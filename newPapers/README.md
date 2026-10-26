@@ -11,6 +11,7 @@ records describe the checks performed on its editions.
 | Atiyah and Macdonald, unedited text | [Unedited](atiyah-macdonald/atiyah-macdonald-unedited.pdf) | [LaTeX](build-directories/unedited/atiyah-macdonald-commutative-algebra/latex/) |
 | Banks, *Modern Quantum Field Theory*, with solutions to numbered problems | [PDF](banks-qft/banks-qft-exercise-edition.pdf) | [Project](build-directories/banks_qft/README.md) |
 | Banks, with added editorial exercises | [PDF](banks-qft/banks-qft-implicit-exercise-edition.pdf) | [Project](build-directories/banks_qft/README.md) |
+| Jared Kaplan, *Notes on Contemporary Machine Learning for Physicists*, JHEP edition without exercises | [PDF](kaplan-ml/kaplan-ml-jhep-no-exercises.pdf) | 96 pages |
 | Milnor, *Topology from the Differentiable Viewpoint* | [PDF](milnor-topology/milnor-topology.pdf) | [LaTeX](build-directories/milnorTopFromDiffView/latex/) |
 | Streater and Wightman, *PCT, Spin and Statistics, and All That* | [PDF](pct-spin-statistics-all-that/pct-spin-statistics-all-that.pdf) | [Project](build-directories/pct_spin_statistics_all_that/README.md) |
 | Wald, *General Relativity* | [PDF](wald-gr/wald-gr-modernized.pdf) | [Project](build-directories/wald_gr/README.md) |

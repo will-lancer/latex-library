@@ -1,4 +1,4 @@
-# TypesetTranslate
+# latex-library
 
 Physics and mathematics books typeset in modern LaTeX, largely with coding agents.
 Report errors to `will.m.lancer@gmail.com`.
