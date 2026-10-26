@@ -10,9 +10,8 @@
 *.run.xml
 *.synctex.gz
 *.toc
-newPapers/*/latex/*.pdf
-newPapers/unedited/*/latex/*.pdf
-newPapers/build-directories/*/latex/*.pdf
+sources/*/latex/*.pdf
+sources/unedited/*/latex/*.pdf
 
 # Python verification artifacts
 __pycache__/
@@ -23,8 +22,8 @@ __pycache__/
 
 # Large local lecture media (exceeds GitHub 100MB limit)
 *.mp4
-newPapers/build-directories/*/work/**/video/
+sources/*/work/**/video/
 
 # Regenerable Yin 253a QA/export samples
-newPapers/yin-qft-253abc.pdf
-tmp/pdfs/yin-string-style/
+pdfs/yin-qft-253abc.pdf
+archive/tmp/pdfs/yin-string-style/
