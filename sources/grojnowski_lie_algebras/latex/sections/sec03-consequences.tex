@@ -1,0 +1,143 @@
+\section{Consequences}
+
+Let $V, W$ be representations of a Lie algebra $\g$.
+
+\begin{claim}
+$\g \to \End(V \otimes W) = \End(V) \otimes \End(W)$ via
+$x \mapsto x \otimes 1 + 1 \otimes x$ is a homomorphism of Lie algebras.
+\end{claim}
+
+\begin{exercise}
+Prove it. (This comes from differentiating the group homomorphism
+$G \to G \times G$ via $g \mapsto (g, g)$.)
+\end{exercise}
+
+\begin{corollary}
+If $V, W$ are representations of $\g$, then so is $V \otimes W$.
+\end{corollary}
+
+\begin{remark}
+If $A$ is an algebra and $V$ and $W$ are representations of $A$, then
+$V \otimes W$ is naturally a representation of $A \otimes A$. To make it a
+representation of $A$, we need an algebra homomorphism $A \to A \otimes A$.
+(An object with such a structure, plus some other properties, is called a Hopf
+algebra.) In some essential way, $\g$ behaves like a Hopf algebra. (Or,
+rather, the universal enveloping algebra of $\g$ is a Hopf algebra, and so are
+its deformations, the quantum groups.)
+\end{remark}
+
+Now, take $\g = \sl_2$. What is $L(n) \otimes L(m)$? That is, we know
+$L(n) \otimes L(m) = \bigoplus_k a_kL(k)$; what are the $a_k$?
+
+One method of doing this would be to compute all the highest-weight vectors.
+
+\begin{exercise}
+Do this for $L(1) \otimes L(n)$. Then do it for $L(2) \otimes L(n)$.
+\end{exercise}
+
+As a start on the exercise, let $v_a$ denote the highest-weight vector in
+$L(a)$. Then $v_n \otimes v_m$ is a highest-weight vector in
+$L(n) \otimes L(m)$. Indeed,
+\begin{align*}
+  h(v_n \otimes v_m) &= (hv_n) \otimes v_m + v_n \otimes (hv_m) = (n + m)\,v_n \otimes v_m,\\
+  e(v_n \otimes v_m) &= (ev_n) \otimes v_m + v_n \otimes (ev_m) = 0 + 0 = 0.
+\end{align*}
+Therefore,
+\[
+  L(n) \otimes L(m) = L(n + m) + \text{other stuff}.
+\]
+However, counting dimensions, we get
+\[
+  (n + 1)(m + 1) = (n + m + 1) + \dim(\text{other stuff}),
+\]
+which shows that there is quite a lot of this ``other stuff'' in there.
+
+One can write down explicit formulae for all the highest-weight vectors; these
+are complicated but mildly interesting. However, we don't have to do it to
+determine the summands of $L(n) \otimes L(m)$.
+
+Let $V$ be a finite-dimensional representation of $\sl_2$.
+
+\begin{definition}
+The \emph{character} of $V$ is
+$\ch V = \sum_{n \in \Z} \dim V_n\, z^n \in \N[z, z^{-1}]$.
+\end{definition}
+
+\begin{properties}\leavevmode
+\begin{enumerate}
+  \item $\ch V|_{z=1} = \dim V$.
+
+    This is equivalent to the claim that $h$ is diagonalisable with
+    eigenvalues in $\Z$, so $V = \bigoplus_{n \in \Z} V_n$.
+  \item $\ch L(n) = z^n + z^{n-2} + \dots + z^{-n}
+       = \dfrac{z^{n+1} - z^{-(n+1)}}{z - z^{-1}}$.
+    Sometimes this is written as $[n + 1]_z$.
+  \item $\ch V = \ch W$ iff $V \cong W$.
+
+    Note that $\ch L(0) = 1$, $\ch L(1) = z + z^{-1}$,
+    $\ch L(2) = z^2 + 1 + z^{-2}, \dots$ form a $\Z$-basis for the space of
+    symmetric Laurent polynomials with integer coefficients. On the other
+    hand, by complete reducibility,
+    \begin{align*}
+      V &= \textstyle\bigoplus_{n \geq 0} a_nL(n), \quad a_n \geq 0,\\
+      W &= \textstyle\bigoplus_{n \geq 0} b_nL(n), \quad b_n \geq 0,\\
+      V \cong W &\iff a_n = b_n \text{ for all } n.
+    \end{align*}
+    But since the $\ch L(n)$ form a basis, $\ch V = \sum a_n \ch L(n)$
+    determines the $a_n$.
+
+    \begin{remark}
+    Note that for the representations, we only need nonnegative coefficients
+    $a_n \geq 0$. On the other hand, if instead of looking at modules we were
+    looking at chain complexes, the idea of $\Z$-linear combinations would
+    become meaningful.
+    \end{remark}
+  \item $\ch(V \otimes W) = \ch V \cdot \ch W$.
+
+    \begin{exercise}[Essential!]
+    $V_n \otimes W_m \subseteq (V \otimes W)_{n+m}$. Therefore,
+    $(V \otimes W)_p = \bigoplus_{n+m=p} V_n \otimes W_m$. This is exactly how
+    we multiply polynomials.
+    \end{exercise}
+
+    \begin{example}
+    We can now compute $L(1) \otimes L(3)$:
+    \begin{align*}
+      \ch L(1) \cdot \ch L(3) &= (z + z^{-1})(z^3 + z + z^{-1} + z^{-3})\\
+        &= (z^4 + z^2 + 1 + z^{-2} + z^{-4}) + (z^2 + 1 + z^{-2})
+         = \ch L(4) + \ch L(2),
+    \end{align*}
+    so $L(1) \otimes L(3) = L(4) \oplus L(2)$.
+    \end{example}
+  \item The Clebsch--Gordan rule:
+    \[
+      L(n) \otimes L(m) = \bigoplus_{\substack{k = |n - m|\\ k \equiv n - m \bmod 2}}^{n + m} L(k).
+    \]
+    There is a picture that goes with this rule (so you don't actually need to
+    remember it); see figure~\ref{fig:crystal-sl2}.
+\end{enumerate}
+\end{properties}
+
+\begin{figure}[!htbp]
+  \centering
+  \slcrystal
+  \caption{Crystal for $\sl_2$, drawn for $n = 4$, $m = 6$.}
+  \label{fig:crystal-sl2}
+\end{figure}
+
+The individual strings are the $L(a)$ in the decomposition.
+
+One of the points of this course is that this sort of picture-drawing (called
+crystals) lets us decompose tensor products of representations of all other
+semisimple Lie algebras. (This fact was discovered about 20 years ago by
+Kashiwara and Lusztig.)
+
+What we will actually show for the other semisimple Lie algebras:
+\begin{itemize}
+  \item The category of finite-dimensional representations is completely
+    reducible (i.e.\ all finite-dimensional representations are semisimple).
+  \item We will parametrise the irreducible representations.
+  \item We will compute the characters of the irreducible representations.
+  \item We will show how to take tensor products of irreducible
+    representations by drawing pictures (crystals).
+\end{itemize}

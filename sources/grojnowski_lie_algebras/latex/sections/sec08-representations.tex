@@ -1,0 +1,569 @@
+\section{Representations}
+
+Let $\g$ be a semisimple Lie algebra,
+$\g = \at + \bigoplus_{\alpha \in R} \g_\alpha = \at + \fn^+ + \fn^-$. Let $V$
+be a finite-dimensional representation of $\g$. (We don't quite need
+finite-dimensional; we'll see exactly what we need a bit later.)
+
+\begin{proposition}\leavevmode
+\begin{enumerate}
+  \item $V = \bigoplus_{\lambda \in \at^*} V_\lambda$, where
+    $V_\lambda = \setc{v \in V}{t(v) = \lambda(t)v \ \forall t \in \at}$ (this
+    is the weight space decomposition with respect to $\at$).
+  \item If $V_\lambda \neq 0$, then $\lambda(h_\alpha) \in \Z$ for all
+    $\alpha \in R$. (Here, $h_\alpha$ is the element of the $(\sl_2)_\alpha$,
+    $h_\alpha = \nu^{-1}(\alpha\cv)$.)
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Since $V$ is a finite-dimensional representation of $\g$, it is a
+finite-dimensional representation of $(\sl_2)_\alpha$. Therefore, $h_\alpha$
+acts diagonalisably on $V$ with eigenvalues $\lambda(h_\alpha) \in \Z$. The
+first assertion follows because the $h_\alpha$ commute and span $\at$.
+\end{proof}
+
+\begin{definition}
+$Q = \Z R = \bigoplus_{\alpha_i \in \Pi} \Z\alpha_i$ is the \emph{lattice of
+roots}.
+$P = \setc{\gamma \in \Q R}{(\gamma, \alpha\cv) \in \Z \ \forall \alpha \in R}$
+(the dual lattice) is the \emph{lattice of weights}. Note that the condition
+can be checked by computing $(\gamma, \alpha_i\cv)$ for $\alpha_i \in \Pi$.
+\end{definition}
+
+Since $(\beta, \alpha\cv) \in \Z$ for $\beta, \alpha \in R$, we see that
+$Q \subseteq P$. Also, if $V$ is a finite-dimensional representation of $\g$
+and $V_\lambda \neq 0$, then $\lambda \in P$, as
+$\lambda(h_\alpha) = (\lambda, \alpha\cv)$.
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item $|P/Q| < \infty$. In fact, $|P/Q| = \det A$, where $A$ is the Cartan
+    matrix.
+  \item $W(P) \subseteq P$, where $W$ is the Weyl group.
+\end{enumerate}
+\end{exercise}
+
+\begin{example}
+In $\sl_2$, $R = \{\pm\alpha\}$, $Q = \Z\alpha$, $(\alpha, \alpha) = 2$, so
+$P = \Z\alpha/2$, and $|P/Q| = 2 = \det(2)$.
+\end{example}
+
+\begin{definition}
+For $V$ a finite-dimensional representation of $\g$, define
+\[
+  \ch V = \sum_{\lambda \in P} \dim V_\lambda \cdot e^\lambda \in \Z[P].
+\]
+Here, $e^\lambda$ is a formal symbol ($e^\lambda e^\mu = e^{\lambda+\mu}$)
+forming a basis for $\Z[P]$.
+\end{definition}
+
+``People are looking at me as if I'm speaking some language I don't speak, let
+alone you don't speak.''
+
+\begin{example}
+For $\sl_2$, $P = \Z\alpha/2$. Write $z = e^{\alpha/2}$; then
+$\ch L(n) = z^n + \dots + z^{-n} = \frac{z^{n+1} - z^{-(n+1)}}{z - z^{-1}}$.
+\end{example}
+
+\begin{example}
+Let $\g = \sl_3$, and $V = \g$ the adjoint representation. Then
+\[
+  \ch V = 2 + z + w + zw + z^{-1} + w^{-1} + z^{-1}w^{-1},
+\]
+where $w = e^{\alpha_1}$, $z = e^{\alpha_2}$. See figure~\ref{fig:sl3-adjoint}.
+\end{example}
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[scale=1.25,every node/.append style={font=\small}]
+  \foreach \i in {-2,...,2} \foreach \j in {-2,...,2} {
+    \pgfmathsetmacro{\x}{\i + \j*cos(120)}
+    \pgfmathsetmacro{\y}{\j*sin(120)}
+    \pgfmathsetmacro{\r}{sqrt(\x*\x+\y*\y)}
+    \ifdim \r pt < 2.1pt \node[dot] at (\x,\y) {}; \fi
+  }
+  \node[above right=0pt] at (0,0) {$2$};
+  \foreach \a in {0,60,...,300} \node[above right=0pt] at (\a:1) {$1$};
+  \node[below=3pt] at (0:1) {$\alpha_1$};
+  \node[below=3pt] at (120:1) {$\alpha_2$};
+  \node[below=3pt] at (60:1) {$\alpha_1 + \alpha_2$};
+\end{tikzpicture}
+\caption{Root lattice points of $\sl_3$ near the origin, with the dimensions
+of the weight spaces of the adjoint representation. The six roots carry $1$,
+the origin carries $2$, and the picture is $W$-invariant ($W = S_3$ here).}
+\label{fig:sl3-adjoint}
+\end{figure}
+
+\begin{proposition}
+If $V$ is a finite-dimensional representation of $\g$, then
+$\dim V_\lambda = \dim V_{w\lambda}$ for all $w \in W$, i.e.\ $\ch V$ is
+$W$-invariant, $\ch V \in \Z[P]^W$. (In particular, for $\sl_n$ this means that
+the $\ch V$ are symmetric functions.)
+\end{proposition}
+
+We will sketch three proofs, of which the third one is the easiest, but the
+first two reveal what is actually going on.
+
+\begin{sketch}{1}
+If $G$ is an algebraic group with Lie algebra $\g$ then (by a theorem)
+$W = N(T)/T$ (where $T$ is the maximal torus in $G$ whose Lie algebra is
+$\at$, and $N(T)$ is its normaliser).
+
+\begin{example}
+If $G = SL_n$ with $T$ the diagonal matrices, then $N(T)$ consists of the
+matrices with exactly one nonzero entry in each row and column, and
+$N(T)/T = S_n$, the permutation matrices.
+\end{example}
+
+That is, there exists $\dot w \in N(T)$ such that $\dot wT = w$. If $G$ acts on
+$V$ (as it always does when $G$ is simply connected), then
+$\dot w(V_\lambda) = V_{w\lambda}$, since
+\[
+  t\dot w(v) = \dot w(\dot w^{-1}t\dot w)v = \dot w\bigl(\lambda(\dot w^{-1}t\dot w)v\bigr).
+\]
+That is, $W$ is almost a subgroup of $G$. However, it is definitely not
+actually a subgroup. E.g., in $SL_2$, we take
+$\dot s = \bigl(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\bigr)$,
+and then
+$\dot s^2 = \bigl(\begin{smallmatrix} -1 & 0 \\ 0 & -1 \end{smallmatrix}\bigr) \in T$
+is not equal to $1$. That is, $W$ does not embed into $G$ and does not act on
+$V$. (There is a small $2$-group, $\approx (\Z/2)^l$, that intervenes. This
+$2$-group is also involved in determining the coefficients $c_{\alpha\beta}$.)
+\end{sketch}
+
+\begin{sketch}{2}
+We can mimic the above argument in $\g$:
+\[
+  \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+  = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}
+  = \exp(f)\exp(-e)\exp(f).
+\]
+Therefore, for each root $\alpha$ we define
+$\dot s_\alpha = \exp(f_\alpha)\exp(-e_\alpha)\exp(f_\alpha)$, where the
+matrix exponential is defined in the usual power series way.
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item If $V$ is a finite-dimensional representation of $\g$, then
+    $e_\alpha$, $f_\alpha$ act nilpotently on $V$, so
+    $\dot s_\alpha\colon V \to V$ is a well-defined finite sum.
+  \item $\dot s_\alpha^2 = \epsilon_\alpha\colon V_\lambda \to V_\lambda$,
+    where $\epsilon_\alpha^2 = 1$ and $\epsilon_\alpha$ acts by a constant.
+    Determine this constant (in terms of $\lambda$).
+  \item $\dot s_\alpha(V_\lambda) = V_{s_\alpha\lambda}$.
+  \qedhere
+\end{enumerate}
+\end{exercise}
+\end{sketch}
+
+\begin{remark}
+We did not really need $V$ to be finite-dimensional; what we need instead is
+for each $e_\alpha$ and $f_\alpha$ to act \emph{locally nilpotently}. We say
+$x\colon V \to V$ acts \emph{locally nilpotently} if for all $v \in V$ we have
+$x^nv = 0$ for some $n$.
+\end{remark}
+
+\begin{exercise}
+This is equivalent to saying that as an $(\sl_2)_\alpha$-module, $V$ splits
+into a (possibly infinite) direct sum of finite-dimensional $\sl_2$-modules.
+\end{exercise}
+
+\begin{definition}
+Such a $V$ is called \emph{integrable} (because you can ``integrate'' the Lie
+algebra action to a group action).
+\end{definition}
+
+In the rest of the course, you can replace all instances of
+``finite-dimensional'' by ``integrable'', and then all theorems and proofs will
+work for the Kac--Moody algebras as well.
+
+\begin{sketch}{3}
+If we're just working with $\sl_2$ anyway, we shouldn't need all the other
+stuff.
+
+\begin{exercise}
+Consider $V$ as a representation of $(\sl_2)_\alpha \times \at$. Then $V$
+splits up into a direct sum of strings, each of which is of the form
+\[
+  \lambda \qquad \lambda - \alpha \qquad \lambda - 2\alpha \qquad \cdots \qquad \lambda - m\alpha,
+\]
+where $m = \lambda(h_\alpha)$ for the top weight $\lambda$ of the string.
+\end{exercise}
+
+Such a string is obviously $s_\alpha$-invariant, since $s_\alpha$ will just
+flip the string from left to right (as the reflection did in $\sl_2$).
+\end{sketch}
+
+\lecture{16}
+
+\begin{definition}
+For $\lambda, \mu \in \at^*$ write $\mu \leq \lambda$ to mean
+$\lambda - \mu = \sum k_i\alpha_i$ with $k_i \in \N$. The points
+$\setc{\mu \in P}{\mu \leq \lambda}$ are the lattice points in an obtuse cone
+(figure~\ref{fig:cone}).
+\end{definition}
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[scale=0.9]
+  \fill[pattern=north east lines] (0,0) -- (-2.1,0) -- ($(-2.1,0)+(-60:1.9)$) -- (-60:1.9) -- cycle;
+  \draw (0,0) -- (-2.1,0);
+  \draw (0,0) -- (-60:1.9);
+  \node[above] at (0,0) {$\lambda$};
+\end{tikzpicture}
+\caption{The cone $\setc{\mu}{\mu \leq \lambda}$ for $\sl_3$, bounded by the
+directions $-\alpha_1$ and $-\alpha_2$.}
+\label{fig:cone}
+\end{figure}
+
+\begin{definition}
+If $V$ is a representation of $\g$, we say that $\mu \in P$ is a \emph{highest
+weight} if $V_\mu \neq 0$ and $V_\lambda \neq 0 \implies \lambda \leq \mu$.
+
+We say $v \in V_\gamma$ is a \emph{singular vector} if $v \neq 0$ and
+$e_\alpha v = 0$ for all $\alpha \in R^+$. (Note that
+$e_\alpha v \in V_{\gamma+\alpha}$, so if $\gamma$ is a highest weight, then
+all nonzero elements of $V_\gamma$ are singular vectors.)
+
+We say that $\mu$ is an \emph{extremal weight} if $w\mu$ is a highest weight
+for some $w \in W$.
+\end{definition}
+
+\begin{example}
+In the adjoint representation of $\sl_3$, the highest weight is
+$\alpha_1 + \alpha_2$, and the six roots on the outer hexagon are the extremal
+weights.
+\end{example}
+
+\begin{theorem}
+Let $\g$ be a semisimple Lie algebra over $\C$.
+\begin{enumerate}
+  \item ``Complete reducibility'': if $V$ is a finite-dimensional
+    representation of $\g$, then $V$ is a direct sum of irreducible
+    representations of $\g$.
+
+    Set $P^+ = \setc{\lambda \in P}{(\lambda, \alpha\cv) \geq 0 \ \forall \alpha \in R^+}$
+    (of course, it's enough to check this on $\alpha \in \Pi$). This is the
+    cone of \emph{dominant weights}. The assertion of the next parts of the
+    theorem is that $P^+$ parametrises the finite-dimensional irreducible
+    representations of $\g$, with $\lambda \mapsto L(\lambda)$. More
+    precisely,
+  \item Let $V$ be a finite-dimensional irreducible representation of $\g$,
+    and $v \in V_\lambda$ a singular vector. Then
+    \begin{alist}
+      \item $\dim V_\lambda = 1$;
+      \item $V_\mu \neq 0 \implies \mu \leq \lambda$, so $\lambda$ is a
+        highest weight (and $v$ a highest-weight vector);
+      \item $\lambda(h_i) \in \N$ for all $i$, i.e.\ $\lambda \in P^+$.
+    \end{alist}
+    Moreover, if $W$ is another finite-dimensional irreducible representation
+    of $\g$ with highest weight $\lambda$, and $w \in W_\lambda$, $w \neq 0$,
+    then there exists a unique isomorphism $V \to W$ mapping $v \mapsto w$.
+    (Of course, given they are irreducible representations, if there is an
+    isomorphism, there is a one-dimensional family of them, so we would pin
+    down the exact one by sending $v \mapsto w$. That is, uniqueness is not
+    the nontrivial statement here.)
+  \item Given $\lambda \in P^+$, there exists a finite-dimensional irreducible
+    representation with highest weight $\lambda$, called $L(\lambda)$.
+  \item There is a formula for $\ch L(\lambda)$ (the Weyl character formula),
+    to be stated later.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+For Kac--Moody algebras, we need a slight modification, since it is no longer
+obvious that we will have highest-weight vectors. We need to work in the
+category of integrable highest-weight representations instead.
+\end{remark}
+
+\begin{corollary}
+\[
+  \ch L(\lambda) = e^\lambda + \sum_{\mu < \lambda} a_{\mu\lambda}e^\mu \in \Z[P],
+\]
+hence $\setc{\ch L(\lambda)}{\lambda \in P^+}$ are linearly independent (they
+have different leading terms). On the other hand,
+\[
+  \ch L(\lambda) = m_\lambda + \sum_{\substack{\mu < \lambda\\ \mu \in P^+}} \tilde a_{\mu\lambda}m_\mu
+    \in \Z[P]^W, \qquad \text{where } m_\mu = \sum_{\gamma \in W\mu} e^\gamma.
+\]
+Since the $\{m_\mu\}_{\mu \in P^+}$ clearly form a basis for $\Z[P]^W$, the
+$\ch L(\lambda)$ form a basis of $\Z[P]^W$.
+\end{corollary}
+
+\begin{corollary}
+If $V$ and $W$ are finite-dimensional representations of $\g$, then
+$V \cong W \iff \ch V = \ch W$.
+\end{corollary}
+
+\begin{proof}
+Complete reducibility, plus the fact that the characters of irreducibles form a
+basis.
+\end{proof}
+
+\begin{definition}
+Define $\omega_i \in P$ to be the dual basis to the simple (co)roots,
+$(\omega_i, \alpha_j\cv) = \delta_{ij}$ for $i, j = 1, \dots, l$. These are
+called the \emph{fundamental weights}.
+\end{definition}
+
+Then $P^+ = \bigoplus \Z_{\geq 0}\omega_i = \setc{\sum n_i\omega_i}{n_i \geq 0}$.
+This is a fundamental domain for the action of $W$ on $P$. Each irreducible
+representation will have a unique highest weight lying in this cone, which is
+what parametrises the representation.
+
+\begin{exercise}
+Compute the $\omega_i$ for the simple Lie algebras $\sl_n$, $\so_{2n}$,
+$\so_{2n+1}$, $\spl_{2n}$, etc., and draw the picture for $A_2$, $B_2$, and
+$G_2$.
+\end{exercise}
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[scale=1.45,every node/.append style={font=\footnotesize}]
+  \fill[gray!20] (0,0) -- (90:2.35) -- (30:2.35) -- cycle;
+  \draw (0,0) -- (90:2.35); \draw (0,0) -- (30:2.35);
+  \foreach \i in {-2,...,2} \foreach \j in {-2,...,2} {
+    \pgfmathsetmacro{\x}{\i + \j*cos(120)}
+    \pgfmathsetmacro{\y}{\j*sin(120)}
+    \pgfmathsetmacro{\r}{sqrt(\x*\x+\y*\y)}
+    \ifdim \r pt < 2.1pt \node[dot] at (\x,\y) {}; \fi
+  }
+  \node[below=2pt] at (0:1) {$\alpha_1$};
+  \node[below=2pt] at (120:1) {$\alpha_2$};
+  \node[above=2pt] at (60:1) {$\alpha_1 + \alpha_2$};
+  \node[above] at (90:2.35) {$\R_{\geq 0}\,\omega_2$};
+  \node[right] at (30:2.35) {$\R_{\geq 0}\,\omega_1$};
+\end{tikzpicture}
+\caption{Cone of dominant weights for $\sl_3$, spanned by the fundamental
+weights. The adjoint representation's highest weight is $\alpha_1 + \alpha_2$.}
+\label{fig:dominant-sl3}
+\end{figure}
+
+\begin{exercise}
+$\lambda \in P \implies \lambda = \sum \lambda(h_i)\omega_i$, where
+$h_i = \nu^{-1}(\alpha_i\cv)$.
+\end{exercise}
+
+\begin{example}
+For any $\g$, the trivial representation is $L(0)$.
+\end{example}
+
+For any simple $\g$, the adjoint representation $V = \g$ is irreducible. The
+decomposition $\g = \at + \bigoplus_{\alpha \in R} \g_\alpha$ means that a
+highest weight $\lambda$ is a root such that $\lambda + \alpha_i \notin R$ for
+all $i$, i.e.\ $\lambda = \theta$, the highest root in $R^+$ (see
+figure~\ref{fig:dominant-sl3}). (Therefore, the theorem of the highest weight
+implies that $\theta$ is unique, as promised.)
+
+\begin{example}
+In $A_{n-1}$ ($n \geq 3$), the highest root is $\theta = e_1 - e_n$ (recall
+$\alpha_i = e_i - e_{i+1}$ and $h_i$ is a diagonal matrix with $+1$ in the
+$i$th position, $-1$ in the $(i+1)$th position, and $0$ elsewhere). We have
+$\theta(h_1) = 1$, $\theta(h_2) = 0, \dots, \theta(h_{n-2}) = 0$,
+$\theta(h_{n-1}) = 1$. We can label the Dynkin diagram by the $\theta(h_i)$:
+\[
+\begin{tikzpicture}[baseline=-3pt,x=1.1cm]
+  \node[node] (p1) at (0,0) {}; \node[node] (p2) at (1,0) {};
+  \node[node] (p3) at (3,0) {}; \node[node] (p4) at (4,0) {};
+  \draw (p1)--(p2); \draw[dotted] (p2)--(p3); \draw (p3)--(p4);
+  \node[above=2pt] at (p1) {$1$}; \node[above=2pt] at (p2) {$0$};
+  \node[above=2pt] at (p3) {$0$}; \node[above=2pt] at (p4) {$1$};
+\end{tikzpicture}
+\]
+The labels give the decomposition $\theta = \omega_1 + \omega_{n-1}$ of
+$\theta$ into fundamental weights.
+\end{example}
+
+\begin{exercise}
+Compute the $\theta(h_i)$ for all the simple Lie algebras.
+\end{exercise}
+
+\begin{example}
+Other representations of $\sl_n$: we have the standard representation,
+$\C^n$, with weight basis $v_1, \dots, v_n$ and weights $e_1, \dots, e_n$
+(recall $\sum e_i = 0$). The highest weight is $e_1$ (as
+$e_1 > e_2 > \dots > e_n$, since $e_1 - e_2, e_2 - e_3, \dots \in R^+$).
+Therefore, $\C^n = L(\omega_1)$, and
+\[
+  \ch \C^n = e^{e_1} + \dots + e^{e_n} = z_1 + \dots + z_n,
+\]
+where $z_i = e^{e_i} \in \Z[P] = \Z[z_1^{\pm 1}, \dots, z_n^{\pm 1}]/(z_1\cdots z_n = 1)$.
+\end{example}
+
+Now, if $V$ and $W$ are representations of $\g$, then so is $V \otimes W$ (via
+$x \in \g$ acting by $x \otimes 1 + 1 \otimes x$). In particular,
+$V \otimes V$ is a representation. Note that
+$\sigma\colon V \otimes V \to V \otimes V$, $a \otimes b \mapsto b \otimes a$,
+commutes with the $\g$-action, so the eigenspaces of $\sigma$ are
+$\g$-modules. That is, $S^2V$ and $\Lambda^2V$ are $\g$-modules. In general,
+these need not be irreducible, but they are for $V = \C^n$ and $\g = \sl_n$, as
+we check below.
+
+Consider $\Lambda^s\C^n$ (for $s \leq n - 1$). This has weight basis
+$v_{i_1} \wedge \dots \wedge v_{i_s}$ for $i_1 < \dots < i_s$, and the weight
+of this is $e_{i_1} + \dots + e_{i_s}$, as is clear from the action. Therefore,
+\[
+  E_i(v_{i_1} \wedge \dots \wedge v_{i_s}) = 0 \text{ for all } i
+  \iff v_{i_1} \wedge \dots \wedge v_{i_s} = v_1 \wedge \dots \wedge v_s,
+\]
+i.e.\ this is the only singular vector (up to scalars). Note that its weight
+is $\omega = e_1 + \dots + e_s$, which is the $s$th fundamental weight, as
+$(\omega, e_i - e_{i+1}) = \delta_{is}$. Therefore,
+\[
+  \Lambda^s\C^n = L(\omega_s) \text{ is a \emph{fundamental representation}.}
+\]
+In particular, $\Lambda^{n-1}\C^n \cong (\C^n)^* = L(\omega_{n-1})$.
+
+Consider $S^m\C^n$. It has weight basis $v_{i_1}\cdots v_{i_m}$ with
+$i_1 \leq \dots \leq i_m$ and weight $e_{i_1} + \dots + e_{i_m}$. We have
+\[
+  E_i(v_{i_1}\cdots v_{i_m}) = 0 \text{ for all } i
+  \iff v_{i_1}\cdots v_{i_m} = v_1\cdots v_1 = v_1^m,
+\]
+i.e.\ $S^m\C^n$ is an irreducible representation isomorphic to
+$L(m\omega_1)$.
+
+\begin{exercise}
+Check that the above is true. Compute $\ch \Lambda^s\C^n$ and
+$\ch S^m\C^n$. Find a closed formula for the generating functions
+\[
+  \sum_{m \geq 0} (\ch S^m\C^n)q^m, \qquad \sum_{m \geq 0} (\ch \Lambda^m\C^n)q^m.
+\]
+\end{exercise}
+
+\lecture{17}
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item If $V$ and $W$ are $\g$-modules, $V$ finite-dimensional, then
+    $V^* \otimes W \cong \Hom(V, W)$ as $\g$-modules, via
+    $v^* \otimes w \mapsto (v \mapsto v^*(v) \cdot w)$.
+
+    \begin{remark}
+    If $V$ is a $\g$-module, $V^*$ is a $\g$-module with action
+    $(x \cdot \lambda)(v) = -\lambda(xv)$. The $-$ sign comes from
+    differentiating the group action, $(g \cdot \lambda)(v) = \lambda(g^{-1}v)$.
+    \end{remark}
+  \item Show that if $V = \C^n$ and $\g = \sl_n$, then
+    $V \otimes V^* \cong \sl_n \oplus \C$, adjoint plus trivial
+    representations (where the trivial representation comes from
+    $\Id \in \Hom_\g(V, V)$). In contrast, $V \otimes V \cong S^2V \oplus \Lambda^2V$
+    always.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $\g = \so_n$, or $\g = \spl_{2l}$ with $2l = n$, and let $V = \C^n$.
+\begin{enumerate}
+  \item Compute the highest weight of this representation.
+  \item $V \cong V^*$ via the form defining $\g$, so $V \otimes V$ has at least
+    three components (since it must contain the trivial representation). Show
+    that it has exactly three, describe them, and find the highest weights.
+\end{enumerate}
+\end{exercise}
+
+We will now devote ourselves to proving Theorem~8.3, classifying all the
+representations of semisimple Lie algebras.
+
+Let $\g$ be any Lie algebra with a non-degenerate invariant bilinear form
+$(\,,\,)$, e.g., $\g$ semisimple and $(\,,\,) = (\,,\,)_{\ad}$. Let
+$x_1, \dots, x_N$ be a basis of $\g$, and $x^1, \dots, x^N$ the dual basis (so
+$(x_i, x^j) = \delta_{ij}$).
+
+\begin{definition}
+$\Omega = \sum x_ix^i$ is the \emph{Casimir} of $\g$.
+\end{definition}
+
+\begin{remark}
+For the moment, $\Omega$ is an operator on any representation of $\g$.
+However, we will in a moment define the ``universal enveloping algebra of
+$\g$'', and that is where $\Omega$ naturally lives.
+\end{remark}
+
+\begin{lemma}
+For all $x \in \g$, we have $[\Omega, x] = 0$.
+\end{lemma}
+
+\begin{proof}[Proof 1, coordinate-based]
+$[\Omega, x] = [\sum x_ix^i, x]$. Since $\ad x$ is a derivation, we rewrite
+this as $\sum x_i[x^i, x] + \sum [x_i, x]x^i$. Write
+$[x^i, x] = \sum_j a_{ij}x^j$ and $[x_i, x] = \sum_j b_{ij}x_j$. Then
+\begin{align*}
+  a_{ij} &= ([x^i, x], x_j) = ([x_j, x^i], x),\\
+  b_{ij} &= ([x_i, x], x^j) = ([x^j, x_i], x) = -a_{ji}.
+\end{align*}
+Thus,
+\[
+  [\Omega, x] = \sum_{i,j} a_{ij}x_ix^j + \sum_{i,j} b_{ij}x_jx^i = 0. \qedhere
+\]
+\end{proof}
+
+\begin{proof}[Proof 2, without coordinates]
+We have maps of $\g$-modules
+$\C \hookrightarrow \End(\g) \cong \g \otimes \g^* \cong \g \otimes \g$ (the
+first map is via $\lambda \mapsto \lambda\Id$, i.e.\
+$1 \mapsto \sum x_i \otimes x^i$; the last isomorphism is via the bilinear
+form). Since $\g$ acts on $V$, we have a map of $\g$-modules
+$\g \to \End(V)$. Finally, we have a map of $\g$-modules
+$\End(V) \otimes \End(V) \to \End(V)$ by multiplication. This finally gives
+\[
+  \C \hookrightarrow \g \otimes \g^* \cong \g \otimes \g \to \End(V) \otimes \End(V) \to \End(V)
+\]
+sending $1 \mapsto \Omega$. Therefore, $\Omega$ generates a trivial
+$\g$-submodule of $\End(V)$, which is equivalent to saying $[\Omega, x] = 0$
+for all $x \in \g$.
+\end{proof}
+
+Now let $\g$ be semisimple, $\g = \at \oplus \bigoplus_{\alpha \in R} \g_\alpha$,
+and $(\,,\,)_{\ad}$ the Killing form. Choose a basis $u_1, \dots, u_l$ of
+$\at$, $x_\alpha$ of $\g_\alpha$; choose the dual basis $u^1, \dots, u^l$ of
+$\at$ and $x^{-\alpha}$ of $\g_{-\alpha}$ (so that $(x_\alpha, x^{-\alpha}) = 1$).
+Normalise $x_\alpha$ so that $(x_\alpha, x_{-\alpha})_{\ad} = 1$, so that
+$x^{-\alpha} = x_{-\alpha}$. Then $[x_\alpha, x_{-\alpha}] = \nu^{-1}(\alpha)$
+by the structure theorem. Now,
+\[
+  \Omega = \sum u_iu^i + \sum_{\alpha \in R^+} (x_\alpha x_{-\alpha} + x_{-\alpha}x_\alpha)
+         = \sum u_iu^i + 2\sum_{\alpha \in R^+} x_{-\alpha}x_\alpha + \sum_{\alpha \in R^+} \nu^{-1}(\alpha).
+\]
+
+\begin{definition}
+$\rho = \frac12 \sum_{\alpha \in R^+} \alpha$.
+\end{definition}
+
+\begin{remark}
+Of course, there will be an exercise to compute $\rho$ for all the simple Lie
+algebras. However, we will state this exercise later, when it's more obvious
+what $\rho$ is.
+\end{remark}
+
+\begin{remark}
+If you like algebraic geometry, this is the square root of the anticanonical
+bundle on the flag variety.
+\end{remark}
+
+Then
+\[
+  \Omega = \sum u_iu^i + 2\nu^{-1}(\rho) + 2\sum_{\alpha \in R^+} x_{-\alpha}x_\alpha.
+\]
+
+\begin{lemma}
+Let $V$ be a $\g$-module, $v \in V$ a singular vector with weight $\lambda$
+(i.e.\ $\fn^+v = 0$ and $tv = \lambda(t)v$). Then
+$\Omega v = \bigl(|\lambda + \rho|^2 - |\rho|^2\bigr)v$.
+\end{lemma}
+
+\begin{proof}
+Apply the most recent version of $\Omega$:
+\[
+  \Omega v = \Bigl(\sum \lambda(u_i)\lambda(u^i) + \lambda\bigl(2\nu^{-1}(\rho)\bigr)\Bigr)v
+    + 2\sum_{\alpha \in R^+} x_{-\alpha}x_\alpha v
+  = \bigl((\lambda, \lambda) + 2(\lambda, \rho)\bigr)v. \qedhere
+\]
+\end{proof}
+
+In particular, if $V$ is irreducible and has a singular vector of weight
+$\lambda$, then $\Omega$ acts on $V$ by $(\lambda, \lambda) + 2(\lambda, \rho)$,
+by Schur's lemma.

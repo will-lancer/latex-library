@@ -1,0 +1,175 @@
+\pdfoutput=1
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathdots}
+\usepackage{jheppub}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.markings,decorations.pathreplacing,patterns,positioning}
+\hypersetup{hypertexnames=false,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+
+% Edited JHEP edition of I. Grojnowski, "Introduction to Lie algebras and
+% their representations", Part III lectures, Cambridge, Michaelmas 2010,
+% typeset by E. Yudovina. Source PDF: originals/grojnowski-lie-algebras.pdf.
+% Every change of mathematical substance is listed in ../CORRECTIONS.md.
+%
+% Numbering follows the original: theorem-like statements share one counter
+% per section, examples have their own counter per section, and exercises
+% are numbered consecutively through the whole text.
+
+% ---------------------------------------------------------------- theorems
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+\theoremstyle{definition}
+\newtheorem{properties}[theorem]{Properties}
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}
+\newtheorem*{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newenvironment{sketch}[1]{\begin{proof}[Sketch #1]}{\end{proof}}
+
+\setlist[enumerate]{label=(\arabic*),leftmargin=*,topsep=2pt,itemsep=1pt}
+\setlist[itemize]{topsep=2pt,itemsep=1pt}
+\newlist{alist}{enumerate}{1}
+\setlist[alist]{label=(\alph*),leftmargin=*,topsep=2pt,itemsep=1pt}
+
+\setlength{\emergencystretch}{2.5em}
+
+\newcommand{\lecture}[1]{\par\medskip\noindent\textbf{Lecture #1.}\enspace\ignorespaces}
+
+% ------------------------------------------------------------------ fields
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Fpbar}{\overline{\mathbb{F}}_p}
+\newcommand{\PP}{\mathbb{P}}
+
+% ------------------------------------------------------------- Lie algebras
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\at}{\mathfrak{t}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\fz}{\mathfrak{z}}
+\newcommand{\Heis}{\mathfrak{H}}
+\newcommand{\gl}{\mathfrak{gl}}
+\renewcommand{\sl}{\mathfrak{sl}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\spl}{\mathfrak{sp}}
+\newcommand{\gbar}{\overline{\mathfrak{g}}}
+\newcommand{\gtil}{\widetilde{\mathfrak{g}}}
+\newcommand{\U}{\mathcal{U}}
+
+% --------------------------------------------------------------- operators
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\wt}{wt}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\CT}{CT}
+\DeclareMathOperator{\htt}{ht}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\charac}{char}
+\newcommand{\dimq}{\dim_q}
+\newcommand{\te}{\tilde{e}}
+\newcommand{\tf}{\tilde{f}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\cv}{^{\vee}}
+\newcommand{\bx}[1]{\mbox{\fboxsep=2pt\fbox{$#1$}}}
+\newcommand{\xto}[1]{\xrightarrow[#1]{}}
+\newcommand{\setc}[2]{\{#1 \mid #2\}}
+
+% ---------------------------------------------------------- figure helpers
+\tikzset{
+  dot/.style={circle,fill,inner sep=1.6pt},
+  node/.style={circle,draw,inner sep=0pt,minimum size=9pt,fill=white},
+  aff/.style={circle,draw,inner sep=0pt,minimum size=9pt,pattern=north east lines},
+  root/.style={-{Stealth[length=6pt]},thick},
+  cr1/.style={-{Stealth[length=5pt]},black},
+  cr2/.style={-{Stealth[length=5pt]},red!80!black},
+}
+% a double or triple bond between nodes at #1 and #2 with an arrowhead
+% pointing at the short root, here always the second argument
+\newcommand{\dbond}[2]{%
+  \draw[double distance=2.2pt] (#1) -- (#2);
+  \draw[thick] ($(#1)!0.42!(#2)+(0,4pt)$) -- ($(#1)!0.58!(#2)$) -- ($(#1)!0.42!(#2)-(0,4pt)$);}
+\newcommand{\tbond}[2]{%
+  \draw ($(#1)+(0,2.4pt)$) -- ($(#2)+(0,2.4pt)$);
+  \draw (#1) -- (#2);
+  \draw ($(#1)-(0,2.4pt)$) -- ($(#2)-(0,2.4pt)$);
+  \draw[thick] ($(#1)!0.42!(#2)+(0,5pt)$) -- ($(#1)!0.58!(#2)$) -- ($(#1)!0.42!(#2)-(0,5pt)$);}
+% the sl_2 tensor product crystal L(n) (x) L(m) with n = 4, m = 6
+\newcommand{\slcrystal}{%
+\begin{tikzpicture}[scale=0.55]
+  \foreach \c in {0,...,6} \node[dot] (t\c) at (\c,1) {};
+  \draw (t0) -- (t6);
+  \node[above] at (3,1.2) {$m+1$ dots};
+  \foreach \r in {0,...,4} \node[dot] (l\r) at (-1.3,-\r) {};
+  \draw (l0) -- (l4);
+  \node[left] at (-1.5,-2) {$n+1$ dots};
+  \foreach \r in {0,...,4} {
+    \pgfmathtruncatemacro{\last}{6-\r}
+    \foreach \c in {0,...,6} \node[dot] at (\c,-\r) {};
+    \draw (0,-\r) -- (\last,-\r) -- (\last,-4);
+  }
+\end{tikzpicture}}
+
+\title{Introduction to Lie Algebras and their Representations}
+\subheader{Part III lecture notes, University of Cambridge, Michaelmas 2010}
+\author[a]{Ian Grojnowski}
+\author[b]{with notes typeset by Elena Yudovina}
+\affiliation[a]{DPMMS, University of Cambridge}
+\affiliation[b]{Statistical Laboratory, University of Cambridge}
+\emailAdd{I.Grojnowski@dpmms.cam.ac.uk}
+\emailAdd{E.Yudovina@statslab.cam.ac.uk}
+\abstract{These are notes from a Part III course given in Cambridge in the
+autumn of 2010. They start from $\sl_2$ and its representations. From there
+they go through the structure and classification of semisimple Lie algebras
+over $\C$, root systems and Dynkin diagrams, highest-weight theory, Verma
+modules and the Weyl character formula. The last lectures cover the principal
+$\sl_2$, Kashiwara crystals and Littelmann paths. This edition corrects
+misprints and mathematical slips in the 2011 typescript; the file
+\texttt{CORRECTIONS.md} beside the source lists every change of substance.}
+
+\begin{document}
+\maketitle
+\flushbottom
+
+\input{sections/sec01-introduction}
+\input{sections/sec02-sl2}
+\input{sections/sec03-consequences}
+\input{sections/sec04-structure-classification}
+\input{sections/sec05-structure-theory}
+\input{sections/sec06-root-systems}
+\input{sections/sec07-existence-uniqueness}
+\input{sections/sec08-representations}
+\input{sections/sec09-10-pbw-representations}
+\input{sections/sec11-13-principal-crystals-paths}
+
+\end{document}

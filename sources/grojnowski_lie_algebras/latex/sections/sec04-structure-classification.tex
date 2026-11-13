@@ -1,0 +1,439 @@
+\section{Structure and classification of simple Lie algebras}
+
+\lecture{6} We begin with some linear algebra preliminaries.
+
+\begin{definition}
+A Lie algebra $\g$ is called \emph{simple} if the only ideals in $\g$ are $0$
+and $\g$, and $\dim \g > 1$ (equivalently, given the first condition, $\g$ is
+not abelian). A Lie algebra $\g$ is called \emph{semisimple} if it is a direct
+sum of simple Lie algebras.
+\end{definition}
+
+\begin{remark}
+Recall that $\C$ behaved quite differently from $\sl_2$, so it is sensible to
+exclude the abelian Lie algebras.
+\end{remark}
+
+\begin{definition}
+The \emph{derived algebra} of $\g$ is
+$[\g, \g] = \Span\setc{[x, y]}{x, y \in \g}$.
+\end{definition}
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item $[\g, \g]$ is an ideal;
+  \item $\g/[\g, \g]$ is abelian.
+\end{enumerate}
+\end{exercise}
+
+\begin{definition}
+The \emph{central series} of $\g$ is given by $\g^0 = \g$,
+$\g^n = [\g^{n-1}, \g]$, i.e.
+\[
+  \g \supseteq [\g, \g] \supseteq [[\g, \g], \g] \supseteq \cdots
+\]
+The \emph{derived series} of $\g$ is given by $\g^{(0)} = \g$,
+$\g^{(n)} = [\g^{(n-1)}, \g^{(n-1)}]$, i.e.
+\[
+  \g \supseteq [\g, \g] \supseteq [[\g, \g], [\g, \g]] \supseteq \cdots
+\]
+\end{definition}
+
+\begin{remark}
+Clearly, $\g^{(n)} \subseteq \g^n$.
+\end{remark}
+
+\begin{definition}
+$\g$ is \emph{nilpotent} if $\g^n = 0$ for some $n > 0$, i.e.\ the central
+series terminates. $\g$ is \emph{solvable} if $\g^{(n)} = 0$ for some $n > 0$,
+i.e.\ the derived series terminates.
+\end{definition}
+
+By the above remark, a nilpotent Lie algebra is necessarily solvable.
+
+\begin{remark}
+The term ``solvable'' comes from Galois theory (if the Galois group is
+solvable, the associated polynomial is solvable by radicals). We will see
+shortly where the term ``nilpotent'' comes from.
+\end{remark}
+
+\begin{example}\leavevmode
+\begin{enumerate}
+  \item $\fn = \Biggl\{ \begin{pmatrix}
+            0 & * & \cdots & *\\
+              & 0 & \cdots & *\\
+              &   & \ddots & \vdots\\
+              &   &        & 0
+          \end{pmatrix} \in \gl_n \Biggr\}$, the strictly upper triangular
+    matrices, form a nilpotent Lie algebra.
+  \item $\fb = \Biggl\{ \begin{pmatrix}
+            * & * & \cdots & *\\
+              & * & \cdots & *\\
+              &   & \ddots & \vdots\\
+              &   &        & *
+          \end{pmatrix} \in \gl_n \Biggr\}$, the upper triangular matrices,
+    form a solvable Lie algebra.
+
+    \begin{exercise}[Essential]\leavevmode
+    \begin{alist}
+      \item Compute the central and derived series to check that these
+        algebras are nilpotent and solvable respectively.
+      \item Compute the centre of these algebras.
+    \end{alist}
+    \end{exercise}
+  \item Let $W$ be a symplectic vector space with inner product
+    $\langle\,,\,\rangle$ (recall that a symplectic vector space is equipped
+    with a nondegenerate bilinear antisymmetric form, and there is essentially
+    one example: given a finite-dimensional vector space $L$ let
+    $W = L + L^*$ with inner product
+    $\langle L, L\rangle = \langle L^*, L^*\rangle = 0$ and
+    $\langle v, v^*\rangle = -\langle v^*, v\rangle = v^*(v)$). Define the
+    \emph{Heisenberg Lie algebra} as
+    \[
+      \Heis_W = W \oplus \C c, \qquad [w, w'] = \langle w, w'\rangle c, \quad [c, w] = 0.
+    \]
+
+    \begin{exercise}
+    Show this is a Lie algebra, and that it is nilpotent.
+    \end{exercise}
+
+    This is the most important nilpotent Lie algebra occurring in nature. For
+    example, let $L = \C$; then $\Heis_W = \C p + \C q + \C c$ with
+    $[p, q] = c$, $[p, c] = [q, c] = 0$ (as we know from classifying the
+    $3$-dimensional Lie algebras!). Show that this has a representation on
+    $\C[x]$ via $q \mapsto$ multiplication by $x$, $p \mapsto \partial/\partial x$,
+    $c \mapsto 1$.
+
+    (For a general vector space $L$, the basis vectors $v_1, \dots, v_n$ map
+    to multiplication by $x_1, \dots, x_n$, and their duals map to
+    $\partial/\partial x_1, \dots, \partial/\partial x_n$.)
+\end{enumerate}
+\end{example}
+
+\begin{properties}\leavevmode
+\begin{enumerate}
+  \item Subalgebras and quotients of solvable Lie algebras are solvable.
+    Subalgebras and quotients of nilpotent Lie algebras are nilpotent.
+  \item Let $\g$ be a Lie algebra, and let $\h$ be an ideal of $\g$. Then $\g$
+    is solvable if and only if $\h$ and $\g/\h$ are both solvable. (That is,
+    solvable Lie algebras are built out of abelian Lie algebras, i.e.\ there
+    is a refinement of the derived series such that the subquotients are
+    $1$-dimensional and therefore abelian.)
+  \item A nonzero $\g$ is nilpotent iff the centre of $\g$ is nonzero and
+    $\g/(\text{centre of } \g)$ is nilpotent. Indeed, if $\g$ is nilpotent,
+    then the central series is
+    \[
+      \g \supsetneq \g^1 \supsetneq \cdots \supsetneq \g^{n-1} \supsetneq \g^n = 0,
+    \]
+    and since $\g^n = [\g^{n-1}, \g]$ we must have $\g^{n-1}$ contained in the
+    centre of $\g$.
+  \item $\g$ is nilpotent iff $\ad \g \subseteq \gl(\g)$ is nilpotent, as we
+    have an exact sequence
+    \[
+      0 \to \text{centre of } \g \hookrightarrow \g \twoheadrightarrow \ad \g \to 0.
+    \]
+\end{enumerate}
+\end{properties}
+
+\begin{exercise}
+Prove the properties. (The proofs should all be easy and tedious.)
+\end{exercise}
+
+We now state a nontrivial result, which we will not prove.
+
+\begin{theorem}[Lie's theorem]
+Let $\g \subseteq \gl(V)$ be a solvable Lie algebra, where $V \neq 0$ is
+finite-dimensional, and let the base field $k$ be algebraically closed and
+have characteristic zero. Then there exists a basis $v_1, \dots, v_n$ of $V$
+with respect to which $\g \subseteq \fb(V)$, i.e.\ the matrices of all elements
+of $\g$ are upper triangular.
+
+Equivalently, there exist a linear function $\lambda\colon \g \to k$ and a
+nonzero $v \in V$ such that $xv = \lambda(x)v$ for all $x \in \g$, i.e.\ $v$ is
+a common eigenvector for all of $\g$, i.e.\ $kv$ is a one-dimensional
+subrepresentation.
+\end{theorem}
+
+In particular, the only irreducible finite-dimensional representations of a
+solvable $\g$ are one-dimensional.
+
+\begin{exercise}
+Show that these are actually equivalent. (One direction should be obvious; in
+the other, quotient by $v_1$ and repeat.)
+\end{exercise}
+
+\begin{exercise}
+Show that we need $k$ to be algebraically closed.
+
+Show that we need $k$ to have characteristic $0$. [\emph{Hint:} let $\g$ be
+the $3$-dimensional Heisenberg Lie algebra, and show that $k[x]/x^p$ is a
+finite-dimensional irreducible representation of dimension markedly bigger
+than $1$.]
+\end{exercise}
+
+\begin{corollary}
+In characteristic $0$, if $\g$ is a solvable finite-dimensional Lie algebra,
+then $[\g, \g]$ is nilpotent.
+\end{corollary}
+
+\begin{exercise}
+Find a counterexample in characteristic $p$.
+\end{exercise}
+
+\begin{proof}
+Apply Lie's theorem to the adjoint representation $\g \to \End(\g)$. With
+respect to some basis, $\ad \g \subseteq \fb(\g)$. Since $[\fb, \fb] \subseteq \fn$
+(note the diagonal entries cancel out when we take the bracket), we see that
+$[\ad \g, \ad \g]$ is nilpotent. Since $\ad[\g, \g] = [\ad \g, \ad \g]$ (it's a
+representation!), we see that $\ad[\g, \g]$ is nilpotent, and therefore so is
+$[\g, \g]$.
+\end{proof}
+
+\begin{theorem}[Engel's theorem]
+Let the base field $k$ be arbitrary, and let $\g$ be finite-dimensional. Then
+$\g$ is nilpotent iff $\ad \g$ consists of nilpotent endomorphisms of $\g$
+(i.e., for all $x \in \g$, $\ad x$ is nilpotent).
+
+Equivalently, if $V \neq 0$ is a finite-dimensional representation of $\g$ such
+that all elements of $\g$ act on $V$ by nilpotent endomorphisms, then there
+exists a nonzero $v \in V$ such that $x(v) = 0$ for all $x \in \g$, i.e.\ $V$
+has the trivial representation as a subrepresentation.
+
+Equivalently, in a suitable basis every $x \in \g$ acts by a strictly upper
+triangular matrix.
+\end{theorem}
+
+\begin{exercise}
+Show that these are actually equivalent.
+\end{exercise}
+
+\lecture{7}
+
+\begin{definition}
+A symmetric bilinear form $(\,,\,)\colon \g \times \g \to k$ is
+\emph{invariant} if $([x, y], z) = (x, [y, z])$.
+\end{definition}
+
+\begin{exercise}
+If $\fa \subseteq \g$ is an ideal and $(\,,\,)$ is an invariant bilinear form,
+then $\fa^\perp$ is an ideal.
+\end{exercise}
+
+\begin{definition}
+If $V$ is a finite-dimensional representation of $\g$, i.e.\ if
+$\rho\colon \g \to \gl(V)$ is a homomorphism, define the \emph{trace form} to
+be $(x, y)_V = \tr\bigl(\rho(x)\rho(y)\colon V \to V\bigr)$.
+\end{definition}
+
+\begin{exercise}
+Check that the trace form is symmetric, bilinear, and invariant. (They should
+all be obvious.)
+\end{exercise}
+
+\begin{example}
+$(\,,\,)_{\ad}$ is the ``Killing form'' (named after a person, not after an
+action). This is the trace form attached to the adjoint representation. That
+is, $(x, y)_{\ad} = \tr(\ad x \ad y\colon \g \to \g)$.
+\end{example}
+
+\begin{theorem}[Cartan's criterion]
+Let $\g \subseteq \gl(V)$ and let $\charac k = 0$. Then $\g$ is solvable if and
+only if $(x, y)_V = 0$ for every $x \in \g$ and $y \in [\g, \g]$. (That is,
+$[\g, \g] \subseteq \g^\perp$.)
+\end{theorem}
+
+\begin{exercise}
+Lie's theorem gives us one direction. Indeed, if $\g$ is solvable then we can
+take a basis in which $x$ is an upper triangular matrix, $y$ is strictly upper
+triangular, and then $xy$ and $yx$ both have zeros on the diagonal (and thus
+trace $0$). That is, if $\g$ is solvable and nonabelian, all trace forms are
+degenerate. (The exercise is to convince yourself that this is true.)
+\end{exercise}
+
+\begin{corollary}
+$\g$ is solvable iff $(\g, [\g, \g])_{\ad} = 0$.
+\end{corollary}
+
+\begin{proof}
+If $\g$ is solvable, Lie's theorem gives the trace to be zero. Conversely,
+Cartan's criterion tells us that $\ad \g = \g/(\text{centre of } \g)$ is
+solvable, and therefore so is $\g$.
+\end{proof}
+
+\begin{exercise}
+Not every invariant form is a trace form. Let
+$\tilde\Heis = \C\langle p, q, c, d\rangle$ where $[c, \tilde\Heis] = 0$,
+$[p, q] = c$, $[d, p] = p$, $[d, q] = -q$.
+\begin{enumerate}
+  \item Construct a nondegenerate invariant form on $\tilde\Heis$.
+  \item Show $\tilde\Heis$ is solvable.
+  \item Extend the representation of $\langle c, p, q\rangle = \Heis$ on
+    $k[x]$ to a representation of $\tilde\Heis$.
+\end{enumerate}
+\end{exercise}
+
+\begin{definition}
+The \emph{radical} of $\g$, $R(\g)$, is the maximal solvable ideal in $\g$.
+\end{definition}
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item Show $R(\g)$ is the sum of all solvable ideals in $\g$ (i.e., show
+    that the sum of solvable ideals is solvable).
+  \item Show $R(\g/R(\g)) = 0$.
+\end{enumerate}
+\end{exercise}
+
+\begin{theorem}
+In characteristic $0$, the following are equivalent:
+\begin{enumerate}
+  \item $\g$ is semisimple;
+  \item $R(\g) = 0$;
+  \item the Killing form $(\,,\,)_{\ad}$ is nondegenerate (the Killing
+    criterion).
+\end{enumerate}
+Moreover, if $\g$ is semisimple, then every derivation $D\colon \g \to \g$ is
+inner, but not conversely (where we define the terms ``derivation'' and
+``inner'' below).
+\end{theorem}
+
+\begin{definition}
+A \emph{derivation} $D\colon \g \to \g$ is a linear map satisfying
+$D[x, y] = [Dx, y] + [x, Dy]$.
+\end{definition}
+
+\begin{example}
+$\ad(x)$ is a derivation for any $x$. Derivations of the form $\ad(x)$ for some
+$x \in \g$ are called \emph{inner}.
+\end{example}
+
+\begin{remark}
+If $\g$ is any Lie algebra, we have the exact sequence
+\[
+  0 \to R(\g) \hookrightarrow \g \twoheadrightarrow \g/R(\g) \to 0,
+\]
+where $R(\g)$ is a solvable ideal, and $\g/R(\g)$ is semisimple. That is, any
+Lie algebra has a maximal semisimple quotient, and the kernel is a solvable
+ideal. This shows you how much nicer the theory of Lie algebras is than the
+corresponding theory for finite groups. In particular, the corresponding
+statement for finite groups is essentially equivalent to the classification of
+the finite simple groups.
+\end{remark}
+
+A theorem that we will neither prove nor use, but which is pretty:
+
+\begin{theorem}[Levi's theorem]
+In characteristic $0$, a stronger result is true. Namely, the exact sequence
+splits, i.e.\ there exists a subalgebra $\fs \subseteq \g$ such that
+$\fs \cong \g/R(\g)$. (This subalgebra is not canonical; in particular, it is
+not an ideal of $\g$.) That is, $\g$ can be written as
+$\g = \fs \ltimes R(\g)$.
+\end{theorem}
+
+\begin{exercise}
+Show that this fails in characteristic $p$. Let $\g = \sl_p(\Fpbar)$; show
+$R(\g) = \Fpbar I$ (note that the identity matrix in dimension $p$ has trace
+$0$), but that there is no complement to $R(\g)$ that is an algebra.
+\end{exercise}
+
+\begin{proof}[Proof of Theorem~4.7]
+First, notice that $R(\g) = 0$ if and only if $\g$ has no nonzero abelian
+ideals. (In one direction, an abelian ideal is solvable; in the other, notice
+that the last nonzero term of the derived series of $R(\g)$ is an abelian
+ideal of $\g$.)
+
+From now on, $(\,,\,)$ refers to the Killing form $(\,,\,)_{\ad}$.
+
+(3) $\implies$ (2): we show that if $\fa$ is an abelian ideal of $\g$, then
+$\fa \subseteq \g^\perp$. (Since the Killing form is nondegenerate, this means
+$\fa = 0$, and therefore $R(\g) = 0$.)
+
+Write $\g = \fa + \h$ where $\h$ is a vector space complement to $\fa$ (not
+necessarily an ideal). For $a \in \fa$, $\ad a$ has block matrix
+$\bigl(\begin{smallmatrix} 0 & * \\ 0 & 0 \end{smallmatrix}\bigr)$. For
+$x \in \g$, $\ad x$ has block matrix
+$\bigl(\begin{smallmatrix} * & * \\ 0 & * \end{smallmatrix}\bigr)$. (This is
+because $\fa$ is an ideal, so $[a, x] \in \fa$ for all $x \in \g$, and moreover
+$\ad a$ acts by $0$ on $\fa$.) Therefore,
+\[
+  \tr(\ad a \cdot \ad x) = \tr \begin{pmatrix} 0 & * \\ 0 & 0 \end{pmatrix} = 0,
+\]
+i.e.\ $(\fa, \g)_{\ad} = 0$. Since the Killing form is nondegenerate, $\fa = 0$.
+
+(2) $\implies$ (3): Let $\fr \subseteq \g^\perp$ be an ideal (e.g.\
+$\fr = \g^\perp$), and suppose $\fr \neq 0$. Then $\ad \fr \subseteq \gl(\g)$,
+and $(x, y)_{\ad} = 0$ for all $x, y \in \fr$. By Cartan's criterion,
+$\ad \fr \cong \fr/(\fr \cap \text{centre of } \g)$ is solvable, so $\fr$ is
+solvable, contradicting $R(\g) = 0$.
+
+\begin{exercise}
+Show that $R(\g) \supseteq \g^\perp \supseteq [R(\g), R(\g)]$.
+\end{exercise}
+
+(2), (3) $\implies$ (1): Let $(\,,\,)_{\ad}$ be nondegenerate, and let
+$\fa \subseteq \g$ be a minimal nonzero ideal. We claim that
+$(\,,\,)_{\ad}|_{\fa}$ is either $0$ or nondegenerate. Indeed, the kernel of
+$(\,,\,)_{\ad}|_{\fa}$ is
+$\setc{x \in \fa}{(x, \fa)_{\ad} = 0} = \fa \cap \fa^\perp$, which is an ideal!
+
+Cartan's criterion implies that $\fa$ is solvable if $(\,,\,)_{\ad}|_{\fa}$ is
+$0$. Since $R(\g) = 0$, we conclude that $(\,,\,)_{\ad}|_{\fa}$ is
+nondegenerate.
+
+Therefore, $\g = \fa \oplus \fa^\perp$, where $\fa$ is a minimal ideal, i.e.\
+simple. (Note that $R(\g) = 0$, so $\fa$ cannot be abelian.)
+
+But now ideals of $\fa^\perp$ are ideals of $\g$, so we can apply the same
+argument to $\fa^\perp$, since $R(\g) = 0 \implies R(\fa^\perp) = 0$.
+Therefore, $\g = \bigoplus \fa_i$, where the $\fa_i$ are simple Lie algebras.
+\end{proof}
+
+\begin{exercise}
+Show that if $\g$ is semisimple, then $\g$ is the direct sum of minimal ideals
+\emph{in a unique manner}. That is, if $\g = \bigoplus \fa_i$ where the
+$\fa_i$ are minimal, and $\fb$ is a minimal ideal of $\g$, then in fact
+$\fb = \fa_i$ for some $i$. (Consider $\fb \cap \fa_j$.) Conclude that
+(1) $\implies$ (2).
+\end{exercise}
+
+\lecture{8} Finally, we show that all derivations on semisimple Lie algebras
+are inner. Let $\g$ be a semisimple Lie algebra, and let $D\colon \g \to \g$ be
+a derivation. Consider the linear functional $l\colon \g \to k$ via
+$x \mapsto \tr(D \cdot \ad x)$. Since $\g$ is semisimple, the Killing form is a
+nondegenerate inner product giving an isomorphism with the dual, so there
+exists $y \in \g$ such that $l(x) = (y, x)_{\ad}$. Our task is to show that
+$D = \ad y$, i.e.\ that $E := D - \ad y = 0$.
+
+This is equivalent to showing that $Ex = 0$ for all $x \in \g$, or
+equivalently that $(Ex, z)_{\ad} = 0$ for all $z \in \g$. Now,
+\[
+  \ad(Ex) = E \cdot \ad x - \ad x \cdot E = [E, \ad x]\colon \g \to \g,
+\]
+since $\ad(Ex)(z) = [Ex, z] = E[x, z] - [x, Ez]$. Therefore,
+\begin{align*}
+  (Ex, z)_{\ad} &= \tr_\g(\ad(Ex) \cdot \ad z) = \tr_\g([E, \ad x] \cdot \ad z)\\
+    &= \tr_\g(E \cdot [\ad x, \ad z]) = \tr_\g(E \cdot \ad[x, z]).
+\end{align*}
+But by definition of $E$, for any $a \in \g$ (here $a = [x, z]$),
+$\tr_\g(E \cdot \ad a) = \tr_\g(D \cdot \ad a) - (y, a)_{\ad} = l(a) - l(a) = 0$.
+\qed
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item A nonzero nilpotent Lie algebra always has non-inner derivations.
+  \item $\g = \langle a, b\rangle$ with $[a, b] = b$ only has inner
+    derivations. Thus, this condition doesn't characterise semisimplicity.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item Let $\g$ be a simple Lie algebra, and $(\,,\,)_1$ and $(\,,\,)_2$ two
+    non-degenerate invariant bilinear forms. Show that there exists $\lambda$
+    such that $(\,,\,)_1 = \lambda(\,,\,)_2$.
+  \item Let $\g = \sl_n(\C)$. We will shortly show that this is a simple Lie
+    algebra. We have two nondegenerate bilinear forms: the Killing form
+    $(\,,\,)_{\ad}$ and $(A, B) = \tr(AB)$ in the standard representation.
+    Compute $\lambda$.
+\end{enumerate}
+\end{exercise}

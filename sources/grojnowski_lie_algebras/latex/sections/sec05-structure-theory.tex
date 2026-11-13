@@ -1,0 +1,545 @@
+\section{Structure theory}
+
+\begin{definition}
+A \emph{torus} $\at \subseteq \g$ is an abelian subalgebra such that for all
+$t \in \at$ the adjoint $\ad(t)\colon \g \to \g$ is a diagonalisable linear
+map. A \emph{maximal torus} is a torus that is not contained in any bigger
+torus.
+\end{definition}
+
+\begin{example}
+Let $T = (S^1)^r \subseteq G$ where $G$ is a compact Lie group (or
+$T = (\C^\times)^r \subseteq G$ where $G$ is a reductive algebraic group). Then
+$\at = \Lie(T) \subseteq \g = \Lie(G)$ is a torus, maximal if $T$ is. (This
+comes from knowing that representations of $T$ are diagonalisable by an
+averaging argument, but we don't really know this.)
+\end{example}
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item For $\g = \sl_n$ or $\g = \gl_n$, the diagonal matrices (of trace $0$
+    if inside $\sl_n$) form a maximal torus $\at$.
+  \item $\bigl(\begin{smallmatrix} 0 & * \\ 0 & 0 \end{smallmatrix}\bigr)$ is
+    \emph{not} a torus. (We should know this is not diagonalisable!)
+\end{enumerate}
+\end{exercise}
+
+For a vector space $V$, let $t_1, \dots, t_r\colon V \to V$ be pairwise
+commuting diagonalisable linear maps; let
+$\lambda = (\lambda_1, \dots, \lambda_r) \in \C^r$. Set
+$V_\lambda = \setc{v \in V}{t_iv = \lambda_iv \text{ for all } i}$, the
+simultaneous eigenspace.
+
+\begin{lemma}
+$V = \bigoplus_{\lambda \in \C^r} V_\lambda$.
+\end{lemma}
+
+\begin{proof}
+Induct on $r$. For $r = 1$ this follows from the requirement that $t_1$ be
+diagonalisable. For $r > 1$, look at $t_1, \dots, t_{r-1}$ and decompose
+\[
+  V = \bigoplus V_{(\lambda_1, \dots, \lambda_{r-1})}.
+\]
+Since $t_r$ commutes with $t_1, \dots, t_{r-1}$, it preserves the
+decomposition. Now decompose each $V_{(\lambda_1, \dots, \lambda_{r-1})}$ into
+eigenspaces for $t_r$ (the restriction of a diagonalisable map to an invariant
+subspace is diagonalisable).
+\end{proof}
+
+Let $\at$ be the $r$-dimensional abelian Lie algebra with basis
+$(t_1, \dots, t_r)$. The lemma asserts that $V$ is a semisimple (i.e.\
+completely reducible) representation of $\at$. $V = \bigoplus V_\lambda$ is the
+decomposition into isotypic representations. Namely, letting $\C_\lambda$ be
+the $1$-dimensional representation wherein $t_i(w) = \lambda_iw$, we have
+$\lambda \neq \mu \implies \C_\lambda \not\cong \C_\mu$, and $V_\lambda$ is
+the direct sum of $\dim V_\lambda$ copies of $\C_\lambda$.
+
+\begin{exercise}
+Show that every irreducible representation of $\at$ is one-dimensional.
+\end{exercise}
+
+Another way of saying this is as follows. $\lambda$ is a linear map
+$\at \to \C$, i.e.\ an element of the dual space $\lambda \in \at^*$ (sending
+$t_i \mapsto \lambda_i$). Therefore, one-dimensional representations of $\at$
+(which are all the irreducible representations of $\at$) correspond to
+elements of $\at^* = \Hom_{\text{vector spaces}}(\at, \C)$. The decomposition
+\[
+  V = \bigoplus_{\lambda \in \at^*} V_\lambda, \qquad
+  V_\lambda = \setc{v \in V}{t(v) = \lambda(t)v \text{ for all } t \in \at}
+\]
+is called the \emph{weight space decomposition} of $V$.
+
+Now, let $\g$ be a Lie algebra and $\at$ a maximal torus. The weight space
+decomposition of $\g$ is
+\[
+  \g = \g_0 \oplus \bigoplus_{\substack{\lambda \in \at^*\\ \lambda \neq 0}} \g_\lambda,
+\]
+where $\g_0 = \setc{x \in \g}{[t, x] = 0 \text{ for all } t \in \at}$ and
+$\g_\lambda = \setc{x \in \g}{[t, x] = \lambda(t)x \text{ for all } t \in \at}$.
+
+\begin{definition}
+$R = \setc{\lambda \in \at^*}{\g_\lambda \neq 0,\ \lambda \neq 0}$ is the set
+of \emph{roots} of $\g$.
+\end{definition}
+
+We will now compute the root space decomposition for $\sl_n$.
+
+\begin{example}
+$\g = \sl_n$, $\at = $ diagonal matrices in $\sl_n$. Let
+\[
+  t = \begin{pmatrix} t_1 & & 0 \\ & \ddots & \\ 0 & & t_n \end{pmatrix}
+\]
+and let $E_{ij}$ be the matrix with $1$ in the $(i, j)$th position and $0$
+elsewhere. Then $[t, E_{ij}] = (t_i - t_j)E_{ij}$.
+
+Let $\eps_i \in \at^*$, $\eps_i(t) = t_i$. Then $\eps_1, \dots, \eps_n$ span
+$\at^*$, but $\eps_1 + \dots + \eps_n = 0$.
+
+\begin{remark}
+$\at$ is a subalgebra of $\C^n$, so $\at^*$ should be a quotient of
+$(\C^n)^*$, and here is the relation by which it is a quotient.
+\end{remark}
+
+Therefore, we can rewrite the above as
+$[t, E_{ij}] = (\eps_i - \eps_j)(t) \cdot E_{ij}$. Therefore, the roots are
+$R = \setc{\eps_i - \eps_j}{i \neq j}$ and $\g_0 = \at$. (Note that we've shown
+$\at$ is a maximal torus in the process.) The root space
+$\g_{\eps_i - \eps_j} = \C E_{ij}$ is one-dimensional.
+
+That is, the root space decomposition of $\sl_n$ is
+\[
+  \sl_n = \at \oplus \bigoplus_{\eps_i - \eps_j \in R} \g_{\eps_i - \eps_j}.
+\]
+\end{example}
+
+\begin{exercise}
+``This is (a) an essential exercise, and (b) guaranteed to be on the exam. The
+first should get you to do it, the second is irrelevant.''
+
+Compute the root space decomposition for $\sl_n$ (as we just did),
+$\so_{2n}$, $\so_{2n+1}$, $\spl_{2n}$, where $\at$ is the diagonal matrices
+in $\g$, and we take the conjugate $\so_n$ defined by
+\[
+  \so_n = \setc{A \in \gl_n}{JA + A^TJ = 0}, \qquad
+  J = \begin{pmatrix} 0 & & 1 \\ & \iddots & \\ 1 & & 0 \end{pmatrix}
+\]
+(this is conjugate to the usual $\so_n$ since we've defined a nondegenerate
+inner product; in this version, the diagonal matrices are a maximal torus).
+The symplectic matrices are given by the same embedding as before.
+
+In particular, show that $\at$ is a maximal torus and the root spaces are
+one-dimensional.
+\end{exercise}
+
+\lecture{9} The Lie algebras we were working with last time are called the
+``classical'' Lie algebras (they are Lie algebras of automorphisms of vector
+spaces preserving a form). The rest of the course will be concerned with
+explaining how their roots control their representations.
+
+\begin{proposition}
+$\sl_n(\C)$ is simple.
+\end{proposition}
+
+\begin{proof}
+Recall
+\[
+  \sl_n(\C) = \at \oplus \bigoplus_{\alpha \in R} \g_\alpha,
+\]
+where $R = \setc{\eps_i - \eps_j}{i \neq j}$ and $\g_{\eps_i - \eps_j} = \C E_{ij}$.
+
+Suppose $\fr \subseteq \sl_n$ is a nonzero ideal. Choose $r \in \fr$,
+$r \neq 0$, such that when we write $r = t + \sum_{\alpha \in R} e_\alpha$
+with $t \in \at$ and $e_\alpha \in \g_\alpha$, the number of nonzero terms is
+minimal.
+
+First, suppose $t \neq 0$. Choose $t_0 \in \at$ such that $\alpha(t_0) \neq 0$
+for all $\alpha \in R$ (i.e., $t_0$ has distinct eigenvalues). Consider
+$[t_0, r] = \sum_{\alpha \in R} \alpha(t_0)e_\alpha$. Note that this lies in
+$\fr$, and if it is nonzero, it has fewer nonzero terms than $r$, a
+contradiction. Thus, $[t_0, r] = 0$, i.e.\ $r = t \in \at$.
+
+Since $t \neq 0$, there exists $\alpha = \eps_i - \eps_j \in R$ with
+$\alpha(t) \neq 0$ (i.e.\ $t$ can't have all its eigenvalues equal, since it
+has trace $0$). Then
+\[
+  [t, E_{ij}] = \alpha(t)E_{ij} \in \fr \implies E_{ij} \in \fr.
+\]
+Now,
+\[
+  [E_{ij}, E_{jk}] = E_{ik} \text{ for } i \neq k, \qquad
+  [E_{si}, E_{ij}] = E_{sj} \text{ for } s \neq j,
+\]
+and therefore $E_{ab} \in \fr$ for all $a \neq b$. Finally,
+\[
+  [E_{i,i+1}, E_{i+1,i}] = E_{ii} - E_{i+1,i+1} \in \fr,
+\]
+so in fact the entire basis for $\sl_n$ lies in $\fr$ and $\fr = \sl_n$.
+
+\begin{remark}
+This is actually a combinatorial statement about root spaces; we'll see more
+about this later.
+\end{remark}
+
+That leaves us with the case $t = 0$. If $r = cE_{ij}$ has only one nonzero
+term, we are done exactly as above; therefore,
+\[
+  r = e_\alpha + e_\beta + \sum_{\gamma \in R - \{\alpha, \beta\}} e_\gamma,
+  \qquad \alpha \neq \beta,\ e_\alpha, e_\beta \neq 0.
+\]
+Choose $t_0 \in \at$ such that $\alpha(t_0) \neq \beta(t_0)$; then
+$[t_0, r] - \beta(t_0)r$ is nonzero and has fewer nonzero terms than $r$, a
+contradiction.
+\end{proof}
+
+\begin{proposition}
+Let $\g$ be a semisimple Lie algebra. Then maximal tori exist (i.e.\ are
+nonzero). Moreover,
+$\g_0 = \setc{x \in \g}{[\at, x] = 0} = \at$. (Recall that $\at$ is not defined
+to be the maximal abelian subalgebra, but as the maximal abelian subalgebra
+whose adjoint acts semisimply.)
+\end{proposition}
+
+We won't prove this; the proof involves introducing the Cartan subalgebra and
+showing that it's the same as a maximal torus. As a result, we will sometimes
+be calling $\at$ the Cartan subalgebra.
+
+This means that the root space decomposition of a semisimple Lie algebra is
+\[
+  \g = \at \oplus \bigoplus_{\alpha \in R} \g_\alpha,
+\]
+as we have, of course, already seen for the classical Lie algebras.
+
+\begin{theorem}[Structure theorem for semisimple Lie algebras, part I]
+Let $\g$ be a semisimple Lie algebra over $\C$, and let $\at \subseteq \g$ be a
+maximal torus. Write $\g = \at \oplus \bigoplus_{\alpha \in R} \g_\alpha$. Then
+\begin{enumerate}
+  \item $\C R = \at^*$, i.e.\ the roots span $\at^*$.
+  \item $\dim \g_\alpha = 1$.
+  \item If $\alpha, \beta \in R$ and $\alpha + \beta \in R$ then
+    $[\g_\alpha, \g_\beta] = \g_{\alpha+\beta}$. If $\alpha + \beta \notin R$
+    and $\alpha \neq -\beta$ then $[\g_\alpha, \g_\beta] = 0$.
+  \item $[\g_\alpha, \g_{-\alpha}] \subseteq \at$ is one-dimensional, and
+    $\g_\alpha \oplus [\g_\alpha, \g_{-\alpha}] \oplus \g_{-\alpha}$ is a Lie
+    subalgebra of $\g$ isomorphic to $\sl_2$. (In particular,
+    $\alpha \in R \implies -\alpha \in R$.)
+\end{enumerate}
+\end{theorem}
+
+\begin{exercise}
+Check this for the classical Lie algebras.
+\end{exercise}
+
+\begin{proof}\leavevmode
+(1) Suppose not; then there exists a nonzero $t \in \at$ such that
+$\alpha(t) = 0$ for all $\alpha \in R$. But then $[t, \g_\alpha] = 0$; as
+$[t, \at] = 0$ by definition, we see that $t$ is central in $\g$. However, $\g$
+is semisimple, so it has no abelian ideals, in particular no centre.
+
+We will now show a sequence of statements.
+\begin{alist}
+  \item $[\g_\lambda, \g_\mu] \subseteq \g_{\lambda+\mu}$ if
+    $\lambda, \mu \in \at^*$. Indeed, for $x \in \g_\lambda$ and
+    $y \in \g_\mu$ we have
+    \[
+      [t, [x, y]] = [[t, x], y] + [x, [t, y]] = (\lambda(t) + \mu(t))[x, y].
+    \]
+    This shows that $[\g_\alpha, \g_\beta] \subseteq \g_{\alpha+\beta}$ if
+    $\alpha + \beta \in R$, is $0$ if $\alpha + \beta \notin R$ and
+    $\alpha \neq -\beta$, and $[\g_\alpha, \g_{-\alpha}] \subseteq \at$.
+  \item $(\g_\lambda, \g_\mu)_{\ad} = 0$ if $\lambda \neq -\mu$;
+    $(\,,\,)_{\ad}|_{\g_\lambda \oplus \g_{-\lambda}}$ is nondegenerate.
+
+    \begin{proof}
+    Let $x \in \g_\lambda$ and $y \in \g_\mu$. Recall
+    $(x, y)_{\ad} = \tr_\g(\ad x \cdot \ad y)$. To show that it's zero, we
+    show that $\ad x \cdot \ad y$ is nilpotent. Indeed,
+    $(\ad x \cdot \ad y)^N\g_\alpha \subseteq \g_{\alpha + N(\lambda+\mu)}$,
+    so if $\lambda \neq -\mu$ then for $N \gg 0$ this is zero.
+
+    On the other hand, $(\,,\,)_{\ad}$ is nondegenerate and
+    $\g = \bigoplus_{\lambda \in \at^*} \g_\lambda$, so the restriction
+    $(\,,\,)_{\ad}|_{\g_\lambda \oplus \g_{-\lambda}}$ must be nondegenerate.
+    \end{proof}
+  \item In particular, $(\,,\,)_{\ad}|_\at$ is nondegenerate, as
+    $\at = \g_0$.
+
+    \begin{remark}
+    $(\,,\,)_{\ad}|_\at \neq (\,,\,)_{\ad\,\at}$ (which is zero since $\at$ is
+    abelian).
+    \end{remark}
+
+    Therefore, the Killing form defines an isomorphism
+    $\nu\colon \at \to \at^*$ with $\nu(t)(t') = (t, t')_{\ad}$. It also
+    defines an induced inner product (well, symmetric bilinear form to be
+    precise; we don't know it's positive) on $\at^*$, via
+    $(\nu(t), \nu(t')) = (t, t')_{\ad}$.
+  \item $\alpha \in R \implies -\alpha \in R$, since $(\,,\,)_{\ad}$ is
+    nondegenerate on $\g_\alpha \oplus \g_{-\alpha}$, but
+    $(\g_\alpha, \g_\alpha)_{\ad} = 0$ if $\alpha \neq 0$. In particular,
+    $\g_{-\alpha} \cong \g_\alpha^*$ via the Killing form.
+  \item $x \in \g_\alpha$, $y \in \g_{-\alpha} \implies
+    [x, y] = (x, y)_{\ad}\, \nu^{-1}(\alpha)$.
+
+    \begin{proof}
+    For $t \in \at$,
+    \[
+      (t, [x, y])_{\ad} = ([t, x], y)_{\ad} = \alpha(t)(x, y)_{\ad}
+        = \bigl(t, (x, y)_{\ad}\,\nu^{-1}(\alpha)\bigr)_{\ad},
+    \]
+    which is exactly what we want, since $(\,,\,)_{\ad}|_\at$ is
+    nondegenerate.
+    \end{proof}
+  \item Let $e_\alpha \in \g_\alpha$ be nonzero, and pick
+    $e_{-\alpha} \in \g_{-\alpha}$ such that $(e_\alpha, e_{-\alpha})_{\ad} \neq 0$.
+    Then $[e_\alpha, e_{-\alpha}] = (e_\alpha, e_{-\alpha})_{\ad}\,\nu^{-1}(\alpha)$.
+    To show that $e_\alpha$, $e_{-\alpha}$, and their bracket give a copy of
+    $\sl_2$, we need to compute
+    \[
+      [\nu^{-1}(\alpha), e_\alpha] = \alpha(\nu^{-1}(\alpha))e_\alpha = (\alpha, \alpha)e_\alpha.
+    \]
+    We will be done if we show that $(\alpha, \alpha) \neq 0$ (then we get a
+    copy of $\sl_2$ after renormalising).
+
+    \begin{proposition}
+    $(\alpha, \alpha) \neq 0$ for all $\alpha \in R$.
+    \end{proposition}
+
+    \begin{proof}
+    Next time.
+    \end{proof}
+\end{alist}
+\let\qed\relax
+\end{proof}
+
+\lecture{10} We now prove the last proposition, $(\alpha, \alpha) \neq 0$ for
+all $\alpha \in R$.
+
+\begin{proof}
+Suppose otherwise. Let
+$\fm_\alpha = \langle e_\alpha, e_{-\alpha}, \nu^{-1}(\alpha)\rangle$. If
+$(\alpha, \alpha) = 0$, i.e.\ if $[\nu^{-1}(\alpha), e_\alpha] = 0$, then
+$[\fm_\alpha, \fm_\alpha] = \C\nu^{-1}(\alpha)$ and $\fm_\alpha$ is solvable.
+However, by Lie's theorem this implies that $\ad[\fm_\alpha, \fm_\alpha]$ acts
+by nilpotents on $\g$, i.e.\ $\ad\nu^{-1}(\alpha)$ is nilpotent. Since
+$\nu^{-1}(\alpha) \in \at$, it is also diagonalisable, and the only
+diagonalisable nilpotent element is $0$. However,
+$\alpha \in R \implies \alpha \neq 0$.
+\end{proof}
+
+Now, define
+\[
+  h_\alpha = \frac{2}{(\alpha, \alpha)}\nu^{-1}(\alpha)
+\]
+and rescale $e_{-\alpha}$ such that $(e_\alpha, e_{-\alpha})_{\ad} = 2/(\alpha, \alpha)$.
+
+\begin{exercise}
+The map $(e_\alpha, h_\alpha, e_{-\alpha}) \mapsto (e, h, f)$ gives an
+isomorphism $\fm_\alpha \cong \sl_2$.
+\end{exercise}
+
+\begin{remark}
+In $\sl_n$, the root spaces are spanned by the $E_{ij}$, so we are saying that
+the subalgebra of matrices of the form
+\[
+  \begin{pmatrix} a & * \\ * & -a \end{pmatrix}
+\]
+(entries in rows and columns $i$ and $j$ only, zero elsewhere) is a copy of
+$\sl_2$,
+which is obvious. The cool thing is that something like this happens for all
+the semisimple Lie algebras, and that this lets us know just about everything
+about them.
+\end{remark}
+
+We will now use our knowledge of the representation theory of $\sl_2$. We show
+
+\begin{claim}
+$\dim \g_{-\alpha} = 1$ for all $\alpha \in R$.
+\end{claim}
+
+\begin{proof}
+Pick a copy of $\fm_\alpha = \langle e_\alpha, h_\alpha, e_{-\alpha}\rangle \cong \sl_2$.
+Suppose $\dim \g_{-\alpha} > 1$; then the map $\g_{-\alpha} \to \C\nu^{-1}(\alpha)$,
+$x \mapsto [e_\alpha, x]$ has a kernel. That is, there is a nonzero
+$v \in \g_{-\alpha}$ such that $\ad e_\alpha \cdot v = 0$. Then $v$ is a
+highest-weight vector (it comes from a root space $\g_{-\alpha}$, so it's an
+eigenvector of $\ad h_\alpha$), and its weight is determined by
+\[
+  \ad h_\alpha \cdot v = -\alpha(h_\alpha)v = -2v.
+\]
+That is, $v$ is a highest-weight vector of weight $-2$. However, we know that
+in finite-dimensional representations of $\sl_2$ (which $\g$ is, since
+$\fm_\alpha$ acts on it) the highest weights are nonnegative integers. This
+contradiction shows the claim.
+\end{proof}
+
+Before we finish proving the theorem we had (we still need to show
+$[\g_\alpha, \g_\beta] = \g_{\alpha+\beta}$ when
+$\alpha, \beta, \alpha + \beta \in R$), we show further combinatorial
+properties of the roots.
+
+\begin{theorem}[Structure theorem, continued]\leavevmode
+\begin{enumerate}
+  \item $\dfrac{2(\alpha, \beta)}{(\alpha, \alpha)} \in \Z$ for all
+    $\alpha, \beta \in R$.
+  \item If $\alpha \in R$ and $k\alpha \in R$, then $k = \pm 1$.
+  \item Let $\alpha, \beta \in R$ with $\beta \neq \pm\alpha$. Then
+    \[
+      \bigoplus_{k \in \Z} \g_{\beta + k\alpha}
+    \]
+    is an irreducible module for
+    $(\sl_2)_\alpha = \langle e_\alpha, h_\alpha, e_{-\alpha}\rangle$. In
+    particular,
+    \[
+      \setc{\beta + k\alpha}{\beta + k\alpha \in R,\ k \in \Z}
+    \]
+    is of the form
+    $\beta - p\alpha, \beta - (p - 1)\alpha, \dots, \beta, \dots,
+    \beta + (q - 1)\alpha, \beta + q\alpha$, where
+    $p - q = \frac{2(\alpha, \beta)}{(\alpha, \alpha)}$. We call this set the
+    ``$\alpha$-string through $\beta$''.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1): Let $q = \max\setc{k}{\beta + k\alpha \in R}$ and let
+$v \in \g_{\beta + q\alpha}$ be nonzero. Then
+$\ad e_\alpha \cdot v \in \g_{\beta + (q+1)\alpha} = 0$, and
+\[
+  \ad h_\alpha \cdot v = (\beta + q\alpha)(h_\alpha) \cdot v
+    = \Bigl(\frac{2(\beta, \alpha)}{(\alpha, \alpha)} + 2q\Bigr)v.
+\]
+That is, $v$ is a highest-weight vector for $(\sl_2)_\alpha$ with weight
+$2(\beta, \alpha)/(\alpha, \alpha) + 2q$. Since the weight in a
+finite-dimensional representation is an integer, we see that
+$2(\beta, \alpha)/(\alpha, \alpha) \in \Z$.
+
+(3): The structure of $\sl_2$-modules tells us that
+$(\ad e_{-\alpha})^rv \neq 0$ for
+$0 \leq r \leq \frac{2(\alpha, \beta)}{(\alpha, \alpha)} + 2q = N$, and that
+$(\ad e_{-\alpha})^{N+1}v = 0$. Therefore,
+$\setc{\beta + q\alpha - k\alpha}{0 \leq k \leq N}$ are all roots (or possibly
+equal to zero; in any case, they have nonzero root space). This certainly is
+an irreducible $(\sl_2)_\alpha$-module; we now need to show that there are no
+other roots in the $\alpha$-string through $\beta$. We do this by repeating the
+same construction from the bottom up.
+
+Let $p = \max\setc{k}{\beta - k\alpha \in R}$ and let
+$w \in \g_{\beta - p\alpha}$ be nonzero. Then $\ad e_{-\alpha} \cdot w = 0$ and
+$\ad h_\alpha \cdot w = (2(\beta, \alpha)/(\alpha, \alpha) - 2p)w$, so $w$ is a
+lowest-weight vector of weight $2(\beta, \alpha)/(\alpha, \alpha) - 2p$. By
+applying $\ad e_\alpha$ repeatedly, we get an irreducible $\sl_2$-module with
+roots $\beta - p\alpha, \beta - (p - 1)\alpha, \dots,
+\beta + (p - 2(\alpha, \beta)/(\alpha, \alpha))\alpha$.
+
+Now by construction we have $p - 2(\alpha, \beta)/(\alpha, \alpha) \leq q$ and
+also $q + 2(\alpha, \beta)/(\alpha, \alpha) \leq p$, which means that in fact
+$p - q = 2(\alpha, \beta)/(\alpha, \alpha)$ and the two submodules we get
+coincide.
+
+(2): By (1) we have $2(\alpha, k\alpha)/(k\alpha, k\alpha) = 2/k \in \Z$ and
+$2(k\alpha, \alpha)/(\alpha, \alpha) = 2k \in \Z$. Thus, it suffices to show
+that $\alpha \in R \implies 2\alpha \notin R$.
+
+But indeed, suppose $2\alpha \in R$ and let $v \in \g_{-2\alpha}$ be nonzero.
+Then $[e_\alpha, v] \in \g_{-\alpha}$ has the property that
+\[
+  ([e_\alpha, v], e_\alpha) = -(v, [e_\alpha, e_\alpha]) = 0,
+\]
+and since $\g_\alpha$ is one-dimensional and spanned by $e_\alpha$, we find
+$([e_\alpha, v], \g_\alpha) = 0$. Since
+$(\,,\,)|_{\g_\alpha \oplus \g_{-\alpha}}$ is nondegenerate, this means
+$[e_\alpha, v] = 0$, i.e.\ $v \in \g_{-2\alpha}$ is a highest-weight vector
+for $(\sl_2)_\alpha$ with highest weight $-4$. This doesn't happen in
+finite-dimensional representations, so $\g_{-2\alpha} = 0$ and $2\alpha$ is not
+a root.
+
+(In fact, we could derive this from (3), since we know that there is a
+$3$-dimensional $\sl_2$-module running through $0$.)
+\end{proof}
+
+We finally show $[\g_\alpha, \g_\beta] = \g_{\alpha+\beta}$ when
+$\alpha, \beta, \alpha + \beta \in R$. Indeed, we have just shown that
+$\bigoplus_k \g_{\beta + k\alpha}$ is an irreducible representation of
+$\fm_\alpha$, and $\ad e_\alpha\colon \g_{\beta + k\alpha} \to
+\g_{\beta + (k+1)\alpha}$ is an isomorphism for $-p \leq k < q$. Since
+$q \geq 1$, we see that $\ad e_\alpha \cdot \g_\beta = \g_{\alpha+\beta}$.
+
+\begin{remark}
+The combinatorial statement of (3) is rather clunky. We now ``unclunk'' it.
+
+For $\alpha \in \at^*$, define $s_\alpha\colon \at^* \to \at^*$ by
+$s_\alpha(v) = v - \frac{2(\alpha, v)}{(\alpha, \alpha)}\alpha$ (a reflection
+of $v$ in the hyperplane orthogonal to $\alpha$).
+\end{remark}
+
+\begin{claim}
+(3) implies (and in fact, is equivalent to) $s_\alpha(\beta) \in R$ whenever
+$\alpha, \beta \in R$.
+\end{claim}
+
+\begin{proof}
+For $\beta = \pm\alpha$ this is clear, so let $\beta \neq \pm\alpha$. Let
+$r = 2(\alpha, \beta)/(\alpha, \alpha)$. If $r \geq 0$, then
+$p = q + r \geq r$; if $r \leq 0$ then $q = p - r \geq -r$. Either way,
+$\beta - r\alpha$ is in the $\alpha$-string through $\beta$.
+\end{proof}
+
+Over the next several lectures, we will classify the root systems as
+combinatorial objects. Before we do that, we state some further properties of
+the roots:
+
+\begin{proposition}\leavevmode
+\begin{enumerate}
+  \item $\alpha, \beta \in R \implies (\alpha, \beta) \in \Q$.
+  \item If we pick a basis $\beta_1, \dots, \beta_l$ of $\at^*$, with
+    $\beta_i \in R$, then any $\beta \in R$ expands as $\sum q_i\beta_i$ with
+    $q_i \in \Q$, i.e.\ $\dim_\Q \Q R = \dim_\C \at$.
+  \item $(\,,\,)$ is positive definite on $\Q R$.
+\end{enumerate}
+\end{proposition}
+
+\lecture{11}
+
+\begin{proof}[Proof of the proposition at the end of last lecture]\leavevmode
+\begin{enumerate}
+  \item It suffices to show $(\beta, \beta) \in \Q$ for all $\beta \in R$.
+    Let $h, h' \in \at$; then
+    \[
+      (h, h')_{\ad} = \tr_\g(\ad h \ad h') = \sum_{\alpha \in R} \alpha(h)\alpha(h'),
+    \]
+    since $\g = \at + \bigoplus_{\alpha \in R} \g_\alpha$ by the structure
+    theorem. Therefore, for $\lambda, \mu \in \at^*$,
+    \[
+      (\lambda, \mu) = (\nu^{-1}(\lambda), \nu^{-1}(\mu))_{\ad}
+        = \sum_{\alpha \in R} \alpha(\nu^{-1}\lambda)\alpha(\nu^{-1}\mu)
+        = \sum_{\alpha \in R} (\lambda, \alpha)(\mu, \alpha).
+    \]
+    In particular, $(\beta, \beta) = \sum_{\alpha \in R} (\alpha, \beta)^2$.
+    Multiplying by $4/(\beta, \beta)^2$, we get
+    \[
+      \frac{4}{(\beta, \beta)} = \sum_{\alpha \in R}
+        \Bigl(\frac{2(\alpha, \beta)}{(\beta, \beta)}\Bigr)^2 \in \Z,
+    \]
+    and therefore $(\beta, \beta) \in \Q$.
+  \item Let $B$ be the Gram matrix of the basis, $B_{ij} = (\beta_i, \beta_j)$.
+
+    \begin{exercise}
+    $(\,,\,)$ is a nondegenerate symmetric bilinear form $\implies \det B \neq 0$.
+    \end{exercise}
+
+    Let $\beta = \sum c_i\beta_i \in R$. Then
+    $(\beta, \beta_i) = \sum_j c_j(\beta_j, \beta_i)$. Therefore, we can recover
+    the vector of $c_i$ as
+    \[
+      (c_1, \dots, c_l) = \bigl((\beta, \beta_1), \dots, (\beta, \beta_l)\bigr)B^{-1}.
+    \]
+    Since the inner products of roots are all rational, we see that
+    $c_i \in \Q$ as well.
+  \item Let $\lambda \in \Q R$. Then $\lambda = \sum c_i\beta_i$ with
+    $c_i \in \Q$, and $(\lambda, \alpha) \in \Q$ for all $\alpha \in R$.
+    Moreover, $(\lambda, \lambda) = \sum_{\alpha \in R} (\lambda, \alpha)^2 \geq 0$,
+    and if $(\lambda, \lambda) = 0$ then $(\lambda, \alpha) = 0$ for all
+    $\alpha \in R$. Since $R$ spans $\at^*$ and $(\,,\,)$ is nondegenerate,
+    this implies that $\lambda = 0$. \qedhere
+\end{enumerate}
+\end{proof}

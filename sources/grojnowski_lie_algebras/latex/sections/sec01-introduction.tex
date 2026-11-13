@@ -1,0 +1,572 @@
+\section{Introduction, motivation, etc.}
+
+\lecture{1} For most of this lecture, we will be motivating why we care about
+Lie algebras and why they are defined the way they are. If there are sections
+of it that don't make sense, they can be skipped (although if none of it makes
+sense, you should be worried).
+
+Connected Lie groups are groups which are also differentiable manifolds. The
+simple algebraic groups over algebraically closed fields (which form a nice
+class of Lie groups) are:
+\begin{align*}
+  SL(n) &= \setc{A \in \Mat_n}{\det A = 1},\\
+  SO(n) &= \setc{A \in SL_n}{AA^T = I},\\
+  Sp(2n) &= \setc{A \in SL_{2n}}{A \text{ preserves a symplectic form}},
+\end{align*}
+and exactly $5$ others (as we will actually see!). (We are ignoring finite
+centres, so $\Spin(n)$, the double cover of $SO(n)$, is missing.)
+
+\begin{remark}
+Each of these groups has a maximal compact subgroup. For example, $SU(n)$ is
+the maximal compact subgroup of $SL_n(\C)$, while $SO_n(\R)$ is the maximal
+compact subgroup of $SO_n(\C)$. These are themselves Lie groups, of course.
+The representations of the maximal compact subgroup are the same as the
+algebraic representations of the simple algebraic group, which in turn are the
+same as the finite-dimensional representations of its (the simple algebraic
+group's) Lie algebra. These last are what we study.
+\end{remark}
+
+Lie groups are complicated objects: for example, $SU_2(\C)$ is homeomorphic to
+a $3$-sphere, and $SU_n$ is a twisted product of a $3$-sphere, a $5$-sphere,
+\dots, a $(2n-1)$-sphere. Thus, studying Lie groups requires some amount of
+algebraic topology and a lot of algebraic geometry. We want to replace these
+``complicated'' disciplines by the ``easy'' discipline of linear algebra.
+
+Therefore, instead of a Lie group $G$ we will be considering $\g = T_IG$, the
+tangent space to $G$ at the identity.
+
+\begin{definition}
+A \emph{linear algebraic group} is a subgroup of some $GL_n$ defined by
+polynomial equations in the matrix coefficients.
+\end{definition}
+
+We see that the examples above are linear algebraic groups.
+
+\begin{remark}
+It is not altogether obvious that this is an intrinsic characterisation (it
+would be nice not to depend on the embedding into $GL_n$). The intrinsic
+characterisation is as ``affine algebraic groups'', that is, groups which are
+affine algebraic varieties and for which multiplication and inverse are
+morphisms of affine algebraic varieties. One direction of this identification
+is relatively easy (we just need to check that multiplication and inverse
+really are morphisms); in the other direction, we need to show that any affine
+algebraic group has a faithful finite-dimensional representation, i.e.\ embeds
+in $GL(V)$. This involves looking at the ring of functions and doing something
+with it.
+\end{remark}
+
+We will now explain a tangent space if you haven't met with it before.
+
+\begin{example}
+Let's pretend we're physicists, since we're in their building anyway. Let
+$G = SL_2$, and let $|\eps| \ll 1$. Then for
+\[
+  g = \begin{pmatrix} 1 & \\ & 1 \end{pmatrix}
+      + \eps \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+      + \text{higher-order terms}
+\]
+to lie in $SL_2$, we must have $\det g = 1$, or
+\[
+  1 = \det \begin{pmatrix} 1 + \eps a & \eps b \\ \eps c & 1 + \eps d \end{pmatrix}
+      + \text{h.o.t.}
+    = 1 + \eps(a + d) + \eps^2(\text{junk}) + \text{h.o.t.}
+\]
+Therefore, to have $g \in G$ we need to have $a + d = 0$.
+\end{example}
+
+To do this formally, we define the \emph{dual numbers}
+\[
+  E = \C[\eps]/\eps^2 = \setc{a + b\eps}{a, b \in \C}.
+\]
+For a linear algebraic group $G$, we consider
+\[
+  G(E) = \setc{A \in \Mat_n(E)}{A \text{ satisfies the polynomial equations defining } G \subset GL_n}.
+\]
+For example,
+\[
+  SL_2(E) = \Bigl\{ \begin{pmatrix} \alpha & \beta \\ \gamma & \delta \end{pmatrix}
+     \Bigm| \alpha, \beta, \gamma, \delta \in E,\ \alpha\delta - \beta\gamma = 1 \Bigr\}.
+\]
+The natural map $E \to \C$, $\eps \mapsto 0$ gives a projection
+$\pi\colon G(E) \to G$. We define the Lie algebra of $G$ as
+\[
+  \g \cong \pi^{-1}(I) \cong \setc{X \in \Mat_n(\C)}{I + \eps X \in G(E)}.
+\]
+In particular,
+\[
+  \sl_2 = \Bigl\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \Mat_2(\C)
+     \Bigm| a + d = 0 \Bigr\}.
+\]
+
+\begin{remark}
+$I + \eps X$ represents an ``infinitesimal change at $I$ in the direction
+$X$''. Equivalently, it is a map $\Spec \C[\eps]/\eps^2 \to G$, the
+first-order germ of a curve through $I$.
+\end{remark}
+
+\begin{exercise}
+(Do this only if you already know what a tangent space and tangent bundle
+are.) Show that $G(E) = TG$ is the tangent bundle to $G$, and $\g = T_IG$ is
+the tangent space to $G$ at $I$.
+\end{exercise}
+
+\begin{example}
+Let $G = GL_n = \setc{A \in \Mat_n}{A^{-1} \text{ exists}}$.
+Claim:
+\begin{align*}
+  G(E) &:= \setc{\tilde A \in \Mat_n(E)}{\tilde A^{-1} \text{ exists}}\\
+       &= \setc{A + B\eps}{A, B \in \Mat_n(\C),\ A^{-1} \text{ exists}}.
+\end{align*}
+Indeed, $(A + B\eps)(A^{-1} - A^{-1}BA^{-1}\eps) = I$.
+\end{example}
+
+\begin{remark}
+It is not obvious that $GL_n$ is itself a linear algebraic group (what are the
+polynomial equations for ``determinant is non-zero''?). However, we can think
+of $GL_n \subset \Mat_{n+1}$ as
+\[
+  \Bigl\{ \begin{pmatrix} A & \\ & \lambda \end{pmatrix}
+     \Bigm| \det(A) \cdot \lambda = 1 \Bigr\}.
+\]
+\end{remark}
+
+\begin{example}
+$G = SL_n(\C)$.
+\end{example}
+
+\begin{exercise}
+$\det(I + \eps X) = 1 + \eps \tr(X)$.
+\end{exercise}
+
+As a corollary to the exercise, $\sl_n = \setc{X \in \Mat_n}{\tr(X) = 0}$.
+
+\begin{example}
+$G = O_n(\C) = \setc{A}{AA^T = I}$. Then
+\begin{align*}
+  \g &:= \setc{X \in \Mat_n(\C)}{(I + \eps X)(I + \eps X)^T = I}\\
+     &= \setc{X \in \Mat_n(\C)}{I + \eps(X + X^T) = I}\\
+     &= \setc{X \in \Mat_n(\C)}{X + X^T = 0},
+\end{align*}
+the antisymmetric matrices. Now, if $X + X^T = 0$ then $2\tr(X) = 0$, and
+since we're working over $\C$ and not in characteristic $2$, we conclude
+$\tr(X) = 0$. Therefore, this is also the Lie algebra of $SO_n$.
+
+This is not terribly surprising, because topologically $O_n$ has two connected
+components corresponding to determinant $+1$ and $-1$ (they are images of each
+other via a reflection). Since $\g = T_IG$, it cannot see the $\det = -1$
+component, so this is expected.
+\end{example}
+
+The above example prompts the question: what exactly is it in the structure of
+$\g$ that we get from $G$ being a group?
+
+The first thing to note is that $\g$ does \emph{not} get a multiplication.
+Indeed, $(I + A\eps)(I + B\eps) = I + (A + B)\eps$, which has nothing to do
+with multiplication.
+
+The operation that turns out to generalise nicely is the commutator,
+$(P, Q) \mapsto PQP^{-1}Q^{-1}$. Taken as a map $G \times G \to G$ that sends
+$(I, I) \mapsto I$, this should give a map $T_IG \times T_IG \to T_IG$ by
+differentiation.
+
+\begin{remark}
+Generally, differentiation gives a \emph{linear} map, whereas what we will get
+is a \emph{bilinear} map. This is because we will in fact differentiate each
+coordinate: i.e.\ first differentiate the map $f_P\colon G \to G$,
+$Q \mapsto PQP^{-1}Q^{-1}$ with respect to $Q$ to get a map
+$\tilde f_P\colon \g \to \g$ (with $P \in G$ still) and then differentiate
+again to get a map $\g \times \g \to \g$.
+\end{remark}
+
+What is this map? Let $P = I + A\eps$, $Q = I + B\delta$ where
+$\eps^2 = \delta^2 = 0$ but $\eps\delta \neq 0$. Then
+\begin{align*}
+  PQP^{-1}Q^{-1} &= (I + A\eps)(I + B\delta)(I - A\eps)(I - B\delta)\\
+                 &= I + (AB - BA)\eps\delta.
+\end{align*}
+Thus, the binary operation on $\g$ should be $[A, B] = AB - BA$.
+
+\begin{definition}
+The \emph{bracket} of $A$ and $B$ is $[A, B] = AB - BA$.
+\end{definition}
+
+\begin{exercise}
+Show that $(PQP^{-1}Q^{-1})^{-1} = QPQ^{-1}P^{-1}$ implies $[A, B] = -[B, A]$,
+i.e.\ the bracket is skew-symmetric.
+\end{exercise}
+
+\begin{exercise}
+Show that the associativity of multiplication in $G$ implies the \emph{Jacobi
+identity}
+\[
+  0 = [[X, Y], Z] + [[Y, Z], X] + [[Z, X], Y].
+\]
+\end{exercise}
+
+\begin{remark}
+The meaning of ``implies'' in the above exercises is as follows: we want to
+think of the bracket as the derivative of the commutator, not as the explicit
+formula $[A, B] = AB - BA$ (which makes the skew-symmetry obvious, and the
+Jacobi identity only slightly less so). For example, we could have started
+working in a different category.
+\end{remark}
+
+We will now define our object of study.
+
+\begin{definition}
+Let $K$ be a field, $\charac K \neq 2, 3$. A \emph{Lie algebra} $\g$ is a
+vector space over $K$ equipped with a bilinear map (\emph{Lie bracket})
+$[\,,\,]\colon \g \times \g \to \g$ with the following properties:
+\begin{enumerate}
+  \item $[X, Y] = -[Y, X]$ (skew-symmetry);
+  \item $[[X, Y], Z] + [[Y, Z], X] + [[Z, X], Y] = 0$ (Jacobi identity).
+\end{enumerate}
+\end{definition}
+
+\lecture{2} Examples of the Lie algebra definition from last time:
+
+\begin{example}\leavevmode
+\begin{enumerate}
+  \item $\gl_n = \Mat_n$ with $[A, B] = AB - BA$.
+  \item $\so_n = \setc{A}{A + A^T = 0}$.
+  \item $\sl_n = \setc{A}{\tr(A) = 0}$ (note that while $AB$ need not have
+    trace $0$ for $A, B \in \sl_n$, we do have $\tr(AB) = \tr(BA)$, so
+    $[A, B] \in \sl_n$ even though $AB \notin \sl_n$ in general).
+  \item $\spl_{2n} = \setc{A \in \gl_{2n}}{JA^TJ^{-1} + A = 0}$, where $J$ is
+    the symplectic form
+    \[
+      J = \begin{pmatrix}
+            &&&&& 1\\
+            &&&& \iddots &\\
+            &&& 1 &&\\
+            && -1 &&&\\
+            & \iddots &&&&\\
+            -1 &&&&&
+          \end{pmatrix}.
+    \]
+  \item $\fb = \Biggl\{ \begin{pmatrix}
+            * & * & \cdots & *\\
+              & * & \cdots & *\\
+              &   & \ddots & \vdots\\
+              &   &        & *
+          \end{pmatrix} \in \gl_n \Biggr\}$,
+    the upper triangular matrices (the name is $\fb$ for Borel, but we don't
+    need to worry about that yet).
+  \item $\fn = \Biggl\{ \begin{pmatrix}
+            0 & * & \cdots & *\\
+              & 0 & \cdots & *\\
+              &   & \ddots & \vdots\\
+              &   &        & 0
+          \end{pmatrix} \in \gl_n \Biggr\}$,
+    the strictly upper triangular matrices (the name is $\fn$ for nilpotent,
+    but we don't need to worry about that yet).
+  \item For any vector space $V$, let $[\,,\,]\colon V \times V \to V$ be the
+    zero map. This is the ``abelian Lie algebra''.
+\end{enumerate}
+\end{example}
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item Check directly that $\gl_n$ is a Lie algebra.
+  \item Check that the other examples above are Lie subalgebras of $\gl_n$,
+    that is, vector subspaces closed under $[\,,\,]$.
+\end{enumerate}
+\end{exercise}
+
+\begin{example}
+$\begin{pmatrix} * & * \\ * & 0 \end{pmatrix}$ is \emph{not} a Lie subalgebra
+of $\gl_2$.
+\end{example}
+
+\begin{exercise}
+Find the algebraic groups whose Lie algebras are given above.
+\end{exercise}
+
+\begin{exercise}
+Classify all Lie algebras of dimension $3$. (You might want to start with
+dimension $2$. I'll do dimension $1$ for you on the board: skew-symmetry of
+the bracket means that the bracket is zero, so there is only the abelian one.)
+\end{exercise}
+
+\begin{definition}
+A \emph{representation} of a Lie algebra $\g$ on a vector space $V$ is a
+homomorphism of Lie algebras $\phi\colon \g \to \gl_V$. We say that $\g$
+\emph{acts on} $V$.
+\end{definition}
+
+Observe that, above, our Lie algebras were defined with a (faithful)
+representation in tow.
+
+There is always a representation coming from the Lie algebra acting on itself
+(it is the derivative of the group acting on itself by conjugation):
+
+\begin{definition}
+For $x \in \g$ define $\ad(x)\colon \g \to \g$ as $y \mapsto [x, y]$.
+\end{definition}
+
+\begin{lemma}
+$\ad\colon \g \to \End \g$ is a representation (called the \emph{adjoint
+representation}).
+\end{lemma}
+
+\begin{proof}
+We need to check whether $\ad([x, y]) = \ad(x)\ad(y) - \ad(y)\ad(x)$, i.e.\
+whether the equality holds when we apply it to a third element $z$. But
+\[
+  \ad([x, y])(z) = [[x, y], z]
+\]
+and
+\[
+  \ad(x)\ad(y)(z) - \ad(y)\ad(x)(z) = [x, [y, z]] - [y, [x, z]]
+    = -[[y, z], x] - [[z, x], y].
+\]
+These are equal by the Jacobi identity.
+\end{proof}
+
+\begin{definition}
+The \emph{centre} of $\g$ is
+$\setc{x \in \g}{[x, y] = 0 \ \forall y \in \g} = \ker(\ad\colon \g \to \End \g)$.
+\end{definition}
+
+Thus, if $\g$ has no centre, then $\ad$ is an embedding of $\g$ into
+$\End \g$ (and conversely, of course).
+
+Is it true that every finite-dimensional Lie algebra embeds into some $\gl_V$,
+i.e.\ is linear? (Equivalently, is it true that every finite-dimensional Lie
+algebra has a faithful finite-dimensional representation?) We see that if $\g$
+has no centre, then the adjoint representation makes this true. On the other
+hand, if we look inside $\gl_2$, then
+$\fn = \bigl(\begin{smallmatrix} 0 & * \\ 0 & 0 \end{smallmatrix}\bigr)$ is
+abelian, so $\ad$ maps it to zero in $\gl(\fn)$, despite the fact that we
+started with $\fn \subset \gl_2$. That is, we can't always just take $\ad$.
+
+\begin{theorem}[Ado's theorem; we will not prove it]
+Any finite-dimensional Lie algebra over $K$ is a subalgebra of some $\gl_n$,
+i.e.\ admits a faithful finite-dimensional representation.
+\end{theorem}
+
+\begin{remark}
+This is the Lie algebra equivalent of the statement we made last time about
+algebraic groups embedding into $GL(V)$. That theorem was ``easy'' because
+there was a natural representation to look at (functions on the algebraic
+group). There isn't such a natural object for Lie algebras, so Ado's theorem
+is actually hard.
+\end{remark}
+
+\begin{example}
+$\g = \sl_2$ with basis
+\[
+  e = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \quad
+  h = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad
+  f = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}
+\]
+(these are the standard names). Then $[e, f] = h$, $[h, e] = 2e$, and
+$[h, f] = -2f$.
+\end{example}
+
+\begin{exercise}
+Check this!
+\end{exercise}
+
+A representation of $\sl_2$ is a triple $E, F, H \in \Mat_n$ satisfying the
+same bracket relations. Where might we find such a thing?
+
+In this lecture and the next, we will get them as derivatives of
+representations of $SL_2$. We will then rederive them from just the linear
+algebra.
+
+\begin{definition}
+If $G$ is an algebraic group, an \emph{algebraic representation} of $G$ on $V$
+is a homomorphism of groups $\rho\colon G \to GL(V)$ defined by polynomial
+equations in the matrix coefficients. (This can be done so that it is
+independent of the embedding into $GL_n$. Think about it.)
+\end{definition}
+
+To get a representation of the Lie algebra out of this, we again use the dual
+numbers $E$. If we use $E = K[\eps]/\eps^2$ instead of $K$, we will get a
+homomorphism of groups $G(E) \to GL_V(E)$. Moreover, since $\rho(I) = I$ and
+it commutes with the projection map, we get
+\[
+  \rho(I + A\eps) = I + \eps \cdot (\text{some function of } A) = I + \eps\, d\rho(A)
+\]
+(this is to be taken as the definition of $d\rho(A)$).
+
+\begin{exercise}
+$d\rho$ is the derivative of $\rho$ evaluated at $I$ (i.e.\
+$d\rho\colon T_IG \to T_IGL_V$).
+\end{exercise}
+
+\begin{exercise}
+The fact that $\rho\colon G \to GL_V$ is a group homomorphism means that
+$d\rho\colon \g \to \gl_V$ is a Lie algebra homomorphism, i.e.\ $V$ is a
+representation of $\g$.
+\end{exercise}
+
+\begin{example}
+$G = SL_2$. Let $L(n)$ be the space of homogeneous polynomials of degree $n$
+in two variables $x, y$, with basis $x^n, x^{n-1}y, \dots, xy^{n-1}, y^n$ (so
+$\dim L(n) = n + 1$). Then $GL_2$ acts on $L(n)$ by change of coordinates: for
+$g = \bigl(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\bigr)$ and
+$f \in L(n)$ we have
+\[
+  \bigl((\rho_n g) f\bigr)(x, y) = f(ax + cy, bx + dy).
+\]
+In particular, $\rho_0$ is the trivial representation of $GL_2$, $\rho_1$ is
+the usual $2$-dimensional representation $K^2$, and
+\[
+  \rho_2 \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+  = \begin{pmatrix} a^2 & ab & b^2 \\ 2ac & ad + bc & 2bd \\ c^2 & cd & d^2 \end{pmatrix}.
+\]
+Since $GL_2$ acts on $L(n)$, we see that $SL_2$ acts on $L(n)$.
+\end{example}
+
+\begin{remark}
+The proper way to think of this is as follows. $GL_2$ acts on $\PP^1$ and on
+$\mathcal{O}(n)$ on $\PP^1$, hence on the global sections
+$\Gamma(\PP^1, \mathcal{O}(n)) = S^nK^2$. That's the source of these
+representations. We can do this sort of thing for all the other algebraic
+groups we listed previously, using flag varieties instead of $\PP^1$ and
+possibly higher cohomology instead of the global sections (this is a theorem
+of Borel, Weil, and Bott). That, however, requires algebraic geometry, and gets
+harder to do in infinitely many dimensions.
+\end{remark}
+
+Differentiating the above representations, e.g.\ for
+$e = \bigl(\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}\bigr)$, we see
+\[
+  \rho(I + \eps e)\, x^iy^j = x^i(\eps x + y)^j = x^iy^j + \eps j x^{i+1}y^{j-1}.
+\]
+Therefore, $d\rho(e)\, x^iy^j = j x^{i+1}y^{j-1}$.
+
+\begin{exercise}\leavevmode
+\begin{enumerate}
+  \item In the action of the Lie algebra,
+    \begin{align*}
+      e(x^iy^j) &= j x^{i+1}y^{j-1},\\
+      f(x^iy^j) &= i x^{i-1}y^{j+1},\\
+      h(x^iy^j) &= (i - j) x^iy^j.
+    \end{align*}
+  \item Check directly that these formulae give a representation of $\sl_2$.
+  \item Check that $L(2)$ is the adjoint representation.
+  \item Show that the formulae $e = x\frac{\partial}{\partial y}$,
+    $f = y\frac{\partial}{\partial x}$,
+    $h = x\frac{\partial}{\partial x} - y\frac{\partial}{\partial y}$ give an
+    (infinite-dimensional!) representation of $\sl_2$ on $k[x, y]$.
+  \item Let $\charac(k) = 0$. Show that $L(n)$ is an irreducible representation
+    of $\sl_2$, hence of $SL_2$.
+\end{enumerate}
+\end{exercise}
+
+\lecture{3} Last time we defined a functor
+\begin{multline*}
+  \bigl(\text{algebraic representations of a linear algebraic group } G\bigr)\\
+  \longrightarrow
+  \bigl(\text{Lie algebra representations of } \g = \Lie(G)\bigr)
+\end{multline*}
+via $\rho \mapsto d\rho$.
+
+This functor is not as nice as you would like to believe, except for the Lie
+algebras we care about.
+
+\begin{example}
+$G = \C^\times \implies \g = \Lie(G) = \C$ with $[x, y] = 0$.
+
+A representation of $\g = \C$ on $V$ is a matrix $A \in \End(V)$ (to
+$\rho\colon \C \to \End(V)$ corresponds $A = \rho(1)$).
+
+$W \subseteq V$ is a submodule iff $AW \subseteq W$, and $\rho$ is isomorphic
+to $\rho'\colon \g \to \End(V')$ iff $A$ and $A'$ are conjugate as matrices.
+
+Therefore, representations of $\g$ correspond to the Jordan normal forms of
+matrices.
+
+As any linear transformation over $\C$ has an eigenvector, there's always a
+one-dimensional subrepresentation of $V$. Therefore, $V$ is irreducible iff
+$\dim V = 1$. Also, $V$ is \emph{completely decomposable} (a direct sum of
+irreducible representations) iff $A$ is diagonalisable.
+
+For example, if
+\[
+  A = \begin{pmatrix}
+        0 & 1 &        &        &   \\
+          & 0 & 1      &        &   \\
+          &   & \ddots & \ddots &   \\
+          &   &        & \ddots & 1 \\
+          &   &        &        & 0
+      \end{pmatrix}
+\]
+then the associated representation is indecomposable, but not irreducible.
+The invariant subspaces are $\langle e_1\rangle, \langle e_1, e_2\rangle,
+\dots, \langle e_1, e_2, \dots, e_n\rangle$, and none of the proper nonzero
+ones has an invariant complement.
+\end{example}
+
+Now let's look at the representations of $G = \C^\times$.
+
+The irreducible representations are $\rho_n\colon G \to GL_1 = \Aut(\C)$,
+for $n \in \Z$, where $\rho_n(z)$ is multiplication by $z^n$. Every
+finite-dimensional representation is a direct sum of these.
+
+\begin{remark}
+Proving these statements about representations of $G$ takes some theory of
+algebraic groups. However, you probably know this for $S^1$, which is homotopy
+equivalent to $G$. Recall that to get complete reducibility in the finite group
+setting you took an average over the group; you can do the same thing here,
+because $S^1$ is compact and so has finite volume. In fact, for the theory
+that we study, our linear algebraic groups have maximal compact subgroups,
+which have the same representations, which for this reason are completely
+reducible. We will not prove that representations of the linear algebraic
+groups are the same as the representations of their maximal compact
+subgroups.
+\end{remark}
+
+Observe that the representations of $G$ and of $\g$ are not the same. Indeed,
+$\rho \mapsto d\rho$ will send $\rho_n \mapsto n \in \C$ (prove it!).
+Therefore, irreducible representations of $G$ embed into irreducible
+representations of $\g$, but the map is not remotely surjective (not to
+mention the decomposability issue).
+
+The above example isn't very surprising, since $\g$ is also the Lie algebra
+$\Lie(\C, +)$, and we should not expect representations of $\g$ to coincide
+with those of $\C^\times$. The surprising result is
+
+\begin{theorem}[Lie]
+$\rho \mapsto d\rho$ is an equivalence of categories $\Rep G \to \Rep \g$ if
+$G$ is a simply connected simple algebraic group.
+\end{theorem}
+
+\begin{remark}
+A ``simple algebraic group'' is not simple in the usual sense: e.g.\ $SL_n$
+has a centre, which is obviously a normal subgroup. However, if $G$ is simply
+connected and simple in the above sense, then the centre of $G$ is finite
+(e.g.\ $Z_{SL_n} = \mu_n$, the $n$th roots of unity), and the proper normal
+subgroups are subgroups of the centre.
+\end{remark}
+
+\begin{exercise}
+If $G$ is an algebraic group, and $Z$ is a finite central subgroup of $G$,
+then $\Lie(G/Z) = \Lie(G)$. (Morally, $Z$ identifies points ``far away'', and
+therefore does not affect the tangent space at $I$.)
+\end{exercise}
+
+We have now seen that the map (algebraic groups) $\to$ (Lie algebras) is not
+injective (see the above exercise, or, more shockingly, $G = \C$ and
+$G = \C^\times$). In fact,
+
+\begin{exercise}
+Let $G_n = \C^\times \ltimes \C$ where $\C^\times$ acts on $\C$ via
+$t \cdot \lambda = t^n\lambda$ (so
+$(t, \lambda)(t', \lambda') = (tt', \lambda + t^n\lambda')$). Show that
+$G_n \cong G_m$ iff $n = \pm m$. Show that $\Lie(G_n) \cong \C x + \C y$ with
+$[x, y] = y$ for every $n \neq 0$.
+\end{exercise}
+
+The map also isn't surjective (its image consists of the ``algebraic Lie
+algebras''). This is easily seen in characteristic $p$; for example,
+$\sl_p/\text{centre}$ cannot be the image of an algebraic group. In general,
+algebraic groups have a Jordan decomposition (every element can be written as
+$(\text{semisimple}) \times (\text{unipotent})$), and therefore the algebraic
+Lie algebras should have a Jordan decomposition as well. In Bourbaki, you can
+find an example of a $5$-dimensional Lie algebra for which the semisimple and
+the nilpotent parts of its elements lie only in the ambient $\gl_V$ and not in
+the algebra itself.

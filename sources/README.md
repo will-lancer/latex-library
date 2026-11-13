@@ -9,6 +9,7 @@ stay consistent across scripts that compare editions.
 | --- | --- |
 | Atiyah and Macdonald | [Original text](unedited/atiyah-macdonald-commutative-algebra/latex/) · [Edited](atiyah-macdonald-commutative-algebra/latex/) |
 | Banks QFT | [Project](banks_qft/README.md) |
+| Grojnowski, *Introduction to Lie Algebras and their Representations* | [Project](grojnowski_lie_algebras/README.md) |
 | Milnor, *Topology from the Differentiable Viewpoint* | [LaTeX](milnorTopFromDiffView/latex/) |
 | Streater and Wightman | [Project](pct_spin_statistics_all_that/README.md) |
 | Wald GR | [Project](wald_gr/README.md) · [Exercise project](wald_gr_exercises/README.md) |

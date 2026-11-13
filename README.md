@@ -9,6 +9,7 @@ Books and lecture notes typeset in LaTeX. Choose a PDF below to read or download
 | Book | PDFs | LaTeX |
 | --- | --- | --- |
 | Atiyah and Macdonald, *Introduction to Commutative Algebra* | [Original text](pdfs/atiyah-macdonald/atiyah-macdonald-unedited.pdf) · [With added explanations](pdfs/atiyah-macdonald/atiyah-macdonald-edited.pdf) | [Original](sources/unedited/atiyah-macdonald-commutative-algebra/latex/) · [Edited](sources/atiyah-macdonald-commutative-algebra/latex/) |
+| Grojnowski, *Introduction to Lie Algebras and their Representations* (Part III notes) | [PDF](pdfs/grojnowski-lie-algebras/grojnowski-lie-algebras-jhep.pdf) | [Project](sources/grojnowski_lie_algebras/README.md) |
 | Milnor, *Topology from the Differentiable Viewpoint* | [PDF](pdfs/milnor-topology/milnor-topology.pdf) | [Source](sources/milnorTopFromDiffView/latex/) |
 
 ## Quantum field theory
