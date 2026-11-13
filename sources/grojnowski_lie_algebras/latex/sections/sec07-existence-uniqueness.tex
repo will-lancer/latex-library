@@ -198,22 +198,19 @@ $A_{n-1}$ they look like figure~\ref{fig:braid}.
 
 \begin{figure}[!htbp]
 \centering
-\begin{tikzpicture}[x=0.6cm,y=0.55cm,line width=0.8pt]
-  % s_1 s_2 s_1 on strands 0,1,2; each crossing occupies one unit of height
-  \newcommand{\cross}[2]{% #1 = left strand position, #2 = bottom height
-    \draw (#1,#2) .. controls (#1,#2+0.5) and (#1+1,#2+0.5) .. (#1+1,#2+1);
-    \draw[white,line width=4pt] (#1+1,#2) .. controls (#1+1,#2+0.5) and (#1,#2+0.5) .. (#1,#2+1);
-    \draw (#1+1,#2) .. controls (#1+1,#2+0.5) and (#1,#2+0.5) .. (#1,#2+1);}
-  \begin{scope}
-    \cross{0}{0} \draw (2,0)--(2,1);
-    \cross{1}{1} \draw (0,1)--(0,2);
-    \cross{0}{2} \draw (2,2)--(2,3);
-  \end{scope}
+\begin{tikzpicture}[x=0.75cm,y=0.65cm,line width=0.9pt,
+    strand/.style={preaction={draw,white,line width=5pt}}]
+  % each strand is listed by its position (0, 1, 2) at heights 0, 1, 2, 3
+  \newcommand{\strand}[4]{\draw[strand] (#1,0)
+      .. controls (#1,0.5) and (#2,0.5) .. (#2,1)
+      .. controls (#2,1.5) and (#3,1.5) .. (#3,2)
+      .. controls (#3,2.5) and (#4,2.5) .. (#4,3);}
+  % s_1 s_2 s_1
+  \strand{0}{1}{2}{2} \strand{1}{0}{0}{1} \strand{2}{2}{1}{0}
   \node at (3.5,1.5) {$=$};
-  \begin{scope}[xshift=3cm]
-    \cross{1}{0} \draw (0,0)--(0,1);
-    \cross{0}{1} \draw (2,1)--(2,2);
-    \cross{1}{2} \draw (0,2)--(0,3);
+  % s_2 s_1 s_2
+  \begin{scope}[xshift=3.4cm]
+    \strand{0}{0}{1}{2} \strand{1}{2}{2}{1} \strand{2}{1}{0}{0}
   \end{scope}
 \end{tikzpicture}
 \caption{Braid relation $s_1s_2s_1 = s_2s_1s_2$ in $A_{n-1}$, drawn on three

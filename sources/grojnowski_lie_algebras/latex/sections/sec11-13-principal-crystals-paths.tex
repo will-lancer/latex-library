@@ -141,18 +141,19 @@ is a crystal, where the weight of vertex $i$ is $i\alpha/2$.
 Define $\epsilon_i(b) = \max\setc{n \geq 0}{\te_i^n(b) \neq 0}$, and
 $\phi_i(b) = \max\setc{n \geq 0}{\tf_i^n(b) \neq 0}$:
 \[
-\begin{tikzpicture}[baseline=-3pt,x=0.9cm]
+\begin{tikzpicture}[baseline=-3pt,x=1.2cm,
+    st/.style={-{Stealth[length=4pt]},shorten >=4pt,shorten <=4pt}]
   \foreach \i in {0,1,2} \node[dot] (p\i) at (\i,0) {};
   \node (b) at (3,0) {$b$};
-  \node (d) at (4.2,0) {$\cdots$};
-  \node[dot] (q) at (5.4,0) {};
-  \node[dot] (r) at (6.4,0) {};
-  \draw[->] (p0)--(p1); \draw[->] (p1)--(p2); \draw[->] (p2)--(b);
-  \draw[->] (b)--(d); \draw[->] (d)--(q); \draw[->] (q)--(r);
-  \draw[decorate,decoration={brace,mirror,amplitude=4pt}] (-0.1,-0.3) -- (2.9,-0.3)
-    node[midway,below=4pt] {$\epsilon_i(b)$};
-  \draw[decorate,decoration={brace,mirror,amplitude=4pt}] (3.1,-0.3) -- (6.5,-0.3)
-    node[midway,below=4pt] {$\phi_i(b)$};
+  \node (d) at (4.1,0) {$\cdots$};
+  \node[dot] (q) at (5.2,0) {};
+  \node[dot] (r) at (6.2,0) {};
+  \draw[st] (p0)--(p1); \draw[st] (p1)--(p2); \draw[st] (p2)--(b);
+  \draw[st] (b)--(d); \draw[st] (d)--(q); \draw[st] (q)--(r);
+  \draw[decorate,decoration={brace,mirror,amplitude=4pt}] (0,-0.3) -- (2.95,-0.3)
+    node[midway,below=4pt] {$\epsilon_i(b)$ arrows};
+  \draw[decorate,decoration={brace,mirror,amplitude=4pt}] (3.05,-0.3) -- (6.2,-0.3)
+    node[midway,below=4pt] {$\phi_i(b)$ arrows};
 \end{tikzpicture}
 \]
 In $\sl_2$, the sum $\epsilon_i(b) + \phi_i(b)$ is the length of the string
@@ -450,27 +451,29 @@ We will now construct the Young tableaux for all the classical Lie algebras.
   \item $\so_{2n}$ (type $D_n$): the crystal of the standard representation
     $\C^{2n}$ is
     \[
-    \begin{tikzpicture}[baseline=-3pt,x=1.25cm,every node/.append style={font=\small}]
+    \begin{tikzpicture}[baseline=-3pt,x=0.92cm,every node/.append style={font=\small},
+        ar/.style={->,shorten >=1pt,shorten <=1pt},
+        lab/.style={font=\scriptsize}]
       \node (1) at (0,0) {\bx{1}};
-      \node (2) at (1,0) {\bx{2}};
-      \node (d1) at (2,0) {$\cdots$};
-      \node (m) at (3.1,0) {\bx{n-1}};
-      \node (n) at (4.2,0.8) {\bx{n}};
-      \node (nb) at (4.2,-0.8) {\bx{\overline{n}}};
-      \node (mb) at (5.3,0) {\bx{\overline{n-1}}};
-      \node (d2) at (6.4,0) {$\cdots$};
-      \node (2b) at (7.4,0) {\bx{\overline{2}}};
-      \node (1b) at (8.4,0) {\bx{\overline{1}}};
-      \draw[->] (1) -- node[below]{\scriptsize $1$} (2);
-      \draw[->] (2) -- node[below]{\scriptsize $2$} (d1);
-      \draw[->] (d1) -- node[below]{\scriptsize $n-2$} (m);
-      \draw[->] (m) -- node[above left=-2pt]{\scriptsize $n-1$} (n);
-      \draw[->] (m) -- node[below left=-2pt]{\scriptsize $n$} (nb);
-      \draw[->] (n) -- node[above right=-2pt]{\scriptsize $n$} (mb);
-      \draw[->] (nb) -- node[below right=-2pt]{\scriptsize $n-1$} (mb);
-      \draw[->] (mb) -- node[below]{\scriptsize $n-2$} (d2);
-      \draw[->] (d2) -- node[below]{\scriptsize $2$} (2b);
-      \draw[->] (2b) -- node[below]{\scriptsize $1$} (1b);
+      \node (2) at (1.4,0) {\bx{2}};
+      \node (d1) at (2.9,0) {$\cdots$};
+      \node (m) at (4.7,0) {\bx{n-1}};
+      \node (n) at (6.3,1.0) {\bx{n}};
+      \node (nb) at (6.3,-1.0) {\bx{\overline{n}}};
+      \node (mb) at (7.9,0) {\bx{\overline{n-1}}};
+      \node (d2) at (9.7,0) {$\cdots$};
+      \node (2b) at (11.0,0) {\bx{\overline{2}}};
+      \node (1b) at (12.4,0) {\bx{\overline{1}}};
+      \draw[ar] (1) -- node[lab,above]{$1$} (2);
+      \draw[ar] (2) -- node[lab,above]{$2$} (d1);
+      \draw[ar] (d1) -- node[lab,above]{$n-2$} (m);
+      \draw[ar] (m) -- node[lab,above left]{$n-1$} (n);
+      \draw[ar] (m) -- node[lab,below left]{$n$} (nb);
+      \draw[ar] (n) -- node[lab,above right]{$n$} (mb);
+      \draw[ar] (nb) -- node[lab,below right]{$n-1$} (mb);
+      \draw[ar] (mb) -- node[lab,above]{$n-2$} (d2);
+      \draw[ar] (d2) -- node[lab,above]{$2$} (2b);
+      \draw[ar] (2b) -- node[lab,above]{$1$} (1b);
     \end{tikzpicture}
     \]
   \item $\spl_{2n}$ (type $C_n$): the crystal of the standard representation
@@ -622,25 +625,27 @@ path $\te_i(\pi)$ as follows (see figure~\ref{fig:littelmann}):
 
 \begin{figure}[!htbp]
 \centering
-\begin{tikzpicture}[scale=1.1,every node/.append style={font=\small}]
-  \draw (0,-2.2) -- (0,1.9) node[above] {$h_i$};
-  \draw (1.1,-2.2) -- (1.1,1.9) node[above] {$h_i + 1$};
-  % pi, traversed from 0 (bottom right) to pi(1)
-  \coordinate (O) at (4.5,-0.9);
-  \draw (O) -- (3.5,-0.2) -- (2.0,-1.0) -- (0.65,-0.6) -- (2.25,0.2) -- (0.35,0.7)
-        -- (-0.2,0.3) -- (0.35,1.3) -- (1.0,1.45);
-  \node[right] at (O) {$0$};
-  \node[above left=1pt] at (1.0,1.45) {$\pi(1)$};
-  % e_i(pi): reflect the stretch between the last visit to h_i+1 and the
-  % first visit to h_i in the line h_i+1, then translate the rest by alpha_i
-  % pi meets h_i + 1 for the last time before t_1 at (1.1, 0.503) and first
-  % meets h_i at (0, 0.445); alpha_i is drawn as the horizontal vector (2.2, 0)
-  \draw[red!80!black] (1.1,0.503) -- (1.85,0.7) -- (2.2,0.445) -- (2.0,0.3)
-        -- (2.55,1.3) -- (3.2,1.45);
-  \node[red!80!black,right] at (3.2,1.45) {$\te_i(\pi)(1)$};
+\begin{tikzpicture}[scale=1.05,every node/.append style={font=\small}]
+  \draw[gray] (0,-1.7) -- (0,2.1) node[above,black] {$h_i$};
+  \draw[gray] (1.5,-1.7) -- (1.5,2.1) node[above,black] {$h_i + 1$};
+  % pi: from 0 at (4.5,0); last crossing of h_i + 1 before t_1 is pi(t_0);
+  % first touch of h_i is pi(t_1)
+  \draw[thick] (4.5,0) -- (2.7,1.0) -- (0.9,0.2) -- (2.25,-0.6) -- (0.6,-1.2)
+        -- (0,-0.5) -- (0.75,0.4) -- (3.0,1.5);
+  % e_i(pi): reflect pi(t_0)..pi(t_1) in h_i + 1, then translate by alpha_i
+  \draw[thick,red!80!black] (1.5,-0.873) -- (2.4,-1.2) -- (3.0,-0.5)
+        -- (3.75,0.4) -- (6.0,1.5);
+  \node[dot] at (4.5,0) {}; \node[right] at (4.5,0) {$0$};
+  \node[dot] at (3.0,1.5) {}; \node[above] at (3.0,1.5) {$\pi(1)$};
+  \node[dot,red!80!black] at (6.0,1.5) {};
+  \node[above,red!80!black] at (6.0,1.5) {$\te_i(\pi)(1)$};
+  \node[dot,inner sep=1.2pt] at (1.5,-0.873) {};
+  \node[above left=0pt,font=\scriptsize] at (1.5,-0.873) {$\pi(t_0)$};
+  \node[dot,inner sep=1.2pt] at (0,-0.5) {};
+  \node[left=1pt,font=\scriptsize] at (0,-0.5) {$\pi(t_1)$};
 \end{tikzpicture}
 \caption{$\pi$ is drawn in black; $\te_i(\pi)$, from the point where it
-deviates from $\pi$, is drawn in red. The vertical lines are the hyperplanes
+deviates from $\pi$, is drawn in red. The grey lines are the hyperplanes
 $\ip{\lambda}{\alpha_i\cv} = h_i$ and $h_i + 1$.}
 \label{fig:littelmann}
 \end{figure}

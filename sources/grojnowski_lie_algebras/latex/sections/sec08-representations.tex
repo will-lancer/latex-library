@@ -208,11 +208,14 @@ $\setc{\mu \in P}{\mu \leq \lambda}$ are the lattice points in an obtuse cone
 
 \begin{figure}[!htbp]
 \centering
-\begin{tikzpicture}[scale=0.9]
-  \fill[pattern=north east lines] (0,0) -- (-2.1,0) -- ($(-2.1,0)+(-60:1.9)$) -- (-60:1.9) -- cycle;
-  \draw (0,0) -- (-2.1,0);
-  \draw (0,0) -- (-60:1.9);
+\begin{tikzpicture}[scale=0.9,every node/.append style={font=\small}]
+  \fill[gray!20] (0,0) -- (180:2.8) -- ($(180:2.8)+(-60:2.5)$) -- (-60:2.5) -- cycle;
+  \draw (0,0) -- (180:2.8);
+  \draw (0,0) -- (-60:2.5);
+  \node[dot] at (0,0) {};
   \node[above] at (0,0) {$\lambda$};
+  \node[above] at (180:2.2) {$\lambda - \R_{\geq 0}\alpha_1$};
+  \node[right] at (-60:2.2) {$\lambda - \R_{\geq 0}\alpha_2$};
 \end{tikzpicture}
 \caption{The cone $\setc{\mu}{\mu \leq \lambda}$ for $\sl_3$, bounded by the
 directions $-\alpha_1$ and $-\alpha_2$.}
