@@ -100,6 +100,9 @@ the end. So are the layout repairs.
   eigenvalue 0.
 - p. 21. `g_λ = {x ∈ g : [t, x] = λ(t)x for all t ∈ t}`. The typescript had
   `x ∈ G` and no quantifier on `t`.
+- p. 21, Lecture 9. The classical Lie algebras are Lie algebras of
+  automorphisms of vector spaces preserving a form. The typescript called them
+  "automorphisms of vector spaces".
 - p. 22, proof of Proposition 5.2. The sum runs over `α ∈ R`, not `α ∈ r`. The
   conclusion is `E_{ij} ∈ r`. The last step names the combination
   `[t_0, r] − β(t_0) r`, which kills `e_β` and keeps `e_α`.
@@ -170,8 +173,18 @@ the end. So are the layout repairs.
 - p. 43, Example 8.7. Needs `n ≥ 3`.
 - p. 44. In `S^m C^n` the condition is `v_{i_1} ⋯ v_{i_m} = v_1^m`. The
   typescript wrote `v_{i_s}`.
+- p. 43, Example 8.8. The typescript said `S²V` and `Λ²V` are irreducible for
+  `sl_n` "provided `V` is irreducible". That fails in general: `S²` of the
+  adjoint representation of `sl_n` is reducible. The claim is now made only
+  for `V = C^n`, which is what the text goes on to check.
 - p. 44, Remark in Exercise 78. The group action on the dual is
   `(g · λ)(v) = λ(g^{−1} v)`. The typescript wrote `(x · g)(v) = g^{−1}(xv)`.
+- p. 44, Exercise 79. "Exactly three" components fails for `so_4`, where
+  `Λ²C⁴ ≅ sl_2 ⊕ sl_2` splits, and for `sp_2 = sl_2`, where `V ⊗ V` has two. The
+  exercise now assumes `n = 3` or `n ≥ 5` for `so_n`, and `l ≥ 2` for
+  `sp_{2l}`.
+- p. 44. Theorem 8.3 classifies representations of *semisimple* Lie algebras.
+  The sentence introducing its proof said "simple".
 - p. 45. In the Casimir, `x^α` is `x_α`.
 - p. 45, Remark. `ρ` corresponds to the square root of the *anticanonical*
   bundle on the flag variety.

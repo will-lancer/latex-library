@@ -27,7 +27,7 @@ Section files follow the original sections; `sec09-10` and `sec11-13` group
 the short final sections.
 
 [CORRECTIONS.md](CORRECTIONS.md) lists every mathematical correction with its
-typescript page. It has 106 entries. Some are sign errors in displayed
+typescript page. It has 110 entries. Some are sign errors in displayed
 formulas, such as the closed form for `ch L(n)` and the Weyl denominator
 computation. Others are wrong numbers (`dim E_8`, the value of `f` on an
 `E_8` simple root) or definitions with the wrong inequality (dominant
