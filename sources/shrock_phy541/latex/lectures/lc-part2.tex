@@ -1,5 +1,6 @@
 % Source: phaseTransitions_liquidCrystals.pdf, pages 7-20 (percolation and dilute spin models).
-\subsection{Lattice vacancies and percolation}
+\subsection{Percolation and dilute spin models}
+\subsubsection*{Lattice vacancies and percolation}
 
 Another type of nonanalytic behavior has to do with lattice vacancies, defects, and impurities in real materials. These
 can often be modelled by allowing sites to be occupied randomly with probability $p\in[0,1]$, and hence vacant with
@@ -68,7 +69,7 @@ The critical percolation probabilities $p_{c,\Lambda}^{(s)}$ and $p_{c,\Lambda}^
 percolation and $\Lambda$. One can define an average cluster size, $S(p)$; as $p\nearrow p_{c,\Lambda}$, this diverges
 and one writes $S(p)\propto(p_c-p)^{-\gamma}$ as $p\nearrow p_c$.
 
-\subsubsection*{Connection to the Potts model}
+\paragraph{Connection to the Potts model.}
 
 Bond percolation has an interesting connection to the Potts model. The average number of (connected) clusters on a
 general graph $G$ defined by its vertex set $V$ and its edge (= bond) set $E$ is $\ev k$:
@@ -122,7 +123,7 @@ $\Delta_{\text{eff}} = \lim_{n\to\infty}\frac{2e(G)}{n(G)}$. This is an analytic
 $q = 1$ and then $n\to\infty$ has no critical behavior. The nontrivial critical behavior is obtained by taking $n\to\infty$
 first and then $q\to 1$.
 
-\subsubsection*{Properties of the average cluster number}
+\paragraph{Properties of the average cluster number.}
 
 The average cluster number $\ev k$ obtained in this limit has several general properties:
 \begin{enumerate}[label=(\arabic*)]
@@ -215,7 +216,7 @@ With PBC$_y$, we calculate
 (terms that differ from the infinite-lattice series are in red). Similar results hold for the small-$r$ series and other
 lattices.
 
-\subsubsection*{Complex singularities of the average cluster number}
+\paragraph{Complex singularities of the average cluster number.}
 
 Another interesting output of these exact calculations of $\ev k$ for infinite-length, finite-width lattice strips is the
 singularities of $\ev k$ in the complex $p$ plane. We prove that $\ev k$ is a rational function of $p$, so its
@@ -252,7 +253,7 @@ arXiv:2105.13415 for more details.
 Percolation continues to be a subject of considerable interest in statistical mechanics and condensed matter physics, as
 well as in engineering and applied physics.
 
-\subsubsection*{Example of a calculation: the square-lattice ladder}
+\paragraph{Example of a calculation: the square-lattice ladder.}
 
 Consider the square-lattice ladder graph with FBC$_y$. As above, this is denoted $[\text{sq},2_F]$. The result for $\ev k$
 is independent of the longitudinal b.c., BC$_x$. Let us take PBC$_x$. Denote a strip of length $m$ vertices as
@@ -308,7 +309,7 @@ $\ev k$ for the $L_x\equiv m\to\infty$ limit of this sq, $2_F$ strip, namely
   \ev k_{\text{sq},2_F} = \frac{(1-p)^2(2+p-2p^2)}{2(1-p^2+p^3)}.
 \end{equation}
 
-\subsubsection*{Site versus bond percolation thresholds}
+\paragraph{Site versus bond percolation thresholds.}
 
 It is easy to see why $(p_c^{(s)})_{1D} = (p_c^{(b)})_{1D} = 1$ on the 1D lattice: if $p<1$, then sites or bonds may be
 absent, but then this would prevent the existence of a path connecting a site to the left of the break to a site to the
@@ -360,7 +361,7 @@ $P(p)$ is the probability that a given site is a member of an infinite cluster. 
 support the conclusion that critical exponents such as $\beta$ are the same for site and bond percolation and are also
 independent of lattice type in a fixed spatial dimension $d$ (e.g.\ sq, tri, hc in $d = 2$, etc.), but do depend on $d$.
 
-\subsubsection*{Cluster sizes and correlations}
+\paragraph{Cluster sizes and correlations.}
 
 Let us denote a cluster containing $s$ sites as an $s$-cluster. As we denoted the average cluster number per site
 (including all $s$ values) as $\ev k$ (often written as $\ev n$ in the percolation literature), let us also write the
@@ -438,7 +439,7 @@ $\ev k_{\text{sing}}\sim|p-p_c|^{2-\alpha}$.
 {\small Values of critical exponents in percolation ($d = 3$ values are approximate).}
 \end{center}
 
-\subsubsection*{Fractal structure of the incipient infinite cluster}
+\paragraph{Fractal structure of the incipient infinite cluster.}
 
 An interesting feature of percolation is that, as computer simulations have shown, at $p_c$ ($p_{c,\Lambda}^{(s)}$ or
 $p_{c,\Lambda}^{(b)}$ for site or bond percolation on a lattice $\Lambda$) the incipient infinite percolation cluster has a
@@ -506,7 +507,7 @@ critical probability that the fire will spread out of control;
 (2) disease epidemics; the site percolation model would set $p$ = probability that an individual is infected by the disease and
 hence can spread it.
 
-\subsection{Dilute spin models}
+\subsubsection*{Dilute spin models}
 
 An important related topic is spin models in media with
 \begin{enumerate}[label=(\roman*)]

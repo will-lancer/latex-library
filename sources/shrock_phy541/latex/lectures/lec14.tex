@@ -10,7 +10,8 @@ Wilson, and Fisher. We will focus much of our discussion on the real-space RG; v
 transform from position space $\mathbf{x}$ to momentum space $\mathbf{k}$, this has an obvious
 analogue in momentum space.
 
-\subsection{The Kadanoff block-spin construction}
+\subsection{Block spins and scaling}
+\subsubsection*{The Kadanoff block-spin construction}
 
 We begin with the Kadanoff ``block-spin'' construction. Consider a system undergoing a continuous
 phase transition with a correlation length $\xi$ that diverges as $T\to T_c$. The discussion applies
@@ -64,7 +65,7 @@ so the $\infty$ iteration of the RG blocking transformation has a fixed point (R
 which is the critical point. (Formally, there is also a critical point with $\xi = 0$, namely at
 $T = \infty$.)
 
-\subsection{Scaling hypothesis and the thermal and magnetic exponents}
+\subsubsection*{Scaling hypothesis and the thermal and magnetic exponents}
 
 Kadanoff assumed that the (Gibbs) free energy can be rewritten in the same form, with different
 parameters in $\Ham$, and with a $(d,L)$-dependent volume factor $L^d$, since here we deal with the total
@@ -98,7 +99,7 @@ with $\tilde\tau = \varphi_\tau(L)\tau = L^{y_\tau}\tau$ and $\tilde H = \varphi
   G(L^{y_\tau}\tau,L^{y_h}H) = L^dG(\tau,H).
 \end{equation}
 
-\subsubsection*{Some mathematical background}
+\paragraph{Some mathematical background.}
 
 \paragraph{Definition.} $f(x,y)$ is a homogeneous function if $f(\lambda x,\lambda y) = \lambda^pf(x,y)$
 for some power $p$. E.g.\ $f(x,y) = x^2+2xy+3y^2$ is a homogeneous function with $p = 2$, since
@@ -141,7 +142,8 @@ expressed as a prefactor times a function of 1 variable, $g$. This function $g$ 
 continuous phase transition (with an $\infty$ correlation length). See, e.g., the book by Stanley,
 chapters 11 and 12, for a corresponding discussion.
 
-\subsection{Exponent relations from scaling}
+\subsection{Relations among critical exponents}
+\subsubsection*{Exponent relations from scaling}
 
 Write the original relation in the canonical form: $G(L^{y_\tau}\tau,L^{y_h}H) = L^dG(\tau,H)$; set
 $\lambda = L^d$, so
@@ -318,7 +320,7 @@ These relations among critical exponents are also consistent with (i) values det
 spin models from series expansions and Monte Carlo simulations, and (ii) values measured in real 3D
 physical systems, including both magnetic, liquid--gas, and structural phase transitions ($\beta$ brass).
 
-\subsection{Approximate values of critical exponents in 3D phase transitions}
+\subsubsection*{Approximate values of critical exponents in 3D phase transitions}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -345,7 +347,7 @@ For $O(2)$, recall that the order parameter for the superfluid transition is the
 condensate wavefunction $\sim e^{\ii\theta}$, $U(1)\sim O(2)$ (the $\lambda$ line in the $^4$He phase
 diagram). For $O(3)$: $\alpha+2\beta+\gamma = 2$; $d\nu = 2.1 = 2-\alpha$; $\gamma = \nu(2-\eta)$ \checkmark.
 
-\subsubsection*{Some further remarks on critical exponents}
+\paragraph{Some further remarks on critical exponents.}
 
 With $\alpha = \alpha'$, $C\sim|\tau|^{-\alpha}$ as $\tau\to 0$. If $\alpha>0$, $C$ diverges at
 $T = T_c$: e.g.\ 2D Ising: $\alpha = 0$ (log); 2D $q = 3$ Potts: $\alpha = \frac13$; 2D $q = 4$ Potts:
@@ -387,7 +389,8 @@ is, the more rapid the onset of magnetic order as $T$ decreases below $T_c$, e.g
 Potts): $\beta = \frac18$; 2D $q = 3$ Potts: $\beta = \frac19$; 2D $q = 4$ Potts: $\beta = \frac1{12}$; 3D
 Ising: $\beta\simeq 0.325$; 3D $O(3)$: $\beta\simeq 0.37$.
 
-\subsection{The renormalization ``group'' is a semigroup}
+\subsection{RG transformations, flows and fixed points}
+\subsubsection*{The renormalization ``group'' is a semigroup}
 
 The Kadanoff block-spin construction is the basis of the real-space renormalization group (RG).
 However, the term ``group'' is a misnomer here. Recall the definition of a group $G$:

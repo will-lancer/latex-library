@@ -1,6 +1,6 @@
 % Source: Lecture6.pdf, pages 1-7 (page 8 is blank).
 \lecture{6}
-\subsubsection*{1D Ising model, continued}
+\paragraph{1D Ising model, continued.}
 
 Recall: with PBC,
 $Z = \sum_{\{\sigma_i\}}e^{-\beta\Ham} = \Tr(T^N)$, where $T$ = transfer matrix, with
@@ -28,7 +28,7 @@ $\cosh K>\sinh K$. The internal energy per site is
 \end{equation}
 N.B.: this is invariant under $J\to -J$.
 
-\subsection{Ferromagnet--antiferromagnet mapping on bipartite lattices}
+\subsubsection*{Ferromagnet--antiferromagnet mapping on bipartite lattices}
 
 \paragraph{Theorem.} On a bipartite lattice,
 $\Lambda = \Lambda_e\oplus\Lambda_o$, there is a mapping that relates a spin model with the
@@ -72,7 +72,7 @@ As $T\to\infty$, $\beta\to 0$, the spins are random, so $\ev{\sigma_2\sigma_1}\t
 $T\to 0$, the FM coupling favors short-range order; $\tanh(\beta J)\to 1$ as $\beta\to\infty$.
 (See the plot of $\bar U$ at the end of the previous lecture.)
 
-\subsection{Specific heat of the 1D Ising model}
+\subsubsection*{Specific heat of the 1D Ising model}
 
 Next, calculate the specific heat (per spin), $\bar C = \left.\frac{\dd\bar U}{\dd T}\right|_{H=0}$;
 we drop the bars in the notation henceforth. Now
@@ -121,7 +121,8 @@ specific heat reaches a max at an intermediate temperature $T$ such that $\kB T\
 for temperatures of this order a change in $T$ has a significant effect on the local spin
 order and hence on $U$.
 
-\subsection{Nonzero external field}
+\subsection{The 1D Ising model in a magnetic field}
+\subsubsection*{Nonzero external field}
 
 Next, apply a nonzero external magnetic field $H$. Calculate the eigenvalues of the transfer
 matrix $T$. Recall
@@ -147,7 +148,7 @@ is
 Here $\lambda_+$ is the maximal eigenvalue of $T$, and $f = \ln\lambda_+$,
 $\bar G(T,H) = -\kB Tf = -\beta^{-1}f$.
 
-\subsubsection*{Magnetization}
+\paragraph{Magnetization.}
 
 Now calculate the induced magnetization per site:
 \begin{equation}
@@ -202,7 +203,7 @@ $\bar M_{sp}$ thus has a discontinuous behavior as $T\to 0$.
 $\sgn(\bar M)$ with $\sgn(H)$.}
 \end{diagram}
 
-\subsection{The Peierls theorem in one dimension}
+\subsubsection*{The Peierls theorem in one dimension}
 
 The fact that there is no spontaneous magnetization, i.e.\ no ``long-range order'' (LRO), at
 any finite temperature in this model is a consequence of a general theorem, the (1D form of
@@ -224,7 +225,7 @@ absent; then $\Delta G = \Delta U$ and the appearance of the seam is dispreferre
 if and only if $T = 0$, then the minimization of the free energy is the same as the
 minimization of the internal energy.
 
-\subsection{Susceptibility}
+\subsubsection*{Susceptibility}
 
 Next, calculate the (isothermal) magnetic susceptibility $\chi = (\partial M/\partial H)_T$
 and, per site,
@@ -251,7 +252,8 @@ $T = 0$. Rather than algebraic singularities, it has a combination of essential 
 $\bar C$ and $\bar\chi_{H=0}$ and a discontinuous singularity in
 $M_{H=0} = M_{\text{spontaneous}}$.
 
-\subsection{Spin--spin correlation function by a high-temperature expansion}
+\subsection{Correlations in the 1D Ising model}
+\subsubsection*{Spin--spin correlation function by a high-temperature expansion}
 
 Calculate the spin--spin correlation function
 $\ev{\sigma_i\sigma_j}_{H=0} = \ev{\sigma_i\sigma_j}_{\text{conn.},H=0}$, where $i$, $j$ are

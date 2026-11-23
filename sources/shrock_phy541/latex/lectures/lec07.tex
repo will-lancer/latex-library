@@ -1,7 +1,7 @@
 % Source: Lecture7.pdf, pages 1-3 (1D Ising model, continued). Page 8 is blank.
 % The Potts-model half of the lecture (pages 3-7) is in lec07-potts.tex.
 \lecture{7}
-\subsection{Correlation length and susceptibility of the 1D Ising model}
+\subsubsection*{Correlation length and susceptibility of the 1D Ising model}
 
 Previously, we calculated (for $H = 0$) the 2-spin correlation function
 \begin{equation}
@@ -37,7 +37,7 @@ $J>0$ and $J<0$, namely that $\ev{\sigma_0\sigma_\ell}>0$ for FM $J$, while for 
   \begin{array}{cccc} - & + & - & +\\[-2pt] \scriptstyle 0 & \scriptstyle 1 & \scriptstyle 2 & \scriptstyle 3\end{array}
 \end{equation*}
 
-\subsubsection*{Correlation length}
+\paragraph{Correlation length.}
 
 Next, calculate the correlation length $\xi$. Because of the bipartite nature of the 1D lattice, we may take $J>0$ with no
 loss of generality. Recall that for $T\ne T_c$, a connected correlation function decays exponentially as the distance
@@ -68,7 +68,7 @@ So the correlation length $\xi$ diverges exponentially rapidly as $T\to 0$,
 an essential singularity. This is similar to what we found for $\bar\chi$, the initial ($H = 0$) magnetic susceptibility,
 $\bar\chi_{H=0} = \beta e^{2K}$.
 
-\subsubsection*{Susceptibility from the correlation function}
+\paragraph{Susceptibility from the correlation function.}
 
 It is useful to exhibit a different way to calculate $\bar\chi_{H=0}$. To do this we recall that, just as
 $\bar M = \pder fh$ ``pulls down'' one $\sigma_i$ from $e^{-\beta\Ham}$,
@@ -105,7 +105,7 @@ So $1 + 2\sum_{j=1}^\infty v^j = 1 + 2\left(\frac{v}{1-v}\right) = \frac{1+v}{1-
 \end{align}
 i.e.\ $\bar\chi = \beta e^{2K}$, as we derived earlier.
 
-\subsubsection*{Susceptibility in a nonzero field}
+\paragraph{Susceptibility in a nonzero field.}
 
 Next, discuss our earlier result in the case of a nonzero external magnetic field $H$. Recall the expression
 \begin{equation}

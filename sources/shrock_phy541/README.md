@@ -15,7 +15,8 @@ with TikZ is required. Build files go to a temporary directory under
 
 The eleven sections group the lectures by topic, so a section can hold several
 lectures. A small-caps marker at the right margin shows where each lecture
-starts.
+starts. Each section has three to six numbered subsections, 49 in all. Inside a
+subsection, unnumbered headings and bold run-in labels mark the smaller topics.
 
 | Section | Sources |
 | --- | --- |
@@ -59,4 +60,4 @@ edition.
 | `latex/lectures/*.tex` | One file per lecture or handout |
 | `SOURCE_MAP.md` | Source pages for each file |
 | `CORRECTIONS.md` | Every change of substance, by page |
-| `qa/build.log` | Log of the last build |
+| `qa/build.log` | Log of the last build (written locally, not tracked) |

@@ -1,7 +1,8 @@
 % Source: Lecture8a.pdf, pages 1-4 (page 1 is a title page; page 5 is blank). Title on the source:
 % "Lecture 8a (to be used in conjunction with the printed slides in Lecture 8)".
 \lecture{8a}
-\subsection{Further notes for Lecture 8: examples of graphs}
+\subsection{Graph examples and the deletion--contraction relation}
+\subsubsection*{Types of graphs}
 
 These notes are to be used in conjunction with the printed slides of Lecture 8.
 
@@ -83,7 +84,7 @@ There are 3 cycles, but only 2 are linearly independent; by combining the inner 
 \diagramcaption{The square with a diagonal edge: two independent inner cycles and the outer cycle.}
 \end{diagram}
 
-\subsection{Spanning subgraphs and the Tutte polynomial of \texorpdfstring{$C_3$}{C3}}
+\subsubsection*{Spanning subgraphs and the Tutte polynomial of \texorpdfstring{$C_3$}{C3}}
 
 Spanning subgraphs (SSG): e.g.\ let $G = C_3 = K_3$; $G = (V,E)$; $G' = (V,E')$, $E'\subseteq E$. The spanning subgraphs
 $\{G'\}$ are:
@@ -126,7 +127,7 @@ and
   T(C_3,2,1) &= N_{SF}(C_3) = 7, & T(C_3,2,2) &= N_{SSG}(C_3) = 8 .
 \end{align}
 
-\subsection{\texorpdfstring{$k$}{k}-partite graphs}
+\subsubsection*{\texorpdfstring{$k$}{k}-partite graphs}
 
 $k$-partite graphs: $G = G(V,E)$ such that $V = V_1\cup V_2\cup\cdots\cup V_k$, where $\{V_i\}$ are subsets of $V$, such that no
 edge connects a vertex in $V_i$ to another vertex in $V_i$. Any loopless $n$-vertex graph is $n$-partite with $V_i = \{v_i\}$.
@@ -171,7 +172,7 @@ $P(\text{tri lattice, FBC},q=3) = 3!$, as in the coloring of Figure~\ref{fig:tri
 \diagramcaption{A proper 3-coloring of a section of the triangular lattice with free boundary conditions.}\label{fig:tri3col}
 \end{diagram}
 
-\subsection{Planar duality}
+\subsubsection*{Planar duality}
 
 E.g.\ let $G = C_3 = K_3$. The triangle has two faces, the interior and the exterior, so its dual has two vertices, joined by one
 edge for each of the three edges of the triangle: $C_3^*$ is the ``fat link'' $FL_3$, where $FL_n$ denotes two vertices joined by
@@ -200,7 +201,7 @@ three edges.}
 A lattice example: $(\Lambda_{tri})^* = \Lambda_{hc}$, where tri = triangular lattice and hc = honeycomb lattice. The faces of the
 triangular lattice become the vertices of the honeycomb lattice (see Figure~\ref{fig:duality}, read from right to left).
 
-\subsection{The deletion--contraction relation}
+\subsubsection*{The deletion--contraction relation}
 
 DCR = deletion--contraction relation for the chromatic polynomial ($T = 0$ Potts antiferromagnet): consider a graph $G$ and an
 edge $e$ in $G$; then

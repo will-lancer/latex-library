@@ -1,5 +1,6 @@
 % Source: Lecture7.pdf, pages 3-7 (the Potts model).
-\subsection{From the Ising model to the Potts model}
+\subsection{The Potts model and its solution in one dimension}
+\subsubsection*{From the Ising model to the Potts model}
 
 Next, discuss a generalization of the Ising model. The dynamical variables in the Ising model take on 2 values,
 $\sigma_i = \pm1$. The spin--spin interaction (with $H = 0$)
@@ -27,7 +28,7 @@ Now we can generalize this model further; we let each dynamical variable $\sigma
 $\sigma_i\in\{1,2,\ldots,q\}$. This is the $q$-state Potts model, and we have shown the equivalence of the 2-state Potts
 model with the Ising model.
 
-\subsection{Transfer-matrix solution of the 1D Potts model}
+\subsubsection*{Transfer-matrix solution of the 1D Potts model}
 
 We can use a transfer-matrix method inductively to solve for the free energy of the $q$-state Potts model on a 1D lattice.
 Again, we assume PBC (and take zero external field for this calculation). Then
@@ -137,7 +138,7 @@ So
 N.B.: the $q-1$ factor reflects the fact that if $q = 1$, all spins have the same value, so
 $\delta_{\sigma_i\sigma_j} = 1\ \forall\,\langle i,j\rangle$: no nontrivial thermal behavior.
 
-\subsection{A general identity for the Potts model}
+\subsubsection*{A general identity for the Potts model}
 
 General identity in the $q$-state Potts model: with $v_P = e^{K_P}-1$,
 \begin{equation}
@@ -160,7 +161,7 @@ analogous to
 \end{gather}
 where $v_I = \tanh K_I$. These identities are sometimes called ``character decompositions'' in mathematics.
 
-\subsection{A physical realization: krypton on graphite}
+\subsubsection*{A physical realization: krypton on graphite}
 
 A physical realization of the $q = 3$ Potts model is krypton atoms adsorbed on a graphite surface. The carbon atoms in
 graphite form honeycomb sheets (graphene). The Kr atoms preferentially are adsorbed on faces of the graphene sheet. Because
