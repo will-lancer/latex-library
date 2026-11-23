@@ -26,6 +26,7 @@ page.
 | Lecture16.pdf | 1 (title only), 2-6; 7 blank | lectures/lec16.tex |
 | Lecture17_18.pdf | 1-3 | lectures/lec17.tex |
 | Lecture17_18.pdf | 4-11 | lectures/lec18.tex |
+| cft.pdf | 1-10, typed handout | lectures/cft.tex |
 | Complex.pdf | 1-8 | lectures/complex.tex |
 | Lecture21.pdf | 1-6 | lectures/lec21.tex |
 | Lecture22.pdf | 1-6 | lectures/lec22.tex |
@@ -41,10 +42,13 @@ high- and low-temperature series expansions.
 
 ## Unnumbered handouts
 
-Five handouts carry no lecture number. They are placed by topic and by their
+Six handouts carry no lecture number. They are placed by topic and by their
 export dates:
 
-- `Complex.pdf` follows the renormalization group lectures.
+- `cft.pdf` follows the renormalization group lectures. It was exported on
+  14 March 2026, two days after Lectures 17 and 18, and it uses their scaling
+  dimensions and the exponents y_τ and y_h.
+- `Complex.pdf` follows the notes on conformal invariance.
 - `Work-by-gas.pdf` follows the Dieterici equation of state, which it cites.
 - `phaseTransitions_liquidCrystals.pdf` follows the gas equations of state.
 - `quantum_distribution_functions.pdf` and `moreBoseEinstein.pdf` were exported

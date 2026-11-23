@@ -18,6 +18,16 @@ scans can see they were noticed.
 - Lecture 10, p. 6. 1/(2 ln(1+√2)) is 0.5673, not 0.56725.
 - Lecture 13, p. 2. The second mixed case, written {J₂ < 0, J₁ > 0}, is now
   {J₁ < 0, J₂ > 0}. That matches the column-ordered picture drawn beside it.
+- `cft.pdf`, p. 4. "With L_n|c,h⟩ ∝ |c,n′⟩" is now |c,h′⟩, the state the next
+  line solves for.
+- `cft.pdf`, p. 5. "The eigenvalues are real, but this does imply that they are
+  non-negative" now reads "does not imply". The next sentence imposes
+  non-negativity as a further condition.
+- `cft.pdf`, p. 6. Eq. (31) factored the level-2 determinant as
+  32(h − h₁,₁)(h − h₂,₁)(h − h₂,₂). The third root is h₁,₂, the one Eq. (33)
+  gives. The two agree only at c = 1/2.
+- `cft.pdf`, p. 6. The Kac prefactor α_ℓ "does affect the analysis" now reads
+  "does not affect". It is positive and independent of c and h.
 - `Complex.pdf`, p. 2. The off-diagonal entries of the 1D transfer matrix are
   e^{−K}, not e^{−h}, as in Lectures 5 and 6.
 - `Complex.pdf`, p. 3. "f = ½ ∫₀^{2π} dθ ln[...]" was missing the 1/(2π)
@@ -49,6 +59,22 @@ Lecture 8 is a typed handout. Its edits are small:
 - T(G, 2, 2) = 2^{e(G)} is written out where the handout says this valuation
   counts all spanning subgraphs.
 
+## Notes on conformal invariance
+
+`cft.pdf` is also a typed handout. Its small edits:
+
+- "the algebra (5 below." gets its closing parenthesis.
+- "The Eq. (5)" is now "Eq. (5)", and "Virasoro algebra is
+  infinite-dimensional" is now "the Virasoro algebra".
+- "three infinitesimal generators J_i, j = 1, 2, 3" is now J_j.
+- "annhilated" is now "annihilated", and "takes as state" is now "takes a
+  state".
+- "the state |L₋ₙ|h⟩" is now L₋ₙ|h⟩.
+- "Much of the advances" is now "Many of the advances".
+- Sénéchal is spelled with its accents in both places. The Li and Poland
+  preprint number gets an arXiv prefix.
+- The vectors T·a and v are bold, as in the rest of the notes.
+
 ## Readings kept as written
 
 - Lecture 1, p. 3. "p = 101 kPa = 1.01×10⁵ Pa = 1 bar" is typed with ≃.
@@ -58,6 +84,13 @@ Lecture 8 is a typed handout. Its edits are small:
 - Lecture 6, p. 7. The finite-N result ⟨σ₀σ_ℓ⟩ = v^ℓ + v^{N−ℓ} leaves out the
   denominator 1 + v^N. The numerator is typed with ∝. The N → ∞ limit v^ℓ is
   unaffected.
+- `cft.pdf`, p. 4. "L₋₁L₋₂|h⟩ is not independent of L₋₂L₋₁|h⟩" is kept. The
+  state equals L₋₂L₋₁|h⟩ + L₋₃|h⟩, so it lies in the span of the listed
+  level-3 states.
+- `cft.pdf`, p. 6. The curve det M⁽²⁾ = 0, that is 16h² + 2(c − 5)h + c = 0,
+  is called a parabola. With its hc term it is a branch of a hyperbola in the
+  (c, h) plane. The description of where the determinant is negative is
+  correct.
 - `quantum_distribution_functions.pdf`, p. 3. "Bose-Einstein condition" is read
   as "condensation".
 - `moreBoseEinstein.pdf`, p. 5. A step in U = Σ ħω e^{−βħω}/(1 − e^{−βħω}) is
@@ -86,3 +119,11 @@ hard-sphere B₂ series; the Dieterici critical constants; the BEC and Debye
 estimates; and the percolation strip formulas with their series and poles.
 Three entries above came from that check: the Lecture 2 energy, the Lecture 10
 ratio and the sign of the percolation pole.
+
+For the conformal invariance notes, the Gram matrices were built from the
+Virasoro algebra in exact rational arithmetic. That reproduces Eq. (21), M⁽¹⁾,
+M⁽²⁾ with its trace and determinant, and the eigenvalues in Eq. (34). The Kac
+formula, Eq. (35), holds at levels 3 and 4 with a constant α_ℓ (2304 and
+37748736). Eqs. (36) to (42) agree for m = 2 to 7, and the range
+1 ≤ s ≤ r ≤ m − 1 lists each distinct h_{r,s} once. The check also confirms the
+h₁,₂ correction above.

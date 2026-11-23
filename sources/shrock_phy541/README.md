@@ -1,8 +1,8 @@
 # Shrock, Advanced Statistical Mechanics (PHY 541)
 
 Robert Shrock's lecture notes for Physics 541 at Stony Brook, Spring 2026,
-typed in JHEP format. All but Lecture 8 are handwritten; Lecture 8 is a typed
-handout. The scans and the homework sets are in
+typed in JHEP format. Lecture 8 and the notes on conformal invariance are typed
+handouts, and the rest are handwritten. The scans and the homework sets are in
 [`originals/shrock-phy541/`](../../originals/shrock-phy541/).
 
 Open [`pdfs/shrock-phy541/shrock-phy541.pdf`](../../pdfs/shrock-phy541/shrock-phy541.pdf).
@@ -13,9 +13,9 @@ with TikZ is required. Build files go to a temporary directory under
 
 ## Sections
 
-The eleven sections group the lectures by topic, so a section can hold several
+The twelve sections group the lectures by topic, so a section can hold several
 lectures. A small-caps marker at the right margin shows where each lecture
-starts. Each section has three to six numbered subsections, 49 in all. Inside a
+starts. Each section has three to six numbered subsections, 53 in all. Inside a
 subsection, unnumbered headings and bold run-in labels mark the smaller topics.
 
 | Section | Sources |
@@ -27,10 +27,11 @@ subsection, unnumbered headings and bold run-in labels mark the smaller topics.
 | 5 The two-dimensional Ising model | Lecture 12 |
 | 6 Other spin models | Lecture 13 |
 | 7 The renormalization group | Lectures 14-18 |
-| 8 Complexified parameters | `Complex.pdf` |
-| 9 Equations of state for gases | Lectures 21-23, `Work-by-gas.pdf` |
-| 10 Other types of phase transitions | `phaseTransitions_liquidCrystals.pdf` |
-| 11 Quantum statistics | `quantum_distribution_functions.pdf`, `moreBoseEinstein.pdf` |
+| 8 Conformal invariance and continuous phase transitions in 2D | `cft.pdf` |
+| 9 Complexified parameters | `Complex.pdf` |
+| 10 Equations of state for gases | Lectures 21-23, `Work-by-gas.pdf` |
+| 11 Other types of phase transitions | `phaseTransitions_liquidCrystals.pdf` |
+| 12 Quantum statistics | `quantum_distribution_functions.pdf`, `moreBoseEinstein.pdf` |
 
 Lectures 19 and 20 are not among the scans. Section and subsection titles
 follow Shrock's lecture titles where he wrote them and the homework topics
@@ -47,7 +48,7 @@ equations or in figure captions. Every figure is redrawn in TikZ.
 [CORRECTIONS.md](CORRECTIONS.md) lists each change of substance with its page,
 along with the readings kept as written. [SOURCE_MAP.md](SOURCE_MAP.md) maps
 every source page to its LaTeX file and explains where the unnumbered handouts
-go. The published papers that came with the course, the typed CFT handout, the
+go. The published papers that came with the course, the reading list, the
 Cardy scaling notes and the Russian lecture notes are not part of this
 edition.
 
