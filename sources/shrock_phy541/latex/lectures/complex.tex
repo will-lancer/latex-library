@@ -26,7 +26,7 @@ the Taylor series for $f(x)$.
   \begin{scope}[xshift=6.5cm]
   \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x\in\mathbb R$}; \draw (0,-0.4) -- (0,1.6);
   \draw[thick,blue,domain=-2.4:2.4,samples=60] plot (\x,{1.0/(1+\x*\x)});
-  \node[font=\small] at (0.9,1.3) {$f(x) = 1/(1+x^2)$};
+  \node[font=\small,anchor=west] at (0.45,1.3) {$f(x) = 1/(1+x^2)$};
   \end{scope}
 \end{tikzpicture}
 \diagramcaption{The poles of $f(x) = 1/(1+x^2)$ at $x = \pm\ii$ lie on the circle $|x| = 1$ in the complex plane
@@ -172,7 +172,8 @@ $z_{PM\text{-}FM} = \sqrt2-1$, $z_{PM\text{-}AFM} = (z_{PM\text{-}FM})^{-1} = \s
   \node[blue,font=\scriptsize,above] at (0.2,0) {FM}; \node[blue,font=\scriptsize,below] at (1.4,0) {PM}; \node[blue,font=\scriptsize,below] at (2.8,0) {AFM};
   \node[font=\scriptsize,above right] at (2.4,0.25) {$\sqrt2+1$};
   \node[font=\scriptsize,above left] at (-2.414,0) {$-(\sqrt2+1)$};
-  \node[font=\scriptsize,above] at (0,1) {$\ii$}; \node[font=\scriptsize,below] at (0,-1) {$-\ii$};
+  \fill (0,1) circle (0.04); \fill (0,-1) circle (0.04);
+  \node[font=\small,anchor=south east] at (-0.03,1.03) {$\ii$}; \node[font=\small,anchor=north east] at (-0.03,-1.03) {$-\ii$};
   \node[red,font=\small] at (-1.9,-1.6) {$|z+1| = \sqrt2$}; \node[red,font=\small] at (1.9,-1.6) {$|z-1| = \sqrt2$};
   \node[font=\small] at (-1,0.5) {$O$};
 \end{tikzpicture}
@@ -189,6 +190,25 @@ $\mathcal B\to\mathcal B$, so $\mathcal B_v$ is the same as $\mathcal B_z$: $|v\
 crossings on the real-$z$ and real-$v$ axes correspond to different phase transitions. With $v = \tanh K$, the
 physical phases are: $0\le v\le\sqrt2-1$: PM for $J>0$; $-(\sqrt2-1)\le v\le 0$: PM for $J<0$;
 $\sqrt2-1<v<1$: FM for $J>0$; $-1<v<-(\sqrt2-1)$: AFM for $J<0$.
+
+\begin{diagram}
+\begin{tikzpicture}[scale=1.0]
+  \draw[->] (-3,0) -- (3.4,0) node[right] {$\mathrm{Re}(v)$}; \draw[->] (0,-1.8) -- (0,1.8) node[above] {$\mathrm{Im}(v)$};
+  \draw[red,thick] (-1,0) circle (1.414); \draw[red,thick] (1,0) circle (1.414);
+  \draw[very thick,blue] (-1,0) -- (1,0);
+  \fill[red] (0.414,0) circle (0.05); \fill[red] (2.414,0) circle (0.05); \fill[red] (-0.414,0) circle (0.05); \fill[red] (-2.414,0) circle (0.05);
+  \fill[green!60!black] (1,0) circle (0.05); \fill[green!60!black] (-1,0) circle (0.05);
+  \node[blue,font=\scriptsize,below] at (0.22,0) {PM}; \node[blue,font=\scriptsize,above] at (0.72,0) {FM}; \node[blue,font=\scriptsize,above] at (-0.72,0) {AFM};
+  \node[green!60!black,font=\scriptsize,below] at (1,0) {$1$}; \node[green!60!black,font=\scriptsize,below] at (-1,0) {$-1$};
+  \node[font=\scriptsize,above right] at (2.4,0.25) {$\sqrt2+1$};
+  \node[font=\scriptsize,above left] at (-2.414,0) {$-(\sqrt2+1)$};
+  \fill (0,1) circle (0.04); \fill (0,-1) circle (0.04);
+  \node[font=\small,anchor=south east] at (-0.03,1.03) {$\ii$}; \node[font=\small,anchor=north east] at (-0.03,-1.03) {$-\ii$};
+  \node[red,font=\small] at (-1.9,-1.6) {$|v+1| = \sqrt2$}; \node[red,font=\small] at (1.9,-1.6) {$|v-1| = \sqrt2$};
+\end{tikzpicture}
+\diagramcaption{The boundary $\mathcal B_v$, with the physical phases on the real $v$ axis marked in blue: PM for
+$|v|\le\sqrt2-1$, FM for $\sqrt2-1<v<1$, AFM for $-1<v<-(\sqrt2-1)$.}
+\end{diagram}
 
 Thermodynamic quantities can be formally analytically continued from physical $z$ or $v$ values to complex-$K$ values.
 For example, the spontaneous magnetization of the 2D Ising model on the square lattice:
@@ -258,7 +278,7 @@ in our previous notation; $\mathcal B_y$ is the line $y = \left(1-q/2\right)+\ii
 \end{tikzpicture}
 \diagramcaption{The loci $\mathcal B_v$, $\mathcal B_y$ and $\mathcal B_z$ for the $q$-state Potts model on the
 circuit graph in the limit $n\to\infty$. In the $z$ plane $\mathcal B_z$ is the circle
-$|z+1/(q-2)| = 1/(|q-2|)$, with center $z = -1/(q-2)$ and radius $1/(|q-2|)$.}
+$|z+1/(q-2)| = 1/|q-2|$, with center $z = -1/(q-2)$ and radius $1/|q-2|$.}
 \end{diagram}
 
 So we see that for the $q = 2$ Ising case, $\mathcal B_y$ is the imaginary axis in the complex $y$ plane, which maps

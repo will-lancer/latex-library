@@ -18,7 +18,7 @@ $p$ is replaced by $\left[p + a\left(N/V\right)^2\right]$, where $a$ is a consta
 $\dim(p) = \text{force}/\text{area} = \text{energy}/\text{volume} = E/V$, so
 $[p] = [a]/V^2\Rightarrow[a] = E/V\cdot V^2 = E\cdot V$. Recall that the interaction between the gas
 particles (molecules, e.g.\ N$_2$, O$_2$, CO$_2$, \ldots; atoms, e.g.\ Ar, \ldots) is described by the
-Lennard-Jones (6--12) potential:
+Lennard-Jones (6--12) potential (Figure~\ref{fig:lj}):
 \begin{equation}
   U(r) = U_0\left[\left(\frac{r_0}{r}\right)^{12} - 2\left(\frac{r_0}{r}\right)^6\right],
 \end{equation}
@@ -84,7 +84,7 @@ with zero slope; this is also a point of inflection.
   \fill (1,1) circle (0.035);
   \draw[->] (1.6,1.75) node[anchor=south west,font=\small] {critical pt.} -- (1.04,1.04);
   \node[blue,font=\small,anchor=west] at (2.9,1.25) {$T\gg T_c$};
-  \node[blue,font=\small,anchor=west] at (3.3,0.45) {$T<T_c$};
+  \node[blue,font=\small,anchor=west] at (3.3,0.3) {$T<T_c$};
   \node[left,font=\small] at (0,1) {$1$}; \node[below,font=\small] at (1,0) {$1$};
 \end{tikzpicture}
 \diagramcaption{Isotherms (constant $T$) of the van der Waals EOS, in reduced units, for temperatures above, at
@@ -112,7 +112,7 @@ $\kB T_c = (2a/v_c^3)(v_c-b)^2 = (2a/(3b)^3)(2b)^2 = 8a/(27b)$:
 \end{equation}
 Substitute in the EOS:
 \begin{equation}
-  p_c = \frac{\kB T_c}{v_c-b} - \frac{a}{v_c^2} = \frac{\left(\frac{8a}{27b}\right)}{(2b)} - \frac{a}{(3b)^2}
+  p_c = \frac{\kB T_c}{v_c-b} - \frac{a}{v_c^2} = \frac{\left(8a/(27b)\right)}{(2b)} - \frac{a}{(3b)^2}
   = \left(\frac{4}{27}-\frac{1}{9}\right)\frac{a}{b^2} = \boxed{\frac{a}{27b^2} = p_c}.
 \end{equation}
 Summary of the critical values of $p$, $T$, $v = \rho_n^{-1}$:
@@ -126,7 +126,7 @@ A standard measure of the comparison with the ideal gas EOS is the ratio
 \end{equation}
 this is $=1$ at all points for an ideal gas, including the critical point. For the vdW EOS,
 \begin{equation}
-  Z_c = \frac{\left(\frac{a}{27b^2}\right)(3b)}{\left(\frac{8a}{27b}\right)} = \frac{3}{8} = 0.375 .
+  Z_c = \frac{\left(a/(27b^2)\right)(3b)}{\left(8a/(27b)\right)} = \frac{3}{8} = 0.375 .
 \end{equation}
 The fact that $Z_c<1$ reflects the effect of the attractive interaction which is responsible for the critical
 behavior and condensation of the gas. (The ideal gas EOS does not yield any critical point or condensation.)

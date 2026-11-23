@@ -165,7 +165,7 @@ where $d$ = spatial dimensionality.
   \node[below] at (0,0) {$-\infty$}; \node[below] at (3,0) {$0$}; \node[below] at (6,0) {$\infty$};
   \node[below=10pt] at (1.5,0) {$H$};
   \node[left] at (0,3.2) {$1$}; \node[left] at (0,1.6) {$0$}; \node[left] at (0,0) {$-1$};
-  \node[left] at (-0.4,2.3) {$M(H)/(|M_{\max}|)$};
+  \node[left] at (-0.4,2.3) {$M(H)/|M_{\max}|$};
   \draw[thick,blue] (0,0.05) .. controls (2.7,0.12) and (2.95,0.5) .. (3,1.0);
   \draw[thick,blue] (3,2.2) .. controls (3.05,2.7) and (3.3,3.08) .. (6,3.15);
   \draw[thick,green!60!black] (0,0.08) .. controls (2.3,0.2) and (2.9,0.6) .. (3,1.6) .. controls (3.1,2.6) and (3.7,3.0) .. (6,3.12);
@@ -257,9 +257,9 @@ geophysics:
   \draw (0,0) circle (1.4);
   \draw (0,0) circle (0.45);
   \draw[->] (-2.9,2.4) -- (-1.75,1.55); \node[anchor=east,font=\small] at (-2.9,2.4) {crust};
-  \node[font=\small] at (-0.95,1.35) {mantle};
+  \node[font=\small] at (0,1.85) {mantle};
   \draw[->] (2.4,1.6) -- (1.65,1.4); \node[anchor=west,font=\small] at (2.4,1.6) {upper mantle};
-  \draw[->] (2.4,0.2) -- (1.0,0.2); \node[anchor=west,font=\small] at (2.4,0.2) {lower mantle};
+  \draw[->] (2.4,0.2) -- (1.55,0.2); \node[anchor=west,font=\small] at (2.4,0.2) {lower mantle};
   \draw[->] (-2.7,-1.9) -- (-0.35,-0.25); \node[anchor=east,font=\small] at (-2.7,-1.9) {inner core (solid)};
   \draw[->] (1.6,-2.2) -- (0.75,-0.8); \node[anchor=north,font=\small] at (1.6,-2.2) {outer core (liquid)};
   \node[font=\small] at (-2.8,-2.6) {$T\sim 10^3$ K};

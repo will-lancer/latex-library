@@ -31,16 +31,19 @@ space of 2 couplings, $K_{nn}$, $K_{nnn}$ (for FM signs $J_{nn}>0$, $J_{nnn}>0$ 
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.9,>=Stealth]
+  % saddle at the critical RGFP: relevant direction along the diagonal, irrelevant (critical curve) across it
   \draw (0,0) rectangle (4.5,4);
-  \coordinate (fp) at (2,1.8);
+  \coordinate (fp) at (2,1.778);
   \draw[thick] (0,0) -- (4.5,4);
-  \draw[->,thick] (fp) -- (1.0,0.89); \draw[->,thick] (fp) -- (3.2,2.87);
-  \draw[->,thick] (0.6,3.2) .. controls (1.4,2.4) .. (1.85,1.95);
-  \draw[->,thick] (3.6,0.5) .. controls (2.7,1.3) .. (2.15,1.65);
-  \draw[->] (0.6,3.4) .. controls (1.8,2.6) and (2.2,2.6) .. (2.6,3.4);
-  \draw[->] (3.7,0.8) .. controls (2.8,1.4) and (2.8,1.0) .. (3.2,0.3);
-  \draw[->] (0.4,2.9) .. controls (1.4,2.1) and (1.2,1.4) .. (0.4,1.4);
-  \draw[->] (3.9,0.9) .. controls (2.9,1.6) and (3.2,2.2) .. (4.0,2.5);
+  \draw[thick,->] (fp) -- ($(fp)!0.5!(4.5,4)$);
+  \draw[thick,->] (fp) -- ($(fp)!0.5!(0,0)$);
+  \draw[thick] (0.75,3.03) -- (3.25,0.53);
+  \draw[thick,->] (0.75,3.03) -- ($(0.75,3.03)!0.55!(fp)$);
+  \draw[thick,->] (3.25,0.53) -- ($(3.25,0.53)!0.55!(fp)$);
+  % hyperbolic flows u v = const in the four sectors, flowing in along the critical curve and out along the diagonal
+  \foreach \su/\sv in {1/1,-1/1,1/-1,-1/-1}
+    \draw[->] plot[domain=0.32:1.55,samples=40,smooth]
+      ({2 + \su*\x*0.747 - \sv*(0.3/\x)*0.707},{1.778 + \su*\x*0.664 + \sv*(0.3/\x)*0.707});
   \fill[red] (fp) circle (0.08);
   \fill[blue] (0,0) circle (0.08); \fill[blue] (4.5,4) circle (0.08);
   \node[below] at (0,0) {$0$}; \node[below] at (4.5,0) {$\infty$}; \node[below=10pt] at (2.25,0) {$K_{nn}$};
@@ -187,11 +190,11 @@ Correspondingly the correlation length decreases under the RG flow; $\xi\to\xi/b
 \end{diagram}
 
 Solve for $K'$, using $\operatorname{arctanh}x = (1/2)\ln\left((1+x)/(1-x)\right)$:
-\begin{equation}
-  K' = \frac{1}{2}\ln\left(\frac{1+v^2}{1-v^2}\right)
-     = \frac{1}{2}\ln\left[\frac{1+\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right)^2}{1-\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right)^2}\right]
-     = \frac{1}{2}\ln\left[\frac{(e^K+e^{-K})^2+(e^K-e^{-K})^2}{(e^K+e^{-K})^2-(e^K-e^{-K})^2}\right],
-\end{equation}
+\begin{align}
+  K' &= \frac{1}{2}\ln\left(\frac{1+v^2}{1-v^2}\right)
+     = \frac{1}{2}\ln\left[\frac{1+\left((e^K-e^{-K})/(e^K+e^{-K})\right)^2}{1-\left((e^K-e^{-K})/(e^K+e^{-K})\right)^2}\right]\nonumber\\
+     &= \frac{1}{2}\ln\left[\frac{(e^K+e^{-K})^2+(e^K-e^{-K})^2}{(e^K+e^{-K})^2-(e^K-e^{-K})^2}\right],
+\end{align}
 where the numerator is $2(e^{2K}+e^{-2K})$ and the denominator is 4, so
 \begin{equation}
   \boxed{K' = \frac{1}{2}\ln\left(\cosh(2K)\right)}.
@@ -202,7 +205,7 @@ correlation length $\xi$ decreases: $\xi\to\xi/b$ (from $\xi = \infty$ at $K = \
 $K = 0$). With $\ev{\sigma_0\sigma_r} = v^r = e^{-r/\xi}$,
 \begin{equation}
   v = e^{-1/\xi},\qquad \ln v = -\frac{1}{\xi},\qquad
-  \xi = -\frac{1}{\ln v} = \frac{1}{\ln\left(\frac{1}{\tanh K}\right)}.
+  \xi = -\frac{1}{\ln v} = \frac{1}{\ln\left(1/(\tanh K)\right)}.
 \end{equation}
 A special property of this 1D example is that there is only an RG flow away from the critical RGFP. In a
 higher-dimensional case, one also generically has an RG flow toward the critical RGFP, as shown in the

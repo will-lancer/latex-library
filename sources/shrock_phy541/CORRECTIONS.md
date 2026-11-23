@@ -75,6 +75,25 @@ Lecture 8 is a typed handout. Its edits are small:
   preprint number gets an arXiv prefix.
 - The vectors T·a and v are bold, as in the rest of the notes.
 
+## Figures
+
+Each figure was checked against its scan. Three now differ from the sketch on
+purpose:
+
+- Lecture 13, p. 8. The n = −1 vortex is drawn as an antivortex, with the spin
+  angle turning opposite to the polar angle. The notes draw a clockwise
+  circulation, which still has winding number +1.
+- Lecture 18, p. 7. For d > 4 the nontrivial fixed point is drawn at u < 0,
+  r > 0, on the far side of the GFP along ê₁. With ε < 0 the notes' own result
+  (u*, r*) = (ε ln 2/(9c), −4ε ln 2/9) puts it there. The sketch places it at
+  u > 0, as for d < 4.
+- Lecture 18, p. 5. The one-loop correction to r is drawn as the tadpole, a
+  loop attached to the line at one vertex. The notes draw the loop centered on
+  the line.
+
+`Complex.pdf`, p. 5 has a sketch of 𝓑_v with the physical phases on the real v
+axis. It was missing from the first transcription and is now drawn.
+
 ## Readings kept as written
 
 - Lecture 1, p. 3. "p = 101 kPa = 1.01×10⁵ Pa = 1 bar" is typed with ≃.

@@ -56,14 +56,14 @@ states with energies $E_r>\mu$ are unoccupied. At a finite temperature $T$, if $
 \begin{diagram}
 \begin{tikzpicture}[scale=0.9]
   \draw (0,0) -- (5,0) node[below] {$E_r$}; \draw (0,0) -- (0,2.4) node[left] {$\ev{n_r}$};
-  \draw[thick,blue] (0,2) -- (2.5,2) -- (2.5,0) -- (5,0);
   \draw[thick,green!60!black,domain=0:5,samples=60] plot (\x,{2/(exp((\x-2.5)/0.35)+1)});
   \draw[thick,red,domain=0:5,samples=60] plot (\x,{2/(exp((\x-2.5)/1.0)+1)});
+  \draw[thick,blue] (0,2) -- (2.5,2) -- (2.5,0) -- (5,0);
   \node[left] at (0,2) {$1$}; \node[left] at (0,0) {$0$}; \node[below] at (2.5,0) {$\mu$};
   \node[blue,font=\small,anchor=west] at (3.2,2.3) {$\kB T = 0$};
   \node[green!60!black,font=\small,anchor=west] at (3.2,1.8) {$\kB T\sim\mu$};
   \node[red,font=\small,anchor=west] at (3.6,1.0) {$\kB T\gg\mu$};
-  \node[blue,font=\small,anchor=west] at (5.3,-0.1) {$\kB T_F\equiv\mu$};
+  \node[blue,font=\small] at (2.5,-0.8) {$\kB T_F\equiv\mu$};
 \end{tikzpicture}
 \diagramcaption{The Fermi--Dirac distribution.}
 \end{diagram}
@@ -203,7 +203,7 @@ Recall that for a gas at $p\sim 1$~atm and $T\sim 300$~K, $R\sim 34\ \text{\AA} 
 \end{equation}
 where, e.g., for N$_2$ (with $^{14}_7$N), $M = 28$~g/mole $= N_Am$, and $R = N_A\kB = 8.314$~J/(mole$\cdot$K), so
 \begin{equation}
-  \lambda\!\!\!^- = \frac{(6.02\times 10^{23}\ \text{mol}^{-1})(1.05\times 10^{-34}\ \text{J}\cdot\text{sec})}{\left[3(0.028\ \text{kg})\left(8.314\ \frac{\text{J}}{\text{mol}\cdot\text{K}}\right)(300\ \text{K})\right]^{1/2}}
+  \lambda\!\!\!^- = \frac{(6.02\times 10^{23}\ \text{mol}^{-1})(1.05\times 10^{-34}\ \text{J}\cdot\text{sec})}{\left[3(0.028\ \text{kg})\left(8.314\ \text{J}/(\text{mol}\cdot\text{K})\right)(300\ \text{K})\right]^{1/2}}
   = 4.3\times 10^{-12}\ \text{m} = 4.3\times 10^{-3}\ \text{nm}.
 \end{equation}
 So $R\sim 10^3\lambda\!\!\!^-$ in this gas.

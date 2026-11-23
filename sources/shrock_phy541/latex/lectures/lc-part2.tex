@@ -119,7 +119,7 @@ $e(G) = (\Delta/2)n(G)$. So $Z(G,q=1,v) = (1+v)^{(\Delta/2)n}$ and
   f = \lim_{n\to\infty}\frac{1}{n}\ln Z = \frac{\Delta}{2}\ln(1+v) = \frac{\Delta}{2}\ln(e^K) = \frac{\Delta}{2}K;
 \end{equation}
 similarly for a general graph, $f = \left(\Delta_{\text{eff}}/2\right)K$, where
-$\Delta_{\text{eff}} = \lim_{n\to\infty}(2e(G)/(n(G)))$. This is an analytic function of $K$, so the model evaluated for
+$\Delta_{\text{eff}} = \lim_{n\to\infty}(2e(G)/n(G))$. This is an analytic function of $K$, so the model evaluated for
 $q = 1$ and then $n\to\infty$ has no critical behavior. The nontrivial critical behavior is obtained by taking $n\to\infty$
 first and then $q\to 1$.
 
@@ -157,7 +157,8 @@ The average cluster number $\ev k$ obtained in this limit has several general pr
 \begin{diagram}
 \begin{tikzpicture}[scale=0.8]
   \draw (0,0) rectangle (4,2.6);
-  \draw[thick,blue] (0,2.6) .. controls (1.5,1.6) and (2.8,0.5) .. (3.9,0.05);
+  % the exact sq, 2_F strip result, <k> = (1-p)^2 (2+p-2p^2) / [2(1-p^2+p^3)]
+  \draw[thick,blue,domain=0:1,samples=60,smooth] plot ({4*\x},{2.6*(1-\x)^2*(2+\x-2*\x^2)/(2*(1-\x^2+\x^3))});
   \node[left] at (0,2.6) {$1$}; \node[left] at (0,0) {$0$}; \node[left=10pt] at (0,1.3) {$\ev k$};
   \node[below] at (0,0) {$0$}; \node[below] at (4,0) {$1$}; \node[below=10pt] at (2,0) {$p$};
 \end{tikzpicture}
@@ -321,17 +322,34 @@ still usable. So it is necessary to have a higher occupation probability $p$ to 
 percolation than for bond percolation: $(p_c^{(s)})_\Lambda>(p_c^{(b)})_\Lambda$, $\Lambda>1D$.
 
 \begin{diagram}
-\begin{tikzpicture}[scale=0.4]
-  \foreach \s in {0,12} {
-  \begin{scope}[xshift=\s cm]
+\begin{tikzpicture}[scale=0.4,>=Stealth]
+  % (a) a site marked for removal, (b) the lattice without it and its four bonds
+  \foreach \x in {0,...,4} \draw[blue] (\x,-0.4) -- (\x,4.4);
+  \foreach \y in {0,...,4} \draw[blue] (-0.4,\y) -- (4.4,\y);
+  \fill[red] (2,2) circle (0.18);
+  \draw[red,thick] (1.5,1.7) -- (1.5,2.3); \draw[red,thick] (2.5,1.7) -- (2.5,2.3);
+  \draw[red,thick] (1.7,1.5) -- (2.3,1.5); \draw[red,thick] (1.7,2.5) -- (2.3,2.5);
+  \draw[->] (4.9,2) -- (6.3,2);
+  \begin{scope}[xshift=6.8cm]
+    \foreach \x in {0,1,3,4} \draw[blue] (\x,-0.4) -- (\x,4.4);
+    \foreach \y in {0,1,3,4} \draw[blue] (-0.4,\y) -- (4.4,\y);
+    \draw[blue] (2,-0.4) -- (2,1); \draw[blue] (2,3) -- (2,4.4);
+    \draw[blue] (-0.4,2) -- (1,2); \draw[blue] (3,2) -- (4.4,2);
+  \end{scope}
+  \node[red,font=\scriptsize,align=center,text width=4.6cm] at (5.6,-1.6) {removing the site, which also renders the adjacent bonds unusable};
+  % (c) a bond marked for removal, (d) the lattice without it
+  \begin{scope}[xshift=14.5cm]
     \foreach \x in {0,...,4} \draw[blue] (\x,-0.4) -- (\x,4.4);
     \foreach \y in {0,...,4} \draw[blue] (-0.4,\y) -- (4.4,\y);
-  \end{scope}}
-  \fill[red] (2,2) circle (0.18);
-  \foreach \d in {(1.5,2),(2.5,2),(2,1.5),(2,2.5)} \draw[red,thick] \d ++(-0.15,0) -- ++(0.3,0);
-  \draw[red,very thick] (14,2.2) -- (14,1.8);
-  \node[red,font=\scriptsize,align=center,text width=4.5cm] at (2,-1.5) {removing the site, which also renders the adjacent bonds unusable};
-  \node[red,font=\scriptsize,align=center,text width=4.5cm] at (14,-1.5) {removing a bond, but the adjacent sites are still usable};
+    \draw[red,very thick] (1.5,1.7) -- (1.5,2.3);
+    \draw[->] (4.9,2) -- (6.3,2);
+  \end{scope}
+  \begin{scope}[xshift=21.3cm]
+    \foreach \x in {0,...,4} \draw[blue] (\x,-0.4) -- (\x,4.4);
+    \foreach \y in {0,1,3,4} \draw[blue] (-0.4,\y) -- (4.4,\y);
+    \draw[blue] (-0.4,2) -- (1,2); \draw[blue] (2,2) -- (4.4,2);
+  \end{scope}
+  \node[red,font=\scriptsize,align=center,text width=4.6cm] at (20.1,-1.6) {removing a bond, but the adjacent sites are still usable};
 \end{tikzpicture}
 \diagramcaption{Removing a site on the square lattice removes four bonds; removing a bond removes one.}
 \end{diagram}
@@ -525,10 +543,10 @@ or bond dilution is:
 \begin{diagram}
 \begin{tikzpicture}[scale=0.8]
   \draw (0,0) rectangle (4,2.6);
-  \draw[thick] (1.5,0) .. controls (1.55,1.0) and (1.9,1.4) .. (2.4,1.8) -- (4,2.6);
+  \draw[thick] (1.5,0) .. controls (1.55,1.0) and (1.95,1.55) .. (2.6,1.95) .. controls (3.1,2.25) and (3.6,2.45) .. (4,2.6);
   \fill (1.5,0) circle (0.05);
   \node[below] at (0,0) {$0$}; \node[below] at (1.5,0) {$p_c$}; \node[below] at (4,0) {$1$}; \node[below=12pt] at (2,0) {$p$};
-  \node[left] at (0,1.3) {$T_c(p)/(T_c(1))$};
+  \node[left] at (0,1.3) {$T_c(p)/T_c(1)$};
 \end{tikzpicture}
 \diagramcaption{Critical temperature of a dilute spin model as a function of the occupation probability.}
 \end{diagram}

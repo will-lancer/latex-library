@@ -50,8 +50,8 @@ Now define a dimensionless variable $y = \beta\hbar\omega = \hbar\omega/(\kB T)$
 \begin{tikzpicture}[scale=0.9]
   \draw (0,0) -- (5,0) node[below] {$y$}; \draw (0,0) -- (0,2.6) node[left] {$U$};
   \draw[thick,domain=0.01:5,samples=80] plot (\x,{1.6*(\x*1.6)^3/(exp(\x*1.6)-1)});
-  \node[font=\small,anchor=east] at (0.55,0.9) {$U\sim\omega^2$};
-  \node[font=\small,anchor=west] at (2.4,1.9) {$U\sim\omega^3e^{-\beta\hbar\omega}$};
+  \draw[->] (0.95,2.5) node[font=\small,anchor=south] {$U\sim\omega^2$} -- (0.74,1.25);
+  \node[font=\small,anchor=west] at (3.0,1.95) {$U\sim\omega^3e^{-\beta\hbar\omega}$};
 \end{tikzpicture}
 \diagramcaption{The Planck distribution.}
 \end{diagram}
@@ -236,7 +236,7 @@ occur in any of $d$ directions)
   d\cdot L^d\int\frac{\dd^dk}{(2\pi)^d} = \frac{d\cdot V}{(2\pi)^d}\int_0k^{d-1}\dd k\underbrace{\int\dd\Omega}_{A_d}
   = \frac{d\cdot V}{(2\pi)^d}\cdot\frac{k^d}{d}\cdot A_d = \frac{V\omega^dA_d}{(2\pi v_s)^d},
 \end{equation}
-where $A_d = 2\pi^{d/2}/(\Gamma(d/2))$, e.g.\ $A_3 = 2\pi^{3/2}/(\Gamma(3/2)) = 4\pi$ (with $\Gamma(1/2) = \sqrt\pi$,
+where $A_d = 2\pi^{d/2}/\Gamma(d/2)$, e.g.\ $A_3 = 2\pi^{3/2}/\Gamma(3/2) = 4\pi$ (with $\Gamma(1/2) = \sqrt\pi$,
 $\Gamma(3/2) = (1/2)\Gamma(1/2) = \sqrt\pi/2$). So
 \begin{equation}
   \mathcal D(\omega) = \frac{\dd N_{\text{osc}}}{\dd\omega} = \frac{d\cdot V\cdot\omega^{d-1}A_d}{(2\pi v_s)^d};
@@ -351,7 +351,7 @@ $E_F = p_F^2/(2m_e) = \hbar^2k_F^2/(2m_e)$)
 \end{equation}
 Illustrative calculation of $T_F$: e.g.\ for Cu, copper, $\rho_{\text{Cu}} = 8.96$~g/cm$^3$, molar mass $M_{\text{Cu}} = 63.55$~g/mole, so
 \begin{equation}
-  \frac{N_{\text{atoms}}}{V} = \frac{\rho_{\text{Cu}}\cdot N_{\text{Av}}}{M_{\text{Cu}}}\simeq\frac{\left(9\ \frac{\text{g}}{\text{cm}^3}\right)(6\times 10^{23}\ \text{mol}^{-1})}{(64\ \text{g/mole})}
+  \frac{N_{\text{atoms}}}{V} = \frac{\rho_{\text{Cu}}\cdot N_{\text{Av}}}{M_{\text{Cu}}}\simeq\frac{\left(9\ \text{g}/\text{cm}^3\right)(6\times 10^{23}\ \text{mol}^{-1})}{(64\ \text{g/mole})}
   \simeq 0.85\times 10^{23}\ \text{cm}^{-3}.
 \end{equation}
 Copper has 1 conduction e per atom, so $N_e/V = N_{\text{atom}}/V$, so

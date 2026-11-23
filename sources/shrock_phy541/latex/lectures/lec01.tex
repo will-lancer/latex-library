@@ -136,10 +136,10 @@ Example: a gas--liquid--solid system.
   \coordinate (cp) at (4.6,2.9);
   \draw[thick] (0.5,0.15) .. controls (1.4,0.7) and (2,1.2) .. (tp);
   \draw[thick] (tp) .. controls (3.3,2.1) and (4,2.5) .. (cp);
-  \draw[thick] (tp) .. controls (2.6,2.6) and (2.7,3.3) .. (2.85,4);
+  \draw[thick,->] (tp) .. controls (2.6,2.6) and (2.7,3.3) .. (2.85,4);
   \fill (tp) circle (0.06);
   \fill (cp) circle (0.06);
-  \draw[dashed] (0,2.9) -- (cp);
+  \draw[dashed] (0,1.6) -- (3.7,1.6);
   \node at (1.3,2.4) {solid};
   \node at (3.3,3.25) {liquid};
   \node at (4.6,1.0) {gas};

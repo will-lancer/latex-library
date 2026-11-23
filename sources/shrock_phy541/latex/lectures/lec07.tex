@@ -45,14 +45,14 @@ between the spins gets large; $\ev{\sigma_0\sigma_r}\sim e^{-r/\xi}$ (in higher 
 prefactors, but here these are absent). So we have (with $v = \tanh K$)
 \begin{equation}
   v^r = e^{-r/\xi}\ \Rightarrow\ v = e^{-1/\xi}\ \Rightarrow\ \ln v = -\frac{1}{\xi},\quad\text{i.e.}\quad
-  \xi = -\frac{1}{\ln v} = \frac{1}{\ln\left(\frac{1}{v}\right)} .
+  \xi = -\frac{1}{\ln v} = \frac{1}{\ln\left(1/v\right)} .
 \end{equation}
 Since $v$ decreases with increasing $T$, $\ln(1/v)$ increases, and $\xi$ decreases. Again, this makes sense physically; as
 $T$ increases, there is greater thermal disorder, so the correlation length should decrease.
 
 Next, calculate the singularity in $\xi$ as $T\to 0$, i.e.\ $K\to\infty$:
 \begin{align}
-  \xi &= \frac{1}{\ln\left(\frac{1}{v}\right)};\qquad
+  \xi &= \frac{1}{\ln\left(1/v\right)};\qquad
   \frac{1}{v} = \frac{1}{\tanh K} = \frac{\cosh K}{\sinh K} = \frac{e^K+e^{-K}}{e^K-e^{-K}} = \frac{1+e^{-2K}}{1-e^{-2K}}\nonumber\\
   &\simeq\left(1+e^{-2K}\right)\left(1+e^{-2K}+\cdots\right) = 1+2e^{-2K},
 \end{align}

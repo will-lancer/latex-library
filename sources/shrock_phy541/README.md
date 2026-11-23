@@ -42,8 +42,11 @@ elsewhere.
 Shrock's wording is kept, abbreviations included. Vectors use `\mathbf`, and
 sized delimiters are written with `\left` and `\right`. One bracket in
 Lecture 22 keeps `\Bigl[ ... \Bigr]` because it breaks across two lines of an
-`align`. Handwritten arrows and margin remarks became short notes beside the
-equations or in figure captions. Every figure is redrawn in TikZ.
+`align`. Fractions in running text, labels and exponents are written with a
+slash, such as (1/2)(3ξ² − 1) or ∂A/∂M. Displayed fractions are full size, and
+fractions in `cases` and matrix entries use `\dfrac`. Handwritten arrows and
+margin remarks became short notes beside the equations or in figure captions.
+Every figure is redrawn in TikZ and checked against its scan.
 
 [CORRECTIONS.md](CORRECTIONS.md) lists each change of substance with its page,
 along with the readings kept as written. [SOURCE_MAP.md](SOURCE_MAP.md) maps

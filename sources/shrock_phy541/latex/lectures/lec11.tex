@@ -139,13 +139,13 @@ seam, e.g.\ on the square lattice.
     0/{+,+,+,+,+,+,+,+,+,+,+,+},
     1/{+,+,+,+,+,+,+,+,+,+,+,+},
     2/{-,-,+,-,-,-,-,+,+,-,+,+},
-    3/{-,-,-,-,-,-,-,+,+,+,-,-},
+    3/{-,-,-,-,-,-,+,+,+,-,-,-},
     4/{-,-,-,-,-,+,+,-,-,-,-,-},
     5/{-,-,-,-,-,-,-,-,-,-,-,-}} {
     \foreach \s [count=\c] in \row { \node at (\c,-\r) {$\s$}; } }
   \draw[blue,thick] (0.5,-1.5) -- (2.5,-1.5) -- (2.5,-2.5) -- (3.5,-2.5) -- (3.5,-1.5) -- (7.5,-1.5)
      -- (7.5,-2.5) -- (6.5,-2.5) -- (6.5,-3.5) -- (5.5,-3.5) -- (5.5,-4.5) -- (7.5,-4.5) -- (7.5,-3.5)
-     -- (10.5,-3.5) -- (10.5,-2.5) -- (9.5,-2.5) -- (9.5,-1.5) -- (12.5,-1.5);
+     -- (9.5,-3.5) -- (9.5,-1.5) -- (10.5,-1.5) -- (10.5,-2.5) -- (12.5,-2.5);
 \end{tikzpicture}
 \diagramcaption{A disordering seam (blue) in a rectangular section of an $n\times n$ square
 lattice, so $N_{\text{tot}} = n^2$. The increase in the internal energy is $(2J)L$, where $L$ is
@@ -178,7 +178,7 @@ $T<2J/(\kB\ln c)$. This shows that this Ising system will have spontaneous magne
 temperatures below this value. For an illustrative estimate $c = 2.5$ one gets $T_c = 2.2J/\kB$,
 which is close to the exact value
 \begin{equation}
-  T_c = \frac{J}{\kB\cdot\frac{1}{2}\ln(1+\sqrt2)} = \frac{2.27J}{\kB}.
+  T_c = \frac{J}{\kB\cdot(1/2)\ln(1+\sqrt2)} = \frac{2.27J}{\kB}.
 \end{equation}
 This is the Peierls Theorem, proving that there is a nonzero magnetization and an associated phase
 transition from a $\mathbb{Z}_2$-symmetric (paramagnetic) high-temperature phase to a
@@ -257,7 +257,7 @@ $K_c = -(1/2)\ln(\sqrt2-1) = +(1/2)\ln\left(1/(\sqrt2-1)\right)$
 \end{equation}
 Since $K = \beta J = J/(\kB T)$, this yields the result
 \begin{equation}
-  \kB T_c = \frac{J}{\frac{1}{2}\ln(\sqrt2+1)} = 2.269\,J .
+  \kB T_c = \frac{J}{(1/2)\ln(\sqrt2+1)} = 2.269\,J .
 \end{equation}
 This derivation was obtained by Kramers and Wannier in 1941, before the Onsager calculation of the
 free energy of the (zero-field) Ising model on the square lattice (which was published in 1944). Of

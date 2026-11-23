@@ -21,22 +21,22 @@ the curve,
 
 Now do the calculation for a gas with the van der Waals EOS, with $v = V/N$:
 \begin{equation}
-  p = \frac{\kB T}{v-b} - \frac{a}{v^2} = \frac{\kB T}{\left(\frac{V}{N}\right)-b} - \frac{a}{\left(\frac{V}{N}\right)^2} = \frac{N\kB T}{V-bN} - \frac{aN^2}{V^2},
+  p = \frac{\kB T}{v-b} - \frac{a}{v^2} = \frac{\kB T}{\left(V/N\right)-b} - \frac{a}{\left(V/N\right)^2} = \frac{N\kB T}{V-bN} - \frac{aN^2}{V^2},
 \end{equation}
 so
 \begin{align}
   W &= \int_{V_1}^{V_2}p\,\dd V = N\kB T\int_{V_1}^{V_2}\frac{\dd V}{V-bN} - aN^2\int_{V_1}^{V_2}\frac{\dd V}{V^2}\nonumber\\
     &= \left.N\kB T\ln(V-bN)\right|_{V_1}^{V_2} + \underbrace{\left.aN^2\left(\frac{1}{V}\right)\right|_{V_1}^{V_2}}_{aN^2\left(1/V_2-1/V_1\right)}\nonumber\\
     &= N\kB T\ln\left(\frac{V_2-bN}{V_1-bN}\right) + aN^2\left(\frac{V_1-V_2}{V_1V_2}\right)\nonumber\\
-  &= N\kB T\ln\left[\frac{V_2\left(1-b\frac{N}{V_2}\right)}{V_1\left(1-b\frac{N}{V_1}\right)}\right] - \frac{aN^2\Delta V}{V_1V_2},
+  &= N\kB T\ln\left[\frac{V_2\left(1-bN/V_2\right)}{V_1\left(1-bN/V_1\right)}\right] - \frac{aN^2\Delta V}{V_1V_2},
 \end{align}
 where $\Delta V = V_2-V_1>0$. The logarithm is
 \begin{equation}
-  N\kB T\left\{\ln\left(\frac{V_2}{V_1}\right) + \ln\left[\frac{1-b\frac{N}{V_2}}{1-b\frac{N}{V_1}}\right]\right\};
+  N\kB T\left\{\ln\left(\frac{V_2}{V_1}\right) + \ln\left[\frac{1-bN/V_2}{1-bN/V_1}\right]\right\};
 \end{equation}
 expand for small $bN/V$:
 \begin{equation}
-  \ln\left[\frac{1-b\frac{N}{V_2}}{1-b\frac{N}{V_1}}\right]\simeq\ln\left[\left(1-b\frac{N}{V_2}\right)\left(1+b\frac{N}{V_1}\right)\right]
+  \ln\left[\frac{1-bN/V_2}{1-bN/V_1}\right]\simeq\ln\left[\left(1-b\frac{N}{V_2}\right)\left(1+b\frac{N}{V_1}\right)\right]
   \simeq bN\left(\frac{1}{V_1}-\frac{1}{V_2}\right) = \frac{bN(V_2-V_1)}{V_1V_2}.
 \end{equation}
 So
@@ -49,10 +49,10 @@ $W_{\text{ideal}} = N\kB T\ln\left(V_2/V_1\right)$:
   \Delta W = W - W_{\text{ideal}} = b\kB(T-T_{\text{Boyle}})\frac{N^2\Delta V}{V_1V_2}.
 \end{equation}
 N.B.: $bN = V_{\text{total excluded vol}}\equiv V_{\text{excl.}}$. So
-\begin{equation}
-  \frac{\Delta W}{W_{\text{ideal}}} = \frac{(bN)N\kB T\left(1-\frac{T_{\text{Boyle}}}{T}\right)\frac{(V_2-V_1)}{V_1V_2}}{N\kB T\ln(V_2/V_1)}
-  = \frac{\left(\frac{V_{\text{excl.}}}{V_1}\right)\left(1-\frac{V_1}{V_2}\right)\left(1-\frac{T_{\text{Boyle}}}{T}\right)}{\ln\left(\frac{V_2}{V_1}\right)},
-\end{equation}
+\begin{align}
+  \frac{\Delta W}{W_{\text{ideal}}} &= \frac{(bN)N\kB T\left(1-T_{\text{Boyle}}/T\right)(V_2-V_1)/(V_1V_2)}{N\kB T\ln(V_2/V_1)}\nonumber\\
+  &= \frac{\left(V_{\text{excl.}}/V_1\right)\left(1-V_1/V_2\right)\left(1-T_{\text{Boyle}}/T\right)}{\ln\left(V_2/V_1\right)},
+\end{align}
 so
 \begin{equation}
   \begin{cases}

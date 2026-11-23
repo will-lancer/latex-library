@@ -36,15 +36,15 @@ coordination number 4.
   \foreach \i in {0,1,2,3} {\draw (\i,0) -- ++(60:1) -- ++(120:1) -- ++(60:1);}
   \foreach \i in {1,2,3} {\draw (\i,0) -- ++(120:1) -- ++(60:1) -- ++(120:1);}
   \node[font=\small] at (1.75,-1) {triangular $(3^6)$};
-  % kagome
+  % kagome: the medial graph of a triangular lattice of edge 2; corner-sharing triangles around hexagons
   \begin{scope}[xshift=7cm]
-    \foreach \j in {0,1} \foreach \i in {0,1} {
+    \foreach \j in {0,1} \foreach \i in {0,1,2} {
       \begin{scope}[shift={(2*\i+\j,1.732*\j)}]
-        \draw (0,0) -- (2,0) -- (1,1.732) -- cycle;
-        \draw (0.5,0.866) -- (1.5,0.866) -- (1,0) -- cycle;
-        \foreach \p in {(1,0),(0.5,0.866),(1.5,0.866)} \fill \p circle (0.07);
+        \draw (1,0) -- (1.5,0.866) -- (0.5,0.866) -- cycle;
+        \draw (1.5,0.866) -- (2.5,0.866) -- (2,1.732) -- cycle;
+        \foreach \p in {(1,0),(0.5,0.866),(1.5,0.866),(2.5,0.866),(2,1.732)} \fill \p circle (0.07);
       \end{scope}}
-    \node[font=\small] at (2,-1) {kagom\'e $(3\cdot 6\cdot 3\cdot 6)$};
+    \node[font=\small] at (3.5,-1) {kagom\'e $(3\cdot 6\cdot 3\cdot 6)$};
   \end{scope}
 \end{tikzpicture}
 \diagramcaption{The triangular lattice and the kagom\'e lattice. The square,
@@ -88,7 +88,7 @@ Bose--Einstein condensation.
   \node[anchor=west,font=\small] at (6.7,2.45) {critical pt.};
   \node[anchor=west,font=\small] at (5.2,3.4) {$T_c = 5.195$ K, $p_c = 2.25$ atm};
   \node[anchor=west,font=\small] at (3.4,1.0) {$T_b = 4.22$ K};
-  \node[anchor=east,font=\small] at (2.1,0.65) {$T_\lambda = 2.177$ K};
+  \node[font=\small] at (1.0,0.95) {$T_\lambda = 2.177$ K}; \draw[->] (1.85,0.95) -- (2.19,0.99);
 \end{tikzpicture}
 \diagramcaption{Phase diagram of $^4$He ($T_b = 4.222$~K). The $\lambda$ line separates
 the superfluid from the normal liquid.}
