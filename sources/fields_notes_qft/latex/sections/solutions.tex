@@ -225,14 +225,14 @@ $\Gamma(d+1)=2^d\,\pi^{-1/2}\,\Gamma\left(\frac{d+1}2\right)\Gamma\left(\frac d2
 cancels the $\Gamma\left(\frac d2+1\right)$, and the powers of $2$ and $\pi$
 combine into a single factor:
 \[
-\frac{E_{\text{Cas}}}A=-\frac{\Gamma\left(\frac{d+1}2\right)\,\zeta(d+1)}{(4\pi)^{\frac{d+1}2}\,a^d}\,.
+\frac{E_{\text{Cas}}}A=-\frac{\Gamma\left(\frac{d+1}2\right)\,\zeta(d+1)}{(4\pi)^{(d+1)/2}\,a^d}\,.
 \]
 
 \solpart{The force.} The force per unit area is minus the derivative with respect
 to the separation,
 \[
 \frac{\text{Force}}A=-\frac{\partial}{\partial a}\,\frac{E_{\text{Cas}}}A
-=-\frac{d\;\Gamma\left(\frac{d+1}2\right)\,\zeta(d+1)}{(4\pi)^{\frac{d+1}2}\,a^{d+1}}\,.
+=-\frac{d\;\Gamma\left(\frac{d+1}2\right)\,\zeta(d+1)}{(4\pi)^{(d+1)/2}\,a^{d+1}}\,.
 \]
 It is negative, so the plates attract in every dimension. For $d=3$ we have
 $\Gamma(2)\,\zeta(4)/(4\pi)^2=\pi^2/1440$, so $E/A=-\pi^2/1440\,a^3$ and
@@ -436,16 +436,16 @@ Feynman parameter, shift $k$, and use the formula of Section~13:
 \begin{align*}
 B(p^2)&=\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{k^2(k+p)^2}
 =\int_0^1\dd u\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{\bigl[k^2+u(1-u)p^2\bigr]^2}\\
-&=\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{d/2}}\,(p^2)^{\frac d2-2}\int_0^1\dd u\,\bigl[u(1-u)\bigr]^{\frac d2-2}
-=\frac{\Gamma\left(2-\frac d2\right)\,\Gamma\left(\frac d2-1\right)^2}{(4\pi)^{d/2}\,\Gamma(d-2)}\,(p^2)^{\frac d2-2}\,.
+&=\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{d/2}}\,(p^2)^{d/2-2}\int_0^1\dd u\,\bigl[u(1-u)\bigr]^{d/2-2}
+=\frac{\Gamma\left(2-\frac d2\right)\,\Gamma\left(\frac d2-1\right)^2}{(4\pi)^{d/2}\,\Gamma(d-2)}\,(p^2)^{d/2-2}\,.
 \end{align*}
 The more general version of the same calculation is
 \[
 \int\frac{\dd^dk}{(2\pi)^d}\,\frac1{(k^2)^\alpha\,\bigl((p-k)^2\bigr)^\beta}
-=\frac{\Gamma\left(\alpha+\beta-\frac d2\right)\,\Gamma\left(\frac d2-\alpha\right)\,\Gamma\left(\frac d2-\beta\right)}{(4\pi)^{d/2}\,\Gamma(\alpha)\,\Gamma(\beta)\,\Gamma(d-\alpha-\beta)}\,(p^2)^{\frac d2-\alpha-\beta}\,.
+=\frac{\Gamma\left(\alpha+\beta-\frac d2\right)\,\Gamma\left(\frac d2-\alpha\right)\,\Gamma\left(\frac d2-\beta\right)}{(4\pi)^{d/2}\,\Gamma(\alpha)\,\Gamma(\beta)\,\Gamma(d-\alpha-\beta)}\,(p^2)^{d/2-\alpha-\beta}\,.
 \]
 For the sunset we do the $q$ integral first. It is a bubble with external
-momentum $p-k$, so it gives $B\bigl((p-k)^2\bigr)\propto\bigl((p-k)^2\bigr)^{\frac d2-2}$.
+momentum $p-k$, so it gives $B\bigl((p-k)^2\bigr)\propto\bigl((p-k)^2\bigr)^{d/2-2}$.
 The $k$ integral is then the general formula with $\alpha=1$ and
 $\beta=2-\frac d2$. The factors $\Gamma\left(2-\frac d2\right)$ and $\Gamma(d-2)$
 cancel between the two steps, and
@@ -660,13 +660,13 @@ Write $R=|x_E|$. It is easiest to do part~(b) first and read off part~(a) from i
 $\frac1{p^2+m^2}=\int_0^\infty \dd\tau\,e^{-\tau(p^2+m^2)}$. The momentum integral is
 then Gaussian. Completing the square,
 \[
-\int\frac{\dd^4p}{(2\pi)^4}\,e^{-\tau p^2+ipx_E}=\frac1{(4\pi\tau)^2}\,e^{-\frac{R^2}{4\tau}}\,,
+\int\frac{\dd^4p}{(2\pi)^4}\,e^{-\tau p^2+ip\cdot x_E}=\frac1{(4\pi\tau)^2}\,e^{-R^2/4\tau}\,,
 \qquad\text{so}\qquad
-D_E(x_E)=\int_0^\infty\frac{\dd\tau}{(4\pi\tau)^2}\,e^{-m^2\tau-\frac{R^2}{4\tau}}\,.
+D_E(x_E)=\int_0^\infty\frac{\dd\tau}{(4\pi\tau)^2}\,e^{-m^2\tau-R^2/4\tau}\,.
 \]
 This is a standard integral representation of a Bessel function,
 \[
-K_\nu(z)=\frac12\left(\frac z2\right)^\nu\int_0^\infty \dd t\,t^{-\nu-1}\,e^{-t-\frac{z^2}{4t}}\,.
+K_\nu(z)=\frac12\left(\frac z2\right)^\nu\int_0^\infty \dd t\,t^{-\nu-1}\,e^{-t-z^2/4t}\,.
 \]
 Substituting $t=m^2\tau$ turns the exponent into $-t-m^2R^2/4t$, so $z=mR$, and
 $\dd\tau/\tau^2=m^2\,\dd t/t^2$ matches $\nu=1$. Therefore
@@ -812,7 +812,7 @@ We collect the facts we need from Section~22. At small $g$ and $d=2$,
 \[
 \frac{\dd g}{\dd l}=\frac{N-2}{2\pi}\,g^2\,,\qquad
 \gamma_{\mathbf n}(g)=\frac{N-1}{4\pi}\,g\,,\qquad
--\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-\frac12}=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-\frac12}\,.
+-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-1/2}=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-1/2}\,.
 \]
 Taking the logarithm of the last equation,
 \[
@@ -833,7 +833,7 @@ $\dd l=\frac{2\pi}{N-2}\,\dd g/g^2$, so
 \]
 Therefore
 \[
-Z_{\mathbf n}(l)=\left(\frac{g(l)}{g(0)}\right)^{\frac{N-1}{N-2}}=\left(1-\frac{N-2}{2\pi}\,g(0)\,l\right)^{-\frac{N-1}{N-2}}\,.
+Z_{\mathbf n}(l)=\left(\frac{g(l)}{g(0)}\right)^{(N-1)/(N-2)}=\left(1-\frac{N-2}{2\pi}\,g(0)\,l\right)^{-(N-1)/(N-2)}\,.
 \]
 For $g(0)\,l\ll1$ this reduces to $1+\frac{N-1}{2\pi}\,g(0)\,l$, the
 one-step result of Section~22. Since we assumed $g(l)\ll1$ throughout, the
@@ -841,13 +841,13 @@ formula holds for $l<0$ and for positive $l$ well below $2\pi/\bigl((N-2)\,g(0)\
 
 \solpart{I(b)} The scaling relation from the problem reads
 \[
-\bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,\qquad l=\log L\,.
+\bigl\langle\mathbf n(x_1/L)\cdot\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\cdot\mathbf n(x_2)\bigr\rangle_{g(0)}\,,\qquad l=\log L\,.
 \]
 Both sides depend only on the separation. Choose $|x_1-x_2|=r$ and $L=r$. The
 left-hand side is then evaluated at unit separation:
 \[
-\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle_{g(0)}\Big|_{|x|=r}
-=Z_{\mathbf n}^{-1}(l)\,\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle_{g(l)}\Big|_{|x|=1}\,,\qquad l=\log r\,.
+\bigl\langle\mathbf n(x)\cdot\mathbf n(0)\bigr\rangle_{g(0)}\Big|_{|x|=r}
+=Z_{\mathbf n}^{-1}(l)\,\bigl\langle\mathbf n(x)\cdot\mathbf n(0)\bigr\rangle_{g(l)}\Big|_{|x|=1}\,,\qquad l=\log r\,.
 \]
 Short distances mean $r\to0$, so $l\to-\infty$. The flow then drives the
 coupling to zero,
@@ -858,8 +858,8 @@ which is asymptotic freedom. So the expansion in $g(l)$ is reliable. At small
 coupling the field barely fluctuates, and the correlator on the right tends to
 its free value, a constant. Therefore
 \[
-\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle\simeq\Const\left(\frac{g(0)}{g(l)}\right)^{\frac{N-1}{N-2}}
-\sim\left[\log\frac1{x^2}\right]^{\frac{N-1}{N-2}}\qquad(|x|\to0)\,.
+\bigl\langle\mathbf n(x)\cdot\mathbf n(0)\bigr\rangle\simeq\Const\left(\frac{g(0)}{g(l)}\right)^{(N-1)/(N-2)}
+\sim\left[\log\frac1{x^2}\right]^{(N-1)/(N-2)}\qquad(|x|\to0)\,.
 \]
 
 \solpart{I(c)} At $N\to\infty$ the exponent $\frac{N-1}{N-2}$ tends to $1$. In
@@ -868,7 +868,7 @@ $\mathbf n$ is a free field with mass $m\propto\Lambda\,e^{-2\pi/Ng}$, generated
 dynamically, and with propagator proportional to $1/(p^2+m^2)$. In two
 dimensions the Fourier transform of this propagator is
 \[
-\int\frac{\dd^2p}{(2\pi)^2}\,\frac{e^{ipx}}{p^2+m^2}=\frac1{2\pi}\,K_0(m|x|)\simeq\frac1{4\pi}\,\log\frac1{m^2x^2}\qquad(m|x|\ll1)\,.
+\int\frac{\dd^2p}{(2\pi)^2}\,\frac{e^{ip\cdot x}}{p^2+m^2}=\frac1{2\pi}\,K_0(m|x|)\simeq\frac1{4\pi}\,\log\frac1{m^2x^2}\qquad(m|x|\ll1)\,.
 \]
 This is a single power of the logarithm, which is the RG result at $N=\infty$.
 
@@ -891,7 +891,7 @@ Changing the variable to $g$ as before,
 $\dd l=\frac{2\pi}{N-2}\,\dd g/\bigl(g(g-g_*)\bigr)$, so
 \[
 \log Z_{\mathbf n}=\frac{N-1}{N-2}\int_{g(0)}^{g(l)}\frac{\dd g}{g-g_*}\,,\qquad
-Z_{\mathbf n}(l)=\left(\frac{g(l)-g_*}{g(0)-g_*}\right)^{\frac{N-1}{N-2}}\,.
+Z_{\mathbf n}(l)=\left(\frac{g(l)-g_*}{g(0)-g_*}\right)^{(N-1)/(N-2)}\,.
 \]
 At $\epsilon\to0$ we have $g_*\to0$, and this goes back to part~I(a).
 
@@ -899,13 +899,13 @@ Going to short distances, $l\to-\infty$, the factor $e^{\epsilon l}$ goes to
 zero, and $g(l)$ flows to the ultraviolet fixed point $g_*$ from either side.
 Near the fixed point $g(l)-g_*\propto e^{\epsilon l}$, so
 \[
-Z_{\mathbf n}(l)\propto e^{\frac{N-1}{N-2}\,\epsilon l}=e^{2\gamma_*l}\,,\qquad
+Z_{\mathbf n}(l)\propto e^{(N-1)\epsilon l/(N-2)}=e^{2\gamma_*l}\,,\qquad
 \gamma_*=\gamma_{\mathbf n}(g_*)=\frac{(N-1)\,\epsilon}{2(N-2)}\,.
 \]
 The argument of part~I(b) now gives a power law. At $L=r$ the correlator at
 unit separation tends to its value at $g_*$, a constant, and
 \[
-\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle\sim Z_{\mathbf n}^{-1}(\log|x|)\sim|x|^{-2\gamma_*}=|x|^{-\frac{N-1}{N-2}\,\epsilon}\qquad(|x|\to0)\,.
+\bigl\langle\mathbf n(x)\cdot\mathbf n(0)\bigr\rangle\sim Z_{\mathbf n}^{-1}(\log|x|)\sim|x|^{-2\gamma_*}=|x|^{-(N-1)\epsilon/(N-2)}\qquad(|x|\to0)\,.
 \]
 The scaling dimension of $\mathbf n$ at $g_*$ is $D_{\mathbf n}=\gamma_*$. In the
 usual notation $2D_{\mathbf n}=d-2+\eta$, this is

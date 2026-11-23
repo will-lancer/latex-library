@@ -19,8 +19,8 @@ The field $\varphi_0(x)$ is split into its ``slow'' and ``fast'' parts,
 \]
 where
 \begin{equation}\label{eq:slowfast}
-\varphi_1(x)=\int_{|k|<\Lambda/L}\phi(k)\,e^{ikx}\,,\qquad
-\tilde\varphi(x)=\int_{\Lambda/L<|k|<\Lambda}\phi(k)\,e^{ikx}\,.
+\varphi_1(x)=\int_{|k|<\Lambda/L}\phi(k)\,e^{ik\cdot x}\,,\qquad
+\tilde\varphi(x)=\int_{\Lambda/L<|k|<\Lambda}\phi(k)\,e^{ik\cdot x}\,.
 \end{equation}
 Integrating the part $\tilde\varphi$ out one defines new action
 \begin{equation}\label{eq:A1def}
@@ -33,17 +33,17 @@ $\Lambda/L$.
 
 One makes the field variable transformation
 \begin{equation}\label{eq:rescale}
-\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
+\varphi_1(x)=Z^{-1/2}(L)\,\varphi_0(x/L)
 \end{equation}
 in the functional integral over $\varphi_1$, defining new integration variable
 $\varphi_0$. This transformation returns the cutoff parameter to its original
 value $\Lambda$, and yields new action
 \begin{equation}\label{eq:Aprime}
-\mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-\frac12}(L)\,\varphi_0(x/L)\bigr]\,.
+\mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-1/2}(L)\,\varphi_0(x/L)\bigr]\,.
 \end{equation}
 
-In principle, the factor $Z^{\frac12}(L)$ in \eqref{eq:rescale}, \eqref{eq:Aprime}
-is arbitrary. Field renormalizations $\varphi_0\to Z^{\frac12}\varphi_0$ do not
+In principle, the factor $Z^{1/2}(L)$ in \eqref{eq:rescale}, \eqref{eq:Aprime}
+is arbitrary. Field renormalizations $\varphi_0\to Z^{1/2}\varphi_0$ do not
 change physical content of field theory, it can be thought of as some sort of
 gauge transformation.\footnote{Much more general class of ``gauge
 transformations'' can be applied to field theories, the so called ``field
@@ -55,11 +55,11 @@ mixed with the usual gauge transformations in gauge field theories.} When we
 characterize field theories by their action functionals, two actions different
 only in such renormalization are equivalent,
 \[
-\mathcal A\bigl[Z^{\frac12}\varphi_0\bigr]\sim\mathcal A[\varphi_0]\,.
+\mathcal A\bigl[Z^{1/2}\varphi_0\bigr]\sim\mathcal A[\varphi_0]\,.
 \]
 In practice this redundancy is usually eliminated by some field normalization
 condition which plays role of gauge fixing condition. In this case the factor
-$Z^{\frac12}(L)$ must be adjusted so that the transformation
+$Z^{1/2}(L)$ must be adjusted so that the transformation
 $\mathcal A\to\mathcal A'$ does preserve that condition.
 
 It follows from the above definition that if $\mathcal A'$ is obtained from
@@ -67,7 +67,7 @@ $\mathcal A$ by the Wilson's RG transformation, the corresponding correlation
 functions are related as,
 \[
 \text{f.t.}\,\bigl\langle\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr\rangle_{\mathcal A'}
-=\text{f.t.}\,Z^{\frac n2}(L)\,\bigl\langle\varphi_0(x_1L)\cdots\varphi_0(x_nL)\bigr\rangle_{\mathcal A}
+=\text{f.t.}\,Z^{n/2}(L)\,\bigl\langle\varphi_0(x_1L)\cdots\varphi_0(x_nL)\bigr\rangle_{\mathcal A}
 \]
 where it is understood that the Fourier transforms of the correlation functions
 are taken and the comparison is made at low values of the momenta
@@ -241,7 +241,7 @@ is defined as follows. Consider the two-point correlation function. Its typical
 large-distance behavior in Euclidean space is (recall for instance your solution
 of the behavior of the Klein-Gordon propagator $D(x)$ at $|x|\to\infty$)
 \[
-\bigl\langle\varphi_0(x)\varphi_0(0)\bigr\rangle\simeq e^{-\frac{|x|}{R_c}}\qquad\text{as}\qquad|x|\to\infty\,.
+\bigl\langle\varphi_0(x)\varphi_0(0)\bigr\rangle\simeq e^{-|x|/R_c}\qquad\text{as}\qquad|x|\to\infty\,.
 \]
 Let $R_c$ be the correlation length associated with our system described by the
 action $\mathcal A_0$, with the cutoff $\Lambda$. Of course $\mathcal A_l$

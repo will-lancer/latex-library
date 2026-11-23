@@ -5,7 +5,7 @@ Now we turn to actual evaluation of the diagram contributions. For this purpose
 in most cases it is much more convenient to use the Feynman rules in the
 momentum space, evaluating the Fourier transformed correlation functions
 \begin{multline}\label{eq:FTW}
-\int W^{(n)}(x_1,\dots,x_n)\,e^{-ip_1x_1}\cdots e^{-ip_nx_n}\dd^4x_1\cdots \dd^4x_n\\
+\int W^{(n)}(x_1,\dots,x_n)\,e^{-ip_1\cdot x_1}\cdots e^{-ip_n\cdot x_n}\dd^4x_1\cdots \dd^4x_n\\
 =(2\pi)^4\,\delta^{(4)}(p_1+\dots+p_n)\,\tilde W^{(n)}(p_1,\dots,p_n)\,.
 \end{multline}
 Here again $W^{(n)}$ denotes \emph{connected} $n$-point correlation function.
@@ -17,7 +17,7 @@ I will skip detailed derivation of the diagram rules in the momentum space
 (look up \textbf{Sect.~4.4 of PS} for the details). Very briefly, in any
 diagram one uses the Fourier transform
 \[
-D(x-x')=\int\frac{\dd^4p}{(2\pi)^4}\,\tilde D(p)\,e^{ip(x-x')}\,,\qquad
+D(x-x')=\int\frac{\dd^4p}{(2\pi)^4}\,\tilde D(p)\,e^{ip\cdot(x-x')}\,,\qquad
 \tilde D(p)=\frac1{p^2+m^2}
 \]
 of all propagators. Then the integral over all $x$ associated with vertices, as

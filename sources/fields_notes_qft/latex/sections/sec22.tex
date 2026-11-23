@@ -21,10 +21,10 @@ features as compared to what we have done before.
 
 First, we introduce cutoff,
 \[
-\mathbf n(x)=\int_{|k|<\Lambda}\mathbf n_k\,e^{ikx}\,\frac{\dd^2k}{(2\pi)^2}\,.
+\mathbf n(x)=\int_{|k|<\Lambda}\mathbf n_k\,e^{ik\cdot x}\,\frac{\dd^2k}{(2\pi)^2}\,.
 \]
 Note that now the modes $\mathbf n_k$ are not all independent, but must obey
-complicated constraint $\int_q\mathbf n_q\mathbf n_{k-q}=\delta^{(2)}(k)$, because
+complicated constraint $\int_q\mathbf n_q\cdot\mathbf n_{k-q}=\delta^{(2)}(k)$, because
 of the $\sigma$-model constraint $\mathbf n^2(x)=1$.
 
 Next, we want to split $\mathbf n(x)$ into its ``slow'' and ``fast'' components.
@@ -47,7 +47,7 @@ At each spatial point $x$, one can choose a system of vectors $\mathbf e_i(x)$,
 $i=1,2,\dots,N-1$, such that $N$ vectors $(\mathbf n_0(x),\mathbf e_i(x))$ form a
 basis. It is convenient to take orthonormal basis,
 \begin{equation}\label{eq:ebasis}
-\bigl(\mathbf n_0(x)\,\mathbf e_i(x)\bigr)=0\,,\qquad\bigl(\mathbf e_i(x)\,\mathbf e_k(x)\bigr)=\delta_{ik}\,.
+\mathbf n_0(x)\cdot\mathbf e_i(x)=0\,,\qquad\mathbf e_i(x)\cdot\mathbf e_k(x)=\delta_{ik}\,.
 \end{equation}
 Since $\mathbf e_i(x)$ only need to be orthogonal to the ``slow'' field
 $\mathbf n_0(x)$, one can always choose them to be ``slow'' fields as well,
@@ -252,25 +252,25 @@ one needs to find expectation value of this combination over the ensemble of the
 fast modes $\phi$. The last term can be ignored (its expectation value is zero),
 and we have
 \[
-\mathbf n\ \to\ \mathbf n_0\,\left(1-\frac12\,\langle\phi_i^2\rangle\right):=Z_{\mathbf n}^{-\frac12}(L)\,\mathbf n_0\,,
+\mathbf n\ \to\ \mathbf n_0\,\left(1-\frac12\,\langle\phi_i^2\rangle\right):=Z_{\mathbf n}^{-1/2}(L)\,\mathbf n_0\,,
 \]
 where
 \[
-Z_{\mathbf n}^{-\frac12}(L)=1-\frac12\,\langle\phi_i^2\rangle=1-\frac{N-1}2\,\frac g{2\pi}\,l\,.
+Z_{\mathbf n}^{-1/2}(L)=1-\frac12\,\langle\phi_i^2\rangle=1-\frac{N-1}2\,\frac g{2\pi}\,l\,.
 \]
 Since at $d=2$ $\mathbf n$ has zero canonical dimension, we then have
 \[
-\gamma_{\mathbf n}(g)=D_{\mathbf n}(g)=-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-\frac12}(l)\Big|_{l=0}=\frac{N-1}{4\pi}\,g\,.
+\gamma_{\mathbf n}(g)=D_{\mathbf n}(g)=-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-1/2}(l)\Big|_{l=0}=\frac{N-1}{4\pi}\,g\,.
 \]
 In the above calculation we have assumed that $gl\ll1$; that is why the
 higher-order terms in $\phi$ were neglected. But, as usual, we can extend it to
 larger $l$. Generally, we have
 \[
-RG_l\,\mathbf n=Z_{\mathbf n}^{-\frac12}(l)\,\mathbf n\,,
+RG_l\,\mathbf n=Z_{\mathbf n}^{-1/2}(l)\,\mathbf n\,,
 \]
-where $Z_{\mathbf n}^{-\frac12}(l)$ is a solution of the equation
+where $Z_{\mathbf n}^{-1/2}(l)$ is a solution of the equation
 \[
--\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-\frac12}(l)=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-\frac12}(l)\,,
+-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-1/2}(l)=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-1/2}(l)\,,
 \]
 and $g(l)$ is the integral curve of the equation
 \[
@@ -280,10 +280,10 @@ In our case
 \[
 \frac1{g(l)}=\frac1{g(0)}-\frac{N-2}{2\pi}\,l\,.
 \]
-Recall that the ``flow'' of $Z_{\mathbf n}^{-\frac12}(l)$ determines the scale
+Recall that the ``flow'' of $Z_{\mathbf n}^{-1/2}(l)$ determines the scale
 dependence of the correlation functions
 \[
-\bigl\langle\mathbf n(x_1/L)\cdots\mathbf n(x_n/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{\frac n2}(l)\,\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_{g(0)}\,,
+\bigl\langle\mathbf n(x_1/L)\cdots\mathbf n(x_n/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{n/2}(l)\,\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_{g(0)}\,,
 \]
 where $l=\log L$.
 
@@ -296,7 +296,7 @@ For the $O(N)$ nonlinear sigma model,
 \item Derive the following $|x|\to0$ asymptotic of the two-point correlation
 function
 \[
-\bigl\langle\mathbf n(x)\mathbf n(0)\bigr\rangle\sim\left[\log\left(\frac1{x^2}\right)\right]^{\frac{N-1}{N-2}}\,.
+\bigl\langle\mathbf n(x)\cdot\mathbf n(0)\bigr\rangle\sim\left[\log\left(\frac1{x^2}\right)\right]^{(N-1)/(N-2)}\,.
 \]
 Explain how this result is in agreement with the exact solution of the model at
 $N\to\infty$ (PS, \S13.3, pages 463--465).
@@ -459,7 +459,7 @@ Assume $N>2$.
 \item Assuming $g(l)\ll1$, find $Z_{\mathbf n}(l)$ (see Section~22 for
 definition).
 \item Determine the $|x|\to0$ behaviour of the two-point correlation function
-$\langle\mathbf n(x)\mathbf n(0)\rangle$.
+$\langle\mathbf n(x)\cdot\mathbf n(0)\rangle$.
 \item \emph{Optional.} Explain how the result is in agreement with the exact
 solution of the model at $N\to\infty$ (PS, \S13.3, pages 463--465).
 \end{hwparts}
@@ -467,7 +467,7 @@ solution of the model at $N\to\infty$ (PS, \S13.3, pages 463--465).
 $-\frac{\dd}{\dd l}Z_{\mathbf n}^{-1/2}(l)=\gamma_{\mathbf n}(g(l))\,Z_{\mathbf n}^{-1/2}(l)$.
 Use the equation
 \[
-\bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,
+\bigl\langle\mathbf n(x_1/L)\cdot\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\cdot\mathbf n(x_2)\bigr\rangle_{g(0)}\,,
 \]
 and remember that this correlation function depends on the coordinates through the
 separation $|x_1-x_2|$ only.

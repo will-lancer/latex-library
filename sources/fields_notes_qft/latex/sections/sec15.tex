@@ -28,7 +28,7 @@ coordinates on this manifold (the latter is often called the ``theory space'').
 Each point of this manifold represents a field theory, i.e.\ a collection of all
 correlation functions, defined up to finite field renormalizations
 \[
-\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\ \sim\ Z_{\text{finite}}^{\frac n2}\,\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\,.
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\ \sim\ Z_{\text{finite}}^{n/2}\,\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\,.
 \]
 To simplify things one can consider the ratios like
 \[
@@ -122,7 +122,7 @@ sum is
 \]
 This function is singular at
 \[
-|x_1-x_2|=x_0\equiv m^{-1}\,e^{-\frac1\lambda}\,.
+|x_1-x_2|=x_0\equiv m^{-1}\,e^{-1/\lambda}\,.
 \]
 As the result, if one continues to the Minkowski space-time the light cone
 ``fattens'' and causality is broken at short scales $\simeq x_0$.\footnote{One
@@ -223,7 +223,7 @@ where $e_i$ is some set of four fixed 4-vectors, which satisfy
 $e_1+e_2+e_3+e_4=0$, but have no other linear dependencies. To be specific, we
 can choose symmetric arrangement,
 \[
-e_i^2=3\qquad\text{and}\qquad(e_ie_j)=-1\quad\text{for}\quad i\neq j\,.
+e_i^2=3\qquad\text{and}\qquad e_i\cdot e_j=-1\quad\text{for}\quad i\neq j\,.
 \]
 I write $\lambda_{(\mu)}$ for the renormalized coupling constant as the reminder
 about the scale $\mu$ associated with this scheme. It is conventional to refer to
@@ -365,7 +365,7 @@ These equations can be extended to the correlation functions themselves if one
 recalls that a change in renormalization scheme in general induces a finite
 change in normalization of $\varphi$,
 \[
-\varphi_{(\tilde\mu)}=Z^{-\frac12}_{\text{finite}}(\lambda|\tilde\mu/\mu)\,\varphi_{(\mu)}\,,
+\varphi_{(\tilde\mu)}=Z^{-1/2}_{\text{finite}}(\lambda|\tilde\mu/\mu)\,\varphi_{(\mu)}\,,
 \]
 where again at $d=4$ the constant $Z_{\text{finite}}$ can depend on $\lambda$ and
 dimensionless ratio $\tilde\mu/\mu$. For an infinitesimal change
@@ -425,12 +425,12 @@ L\frac{\dd}{\dd L}\,\lambda(L)=-\beta\bigl(\lambda(L)\bigr)\,,\qquad\lambda(1)=\
 \end{equation}
 Then the Callan-Symanzik equation states that
 \begin{equation}\label{eq:CSsol}
-Z^{\frac n2}(L)\,\bigl\langle\varphi(x_1/L)\cdots\varphi(x_n/L)\bigr\rangle_{\lambda(L)}=\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_\lambda\,,
+Z^{n/2}(L)\,\bigl\langle\varphi(x_1/L)\cdots\varphi(x_n/L)\bigr\rangle_{\lambda(L)}=\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_\lambda\,,
 \end{equation}
 where the index $\lambda$ now shows the value of renormalized coupling constant,
 and $Z(L)$ solves the linear differential equation
 \begin{equation}\label{eq:ZL}
-L\frac{\dd}{\dd L}\,Z^{\frac12}(L)=-\Bigl(1+\gamma\bigl(\lambda(L)\bigr)\Bigr)\,Z^{\frac12}(L)\,,\qquad Z^{\frac12}(1)=1\,.
+L\frac{\dd}{\dd L}\,Z^{1/2}(L)=-\Bigl(1+\gamma\bigl(\lambda(L)\bigr)\Bigr)\,Z^{1/2}(L)\,,\qquad Z^{1/2}(1)=1\,.
 \end{equation}
 It is assumed that the correlation functions in \eqref{eq:CSsol} are computed
 within the same scheme, with the same normalization scale $\mu$, but with
@@ -569,7 +569,7 @@ In the massless theory the normalization condition
 $\Gamma^{(\varphi^2_R,2)}(0,0)=1$ we have used before has to be replaced by some
 nonsingular $\mu$ dependent condition. One can take for example
 \begin{equation}\label{eq:phi2mu}
-\Gamma^{(\varphi^2_R,2)}(p_1,p_2)\Big|_{\substack{p_i^2=2\mu^2\\(p_1p_2)=-\mu^2}}=1\,.
+\Gamma^{(\varphi^2_R,2)}(p_1,p_2)\Big|_{\substack{p_i^2=2\mu^2\\p_1\cdot p_2=-\mu^2}}=1\,.
 \end{equation}
 The renormalized field $[\varphi^2]_{(\mu)}$ defined by this condition differs
 from the bare field $\varphi_0^2$ by the renormalization
@@ -584,7 +584,7 @@ $Z_{\varphi^2}$ in Section~14 by the factor of $Z$.},
 Simple calculation similar to that discussed in the previous Section shows that
 in the leading order
 \begin{equation}\label{eq:Zphi2mu}
-Z^{\varphi^2}_{(\mu)}=1-\frac12\,\frac\lambda{(4\pi)^{\frac d2}}\,(2\mu^2)^{\frac d2-2}\,\frac{\Gamma(2-d/2)\,\Gamma^2(d/2-1)}{\Gamma(d-2)}+O(\lambda^2)
+Z^{\varphi^2}_{(\mu)}=1-\frac12\,\frac\lambda{(4\pi)^{d/2}}\,(2\mu^2)^{d/2-2}\,\frac{\Gamma(2-d/2)\,\Gamma^2(d/2-1)}{\Gamma(d-2)}+O(\lambda^2)
 \end{equation}
 Although $Z^{\varphi^2}_{(\mu)}$ is divergent at $d=4$, the ratio
 $Z^{\varphi^2}_{(\tilde\mu)}/Z^{\varphi^2}_{(\mu)}$ is expected to be finite. An

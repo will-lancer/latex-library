@@ -407,7 +407,7 @@ or in symmetric form
 where $\Delta_E$ stands for the 4-dimensional Laplacian. This equation is
 easily solved by Fourier transformation
 \[
-D_E(x_E)=\int\frac{\dd^4p_E}{(2\pi)^4}\,\frac{e^{ip_Ex_E}}{p_E^2+m^2}\,,
+D_E(x_E)=\int\frac{\dd^4p_E}{(2\pi)^4}\,\frac{e^{ip_E\cdot x_E}}{p_E^2+m^2}\,,
 \]
 where the integration is over the 4-dimensional Euclidean momentum space,
 $p_E=(\pp,p_4)$, and $p_E^2=\pp^2+p_4^2$. Note that now the integrand does not
@@ -416,7 +416,7 @@ version of this equation, the solution is unique if we demand that $D_E(x_E)$
 decays at the Euclidean infinity $x_E\to\infty$. By introducing auxiliary
 integration, one can write this function as
 \begin{equation}\label{eq:Schwinger}
-D_E(x_E)=\int_0^\infty \dd\tau\int\frac{\dd^4p_E}{(2\pi)^4}\,e^{-\tau(p_E^2+m^2)}\,e^{ip_Ex_E}\,.
+D_E(x_E)=\int_0^\infty \dd\tau\int\frac{\dd^4p_E}{(2\pi)^4}\,e^{-\tau(p_E^2+m^2)}\,e^{ip_E\cdot x_E}\,.
 \end{equation}
 This form is known as the Schwinger's proper-time representation.
 
@@ -444,7 +444,7 @@ the path integral formulation of quantum mechanics, which we consider next.
 \begin{hwparts}
 \item Show that the Euclidean Klein-Gordon propagator
 \[
-D_E(x_E):=\int\frac{\dd^4p}{(2\pi)^4}\,\frac{e^{ipx_E}}{p^2+m^2}
+D_E(x_E):=\int\frac{\dd^4p}{(2\pi)^4}\,\frac{e^{ip\cdot x_E}}{p^2+m^2}
 \]
 behaves as
 \[

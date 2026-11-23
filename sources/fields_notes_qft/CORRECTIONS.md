@@ -34,6 +34,11 @@ These are editorial choices, not errors in the notes.
 - Differentials are upright, `\dd x` = `\mathop{}\!\mathrm{d}x`, everywhere
   the notes had an italic `d`, including the labels in the figures. The
   dimension `d` stays italic.
+- Scalar products are written with a dot: `p·x`, `e^{ik·x}`, `e_i·e_j`,
+  `⟨𝐧(x)·𝐧(0)⟩`, where the notes put the two factors side by side (`px`,
+  `(e_ie_j)`, `⟨𝐧(x)𝐧(0)⟩`). Contractions with explicit indices are unchanged.
+- Fractions in exponents are written inline: `e^{−R²/4τ}`, `(p²)^{d/2−2}`,
+  `Z^{1/2}`, in place of stacked `\frac`.
 - Lists the notes numbered by hand ("1.", "(i)", "I.") are typeset as numbered
   lists.
 - Solutions to the nine homework problems are new to this edition. They are in

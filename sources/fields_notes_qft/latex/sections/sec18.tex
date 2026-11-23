@@ -341,12 +341,12 @@ coefficients.
 This structure holds true after we perform the step 2, which amounts to the change
 of variables
 \[
-\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)\,.
+\varphi_1(x)=Z^{-1/2}(L)\,\varphi_0(x/L)\,.
 \]
 As $\mathcal O_\beta$ in \eqref{eq:Ostep1} are polynomials of $\varphi_1$ and its
 derivatives taken at $x$, we have
 \begin{multline*}
-\sum_\beta y_\alpha^\beta(L)\,\mathcal O_\beta\left(Z^{-\frac12}(L)\,\varphi_0(x/L),\ Z^{-\frac12}(L)\,\frac\partial{\partial x^\mu}\varphi_0(x/L),\dots\right)\\
+\sum_\beta y_\alpha^\beta(L)\,\mathcal O_\beta\left(Z^{-1/2}(L)\,\varphi_0(x/L),\ Z^{-1/2}(L)\,\frac\partial{\partial x^\mu}\varphi_0(x/L),\dots\right)\\
 =\sum_\beta z_\alpha{}^\beta(L)\,\mathcal O_\beta\left(\varphi_0(x/L),\ \frac\partial{\partial(x^\mu/L)}\varphi_0(x/L),\dots\right)\,,
 \end{multline*}
 i.e.\ under the full RG transformation
@@ -513,11 +513,11 @@ $\mathcal A_{*,G}$ at all,
 \]
 The step 2 is also easy to perform. Setting
 \[
-\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
+\varphi_1(x)=Z^{-1/2}(L)\,\varphi_0(x/L)
 \]
 we obtain
 \[
-\mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-\frac12}(L)\,\varphi_0(x/L)\bigr]\,,
+\mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-1/2}(L)\,\varphi_0(x/L)\bigr]\,,
 \]
 \[
 \mathcal A'=Z^{-1}(L)\int \dd^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x/L)\right)^2=\frac{L^{d-2}}{Z(L)}\int \dd^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x)\right)^2\,.
@@ -525,7 +525,7 @@ we obtain
 where the change of the coordinates $x\to Lx$ is made in the last step. Under the
 choice
 \[
-Z^{\frac12}(L)=L^{\frac{d-2}2}
+Z^{1/2}(L)=L^{(d-2)/2}
 \]
 $\mathcal A'$ coincides with the original action $\mathcal A_{*,G}$, so it indeed
 is a fixed point.
@@ -545,14 +545,14 @@ In the case of infinitesimal transformation $L=1+\delta l$ we have
 \]
 where
 \[
-N_d=\frac{\Omega_d}{(2\pi)^d}\,,\qquad\text{and}\qquad\Omega_d=\frac{2\pi^{\frac d2}}{\Gamma\left(\frac d2\right)}
+N_d=\frac{\Omega_d}{(2\pi)^d}\,,\qquad\text{and}\qquad\Omega_d=\frac{2\pi^{d/2}}{\Gamma\left(\frac d2\right)}
 \]
 is the area of $S^{d-1}$. Therefore we have in this case
 \[
 \frac1{n!}\,\varphi_1^n+\frac1{(n-2)!}\,\varphi_1^{n-2}\,\frac{N_d\Lambda^{d-2}}2\,\delta l\,.
 \]
 As this field does not involve derivatives the step 2 amounts to multiplying
-$\varphi_1$ by $Z^{-\frac12}(L)\sim1-\frac{d-2}2\,\delta l$. Therefore the operator
+$\varphi_1$ by $Z^{-1/2}(L)\sim1-\frac{d-2}2\,\delta l$. Therefore the operator
 $D$ acts on $\mathcal O_n$ as
 \begin{equation}\label{eq:DOn}
 D\,\mathcal O_n=n\,\frac{d-2}2\,\mathcal O_n-\frac{N_d\Lambda^{d-2}}2\,\mathcal O_{n-2}\,.
@@ -740,10 +740,10 @@ In this order in $\lambda$ the step 2 is trivial. For the marginal term
 $\int \dd^4x\,\varphi_1^4(x)$ the factor $Z^{-2}(L)$ which comes from the
 transformation
 \[
-\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
+\varphi_1(x)=Z^{-1/2}(L)\,\varphi_0(x/L)
 \]
 is exactly compensated by the transformation of the integration measure $\dd^4x$
-(recall that $Z^{\frac12}=L$ at $d=4$; it is easy to see that possible corrections
+(recall that $Z^{1/2}=L$ at $d=4$; it is easy to see that possible corrections
 to this formula are $\sim\lambda^2$).
 
 Thus, in our approximation the result of the RG transformation of the action

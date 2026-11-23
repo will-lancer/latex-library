@@ -5,7 +5,7 @@ So far, we have discussed the path integral representation in ordinary quantum
 mechanics. The real-time transition amplitude is represented as a suitably
 defined integral
 \[
-\bra{q_f}e^{-\frac i\hbar HT}\ket{q_i}=\int\bigl[Dq(t)\bigr]_{\substack{q(0)=q_i\\q(T)=q_f}}\,e^{\frac i\hbar S[q(t)]}\,,
+\bra{q_f}e^{-iHT/\hbar}\ket{q_i}=\int\bigl[Dq(t)\bigr]_{\substack{q(0)=q_i\\q(T)=q_f}}\,e^{iS[q(t)]/\hbar}\,,
 \]
 over all ``paths'' $q(t)$ from $q_i$ to $q_f$. Now I want to discuss how the
 idea of the path integral can be applied to a relativistic particle.
@@ -31,7 +31,7 @@ S[\xx(t)]=-m\int_{t_i}^{t_f}\dd t\,\sqrt{1-\dot\xx^2}\,.
 \]
 In quantum theory one may attempt to write for the transition amplitude
 \[
-\int_{\text{paths}(i\to f)}e^{\frac i\hbar S}\,[D\xx(t)]\,,
+\int_{\text{paths}(i\to f)}e^{iS/\hbar}\,[D\xx(t)]\,,
 \]
 where the integration is over ``all paths'' from $x_i$ to $x_f$
 (figure~\ref{fig:relpath}).
@@ -140,7 +140,7 @@ performed since we want to include all paths, with arbitrary length $L$.
 
 The delta-function can be represented as
 \[
-\delta^{(4)}\left(\Delta\sum\nu_k-x\right)=\int\frac{\dd^4P}{(2\pi)^4}\,e^{iP(x-\Delta\sum\nu_k)}\,.
+\delta^{(4)}\left(\Delta\sum\nu_k-x\right)=\int\frac{\dd^4P}{(2\pi)^4}\,e^{iP\cdot(x-\Delta\sum\nu_k)}\,.
 \]
 For fixed $P$ the integration over $\prod \dd\mu(\nu_k)$ splits into $n$
 identical integrals $I(P\Delta)=\int \dd\mu(\nu)\,e^{-i\Delta\nu P}$,
@@ -162,7 +162,7 @@ I^n\sim A^n\,e^{-\Delta^2n\,\xi P^2}\,.
 \]
 Now the integration over $P$ can be performed, and we obtain for given $n$
 \[
-\bigl(4\pi\,n\Delta^2\xi\bigr)^{-2}\,e^{-\frac{x^2}{4\xi n\Delta^2}}\,.
+\bigl(4\pi\,n\Delta^2\xi\bigr)^{-2}\,e^{-x^2/4\xi n\Delta^2}\,.
 \]
 Note that $\Delta$ enters here in the combination $n\Delta^2$, not $n\Delta$
 as one could naively expect. Attempting to take the naive limit
@@ -223,7 +223,7 @@ e^{-m^2\xi n\Delta^2}\to e^{-m^2s}\,.
 \]
 For large $n$ the sum is replaced by the integral over $s$, and one obtains
 \[
-\int_0^\infty \dd s\,e^{-m^2s}\int\frac{\dd^4P}{(2\pi)^4}\,e^{-sP^2}\,e^{iPx}\,,
+\int_0^\infty \dd s\,e^{-m^2s}\int\frac{\dd^4P}{(2\pi)^4}\,e^{-sP^2}\,e^{iP\cdot x}\,,
 \]
 which is exactly the Schwinger's proper-time representation \eqref{eq:Schwinger}
 of the Euclidean correlation function $D_E(x)$ of the KG theory. Thus this

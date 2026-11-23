@@ -144,7 +144,7 @@ classical field theory defined by the action $\mathcal A[\varphi]$. With this
 in mind, let us restore the quantum parameter $\hbar$ (previously set to 1) in
 the definition of the generating functional
 \begin{equation}\label{eq:ZJhbar}
-Z[J]=\int\bigl[D\varphi\bigr]\,e^{-\frac1\hbar\left(\mathcal A[\varphi]-\int_xJ(x)\varphi(x)\right)}
+Z[J]=\int\bigl[D\varphi\bigr]\,e^{-(\mathcal A[\varphi]-\int_xJ(x)\varphi(x))/\hbar}
 \end{equation}
 The semiclassical approximation becomes exact in the limit $\hbar\to0$, while
 corrections to the leading semiclassical contribution can be developed in the
@@ -195,7 +195,7 @@ Then in the leading approximation
 When $\hbar$ is explicit it is convenient to normalize the generating
 functional $W[J]$ so that
 \[
-\frac{Z[J]}{Z[0]}=e^{\frac1\hbar W[J]}\,.
+\frac{Z[J]}{Z[0]}=e^{W[J]/\hbar}\,.
 \]
 We write
 \[
@@ -314,7 +314,7 @@ and expand the action $\mathcal A_J$ to the terms quadratic in $\chi$,
 As usual, the terms linear in $\chi$ cancel in view of the classical equation
 $\varphi_c$ satisfies, and we obtain in this approximation
 \[
-Z[J]=e^{\frac1\hbar W_0[J]}\int\bigl[D\chi\bigr]\,e^{-\frac1\hbar\mathcal A_1[\chi]}\,,
+Z[J]=e^{W_0[J]/\hbar}\int\bigl[D\chi\bigr]\,e^{-\mathcal A_1[\chi]/\hbar}\,,
 \]
 where
 \begin{equation}\label{eq:A1}
@@ -343,7 +343,7 @@ equals
 Actually, we are interested in the ratio $Z[J]/Z[0]$, therefore we need to
 evaluate the ratio of the determinants
 \begin{multline*}
-\left[\frac{\det\bigl(S_0(x-x')+\delta(x-x')\,V''(x')\bigr)}{\det\bigl(S_0(x-x')\bigr)}\right]^{-\frac12}
+\left[\frac{\det\bigl(S_0(x-x')+\delta(x-x')\,V''(x')\bigr)}{\det\bigl(S_0(x-x')\bigr)}\right]^{-1/2}
 \\=\exp\left[-\frac12\log\det\Bigl(\delta(x-x')+D(x-x')\,V''\bigl(\varphi_c(x')\bigr)\Bigr)\right]
 \end{multline*}
 This can be transformed with the help of the identity, valid for any positive

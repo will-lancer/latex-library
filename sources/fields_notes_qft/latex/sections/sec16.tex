@@ -119,7 +119,7 @@ The Landau theory does not take into account prominent role of the
 According to the thermodynamic theory of fluctuations, the probability to have
 some non-equilibrium value $\mathbf M$ of the magnetization is (for $T>T_c$)
 \[
-P(\mathbf M)\sim e^{-\frac{V\Omega(\mathbf M,T)}{kT}}\sim e^{-\frac{VB(T)}{kT}\,\mathbf M^2}
+P(\mathbf M)\sim e^{-V\Omega(\mathbf M,T)/kT}\sim e^{-VB(T)\mathbf M^2/kT}
 \]
 If $B>0$, in the limit $V\to\infty$ the fluctuations are totally suppressed.
 Vanishing of $B(T)$ at $T=T_c$ indicates that in the critical domain the
@@ -180,7 +180,7 @@ corresponds to the so-called Landau-Ginzburg model.
 With this probability distribution, the free energy of the magnet is to be
 computed as some sort of functional integral
 \[
-Z=e^{-\frac F{kT}}=\int\bigl[D\mathbf M(x)\bigr]\,e^{-\frac1{kT}\Ham[\mathbf M(x)]}
+Z=e^{-F/kT}=\int\bigl[D\mathbf M(x)\bigr]\,e^{-\Ham[\mathbf M(x)]/kT}
 \]
 where the integration is over the functions $\mathbf M(x)$ which vary slowly in
 terms of the microscopic scale.
@@ -265,7 +265,7 @@ Because basic ideas of the Wilson's RG do not depend very much on precise way ho
 the cutoff regularization is implemented, let me assume specific one. Let me
 assume that the field $\varphi_0$ can be written as the Fourier-like integral
 \[
-\varphi_0(x)=\int_{|k|<\Lambda}\frac{\dd^dk}{(2\pi)^d}\,\phi(k)\,e^{ikx}\,,
+\varphi_0(x)=\int_{|k|<\Lambda}\frac{\dd^dk}{(2\pi)^d}\,\phi(k)\,e^{ik\cdot x}\,,
 \]
 where only the wave-vectors with $|k|<\Lambda$ contribute to the integral. This
 can be named (as I will) the ``Sharp momentum cutoff'', because in perturbation
@@ -281,8 +281,8 @@ So our question now is how the functional integral depends on $\Lambda$, or what
 is the difference between the integral with $\Lambda=\Lambda_0$ and
 $\Lambda=\Lambda_1$. Let us temporarily use the notations
 \[
-\varphi_0(x)=\int_{|k|<\Lambda_0}\phi(k)\,e^{ikx}\,,\qquad
-\varphi_1(x)=\int_{|k|<\Lambda_1}\phi(k)\,e^{ikx}\,.
+\varphi_0(x)=\int_{|k|<\Lambda_0}\phi(k)\,e^{ik\cdot x}\,,\qquad
+\varphi_1(x)=\int_{|k|<\Lambda_1}\phi(k)\,e^{ik\cdot x}\,.
 \]
 If $\Lambda_0>\Lambda_1$ the difference of course is that the integration over
 $\varphi_0$ includes the integration over all modes with the momenta
@@ -292,7 +292,7 @@ $\varphi_0$ includes the integration over all modes with the momenta
 while the integral over $\varphi_1$ does not. We can write
 \[
 \varphi_0(x)=\varphi_1(x)+\tilde\varphi(x)\,,\qquad\text{where}\qquad
-\tilde\varphi(x)=\int_{\Lambda_0>|k|>\Lambda_1}\phi(k)\,e^{ikx}\,.
+\tilde\varphi(x)=\int_{\Lambda_0>|k|>\Lambda_1}\phi(k)\,e^{ik\cdot x}\,.
 \]
 In this context, the parts $\varphi_1(x)$ and $\tilde\varphi$ are often called
 the ``slow part'' and the ``fast part'', respectively. We have
@@ -428,7 +428,7 @@ brings in the contribution
 \]
 where $\tilde D$ is the $\tilde\varphi$ propagator,
 \[
-\tilde D(x)=\int_{\Lambda_0>|k|>\Lambda_1}\frac{\dd^dk}{(2\pi)^d}\,\frac{e^{ikx}}{k^2+m_0^2}\,.
+\tilde D(x)=\int_{\Lambda_0>|k|>\Lambda_1}\frac{\dd^dk}{(2\pi)^d}\,\frac{e^{ik\cdot x}}{k^2+m_0^2}\,.
 \]
 This non-locality, albeit unpleasant, is not disastrous. Recall that we have
 already violated the locality by introducing the cutoff. It is important however
@@ -491,11 +491,11 @@ and $Z^{1/2}(L)$ is a factor to be discussed later. This is the dilation with th
 factor $1/L$, which returns the cutoff from $\Lambda_1$ back to the original value
 $\Lambda_0$. We have
 \[
-\varphi_1(x)=\int_{|k|<\Lambda_1}\phi(k)\,e^{ikx}=\int_{|k|<\Lambda_1}\phi(k)\,e^{i(Lk)(x/L)}=L^{-d}\int_{|q|<\Lambda_0}\phi(q/L)\,e^{iq(x/L)}\,,
+\varphi_1(x)=\int_{|k|<\Lambda_1}\phi(k)\,e^{ik\cdot x}=\int_{|k|<\Lambda_1}\phi(k)\,e^{i(Lk)\cdot(x/L)}=L^{-d}\int_{|q|<\Lambda_0}\phi(q/L)\,e^{iq\cdot(x/L)}\,,
 \]
 so that
 \[
-\varphi'_0(x)=L^{-d}\,Z^{1/2}(L)\int_{|k|<\Lambda_0}\phi(k/L)\,e^{ikx}
+\varphi'_0(x)=L^{-d}\,Z^{1/2}(L)\int_{|k|<\Lambda_0}\phi(k/L)\,e^{ik\cdot x}
 \]
 indeed contains all the wave-vectors with $|k|<\Lambda_0$.
 
