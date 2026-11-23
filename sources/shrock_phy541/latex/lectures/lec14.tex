@@ -46,7 +46,7 @@ rescaling, so
 \begin{equation}
   \tilde S_i = \sum_{\text{block in }\Lambda_{sq}}s_i .
 \end{equation}
-A distance $r$ in $\Lambda_{sq}$ is mapped (``renormalized'') to a distance $\tilde r = \frac rL = \frac r2$
+A distance $r$ in $\Lambda_{sq}$ is mapped (``renormalized'') to a distance $\tilde r = r/L = r/2$
 on the lattice $\tilde\Lambda_{sq}$.
 
 This blocking or ``decimation'' step can be repeated iteratively. A generalization is to allow a
@@ -55,11 +55,11 @@ $d$-dimensional lattice $\Lambda$, $\tilde S_i = L^ds_i$, where $\tilde S_i$ is 
 ($\tilde S_i = L^2s_i$ for the 2-dimensional case illustrated above).
 
 At each blocking step, one rewrites the Hamiltonian on the blocked lattice in terms of the $\Ham$ on the
-previous lattice. The correlation length $\xi\to\frac\xi L\equiv\frac\xi b$ under a blocking; the
+previous lattice. The correlation length $\xi\to\xi/L\equiv\xi/b$ under a blocking; the
 iterative procedure
 \begin{equation}
   \Lambda_1\to\underbrace{R(\Lambda_1)}_{\Lambda_2}\to\underbrace{R(R(\Lambda_1))}_{\equiv\Lambda_3}\to\cdots
-  \qquad\text{means}\qquad \xi\to\frac\xi b\to\frac{\xi}{b^2}\to\cdots,
+  \qquad\text{means}\qquad \xi\to\frac{\xi}{b}\to\frac{\xi}{b^2}\to\cdots,
 \end{equation}
 so the $\infty$ iteration of the RG blocking transformation has a fixed point (RGFP) if $\xi = \infty$,
 which is the critical point. (Formally, there is also a critical point with $\xi = 0$, namely at
@@ -119,7 +119,7 @@ $f(\mu^{a'}x,\mu^{b'}y) = f(\lambda^{a'/c'}x,\lambda^{b'/c'}y) = \lambda f(x,y)$
 and $b'/c' = b$, this gives $f(\lambda^ax,\lambda^by) = \lambda f(x,y)$. (If $c' = 0$, then $f$ has a
 generalized scale invariance.)
 
-E.g.\ $f(x,y) = x+y^2$ is a generalized homogeneous function with $a = 1$ and $b = \frac12$, since
+E.g.\ $f(x,y) = x+y^2$ is a generalized homogeneous function with $a = 1$ and $b = 1/2$, since
 $f(\lambda^ax,\lambda^by) = f(\lambda x,\sqrt\lambda y) = \lambda x + (\sqrt\lambda y)^2 = \lambda(x+y^2) = \lambda f(x,y)$.
 (This definition can be generalized to a function of $n$ variables: $f(x_1,\ldots,x_n)$ is a generalized
 homogeneous function if $\exists\,\{a_1,\ldots,a_n\}$ such that
@@ -169,11 +169,11 @@ eq.~\eqref{eq:Ghom} gives $-\lambda M$. Taking $\partial/\partial H$ of the LHS:
   \Rightarrow\quad\boxed{\lambda^{a_h-1}M(\lambda^{a_\tau}\tau,\lambda^{a_h}H) = M(\tau,H)}.
 \end{equation}
 Now let $H = 0$, $\tau = (T-T_c)/T_c\to 0^-$:
-$\Rightarrow\lambda^{a_h-1}M(\lambda^{a_\tau}\tau,0) = M(\tau,0)$; set $\lambda^{a_\tau} = -\frac1\tau$, so
+$\Rightarrow\lambda^{a_h-1}M(\lambda^{a_\tau}\tau,0) = M(\tau,0)$; set $\lambda^{a_\tau} = -1/\tau$, so
 $\lambda = (-\tau)^{-1/a_\tau}$:
 \begin{equation}
-  \Rightarrow\ \left[(-\tau)^{-1/a_\tau}\right]^{a_h-1}M\left(\left(-\tfrac1\tau\right)\cdot\tau,0\right)
-  = (-\tau)^{\frac{1-a_h}{a_\tau}}\underbrace{M(-1,0)}_{\text{const.}} = M(\tau,0).
+  \Rightarrow\ \left[(-\tau)^{-1/a_\tau}\right]^{a_h-1}M\left(\left(-\frac{1}{\tau}\right)\cdot\tau,0\right)
+  = (-\tau)^{(1-a_h)/a_\tau}\underbrace{M(-1,0)}_{\text{const.}} = M(\tau,0).
 \end{equation}
 Equating this to the form $M(\tau)\propto(-\tau)^\beta$ as $\tau\to 0^-$, we deduce
 \begin{equation}
@@ -187,8 +187,8 @@ $M>0$),
   \lambda^{a_h-1}M(0,\lambda^{a_h}H) = M(0,H) = H^{1/\delta};
 \end{equation}
 set $\lambda = H^{-1/a_h}$, so
-$(H^{-1/a_h})^{a_h-1}\underbrace{M(0,\tfrac HH)}_{M(0,1),\ \text{const.}} = H^{1/\delta}$
-$\Rightarrow\frac{1-a_h}{a_h} = \frac1\delta$,
+$(H^{-1/a_h})^{a_h-1}\underbrace{M(0,H/H)}_{M(0,1),\ \text{const.}} = H^{1/\delta}$
+$\Rightarrow(1-a_h)/a_h = 1/\delta$,
 \begin{equation}
   \boxed{\delta = \frac{a_h}{1-a_h}}
   \qquad\Rightarrow\qquad
@@ -206,7 +206,7 @@ $a_\tau$ and $a_h$, or equivalently, $y_\tau$ and $y_h$.
 \paragraph{Susceptibility: $\gamma$.} From $G(\lambda^{a_\tau}\tau,\lambda^{a_h}H) = \lambda G(\tau,H)$, we
 got, by taking $\partial/\partial H$, the equation
 $\lambda^{a_h-1}M(\lambda^{a_\tau}\tau,\lambda^{a_h}H) = M(\tau,H)$. Next, take $\partial/\partial H$ again:
-the susceptibility is $\chi = \pder{M}{H} = -\frac{\partial^2G}{\partial H^2}$, and
+the susceptibility is $\chi = \partial M/\partial H = -\partial^2G/\partial H^2$, and
 \begin{equation}
   \lambda^{a_h-1}\pder{M(\lambda^{a_\tau}\tau,\lambda^{a_h}H)}{H} = \chi(\tau,H).
 \end{equation}
@@ -216,16 +216,16 @@ LHS:
   \quad\Rightarrow\quad \lambda^{2a_h-1}\chi(\lambda^{a_\tau}\tau,\lambda^{a_h}H) = \chi(\tau,H).
 \end{equation}
 Set $\lambda = \tau^{-1/a_\tau}$, so
-$\left[\tau^{-1/a_\tau}\right]^{2a_h-1}\chi\left(\left(\frac1\tau\right)\tau,\tau^{-a_h/a_\tau}H\right) = \chi(\tau,H)$;
+$\left[\tau^{-1/a_\tau}\right]^{2a_h-1}\chi\left(\left(1/\tau\right)\tau,\tau^{-a_h/a_\tau}H\right) = \chi(\tau,H)$;
 set $H = 0$ to get the critical behavior as $\tau\to 0$:
 \begin{equation}
-  \tau^{\frac{1-2a_h}{a_\tau}}\underbrace{\chi(1,0)}_{\text{const.}} = \chi(\tau,0) = \tau^{-\gamma}
+  \tau^{(1-2a_h)/a_\tau}\underbrace{\chi(1,0)}_{\text{const.}} = \chi(\tau,0) = \tau^{-\gamma}
   \quad\Rightarrow\quad\boxed{\gamma = \frac{2a_h-1}{a_\tau}},
 \end{equation}
 similarly with $\boxed{\gamma' = \gamma}$.
 
-Now recall that $\beta = \frac{1-a_h}{a_\tau}$ and $\delta = \frac{a_h}{1-a_h}$, so
-$\delta - 1 = \frac{a_h-(1-a_h)}{1-a_h} = \frac{2a_h-1}{1-a_h}$, and hence
+Now recall that $\beta = (1-a_h)/a_\tau$ and $\delta = a_h/(1-a_h)$, so
+$\delta - 1 = (a_h-(1-a_h))/(1-a_h) = (2a_h-1)/(1-a_h)$, and hence
 \begin{equation}
   \beta(\delta-1) = \left(\frac{1-a_h}{a_\tau}\right)\left(\frac{2a_h-1}{1-a_h}\right) = \frac{2a_h-1}{a_\tau} = \gamma,
 \end{equation}
@@ -233,19 +233,19 @@ so
 \begin{equation}
   \boxed{\beta(\delta-1) = \gamma},\quad\text{i.e.}\quad\boxed{\beta\delta = \beta+\gamma}.
 \end{equation}
-Check: Landau--Ginzburg or MFT $\Rightarrow\beta = \frac12$, $\delta = 3$, $\gamma = 1$, so
-$\beta\delta = \frac32 = \frac12+1$ \checkmark; LG/MFT obeys this exponent relation.
-2D Ising ($q = 2$ Potts) $\Rightarrow\beta = \frac18$, $\delta = 15$, $\gamma = \frac74$, so
-$\beta\delta = \frac{15}{8}$; $\beta+\gamma = \frac18+\frac74 = \frac{15}{8}$, so the 2D Ising model also
-obeys this relation. 2D $q = 3$ Potts $\Rightarrow\beta = \frac19$, $\delta = 14$, $\gamma = \frac{13}{9}$,
-so $\beta\delta = \frac{14}{9}$; $\beta+\gamma = \frac{14}{9}$, OK.
+Check: Landau--Ginzburg or MFT $\Rightarrow\beta = 1/2$, $\delta = 3$, $\gamma = 1$, so
+$\beta\delta = 3/2 = 1/2+1$ \checkmark; LG/MFT obeys this exponent relation.
+2D Ising ($q = 2$ Potts) $\Rightarrow\beta = 1/8$, $\delta = 15$, $\gamma = 7/4$, so
+$\beta\delta = 15/8$; $\beta+\gamma = 1/8+7/4 = 15/8$, so the 2D Ising model also
+obeys this relation. 2D $q = 3$ Potts $\Rightarrow\beta = 1/9$, $\delta = 14$, $\gamma = 13/9$,
+so $\beta\delta = 14/9$; $\beta+\gamma = 14/9$, OK.
 
 \paragraph{Specific heat: $\alpha$.} We can also differentiate with respect to $T$, or equivalently
 $\tau$, to get $U$ and $C_H$: $\dd G = -S\dd T - M\dd H$;
 $S = -(\partial G/\partial T)_H$,
 $C_H = T(\partial S/\partial T)_H = -T(\partial^2G/\partial T^2)_H$. With $\tau = (T-T_c)/T_c$,
-$\partial\tau/\partial T = 1/T_c$, $\frac{\partial}{\partial T} = \frac{1}{T_c}\frac{\partial}{\partial\tau}$,
-so $C_H = -\frac{T}{T_c^2}\left(\frac{\partial^2G}{\partial\tau^2}\right)_H$. From
+$\partial\tau/\partial T = 1/T_c$, $\partial/\partial T = (1/T_c)\partial/\partial\tau$,
+so $C_H = -(T/T_c^2)\left(\partial^2G/\partial\tau^2\right)_H$. From
 $G(\lambda^{a_\tau}\tau,\lambda^{a_h}H) = \lambda G(\tau,H)$, we have
 \begin{equation}
   \underbrace{\lambda^{2a_\tau}\left(\frac{T}{T_c^2}\right)\frac{\partial^2G(\lambda^{a_\tau}\tau,\lambda^{a_h}H)}{\partial(\lambda^{a_\tau}\tau)^2}}_{-\lambda^{2a_\tau}C_H(\lambda^{a_\tau}\tau,\lambda^{a_h}H)}
@@ -257,7 +257,7 @@ so
 \end{equation}
 Set $H = 0$, let $\tau\to 0$, set $\lambda = \tau^{-1/a_\tau}$ $\Rightarrow$
 \begin{equation}
-  \left[\tau^{\frac{1-2a_\tau}{a_\tau}}\right]C_H\left((\tau^{-1/a_\tau})^{a_\tau}\tau,0\right) = C_H(\tau,0) = \tau^{-\alpha}
+  \left[\tau^{(1-2a_\tau)/a_\tau}\right]C_H\left((\tau^{-1/a_\tau})^{a_\tau}\tau,0\right) = C_H(\tau,0) = \tau^{-\alpha}
   \quad\Rightarrow\quad\boxed{\alpha = 2-a_\tau^{-1} = \frac{2a_\tau-1}{a_\tau}},
 \end{equation}
 similarly with $\alpha' = \alpha$. The fact that $\alpha = \alpha'$ depends only on $a_\tau$ and not on
@@ -270,8 +270,8 @@ Summarizing: $\boxed{\alpha' = \alpha}$. Then
 \begin{equation}
   \boxed{\alpha+2\beta+\gamma = 2}\qquad\text{(Rushbrooke relation)}.
 \end{equation}
-E.g.\ LG/MFT: $\alpha = 0$ (disc.), $\beta = \frac12$, $\gamma = 1$ \checkmark; 2D Ising: $\alpha = 0$
-(log div.), $\beta = \frac18$, $\gamma = \frac74$ $\Rightarrow 0+2(\frac18)+\frac74 = 2$ \checkmark.
+E.g.\ LG/MFT: $\alpha = 0$ (disc.), $\beta = 1/2$, $\gamma = 1$ \checkmark; 2D Ising: $\alpha = 0$
+(log div.), $\beta = 1/8$, $\gamma = 7/4$ $\Rightarrow 0+2(1/8)+7/4 = 2$ \checkmark.
 
 From the relations expressing $a_h$ in terms of $\delta$ and $a_\tau$ in terms of $\beta$ and $\delta$, one
 obtains the fundamental magnetic and thermal exponents:
@@ -279,9 +279,9 @@ obtains the fundamental magnetic and thermal exponents:
   a_\tau = \frac{1}{\beta(\delta+1)}\ \text{and}\ y_\tau = a_\tau\cdot d;\qquad
   a_h = \frac{\delta}{\delta+1}\ \text{and}\ y_h = a_h\cdot d .
 \end{equation}
-E.g.\ LG/MFT $\Rightarrow\beta = \frac12$, $\delta = 3$ $\Rightarrow a_\tau = \frac{1}{\frac12\cdot 4} = \frac12$,
-$a_h = \frac34$. 2D Ising ($q = 2$ Potts): $\beta = \frac18$, $\delta = 15$ $\Rightarrow
-a_\tau = \frac{1}{\frac18\cdot 16} = \frac12$, $a_h = \frac{15}{16}$, $y_h = a_h\cdot d = \frac{15}{8}$,
+E.g.\ LG/MFT $\Rightarrow\beta = 1/2$, $\delta = 3$ $\Rightarrow a_\tau = 1/(1/2\cdot 4) = 1/2$,
+$a_h = 3/4$. 2D Ising ($q = 2$ Potts): $\beta = 1/8$, $\delta = 15$ $\Rightarrow
+a_\tau = 1/(1/8\cdot 16) = 1/2$, $a_h = 15/16$, $y_h = a_h\cdot d = 15/8$,
 $y_\tau = a_\tau\cdot d = 1$.
 
 \paragraph{Correlation length: $\nu$ (hyperscaling).} Recall that the correlation length diverges as
@@ -302,8 +302,8 @@ since two derivatives with respect to $\tau$ $\Rightarrow C_H\sim\tau^{-\alpha}$
   \Rightarrow\quad\boxed{d\nu = 2-\alpha};\qquad\text{similarly,}\quad\boxed{d\nu' = 2-\alpha'}.
 \end{equation}
 Combining this with $\alpha = \alpha' = 2-a_\tau^{-1}$ $\Rightarrow d\nu = 2-(2-a_\tau^{-1})\Rightarrow
-d\nu = \frac{1}{a_\tau} = \frac{d}{y_\tau}\Rightarrow\nu = \frac{1}{y_\tau}$, and similarly
-$d\nu' = \frac{d}{y_\tau}$ $\Rightarrow$
+d\nu = 1/a_\tau = d/y_\tau\Rightarrow\nu = 1/y_\tau$, and similarly
+$d\nu' = d/y_\tau$ $\Rightarrow$
 \begin{equation}
   \boxed{\nu' = \nu = \frac{1}{y_\tau}}.
 \end{equation}
@@ -313,8 +313,8 @@ correlation function yields the exponent relations
 \begin{equation}
   \boxed{\gamma = \nu(2-\eta),\qquad \gamma' = \nu'(2-\eta)}.
 \end{equation}
-E.g.\ 2D Ising: $\gamma = \gamma' = \frac74$; $\nu = \nu' = 1$; $\eta = \frac14$, so
-$\frac74 = 1\cdot(2-\frac14)$ \checkmark.
+E.g.\ 2D Ising: $\gamma = \gamma' = 7/4$; $\nu = \nu' = 1$; $\eta = 1/4$, so
+$7/4 = 1\cdot(2-1/4)$ \checkmark.
 
 These relations among critical exponents are also consistent with (i) values determined for various 3D
 spin models from series expansions and Monte Carlo simulations, and (ii) values measured in real 3D
@@ -350,8 +350,8 @@ diagram). For $O(3)$: $\alpha+2\beta+\gamma = 2$; $d\nu = 2.1 = 2-\alpha$; $\gam
 \paragraph{Some further remarks on critical exponents.}
 
 With $\alpha = \alpha'$, $C\sim|\tau|^{-\alpha}$ as $\tau\to 0$. If $\alpha>0$, $C$ diverges at
-$T = T_c$: e.g.\ 2D Ising: $\alpha = 0$ (log); 2D $q = 3$ Potts: $\alpha = \frac13$; 2D $q = 4$ Potts:
-$\alpha = \frac23$. For 3D $O(2)$, $O(3)$, $\alpha<0$.
+$T = T_c$: e.g.\ 2D Ising: $\alpha = 0$ (log); 2D $q = 3$ Potts: $\alpha = 1/3$; 2D $q = 4$ Potts:
+$\alpha = 2/3$. For 3D $O(2)$, $O(3)$, $\alpha<0$.
 
 Note that $\alpha$ can be negative; then
 \begin{equation}
@@ -386,7 +386,7 @@ coefficient $C_0<0$.
 $\beta<1$ for all of the models and systems studied, which is reflected in the curves for the order
 parameter, e.g.\ the magnetization $M(T)$, in these phase transitions. The smaller the exponent $\beta$
 is, the more rapid the onset of magnetic order as $T$ decreases below $T_c$, e.g.\ 2D Ising ($q = 2$
-Potts): $\beta = \frac18$; 2D $q = 3$ Potts: $\beta = \frac19$; 2D $q = 4$ Potts: $\beta = \frac1{12}$; 3D
+Potts): $\beta = 1/8$; 2D $q = 3$ Potts: $\beta = 1/9$; 2D $q = 4$ Potts: $\beta = 1/12$; 3D
 Ising: $\beta\simeq 0.325$; 3D $O(3)$: $\beta\simeq 0.37$.
 
 \subsection{RG transformations, flows and fixed points}

@@ -86,8 +86,8 @@ $G_{\text{bip.}} = G_1\oplus G_2$. We will derive a lower bound on
 $Z(G_{\text{bip.}},q,v=-1) = P(G_{\text{bip.}},q)$, the $T = 0$ Potts AFM. A lower bound on
 $P(G_{\text{bip.}},q)$ is obtained by assigning one color to all vertices $v_i\in G_1$. This can
 be done in any of $q$ ways. Then, independently for each vertex $v_i\in G_2$, we can assign a
-color from the remaining set of $q-1$ colors. There are $\frac n2$ vertices in $G_1$ and
-$\frac n2$ vertices in $G_2$. So
+color from the remaining set of $q-1$ colors. There are $n/2$ vertices in $G_1$ and
+$n/2$ vertices in $G_2$. So
 \begin{equation}
   P(G_{\text{bip.}},q)\ge q(q-1)^{n/2},\qquad\text{where } n = n(G_{\text{bip.}}).
 \end{equation}
@@ -155,7 +155,7 @@ bonds) correctly represents the physics. The Slater Rule, also called the requir
 electric neutrality, stipulates that 2 of the 4 arrows must point outward and the other 2
 inward. The total number of arrow configurations at each vertex is $2^4 = 16$, but only
 $\binom42 = 6$ of these satisfy the constraint of local electric neutrality, where
-$\binom ab = \frac{a!}{b!(a-b)!}$.
+$\binom ab = a!/(b!(a-b)!)$.
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.55,>=Stealth]
@@ -175,8 +175,8 @@ in and one out, are forbidden.}
 \end{diagram}
 
 The residual entropy of H$_2$O ice is measured to be
-$S_0 = 0.82\ \frac{\text{cal}}{\text{mole}\cdot\text{K}}$, i.e.\ (using
-$R = N_{\text{Avog.}}\kB = 1.99\ \frac{\text{cal}}{\text{K}\cdot\text{mole}}$) $S_0 = 0.41R$, so
+$S_0 = 0.82\ \text{cal}/(\text{mole}\cdot\text{K})$, i.e.\ (using
+$R = N_{\text{Avog.}}\kB = 1.99\ \text{cal}/(\text{K}\cdot\text{mole})$) $S_0 = 0.41R$, so
 the residual entropy per molecule is $S_0 = 0.41\kB$, so, from $S_0 = \kB\ln W$, i.e.\
 $W = e^{S_0/\kB} = e^{0.41} = 1.5$.
 
@@ -185,14 +185,14 @@ model that yields a very good approximation to this measured value of $\bar S_0$
 can approximate the total ground state degeneracy (number of g.s.\ configurations of the arrows
 on the bonds) as the total number, $2^{e(\Lambda)}$, times the factor arising from the
 constraint of local electric neutrality at each vertex of the crystal lattice (i.e.\ each oxygen
-atom), namely $\frac{6}{2^4} = \frac38$. Then
+atom), namely $6/2^4 = 3/8$. Then
 \begin{equation}
-  Z\simeq 2^{e(\Lambda)}\left(\frac38\right)^{n(\Lambda)}.
+  Z\simeq 2^{e(\Lambda)}\left(\frac{3}{8}\right)^{n(\Lambda)}.
 \end{equation}
-Now $e(\Lambda) = \frac{\Delta}{2}n(\Lambda) = 2n(\Lambda)$ since $\Delta = 4$, so
+Now $e(\Lambda) = (\Delta/2)n(\Lambda) = 2n(\Lambda)$ since $\Delta = 4$, so
 \begin{equation}
-  Z\simeq\left(4\cdot\frac38\right)^{n(\Lambda)} = \left(\frac32\right)^{n(\Lambda)},
-  \qquad\text{so}\quad W = \lim_{n(\Lambda)\to\infty}Z^{1/n(\Lambda)} = \frac32 = 1.5 .
+  Z\simeq\left(4\cdot\frac{3}{8}\right)^{n(\Lambda)} = \left(\frac{3}{2}\right)^{n(\Lambda)},
+  \qquad\text{so}\quad W = \lim_{n(\Lambda)\to\infty}Z^{1/n(\Lambda)} = \frac{3}{2} = 1.5 .
 \end{equation}
 This agrees very well with the measured value of the residual entropy of ice.
 
@@ -270,7 +270,7 @@ ordering, and others being negative, favoring AFM ordering. Example: the Ising s
   \Ham = -\sum_{\{e_{ij}\}}\sigma_iJ_{ij}\sigma_j ,
 \end{equation}
 with the $J_{ij}$ random, distributed with equal probability $>0$ or $<0$: with probability
-$\frac12$ for either sign, $J_{ij} = J$ or $-J$; or with a distribution $P(J_{ij})$ peaked
+$1/2$ for either sign, $J_{ij} = J$ or $-J$; or with a distribution $P(J_{ij})$ peaked
 around $\pm J$, or a single broad distribution centered on zero, or a broad distribution with
 peaks near $\pm J$.
 

@@ -4,19 +4,19 @@
 
 J.~van der Waals (Nobel Prize, 1910) presented an important approximate equation of state (EOS) for a gas
 (1873) that includes two modifications of the ideal gas EOS $pV = N\kB T$. [Equivalently, with $N = nN_A$,
-where $N_A = N_{\text{Avogadro}}$, $R = N_A\kB$, so $N\kB = \left(\frac{N}{N_A}\right)(N_A\kB) = nR$, the ideal gas EOS is
-$pV = nRT$, where $n = \frac{N}{N_A}$ = \# moles; $\kB = 1.38\times 10^{-23}$~J/Kelvin;
+where $N_A = N_{\text{Avogadro}}$, $R = N_A\kB$, so $N\kB = \left(N/N_A\right)(N_A\kB) = nR$, the ideal gas EOS is
+$pV = nRT$, where $n = N/N_A$ = \# moles; $\kB = 1.38\times 10^{-23}$~J/Kelvin;
 $N_A = 6.02\times 10^{23}$ per mole; $R = 8.314$~J/(mole$\cdot$K).] The van der Waals (vdW) EOS contains two
 modifications of the ideal gas EOS:
 
 \paragraph{(1)} A term to incorporate interactions between the molecules or atoms in the gas. For a gas with $N$
-particles, there are $\binom N2 = \frac{N(N-1)}{2}$ 2-body interactions, and these are the leading effect. For
-$N\gg 1$, $\binom N2\simeq\frac{N^2}{2}$. This term depends on the number density $\rho_n = \left(\frac NV\right)$ and hence
-is $\propto\rho_n^2 = \left(\frac NV\right)^2$. At the time that van der Waals proposed his EOS, in 1873, there was no theory
+particles, there are $\binom N2 = N(N-1)/2$ 2-body interactions, and these are the leading effect. For
+$N\gg 1$, $\binom N2\simeq N^2/2$. This term depends on the number density $\rho_n = \left(N/V\right)$ and hence
+is $\propto\rho_n^2 = \left(N/V\right)^2$. At the time that van der Waals proposed his EOS, in 1873, there was no theory
 of quantum mechanics; the understanding of this interaction at a fundamental level came later. In the vdW EOS,
-$p$ is replaced by $\left[p + a\left(\frac NV\right)^2\right]$, where $a$ is a constant. With $\dim(a)\equiv[a]$:
-$\dim(p) = \frac{\text{force}}{\text{area}} = \frac{\text{energy}}{\text{volume}} = \frac EV$, so
-$[p] = \frac{[a]}{V^2}\Rightarrow[a] = \frac EV\cdot V^2 = E\cdot V$. Recall that the interaction between the gas
+$p$ is replaced by $\left[p + a\left(N/V\right)^2\right]$, where $a$ is a constant. With $\dim(a)\equiv[a]$:
+$\dim(p) = \text{force}/\text{area} = \text{energy}/\text{volume} = E/V$, so
+$[p] = [a]/V^2\Rightarrow[a] = E/V\cdot V^2 = E\cdot V$. Recall that the interaction between the gas
 particles (molecules, e.g.\ N$_2$, O$_2$, CO$_2$, \ldots; atoms, e.g.\ Ar, \ldots) is described by the
 Lennard-Jones (6--12) potential:
 \begin{equation}
@@ -27,7 +27,7 @@ higher-energy states to obey the Pauli exclusion principle, and the second is th
 to the dipole--dipole interaction. $\mathbf F = -\boldsymbol\nabla U = 0$ at $r = r_0$, the minimum of the
 potential energy. An equivalent form is
 \begin{equation}
-  U(r) = 4U_0\left[\left(\frac\sigma r\right)^{12} - \left(\frac\sigma r\right)^6\right],
+  U(r) = 4U_0\left[\left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6\right],
 \end{equation}
 which $=0$ at $r = \sigma$; $r_0 = 2^{1/6}\sigma = 1.12\,\sigma$ (see the plot of $U(r)$ in Lecture~3).
 E.g.\ for argon, $r_0 = 3.8\ \text{\AA} = 0.38$~nm and $U_0/\kB = 1.2\times 10^2$~K
@@ -46,19 +46,19 @@ do have nonzero size, so the volume available to them is less than $V$;
   V_{\text{available}} = V - bN,
 \end{equation}
 where $\dim(b) = [b]$ = volume; $b\sim(\text{few \AA})^3$. This atomic or molecular size is set by
-$a_{\text{Bohr}} = \frac{\hbar}{\alpha m_ec}\simeq 0.53$~\AA, where $\alpha = \frac{e^2}{4\pi\hbar c} = \frac{1}{137}$.
+$a_{\text{Bohr}} = \hbar/(\alpha m_ec)\simeq 0.53$~\AA, where $\alpha = e^2/(4\pi\hbar c) = 1/137$.
 
 (At the time, 1873, when van der Waals proposed his EOS, neither (1) nor (2) was understood at a fundamental
 level; the effect of particle--particle interactions and excluded volume were included in an empirical manner.)
 So $pV = N\kB T$ is replaced by the vdW equation of state for a non-ideal gas:
 \begin{equation}
-  \boxed{\left[p + a\left(\frac NV\right)^2\right]\left[V - bN\right] = N\kB T}.
+  \boxed{\left[p + a\left(\frac{N}{V}\right)^2\right]\left[V - bN\right] = N\kB T}.
 \end{equation}
 We can reexpress this in several ways. It is useful to define (lower-case)
 \begin{equation}
-  v = \frac VN = \text{volume per particle}
+  v = \frac{V}{N} = \text{volume per particle}
 \end{equation}
-(N.B.: the number density is $\rho_n = \frac NV = \frac1v$; upper-case $V$, lower-case $v$). Then
+(N.B.: the number density is $\rho_n = N/V = 1/v$; upper-case $V$, lower-case $v$). Then
 \begin{equation}
   \left(p + \frac{a}{v^2}\right)(v-b) = \kB T\ \Rightarrow\ p + \frac{a}{v^2} = \frac{\kB T}{v-b}
   \ \Rightarrow\ \boxed{p = \frac{\kB T}{v-b} - \frac{a}{v^2}}.
@@ -92,28 +92,28 @@ and below $T_c$. The green curve bounds the region where $\partial p/\partial v>
 on BrightSpace.)}
 \end{diagram}
 
-At the critical point, $\pder pv = 0$ and $\frac{\partial^2p}{\partial v^2} = 0$ (inflection point):
+At the critical point, $\partial p/\partial v = 0$ and $\partial^2p/\partial v^2 = 0$ (inflection point):
 \begin{align}
-  0 = \pder pv &= \frac{-\kB T}{(v-b)^2} + \frac{2a}{v^3}\ \Rightarrow\ \frac{\kB T}{(v-b)^2} = \frac{2a}{v^3},\\
+  0 = \pder{p}{v} &= \frac{-\kB T}{(v-b)^2} + \frac{2a}{v^3}\ \Rightarrow\ \frac{\kB T}{(v-b)^2} = \frac{2a}{v^3},\\
   0 = \frac{\partial^2p}{\partial v^2} &= \frac{2\kB T}{(v-b)^3} - \frac{6a}{v^4}\ \Rightarrow\ \frac{\kB T}{(v-b)^3} = \frac{3a}{v^4}.
 \end{align}
 To solve these equations, substitute the first in the second:
 \begin{equation}
-  \frac{\kB T}{(v-b)^3} = \frac3v\cdot\frac{a}{v^3} = \frac{3}{2v}\cdot\frac{2a}{v^3} = \frac{3}{2v}\cdot\frac{\kB T}{(v-b)^2}
-  \ \Rightarrow\ \frac{1}{v-b} = \frac{3}{2v}\ \Rightarrow\ v-b = \frac23v\ \Rightarrow\ \frac v3 - b = 0
+  \frac{\kB T}{(v-b)^3} = \frac{3}{v}\cdot\frac{a}{v^3} = \frac{3}{2v}\cdot\frac{2a}{v^3} = \frac{3}{2v}\cdot\frac{\kB T}{(v-b)^2}
+  \ \Rightarrow\ \frac{1}{v-b} = \frac{3}{2v}\ \Rightarrow\ v-b = \frac{2}{3}v\ \Rightarrow\ \frac{v}{3} - b = 0
 \end{equation}
 \begin{equation}
   \Rightarrow\quad\boxed{v = v_c = 3b}.
 \end{equation}
 Substitute this in the $\partial p/\partial v = 0$ equation:
-$\kB T_c = \frac{2a}{v_c^3}(v_c-b)^2 = \frac{2a}{(3b)^3}(2b)^2 = \frac{8a}{27b}$:
+$\kB T_c = (2a/v_c^3)(v_c-b)^2 = (2a/(3b)^3)(2b)^2 = 8a/(27b)$:
 \begin{equation}
   \boxed{\kB T_c = \frac{8a}{27b}}.
 \end{equation}
 Substitute in the EOS:
 \begin{equation}
   p_c = \frac{\kB T_c}{v_c-b} - \frac{a}{v_c^2} = \frac{\left(\frac{8a}{27b}\right)}{(2b)} - \frac{a}{(3b)^2}
-  = \left(\frac{4}{27}-\frac19\right)\frac{a}{b^2} = \boxed{\frac{a}{27b^2} = p_c}.
+  = \left(\frac{4}{27}-\frac{1}{9}\right)\frac{a}{b^2} = \boxed{\frac{a}{27b^2} = p_c}.
 \end{equation}
 Summary of the critical values of $p$, $T$, $v = \rho_n^{-1}$:
 \begin{equation}
@@ -126,25 +126,25 @@ A standard measure of the comparison with the ideal gas EOS is the ratio
 \end{equation}
 this is $=1$ at all points for an ideal gas, including the critical point. For the vdW EOS,
 \begin{equation}
-  Z_c = \frac{\left(\frac{a}{27b^2}\right)(3b)}{\left(\frac{8a}{27b}\right)} = \frac38 = 0.375 .
+  Z_c = \frac{\left(\frac{a}{27b^2}\right)(3b)}{\left(\frac{8a}{27b}\right)} = \frac{3}{8} = 0.375 .
 \end{equation}
 The fact that $Z_c<1$ reflects the effect of the attractive interaction which is responsible for the critical
 behavior and condensation of the gas. (The ideal gas EOS does not yield any critical point or condensation.)
 
 From the critical values $p_c$ and $T_c$, we can determine $a$ and $b$:
 \begin{gather}
-  v_c = 3b = \frac38\frac{\kB T_c}{p_c}\ \Rightarrow\ \boxed{b = \frac{\kB T_c}{8p_c}};\nonumber\\
+  v_c = 3b = \frac{3}{8}\frac{\kB T_c}{p_c}\ \Rightarrow\ \boxed{b = \frac{\kB T_c}{8p_c}};\nonumber\\
   a = \frac{27}{8}b\cdot(\kB T_c) = \frac{27}{8}\left(\frac{\kB T_c}{8p_c}\right)(\kB T_c)
   \ \Rightarrow\ \boxed{a = \frac{27}{64}\frac{(\kB T_c)^2}{p_c}}.
 \end{gather}
 These relations are also often expressed in terms of molar quantities. Recall that \# moles $= n = N/N_A$. The
-molar volume is $V_m = \frac Vn = \frac{N_AV}{N}$, so $\frac NV = \frac{N_A}{V_m}$, and
-$\left[p + a\left(\frac NV\right)^2\right][V - bN] = N\kB T$ can be rewritten as
-$\left[p + a\left(\frac{N_A}{V_m}\right)^2\right][nV_m - bN_An] = nRT$, i.e.\ $\left[p + a\left(\frac{N_A}{V_m}\right)^2\right][V_m - bN_A] = RT$, or
+molar volume is $V_m = V/n = N_AV/N$, so $N/V = N_A/V_m$, and
+$\left[p + a\left(N/V\right)^2\right][V - bN] = N\kB T$ can be rewritten as
+$\left[p + a\left(N_A/V_m\right)^2\right][nV_m - bN_An] = nRT$, i.e.\ $\left[p + a\left(N_A/V_m\right)^2\right][V_m - bN_A] = RT$, or
 \begin{equation}
   \left[p + \frac{a'}{V_m^2}\right]\left[V_m - b'\right] = RT,\qquad\text{where}\quad a' = N_A^2a\ \text{and}\ b' = N_Ab .
 \end{equation}
-Then $a' = \frac{27}{64}\frac{(RT_c)^2}{p_c}$ and $b' = \frac{RT_c}{8p_c}$. The ratio $Z_c$ can also be expressed
+Then $a' = (27/64)(RT_c)^2/p_c$ and $b' = RT_c/(8p_c)$. The ratio $Z_c$ can also be expressed
 in terms of molar quantities:
 \begin{equation}
   Z_c = \frac{p_cv_c}{\kB T_c} = \frac{p_cN_Av_c}{N_A\kB T_c} = \frac{p_cV_{m,c}}{RT_c},
@@ -154,7 +154,7 @@ where $V_{m,c}$ is the critical value of $V_m$.
 \subsubsection*{Law of corresponding states}
 
 It is convenient to express the vdW EOS in terms of the critical quantities. Define
-$\bar p = \frac{p}{p_c}$, $\bar T = \frac{T}{T_c}$, $\bar V = \frac{V}{V_c}$, $\bar v = \frac{v}{v_c}$, so
+$\bar p = p/p_c$, $\bar T = T/T_c$, $\bar V = V/V_c$, $\bar v = v/v_c$, so
 \begin{equation}
   \left(p + \frac{a}{v^2}\right)(v-b) = \kB T\ \Rightarrow\
   \left[\bar pp_c + \frac{a}{(\bar vv_c)^2}\right]\left[\bar vv_c - b\right] = \kB T_c\cdot\bar T;
@@ -162,10 +162,10 @@ $\bar p = \frac{p}{p_c}$, $\bar T = \frac{T}{T_c}$, $\bar V = \frac{V}{V_c}$, $\
 substitute the values of $p_c$, $v_c$, and $T_c$:
 \begin{gather}
   \left[\left(\frac{a}{27b^2}\right)\bar p + \frac{a}{(3b)^2\bar v^2}\right]\left[(3b)\bar v - b\right] = \left(\frac{8a}{27b}\right)\bar T\nonumber\\
-  \Rightarrow\ \left(\frac{a}{27b^2}\right)\left[\bar p + \frac{3}{\bar v^2}\right](3b)\left[\bar v - \frac13\right] = \left(\frac{8a}{27b}\right)\bar T
+  \Rightarrow\ \left(\frac{a}{27b^2}\right)\left[\bar p + \frac{3}{\bar v^2}\right](3b)\left[\bar v - \frac{1}{3}\right] = \left(\frac{8a}{27b}\right)\bar T
 \end{gather}
 \begin{equation}
-  \Rightarrow\quad\boxed{\left(\bar p + \frac{3}{\bar v^2}\right)\left(\bar v - \frac13\right) = \frac83\bar T}.
+  \Rightarrow\quad\boxed{\left(\bar p + \frac{3}{\bar v^2}\right)\left(\bar v - \frac{1}{3}\right) = \frac{8}{3}\bar T}.
 \end{equation}
 Note that at the critical point, with $\bar p = \bar p_c = 1$, $\bar v = \bar v_c = 1$, $\bar T = \bar T_c = 1$,
 this is an identity: $4\cdot(2/3) = 8/3$.
@@ -186,11 +186,11 @@ $\bar v_c = 1$:
 \end{equation}
 Then the vdW EOS, written in terms of these fractional deviations from critical values, is
 \begin{equation}\label{eq:vdwdev}
-  \left[1+\delta\bar p+\frac{3}{(1+\delta\bar v)^2}\right]\left[1+\delta\bar v-\frac13\right] = \frac83(1+\delta\bar T).
+  \left[1+\delta\bar p+\frac{3}{(1+\delta\bar v)^2}\right]\left[1+\delta\bar v-\frac{1}{3}\right] = \frac{8}{3}(1+\delta\bar T).
 \end{equation}
 
 \paragraph{Critical isotherm.} Recall that the critical isotherm in a liquid--gas system is (with
-$\rho\propto\rho_n = \frac1v$)
+$\rho\propto\rho_n = 1/v$)
 \begin{equation}
   \Delta\rho = \rho_\ell-\rho_g\propto|p-p_c|^{1/\delta}\quad\text{at } T_c,
 \end{equation}
@@ -198,34 +198,34 @@ analogous to $M\propto|H|^{1/\delta}$ at $T = T_c$ in a magnetic system. Use
 $(1+x)^{-2} = 1-2x+3x^2-4x^3+\Order(x^4)$ and set $\delta\bar T = 0$; then eq.~\eqref{eq:vdwdev} becomes
 \begin{align}
   &\left[1+\delta\bar p+3\left\{1-2(\delta\bar v)+3(\delta\bar v)^2-4(\delta\bar v)^3+\Order((\delta\bar v)^4)\right\}\right]
-   \left[\frac23+\delta\bar v\right] = \frac83,\nonumber\\
-  &\left[4+\delta\bar p-6(\delta\bar v)+9(\delta\bar v)^2-12(\delta\bar v)^3+\Order((\delta\bar v)^4)\right]\cdot\frac23\left[1+\frac32(\delta\bar v)\right] = \frac83,\nonumber\\
-  &\frac83\left[1+\frac14\delta\bar p-\frac32(\delta\bar v)+\frac94(\delta\bar v)^2-3(\delta\bar v)^3+\Order((\delta\bar v)^4)\right]\left[1+\frac32(\delta\bar v)\right] = \frac83
+   \left[\frac{2}{3}+\delta\bar v\right] = \frac{8}{3},\nonumber\\
+  &\left[4+\delta\bar p-6(\delta\bar v)+9(\delta\bar v)^2-12(\delta\bar v)^3+\Order((\delta\bar v)^4)\right]\cdot\frac{2}{3}\left[1+\frac{3}{2}(\delta\bar v)\right] = \frac{8}{3},\nonumber\\
+  &\frac{8}{3}\left[1+\frac{1}{4}\delta\bar p-\frac{3}{2}(\delta\bar v)+\frac{9}{4}(\delta\bar v)^2-3(\delta\bar v)^3+\Order((\delta\bar v)^4)\right]\left[1+\frac{3}{2}(\delta\bar v)\right] = \frac{8}{3}
 \end{align}
 \begin{equation}
-  \Rightarrow\ \frac14\delta\bar p + \underbrace{\left(-\frac32+\frac32\right)}_{0}(\delta\bar v)
-  + \underbrace{\left(\frac94-\frac94\right)}_{0}(\delta\bar v)^2
-  + \underbrace{\left(-3+\frac{27}{8}\right)}_{\frac38}(\delta\bar v)^3 + \Order((\delta\bar v)^4) = 0
+  \Rightarrow\ \frac{1}{4}\delta\bar p + \underbrace{\left(-\frac{3}{2}+\frac{3}{2}\right)}_{0}(\delta\bar v)
+  + \underbrace{\left(\frac{9}{4}-\frac{9}{4}\right)}_{0}(\delta\bar v)^2
+  + \underbrace{\left(-3+\frac{27}{8}\right)}_{3/8}(\delta\bar v)^3 + \Order((\delta\bar v)^4) = 0
 \end{equation}
 \begin{equation}
-  \Rightarrow\ \frac14\delta\bar p + \frac38(\delta\bar v)^3 = 0,\qquad \delta\bar p = -\frac32(\delta\bar v)^3;
+  \Rightarrow\ \frac{1}{4}\delta\bar p + \frac{3}{8}(\delta\bar v)^3 = 0,\qquad \delta\bar p = -\frac{3}{2}(\delta\bar v)^3;
 \end{equation}
-since $\delta\bar v\propto-\delta\bar\rho_n\propto-\delta\bar\rho$, $\Rightarrow\delta\bar p = \frac32(\delta\bar\rho)^3$,
+since $\delta\bar v\propto-\delta\bar\rho_n\propto-\delta\bar\rho$, $\Rightarrow\delta\bar p = (3/2)(\delta\bar\rho)^3$,
 $\delta\bar\rho\propto(\delta\bar p)^{1/3}\Rightarrow$ the critical exponent
 \begin{equation}
   \boxed{\delta = 3}.
 \end{equation}
 
 \paragraph{Compressibility.} Recall that the isothermal compressibility is
-$\kappa_T = -\frac1V\left(\frac{\partial V}{\partial p}\right)_T$ and this has the critical behavior
+$\kappa_T = -(1/V)\left(\partial V/\partial p\right)_T$ and this has the critical behavior
 $\kappa_T\sim\tau^{-\gamma}$, $|\tau|^{-\gamma'}$ as $\tau\to 0$, with $\gamma = \gamma'$. Now
-$(-V\kappa_T)^{-1} = \left(\frac{\partial p}{\partial V}\right)_T\propto\left(\frac{\partial\bar p}{\partial\bar v}\right)_T$;
+$(-V\kappa_T)^{-1} = \left(\partial p/\partial V\right)_T\propto\left(\partial\bar p/\partial\bar v\right)_T$;
 calculating this from eq.~\eqref{eq:vdwdev} above, and setting $\delta\bar v = 0$ to get to the critical point, one
 finds $\kappa_T^{-1}\propto\delta\bar T = \tau$, so
 \begin{equation}
   \boxed{\gamma = \gamma' = 1}.
 \end{equation}
-In a similar manner, one obtains the value $\boxed{\beta = \frac12}$ for the critical exponent for the order
+In a similar manner, one obtains the value $\boxed{\beta = 1/2}$ for the critical exponent for the order
 parameter, $\Delta\rho = \rho_\ell-\rho_g$.
 
 From these critical exponents, all of the others can be calculated, and one finds that vdW yields the same
@@ -240,12 +240,12 @@ The vdW EOS has an additional deficiency, which is evident from the graphs for t
 Multiplied out, it is a cubic equation in $\bar v$ or $V$ as a function of $p$ for a given $T$. The (isothermal)
 compressibility
 \begin{equation}
-  \kappa_T = -\frac1V\left(\frac{\partial V}{\partial p}\right)_T = -\frac1v\left(\frac{\partial v}{\partial p}\right)_T
+  \kappa_T = -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T = -\frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_T
 \end{equation}
 must be a positive quantity since exerting pressure on the system reduces the volume, so
-$\frac{\partial v}{\partial p}<0$. Now $\frac{\partial v}{\partial p}<0\Leftrightarrow\frac{\partial p}{\partial v}<0$.
-Now $\frac{\partial p}{\partial v}$ is the slope of the curve of $p$ vs.\ $V$. The condition
-$\frac{\partial p}{\partial v}<0$ is \emph{not} satisfied for all $v$; it is violated in the region of $v$ and $p$
+$\partial v/\partial p<0$. Now $\partial v/\partial p<0\Leftrightarrow\partial p/\partial v<0$.
+Now $\partial p/\partial v$ is the slope of the curve of $p$ vs.\ $V$. The condition
+$\partial p/\partial v<0$ is \emph{not} satisfied for all $v$; it is violated in the region of $v$ and $p$
 within the green boundary. So these values of $p$ and $V$ are not physically allowed, contrary to the prediction of
 the vdW EOS. (At the critical point, $\partial p/\partial v = 0\Rightarrow\kappa_T = \infty$; this is
 understandable since the gas is at the verge of changing to a liquid, analogous to the magnetic susceptibility

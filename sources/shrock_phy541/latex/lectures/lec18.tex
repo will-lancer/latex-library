@@ -8,7 +8,7 @@ Our discussion follows the review by K.~Wilson and J.~Kogut, Physics Reports \te
 section~4.2.
 
 The real-space RG is equivalent, via a Fourier transformation from $\mathbf x\to\mathbf q$, to momentum
-space; $q\leftrightarrow-\ii\frac{\partial}{\partial x}$, $\mathbf q\leftrightarrow-\ii\boldsymbol\nabla$. The
+space; $q\leftrightarrow-\ii\partial/\partial x$, $\mathbf q\leftrightarrow-\ii\boldsymbol\nabla$. The
 momentum-space RG is conventionally formulated by using field-theory methods. The Landau--Ginzburg free
 energy for a bicritical point with zero external field, $H = 0$, for, say, an Ising model is
 $A(T,H=0) = L_2M^2 + L_4M^4$, where $M = \ev{\sigma}$. One could add a kinetic term to this,
@@ -21,12 +21,12 @@ the path integral
 \end{equation}
 the ``action'' (take $\hbar = 1$ here), where $\mathcal L$ = Lagrangian density,
 \begin{equation}
-  \mathcal L = \tfrac12(\partial_\mu\varphi)^2 - \tfrac12\mu^2\varphi^2 - \tfrac\lambda4\varphi^4 .
+  \mathcal L = \frac{1}{2}(\partial_\mu\varphi)^2 - \frac{1}{2}\mu^2\varphi^2 - \frac{\lambda}{4}\varphi^4 .
 \end{equation}
 Make a Wick rotation to Euclidean metric, $\dd t\to-\ii\dd\tau$:
 $(\partial_\mu\varphi)^2 = (\partial_t\varphi)^2-|\boldsymbol\nabla\varphi|^2\to-(\partial_i\varphi)^2$; thus
 \begin{equation}
-  \mathcal L_{\text{Euc}} = \tfrac12(\partial_i\varphi)^2 + \tfrac12\mu^2\varphi^2 + \tfrac\lambda4\varphi^4,
+  \mathcal L_{\text{Euc}} = \frac{1}{2}(\partial_i\varphi)^2 + \frac{1}{2}\mu^2\varphi^2 + \frac{\lambda}{4}\varphi^4,
   \qquad Z = \int\left[\prod_x\dd\varphi(x)\right]e^{-S_{\text{Euc}}} .
 \end{equation}
 Denote $\lambda = u$. This has a $\mathbb{Z}_2$ invariance, the same as the Ising model. In
@@ -40,7 +40,7 @@ length$^d$ $\sim(1/\text{mass})^d$, so the mass dimension of $S_{\text{Euc}}$ is
 \begin{equation}
   \dim(S_{\text{Euc}}) = 0 = -d + \dim\left((\partial_i\varphi)^2\right) = -d + 2 + 2\dim(\varphi),
 \end{equation}
-since $\dim\partial_i = 1$ $\Rightarrow\dim(\varphi) = \frac{d-2}{2}$ in mass units. Calculating the
+since $\dim\partial_i = 1$ $\Rightarrow\dim(\varphi) = (d-2)/2$ in mass units. Calculating the
 dimension of the quartic coupling $u$ (called $\lambda$ in the quantum field theory literature and $u$ in the
 statistical mechanics literature):
 \begin{align}
@@ -51,16 +51,16 @@ Now use integration by parts: $\dd(fg) = (\dd f)g + f(\dd g)\Rightarrow\int f\dd
 with $f = \partial_i\varphi$, $g = \partial_i\varphi$; the surface term $\to 0$, leaving $-\varphi\partial^2\varphi$,
 where $\partial^2 = \sum_{i=1}^d\partial_i^2$. So the equivalent $\mathcal L$:
 \begin{equation}
-  S_{\text{Euc}} = \int\dd^dx\left[-\tfrac12\varphi\,\partial^2\varphi + \tfrac{\mu^2}{2}\varphi^2 + u\varphi^4\right].
+  S_{\text{Euc}} = \int\dd^dx\left[-\frac{1}{2}\varphi\,\partial^2\varphi + \frac{\mu^2}{2}\varphi^2 + u\varphi^4\right].
 \end{equation}
 ($\mu^2$ is usually denoted $r$ in stat.\ mech.; don't confuse it with position $r$.) Under a Fourier
 transform $-\ii\partial_j\to q_j$, $(-\ii\partial_j)(-\ii\partial_j) = -\partial^2\leftrightarrow\mathbf q^2$, where
 $\mathbf q^2 = \sum_{j=1}^dq_j^2$. If $u = 0$, then
 \begin{equation}
-  S_{\text{Euc}} = \tfrac12\int\dd^dx\,\varphi Q\varphi,\qquad Q = -\partial^2 + r = \mathbf q^2 + r,
+  S_{\text{Euc}} = \frac{1}{2}\int\dd^dx\,\varphi Q\varphi,\qquad Q = -\partial^2 + r = \mathbf q^2 + r,
 \end{equation}
 a quadratic integrand. So each functional integral is Gaussian (cf.\ $\int\dd x\,e^{-ax^2}$)
-$\Rightarrow Q^{-1} = \frac{1}{\mathbf q^2+r}$ plays the role of a ``propagator'' for the field $\varphi$ in a
+$\Rightarrow Q^{-1} = 1/(\mathbf q^2+r)$ plays the role of a ``propagator'' for the field $\varphi$ in a
 diagrammatic perturbative expansion; the interaction is a vertex with four $\varphi$ lines and coupling $u$.
 
 This is a continuum formulation: $\mathbf x$ and $\mathbf q$ are continuous variables. One formulates a
@@ -102,12 +102,12 @@ $\dim(u) = 4-d\equiv\epsilon$, so one can write
   u = \frac{\bar u}{\Lambda^{d-4}},
 \end{equation}
 where $\bar u$ is dimensionless and the dimensions of $u$ are explicitly embodied in $\Lambda$, and the
-interaction term in $\mathcal L$ is then $\frac{\bar u}{\Lambda^{d-4}}\varphi^4$, where $\Lambda$ is an ultraviolet
+interaction term in $\mathcal L$ is then $(\bar u/\Lambda^{d-4})\varphi^4$, where $\Lambda$ is an ultraviolet
 scale. For a continuous phase transition, we are interested in the long-distance behavior of the theory,
 since the correlation length $\xi\to\infty$. This is the basis of the Kadanoff block-spin construction. In
 momentum space this means that we are taking the infrared (IR) limit of the RG, integrating out the
 short-distance, high-momentum effects. Equivalently, we are taking large $\Lambda$. So if $d>4$, the effect of
-the interaction term $\frac{\bar u}{\Lambda^{d-4}}\varphi^4\to 0$; it is an irrelevant operator in the RG
+the interaction term $(\bar u/\Lambda^{d-4})\varphi^4\to 0$; it is an irrelevant operator in the RG
 terminology. This means that the physics of the phase transition is that of a free-field theory
 $\Leftrightarrow$ Gaussian integral, so the corresponding RGFP is called the Gaussian fixed point (GFP).
 When $d<4$, then the $\varphi^4$ operator is relevant:
@@ -129,7 +129,7 @@ $u$ are displayed next. Further details are in J.~Kogut and K.G.~Wilson, Phys.\ 
 \end{equation}
 where $\epsilon = 4-d$ and $c$ is a positive constant. Then
 \begin{equation}
-  M = \begin{pmatrix}\pder{u'}{u} & \pder{u'}{r}\\[4pt] \pder{r'}{u} & \pder{r'}{r}\end{pmatrix}
+  M = \begin{pmatrix}\dfrac{\partial u'}{\partial u} & \dfrac{\partial u'}{\partial r}\\[6pt] \dfrac{\partial r'}{\partial u} & \dfrac{\partial r'}{\partial r}\end{pmatrix}
     = \begin{pmatrix}2^\epsilon\left[1-\dfrac{18cu}{(1+r)^2}\right] & \dfrac{18\cdot 2^\epsilon cu^2}{(1+r)^3}\\[12pt]
                      \dfrac{12c}{(1+r)} & 4\left[1-\dfrac{3cu}{(1+r)^2}\right]\end{pmatrix}.
 \end{equation}
@@ -143,11 +143,11 @@ massless, $\mu = \xi^{-1} = 0$ in field theory terminology.) Then
 of triangular form, so
 \begin{gather}
   \lambda_1 = 2^\epsilon = e^{\epsilon\ln 2} = 1+\epsilon\ln 2\ \text{for small }\epsilon,\quad
-  \hat{\mathbf e}_1\propto\begin{pmatrix}1\\ \frac{12c}{-3+\epsilon\ln 2}\end{pmatrix}\simeq\begin{pmatrix}1\\ -4c\end{pmatrix};\nonumber\\
+  \hat{\mathbf e}_1\propto\begin{pmatrix}1\\[6pt] \dfrac{12c}{-3+\epsilon\ln 2}\end{pmatrix}\simeq\begin{pmatrix}1\\ -4c\end{pmatrix};\nonumber\\
   \lambda_2 = 4,\quad \hat{\mathbf e}_2 = \begin{pmatrix}0\\1\end{pmatrix}.
 \end{gather}
 (In general: if $M = \left(\begin{smallmatrix}\lambda_1&0\\a&\lambda_2\end{smallmatrix}\right)$, then
-$\hat{\mathbf e}_2 = \binom01$; $\hat{\mathbf e}_1\propto\binom{\frac{\lambda_1-\lambda_2}{a}}{1}\propto\binom{1}{\frac{a}{\lambda_1-\lambda_2}}$.)
+$\hat{\mathbf e}_2 = \binom01$; $\hat{\mathbf e}_1\propto\binom{(\lambda_1-\lambda_2)/a}{1}\propto\binom{1}{a/(\lambda_1-\lambda_2)}$.)
 \begin{itemize}
   \item If $d>4$, then $\epsilon<0$, so $\lambda_1<1$: the GFP is stable in the $\hat{\mathbf e}_1$ direction.
   \item If $d<4$, then $\epsilon>0$, so $\lambda_1>1$: the GFP is unstable in the $\hat{\mathbf e}_1$ direction.
@@ -155,7 +155,7 @@ $\hat{\mathbf e}_2 = \binom01$; $\hat{\mathbf e}_1\propto\binom{\frac{\lambda_1-
 \end{itemize}
 Since $\lambda_2>1$, the GFP is always unstable in the $\hat{\mathbf e}_2$ ($r$) direction. At the GFP,
 $\lambda_2 = 4 = b^{y_2} = 2^{y_2}\Rightarrow y_2 = 2$ ($\hat{\mathbf e}_2\sim$ temperature direction $\sim r$
-in LG), so $y_2 = y_\tau = 2\Rightarrow\nu = \nu' = \frac{1}{y_\tau} = \frac12$, the MFT value.
+in LG), so $y_2 = y_\tau = 2\Rightarrow\nu = \nu' = 1/y_\tau = 1/2$, the MFT value.
 
 \paragraph{The nontrivial fixed point.} The RG transformation has another RGFP at
 \begin{equation}
@@ -164,7 +164,7 @@ in LG), so $y_2 = y_\tau = 2\Rightarrow\nu = \nu' = \frac{1}{y_\tau} = \frac12$,
 called the ``nontrivial'' fixed point (NTFP) or Wilson--Fisher fixed point; consider this for small
 $\epsilon$. Evaluating $M$ at this fixed point:
 \begin{equation}
-  M_{\text{NTFP}} = \begin{pmatrix}1-\epsilon\ln 2 & 0\\ 12c & 4\left(1-\frac{\epsilon\ln 2}{3}\right)\end{pmatrix},
+  M_{\text{NTFP}} = \begin{pmatrix}1-\epsilon\ln 2 & 0\\[6pt] 12c & 4\left(1-\dfrac{\epsilon\ln 2}{3}\right)\end{pmatrix},
   \qquad \lambda_1 = 1-\epsilon\ln 2 .
 \end{equation}
 If $d>4$, $\epsilon<0$, $\lambda_1>1$: the NTFP is unstable in the $\hat{\mathbf e}_1$ direction. If $d<4$,
@@ -198,51 +198,51 @@ NTFP is always unstable in the $\hat{\mathbf e}_2$ direction $=\hat{\mathbf e}_\
 $\hat{\mathbf e}_1$; for $d<4$ the NTFP does. Both are unstable along $\hat{\mathbf e}_2$.}
 \end{diagram}
 
-For $d>4$, the critical behavior is mean-field like: $\nu = \nu' = \frac{1}{y_\tau} = \frac12$; $u\to 0$ at the
+For $d>4$, the critical behavior is mean-field like: $\nu = \nu' = 1/y_\tau = 1/2$; $u\to 0$ at the
 GFP, $\mathcal L\to\mathcal L_{\text{free field}}$, so $\eta = 0$, etc. Since $\mathcal L\to\mathcal L_{\text{free}}$,
 with the interaction term $\to 0$, this fixed point is called ``trivial'', synonymous with ``Gaussian'' since the
 functional integration can be done exactly as a Gaussian integral. The fluctuations that are neglected by MFT are
-not important, so the MFT exponents describe the critical behavior. Recall these: $\alpha = 0$, $\beta = \frac12$,
-$\gamma = 1$, $\nu = \frac12$, $\eta = 0$, $\delta = 3$; $y_\tau = \frac1\nu = 2$,
-$\beta\delta = \frac{y_h}{y_\tau} = \frac32\Rightarrow y_h = 3$. $d = 4$ is the upper critical dimension
+not important, so the MFT exponents describe the critical behavior. Recall these: $\alpha = 0$, $\beta = 1/2$,
+$\gamma = 1$, $\nu = 1/2$, $\eta = 0$, $\delta = 3$; $y_\tau = 1/\nu = 2$,
+$\beta\delta = y_h/y_\tau = 3/2\Rightarrow y_h = 3$. $d = 4$ is the upper critical dimension
 $d_{u.c.}$ here, meaning the dimension above which the critical behavior is MF-like.
 
 For $d<4$, the nontrivial fixed point is stable in the $\hat{\mathbf e}_1$ direction, since
 $\lambda_1 = 1-\epsilon\ln 2<1$. Now
 \begin{equation}
-  \lambda_2 = 4\left(1-\tfrac13\epsilon\ln 2\right) = b^{y_2} = 2^{y_2},
+  \lambda_2 = 4\left(1-\frac{1}{3}\epsilon\ln 2\right) = b^{y_2} = 2^{y_2},
 \end{equation}
-so $\ln\lambda_2 = y_2\ln 2$, $y_2 = \frac{\ln\lambda_2}{\ln 2}$;
-$\ln\lambda_2 = 2\ln 2 + \ln\left(1-\frac\epsilon3\ln 2\right)$; for $\epsilon\ll 1$,
-$\ln\lambda_2\simeq 2\ln 2-\frac\epsilon3\ln 2$, so for small $\epsilon$,
+so $\ln\lambda_2 = y_2\ln 2$, $y_2 = \ln\lambda_2/(\ln 2)$;
+$\ln\lambda_2 = 2\ln 2 + \ln\left(1-(\epsilon/3)\ln 2\right)$; for $\epsilon\ll 1$,
+$\ln\lambda_2\simeq 2\ln 2-(\epsilon/3)\ln 2$, so for small $\epsilon$,
 \begin{equation}
-  y_2\simeq 2-\frac\epsilon3 = 2\left(1-\frac\epsilon6\right);\qquad
-  \nu = \frac{1}{y_2} = \frac{1}{2\left(1-\frac\epsilon6\right)}\simeq\frac12\left(1+\frac\epsilon6\right),\qquad
-  \nu\simeq\frac12+\frac{\epsilon}{12}+\Order(\epsilon^2),
+  y_2\simeq 2-\frac{\epsilon}{3} = 2\left(1-\frac{\epsilon}{6}\right);\qquad
+  \nu = \frac{1}{y_2} = \frac{1}{2\left(1-\frac{\epsilon}{6}\right)}\simeq\frac{1}{2}\left(1+\frac{\epsilon}{6}\right),\qquad
+  \nu\simeq\frac{1}{2}+\frac{\epsilon}{12}+\Order(\epsilon^2),
 \end{equation}
 with $y_2 = y_\tau$ since $r\sim\hat{\mathbf e}_2\sim$ temperature-like parameter. Note that
-$\nu = \nu_{\text{MFT}} = \frac12$ as $\epsilon\to 0$. Including an external magnetic field as we did for the 1D
+$\nu = \nu_{\text{MFT}} = 1/2$ as $\epsilon\to 0$. Including an external magnetic field as we did for the 1D
 Ising model, one can calculate $y_h$ at the NTFP:
 \begin{equation}
-  \boxed{y_h = 3-\frac\epsilon2+\Order(\epsilon^2)}.
+  \boxed{y_h = 3-\frac{\epsilon}{2}+\Order(\epsilon^2)}.
 \end{equation}
 Again, as with
 \begin{equation}
-  \boxed{y_\tau = 2-\frac\epsilon3+\Order(\epsilon^2)},
+  \boxed{y_\tau = 2-\frac{\epsilon}{3}+\Order(\epsilon^2)},
 \end{equation}
 both reduce to the MFT values as $\epsilon\to 0$. We thus see how the thermal and magnetic exponents approach
 their MFT values as $d\nearrow 4$, and for $d>4$, these stay at their MFT values because the Gaussian fixed point
 is stable. Knowing $y_\tau$ and $y_h$, one can calculate all of the other critical exponents for this Ising
-model: besides $\nu = \nu' = \frac12+\frac\epsilon{12}+\Order(\epsilon^2)$, one gets
+model: besides $\nu = \nu' = 1/2+\epsilon/12+\Order(\epsilon^2)$, one gets
 \begin{gather}
-  \alpha = \alpha' = 0+\frac\epsilon6+\Order(\epsilon^2),\qquad
-  \beta = \frac12-\frac\epsilon6+\Order(\epsilon^2),\qquad
-  \gamma = \gamma' = 1+\frac\epsilon6+\Order(\epsilon^2),\nonumber\\
+  \alpha = \alpha' = 0+\frac{\epsilon}{6}+\Order(\epsilon^2),\qquad
+  \beta = \frac{1}{2}-\frac{\epsilon}{6}+\Order(\epsilon^2),\qquad
+  \gamma = \gamma' = 1+\frac{\epsilon}{6}+\Order(\epsilon^2),\nonumber\\
   \delta = 3+\epsilon+\Order(\epsilon^2),\qquad
   \eta = \underbrace{0}_{\text{MFT}}+0\cdot\epsilon+\Order(\epsilon^2)
 \end{gather}
 ($\eta = 0\Leftrightarrow$ the free field has Maxwellian dimension, so
-$\ev{\varphi_0\varphi_x}\sim\frac{1}{x^{d-2+\eta}}$, $\eta = 0$).
+$\ev{\varphi_0\varphi_x}\sim1/x^{d-2+\eta}$, $\eta = 0$).
 
 \paragraph{Comparison with series, experiment and exact results.}
 
@@ -251,10 +251,10 @@ Evaluating the $\Order(\epsilon)$ results for $\epsilon = 1$, i.e.\ $d = 3$:
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{lccc}
   & $\epsilon$ expansion, $d = 3$ & exp.--series & MFT\\ \hline
-  $\alpha = \alpha'$ & $\frac16 = 0.17$ & 0.11--0.12 & 0\\
-  $\beta$ & $\frac12-\frac16 = \frac13 = 0.33$ & 0.325 & 0.5\\
-  $\gamma = \gamma'$ & $1+\frac16 = \frac76 = 1.17$ & 1.24 & 1\\
-  $\nu = \nu'$ & $\frac12+\frac1{12} = \frac7{12} = 0.58$ & 0.63 & 0.5\\
+  $\alpha = \alpha'$ & $1/6 = 0.17$ & 0.11--0.12 & 0\\
+  $\beta$ & $1/2-1/6 = 1/3 = 0.33$ & 0.325 & 0.5\\
+  $\gamma = \gamma'$ & $1+1/6 = 7/6 = 1.17$ & 1.24 & 1\\
+  $\nu = \nu'$ & $1/2+1/12 = 7/12 = 0.58$ & 0.63 & 0.5\\
   $\eta$ & $\simeq 0$ & 0.03 & 0\\
   $\delta$ & 4 & 4.8 & 3
 \end{tabular}
@@ -268,11 +268,11 @@ to be a very accurate description of the critical behavior in the 2D Ising model
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{lcc}
   & $\epsilon$ expansion, $d = 2$ & exact value\\ \hline
-  $\alpha = \alpha'$ & $0+\frac\epsilon6 = \frac13 = 0.33$ & 0 (log div.)\\
-  $\beta$ & $\frac12-\frac\epsilon6 = \frac12-\frac13 = \frac16 = 0.17$ & $\frac18 = 0.125$\\
-  $\gamma = \gamma'$ & $1+\frac\epsilon6 = \frac43 = 1.33$ & $\frac74 = 1.75$\\
-  $\nu = \nu'$ & $\frac12+\frac\epsilon{12} = \frac12+\frac16 = \frac23 = 0.67$ & 1\\
-  $\eta$ & $0+\Order(\epsilon^2)$ & $\frac14 = 0.25$\\
+  $\alpha = \alpha'$ & $0+\epsilon/6 = 1/3 = 0.33$ & 0 (log div.)\\
+  $\beta$ & $1/2-\epsilon/6 = 1/2-1/3 = 1/6 = 0.17$ & $1/8 = 0.125$\\
+  $\gamma = \gamma'$ & $1+\epsilon/6 = 4/3 = 1.33$ & $7/4 = 1.75$\\
+  $\nu = \nu'$ & $1/2+\epsilon/12 = 1/2+1/6 = 2/3 = 0.67$ & 1\\
+  $\eta$ & $0+\Order(\epsilon^2)$ & $1/4 = 0.25$\\
   $\delta$ & $3+\epsilon = 5$ & 15
 \end{tabular}
 \end{center}
@@ -296,13 +296,13 @@ So in contrast to series calculations, one does not expect, in general, that cal
 other exponents to higher order in $\epsilon$ would necessarily improve the comparison with experiment/series
 results in $d = 3$ and the exactly known results in $d = 2$. E.g.
 \begin{equation}
-  \gamma = 1+\frac\epsilon6+\frac{25}{324}\epsilon^2+\gamma_3\epsilon^3+\Order(\epsilon^4)
+  \gamma = 1+\frac{\epsilon}{6}+\frac{25}{324}\epsilon^2+\gamma_3\epsilon^3+\Order(\epsilon^4)
 \end{equation}
-$\Rightarrow$ for $d = 3$, $\gamma = \frac76 = 1.17$ to $\Order(\epsilon)$, $\gamma = 1.24$ to $\Order(\epsilon^2)$,
+$\Rightarrow$ for $d = 3$, $\gamma = 7/6 = 1.17$ to $\Order(\epsilon)$, $\gamma = 1.24$ to $\Order(\epsilon^2)$,
 $\gamma = 1.195$ to $\Order(\epsilon^3)$, as compared with series and experiment $\gamma = 1.24$ for $d = 3$ Ising.
 So, as illustrated by this calculation of $\gamma$ to $\Order(\epsilon^3)$, going from $\Order(\epsilon)$ to
 $\Order(\epsilon^2)$ improves agreement with series--experiment but going from $\Order(\epsilon^2)$ to
-$\Order(\epsilon^3)$ makes the agreement worse. For $\eta$: $\eta = 0+0\cdot\epsilon+\frac{\epsilon^2}{54}$, so for
+$\Order(\epsilon^3)$ makes the agreement worse. For $\eta$: $\eta = 0+0\cdot\epsilon+\epsilon^2/54$, so for
 $d = 3$, this gives $\eta = 0.0185$, vs.\ the series--experiment value $\eta = 0.03$.
 
 This RG analysis and $\epsilon$ expansion have also been done for the $O(N)$ spin model, with
@@ -323,15 +323,15 @@ IR limit, this UV scale suppresses the $u\varphi^4$ term so that it does not aff
 
 Now let us consider a LG free energy with the highest-power term $u_p\varphi^p$, where $p$ is a general integer
 $>2$ (the $p = 2$ term $r\varphi^2$ is part of the quadratic $\mathcal L\leftrightarrow$ Gaussian F.P.). Let us
-calculate $\dim(u_p)$. Recall that $\dim(S = \text{action}) = 0$ and $\dim(\varphi) = \frac{d-2}{2}$; the
+calculate $\dim(u_p)$. Recall that $\dim(S = \text{action}) = 0$ and $\dim(\varphi) = (d-2)/2$; the
 $u_p\varphi^p$ term contributes $\int\dd^dx\,u_p\varphi^p$ to the action, so
 \begin{equation}
   0 = -d + \dim(u_p) + p\cdot\dim(\varphi) = -d + \dim(u_p) + p\left(\frac{d-2}{2}\right)
   \ \Rightarrow\ \dim(u_p) = d - p\left(\frac{d-2}{2}\right).
 \end{equation}
 Now solve the equation $\dim(u_p) = 0$ to get $d_{u.c.}$:
-$\dim(u_p) = 0\Leftrightarrow d = p\left(\frac d2-1\right)\Rightarrow d\left(1-\frac p2\right) = -p\Rightarrow
-d = d_{u.c.} = \frac{-p}{\left(1-\frac p2\right)} = \frac{2p}{p-2}$:
+$\dim(u_p) = 0\Leftrightarrow d = p\left(d/2-1\right)\Rightarrow d\left(1-p/2\right) = -p\Rightarrow
+d = d_{u.c.} = -p/\left(1-p/2\right) = 2p/(p-2)$:
 \begin{equation}
   \boxed{d_{u.c.} = \frac{2p}{p-2}}\qquad
   \begin{array}{c|c} p & d_{u.c.}\\ \hline 3 & 6\\ 4 & 4\\ 6 & 3\end{array}
@@ -339,13 +339,13 @@ d = d_{u.c.} = \frac{-p}{\left(1-\frac p2\right)} = \frac{2p}{p-2}$:
 Note the $p\leftrightarrow d_{u.c.}$ symmetry; this can be made manifest by re-expressing the equation for
 $d_{u.c.}$:
 \begin{equation}
-  d_{u.c.} = \frac{2p}{p-2} = \frac{2}{1-\frac2p}\ \Rightarrow\ \frac{1}{d_{u.c.}} = \frac12\left(1-\frac2p\right)
-  \ \Rightarrow\ \boxed{2\left(\frac{1}{d_{u.c.}}+\frac1p\right) = 1}.
+  d_{u.c.} = \frac{2p}{p-2} = \frac{2}{1-\frac{2}{p}}\ \Rightarrow\ \frac{1}{d_{u.c.}} = \frac{1}{2}\left(1-\frac{2}{p}\right)
+  \ \Rightarrow\ \boxed{2\left(\frac{1}{d_{u.c.}}+\frac{1}{p}\right) = 1}.
 \end{equation}
-In addition to $d_{u.c.} = 4$ for $\mathcal L = \frac12(\partial\varphi)^2 + r\varphi^2 + u_4\varphi^4$, we have
+In addition to $d_{u.c.} = 4$ for $\mathcal L = (1/2)(\partial\varphi)^2 + r\varphi^2 + u_4\varphi^4$, we have
 $d_{u.c.} = 3$ for
 \begin{equation}
-  \mathcal L = \tfrac12(\partial\varphi)^2 + r\varphi^2 + u_4\varphi^4 + u_6\varphi^6 .
+  \mathcal L = \frac{1}{2}(\partial\varphi)^2 + r\varphi^2 + u_4\varphi^4 + u_6\varphi^6 .
 \end{equation}
 This $\mathcal L$ has been used to describe a tricritical point, i.e.\ a phase transition such that one must tune
 three relevant physical parameters to get to the critical point, as contrasted with two for a bicritical point
@@ -445,7 +445,7 @@ with $c_6>0$ for boundedness of the energy, and
 \end{equation}
 Here $c_2\propto(T-T_t)+\cdots$; if $c_4/c_2\to 0$ at $T_t$ (e.g.\ for a suitable approach), then
 \begin{equation}
-  M^4 = -\frac{c_2}{3c_6}\propto(T_c-T)\ \Rightarrow\ M\sim|T_c-T|^{1/4},\qquad\beta = \tfrac14 .
+  M^4 = -\frac{c_2}{3c_6}\propto(T_c-T)\ \Rightarrow\ M\sim|T_c-T|^{1/4},\qquad\beta = \frac{1}{4} .
 \end{equation}
 
 \paragraph{Lower critical dimension.}

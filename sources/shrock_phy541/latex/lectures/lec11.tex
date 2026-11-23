@@ -54,12 +54,12 @@ for integer $n$. So
 \begin{gather}
   I_0(x) = 1 + \frac{(x/2)^2}{\Gamma(2)} + \Order(x^4) = 1 + \frac{x^2}{4} + \Order(x^4)
   \quad(\Gamma(2) = 1),\nonumber\\
-  I_1(x) = \frac{(x/2)}{\Gamma(2)} + \Order(x^3) = \frac x2 + \Order(x^3).
+  I_1(x) = \frac{(x/2)}{\Gamma(2)} + \Order(x^3) = \frac{x}{2} + \Order(x^3).
 \end{gather}
 Another relation is $\dd I_0(x)/\dd x = I_1(x)$. The dimensionless reduced Gibbs free energy in
 the MFT approximation is then
 \begin{equation}
-  f_{\text{MFT}} = \lim_{N\to\infty}\frac1N\ln Z_{\text{MFT}} = \ln(Z_{ss}) = \ln(I_0(x)) = \ln\left[I_0(K\Delta\bar M+h)\right].
+  f_{\text{MFT}} = \lim_{N\to\infty}\frac{1}{N}\ln Z_{\text{MFT}} = \ln(Z_{ss}) = \ln(I_0(x)) = \ln\left[I_0(K\Delta\bar M+h)\right].
 \end{equation}
 Calculate $\bar M$:
 \begin{equation}
@@ -74,7 +74,7 @@ $\bar M_{sp} = \tanh(K\Delta\bar M_{sp})$ that we derived previously for the Isi
 approximation. As before, at high temperature $T$, i.e.\ small $\beta$ and hence small $K = \beta J$,
 the only solution is $\bar M_{sp} = 0$. As $T$ decreases, and hence $K$ increases, a nonzero solution
 first occurs if RHS $=\bar M_{sp}$, where $|\bar M_{sp}|\ll 1$. So we calculate this by expanding the
-Bessel functions for small arguments, using $I_1(x) = \frac x2 + \Order(x^3)$ and
+Bessel functions for small arguments, using $I_1(x) = x/2 + \Order(x^3)$ and
 $I_0(x) = 1 + \Order(x^2)$:
 \begin{equation}
   \bar M_{sp} = \frac{K\Delta\bar M_{sp}}{2} + \ldots,
@@ -83,7 +83,7 @@ so a nonzero solution occurs as $K$ is increasing from 0 at $K\Delta = 2$, i.e.
 \begin{equation}
   K = K_{c,\text{MFT},O(2)} = \frac{2}{\Delta}.
 \end{equation}
-Comparing this with the result for Ising, $K_{c,\text{MFT},\text{Ising}} = \frac1\Delta$, we see that
+Comparing this with the result for Ising, $K_{c,\text{MFT},\text{Ising}} = 1/\Delta$, we see that
 \begin{equation}
   \kB T_{c,\text{MFT},O(2)} = \frac{J\Delta}{2}\qquad\text{vs.}\qquad\kB T_{c,\text{MFT},\text{Ising}} = J\Delta .
 \end{equation}
@@ -178,7 +178,7 @@ $T<2J/(\kB\ln c)$. This shows that this Ising system will have spontaneous magne
 temperatures below this value. For an illustrative estimate $c = 2.5$ one gets $T_c = 2.2J/\kB$,
 which is close to the exact value
 \begin{equation}
-  T_c = \frac{J}{\kB\cdot\frac12\ln(1+\sqrt2)} = \frac{2.27J}{\kB}.
+  T_c = \frac{J}{\kB\cdot\frac{1}{2}\ln(1+\sqrt2)} = \frac{2.27J}{\kB}.
 \end{equation}
 This is the Peierls Theorem, proving that there is a nonzero magnetization and an associated phase
 transition from a $\mathbb{Z}_2$-symmetric (paramagnetic) high-temperature phase to a
@@ -205,7 +205,7 @@ For the low-temperature expansion of $Z$ on the square lattice, we start from th
 at $T = 0$, with all spins aligned (where without loss of generality we take the FM case, $J>0$,
 $K>0$) and consider one of the ordered states, say spins up (all $+$, or all $-$). This gives a
 contribution $e^{Ke(\Lambda)}$ to $Z$, where $e(\Lambda)$ = \# bonds on the square lattice
-$=\frac\Delta2\cdot n = 2n$, where $\Delta$ = coordination number of the square lattice.
+$=\Delta/2\cdot n = 2n$, where $\Delta$ = coordination number of the square lattice.
 
 The first correction term occurs when one spin flips; this gives a contribution suppressed as
 follows: the four bonds of the flipped spin go from $e^{\Delta K} = e^{4K}$ to
@@ -245,19 +245,19 @@ So $z = v$ is the equation
 \begin{equation}
   z = \frac{1-z}{1+z},\qquad\text{i.e.}\quad z+z^2 = 1-z;\qquad z^2+2z-1 = 0 .
 \end{equation}
-Solutions: $z = \frac12\left[-2\pm 2\sqrt2\right]$, i.e.\ $z = -1\pm\sqrt2$. The solution with a $-$
+Solutions: $z = (1/2)\left[-2\pm 2\sqrt2\right]$, i.e.\ $z = -1\pm\sqrt2$. The solution with a $-$
 sign gives $z<0$, unphysical, so the unique physical solution is
 \begin{equation}
   z = z_c = -1+\sqrt2 ;
 \end{equation}
 now $z = e^{-2K}$, so $e^{-2K_c} = \sqrt2-1$, so $-2K_c = \ln(\sqrt2-1)$, i.e.\
-$K_c = -\frac12\ln(\sqrt2-1) = +\frac12\ln\left(\frac{1}{\sqrt2-1}\right)$
+$K_c = -(1/2)\ln(\sqrt2-1) = +(1/2)\ln\left(1/(\sqrt2-1)\right)$
 \begin{equation}
-  \Rightarrow\quad K_c = \tfrac12\ln(\sqrt2+1) = 0.4407 .
+  \Rightarrow\quad K_c = \frac{1}{2}\ln(\sqrt2+1) = 0.4407 .
 \end{equation}
 Since $K = \beta J = J/(\kB T)$, this yields the result
 \begin{equation}
-  \kB T_c = \frac{J}{\frac12\ln(\sqrt2+1)} = 2.269\,J .
+  \kB T_c = \frac{J}{\frac{1}{2}\ln(\sqrt2+1)} = 2.269\,J .
 \end{equation}
 This derivation was obtained by Kramers and Wannier in 1941, before the Onsager calculation of the
 free energy of the (zero-field) Ising model on the square lattice (which was published in 1944). Of

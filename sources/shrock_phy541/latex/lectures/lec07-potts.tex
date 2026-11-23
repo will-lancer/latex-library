@@ -49,7 +49,7 @@ Let $e^{K_P}\equiv y$, and consider the first few cases.
 \end{equation}
 the indicial equation for the eigenvalues is $(y-\lambda)^2-1 = 0$, i.e.\ $\lambda^2-2\lambda y+y^2-1 = 0$
 \begin{equation}
-  \Rightarrow\quad\lambda = \tfrac12\left[2y\pm\sqrt{4y^2-4(y^2-1)}\right] = \tfrac12\left[2y\pm 2\right] = y\pm 1;
+  \Rightarrow\quad\lambda = \frac{1}{2}\left[2y\pm\sqrt{4y^2-4(y^2-1)}\right] = \frac{1}{2}\left[2y\pm 2\right] = y\pm 1;
   \qquad\lambda_{\max} = y+1 .
 \end{equation}
 So
@@ -58,12 +58,12 @@ So
 \end{equation}
 and the reduced free energy in the thermodynamic limit is
 \begin{equation}
-  f = \lim_{N\to\infty}\frac1N\ln Z = \ln\lambda_{\max} = \ln(y+1) = \ln\left(e^{K_P}+1\right),
+  f = \lim_{N\to\infty}\frac{1}{N}\ln Z = \ln\lambda_{\max} = \ln(y+1) = \ln\left(e^{K_P}+1\right),
 \end{equation}
 recalling
 \begin{align}
-  \lim_{N\to\infty}\frac1N\ln\left\{(y+1)^N\left[1+\left(\frac{y-1}{y+1}\right)^N\right]\right\}
-  &= \lim_{N\to\infty}\left\{\ln(y+1) + \frac1N\ln\left[1+\left(\frac{y-1}{y+1}\right)^N\right]\right\}\nonumber\\
+  \lim_{N\to\infty}\frac{1}{N}\ln\left\{(y+1)^N\left[1+\left(\frac{y-1}{y+1}\right)^N\right]\right\}
+  &= \lim_{N\to\infty}\left\{\ln(y+1) + \frac{1}{N}\ln\left[1+\left(\frac{y-1}{y+1}\right)^N\right]\right\}\nonumber\\
   &= \ln(y+1).
 \end{align}
 
@@ -84,8 +84,8 @@ so
 \end{equation}
 where $(\lambda_{\min}/\lambda_{\max})^N\to 0$ as $N\to\infty$, and
 \begin{equation}
-  f = \lim_{N\to\infty}\frac1N\ln Z = \underbrace{\ln\lambda_{\max}}_{\ln(y+2)}
-    + \underbrace{\lim_{N\to\infty}\frac1N\ln\left[1+2\left(\frac{\lambda_{\min}}{\lambda_{\max}}\right)^N\right]}_{0}
+  f = \lim_{N\to\infty}\frac{1}{N}\ln Z = \underbrace{\ln\lambda_{\max}}_{\ln(y+2)}
+    + \underbrace{\lim_{N\to\infty}\frac{1}{N}\ln\left[1+2\left(\frac{\lambda_{\min}}{\lambda_{\max}}\right)^N\right]}_{0}
     = \ln(y+2).
 \end{equation}
 
@@ -110,21 +110,21 @@ As before, $Z = \sum_j\lambda_j^N = \lambda_{\max}^N + 3\lambda_{\min}^N$, $f = 
 \end{equation}
 where $v_P = y-1$, and
 \begin{equation}
-  f = \lim_{N\to\infty}\frac1N\ln Z = \ln(y+q-1) = \ln(q+v_P) = \ln\left(q+e^{K_P}-1\right).
+  f = \lim_{N\to\infty}\frac{1}{N}\ln Z = \ln(y+q-1) = \ln(q+v_P) = \ln\left(q+e^{K_P}-1\right).
 \end{equation}
 
-\paragraph{Internal energy.} The internal energy per site is, with $y = e^{K_P}\Rightarrow\frac{\dd y}{\dd K_P} = y$,
+\paragraph{Internal energy.} The internal energy per site is, with $y = e^{K_P}\Rightarrow\dd y/\dd K_P = y$,
 \begin{equation}
-  \bar U = -\pder f\beta = -J_P\pder{f}{K_P} = -J_P\pder{y}{K_P}\pder fy
+  \bar U = -\pder{f}{\beta} = -J_P\pder{f}{K_P} = -J_P\pder{y}{K_P}\pder{f}{y}
   = -J_Py\pder{}{y}\ln(y+q-1) = -J_P\left(\frac{y}{y+q-1}\right),
 \end{equation}
 so
 \begin{equation}
   \bar U = -J_P\left(\frac{e^{K_P}}{e^{K_P}+q-1}\right).
 \end{equation}
-As $T\to\infty$, $K_P\to 0$, $\bar U\to-\frac{J_P}{q}$. As $T\to 0$ for FM: $e^{K_P}\to\infty$, $\bar U\to-J_P$.
+As $T\to\infty$, $K_P\to 0$, $\bar U\to-J_P/q$. As $T\to 0$ for FM: $e^{K_P}\to\infty$, $\bar U\to-J_P$.
 
-\paragraph{Specific heat.} With $\frac{\partial y}{\partial K_P} = y$,
+\paragraph{Specific heat.} With $\partial y/\partial K_P = y$,
 \begin{align}
   \bar C &= \pder{\bar U}{T} = -\frac{\kB K_P^2}{J_P}\pder{\bar U}{K_P} = -\frac{\kB K_P^2}{J_P}\pder{y}{K_P}\pder{\bar U}{y}\nonumber\\
   &= -\frac{\kB K_P^2}{J_P}\cdot y\cdot\pder{}{y}\left[\frac{-J_Py}{y+q-1}\right]
@@ -191,8 +191,8 @@ colors mark the three sublattices of $\Lambda_{tri}$.}
 \end{diagram}
 
 The picture shows one ground state of the system, with each Kr atom (indicated by green) surrounded by vacant faces of
-$\Lambda_{hc}\leftrightarrow$ vacant sites of $\Lambda_{hc}^* = \Lambda_{tri}$. This is called ``$\frac13$ coverage'', since
-$\frac13$ of the faces of $\Lambda_{hc}$ (i.e.\ $\frac13$ of the sites of $\Lambda_{tri}$) are occupied by the Kr atoms. Since
+$\Lambda_{hc}\leftrightarrow$ vacant sites of $\Lambda_{hc}^* = \Lambda_{tri}$. This is called ``$1/3$ coverage'', since
+$1/3$ of the faces of $\Lambda_{hc}$ (i.e.\ $1/3$ of the sites of $\Lambda_{tri}$) are occupied by the Kr atoms. Since
 $\Lambda_{tri} = \Lambda_1\oplus\Lambda_2\oplus\Lambda_3$ (green, red and blue sublattices), there are two other equivalent
 ground states, where the Kr atoms are adsorbed on the other set of faces of $\Lambda_{hc}$ (graphene surface), i.e.\ the
 vertices on the other two sublattices of $\Lambda_{tri}$ (red or blue). This is equivalent to the 3 degenerate ground states

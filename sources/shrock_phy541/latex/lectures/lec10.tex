@@ -83,7 +83,7 @@ $T_c-T\to 0^+$, i.e.\ $\ln M = \beta\ln(T_c-T)$,
 \end{equation}
 From our solution for $M$ above, we find
 \begin{equation}
-  \text{LG:}\quad\boxed{\beta = \tfrac12}.
+  \text{LG:}\quad\boxed{\beta = \frac{1}{2}}.
 \end{equation}
 
 Next, calculate the magnetic susceptibility $\chi = \partial M/\partial H$ as $T\to T_c$ and the
@@ -108,7 +108,7 @@ $M = 0$, where $\partial^2A/\partial M^2 = 2\ell_{2,1}(T-T_c)>0$. So as $T\to T_
 For $T<T_c$, $\partial^2A/\partial M^2 = 4\ell_{2,1}(T_c-T)$ at the minimum of $A$
 $\Rightarrow\chi = [4\ell_{2,1}(T_c-T)]^{-1}\Rightarrow\gamma' = 1$.
 
-So the LG approach yields $\beta = \frac12$ and $\gamma = \gamma' = 1$. (Note that the critical
+So the LG approach yields $\beta = 1/2$ and $\gamma = \gamma' = 1$. (Note that the critical
 amplitudes for $\chi$ for $T>T_c$ and $T<T_c$ are different:
 \begin{equation}
   \chi\sim
@@ -175,7 +175,7 @@ model. Then we generalize to other spin models.
   Z = \sum_{\{\sigma_i\}}e^{K\sum_{e_{ij}}\sigma_i\sigma_j + h\sum_i\sigma_i},
   \qquad\text{where, as before,}\quad K\equiv\beta J,\ h\equiv\beta H .
 \end{equation}
-What makes the calculation of $Z$ and $f = \lim_{N\to\infty}\frac1N\ln Z$ difficult is the coupled,
+What makes the calculation of $Z$ and $f = \lim_{N\to\infty}(1/N)\ln Z$ difficult is the coupled,
 many-body (actually infinite in the $N\to\infty$ limit) nature of the problem. MFT simplifies the
 problem drastically by approximating the coupled many-body problem by a 1-body problem, assuming
 that a given spin $\sigma_0$ interacts with a mean (= average) magnetic field due to all of the other
@@ -198,7 +198,7 @@ so for the single site, denoted 0,
 \end{equation}
 and $Z_{\text{MFT}} = (Z_{ss,\text{MFT}})^N$,
 \begin{equation}
-  f_{\text{MFT}} = \lim_{N\to\infty}\frac1N\ln Z_{\text{MFT}} = \ln[Z_{ss,\text{MFT}}]
+  f_{\text{MFT}} = \lim_{N\to\infty}\frac{1}{N}\ln Z_{\text{MFT}} = \ln[Z_{ss,\text{MFT}}]
   = \ln[2\cosh(K\Delta\bar M+h)].
 \end{equation}
 The Gibbs free energy is $G_{\text{MFT}}(T,H) = -\kB Tf_{\text{MFT}}$, and
@@ -217,7 +217,7 @@ expanding the tanh, $\bar M_{sp} = K\Delta\bar M_{sp}$, i.e.\ at $K\Delta = 1$,
 \end{equation}
 (Here we used the Taylor series expansion $\tanh x\simeq x + \Order(x^3)$ for $x\to 0$.) So the
 critical temperature in the MFT approximation is $K_{c,\text{MFT}} = 1/\Delta$, i.e.\
-$\beta_{c,\text{MFT}} = \frac{1}{J\Delta} = \frac{1}{\kB T_{c,\text{MFT}}}$, so
+$\beta_{c,\text{MFT}} = 1/(J\Delta) = 1/(\kB T_{c,\text{MFT}})$, so
 \begin{equation}
   T_{c,\text{MFT}} = \frac{J\Delta}{\kB}.
 \end{equation}
@@ -232,33 +232,33 @@ $T$ \emph{lower} than the MFT prediction, $(T_c)_{\text{MFT}}$, in order for the
 occur and for a nonzero spontaneous magnetization (LRO). For example, we will later derive
 $K_{c,sq}$, the critical $K_c$ for the Ising model on the square lattice. This is
 \begin{equation}
-  K_{c,sq} = \tfrac12\ln(1+\sqrt2) = 0.4407,
+  K_{c,sq} = \frac{1}{2}\ln(1+\sqrt2) = 0.4407,
 \end{equation}
 and, with $K = \beta J = J/(\kB T)$, this means that
 \begin{equation}
   \kB T_{c,sq} = \frac{2J}{\ln(1+\sqrt2)} = 2.269\,J .
 \end{equation}
-Compare with $K_{c,\text{MFT}} = \frac{1}{\Delta_{sq}} = \frac14 = \frac{J}{\kB T_{c,\text{MFT}}}$
+Compare with $K_{c,\text{MFT}} = 1/\Delta_{sq} = 1/4 = J/(\kB T_{c,\text{MFT}})$
 $\Rightarrow\kB T_{c,\text{MFT}} = 4J$. So
 \begin{equation}
   \frac{T_{c,sq}}{T_{c,\text{MFT}}} = \frac{K_{c,\text{MFT}}}{K_{c,sq}}
-  = \frac{\frac14}{\frac12\ln(1+\sqrt2)} = \frac{1}{2\ln(1+\sqrt2)} = 0.5673,
+  = \frac{\frac{1}{4}}{\frac{1}{2}\ln(1+\sqrt2)} = \frac{1}{2\ln(1+\sqrt2)} = 0.5673,
 \end{equation}
 which is $<1$, for the reason given above: the neglect of disordering fluctuations in MFT.
 
 \subsubsection*{Critical exponents in MFT}
 
 Use $\bar M_{sp} = \tanh(K\Delta\bar M_{sp})$ and the expansion
-$\tanh x = x - \frac13x^3 + \Order(x^5)$ as $x\to 0$, so
+$\tanh x = x - (1/3)x^3 + \Order(x^5)$ as $x\to 0$, so
 \begin{equation}
-  \bar M_{sp} = K\Delta\bar M_{sp} - \tfrac13(K\Delta\bar M_{sp})^3 + \Order\left((K\Delta\bar M_{sp})^5\right)
+  \bar M_{sp} = K\Delta\bar M_{sp} - \frac{1}{3}(K\Delta\bar M_{sp})^3 + \Order\left((K\Delta\bar M_{sp})^5\right)
 \end{equation}
 as $T\to T_c^-$, and hence $\bar M_{sp}\to 0$. For $T<T_c$, divide both sides by $\bar M_{sp}$, which
 is nonzero:
 \begin{align}
-  &\Rightarrow 1 = K\Delta - \tfrac13(K\Delta)^3\bar M_{sp}^2 + \Order\left((K\Delta)^5\bar M_{sp}^4\right)
-    = K\Delta\left[1-\tfrac13(K\Delta)^2\bar M_{sp}^2+\ldots\right]\nonumber\\
-  &\Rightarrow\frac{1}{K\Delta} = 1-\tfrac13(K\Delta)^2\bar M_{sp}^2+\ldots
+  &\Rightarrow 1 = K\Delta - \frac{1}{3}(K\Delta)^3\bar M_{sp}^2 + \Order\left((K\Delta)^5\bar M_{sp}^4\right)
+    = K\Delta\left[1-\frac{1}{3}(K\Delta)^2\bar M_{sp}^2+\ldots\right]\nonumber\\
+  &\Rightarrow\frac{1}{K\Delta} = 1-\frac{1}{3}(K\Delta)^2\bar M_{sp}^2+\ldots
   \ \Rightarrow\ \bar M_{sp}^2 = \frac{3}{(K\Delta)^2}\left[1-\frac{1}{K\Delta}\right]
   \quad\text{as } T\to T_c^-,
 \end{align}
@@ -267,7 +267,7 @@ where the $\Order((K\Delta)^5\bar M_{sp}^4)$ term is negligible as $T\to T_c^-$.
   \bar M_{sp}^2 = \frac{3}{(K\Delta)^2}\left[1-\frac{1}{K\Delta}\right]
   = \frac{3}{(K\Delta)^2}\left[1-\frac{K_c}{K}\right] = \frac{3}{K^3\Delta^2}(K-K_c).
 \end{equation}
-Now $K-K_c = J(\beta-\beta_c) = \frac{J}{\kB}\left(\frac1T-\frac1{T_c}\right) = \frac{J}{\kB TT_c}(T_c-T)$,
+Now $K-K_c = J(\beta-\beta_c) = (J/\kB)\left(1/T-1/T_c\right) = (J/(\kB TT_c))(T_c-T)$,
 so
 \begin{equation}
   \bar M_{sp}^2 = \left(\frac{3}{K_c^3\Delta^2}\right)\underbrace{\left(\frac{J}{\kB T_c}\right)}_{K_c}\left(\frac{T_c-T}{T_c}\right)
@@ -276,22 +276,22 @@ so
 where $3/(K_c\Delta)^2$ is a constant. So $\bar M_{sp}\propto(T_c-T)^{1/2}$ as $T\to T_c^-$, so the
 critical exponent is
 \begin{equation}
-  \boxed{\beta = \tfrac12\ \text{in MFT}}.
+  \boxed{\beta = \frac{1}{2}\ \text{in MFT}}.
 \end{equation}
 
 Next, calculate the critical behavior of $\chi$ and the associated exponents $\gamma$, $\gamma'$:
 use the basic MFT equation $\bar M = \tanh(K\Delta\bar M + h)$. Now expand for $T$ near $T_c$, using
-$\tanh x = x - \frac{x^3}{3} + \Order(x^5)$ for small $x$, and use
-$\bar\chi = \pder{M}{H} = \beta\pder{M}{h}$, so $\beta^{-1}\bar\chi = \pder{M}{h}$:
+$\tanh x = x - x^3/3 + \Order(x^5)$ for small $x$, and use
+$\bar\chi = \partial M/\partial H = \beta\partial M/\partial h$, so $\beta^{-1}\bar\chi = \partial M/\partial h$:
 \begin{equation}
-  \bar M = (K\Delta\bar M + h) - \tfrac13(K\Delta\bar M+h)^3+\ldots,\qquad
-  (1-K\Delta)\bar M = h - \tfrac13(K\Delta\bar M+h)^3+\ldots
+  \bar M = (K\Delta\bar M + h) - \frac{1}{3}(K\Delta\bar M+h)^3+\ldots,\qquad
+  (1-K\Delta)\bar M = h - \frac{1}{3}(K\Delta\bar M+h)^3+\ldots
 \end{equation}
 Let $K\Delta\equiv\kappa$. Then
 \begin{equation}
   \Rightarrow\ \bar M = \frac{h}{(1-K\Delta)} - \frac{1}{3(1-K\Delta)}\left[(\kappa\bar M)^3 + 3(\kappa\bar M)^2h + 3(\kappa\bar M)h^2 + h^3\right]+\ldots
 \end{equation}
-The first term is the leading-order behavior as $T\to T_c$, so $\pder{\bar M}{h} = \frac{1}{1-K\Delta}$:
+The first term is the leading-order behavior as $T\to T_c$, so $\partial \bar M/\partial h = 1/(1-K\Delta)$:
 \begin{equation}
   \beta^{-1}\bar\chi = \frac{1}{1-K\Delta} = \frac{1}{1-\frac{K}{K_c}}\propto\frac{1}{K_c-K}\propto\frac{1}{T-T_c},
 \end{equation}
@@ -305,7 +305,7 @@ lattices, extending our previous comparison for the square lattice (2D). Conside
 (sc) lattice. Analysis of high-$T$ series expansions $\Rightarrow\tanh(K_{c,sc})\simeq 0.21813$
 $\Rightarrow K_{c,sc}\simeq 0.22169$, and
 \begin{equation}
-  \frac{T_{c,sc}}{T_{c,\text{MFT},sc}} = \frac{K_{c,\text{MFT},sc}}{K_{c,sc}} = \frac{\frac16}{0.2217}\simeq 0.752 .
+  \frac{T_{c,sc}}{T_{c,\text{MFT},sc}} = \frac{K_{c,\text{MFT},sc}}{K_{c,sc}} = \frac{\frac{1}{6}}{0.2217}\simeq 0.752 .
 \end{equation}
 From this comparison, we see that as the dimension (coordination number) increases, the MFT
 prediction for $T_c$ becomes more accurate; this ratio was 0.567 for the square lattice.
@@ -314,7 +314,7 @@ Let us give another comparison, for the body-centered cubic (bcc) lattice; see t
 Figure~\ref{fig:cubic}; $\Delta = 8$ for the bcc lattice. Analysis of high-temperature series
 expansions gives $K_{c,bcc} = 0.157407$, so
 \begin{equation}
-  \frac{T_{c,bcc}}{(T_c)_{\text{MFT},bcc}} = \frac{K_{c,\text{MFT},bcc}}{K_{c,bcc}} = \frac{\frac18}{0.157407}\simeq 0.7941 .
+  \frac{T_{c,bcc}}{(T_c)_{\text{MFT},bcc}} = \frac{K_{c,\text{MFT},bcc}}{K_{c,bcc}} = \frac{\frac{1}{8}}{0.157407}\simeq 0.7941 .
 \end{equation}
 Summary of these comparisons:
 \begin{center}

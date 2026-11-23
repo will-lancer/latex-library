@@ -13,10 +13,10 @@ $\mathbf k+\dd\mathbf k$ is
 \begin{equation}
   \dd N = \frac{L^3\dd^3k}{(2\pi)^3} = \frac{V\dd^3k}{(2\pi)^3}.
 \end{equation}
-Now the frequency is $\nu = \frac c\lambda$, so $\omega = 2\pi\nu = \frac{2\pi c}{\lambda} = ck$, where $c$ is the velocity of
-light, $\lambda$ is the wavelength, and $k = \frac{2\pi}{\lambda}$; $k = |\mathbf k|$. From the Maxwell equations in vacuum,
-$\boldsymbol\nabla\times\mathbf E = -\frac1c\frac{\partial\mathbf B}{\partial t}$,
-$\boldsymbol\nabla\times\mathbf B = \frac1c\frac{\partial\mathbf E}{\partial t}$, $\boldsymbol\nabla\cdot\mathbf E = 0$ and
+Now the frequency is $\nu = c/\lambda$, so $\omega = 2\pi\nu = 2\pi c/\lambda = ck$, where $c$ is the velocity of
+light, $\lambda$ is the wavelength, and $k = 2\pi/\lambda$; $k = |\mathbf k|$. From the Maxwell equations in vacuum,
+$\boldsymbol\nabla\times\mathbf E = -(1/c)\partial\mathbf B/\partial t$,
+$\boldsymbol\nabla\times\mathbf B = (1/c)\partial\mathbf E/\partial t$, $\boldsymbol\nabla\cdot\mathbf E = 0$ and
 $\boldsymbol\nabla\cdot\mathbf B = 0$ $\Rightarrow$ the electromagnetic wave equations
 \begin{equation}
   \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right)\mathbf E = 0,\qquad
@@ -39,7 +39,7 @@ $\omega+\dd\omega$, is
 \begin{equation}
   \boxed{U(\omega)\dd\omega = \frac{\hbar}{\pi^2c^3}\frac{\omega^3\dd\omega}{(e^{\beta\hbar\omega}-1)}}.
 \end{equation}
-Now define a dimensionless variable $y = \beta\hbar\omega = \frac{\hbar\omega}{\kB T}$, so $\omega = (\kB T/\hbar)y$:
+Now define a dimensionless variable $y = \beta\hbar\omega = \hbar\omega/(\kB T)$, so $\omega = (\kB T/\hbar)y$:
 \begin{equation}
   \Rightarrow\quad U(\omega)\dd\omega = \frac{\hbar}{\pi^2c^3}\left(\frac{\kB T}{\hbar}\right)^4\frac{y^3\dd y}{(e^y-1)}
   = \boxed{\frac{1}{\pi^2}\frac{(\kB T)^4}{(\hbar c)^3}\frac{y^3\dd y}{(e^y-1)}}
@@ -57,7 +57,7 @@ Now define a dimensionless variable $y = \beta\hbar\omega = \frac{\hbar\omega}{\
 \end{diagram}
 
 For $y\ll 1$, i.e.\ $\hbar\omega\ll\kB T$, expand the denominator:
-$\frac{y^3\dd y}{(1+y+\ldots)-1} = y^2\dd y = (\beta\hbar)^3\omega^2\dd\omega$, and
+$y^3\dd y/((1+y+\ldots)-1) = y^2\dd y = (\beta\hbar)^3\omega^2\dd\omega$, and
 \begin{equation}
   U(\omega)\dd\omega = \frac{1}{\pi^2}\frac{(\kB T)^4}{(\hbar c)^3}\left(\frac{\hbar}{\kB T}\right)^3\omega^2\dd\omega
   = \frac{\kB T}{\pi^2c^3}\omega^2\dd\omega,
@@ -69,9 +69,9 @@ energy $E = \hbar\omega$. Einstein used this to explain the photoelectric effect
 For $\hbar\omega\gg\kB T$, i.e.\ $y\gg 1$, where $y = \beta\hbar\omega$,
 \begin{equation}
   U(\omega)\dd\omega\simeq\frac{1}{\pi^2}\frac{1}{\beta^4(\hbar c)^3}\underbrace{\frac{y^3\dd y}{e^y-1}}_{y^3e^{-y}\dd y = \beta^4\hbar^4\omega^3e^{-\beta\hbar\omega}\dd\omega}
-  = \frac{\hbar}{\pi^2}\left(\frac\omega c\right)^3e^{-\beta\hbar\omega}\dd\omega,
+  = \frac{\hbar}{\pi^2}\left(\frac{\omega}{c}\right)^3e^{-\beta\hbar\omega}\dd\omega,
 \end{equation}
-which decreases (exponentially rapidly) to 0 as $\frac{\hbar\omega}{\kB T}\to\infty$.
+which decreases (exponentially rapidly) to 0 as $\hbar\omega/(\kB T)\to\infty$.
 
 The total energy per volume in the thermal photons (``blackbody radiation'') is
 \begin{equation}
@@ -85,15 +85,15 @@ A related quantity is the power per unit area emitted by a thermal bath of photo
 $\omega+\dd\omega$. Recall the Poynting vector $\mathbf S\propto c(\mathbf E\times\mathbf B)\propto c(\mathbf E^2+\mathbf B^2)\propto cU$
 ($\mathbf E$ and $\mathbf B$ have the same dimensions in Gaussian units)
 \begin{equation}
-  \Rightarrow\quad P(\omega)\dd\omega = \frac c4U\dd\omega = \frac{\hbar}{4\pi^2c^2}\frac{\omega^3\dd\omega}{(e^{\beta\hbar\omega}-1)}
+  \Rightarrow\quad P(\omega)\dd\omega = \frac{c}{4}U\dd\omega = \frac{\hbar}{4\pi^2c^2}\frac{\omega^3\dd\omega}{(e^{\beta\hbar\omega}-1)}
   = \frac{(\kB T)^4}{4\pi^2\hbar^3c^2}\frac{y^3\dd y}{(e^y-1)},\qquad y = \beta\hbar\omega,
 \end{equation}
 \begin{equation}
   P_{\text{tot}} = \int_0^\infty P(\omega)\dd\omega = \frac{(\kB T)^4}{4\pi^2\hbar^3c^2}\underbrace{\int_0^\infty\frac{y^3\dd y}{e^y-1}}_{\pi^4/15}
   = \left(\frac{\pi^2\kB^4}{60\hbar^3c^2}\right)T^4 = \sigma T^4,
 \end{equation}
-where $\sigma = \frac{\pi^2\kB^4}{60\hbar^3c^2} = 5.67\times 10^{-8}\ \frac{\text{Watts}}{\text{m}^2\text{K}^4}$ is the
-Stefan--Boltzmann constant. Since $\nu = \frac c\lambda$, $\dd\nu = -\frac{c}{\lambda^2}\dd\lambda$; reexpress this as a function of
+where $\sigma = \pi^2\kB^4/(60\hbar^3c^2) = 5.67\times 10^{-8}\ \text{Watts}/(\text{m}^2\text{K}^4)$ is the
+Stefan--Boltzmann constant. Since $\nu = c/\lambda$, $\dd\nu = -(c/\lambda^2)\dd\lambda$; reexpress this as a function of
 $\lambda$:
 \begin{equation}
   \Rightarrow\quad P(\lambda)\dd\lambda\propto\lambda^{-3}\left(\frac{\dd\lambda}{\lambda^2}\right)\Big/\left[\exp\left(\frac{hc}{\lambda\kB T}\right)-1\right],
@@ -114,7 +114,7 @@ with a maximum at
 \end{diagram}
 
 The chromosphere (outer layer) of a G-type star (the sun is spectral type G2) has a temperature $T\sim 5\times 10^3$~K
-$\Rightarrow\lambda_{\max} = \frac{2.90\times 10^{-3}\ \text{m}\cdot\text{K}}{5\times 10^3\ \text{K}}\sim 0.6\times 10^{-6}\ \text{m} = 600\ \text{nm} = 6000$~\AA.
+$\Rightarrow\lambda_{\max} = 2.90\times 10^{-3}\ \text{m}\cdot\text{K}/(5\times 10^3\ \text{K})\sim 0.6\times 10^{-6}\ \text{m} = 600\ \text{nm} = 6000$~\AA.
 Because the power peaks at this $\lambda$, the color of the sun is creamy yellow. Cooler stars appear redder, since a lower $T$ of the
 chromosphere $\Rightarrow$ larger $\lambda_{\max}$, e.g.\ Aldebaran (type K5), Betelgeuse (M2); Sirius (A0) is blue-white, Rigel (B8)
 white. The stellar spectral series is O B A F G K M, from high $T$ to low $T$.
@@ -136,7 +136,7 @@ red-shifted; this shifted the energies down by a factor of $\sim 10^3$, to $T\si
 \begin{equation}
   \lambda_{\max} = \frac{2.90\times 10^{-3}\ \text{m}\cdot\text{K}}{2.73\ \text{K}}\sim 1\ \text{mm}.
 \end{equation}
-This corresponds to a microwave frequency, $\nu = \frac c\lambda = \frac{3.0\times 10^8\ \text{m/s}}{10^{-3}\ \text{m}}\sim 3\times 10^{11}\ \text{Hz}\sim 300$~GHz.
+This corresponds to a microwave frequency, $\nu = c/\lambda = 3.0\times 10^8\ \text{m/s}/(10^{-3}\ \text{m})\sim 3\times 10^{11}\ \text{Hz}\sim 300$~GHz.
 
 The CMB was first observed by A.~Penzias and R.~Wilson at Bell Labs Holmdel (NJ) in 1965 using microwave antennas (Nobel Prize, 1978).
 Later, measurements were made using ground-based and space missions that confirmed that the observed $P(\omega)$ does agree with the
@@ -156,7 +156,7 @@ $i = 1,\ldots,N$. Denote the deviations from the equilibrium positions as $\bold
 velocity of the $i$th atom or molecule is $\mathbf v_i = \dd\boldsymbol\xi_i/\dd t$. The real application is to dimension $d = 3$, but
 let us keep $d$ general. The kinetic energy is
 \begin{equation}
-  E_{\text{kin}} = \sum_{i=1}^N\frac{m\mathbf v_i^2}{2} = \frac m2\sum_{i=1}^N\sum_{\alpha=1}^dv_{i\alpha}^2 .
+  E_{\text{kin}} = \sum_{i=1}^N\frac{m\mathbf v_i^2}{2} = \frac{m}{2}\sum_{i=1}^N\sum_{\alpha=1}^dv_{i\alpha}^2 .
 \end{equation}
 The potential energy is
 \begin{equation}
@@ -165,10 +165,10 @@ The potential energy is
   + \frac{1}{2!}\sum_{i,j=1}^N\sum_{\alpha,\beta=1}^d\left(\frac{\partial^2V}{\partial r_{i\alpha}\partial r_{j\beta}}\right)_0\xi_{i\alpha}\xi_{j\beta}
 \end{equation}
 to quadratic order in small deviations, where $(\ )_0$ means evaluation at the equilibrium positions, and
-$\frac{\partial V}{\partial r_{i\alpha}} = \frac{\partial V}{\partial\xi_{i\alpha}}$.
+$\partial V/\partial r_{i\alpha} = \partial V/\partial\xi_{i\alpha}$.
 
 The constant term $V_0$ is arbitrary and will not affect the dynamics. The linear term involves
-$\frac{\partial V}{\partial r_{i\alpha}} = -F_{i\alpha}$, the force on the $i$th particle in direction $\alpha$ at
+$\partial V/\partial r_{i\alpha} = -F_{i\alpha}$, the force on the $i$th particle in direction $\alpha$ at
 $r_{i\alpha}^{(0)}$; this $=0$ by the definition of the equilibrium points $\mathbf r_i^{(0)}$. Equivalently, it is the slope of $V$
 as a function of $r_{i\alpha}$ and must be zero at the minimum. The summand of the quadratic term is symmetric in $(i,j)$ and
 $(\alpha,\beta)$, so we can define
@@ -179,15 +179,15 @@ and diagonalize $A$, obtaining the normal modes of this system.
 
 This system thus has the form of a simple harmonic oscillator (SHO). Recall the Hamiltonian for a SHO:
 \begin{equation}
-  \Ham_{\text{SHO}} = \tfrac12m\dot{\mathbf r}^2 + \tfrac\kappa2(\mathbf r-\mathbf r^{(0)})^2,
+  \Ham_{\text{SHO}} = \frac{1}{2}m\dot{\mathbf r}^2 + \frac{\kappa}{2}(\mathbf r-\mathbf r^{(0)})^2,
 \end{equation}
 where $\kappa$ is the ``spring constant''. Defining rescaled coordinates $\mathbf q = \sqrt m(\mathbf r-\mathbf r^{(0)})$,
-$\Ham_{\text{SHO}} = \frac12\dot{\mathbf q}^2 + \frac12\omega^2\mathbf q^2$, where $\omega = \sqrt{\kappa/m}$ is the oscillation (angular)
+$\Ham_{\text{SHO}} = (1/2)\dot{\mathbf q}^2 + (1/2)\omega^2\mathbf q^2$, where $\omega = \sqrt{\kappa/m}$ is the oscillation (angular)
 frequency. Here we have a Hamiltonian describing the quantized vibrations of the atoms or molecules about their equilibrium positions in
 the form of a SHO with $d\cdot N$ coordinates. The solution for the quantum mechanical energy eigenvalues is
-$E_j = \hbar\omega_j(\frac12+n_j)$ for each oscillator $j = 1,\ldots,d\cdot N$. The total wavefunction is $\prod_j|n_j\rangle$. So
+$E_j = \hbar\omega_j(1/2+n_j)$ for each oscillator $j = 1,\ldots,d\cdot N$. The total wavefunction is $\prod_j|n_j\rangle$. So
 \begin{equation}
-  E_{\text{tot}} = V_0 + \sum_{j=1}^{d\cdot N}\left(\frac12+n_j\right)\hbar\omega_j = \tilde V_0 + \sum_{j=1}^{d\cdot N}n_j\hbar\omega_j .
+  E_{\text{tot}} = V_0 + \sum_{j=1}^{d\cdot N}\left(\frac{1}{2}+n_j\right)\hbar\omega_j = \tilde V_0 + \sum_{j=1}^{d\cdot N}n_j\hbar\omega_j .
 \end{equation}
 Then the partition function is
 \begin{align}
@@ -195,7 +195,7 @@ Then the partition function is
      = \sum_{\{n_j\}}\left[\prod_{j=1}^{d\cdot N}e^{-\beta n_j\hbar\omega_j}\right]
      = \prod_{j=1}^{d\cdot N}\frac{1}{(1-e^{-\beta\hbar\omega_j})},
 \end{align}
-using, for each, $\sum_{n_1=0}^\infty e^{-\beta n_1\hbar\omega_1} = \sum_{n_1=0}^\infty x^{n_1} = \frac{1}{1-x}$ with
+using, for each, $\sum_{n_1=0}^\infty e^{-\beta n_1\hbar\omega_1} = \sum_{n_1=0}^\infty x^{n_1} = 1/(1-x)$ with
 $x = e^{-\beta\hbar\omega_1}$; $\ln Z = -\sum_{j=1}^{d\cdot N}\ln(1-e^{-\beta\hbar\omega_j})$,
 \begin{equation}
   U = -\pder{}{\beta}\ln Z = +\pder{}{\beta}\sum_{j=1}^{d\cdot N}\ln\left(1-e^{-\beta\hbar\omega_j}\right)
@@ -206,17 +206,17 @@ i.e.
   U = \sum_{j=1}^{d\cdot N}\frac{\hbar\omega_j}{(e^{\beta\hbar\omega_j}-1)}.
 \end{equation}
 So one sees that the quantized lattice vibrations behave as bosons; they are called phonons because excitations propagate at the speed
-of sound. The associated energy has the form $U = \sum_jE_jn_j$, where $n_j = \frac{1}{(e^{\beta\hbar\omega_j}-1)}$ is the
+of sound. The associated energy has the form $U = \sum_jE_jn_j$, where $n_j = 1/(e^{\beta\hbar\omega_j}-1)$ is the
 Bose--Einstein occupation number.
 
 In a real solid, the normal-mode frequencies are very closely spaced, so one replaces the sum by an integral, with a density-of-states
-function $\mathcal D(\omega) = \frac{\dd N_{\text{osc}}}{\dd\omega}$, where $N_{\text{osc}}$ = \# oscillator states:
+function $\mathcal D(\omega) = \dd N_{\text{osc}}/\dd\omega$, where $N_{\text{osc}}$ = \# oscillator states:
 \begin{equation}
   \ln Z = -\int_0^\infty\dd\omega\,\mathcal D(\omega)\ln(1-e^{-\beta\hbar\omega}),\qquad
   U = \int_0^\infty\dd\omega\,\mathcal D(\omega)\frac{\hbar\omega}{(e^{\beta\hbar\omega}-1)}.
 \end{equation}
-The specific heat capacity is $C_v = \left(\frac{\dd U}{\dd T}\right)_V = -\kB\beta^2\frac{\dd U}{\dd\beta}$, and
-$\frac{\dd}{\dd\beta}(e^{\beta\hbar\omega}-1)^{-1} = -(e^{\beta\hbar\omega}-1)^{-2}\hbar\omega e^{\beta\hbar\omega}$ (N.B.:
+The specific heat capacity is $C_v = \left(\dd U/\dd T\right)_V = -\kB\beta^2\dd U/\dd\beta$, and
+$(\dd/\dd\beta)(e^{\beta\hbar\omega}-1)^{-1} = -(e^{\beta\hbar\omega}-1)^{-2}\hbar\omega e^{\beta\hbar\omega}$ (N.B.:
 $C_v\simeq C_p$ for a solid), so
 \begin{equation}
   C_v = \kB\beta^2\int_0^\infty\dd\omega\,\mathcal D(\omega)\frac{(\hbar\omega)^2e^{\beta\hbar\omega}}{(e^{\beta\hbar\omega}-1)^2},
@@ -229,15 +229,15 @@ This is a general result. In an actual solid, $\mathcal D(\omega)$ is a complica
 
 P.~Debye developed a simple approximate model for $\mathcal D(\omega)$, according to which the phonon oscillation frequencies extend up
 to a finite value, $\omega_D$, the Debye frequency. This is reasonable since at sufficiently high $\omega$, the substance would melt.
-From $\lambda$ = (velocity of sound) $\times$ (period of oscillation) $= \frac{v_s}{\nu}$, i.e.\
-$\lambda\!\!\!^- = \frac1k = \frac{v_s}{\omega}$, we have $\omega = v_sk$. The number of oscillation modes up to $k$ is (oscillations can
+From $\lambda$ = (velocity of sound) $\times$ (period of oscillation) $= v_s/\nu$, i.e.\
+$\lambda\!\!\!^- = 1/k = v_s/\omega$, we have $\omega = v_sk$. The number of oscillation modes up to $k$ is (oscillations can
 occur in any of $d$ directions)
 \begin{equation}
   d\cdot L^d\int\frac{\dd^dk}{(2\pi)^d} = \frac{d\cdot V}{(2\pi)^d}\int_0k^{d-1}\dd k\underbrace{\int\dd\Omega}_{A_d}
   = \frac{d\cdot V}{(2\pi)^d}\cdot\frac{k^d}{d}\cdot A_d = \frac{V\omega^dA_d}{(2\pi v_s)^d},
 \end{equation}
-where $A_d = \frac{2\pi^{d/2}}{\Gamma(d/2)}$, e.g.\ $A_3 = \frac{2\pi^{3/2}}{\Gamma(3/2)} = 4\pi$ (with $\Gamma(\frac12) = \sqrt\pi$,
-$\Gamma(\frac32) = \frac12\Gamma(\frac12) = \frac{\sqrt\pi}{2}$). So
+where $A_d = 2\pi^{d/2}/(\Gamma(d/2))$, e.g.\ $A_3 = 2\pi^{3/2}/(\Gamma(3/2)) = 4\pi$ (with $\Gamma(1/2) = \sqrt\pi$,
+$\Gamma(3/2) = (1/2)\Gamma(1/2) = \sqrt\pi/2$). So
 \begin{equation}
   \mathcal D(\omega) = \frac{\dd N_{\text{osc}}}{\dd\omega} = \frac{d\cdot V\cdot\omega^{d-1}A_d}{(2\pi v_s)^d};
 \end{equation}
@@ -246,20 +246,20 @@ now $N_{\text{osc}} = d\cdot N = \int_0^\infty\dd\omega\,\mathcal D(\omega)$, an
   \Rightarrow\ d\cdot N = \int_0^{\omega_D}\dd\omega\,\mathcal D(\omega) = \frac{d\cdot V\cdot A_d}{(2\pi v_s)^d}\underbrace{\int_0^{\omega_D}\dd\omega\,\omega^{d-1}}_{\omega_D^d/d}
   = \frac{V\cdot A_d\omega_D^d}{(2\pi v_s)^d},
 \end{equation}
-so $\frac{d\cdot\left(\frac NV\right)\cdot(2\pi v_s)^d}{A_d} = \omega_D^d$,
+so $d\cdot\left(N/V\right)\cdot(2\pi v_s)^d/A_d = \omega_D^d$,
 \begin{equation}
-  \Rightarrow\quad\omega_D = (2\pi v_s)\left(\frac{d}{A_d}\cdot\frac NV\right)^{1/d}\qquad\text{in a $d$-dimensional space}.
+  \Rightarrow\quad\omega_D = (2\pi v_s)\left(\frac{d}{A_d}\cdot\frac{N}{V}\right)^{1/d}\qquad\text{in a $d$-dimensional space}.
 \end{equation}
 For $d = 3$, $A_3 = 4\pi$,
-$\omega_D = (2\pi v_s)\left(\frac{3}{4\pi}\frac NV\right)^{1/3} = v_s\left(\frac{(2\pi)^3}{4\pi}\cdot 3\frac NV\right)^{1/3}$:
+$\omega_D = (2\pi v_s)\left((3/(4\pi))N/V\right)^{1/3} = v_s\left((2\pi)^3/(4\pi)\cdot 3N/V\right)^{1/3}$:
 \begin{equation}
-  \boxed{\omega_D = v_s\left(6\pi^2\frac NV\right)^{1/3}}.
+  \boxed{\omega_D = v_s\left(6\pi^2\frac{N}{V}\right)^{1/3}}.
 \end{equation}
 One also defines a Debye temperature, $\boxed{\kB T_D = \hbar\omega_D}$.
 
 Illustrative calculation of $\omega_D$, $T_D$: a typical sound speed in a solid is $v_s\sim 2\ \text{km/sec} = 2\times 10^5$~cm/s. A
-typical number density is $\frac NV\sim 10^{23}$~cm$^{-3}$,
-$\Rightarrow\omega_D = \left(2\times 10^5\ \frac{\text{cm}}{\text{s}}\right)(60\cdot 10^{23})^{1/3} = 4\times 10^{13}$~rad/s, with
+typical number density is $N/V\sim 10^{23}$~cm$^{-3}$,
+$\Rightarrow\omega_D = \left(2\times 10^5\ \text{cm}/\text{s}\right)(60\cdot 10^{23})^{1/3} = 4\times 10^{13}$~rad/s, with
 $(60\cdot 10^{23})^{1/3}\simeq 2\times 10^8$,
 \begin{equation}
   \Rightarrow\quad T_D = \frac{\hbar\omega_D}{\kB} = \frac{(1.05\times 10^{-34}\ \text{J}\cdot\text{s})(0.4\times 10^{14}\ \text{rad/s})}{(1.38\times 10^{-23}\ \text{J/Kelvin})}
@@ -278,12 +278,12 @@ with the Debye model
                                     0 & \text{for } \omega>\omega_D .\end{cases}
 \end{equation}
 Define a dimensionless variable $y = \beta\hbar\omega$, so $y_D = \beta\hbar\omega_D$. Substitute: with
-$\dd\omega\,\omega^{d-1} = \frac{\dd y\cdot y^{d-1}}{(\beta\hbar)^d}$ and $(\beta\hbar\omega)^2 = y^2$,
+$\dd\omega\,\omega^{d-1} = \dd y\cdot y^{d-1}/(\beta\hbar)^d$ and $(\beta\hbar\omega)^2 = y^2$,
 \begin{equation}
   C_v = \frac{\kB\cdot d\cdot A_d\cdot V}{(2\pi v_s)^d}\int_0^{\omega_D}\dd\omega\,\omega^{d-1}\frac{(\beta\hbar\omega)^2e^{\beta\hbar\omega}}{(e^{\beta\hbar\omega}-1)^2}
       = \frac{\kB\cdot d\cdot A_d\cdot V}{(2\pi\beta\hbar v_s)^d}\int_0^{y_D}\dd y\frac{y^{d+1}e^y}{(e^y-1)^2};
 \end{equation}
-recall $d\cdot N = \frac{A_d\omega_D^dV}{(2\pi v_s)^d}$, so $\frac{A_dV}{(2\pi v_s)^d} = \frac{d\cdot N}{\omega_D^d}$
+recall $d\cdot N = A_d\omega_D^dV/(2\pi v_s)^d$, so $A_dV/(2\pi v_s)^d = d\cdot N/\omega_D^d$
 $\Rightarrow$
 \begin{equation}
   C_v = \frac{d^2\cdot N\kB}{(\beta\hbar\omega_D)^d}\int_0^{y_D}\dd y\frac{y^{d+1}e^y}{(e^y-1)^2},
@@ -292,20 +292,20 @@ $\Rightarrow$
 \begin{equation}
   \boxed{C_v = d\cdot N\cdot\kB\cdot\left[\frac{d}{y_D^d}\int_0^{y_D}\dd y\frac{y^{d+1}e^y}{(e^y-1)^2}\right] = d\cdot N\cdot\kB f_D(y_D)},
 \end{equation}
-where $f_D(y_D)$ is the Debye function. The prefactor $\frac{d}{y_D^d}$ is chosen so that $f_D(0) = 1$.
+where $f_D(y_D)$ is the Debye function. The prefactor $d/y_D^d$ is chosen so that $f_D(0) = 1$.
 
-At high temperature $T\gg T_D$, i.e.\ $y_D = \beta\hbar\omega_D = \frac{\hbar\omega_D}{\kB T} = \frac{T_D}{T}\ll 1$, the values of $y$ in
-the integrand are $\ll 1$, so we expand $\frac{1}{(e^y-1)^2}\simeq\frac{1}{[(1+y+\ldots)-1]^2} = \frac{1}{y^2}$ and in the numerator
+At high temperature $T\gg T_D$, i.e.\ $y_D = \beta\hbar\omega_D = \hbar\omega_D/(\kB T) = T_D/T\ll 1$, the values of $y$ in
+the integrand are $\ll 1$, so we expand $1/(e^y-1)^2\simeq1/[(1+y+\ldots)-1]^2 = 1/y^2$ and in the numerator
 $e^y\simeq 1+\ldots$, so for $y_D\ll 1$,
 \begin{equation}
-  f(y_D) = \frac{d}{y_D^d}\int_0^{y_D}\dd y\frac{y^{d+1}}{y^2} = \frac{d}{y_D^d}\cdot\underbrace{\int_0^{y_D}\dd y\,y^{d-1}}_{\left.\frac{y^d}{d}\right|_0^{y_D} = \frac{y_D^d}{d}} = 1,
+  f(y_D) = \frac{d}{y_D^d}\int_0^{y_D}\dd y\frac{y^{d+1}}{y^2} = \frac{d}{y_D^d}\cdot\underbrace{\int_0^{y_D}\dd y\,y^{d-1}}_{\left.y^d/d\right|_0^{y_D} = y_D^d/d} = 1,
   \qquad\text{i.e.}\quad f_D(0) = 1,
 \end{equation}
 so at $T\gg T_D$, $C_v = d\cdot N\cdot\kB$, which is the result from the classical equipartition theorem for a harmonic oscillator in $d$
-dimensions: $d\cdot N\cdot\frac{\kB}{2}$ from the quadratic kinetic energy and $d\cdot N\frac{\kB}{2}$ from the quadratic potential
+dimensions: $d\cdot N\cdot\kB/2$ from the quadratic kinetic energy and $d\cdot N\kB/2$ from the quadratic potential
 energy. So $C_v = 3N\kB$ for $T\gg T_D$ for actual 3D solids (molar: $C_{v,m} = 3R$).
 
-For $T\ll T_D$, $y_D = \beta\hbar\omega_D = \frac{\hbar\omega_D}{\kB T} = \frac{T_D}{T}\gg 1$, so approximate $y_D$ as $\infty$; denoting
+For $T\ll T_D$, $y_D = \beta\hbar\omega_D = \hbar\omega_D/(\kB T) = T_D/T\gg 1$, so approximate $y_D$ as $\infty$; denoting
 the integral as $I_d$,
 \begin{equation}
   f_D(y_D\gg 1)\simeq\frac{d}{y_D^d}\int_0^\infty\dd y\frac{y^{d+1}e^y}{(e^y-1)^2} = \frac{d}{y_D^d}I_d = d\cdot\left(\frac{T}{T_D}\right)^dI_d,
@@ -314,7 +314,7 @@ so
 \begin{equation}
   C_v = d\cdot N\kB f_D(y_D)\simeq d\cdot N\kB\cdot d\cdot\left(\frac{T}{T_D}\right)^dI_d\qquad\text{for } T\ll T_D .
 \end{equation}
-For the actual case $d = 3$, $I_{d=3} = \frac{4\pi^4}{15}$, so $C_v = 9N\kB\left(\frac{T}{T_D}\right)^3\cdot\frac{4\pi^4}{15}$, i.e.
+For the actual case $d = 3$, $I_{d=3} = 4\pi^4/15$, so $C_v = 9N\kB\left(T/T_D\right)^3\cdot4\pi^4/15$, i.e.
 \begin{equation}
   C_v\simeq\frac{12}{5}\pi^4N\kB\left(\frac{T}{T_D}\right)^3\qquad\text{for } T\ll T_D .
 \end{equation}
@@ -325,19 +325,19 @@ next topic, the Fermi gas model of conduction electrons in metals.
 \subsubsection*{The Fermi gas model of conduction electrons}
 
 Recall the general criterion for when coherence and degeneracy effects are important, namely when the interparticle spacing
-$R\lesssim\lambda\!\!\!^-$, where $\lambda\!\!\!^-$ is the reduced de Broglie wavelength, $\lambda\!\!\!^- = \frac\hbar p$. For a typical
-metal, the number density of conduction electrons is $\frac{N_e}{V}\sim 10^{23}\ \text{cm}^{-3} = 10^{29}\ \text{m}^{-3}$, so
-$R = \left(\frac{V}{N_e}\right)^{1/3} = (10\cdot 10^{-30}\ \text{m})^{1/3}\simeq 2\times 10^{-10}\ \text{m} = 2\ \text{\AA} = 0.2$~nm, while
+$R\lesssim\lambda\!\!\!^-$, where $\lambda\!\!\!^-$ is the reduced de Broglie wavelength, $\lambda\!\!\!^- = \hbar/p$. For a typical
+metal, the number density of conduction electrons is $N_e/V\sim 10^{23}\ \text{cm}^{-3} = 10^{29}\ \text{m}^{-3}$, so
+$R = \left(V/N_e\right)^{1/3} = (10\cdot 10^{-30}\ \text{m})^{1/3}\simeq 2\times 10^{-10}\ \text{m} = 2\ \text{\AA} = 0.2$~nm, while
 \begin{equation}
-  \lambda\!\!\!^- = \frac\hbar p = \frac{\hbar}{\sqrt{3m\kB T}}
+  \lambda\!\!\!^- = \frac{\hbar}{p} = \frac{\hbar}{\sqrt{3m\kB T}}
   = \frac{1.05\times 10^{-34}\ \text{J}\cdot\text{s}}{[3(0.911\times 10^{-30}\ \text{kg})(1.38\times 10^{-23}\ \text{J})(300\ \text{K})]^{1/2}}
   = 1\ \text{nm} = 10\ \text{\AA},
 \end{equation}
 so $R\lesssim\lambda\!\!\!^-$ and quantum degeneracy effects are important in metals. Recall the form of the Fermi--Dirac distribution
 function for $T\ll T_F$: all quantum states in the ``Fermi sea'', $E<E_F$, are filled and all states with $E>E_F$ are vacant.
 
-Now $p = \hbar k$, so for the (nonrelativistic) electron Fermi gas, $E = \frac{p^2}{2m_e} = \frac{\hbar^2k^2}{2m_e}$, so (with
-$E_F = \frac{p_F^2}{2m_e} = \frac{\hbar^2k_F^2}{2m_e}$)
+Now $p = \hbar k$, so for the (nonrelativistic) electron Fermi gas, $E = p^2/(2m_e) = \hbar^2k^2/(2m_e)$, so (with
+$E_F = p_F^2/(2m_e) = \hbar^2k_F^2/(2m_e)$)
 \begin{equation}
   N_e = \underbrace{(2s+1)}_{\text{statistical factor for spin }s}\cdot\left(\frac{L}{2\pi}\right)^3\left[\int_0^{k_F}\dd^3k = 4\pi\int_0^{k_F}k^2\dd k = \frac{4\pi}{3}k_F^3\right]
 \end{equation}
@@ -354,15 +354,15 @@ Illustrative calculation of $T_F$: e.g.\ for Cu, copper, $\rho_{\text{Cu}} = 8.9
   \frac{N_{\text{atoms}}}{V} = \frac{\rho_{\text{Cu}}\cdot N_{\text{Av}}}{M_{\text{Cu}}}\simeq\frac{\left(9\ \frac{\text{g}}{\text{cm}^3}\right)(6\times 10^{23}\ \text{mol}^{-1})}{(64\ \text{g/mole})}
   \simeq 0.85\times 10^{23}\ \text{cm}^{-3}.
 \end{equation}
-Copper has 1 conduction e per atom, so $\frac{N_e}{V} = \frac{N_{\text{atom}}}{V}$, so
-$k_F = \left(3\pi^2\frac{N_e}{V}\right)^{1/3} = 1.4\times 10^8$~cm$^{-1}$,
+Copper has 1 conduction e per atom, so $N_e/V = N_{\text{atom}}/V$, so
+$k_F = \left(3\pi^2N_e/V\right)^{1/3} = 1.4\times 10^8$~cm$^{-1}$,
 \begin{equation}
   E_F = \frac{\hbar^2}{2m_e}\left(3\pi^2\frac{N_e}{V}\right)^{2/3} = 7.0\ \text{eV},\qquad
   T_F = (7.0\ \text{eV})(\kB^{-1} = 1.16\times 10^4\ \text{K/eV}) = 8.1\times 10^4\ \text{K}.
 \end{equation}
 Similar values hold for other metals, e.g.\ $T_F(\text{Ag, silver}) = 6.4\times 10^4$~K, $T_F(\text{Au, gold}) = 6.4\times 10^4$~K,
 $T_F(\text{Al, aluminum}) = 1.35\times 10^5$~K. Thus ambient temperatures $T\sim 27^\circ\text{C} = 300$~K are $\ll T_F$;
-$\frac{T_{\text{ambient}}}{T_F}\sim\frac{3\times 10^2\ \text{K}}{0.8\times 10^5\ \text{K}}\simeq 4\times 10^{-3}$.
+$T_{\text{ambient}}/T_F\sim3\times 10^2\ \text{K}/(0.8\times 10^5\ \text{K})\simeq 4\times 10^{-3}$.
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.8]
@@ -371,20 +371,20 @@ $\frac{T_{\text{ambient}}}{T_F}\sim\frac{3\times 10^2\ \text{K}}{0.8\times 10^5\
   \draw[thick,blue,domain=0:4,samples=60] plot (\x,{2/(exp((\x-2)/0.25)+1)});
   \draw[dashed,red] (1.6,0) -- (1.6,2.2); \draw[dashed,red] (2.4,0) -- (2.4,2.2);
   \node[left] at (0,2) {$1$}; \node[left] at (0,0) {$0$}; \node[below] at (2,0) {$E_F$};
-  \node[font=\small,anchor=west] at (2.6,2.0) {width of interval in $E$ at $T$ is $\sim\frac{T}{T_F}$};
+  \node[font=\small,anchor=west] at (2.6,2.0) {width of interval in $E$ at $T$ is $\sim T/T_F$};
 \end{tikzpicture}
 \diagramcaption{The Fermi--Dirac distribution for $T\ll T_F$; the width of the smeared region $\to 0$ as $T/T_F\to 0$.}
 \end{diagram}
 
-So of the total number of electrons, $N_e$, only a very small fraction $N_{e,\text{eff}}\sim\left(\frac{T}{T_F}\right)N_e$ are in states with
+So of the total number of electrons, $N_e$, only a very small fraction $N_{e,\text{eff}}\sim\left(T/T_F\right)N_e$ are in states with
 $E>E_F$. The rest are in the Fermi sea and are not available to absorb energy. So
 \begin{equation}
-  U_{\text{K.E.}}\sim N_{\text{eff}}\cdot\left(\frac32\kB T\right)\sim N_e\left(\frac{T}{T_F}\right)\left(\frac32\kB T\right),
+  U_{\text{K.E.}}\sim N_{\text{eff}}\cdot\left(\frac{3}{2}\kB T\right)\sim N_e\left(\frac{T}{T_F}\right)\left(\frac{3}{2}\kB T\right),
 \end{equation}
-with $\frac32\kB T$ the kinetic energy for a free e in the Fermi gas, so the contribution of these conduction electrons to the specific
+with $(3/2)\kB T$ the kinetic energy for a free e in the Fermi gas, so the contribution of these conduction electrons to the specific
 heat is
 \begin{equation}
-  C_{v,e} = \frac{\dd U_{\text{K.E.}}}{\dd T}\sim\frac{3N\kB T}{T_F}\ll\tfrac32N_e\kB .
+  C_{v,e} = \frac{\dd U_{\text{K.E.}}}{\dd T}\sim\frac{3N\kB T}{T_F}\ll\frac{3}{2}N_e\kB .
 \end{equation}
 Combining this contribution to $C_v$ from e's with the contribution from quantized lattice vibrations (phonons), one has the result, at
 $T\ll T_D\ll T_F$:

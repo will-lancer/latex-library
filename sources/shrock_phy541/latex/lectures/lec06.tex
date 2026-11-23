@@ -6,7 +6,7 @@ Recall: with PBC,
 $Z = \sum_{\{\sigma_i\}}e^{-\beta\Ham} = \Tr(T^N)$, where $T$ = transfer matrix, with
 matrix elements
 \begin{equation}
-  \langle\sigma_{i+1}|T|\sigma_i\rangle = e^{K\sigma_{i+1}\sigma_i+\frac{h}{2}(\sigma_{i+1}+\sigma_i)},
+  \langle\sigma_{i+1}|T|\sigma_i\rangle = e^{K\sigma_{i+1}\sigma_i+(h/2)(\sigma_{i+1}+\sigma_i)},
   \qquad K\equiv\beta J,\quad h\equiv\beta H,
   \qquad
   T = \begin{pmatrix} e^{K+h} & e^{-K}\\ e^{-K} & e^{K-h}\end{pmatrix}.
@@ -18,7 +18,7 @@ For $H = 0$, the eigenvalues of $T$ are $\lambda_+ = 2\cosh K$, $\lambda_- = 2\s
 The Gibbs free energy per site is $\bar G(T,H) = -\kB Tf$, where $f$ = the dimensionless
 reduced free energy. We will usually take the thermodynamic limit $N\to\infty$, with
 \begin{equation}
-  f = \lim_{N\to\infty}\frac1N\ln Z = \ln[2\cosh K] = \ln(\lambda_+).
+  f = \lim_{N\to\infty}\frac{1}{N}\ln Z = \ln[2\cosh K] = \ln(\lambda_+).
 \end{equation}
 This illustrates that $f$ and the resultant thermodynamic functions are determined by the
 dominant (= maximal) eigenvalue of the transfer matrix. This is $\lambda_+$ since
@@ -74,10 +74,10 @@ $T\to 0$, the FM coupling favors short-range order; $\tanh(\beta J)\to 1$ as $\b
 
 \subsubsection*{Specific heat of the 1D Ising model}
 
-Next, calculate the specific heat (per spin), $\bar C = \left.\frac{\dd\bar U}{\dd T}\right|_{H=0}$;
+Next, calculate the specific heat (per spin), $\bar C = \left.\dd\bar U/\dd T\right|_{H=0}$;
 we drop the bars in the notation henceforth. Now
-$K = \beta J = J/(\kB T)$, i.e.\ $T = J/(\kB K)$, so $\dd T = -\frac{J}{\kB K^2}\dd K$, i.e.\
-$\frac{\dd K}{\dd T} = -\frac{\kB K^2}{J}$. With $U = -\pder{f}{\beta} = -J\pder{f}{K}$,
+$K = \beta J = J/(\kB T)$, i.e.\ $T = J/(\kB K)$, so $\dd T = -(J/(\kB K^2))\dd K$, i.e.\
+$\dd K/\dd T = -\kB K^2/J$. With $U = -\partial f/\partial \beta = -J\partial f/\partial K$,
 \begin{equation}
   C = \pder{U}{T} = \pder{K}{T}\cdot\pder{U}{K}
     = \left(-\frac{\kB K^2}{J}\right)\pder{U}{K}
@@ -85,15 +85,15 @@ $\frac{\dd K}{\dd T} = -\frac{\kB K^2}{J}$. With $U = -\pder{f}{\beta} = -J\pder
     = \kB K^2\frac{\partial^2 f}{\partial K^2}.
 \end{equation}
 ($C$ is the second derivative of $f$ with respect to $T$, or equivalently $K$.) Since
-$\frac{\dd}{\dd K}\tanh K = \frac{1}{\cosh^2K}$,
+$(\dd/\dd K)\tanh K = 1/(\cosh^2K)$,
 \begin{equation}
   C = \left(-\frac{\kB K^2}{J}\right)\left(-\frac{J}{\cosh^2K}\right) = \frac{\kB K^2}{\cosh^2K}.
 \end{equation}
-Now $\cosh K = \frac{e^K+e^{-K}}{2}$, so as
+Now $\cosh K = (e^K+e^{-K})/2$, so as
 \begin{equation}
   \begin{cases}
-    T\to\infty,\ \text{i.e.}\ \beta\to 0,\ K\to 0: & \cosh K\to 1,\\
-    T\to 0,\ \text{i.e.}\ \beta\to\infty,\ K\to\infty: & \cosh K\sim\frac{e^K}{2}.
+    T\to\infty,\ \text{i.e.}\ \beta\to 0,\ K\to 0: & \cosh K\to 1,\\[6pt]
+    T\to 0,\ \text{i.e.}\ \beta\to\infty,\ K\to\infty: & \cosh K\sim\dfrac{e^K}{2}.
   \end{cases}
 \end{equation}
 So as $T\to 0$, $C\to 4\kB K^2e^{-2K}\propto 4\kB T^{-2}e^{-2J/T}$, an essential zero; as
@@ -135,12 +135,12 @@ The indicial equation for the eigenvalues is
 \end{gather}
 so
 \begin{align}
-  \lambda_\pm &= \tfrac12\left[2e^K\cosh h\pm\sqrt{4e^{2K}\cosh^2h - 8\sinh(2K)}\right]\nonumber\\
+  \lambda_\pm &= \frac{1}{2}\left[2e^K\cosh h\pm\sqrt{4e^{2K}\cosh^2h - 8\sinh(2K)}\right]\nonumber\\
   &= e^K\left[\cosh h\pm\sqrt{\cosh^2h - 2e^{-2K}\sinh(2K)}\right]\nonumber\\
-  &= e^K\left[\cosh h\pm\sqrt{\left(\tfrac{e^h+e^{-h}}{2}\right)^2 - 2e^{-2K}\left(\tfrac{e^{2K}-e^{-2K}}{2}\right)}\right]\nonumber\\
-  &= e^K\left[\cosh h\pm\sqrt{\tfrac14(e^{2h}+2+e^{-2h}) + (-1+e^{-4K})}\right].
+  &= e^K\left[\cosh h\pm\sqrt{\left(\frac{e^h+e^{-h}}{2}\right)^2 - 2e^{-2K}\left(\frac{e^{2K}-e^{-2K}}{2}\right)}\right]\nonumber\\
+  &= e^K\left[\cosh h\pm\sqrt{\frac{1}{4}(e^{2h}+2+e^{-2h}) + (-1+e^{-4K})}\right].
 \end{align}
-Since $\frac14(e^{2h}+2-4+e^{-2h}) = (\sinh h)^2$, an equivalent expression for $\lambda_\pm$
+Since $(1/4)(e^{2h}+2-4+e^{-2h}) = (\sinh h)^2$, an equivalent expression for $\lambda_\pm$
 is
 \begin{equation}
   \lambda_\pm = e^K\left[\cosh h\pm\sqrt{(\sinh h)^2+e^{-4K}}\right],\qquad h = \beta H .
@@ -152,8 +152,8 @@ $\bar G(T,H) = -\kB Tf = -\beta^{-1}f$.
 
 Now calculate the induced magnetization per site:
 \begin{equation}
-  \bar M = \lim_{N\to\infty}\frac1N\left[\frac{\sum_{\{\sigma_i\}}\left(\sum_j\sigma_j\right)e^{-\beta\Ham}}{\sum_{\{\sigma_i\}}e^{-\beta\Ham}}\right]
-  = \left(\pder{f}{h}\right)_T = \frac1\beta\left(\pder{f}{H}\right)_T = -\left(\pder{\bar G}{H}\right)_T ;
+  \bar M = \lim_{N\to\infty}\frac{1}{N}\left[\frac{\sum_{\{\sigma_i\}}\left(\sum_j\sigma_j\right)e^{-\beta\Ham}}{\sum_{\{\sigma_i\}}e^{-\beta\Ham}}\right]
+  = \left(\pder{f}{h}\right)_T = \frac{1}{\beta}\left(\pder{f}{H}\right)_T = -\left(\pder{\bar G}{H}\right)_T ;
 \end{equation}
 recall $\dd G(T,H) = -S\dd T - M\dd H$, so $M = -(\partial G/\partial H)_T$. So
 \begin{equation}
@@ -162,13 +162,12 @@ recall $\dd G(T,H) = -S\dd T - M\dd H$, so $M = -(\partial G/\partial H)_T$. So
 \end{equation}
 Now
 \begin{equation}
-  \pder{\tilde\lambda_+}{h} = \sinh h + \frac12\cdot\frac{2(\sinh h)(\cosh h)}{\sqrt{\sinh^2h+e^{-4K}}}
+  \pder{\tilde\lambda_+}{h} = \sinh h + \frac{1}{2}\cdot\frac{2(\sinh h)(\cosh h)}{\sqrt{\sinh^2h+e^{-4K}}}
   = (\sinh h)\left[1 + \frac{\cosh h}{\sqrt{\sinh^2h+e^{-4K}}}\right],
 \end{equation}
 \begin{equation}
   \frac{1}{\lambda_+}\pder{\lambda_+}{h} = \frac{1}{\tilde\lambda_+}\pder{\tilde\lambda_+}{h}
-  = \frac{(\sinh h)\left[\frac{\sqrt{\sinh^2h+e^{-4K}}+\cosh h}{\sqrt{\sinh^2h+e^{-4K}}}\right]}
-         {\cosh h+\sqrt{\sinh^2h+e^{-4K}}}
+  = \frac{(\sinh h)\left[\frac{\sqrt{\sinh^2h+e^{-4K}}+\cosh h}{\sqrt{\sinh^2h+e^{-4K}}}\right]}{\cosh h+\sqrt{\sinh^2h+e^{-4K}}}
   = \frac{\sinh h}{\sqrt{\sinh^2h+e^{-4K}}},
 \end{equation}
 so
@@ -237,7 +236,7 @@ As is evident, $\chi$ is a second derivative of $f$ with respect to $h$. Now
 \begin{align}
   \pder{\bar M}{h} &= \pder{}{h}\left[\frac{\sinh h}{\sqrt{\sinh^2h+e^{-4K}}}\right]\nonumber\\
   &= \frac{\cosh h}{\sqrt{\sinh^2h+e^{-4K}}}
-    - \frac12(\sinh h)(\sinh^2h+e^{-4K})^{-3/2}\cdot(2\sinh h\cosh h)\nonumber\\
+    - \frac{1}{2}(\sinh h)(\sinh^2h+e^{-4K})^{-3/2}\cdot(2\sinh h\cosh h)\nonumber\\
   &= \frac{\cosh h}{\sqrt{\sinh^2h+e^{-4K}}}\left[1-\frac{\sinh^2h}{\sinh^2h+e^{-4K}}\right]
    = \frac{e^{-4K}\cosh h}{(\sinh^2h+e^{-4K})^{3/2}},
 \end{align}
@@ -274,8 +273,8 @@ Use $e^x = \sum_{n=0}^\infty x^n/n!$ and $\sigma_i = \pm 1$, $\sigma_i^2 = 1$:
   &= \underbrace{\left[1+\frac{K^2}{2!}+\frac{K^4}{4!}+\cdots\right]}_{\cosh K}
    + \sigma_i\sigma_j\underbrace{\left[K+\frac{K^3}{3!}+\frac{K^5}{5!}+\cdots\right]}_{\sinh K}
 \end{align}
-(recall $\cosh x = 1 + \frac{x^2}{2!}+\frac{x^4}{4!}+\cdots$ and
-$\sinh x = x + \frac{x^3}{3!}+\frac{x^5}{5!}+\cdots$), so
+(recall $\cosh x = 1 + x^2/2!+x^4/4!+\cdots$ and
+$\sinh x = x + x^3/3!+x^5/5!+\cdots$), so
 \begin{equation}
   e^{K\sigma_i\sigma_j} = \cosh K + \sigma_i\sigma_j\sinh K = \cosh K\,(1+v\sigma_i\sigma_j),
   \qquad v\equiv\tanh K .
@@ -293,7 +292,7 @@ coordination number $\Delta\equiv$ degree of each site in $\Lambda$,
 \end{equation}
 so $e(\Lambda_{1D}) = n$ for a 1D lattice with PBC, and
 \begin{equation}
-  Z = (\cosh K)^{\frac{\Delta}{2}n}\sum_{\{\sigma_i\}}\left[\prod_{\langle ij\rangle}(1+v\sigma_i\sigma_j)\right].
+  Z = (\cosh K)^{(\Delta/2)n}\sum_{\{\sigma_i\}}\left[\prod_{\langle ij\rangle}(1+v\sigma_i\sigma_j)\right].
 \end{equation}
 
 \paragraph{Example: a triangle.} Illustrate this with a calculation of $Z$ for a (finite)
@@ -318,8 +317,7 @@ only depends on $|n-n'|$. E.g.\ calculate $\ev{\sigma_0\sigma_2}$ on a ring of s
 $0,1,2,3$:
 \begin{equation}
   \ev{\sigma_0\sigma_2} = \frac{\sum_{\{\sigma_i\}}\sigma_0\sigma_2e^{-\beta\Ham}}{\sum_{\{\sigma_i\}}e^{-\beta\Ham}}
-  = \frac{\sum_{\{\sigma_i\}}\sigma_0\sigma_2\prod_{\langle ij\rangle}(1+v\sigma_i\sigma_j)}
-         {\sum_{\{\sigma_i\}}\prod_{\langle ij\rangle}(1+v\sigma_i\sigma_j)}.
+  = \frac{\sum_{\{\sigma_i\}}\sigma_0\sigma_2\prod_{\langle ij\rangle}(1+v\sigma_i\sigma_j)}{\sum_{\{\sigma_i\}}\prod_{\langle ij\rangle}(1+v\sigma_i\sigma_j)}.
 \end{equation}
 The numerator is
 \begin{align}

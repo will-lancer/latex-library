@@ -94,11 +94,11 @@ where $*$ means evaluated at the critical RGFP, so $\delta K_1'\equiv K_1'-K_1^*
   \delta K_1' = \left(\pder{R_1}{K_1}\right)_*\delta K_1 + \left(\pder{R_1}{K_2}\right)_*\delta K_2 .
 \end{equation}
 Similarly,
-$\delta K_2' = \left(\pder{R_2}{K_1}\right)_*\delta K_1 + \left(\pder{R_2}{K_2}\right)_*\delta K_2$; as a
+$\delta K_2' = \left(\partial R_2/\partial K_1\right)_*\delta K_1 + \left(\partial R_2/\partial K_2\right)_*\delta K_2$; as a
 matrix equation:
 \begin{equation}
   \begin{pmatrix}\delta K_1'\\ \delta K_2'\end{pmatrix}
-  = \underbrace{\begin{pmatrix}\pder{R_1}{K_1} & \pder{R_1}{K_2}\\[4pt] \pder{R_2}{K_1} & \pder{R_2}{K_2}\end{pmatrix}_*}_{\text{matrix } M}
+  = \underbrace{\begin{pmatrix}\dfrac{\partial R_1}{\partial K_1} & \dfrac{\partial R_1}{\partial K_2}\\[6pt] \dfrac{\partial R_2}{\partial K_1} & \dfrac{\partial R_2}{\partial K_2}\end{pmatrix}_*}_{\text{matrix } M}
     \begin{pmatrix}\delta K_1\\ \delta K_2\end{pmatrix}.
 \end{equation}
 The diagonalization of $M$ yields the eigenvectors $\hat{\mathbf e}_1$, $\hat{\mathbf e}_2$ = directions of
@@ -132,7 +132,7 @@ isotropic FM Ising model on 2D lattices, with $z = e^{-2K}$,
   \text{hc: } z_c = 2-\sqrt3 = 0.268,
 \end{equation}
 but these all have the same critical behavior. (Recall from the previous lecture that $y_\tau = 1$ and
-$y_h = \frac{15}{8}$; $\beta\delta = \frac{y_h}{y_\tau} = \frac18\cdot 15$.) After a blocking
+$y_h = 15/8$; $\beta\delta = y_h/y_\tau = 1/8\cdot 15$.) After a blocking
 transformation, $\xi' = \xi/b$.
 
 The ``basin of attraction'' of a given RGFP is the subspace in the space of couplings $\{K_i\}$ such that
@@ -186,22 +186,22 @@ Correspondingly the correlation length decreases under the RG flow; $\xi\to\xi/b
 \diagramcaption{RG flow of the zero-field 1D Ising model.}
 \end{diagram}
 
-Solve for $K'$, using $\operatorname{arctanh}x = \frac12\ln\left(\frac{1+x}{1-x}\right)$:
+Solve for $K'$, using $\operatorname{arctanh}x = (1/2)\ln\left((1+x)/(1-x)\right)$:
 \begin{equation}
-  K' = \frac12\ln\left(\frac{1+v^2}{1-v^2}\right)
-     = \frac12\ln\left[\frac{1+\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right)^2}{1-\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right)^2}\right]
-     = \frac12\ln\left[\frac{(e^K+e^{-K})^2+(e^K-e^{-K})^2}{(e^K+e^{-K})^2-(e^K-e^{-K})^2}\right],
+  K' = \frac{1}{2}\ln\left(\frac{1+v^2}{1-v^2}\right)
+     = \frac{1}{2}\ln\left[\frac{1+\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right)^2}{1-\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right)^2}\right]
+     = \frac{1}{2}\ln\left[\frac{(e^K+e^{-K})^2+(e^K-e^{-K})^2}{(e^K+e^{-K})^2-(e^K-e^{-K})^2}\right],
 \end{equation}
 where the numerator is $2(e^{2K}+e^{-2K})$ and the denominator is 4, so
 \begin{equation}
-  \boxed{K' = \tfrac12\ln\left(\cosh(2K)\right)}.
+  \boxed{K' = \frac{1}{2}\ln\left(\cosh(2K)\right)}.
 \end{equation}
 So for the zero-field 1D Ising model, there is one relevant parameter, $K$, and the RG flow is from
 $K = \infty$ ($T = 0$) to $K = 0$ ($T = \infty$). This is understandable, since under this flow the
 correlation length $\xi$ decreases: $\xi\to\xi/b$ (from $\xi = \infty$ at $K = \infty$ to $\xi = 0$ at
 $K = 0$). With $\ev{\sigma_0\sigma_r} = v^r = e^{-r/\xi}$,
 \begin{equation}
-  v = e^{-1/\xi},\qquad \ln v = -\frac1\xi,\qquad
+  v = e^{-1/\xi},\qquad \ln v = -\frac{1}{\xi},\qquad
   \xi = -\frac{1}{\ln v} = \frac{1}{\ln\left(\frac{1}{\tanh K}\right)}.
 \end{equation}
 A special property of this 1D example is that there is only an RG flow away from the critical RGFP. In a

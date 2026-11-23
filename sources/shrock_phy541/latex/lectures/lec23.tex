@@ -4,18 +4,18 @@
 
 The van der Waals EOS,
 \begin{equation}
-  \left[p + a\left(\frac NV\right)^2\right]\left[V-Nb\right] = N\kB T,
+  \left[p + a\left(\frac{N}{V}\right)^2\right]\left[V-Nb\right] = N\kB T,
 \end{equation}
-i.e., with $v\equiv V/N$, the equivalent equation $\left(p + \frac{a}{v^2}\right)(v-b) = \kB T$, was an improvement over the
+i.e., with $v\equiv V/N$, the equivalent equation $\left(p + a/v^2\right)(v-b) = \kB T$, was an improvement over the
 ideal gas EOS $pV = N\kB T$, i.e.\ $pv = \kB T$, in that it predicted a critical point. The unphysical prediction of
-a region with $\frac{\partial p}{\partial v}>0$ and hence compressibility
-$\kappa_T = -\frac1V\frac{\partial V}{\partial p} = -\frac1v\frac{\partial v}{\partial p}<0$ could be circumvented via
+a region with $\partial p/\partial v>0$ and hence compressibility
+$\kappa_T = -(1/V)\partial V/\partial p = -(1/v)\partial v/\partial p<0$ could be circumvented via
 the Maxwell construction. Recall the solution for $T_c$, $v_c$, and $p_c$ with the vdW EOS:
 \begin{equation}
   \kB T_c = \frac{8a}{27b},\qquad v_c = 3b,\qquad p_c = \frac{a}{27b^2},\qquad\text{so}\quad
-  Z_c\equiv\frac{p_cv_c}{\kB T_c} = \frac38 = 0.375,
+  Z_c\equiv\frac{p_cv_c}{\kB T_c} = \frac{3}{8} = 0.375,
 \end{equation}
-with $b = \frac{\kB T_c}{8p_c}$ and $a = \frac{27}{64}\frac{(\kB T_c)^2}{p_c}$.
+with $b = \kB T_c/(8p_c)$ and $a = (27/64)(\kB T_c)^2/p_c$.
 
 The prediction for $Z_c$ is only in fair agreement with experimental values; some of these are (e.g.\ see Table~5.1,
 p.~69 in Stanley's book):
@@ -46,11 +46,11 @@ Dieterici EOS (DEOS):
 \begin{equation}
   p = \frac{\kB T}{v-b}\exp\left[-\frac{a}{\kB Tv}\right].
 \end{equation}
-Note that expanding the RHS for small $\frac{a}{Tv}$ gives
+Note that expanding the RHS for small $a/(Tv)$ gives
 \begin{equation}
   p\simeq\frac{\kB T}{v-b}\left[1-\frac{a}{\kB Tv}\right] = \frac{\kB T}{v-b} - \frac{a}{v(v-b)},
 \end{equation}
-to be compared with the vdW EOS, $p = \frac{\kB T}{v-b} - \frac{a}{v^2}$, so in this expansion, to leading order, the
+to be compared with the vdW EOS, $p = \kB T/(v-b) - a/v^2$, so in this expansion, to leading order, the
 difference of the DEOS with respect to vdW is the replacement of the denominator in the $a$-term by $v(v-b)$ instead
 of $v^2$. Thus, the general shape of the $p$--$v$ curve is qualitatively similar to the vdW $p$--$v$ curve in this
 regime.
@@ -63,7 +63,7 @@ regime.
   \draw[dashed,blue] (0,1.4) -- (2.3,1.4) -- (2.3,0);
   \node[left,blue] at (0,1.4) {$p_c$}; \node[below,blue] at (2.3,0) {$v_c$}; \node[below] at (0,0) {$0$};
   \node[blue,font=\small,anchor=west] at (2.4,2.5) {$T = T_c$ isotherm};
-  \node[blue,font=\small,anchor=west,align=left] at (2.4,1.9) {critical pt.: $\pder pv = 0$ and $\frac{\partial^2p}{\partial v^2} = 0$};
+  \node[blue,font=\small,anchor=west,align=left] at (2.4,1.9) {critical pt.: $\partial p/\partial v = 0$ and $\partial^2p/\partial v^2 = 0$};
 \end{tikzpicture}
 \diagramcaption{The critical isotherm of the Dieterici EOS.}
 \end{diagram}
@@ -73,34 +73,34 @@ to define $\tilde p\equiv\beta p$, $\tilde a\equiv\beta a$, so
 \begin{equation}
   \text{DEOS:}\quad \beta p = \frac{e^{-\beta a/v}}{v-b},\qquad \tilde p = \frac{e^{-\tilde a/v}}{v-b}.
 \end{equation}
-Since $\beta$ = const.\ on an isotherm, $\pder pv = 0\Leftrightarrow\pder{\tilde p}{v} = 0$:
+Since $\beta$ = const.\ on an isotherm, $\partial p/\partial v = 0\Leftrightarrow\partial \tilde p/\partial v = 0$:
 \begin{equation}
   \pder{\tilde p}{v} = \frac{\tilde a}{v^2}\frac{e^{-\tilde a/v}}{v-b} - \frac{e^{-\tilde a/v}}{(v-b)^2}
   = \frac{e^{-\tilde a/v}}{v-b}\left[\frac{\tilde a}{v^2} - \frac{1}{v-b}\right] = 0
   \ \Rightarrow\ \frac{1}{v-b} = \frac{\tilde a}{v^2}.
 \end{equation}
-Similarly, $\frac{\partial^2p}{\partial v^2} = 0\Leftrightarrow\frac{\partial^2\tilde p}{\partial v^2} = 0$:
+Similarly, $\partial^2p/\partial v^2 = 0\Leftrightarrow\partial^2\tilde p/\partial v^2 = 0$:
 \begin{align}
   0 = \frac{\partial^2\tilde p}{\partial v^2}
    &= -\frac{2\tilde a}{v^3}\frac{e^{-\tilde a/v}}{v-b} + \frac{\tilde a}{v^2}\cdot\frac{\tilde a}{v^2}\frac{e^{-\tilde a/v}}{v-b}
-      \underbrace{- \frac{\tilde a}{v^2}\frac{e^{-\tilde a/v}}{(v-b)^2} - \frac{\tilde a}{v^2}\frac{e^{-\tilde a/v}}{(v-b)^2}}_{-\frac{2\tilde a}{v^2}e^{-\tilde a/v}/(v-b)^2}
+      \underbrace{- \frac{\tilde a}{v^2}\frac{e^{-\tilde a/v}}{(v-b)^2} - \frac{\tilde a}{v^2}\frac{e^{-\tilde a/v}}{(v-b)^2}}_{-(2\tilde a/v^2)e^{-\tilde a/v}/(v-b)^2}
       + \frac{2e^{-\tilde a/v}}{(v-b)^3}\nonumber\\
    &= \frac{e^{-\tilde a/v}}{v^3(v-b)}\left[-2\tilde a + \frac{\tilde a^2}{v} - \frac{2\tilde av}{v-b} + \frac{2v^3}{(v-b)^2}\right].
 \end{align}
-In $\frac{\partial^2\tilde p}{\partial v^2}$, we replace $\frac{1}{v-b}$ by $\frac{\tilde a}{v^2}$ using the first
+In $\partial^2\tilde p/\partial v^2$, we replace $1/(v-b)$ by $\tilde a/v^2$ using the first
 condition:
 \begin{equation}
   = \frac{1}{v^3}\frac{\tilde a}{v^2}e^{-\tilde a/v}\left[-2\tilde a + \frac{\tilde a^2}{v}
-    \underbrace{-\,2\tilde av\left(\frac{\tilde a}{v^2}\right)}_{-\frac{2\tilde a^2}{v}}
-    \underbrace{+\,2v^3\left(\frac{\tilde a}{v^2}\right)^2}_{+\frac{2\tilde a^2}{v}}\right],
+    \underbrace{-\,2\tilde av\left(\frac{\tilde a}{v^2}\right)}_{-2\tilde a^2/v}
+    \underbrace{+\,2v^3\left(\frac{\tilde a}{v^2}\right)^2}_{+2\tilde a^2/v}\right],
 \end{equation}
 where the last two terms cancel, so
 \begin{equation}
   0 = \frac{\partial^2\tilde p}{\partial v^2} = \frac{\tilde a^2}{v^5}e^{-\tilde a/v}\left(-2+\frac{\tilde a}{v}\right)
   \ \Rightarrow\ \tilde a = 2v .
 \end{equation}
-Next, substitute this into the $\pder{\tilde p}{v} = 0$ equation: $\frac{1}{v-b} = \frac{\tilde a}{v^2} = \frac2v$
-$\Rightarrow v-b = \frac v2$, $\frac v2 - b = 0\Rightarrow$
+Next, substitute this into the $\partial \tilde p/\partial v = 0$ equation: $1/(v-b) = \tilde a/v^2 = 2/v$
+$\Rightarrow v-b = v/2$, $v/2 - b = 0\Rightarrow$
 \begin{equation}
   \boxed{v = v_c = 2b},\qquad\text{so}\quad \tilde a = \beta a = \frac{v^2}{v-b} = \frac{(2b)^2}{b} = 4b,
 \end{equation}
@@ -116,7 +116,7 @@ Then
 \paragraph{Summary for the Dieterici EOS.}
 
 \begin{gather}
-  p = \frac{\kB T}{v-b}\exp\left[\frac{-a}{\kB Tv}\right],\quad\text{i.e.}\quad p = \frac{\beta^{-1}}{v-b}e^{-\frac{\beta a}{v}};\nonumber\\
+  p = \frac{\kB T}{v-b}\exp\left[\frac{-a}{\kB Tv}\right],\quad\text{i.e.}\quad p = \frac{\beta^{-1}}{v-b}e^{-\beta a/v};\nonumber\\
   v_c = 2b,\quad \kB T_c = \beta_c^{-1} = \frac{a}{4b},\quad p_c = \frac{a}{4b^2}e^{-2}.
 \end{gather}
 Then
@@ -126,8 +126,8 @@ Then
 \end{equation}
 where $e = 2.71828\ldots$. Determining $a$ and $b$ from $T_c$ and $p_c$:
 \begin{equation}
-  b = \frac{v_c}{2} = \frac12\left(\frac{\kB T_cZ_c}{p_c}\right) = \frac{1}{e^2}\left(\frac{\kB T_c}{p_c}\right);\qquad
-  a = (4b)(\kB T_c) = \left(\frac2e\right)^2\frac{(\kB T_c)^2}{p_c}.
+  b = \frac{v_c}{2} = \frac{1}{2}\left(\frac{\kB T_cZ_c}{p_c}\right) = \frac{1}{e^2}\left(\frac{\kB T_c}{p_c}\right);\qquad
+  a = (4b)(\kB T_c) = \left(\frac{2}{e}\right)^2\frac{(\kB T_c)^2}{p_c}.
 \end{equation}
 So the Dieterici EOS predicts a smaller value of $Z_c$ than the van der Waals EOS, closer to experimental values, about
 7\% below the $Z_c\simeq 0.29$ values for Xe, Ar, N$_2$, O$_2$, and close to $Z_c = 0.275$ for CO$_2$, for example.
@@ -140,15 +140,15 @@ So the Dieterici EOS predicts a smaller value of $Z_c$ than the van der Waals EO
 \end{equation*}
 Critical values:
 \begin{center}
-\renewcommand{\arraystretch}{1.6}
+\small\renewcommand{\arraystretch}{1.6}\setlength{\tabcolsep}{4pt}
 \begin{tabular}{l|l|l}
   quantity & van der Waals & Dieterici\\ \hline
   $v_c$ & $3b$ & $2b$\\
-  $p_c$ & $\frac{1}{27}\left(\frac{a}{b^2}\right) = 0.0370\left(\frac{a}{b^2}\right)$ & $\frac{1}{(2e)^2}\left(\frac{a}{b^2}\right) = 0.0338\left(\frac{a}{b^2}\right)$\\
-  $\kB T_c$ & $\frac{8}{27}\left(\frac ab\right) = 0.296\left(\frac ab\right)$ & $\frac14\left(\frac ab\right) = 0.25\left(\frac ab\right)$\\
-  $Z_c = \frac{p_cv_c}{\kB T_c}$ & $\frac38 = 0.375$ & $\frac{2}{e^2} = 0.271$\\
-  $a$ & $\frac{27}{64}\frac{(\kB T_c)^2}{p_c} = 0.422\frac{(\kB T_c)^2}{p_c}$ & $\left(\frac2e\right)^2\frac{(\kB T_c)^2}{p_c} = 0.541\frac{(\kB T_c)^2}{p_c}$\\
-  $b$ & $\frac18\left(\frac{\kB T_c}{p_c}\right) = 0.125\left(\frac{\kB T_c}{p_c}\right)$ & $\frac{1}{e^2}\left(\frac{\kB T_c}{p_c}\right) = 0.135\left(\frac{\kB T_c}{p_c}\right)$
+  $p_c$ & $a/(27b^2) = 0.0370\,a/b^2$ & $a/(4e^2b^2) = 0.0338\,a/b^2$\\
+  $\kB T_c$ & $8a/(27b) = 0.296\,a/b$ & $a/(4b) = 0.25\,a/b$\\
+  $Z_c = p_cv_c/(\kB T_c)$ & $3/8 = 0.375$ & $2/e^2 = 0.271$\\
+  $a$ & $(27/64)(\kB T_c)^2/p_c = 0.422(\kB T_c)^2/p_c$ & $(4/e^2)(\kB T_c)^2/p_c = 0.541(\kB T_c)^2/p_c$\\
+  $b$ & $\kB T_c/(8p_c) = 0.125\,\kB T_c/p_c$ & $\kB T_c/(e^2p_c) = 0.135\,\kB T_c/p_c$
 \end{tabular}
 \end{center}
 A modern discussion of the Dieterici EOS is in R.~Sadus, J.\ Chem.\ Phys.\ \textbf{115}, 1460 (2001).

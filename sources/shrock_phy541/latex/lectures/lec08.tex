@@ -37,7 +37,7 @@ lattice with periodic boundary conditions (BC) is a 2-regular graph. A 2D square
 is a 4-regular graph, etc. On a $\Delta$-regular lattice graph $\Lambda$, $\Delta_\Lambda$ is the coordination number of the
 lattice. For a $\Delta$-regular lattice graph,
 \begin{equation}
-  e(G) = \frac\Delta2n(G).
+  e(G) = \frac{\Delta}{2}n(G).
 \end{equation}
 One can also define an effective degree $\Delta_{\text{eff}}$ of a graph as
 \begin{equation}
@@ -202,19 +202,19 @@ cycles in $G'$. Since $k(G')-k(G)\ge 0$ and $c(G')\ge 0$, it follows that $T(G,x
 
 To prove this connection (essentially an equivalence with appropriate changes of variables), let
 \begin{equation}
-  x = 1+\frac qv,\qquad y = v+1,
+  x = 1+\frac{q}{v},\qquad y = v+1,
 \end{equation}
 so $q = (x-1)(y-1)$ and $v = y-1$. Then, using the fact that $n(G') = n(G)$, so
 $c(G') = e(G')+k(G')-n(G') = e(G')+k(G')-n(G)$, and $x-1 = q/v$, $y-1 = v$, we have
 \begin{align}
   T(G,x,y) &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}(x-1)^{k(G')}(y-1)^{e(G')+k(G')}\nonumber\\
-  &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}\left(\frac qv\right)^{k(G')}v^{e(G')+k(G')}\nonumber\\
+  &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}\left(\frac{q}{v}\right)^{k(G')}v^{e(G')+k(G')}\nonumber\\
   &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}q^{k(G')}v^{e(G')}\nonumber\\
   &= (x-1)^{-k(G)}(y-1)^{-n(G)}Z(G,q,v),
 \end{align}
 i.e.
 \begin{equation}
-  Z(G,q,v) = (x-1)^{k(G)}(y-1)^{n(G)}T(G,x,y) = \left(\frac qv\right)^{k(G)}v^{n(G)}T(G,x,y).
+  Z(G,q,v) = (x-1)^{k(G)}(y-1)^{n(G)}T(G,x,y) = \left(\frac{q}{v}\right)^{k(G)}v^{n(G)}T(G,x,y).
 \end{equation}
 
 \paragraph{Special valuations of the Tutte polynomial.}
@@ -285,8 +285,8 @@ century. It was proved in 1976 by Appel and Haken.
 We have shown that for a circuit graph, $C_n$, $Z(C_n,q,v) = (q+v)^n+(q-1)v^n$. Using $x-1 = q/v$ and $q = (x-1)(y-1)$, we
 can write this as
 \begin{equation}
-  Z(C_n,q,v) = v^n\left[\left(1+\frac qv\right)^n+(q-1)\right] = v^n\left[x^n+(q-1)\right]
-  = \left(\frac qv\right)v^n\left[\frac{x^n+(q-1)}{x-1}\right],
+  Z(C_n,q,v) = v^n\left[\left(1+\frac{q}{v}\right)^n+(q-1)\right] = v^n\left[x^n+(q-1)\right]
+  = \left(\frac{q}{v}\right)v^n\left[\frac{x^n+(q-1)}{x-1}\right],
 \end{equation}
 and hence we have
 \begin{equation}

@@ -28,7 +28,7 @@ generalization for systems with variable numbers of particles is the grand canon
 where $\beta = 1/(\kB T)$, $\alpha\equiv\beta\mu$ and $\mu$ = ``chemical potential''; $\Omega_G = -\kB T\ln Z_G$, so
 \begin{equation}
   \ev n = \frac{\sum_rn_re^{-\beta(E_r^{\text{tot}}-\mu n_r)}}{\sum_re^{-\beta(E_r^{\text{tot}}-\mu n_r)}}
-        = \frac1\beta\frac{\partial\ln Z_G}{\partial\mu} = \frac{\partial\ln Z_G}{\partial\alpha}.
+        = \frac{1}{\beta}\frac{\partial\ln Z_G}{\partial\mu} = \frac{\partial\ln Z_G}{\partial\alpha}.
 \end{equation}
 For a system with $n_r$ fermions in a quantum state with energy $E_r$, the total energy is $E_r^{\text{tot}} = n_rE_r$.
 
@@ -40,7 +40,7 @@ So we can write (for fermions)
 \end{equation}
 so $\ln Z_G = \sum_r\ln\left(1+e^{-\beta(E_r-\mu)}\right)$ and
 \begin{equation}
-  \ev n = \sum_r\ev{n_r} = \frac1\beta\frac{\partial\ln Z_G}{\partial\mu}
+  \ev n = \sum_r\ev{n_r} = \frac{1}{\beta}\frac{\partial\ln Z_G}{\partial\mu}
   = \sum_r\frac{e^{-\beta(E_r-\mu)}}{1+e^{-\beta(E_r-\mu)}} = \sum_r\frac{1}{e^{\beta(E_r-\mu)}+1}
 \end{equation}
 \begin{equation}
@@ -48,10 +48,10 @@ so $\ln Z_G = \sum_r\ln\left(1+e^{-\beta(E_r-\mu)}\right)$ and
 \end{equation}
 This is the \emph{Fermi--Dirac} (quantum) distribution function. As $T\to 0$, i.e.\ $\beta\to\infty$:
 \begin{equation}
-  \ev{n_r} = \begin{cases}\frac{1}{e^{-\infty}+1} = 1 & \text{if } E_r<\mu\\[4pt] \frac{1}{e^{\infty}+1} = 0 & \text{if } E_r>\mu .\end{cases}
+  \ev{n_r} = \begin{cases}\dfrac{1}{e^{-\infty}+1} = 1 & \text{if } E_r<\mu\\[6pt] \dfrac{1}{e^{\infty}+1} = 0 & \text{if } E_r>\mu .\end{cases}
 \end{equation}
 Here, $\mu$ is called the ``Fermi energy'' and, at $T = 0$, all states with energies $E_r<\mu$ are occupied, while all
-states with energies $E_r>\mu$ are unoccupied. At a finite temperature $T$, if $E_r = \mu$, then $\ev{n_r} = \frac12$.
+states with energies $E_r>\mu$ are unoccupied. At a finite temperature $T$, if $E_r = \mu$, then $\ev{n_r} = 1/2$.
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.9]
@@ -90,7 +90,7 @@ so
   \ln Z_G = -\sum_r\ln\left[1-e^{-\beta(E_r-\mu)}\right],
 \end{equation}
 \begin{equation}
-  \ev n = \frac1\beta\frac{\partial\ln Z_G}{\partial\mu} = -\sum_r(-1)\left[\frac{e^{-\beta(E_r-\mu)}}{1-e^{-\beta(E_r-\mu)}}\right]
+  \ev n = \frac{1}{\beta}\frac{\partial\ln Z_G}{\partial\mu} = -\sum_r(-1)\left[\frac{e^{-\beta(E_r-\mu)}}{1-e^{-\beta(E_r-\mu)}}\right]
         = \sum_r\frac{1}{e^{\beta(E_r-\mu)}-1},
 \end{equation}
 so
@@ -100,7 +100,7 @@ so
 the \emph{Bose--Einstein} distribution function (Satyendra Bose, A.~Einstein, 1924).
 
 For these distribution functions, $\mu\to-\mu$ for particle $\to$ antiparticle, so since photons (which have spin 1 and
-hence are bosons) are self-conjugate, $\mu_\gamma = 0$ and $\ev{n_r} = \frac{1}{e^{\beta E_r}-1}$ for photons.
+hence are bosons) are self-conjugate, $\mu_\gamma = 0$ and $\ev{n_r} = 1/(e^{\beta E_r}-1)$ for photons.
 
 \subsection{Superconductivity and superfluidity}
 \subsubsection*{Superconductivity}
@@ -110,8 +110,8 @@ is the basic physics responsible for superconductivity and superfluidity. It was
 atomic vapors in 1995. Recall some basics.
 
 Superconductivity (SC). An electric current $I$ flowing through a conductor with a resistance $R$ has ohmic power
-dissipation $P = I^2R$. For a wire of area $A$, length $\ell$, $R = \frac{\rho\ell}{A}$, where $\rho$ = resistivity
-($\rho = \frac1\sigma$, where $\sigma$ = conductivity). Metals are distinguished from insulators by the presence of
+dissipation $P = I^2R$. For a wire of area $A$, length $\ell$, $R = \rho\ell/A$, where $\rho$ = resistivity
+($\rho = 1/\sigma$, where $\sigma$ = conductivity). Metals are distinguished from insulators by the presence of
 (quasi)free electrons in the conduction band. The resistivity of a metal is due to the inelastic scattering of the e's in a
 current from other e's, dissipating energy. As the temperature is reduced, the resistivity $\rho$ decreases. In 1911,
 Kamerlingh Onnes (working in Leiden) discovered that when certain metals were cooled to temperatures below a few K, $\rho$
@@ -140,12 +140,12 @@ theoretical and experimental effort has gone into the study of HTSC since 1986. 
 have not been applied very much in engineering. Superconductivity has also been observed in stacked layers of graphene.
 
 $\ev{ee}$ carries charge $-2$, so the Cooper pair condensate effectively breaks $U(1)_{em}$; the photon gets an effective mass,
-$m_\gamma^2\propto\frac{ne^2}{m_e}$, which leads to the Meissner Effect: in contrast to the situation with a normal metal,
+$m_\gamma^2\propto ne^2/m_e$, which leads to the Meissner Effect: in contrast to the situation with a normal metal,
 which allows a nonzero magnetic field in its interior, a superconductor excludes a magnetic field:
 \begin{equation}
-  \mathbf B(x)\sim|\mathbf B(0)|e^{-\frac{x}{\lambda_L}},
+  \mathbf B(x)\sim|\mathbf B(0)|e^{-x/\lambda_L},
 \end{equation}
-where $x$ is the distance into the superconductor and $\lambda_L = \frac{1}{m_\gamma}$ is the ``London penetration depth''; a
+where $x$ is the distance into the superconductor and $\lambda_L = 1/m_\gamma$ is the ``London penetration depth''; a
 typical value is $\lambda_L\sim 5\times 10^2\ \text{\AA} = 50$~nm. Some SC (type II SC) allow a $\mathbf B$ field to penetrate,
 but only in filaments. These have been used for magnetic resonance imaging (MRI) machines for medical imaging, which have
 $\mathbf B$ fields of order 2--4 Tesla. They have also been crucial for wiring to carry high electrical currents in magnets to
@@ -183,19 +183,19 @@ phenomenon of BEC.
 \subsubsection*{When are quantum coherence effects important?}
 
 We begin with a general analysis of when quantum coherence effects are important. The criterion for this is that the
-interparticle spacing $R\lesssim\lambda\!\!\!^-$, where $\lambda\!\!\!^- = \frac\hbar p$ is the de Broglie wavelength (divided
-by $2\pi$; $\lambda\!\!\!^- = \frac{\lambda}{2\pi}$) of the relevant particles. For a gas of $N$ particles occupying a volume $V$
-in $d$ dimensions ($d = 3$ here), the average volume occupied by each particle is $v = \frac VN$ and $v = R^d$, so
-$R = \left(\frac VN\right)^{1/d}$. For a gas at $p\sim 1$~atm and room temperature $T\sim 300$~K, the ideal gas EOS is a very good description
-and so $pV = N\kB T$, $\frac{p}{\kB T} = \frac NV = \rho_n$, so $R = \left(\frac VN\right)^{1/d} = \left(\frac{\kB T}{p}\right)^{1/d}$. The kinetic
-energy of a gas particle is $E_{\text{kin.}} = \frac{|\mathbf p|^2}{2m} = d\cdot\frac{\kB T}{2}$, by the equipartition theorem, so
+interparticle spacing $R\lesssim\lambda\!\!\!^-$, where $\lambda\!\!\!^- = \hbar/p$ is the de Broglie wavelength (divided
+by $2\pi$; $\lambda\!\!\!^- = \lambda/(2\pi)$) of the relevant particles. For a gas of $N$ particles occupying a volume $V$
+in $d$ dimensions ($d = 3$ here), the average volume occupied by each particle is $v = V/N$ and $v = R^d$, so
+$R = \left(V/N\right)^{1/d}$. For a gas at $p\sim 1$~atm and room temperature $T\sim 300$~K, the ideal gas EOS is a very good description
+and so $pV = N\kB T$, $p/(\kB T) = N/V = \rho_n$, so $R = \left(V/N\right)^{1/d} = \left(\kB T/p\right)^{1/d}$. The kinetic
+energy of a gas particle is $E_{\text{kin.}} = |\mathbf p|^2/(2m) = d\cdot\kB T/2$, by the equipartition theorem, so
 $|\mathbf p|\equiv p = \sqrt{d\cdot m\kB T}$, and the de Broglie wavelength is
 \begin{equation}
-  \lambda\!\!\!^- = \frac\hbar p = \frac{\hbar}{\sqrt{d\cdot m\kB T}},
+  \lambda\!\!\!^- = \frac{\hbar}{p} = \frac{\hbar}{\sqrt{d\cdot m\kB T}},
 \end{equation}
 so the conditions under which quantum mechanical effects will be important are $R\lesssim\lambda\!\!\!^-$, i.e.
 \begin{equation}
-  \left(\frac VN\right)^{1/d}\lesssim\frac{\hbar}{\sqrt{d\cdot m\kB T}}.
+  \left(\frac{V}{N}\right)^{1/d}\lesssim\frac{\hbar}{\sqrt{d\cdot m\kB T}}.
 \end{equation}
 Recall that for a gas at $p\sim 1$~atm and $T\sim 300$~K, $R\sim 34\ \text{\AA} = 3.4$~nm. And
 \begin{equation}
@@ -214,12 +214,12 @@ radiates electromagnetic waves, losing energy and spiraling in to the nucleus. S
 $R\lesssim\lambda\!\!\!^-$ leads to observable quantum coherence effects. This condition $\lambda\!\!\!^-\gtrsim R$ is, for
 $d = 3$:
 \begin{equation}
-  \frac{\hbar}{[3m\kB T]^{1/2}}\gtrsim\left(\frac VN\right)^{1/3},\quad\text{i.e.}\quad
-  \frac{\hbar^2}{3m\kB T}\gtrsim\left(\frac VN\right)^{2/3},\quad\text{i.e.}\quad
-  \boxed{\frac{\hbar^2}{3m}\left(\frac NV\right)^{2/3}\gtrsim\kB T}.
+  \frac{\hbar}{[3m\kB T]^{1/2}}\gtrsim\left(\frac{V}{N}\right)^{1/3},\quad\text{i.e.}\quad
+  \frac{\hbar^2}{3m\kB T}\gtrsim\left(\frac{V}{N}\right)^{2/3},\quad\text{i.e.}\quad
+  \boxed{\frac{\hbar^2}{3m}\left(\frac{N}{V}\right)^{2/3}\gtrsim\kB T}.
 \end{equation}
 So high density and low temperature $\Rightarrow\lambda\!\!\!^-\gtrsim R$. This rough estimate will be seen to have the same
-functional form, $\kB T_c\sim(\text{no.})\frac{\hbar^2}{m}\left(\frac NV\right)^{2/3}$, as the actual Bose--Einstein condensation
+functional form, $\kB T_c\sim(\text{no.})(\hbar^2/m)\left(N/V\right)^{2/3}$, as the actual Bose--Einstein condensation
 temperature; they only differ in the numerical coefficient.
 
 \subsubsection*{The condensation temperature}
@@ -229,35 +229,35 @@ The total number of bosons, $N$, can be divided into the number in the ground st
   N = N_0 + \sum_{\text{excited states }r}n_r = N_0 + \sum_{\text{excited states }r}\frac{1}{e^{\beta(E_r-\mu)}-1}.
 \end{equation}
 The excited states may be approximated as closely spaced (although the gap with the g.s.\ is retained), so replace the sum by an
-integral, $\dd N = L^3\frac{\dd^3k}{(2\pi)^3}$, where $L^3$ is the volume. So
+integral, $\dd N = L^3\dd^3k/(2\pi)^3$, where $L^3$ is the volume. So
 \begin{equation}
   N = N_0 + g_J\left(\frac{L}{2\pi}\right)^3\int\frac{\dd^3k}{e^{\beta(E_k-\mu)}-1},
 \end{equation}
 where $g_J = 2J+1$ is the statistical factor, with $J$ = spin. With $\dd^3k = 4\pi k^2\dd k$ and
-$k^2\dd k = k\cdot(k\,\dd k) = k\cdot\frac12\dd k^2$,
+$k^2\dd k = k\cdot(k\,\dd k) = k\cdot(1/2)\dd k^2$,
 \begin{align}
   \int\frac{\dd^3k}{(\cdots)} &= 4\pi\int_0^{k_{\max}}\frac{k^2\dd k}{(\cdots)} = 2\pi\int_0^{k_{\max}}\frac{k\,\dd k^2}{(\cdots)}\nonumber\\
   &= \frac{2\pi}{\hbar^3}\int_0^{p_{\max}}\frac{p\,\dd p^2}{(\cdots)} = \frac{2\pi}{\hbar^3}(2m)^{3/2}\int\frac{\sqrt E\,\dd E}{(e^{\beta(E-\mu)}-1)},
 \end{align}
-where now $p = \hbar k$, and $E = \frac{p^2}{2m}$, so $p = \sqrt{2mE}$. Because of the exponential decrease of the integrand as $E$
+where now $p = \hbar k$, and $E = p^2/(2m)$, so $p = \sqrt{2mE}$. Because of the exponential decrease of the integrand as $E$
 gets large, we can extend the range of integration to $\infty$, obtaining the result
 \begin{equation}
-  N = N_0 + g_J\left(\frac{L}{2\pi\hbar}\right)^3\cdot 2\pi(2m)^{3/2}\underbrace{\int_0^\infty\frac{E^{1/2}\dd E}{(e^{\beta(E-\mu)}-1)}}_{\beta^{-3/2}\int_0^\infty\frac{x^{1/2}\dd x}{(e^{x-\beta\mu}-1)}},
+  N = N_0 + g_J\left(\frac{L}{2\pi\hbar}\right)^3\cdot 2\pi(2m)^{3/2}\underbrace{\int_0^\infty\frac{E^{1/2}\dd E}{(e^{\beta(E-\mu)}-1)}}_{\beta^{-3/2}\int_0^\infty x^{1/2}\dd x/(e^{x-\beta\mu}-1)},
 \end{equation}
-where we define a dimensionless variable $x = \beta E = \frac{E}{\kB T}$. It is convenient to re-express this in terms of
-$\frac NV = \rho_n$, the number density, where $V = L^3$:
+where we define a dimensionless variable $x = \beta E = E/(\kB T)$. It is convenient to re-express this in terms of
+$N/V = \rho_n$, the number density, where $V = L^3$:
 \begin{equation}
-  \left(\frac NV\right) = \left(\frac{N_0}{V}\right) + \underbrace{\frac{g_J}{(2\pi)^2}\left(\frac{2m\kB T}{\hbar^2}\right)^{3/2}\int_0^\infty\frac{x^{1/2}\dd x}{(e^{x-\beta\mu}-1)}}_{N_{\text{excited}}/V}.
+  \left(\frac{N}{V}\right) = \left(\frac{N_0}{V}\right) + \underbrace{\frac{g_J}{(2\pi)^2}\left(\frac{2m\kB T}{\hbar^2}\right)^{3/2}\int_0^\infty\frac{x^{1/2}\dd x}{(e^{x-\beta\mu}-1)}}_{N_{\text{excited}}/V}.
 \end{equation}
 Consider a situation in which a large number of particles are in the $E = 0$ state, so
 \begin{equation}
   N = \frac{1}{e^{\beta(E-\mu)}-1} = \frac{1}{e^{-\beta\mu}-1};\quad\text{expand}\ \to\ \frac{1}{(1-\beta\mu\ldots)-1} = -\frac{1}{\beta\mu} = -\frac{\kB T}{\mu},
 \end{equation}
-so $\mu\simeq-\frac{\kB T}{N}\to 0$ in this case. So we can approximate the integral as
+so $\mu\simeq-\kB T/N\to 0$ in this case. So we can approximate the integral as
 \begin{equation}
   \int_0^\infty\frac{x^{1/2}\dd x}{e^x-1} = \frac{\sqrt\pi}{2}\zeta(3/2),
 \end{equation}
-where $\zeta(s) = \sum_{n=1}^\infty\frac{1}{n^s}$ is the Riemann zeta function and $\zeta(3/2) = 2.61238\ldots$. So at the
+where $\zeta(s) = \sum_{n=1}^\infty(1/n^s)$ is the Riemann zeta function and $\zeta(3/2) = 2.61238\ldots$. So at the
 temperature where there is just beginning to be a significant $N_0$, we have
 \begin{equation}
   \left(\frac{N_{\text{excited}}}{V}\right) = \left(\frac{g_J}{4\pi^2}\right)\left(\frac{2m\kB T_c}{\hbar^2}\right)^{3/2}\frac{\sqrt\pi}{2}\zeta(3/2)
@@ -265,7 +265,7 @@ temperature where there is just beginning to be a significant $N_0$, we have
 \end{equation}
 So as $T\to T_c^+$, $N_{\text{excited}}\simeq N$, so, solving for $T_c$:
 \begin{gather}
-  \frac{N_{\text{excited}}}{V}\simeq\frac NV = \frac{g_J}{8}\left(\frac{2m\kB T_c}{\pi\hbar^2}\right)^{3/2}\zeta(3/2)
+  \frac{N_{\text{excited}}}{V}\simeq\frac{N}{V} = \frac{g_J}{8}\left(\frac{2m\kB T_c}{\pi\hbar^2}\right)^{3/2}\zeta(3/2)
   \ \Rightarrow\ \left(\frac{8N}{g_J\zeta(3/2)V}\right)^{2/3} = \frac{2m\kB T_c}{\pi\hbar^2}\nonumber\\
   \Rightarrow\quad\boxed{\kB T_c = \frac{2\pi\hbar^2}{m}\left(\frac{N}{g_J\zeta(3/2)V}\right)^{2/3}},
 \end{gather}
@@ -282,15 +282,15 @@ As an illustrative calculation for the experimental conditions of the MIT group,
 \end{equation}
 see PRL \textbf{75}, 3969 (1995) for the MIT result (several $J$ values are mentioned).
 
-Since $\frac{N_{\text{exc}}}{V}\propto T^{3/2}$ and $\frac NV\propto T_c^{3/2}$ with the same proportionality constant,
-$\frac{N_{\text{exc}}}{N} = \left(\frac{T}{T_c}\right)^{3/2}$, so
+Since $N_{\text{exc}}/V\propto T^{3/2}$ and $N/V\propto T_c^{3/2}$ with the same proportionality constant,
+$N_{\text{exc}}/N = \left(T/T_c\right)^{3/2}$, so
 \begin{equation}
   N_0 = N - N_{\text{exc}} = N\left(1-\frac{N_{\text{exc}}}{N}\right) = N\left[1-\left(\frac{T}{T_c}\right)^{3/2}\right].
 \end{equation}
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.8]
-  \draw (0,0) -- (4,0) node[below] {$T$}; \draw (0,0) -- (0,2.3) node[left] {$\frac{N_0}{N}$};
+  \draw (0,0) -- (4,0) node[below] {$T$}; \draw (0,0) -- (0,2.3) node[left] {$N_0/N$};
   \draw[thick,domain=0:2.6,samples=50] plot (\x,{2*(1-(\x/2.6)^1.5)});
   \node[left] at (0,2) {$1$}; \node[below] at (0,0) {$0$}; \node[below] at (2.6,0) {$T_c$};
   \node[font=\small,anchor=west] at (2.4,0.6) {$N_0\ll N$};

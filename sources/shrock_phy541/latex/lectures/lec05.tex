@@ -150,7 +150,7 @@ In this limit, one naturally deals with the energy per unit volume or per site o
 since this is finite in the thermodynamic limit. Hence, we define a reduced dimensionless
 free energy function
 \begin{equation}
-  f = \lim_{N\to\infty}\frac1N\ln Z,\qquad\text{so}\quad \bar U = -\pder{f}{\beta}.
+  f = \lim_{N\to\infty}\frac{1}{N}\ln Z,\qquad\text{so}\quad \bar U = -\pder{f}{\beta}.
 \end{equation}
 The corresponding Gibbs free energy per volume or per particle is $\bar G = -\kB Tf$. We
 will often drop the bar on $\bar U$, $\bar G$ and other quantities such as $\bar M$ when
@@ -168,7 +168,7 @@ For a magnetic system, say the Ising system with $\sigma_i = \pm 1$ (\# states $
 \end{equation}
 where $K\equiv\beta J$ and $h\equiv\beta H$, so
 \begin{equation}
-  \bar M = \ev{\sigma_i} = \frac1\beta\pder{f}{H} = \pder{f}{h}.
+  \bar M = \ev{\sigma_i} = \frac{1}{\beta}\pder{f}{H} = \pder{f}{h}.
 \end{equation}
 The spontaneous magnetization is
 \begin{equation}
@@ -191,7 +191,7 @@ singularities.
 with $2^N$ states. To compute $Z$, we will use a transfer matrix method. The matrix element
 of the transfer matrix $T$ (not temperature) is
 \begin{equation}
-  \langle\sigma_{i+1}|T|\sigma_i\rangle = e^{K\sigma_{i+1}\sigma_i + \frac{h}{2}(\sigma_{i+1}+\sigma_i)}.
+  \langle\sigma_{i+1}|T|\sigma_i\rangle = e^{K\sigma_{i+1}\sigma_i + (h/2)(\sigma_{i+1}+\sigma_i)}.
 \end{equation}
 For the spin states $++$, $-+$, $+-$, $--$:
 \begin{equation}
@@ -226,7 +226,7 @@ First, do this for $H = 0$, i.e.\ no external magnetic field:
   \lambda^2 - 2e^K\lambda + (e^{2K}-e^{-2K}) = 0,
 \end{equation}
 \begin{equation}
-  \lambda_\pm = \tfrac12\left[2e^K\pm\sqrt{4e^{2K}-4(e^{2K}-e^{-2K})}\right]
+  \lambda_\pm = \frac{1}{2}\left[2e^K\pm\sqrt{4e^{2K}-4(e^{2K}-e^{-2K})}\right]
   = e^K\pm e^{-K} = \begin{cases} 2\cosh K\\ 2\sinh K.\end{cases}
 \end{equation}
 We use the notation $\cosh K\equiv\operatorname{ch}K$, $\sinh K\equiv\operatorname{sh}K$,
@@ -243,7 +243,7 @@ Then $T_d = \operatorname{diag}(\lambda_+,\lambda_-)$ and
   \ln Z = N\ln 2 + N\ln[\cosh K] + \ln[1+v^N],
 \end{equation}
 \begin{equation}
-  f = \lim_{N\to\infty}\frac1N\ln Z = \ln 2 + \ln(\cosh K) = \ln[2\cosh K] = \ln(\lambda_{\max});
+  f = \lim_{N\to\infty}\frac{1}{N}\ln Z = \ln 2 + \ln(\cosh K) = \ln[2\cosh K] = \ln(\lambda_{\max});
   \qquad \bar G = -\kB Tf .
 \end{equation}
 So

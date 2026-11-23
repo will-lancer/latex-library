@@ -6,7 +6,7 @@
 In mathematics, it is often useful to generalize from functions of a real variable to functions of a
 complex variable, $\mathbb R\to\mathbb C$. For example, in general, one must make this step when solving for
 the roots of an algebraic equation with real coefficients. Consider the quadratic equation
-$ax^2+bx+c = 0$. The solutions are $x = \frac{1}{2a}\left[-b\pm\sqrt{b^2-4ac}\right]$ and these are complex if
+$ax^2+bx+c = 0$. The solutions are $x = (1/(2a))\left[-b\pm\sqrt{b^2-4ac}\right]$ and these are complex if
 $b^2<4ac$. This generalization is also necessary to understand the properties of series expansions. For
 instance, consider the Taylor series expansion
 \begin{equation}
@@ -26,7 +26,7 @@ the Taylor series for $f(x)$.
   \begin{scope}[xshift=6.5cm]
   \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x\in\mathbb R$}; \draw (0,-0.4) -- (0,1.6);
   \draw[thick,blue,domain=-2.4:2.4,samples=60] plot (\x,{1.0/(1+\x*\x)});
-  \node[font=\small] at (0.9,1.3) {$f(x) = \frac{1}{1+x^2}$};
+  \node[font=\small] at (0.9,1.3) {$f(x) = 1/(1+x^2)$};
   \end{scope}
 \end{tikzpicture}
 \diagramcaption{The poles of $f(x) = 1/(1+x^2)$ at $x = \pm\ii$ lie on the circle $|x| = 1$ in the complex plane
@@ -44,10 +44,10 @@ lattice $\Lambda$. Then
   Z = \sum_{\{\sigma_i\}}e^{-\beta\Ham} = \sum_{\{\sigma_i\}}e^{K\sum_{nn}\sigma_i\sigma_j + h\sum_i\sigma_i},
   \qquad K = \beta J,\quad h = \beta H .
 \end{equation}
-At $T = 0$, $Z = 2e^{\frac\Delta2Kn+hn}$, where $\Delta$ = vertex degree of $\Lambda$. Recall the low-temperature
+At $T = 0$, $Z = 2e^{(\Delta/2)Kn+hn}$, where $\Delta$ = vertex degree of $\Lambda$. Recall the low-temperature
 expansion:
 \begin{equation}
-  Z = e^{n\left(\frac\Delta2K+h\right)}\left[1 + nz^\Delta\mu + \cdots\right],\qquad\text{where}\quad z = e^{-2K}\ \text{and}\ \mu = e^{-2h}.
+  Z = e^{n\left((\Delta/2)K+h\right)}\left[1 + nz^\Delta\mu + \cdots\right],\qquad\text{where}\quad z = e^{-2K}\ \text{and}\ \mu = e^{-2h}.
 \end{equation}
 It is thus clear that aside from the prefactor, $Z$ is a polynomial in the Boltzmann weights $z = e^{-2K}$ and
 $\mu = e^{-2h}$. By multiplying by a different prefactor, one could also write $Z$ as a polynomial in
@@ -63,7 +63,7 @@ terms in $Z$ are real. In the thermodynamic limit, these zeros are dense on the 
 unit circle. If $\Lambda$ has dimension above $d = 1$, i.e.\ $d\ge 2$, so that the model has a critical point at
 $T_c>0$, then as $T\searrow T_c$, the complex-conjugate arcs ``pinch'' the real axis at $\mu = 1$, thereby forming
 a closed curve (the unit circle) that separates the complex $\mu$ plane into 2 regions, $|\mu|>1$ and $|\mu|<1$.
-So $\mu = e^{\ii\theta} = e^{-2h}$; $h = -\frac{\ii\theta}{2}$.
+So $\mu = e^{\ii\theta} = e^{-2h}$; $h = -\ii\theta/2$.
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.6]
@@ -88,20 +88,20 @@ $T = \left(\begin{smallmatrix}e^{K+h} & e^{-K}\\ e^{-K} & e^{K-h}\end{smallmatri
 \begin{equation}
   \lambda_\pm = e^K\left[\cosh h\pm\sqrt{\sinh^2h+e^{-4K}}\right].
 \end{equation}
-Let $h = -\frac{\ii\theta}{2}$ and use the identities $\cosh(\ii x) = \cos x$, $\sinh(\ii x) = \ii\sin x$. Here
+Let $h = -\ii\theta/2$ and use the identities $\cosh(\ii x) = \cos x$, $\sinh(\ii x) = \ii\sin x$. Here
 $Z = \lambda_+^n+\lambda_-^n$; the zeros require $|\lambda_+| = |\lambda_-|$ for cancellation. For physical $K$, $h$,
 $\lambda_+>\lambda_-$, so $Z$ is never zero, as is obvious from the definition $Z = \sum_{\{\sigma\}}e^{-\beta\Ham}$,
-which is positive-definite, but $Z$ can vanish for complex $h$ and/or $K$. Setting $h = -\frac{\ii\theta}{2}$,
+which is positive-definite, but $Z$ can vanish for complex $h$ and/or $K$. Setting $h = -\ii\theta/2$,
 \begin{equation}
-  \lambda_\pm\to e^K\left[\cos\frac\theta2\pm\sqrt{-\sin^2(\theta/2)+e^{-4K}}\right];
+  \lambda_\pm\to e^K\left[\cos\frac{\theta}{2}\pm\sqrt{-\sin^2(\theta/2)+e^{-4K}}\right];
 \end{equation}
 $|\lambda_+| = |\lambda_-|$ if the expression in the square root is negative, i.e.\
-$\sin^2(\theta/2)>e^{-4K}$, $|\sin\frac\theta2|>e^{-2K}$. For the $\theta>0$ branch of the arc,
-$\frac\theta2>\arcsin(e^{-2K})$, with the endpoints of the arc at
+$\sin^2(\theta/2)>e^{-4K}$, $|\sin\theta/2|>e^{-2K}$. For the $\theta>0$ branch of the arc,
+$\theta/2>\arcsin(e^{-2K})$, with the endpoints of the arc at
 \begin{equation}
   \theta_e = \pm 2\arcsin(e^{-2K}).
 \end{equation}
-E.g.\ $T = \infty$, i.e.\ $K = 0\Rightarrow e^{-2K} = 1$, $\theta_e = \pm 2\left(\frac\pi2\right) = \pm\pi$; as $T\to 0$,
+E.g.\ $T = \infty$, i.e.\ $K = 0\Rightarrow e^{-2K} = 1$, $\theta_e = \pm 2\left(\pi/2\right) = \pm\pi$; as $T\to 0$,
 $K\to\infty$, $e^{-2K}\to 0$, $\theta_e\to 0$.
 
 \begin{diagram}
@@ -117,7 +117,7 @@ $K\to\infty$, $e^{-2K}\to 0$, $\theta_e\to 0$.
 \subsection{Fisher zeros in the complex temperature plane}
 
 Complex-$K$ zeros are also of interest. In general, with $Z = \Tr(T^n) = \sum_i\lambda_i^n$, so
-$f = \lim_{n\to\infty}\frac1n\ln Z = \ln(\lambda_{\text{dom.}})$; at the locus of points where there is a switch in
+$f = \lim_{n\to\infty}(1/n)\ln Z = \ln(\lambda_{\text{dom.}})$; at the locus of points where there is a switch in
 the dominant eigenvalue, where $|\lambda_i| = |\lambda_j|$ for some $i$, $j$, as occurs for zeros of $Z$, there is a
 nonanalytic change in the (reduced) free energy $f$. This establishes a connection between the accumulation set of
 the zeros of $Z$ and the complex-$K$ generalization of phase transition points $K_c$.
@@ -131,7 +131,7 @@ a switch between 2 dominant eigenvalues of $T$, so let $Z = \lambda_1^n+\lambda_
 \end{align}
 so, for $n\to\infty$,
 \begin{equation}
-  f = \lim_{n\to\infty}\frac1n\ln Z = \frac12\int_0^{2\pi}\frac{\dd\theta}{2\pi}\ln\left[\lambda_1^2+\lambda_2^2+2\lambda_1\lambda_2\cos\theta\right]
+  f = \lim_{n\to\infty}\frac{1}{n}\ln Z = \frac{1}{2}\int_0^{2\pi}\frac{\dd\theta}{2\pi}\ln\left[\lambda_1^2+\lambda_2^2+2\lambda_1\lambda_2\cos\theta\right]
   = \ln[\lambda_{\text{dom.}}];
 \end{equation}
 the integrand is singular where $|\lambda_1| = |\lambda_2|$, i.e.\ on the locus of zeros of $Z$ for
@@ -149,13 +149,13 @@ these crossings occur at the critical point of this 1D model, at $T = 0$ for the
 ($J<0$) cases. The fact that the coefficients of terms in $Z$ are real $\Rightarrow\mathcal B_z = \mathcal B_z^*$,
 i.e.\ the locus $\mathcal B_z$ is invariant under complex conjugation. The isomorphism of the FM and AFM on a
 bipartite lattice such as the 1D line (with $n$ even) $\Rightarrow\mathcal B_z$ is also invariant under
-$z\to z^{-1}$, inversion, corresponding to $J\to-J$ (so $K\to-K$, $z\to\frac1z$).
+$z\to z^{-1}$, inversion, corresponding to $J\to-J$ (so $K\to-K$, $z\to1/z$).
 
 \paragraph{2D Ising model.} The locus of complex-$K$ zeros for the 2D Ising model can be determined from the exact
 solution, as the locus in $z$ or $v$ where the argument of the log in the integral vanishes, similarly to the 1D
 integral. Recall, for the square lattice,
 \begin{equation}
-  f = 2K + \frac12\int_0^{2\pi}\frac{\dd^2\theta}{(2\pi)^2}\ln(L),\qquad
+  f = 2K + \frac{1}{2}\int_0^{2\pi}\frac{\dd^2\theta}{(2\pi)^2}\ln(L),\qquad
   L = (1+z^2)^2 - 2z(1-z^2)\mathcal P(\theta_1,\theta_2),
 \end{equation}
 with $\mathcal P(\theta_1,\theta_2) = \cos\theta_1+\cos\theta_2$; $-2\le\mathcal P(\theta_1,\theta_2)\le 2$. As
@@ -181,10 +181,10 @@ physical phases marked in blue: PM, $\sqrt2-1\le z\le 1$ for $J>0$, $1\le z\le\s
 $0\le z<\sqrt2-1$; AFM, $z>\sqrt2+1$.}
 \end{diagram}
 
-$\mathcal B_z$ is invariant under (1) $z\to z^*$; (2) $z\to\frac1z = y$; (3) $z\to-z$. This boundary
+$\mathcal B_z$ is invariant under (1) $z\to z^*$; (2) $z\to1/z = y$; (3) $z\to-z$. This boundary
 $\mathcal B_z$ thus defines complex-$z$ extensions of the physical phases.
 
-Recall that $v = \frac{1-z}{1+z}$ maps the $z$ plane to the $v$ plane. This mapping takes
+Recall that $v = (1-z)/(1+z)$ maps the $z$ plane to the $v$ plane. This mapping takes
 $\mathcal B\to\mathcal B$, so $\mathcal B_v$ is the same as $\mathcal B_z$: $|v\pm1| = \sqrt2$, although the
 crossings on the real-$z$ and real-$v$ axes correspond to different phase transitions. With $v = \tanh K$, the
 physical phases are: $0\le v\le\sqrt2-1$: PM for $J>0$; $-(\sqrt2-1)\le v\le 0$: PM for $J<0$;
@@ -199,7 +199,7 @@ where $k_< = (\sinh 2K)^{-2}$. This has a physical zero at the PM--FM critical p
 $u = 3-2\sqrt2 = (\sqrt2-1)^2 = u_{PM\text{-}FM}$, which is one root of the $1-6u+u^2$ factor. The other root is
 $u = 3+2\sqrt2 = u_{PM\text{-}AFM}$. Note that $u_{PM\text{-}AFM} = (u_{PM\text{-}FM})^{-1}$, reflecting the
 isomorphism between the $J>0$ and $J<0$ (FM and AFM signs of the spin--spin couplings). Indeed the expression for
-$M$ is invariant under $J\to-J$, hence $u\to\frac1u$, and after this transformation, it applies to the staggered
+$M$ is invariant under $J\to-J$, hence $u\to1/u$, and after this transformation, it applies to the staggered
 magnetization. As is evident, $M$ also has a complex-$K$ zero at $u = -1$, i.e.\ $z = \pm\ii$. See, e.g., Matveev and
 Shrock, J.\ Phys.\ A \textbf{28}, 1557 (1995) for more details.
 
@@ -232,33 +232,33 @@ PBC):
 Assume $q\ne 0$, $q\ne 1$ to avoid trivial cases. Physically, $q+v>v$, so $f = \ln(q+v)$, but here consider
 $v,q\in\mathbb C$. First, consider the locus $\mathcal B_v$ = accumulation set of zeros of $Z$ in $v$ as
 $n\to\infty$. This is determined as the solution to the equation $|q+v| = |v|$. Let us take $q\in\mathbb R$; the
-solution is $v = -\frac q2+\ii r$, $r\in\mathbb R$ $\Rightarrow|\frac q2+\ii r| = |-\frac q2+\ii r|$. Denote
+solution is $v = -q/2+\ii r$, $r\in\mathbb R$ $\Rightarrow|q/2+\ii r| = |-q/2+\ii r|$. Denote
 $y = v+1 = e^K$. Restoring the subscript,
 \begin{equation}
   y = e^{K_P} = e^{2K_{\text{Ising}}} = z^{-1}
 \end{equation}
-in our previous notation; $\mathcal B_y$ is the line $y = \left(1-\frac q2\right)+\ii r$.
+in our previous notation; $\mathcal B_y$ is the line $y = \left(1-q/2\right)+\ii r$.
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.8]
   \draw[->] (-2,0) -- (2,0) node[right] {$\mathrm{Re}(v)$}; \draw[->] (0.3,-1.6) -- (0.3,1.6) node[above] {$\mathrm{Im}(v)$};
   \draw[red,thick] (-0.8,-1.6) -- (-0.8,1.6); \node[red,font=\small] at (-1.4,-1.2) {$\mathcal B_v$};
-  \node[red,font=\scriptsize] at (-0.8,-1.95) {$v = -\frac q2+\ii r$};
+  \node[red,font=\scriptsize] at (-0.8,-1.95) {$v = -q/2+\ii r$};
   \begin{scope}[xshift=6cm]
   \draw[->] (-2,0) -- (2,0) node[right] {$\mathrm{Re}(y)$}; \draw[->] (0,-1.6) -- (0,1.6) node[above] {$\mathrm{Im}(y)$};
   \draw[red,thick] (-0.5,-1.6) -- (-0.5,1.6); \node[red,font=\small] at (-1.1,-1.2) {$\mathcal B_y$};
-  \node[red,font=\scriptsize] at (-0.5,-1.95) {$y = \left(1-\frac q2\right)+\ii r$, pictured for $q>2$};
+  \node[red,font=\scriptsize] at (-0.5,-1.95) {$y = \left(1-q/2\right)+\ii r$, pictured for $q>2$};
   \end{scope}
   \begin{scope}[xshift=12cm]
   \draw[->] (-2,0) -- (1.6,0) node[right] {$\mathrm{Re}(z)$}; \draw[->] (0,-1.4) -- (0,1.4) node[above] {$\mathrm{Im}(z)$};
   \draw[red,thick] (-0.6,0) circle (0.6); \fill[green!60!black] (-0.6,0) circle (0.04);
-  \node[red,font=\scriptsize] at (-1.2,-1.0) {$z = -\frac{2}{q-2}$};
+  \node[red,font=\scriptsize] at (-1.2,-1.0) {$z = -2/(q-2)$};
   \node[font=\scriptsize] at (0.6,-1.8) {pictured for $q>2$};
   \end{scope}
 \end{tikzpicture}
 \diagramcaption{The loci $\mathcal B_v$, $\mathcal B_y$ and $\mathcal B_z$ for the $q$-state Potts model on the
 circuit graph in the limit $n\to\infty$. In the $z$ plane $\mathcal B_z$ is the circle
-$|z+\frac{1}{q-2}| = \frac{1}{|q-2|}$, with center $z = -\frac{1}{q-2}$ and radius $\frac{1}{|q-2|}$.}
+$|z+1/(q-2)| = 1/(|q-2|)$, with center $z = -1/(q-2)$ and radius $1/(|q-2|)$.}
 \end{diagram}
 
 So we see that for the $q = 2$ Ising case, $\mathcal B_y$ is the imaginary axis in the complex $y$ plane, which maps
@@ -266,7 +266,7 @@ to itself under the inversion map $y = z^{-1}\to z$. So for the Potts model with
 $\mathcal B_z$ again separates the $z$ plane into two regions. To the right, $f = \ln(q+v)$ and to the left,
 $f = \ln v$; there is a non-analytic change in $f$ as one crosses the boundary $\mathcal B_v$. The image of
 $\mathcal B$ in the $z$ plane is a circle that passes through $z = 0$ and
-$z = \left(1-\frac q2\right)^{-1} = \frac{2}{2-q} = -\left(\frac{2}{q-2}\right)$:
+$z = \left(1-q/2\right)^{-1} = 2/(2-q) = -\left(2/(q-2)\right)$:
 \begin{equation}
   \left|z+\frac{1}{q-2}\right| = \frac{1}{|q-2|}.
 \end{equation}

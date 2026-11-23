@@ -16,7 +16,7 @@ similarly with $K_2$ (where $*$ means evaluated at the critical point), so with
 $\delta K_i'\equiv K_i'-K_i^*$, $i = 1,2$,
 \begin{equation}
   \begin{pmatrix}\delta K_1'\\ \delta K_2'\end{pmatrix}
-  = \underbrace{\begin{pmatrix}\pder{R_1}{K_1} & \pder{R_1}{K_2}\\[4pt] \pder{R_2}{K_1} & \pder{R_2}{K_2}\end{pmatrix}_*}_{M}
+  = \underbrace{\begin{pmatrix}\dfrac{\partial R_1}{\partial K_1} & \dfrac{\partial R_1}{\partial K_2}\\[6pt] \dfrac{\partial R_2}{\partial K_1} & \dfrac{\partial R_2}{\partial K_2}\end{pmatrix}_*}_{M}
     \begin{pmatrix}\delta K_1\\ \delta K_2\end{pmatrix}.
 \end{equation}
 Diagonalizing $M$: $M\hat{\mathbf e}_i = \lambda_i\hat{\mathbf e}_i$, $i = 1,2$, $\lambda_i = b^{y_i}$;
@@ -49,9 +49,9 @@ In the previous lecture, we carried out an RG analysis of the 1D zero-field Isin
 generality, we took $J>0$ (FM $J$), so $K\ge 0$. We derived the RG
 \begin{equation}
   v' = v^2,\quad\text{i.e.}\quad \tanh K' = (\tanh K)^2,\qquad
-  K' = \operatorname{arctanh}\left((\tanh K)^2\right) = \tfrac12\ln(\cosh(2K)),
+  K' = \operatorname{arctanh}\left((\tanh K)^2\right) = \frac{1}{2}\ln(\cosh(2K)),
 \end{equation}
-using $\operatorname{arctanh}x = \frac12\ln\left(\frac{1+x}{1-x}\right)$, so $K'<K$ if $0<T<\infty$.
+using $\operatorname{arctanh}x = (1/2)\ln\left((1+x)/(1-x)\right)$, so $K'<K$ if $0<T<\infty$.
 
 \begin{diagram}
 \begin{tikzpicture}[scale=0.9,>=Stealth]
@@ -87,7 +87,7 @@ proof:
   \frac{4U}{(1+U)^2} = \frac{4}{[U^{-1/2}(1+U)]^2} = \frac{4}{[U^{-1/2}+U^{1/2}]^2}
   = \frac{4}{(e^{2K}+e^{-2K})^2} = \frac{1}{[\cosh(2K)]^2},
 \end{equation}
-so $U' = e^{-4K'} = \frac{1}{[\cosh(2K)]^2}$, $-4K' = -2\ln[\cosh(2K)]\Rightarrow K' = \frac12\ln[\cosh(2K)]$.
+so $U' = e^{-4K'} = 1/[\cosh(2K)]^2$, $-4K' = -2\ln[\cosh(2K)]\Rightarrow K' = (1/2)\ln[\cosh(2K)]$.
 It is convenient to use the Boltzmann variable because the RG transformation is an algebraic (rational)
 function for $U\to U'$ but a transcendental function for $K\to K'$.
 
@@ -122,12 +122,12 @@ The partition function, expressed in terms of $\sigma$'s on even and odd sites o
   Z &= \sum_{\{\sigma_i\}}e^{-\beta\Ham}
      = \sum_{\{\sigma_i\}}\prod_{i,j}\exp\left[K\sum_{e_{ij}}\sigma_i\sigma_j + h\sum_i\sigma_i\right]\nonumber\\
     &= \sum_{\{\sigma_{\text{even}}\}}\sum_{\{\sigma_{\text{odd}}\}}\prod_{i,j}
-       \exp\left[K\sigma_i(\sigma_{i-1}+\sigma_{i+1}) + h\sigma_i + \tfrac h2(\sigma_{i-1}+\sigma_{i+1})\right],
+       \exp\left[K\sigma_i(\sigma_{i-1}+\sigma_{i+1}) + h\sigma_i + \frac{h}{2}(\sigma_{i-1}+\sigma_{i+1})\right],
 \end{align}
 where $i$ is odd and $i\pm1$ are even sites. Now perform the sums over $\sigma_i = \pm1$ on all odd sites:
 \begin{align}
   Z &= \sum_{\{\sigma_{\text{even}}\}}\prod_{\text{sites}}\left\{e^{K(\sigma_{i-1}+\sigma_{i+1})+h}
-       + e^{-K(\sigma_{i-1}+\sigma_{i+1})-h}\right\}e^{\frac h2(\sigma_{i-1}+\sigma_{i+1})}\nonumber\\
+       + e^{-K(\sigma_{i-1}+\sigma_{i+1})-h}\right\}e^{(h/2)(\sigma_{i-1}+\sigma_{i+1})}\nonumber\\
     &= \sum_{\{\sigma_j\}}\prod_j\exp\left[K'\sigma_j\sigma_{j+1} + h'\sigma_j + C'\right],
 \end{align}
 where now the $j$'s are sites on the blocked lattice. This yields the RG transformation
@@ -139,8 +139,8 @@ since it divides out in all thermal averages: for any operator $\mathcal O$,
 \end{equation}
 Thus
 \begin{equation}
-  \left\{e^{K(\sigma_{i-1}+\sigma_{i+1})+h} + e^{-K(\sigma_{i-1}+\sigma_{i+1})-h}\right\}e^{\frac h2(\sigma_{i-1}+\sigma_{i+1})}
-  = e^{K'\sigma_j\sigma_{j+1} + \frac{h'}{2}(\sigma_j+\sigma_{j+1}) + C'} .
+  \left\{e^{K(\sigma_{i-1}+\sigma_{i+1})+h} + e^{-K(\sigma_{i-1}+\sigma_{i+1})-h}\right\}e^{(h/2)(\sigma_{i-1}+\sigma_{i+1})}
+  = e^{K'\sigma_j\sigma_{j+1} + (h'/2)(\sigma_j+\sigma_{j+1}) + C'} .
 \end{equation}
 Evaluate this for all the possible cases for $\sigma_j$, $\sigma_{j+1}$:
 \begin{align}
@@ -159,7 +159,7 @@ Evaluate this for all the possible cases for $\sigma_j$, $\sigma_{j+1}$:
 \end{equation}
 so
 \begin{equation}
-  h' = h + \frac12\ln\left[\frac{\cosh(2K+h)}{\cosh(2K-h)}\right]>h:
+  h' = h + \frac{1}{2}\ln\left[\frac{\cosh(2K+h)}{\cosh(2K-h)}\right]>h:
 \end{equation}
 the RG flow is to larger $h$, i.e.\ smaller $\mu = e^{-2h}$.
 
@@ -171,7 +171,7 @@ the RG flow is to larger $h$, i.e.\ smaller $\mu = e^{-2h}$.
 \end{align}
 so
 \begin{equation}
-  K' = \frac14\ln\left[\frac{\cosh(2K+h)\cosh(2K-h)}{\cosh^2h}\right].
+  K' = \frac{1}{4}\ln\left[\frac{\cosh(2K+h)\cosh(2K-h)}{\cosh^2h}\right].
 \end{equation}
 So we have calculated the RG transformation $(K,h)\to(K',h')$ (independent of the constants $C$, $C'$,
 since these do not affect the physics). Also, (eq.~1)(eq.~2)(eq.~3)$^2$:
@@ -195,7 +195,7 @@ So the RG transformation $(U,\mu)\to(U',\mu')$ is
   \boxed{U' = \frac{U(1+\mu)^2}{(U+\mu)(1+U\mu)}},\qquad
   \boxed{\mu' = \mu\left(\frac{U+\mu}{1+U\mu}\right)}.
 \end{equation}
-Note that if $H = 0$, i.e.\ $\mu = 1$, then $\mu' = \left(\frac{U+1}{1+U}\right) = 1$, so
+Note that if $H = 0$, i.e.\ $\mu = 1$, then $\mu' = \left((U+1)/(1+U)\right) = 1$, so
 $\mu = 1\Rightarrow\mu' = 1\ \forall\,U$, i.e.\ $H = 0\Rightarrow H' = 0$.
 
 \paragraph{Fixed points and flows.}
@@ -203,13 +203,13 @@ $\mu = 1\Rightarrow\mu' = 1\ \forall\,U$, i.e.\ $H = 0\Rightarrow H' = 0$.
 One RG fixed point (RGFP) in the variables $U$ and $\mu$ is at $U = 0$, $\mu = 1$, which can be reached by
 setting $H = 0$, so $\mu = e^{-2h} = 1$, and then letting $T\to 0$, i.e.\ $K\to\infty$, so
 $U = e^{-4K}\to 0$. This is the physical critical point in the model. We see that this is an RGFP since
-$\mu' = 1$ and $U' = \lim_{U\to 0}\frac{4U}{(1+U)^2} = 0$, so $(U,\mu) = (0,1)\xrightarrow{\text{RG}}(U',\mu') = (0,1)$.
+$\mu' = 1$ and $U' = \lim_{U\to 0}(4U/(1+U)^2) = 0$, so $(U,\mu) = (0,1)\xrightarrow{\text{RG}}(U',\mu') = (0,1)$.
 
 Since $H = 0$, i.e.\ $\mu = 1$, maps to $\mu' = 1\ \forall\,U$ under RG, the RG flow that we derived before
 for $H = 0$ holds true here also. Now consider $U = 1$; here
-$U' = \frac{1\cdot(1+\mu)^2}{(1+\mu)^2} = 1$, so $U = 1\xrightarrow{\text{RG}}U' = 1\ \forall\,\mu$, and, if
-$U = 1$, then $\mu' = \mu\left(\frac{1+\mu}{1+\mu}\right) = \mu$, so the line $U = 1$ is a fixed line. If
-$U = 0$, then $\mu' = \mu\left(\frac{0+\mu}{1}\right) = \mu^2$, and since $\mu = e^{-2h}<1$, $\mu'<\mu$, so the
+$U' = 1\cdot(1+\mu)^2/(1+\mu)^2 = 1$, so $U = 1\xrightarrow{\text{RG}}U' = 1\ \forall\,\mu$, and, if
+$U = 1$, then $\mu' = \mu\left((1+\mu)/(1+\mu)\right) = \mu$, so the line $U = 1$ is a fixed line. If
+$U = 0$, then $\mu' = \mu\left((0+\mu)/1\right) = \mu^2$, and since $\mu = e^{-2h}<1$, $\mu'<\mu$, so the
 RG flow on the line $U = 0$ is from $\mu = 1$ to $\mu = 0$. If $\mu = 0$, then $U\to U' = 1$. These are the RG
 flows on the edges of the diagram.
 
@@ -234,7 +234,7 @@ $(U,\mu) = (0,1)$; the line $U = 1$ is a fixed line.}
 The RG flow in the interior of the figure is determined by the RG map $(U,\mu)\to(U',\mu')$. From our earlier
 solution of the 1D Ising model, we showed that the critical singularities are non-algebraic in terms of $T$,
 but we can reexpress them in terms of the Boltzmann variables. For example, the correlation length:
-$\ev{\sigma_0\sigma_r} = v^r = e^{-r/\xi}\Rightarrow v = e^{-1/\xi}$, $\ln v = -\frac1\xi$, $\xi = -\frac{1}{\ln v}$,
+$\ev{\sigma_0\sigma_r} = v^r = e^{-r/\xi}\Rightarrow v = e^{-1/\xi}$, $\ln v = -1/\xi$, $\xi = -1/(\ln v)$,
 where $v = \tanh K$. As $T\to 0$, $K\to\infty$,
 \begin{equation}
   \ln(\tanh K) = \ln\left(\frac{e^K-e^{-K}}{e^K+e^{-K}}\right) = \ln\left(\frac{1-e^{-2K}}{1+e^{-2K}}\right)
@@ -242,7 +242,7 @@ where $v = \tanh K$. As $T\to 0$, $K\to\infty$,
 \end{equation}
 so
 \begin{equation}
-  \xi\to\tfrac12e^{2K} = \frac{1}{2\sqrt U},
+  \xi\to\frac{1}{2}e^{2K} = \frac{1}{2\sqrt U},
 \end{equation}
 algebraic in terms of $U$.
 
@@ -252,7 +252,7 @@ So it is of interest to linearize the RG transformation at the critical RGFPs. T
 the $T = 0$, $H = 0$ critical point reached by setting $H = 0$, so $\mu = 1$, and letting $T\to 0$, i.e.\
 $K\to\infty$, so $U = e^{-4K}\to 0$. This is the RGFP $(U,\mu) = (0,1)$. We calculate
 \begin{equation}
-  M = \begin{pmatrix}\pder{U'}{U} & \pder{U'}{\mu}\\[4pt] \pder{\mu'}{U} & \pder{\mu'}{\mu}\end{pmatrix}
+  M = \begin{pmatrix}\dfrac{\partial U'}{\partial U} & \dfrac{\partial U'}{\partial \mu}\\[6pt] \dfrac{\partial \mu'}{\partial U} & \dfrac{\partial \mu'}{\partial \mu}\end{pmatrix}
     = \begin{pmatrix}
         \dfrac{(1-U^2)\mu(1+\mu)^2}{(U+\mu)^2(1+U\mu)^2} & -\dfrac{U(1-U)^2(1-\mu^2)}{(U+\mu)^2(1+U\mu)^2}\\[12pt]
         \dfrac{\mu(1-\mu^2)}{(1+U\mu)^2} & \dfrac{U+2\mu+U\mu^2}{(1+U\mu)^2}

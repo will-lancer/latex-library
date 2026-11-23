@@ -66,13 +66,13 @@ unit normalization).
 An order parameter, defined to be zero in the isotropic phase and nonzero in the nematic phase, is the scalar order
 parameter
 \begin{equation}
-  s = \tfrac12(3\cos^2\theta-1),
+  s = \frac{1}{2}(3\cos^2\theta-1),
 \end{equation}
 where here, $\theta$ is the polar angle of the rods with respect to the ordering axis $\hat{\mathbf n}_0\sim\hat{\mathbf z}$.
 For example, if this axis is taken to be the $\hat{\mathbf z}$ axis, then with the usual spherical coordinates one has
 $\int\dd\Omega = \int_0^\pi\sin\theta\,\dd\theta\int_0^{2\pi}\dd\phi = 2\pi\int_{-1}^1\dd\cos\theta = 2\pi\int_{-1}^1\dd\xi$.
 Note that $s = P_2(\cos\theta)$, where $P_\ell(\cos\theta)$, with $\xi = \cos\theta$, is the $\ell$'th Legendre polynomial.
-Recall: $P_0(\xi) = 1$, $P_1(\xi) = \xi$, $P_2(\xi) = \frac12(3\xi^2-1)$, $P_3(\xi) = \frac12(5\xi^3-3\xi)$, etc.,
+Recall: $P_0(\xi) = 1$, $P_1(\xi) = \xi$, $P_2(\xi) = (1/2)(3\xi^2-1)$, $P_3(\xi) = (1/2)(5\xi^3-3\xi)$, etc.,
 \begin{equation}
   P_\ell(\xi) = \frac{1}{2^\ell\ell!}\frac{\dd^\ell}{\dd\xi^\ell}(\xi^2-1)^\ell;\qquad P_\ell(1) = 1,
 \end{equation}
@@ -82,8 +82,8 @@ and the inner product in the function space is
 \end{equation}
 Thus in the isotropic phase,
 $\ev s = \int_{-1}^1\dd\xi\,s(\xi) = \int_{-1}^1\dd\xi\,P_2(\xi)\cdot\underbrace{P_0(\xi)}_{1} = 0$. In the limit of
-complete orientational ordering, $\cos\theta = 1$, $s = 1$. The full range of values of $s$ extends from $s = -\frac12$
-for $\theta = \frac\pi2$ to $s = 1$ for $\theta = 0$.
+complete orientational ordering, $\cos\theta = 1$, $s = 1$. The full range of values of $s$ extends from $s = -1/2$
+for $\theta = \pi/2$ to $s = 1$ for $\theta = 0$.
 
 The partition function is then (for a thermotropic LC)
 \begin{equation}
@@ -98,7 +98,7 @@ The order of the isotropic-to-nematic phase transition can be seen from the Land
   A = L_0 + L_1s + L_2s^2 + L_3s^3 + L_4s^4 .
 \end{equation}
 The constant term $L_0$ does not affect the determination of the minimum of $A$ as a function of $s$. The coefficient of
-the linear term $L_1 = 0$, since otherwise $\left.\frac{\partial A}{\partial s}\right|_{s=0}\ne 0$ and $s = 0$ would not minimize
+the linear term $L_1 = 0$, since otherwise $\left.\partial A/\partial s\right|_{s=0}\ne 0$ and $s = 0$ would not minimize
 $A$ even in the isotropic phase. So
 \begin{equation}
   A = L_2s^2 + L_3s^3 + L_4s^4,
@@ -109,7 +109,7 @@ $Z$ is invariant under $\mathbf M\to-\mathbf M$ (indeed it is invariant under a 
 The presence of the cubic term leads to a first-order phase transition. This is confirmed in Monte Carlo simulations.
 These naturally freeze out the orientational degrees of freedom and hence assign sites to the centers of the rods, so
 \begin{equation}
-  \Ham = -J\sum_{e_{ij}}\tfrac12\left[3(\hat{\mathbf S}_i\cdot\hat{\mathbf S}_j)^2-1\right] = -J\sum_{e_{ij}}P_2\left(\cos(\theta_i-\theta_j)\right).
+  \Ham = -J\sum_{e_{ij}}\frac{1}{2}\left[3(\hat{\mathbf S}_i\cdot\hat{\mathbf S}_j)^2-1\right] = -J\sum_{e_{ij}}P_2\left(\cos(\theta_i-\theta_j)\right).
 \end{equation}
 
 \begin{diagram}
@@ -243,7 +243,7 @@ consisting of even and odd sublattices $\Lambda_1$ and $\Lambda_2$. The partitio
 $T = 0$ is the chromatic polynomial, $P(\Lambda,q)$, which is equal to the number of ways of assigning colors from a set of
 $q$ colors to the sites of the lattice subject to the constraint that no adjacent vertices have the same color. The lower
 bound is proved by first assigning one of the $q$ colors to all of the sites on one of the two sublattices, say $\Lambda_1$.
-This can be done in any of $q$ ways. Then independently for each of the $\frac N2$ sites on the other sublattice,
+This can be done in any of $q$ ways. Then independently for each of the $N/2$ sites on the other sublattice,
 $\Lambda_2$, we can assign a color from the remaining set of $q-1$ colors. So $P(\Lambda_{\text{bip.}},q)\ge q(q-1)^{N/2}$.
 Then
 \begin{equation}
@@ -259,6 +259,6 @@ equivalently, color assignments.
 
 This nonzero g.s.\ disorder and entropy are associated with a decrease of the critical temperature of the Potts AFM, $T_c$,
 to zero as $q$ increases from $q = 2$ (Ising) to $q = 3$. There is a nonzero g.s.\ degeneracy per site present here: for
-this $q = 3$ Potts AFM on the square lattice, $\bar W_0 = (\frac43)^{3/2} = 1.5396$. The lower bound that we derived is
+this $q = 3$ Potts AFM on the square lattice, $\bar W_0 = (4/3)^{3/2} = 1.5396$. The lower bound that we derived is
 close to this: $\bar W_0>(q-1)^{1/2} = \sqrt2 = 1.414$. For $q\ge 4$, the Potts AFM has larger g.s.\ degeneracy; see,
 e.g., V.~Matveev and R.~Shrock, Phys.\ Rev.\ E \textbf{54}, 6174 (1996).
