@@ -1,0 +1,252 @@
+% Source pp. 49-55 (Lectures1-6.pdf).
+\section{Path integral for a relativistic particle}
+
+So far, we have discussed the path integral representation in ordinary quantum
+mechanics. The real-time transition amplitude is represented as a suitably
+defined integral
+\[
+\bra{q_f}e^{-\frac i\hbar HT}\ket{q_i}=\int\bigl[Dq(t)\bigr]_{\substack{q(0)=q_i\\q(T)=q_f}}\,e^{\frac i\hbar S[q(t)]}\,,
+\]
+over all ``paths'' $q(t)$ from $q_i$ to $q_f$. Now I want to discuss how the
+idea of the path integral can be applied to a relativistic particle.
+
+As we have seen (Lecture~4), the KG theory is the theory of spinless Bose
+particles, and we expect that the Feynman propagator $D_F(x_f-x_i)$ (and
+related Euclidean correlation function $D_E$) admit an interpretation in terms
+of amplitude associated with the particle propagation from $x_i$ to $x_f$. Can
+we write such amplitude as an integral over the ``paths''?
+
+In classical mechanics the action of a relativistic particle travelling from
+$x_i$ to $x_f$ is
+\[
+S=-m\int_{x_i}^{x_f}\sqrt{dx_\mu\,dx^\mu}=-m\int_{(t_i,\xx_i)}^{(t_f,\xx_f)}\sqrt{dt^2-d\xx^2}\,,
+\]
+where the integration is performed along a given path (generally described by
+a parametric curve $x^\mu(s)$) from $x_i$ to $x_f$. In classical theory it is
+assumed that $(dx^0)^2\ge d\xx^2$ along the whole path (the particle velocity
+never exceeds the speed of light). Then the time component $t=x^0$ of $x^\mu$
+can serve as the parameter along the path, and we can write
+\[
+S[\xx(t)]=-m\int_{t_i}^{t_f}dt\,\sqrt{1-\dot\xx^2}\,.
+\]
+In quantum theory one may attempt to write for the transition amplitude
+\[
+\int_{\text{paths}(i\to f)}e^{\frac i\hbar S}\,[D\xx(t)]\,,
+\]
+where the integration is over ``all paths'' from $x_i$ to $x_f$
+(figure~\ref{fig:relpath}).
+\begin{figure}[ht]
+\centering\figfile{relpath}
+\caption{Two of the paths from $x_i$ to $x_f$ that enter the sum. The
+element $dx^\mu$ of a path may be time-like or space-like.}
+\label{fig:relpath}
+\end{figure}
+
+The problems appear when we want to give a precise meaning to this expression.
+On the formal side, we observe that the Hamiltonian associated with the
+problem,
+\[
+H=\sqrt{m^2+\pp^2}
+\]
+(where $\pp$ is the momentum conjugated to $\xx$), is not ``local'' in the
+sense we discussed the last time; the matrix elements $\bra{\xx}H\ket{\xx'}$
+do not vanish when $\xx\neq\xx'$ (check it against the Exercise in
+Lecture~2). More fundamentally, the problem is about the class of the paths
+which we need to include into the path integral. The expression
+$dx_\mu dx^\mu$ in the square root in $S$ can be either positive or negative,
+depending on whether $dx^\mu$ is time-like or space-like. One can try to
+exclude from the integration the paths having space-like $dx^\mu$ anywhere,
+but it does not seem to be right idea if we want to describe the propagator
+$D_F$ this way. Indeed, unlike the commutator, the function $D_F(\xx,t)$ does
+not vanish outside the light cone (at $|t|<|\xx|$). It is exponentially small
+if you go far outside the light cone, but it is not zero. This is similar to a
+non-relativistic particle in the classically inaccessible region of its
+configuration space: the wave function is exponentially small but does not
+vanish (``quantum tunneling''). Thus we have to admit the paths having
+space-like $dx^\mu$ somewhere along them. Once such paths are admitted, the
+Lorentz invariance requires that paths in which $dx^0$ is allowed to take
+negative values (i.e.\ the paths with the folds going ``backward in time'')
+are admitted as well (figure~\ref{fig:backpath}).
+\begin{figure}[ht]
+\centering\figfile{backpath}
+\caption{A path with a fold going backward in time.}
+\label{fig:backpath}
+\end{figure}
+
+For such paths $\xx(t)$ is not a function, and the integral over $[D\xx(t)]$
+does not apply. Besides, whereas for the case of space-like $dx^\mu$ there is
+a natural choice of the branch of the square root $\sqrt{dx_\mu dx^\mu}$ in the
+action ($e^{iS}$ must receive exponentially small contributions from the
+space-like parts of the path), we have no clear intuition which sign to choose
+in the case of the time-like ``backward in time'' paths.
+
+All these ambiguities are resolved by adopting the Euclidean ($=$ imaginary
+time) formulation of the path integral. Replacing as before
+\[
+t=-i\,x_4\,,
+\]
+we have $iS\to-\mathcal A$, where the Euclidean action is
+\[
+\mathcal A=m\int\sqrt{(dx_E)^2}\,,
+\]
+with explicitly positive expression
+\[
+dx_E^2=dx_4^2+d\xx^2
+\]
+under the square root. In the subsequent discussion I will often omit the
+subscript $E$ for the Euclidean 4-vectors. With this, one can define the
+Euclidean amplitude as the integral
+\[
+\int_{\text{paths}(x_i\to x_f)}e^{-\mathcal A[\text{path}]}
+\]
+over all paths connecting two Euclidean points $x_i$ and $x_f$; one expects
+that the real-time propagator will be accessible through analytic
+continuation, as we previously discussed.
+
+Note that
+\[
+\mathcal A[\text{path}]=m_0\,L[\text{path}]\,,
+\]
+where $L[\text{path}]$ is just the Euclidean length of the path. I have
+replaced $m$ by the ``bare mass'' $m_0$; we will see that this parameter does
+not necessarily coincide with the physical mass but requires
+``renormalization''.
+
+By analogy with our definition of the path integral in ordinary quantum
+mechanics, let us define this path integral as a limit of finite-dimensional
+integrals. Namely, for given (large) number $n$, let us consider the piecewise
+linear paths from $x_i=0$ to $x_f=x$, each linear piece having fixed length
+$\Delta$ (figure~\ref{fig:steps}).
+\begin{figure}[ht]
+\centering\figfile{steps}
+\caption{A piecewise linear path from $0$ to $x$ made of $n$ pieces of equal
+length $\Delta$.}
+\label{fig:steps}
+\end{figure}
+The overall length of such path is
+\[
+L_n=n\,\Delta\,.
+\]
+Let $\nu_k$ be the unit 4-vector in the direction of the $k$-th piece;
+$|\nu_k|=1$. In this discrete approximation the path integral can be written
+as
+\[
+\sum_{n=0}^\infty e^{-m_0\Delta n}\int\Bigl(\prod_{k=1}^nd\mu(\nu_k)\Bigr)\,\delta^{(4)}\Bigl(\Delta\sum_{k=1}^n\nu_k-x\Bigr)\,.
+\]
+Here $d\mu(\nu_k)$ stands for the usual measure on $S^3$, and the
+delta-function ensures that the vectors $\Delta\,\nu_k$ add up to $x$, i.e.\
+the path indeed is from $0$ to $x=x_f-x_i$. Finally, the sum over $n$ must be
+performed since we want to include all paths, with arbitrary length $L$.
+
+The delta-function can be represented as
+\[
+\delta^{(4)}\Bigl(\Delta\sum\nu_k-x\Bigr)=\int\frac{d^4P}{(2\pi)^4}\,e^{iP(x-\Delta\sum\nu_k)}\,.
+\]
+For fixed $P$ the integration over $\prod d\mu(\nu_k)$ splits into $n$
+identical integrals $I(P\Delta)=\int d\mu(\nu)\,e^{-i\Delta\nu P}$,
+\[
+\prod_{k=1}^n\int d\mu(\nu_k)\,e^{-i\Delta\nu_kP}=\bigl[I(P\Delta)\bigr]^n\,.
+\]
+Certainly, the integral $I$ can be evaluated explicitly in terms of the
+Bessel's function. However, there is no need in its explicit form. We are
+going to send $\Delta\to0$ (in which limit a significant contribution comes
+from large $n$). Therefore only the behavior of $I$ at small values of its
+argument is important. We find
+\[
+I(P\Delta)=A-A\,\xi\,P^2\Delta^2+O(\Delta^4)\,,
+\]
+where exact values of the constants $A=\int_{S^3}d\mu(\nu)=2\pi^2$ and
+$\xi=1/8$ are not important. We have
+\[
+I^n\sim A^n\,e^{-\Delta^2n\,\xi P^2}\,.
+\]
+Now the integration over $P$ can be performed, and we obtain for given $n$
+\[
+\bigl(4\pi\,n\Delta^2\xi\bigr)^{-2}\,e^{-\frac{x^2}{4\xi n\Delta^2}}\,.
+\]
+Note that $\Delta$ enters here in the combination $n\Delta^2$, not $n\Delta$
+as one could naively expect. Attempting to take the naive limit
+\[
+\Delta\to0\,,\qquad n\to\infty\qquad\text{with}\quad L=n\Delta=\text{finite}
+\]
+would lead to the propagation amplitude which vanishes at any finite $|x|$.
+This result is not surprising. Our calculation was nearly identical to the
+well known probability calculation for a Brownian particle. We know that a
+Brownian particle with typical microscopic velocity $\bar v$ will be found,
+after the elapsed time $T$, at the distance
+\[
+\bar x=\bar v\,\sqrt{T\,\Delta t}
+\]
+away from its initial position. Here $\Delta t$ is the typical time between
+collisions. In this analogy
+\[
+\Delta\sim\bar v\,\Delta t\,,\qquad n\sim T/\Delta t\,.
+\]
+Thus we expect to have
+\[
+\bar x^2=n\,\Delta^2\,,
+\]
+in agreement with our calculation.
+
+We conclude that the right continuous limit is achieved by taking
+\[
+\Delta\to0\,,\qquad n\to\infty\qquad\text{with}\quad s=\xi\,n\,\Delta^2=\text{finite}\,,
+\]
+and it is the parameter $s$ that characterizes the geometry of the typical
+path; the microscopic length $L=n\Delta$ becomes infinitely large in this
+limit. The absolute majority of the paths contributing to the functional
+integral are extremely crumpled at all scales, as figure~\ref{fig:crumpled}
+illustrates.
+\begin{figure}[ht]
+\centering\figfile{crumpled}
+\caption{A typical path is crumpled at all scales: a small piece of it,
+magnified (right), looks as crumpled as the whole.}
+\label{fig:crumpled}
+\end{figure}
+The parameter $s$ has the dimension of the $[\text{length}]^2$; it is said that
+the typical path has the fractal dimension 2.
+
+Finally, there are two unpleasant factors to be dealt with before we can take
+the limit $\Delta\to0$. These are
+\[
+A^n\,e^{-m_0n\Delta}=e^{-n(m_0\Delta-\log A)}\,.
+\]
+Consider $m_0$ as a parameter which can carry some dependence on $\Delta$, and
+is free to be adjusted (in the limit $\Delta\to0$) so that
+\[
+\Delta\,m_0(\Delta)-\log A\ \to\ \xi\,m^2\,\Delta^2\qquad\text{as}\quad\Delta\to0\,,
+\]
+where it is $m^2$, not $m_0$, which remains constant in this limit. Then the
+above two factors combine into
+\[
+e^{-m^2\xi n\Delta^2}\to e^{-m^2s}\,.
+\]
+For large $n$ the sum is replaced by the integral over $s$, and one obtains
+\[
+\int_0^\infty ds\,e^{-m^2s}\int\frac{d^4P}{(2\pi)^4}\,e^{-sP^2}\,e^{iPx}\,,
+\]
+which is exactly the Schwinger's proper-time representation \eqref{eq:Schwinger}
+of the Euclidean correlation function $D_E(x)$ of the KG theory. Thus this
+correlation function admits interpretation as the integral over the paths in
+Euclidean space-time. As we know, the Feynman propagator $D_F$ coincides with
+the analytic continuation of this correlation function back to the real time,
+$x_4=it$.
+
+\begin{remark}
+In our calculation above we have assumed that the linear pieces of the
+discretized paths have equal lengths $\Delta$. This is not essential, and is
+done for simplicity only. One can change details of the finite-dimensional
+approximations, but in the limit the same correlation function $D_E$ comes
+out (though the relation between the ``bare'' and ``renormalized'' mass
+parameters $m_0$ and $m$ does depend on the details of the approximation).
+This is an elementary example of \emph{universality}.
+\end{remark}
+
+In principle, it is possible to develop a theory of interacting relativistic
+particles based on the idea of integrating over all the particles paths,
+including the paths of many particles, with interaction events (``vertices'').
+But much more universal and powerful approach is based on quantization of the
+field variables. In the associated path integral, one integrates not over the
+paths of the particles, but over the paths of the field variables, i.e.\ over
+all the ``trajectories'' $\Phi(\xx,t)$ of the fields. In what follows we
+elaborate this idea in the KG theory.

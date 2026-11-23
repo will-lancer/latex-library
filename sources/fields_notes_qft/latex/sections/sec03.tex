@@ -1,0 +1,301 @@
+% Source pp. 20-26 (Lectures1-6.pdf).
+\section{Casimir Effect}
+
+To understand possible manifestations of the vacuum energy, let us now
+briefly discuss the \emph{Casimir Effect}. Originally, the Casimir effect
+refers to the situation where we have two parallel conducting plates, of large
+size $L\times L$, separated by a distance $a$ (figure~\ref{fig:plates}).
+\begin{figure}[ht]
+\centering\figfile{plates}
+\caption{Two parallel conducting plates of size $L\times L$ at separation $a$.}
+\label{fig:plates}
+\end{figure}
+Due to the quantum nature of the electromagnetic field in between the plates,
+more precisely, due to the effect of the plates on the zero-point energy of
+quantum electromagnetic field, the plates are attracted with the force
+\[
+\frac{\text{Force}}{L^2}=-\hbar c\,\frac{\pi^2}{240\,a^4}\,,
+\]
+where it is assumed that
+\[
+L\gg a\gg\text{atomic distances.}
+\]
+
+\subsection*{Casimir effect in KG theory}
+
+Let us study the nature of this effect using our scalar field theory, the KG
+theory, instead of the electrodynamics; the result is not going to be very
+different. Since the real photons are massless (and to make calculations
+simpler), we will assume that $m^2=0$. In macroscopic electromagnetic theory
+(valid at the scales $\gg$ atomic distances) the presence of the conducting
+plates is taken into account by imposing the boundary conditions
+$\mathbf{E}_\parallel=0$, $\mathbf{B}_\perp=0$ at the surface of the conductor.
+To mimic this situation we consider instead the KG field in the presence of
+two plates with the boundary condition
+\[
+\varphi(\xx)=0\qquad\text{at the surface.}
+\]
+Let us concentrate attention on the field between the plates. In order to
+take into account the boundary conditions, in this case we must use, instead
+of the functions $f_\pp(x)$ and $f^*_\pp(x)$ above, the following complete set
+of solutions
+\[
+f_{\pp_\parallel,n}(\xx,t)=\sqrt{\frac2a}\;e^{i\omega_{\pp_\parallel,n}t-i\pp_\parallel\cdot\xx_\parallel}\,
+\sin\Bigl(\frac{\pi n}{a}\,x_\perp\Bigr)\,,
+\]
+and the corresponding complex-conjugated functions $f^*_{\pp_\parallel,n}$.
+Here $\xx_\parallel$ and $x_\perp$ are the components of $\xx$ parallel and
+perpendicular to the plates, $\xx=(\xx_\parallel,x_\perp)$, and
+\[
+\omega_{\pp_\parallel,n}=\sqrt{\pp_\parallel^2+\frac{\pi^2n^2}{a^2}}
+\]
+with positive integer $n$,
+\[
+n=1,2,3,\dots\,.
+\]
+These functions solve the KG equation with $m^2=0$ as well as the boundary
+conditions
+\[
+f_{\pp_\parallel,n}\big|_{x_\perp=0}=0\,,\qquad\text{and}\qquad
+f_{\pp_\parallel,n}\big|_{x_\perp=a}=0\,.
+\]
+Exactly as we did in the infinite-volume case, we now introduce the operators
+\[
+\hat A_{\pp_\parallel,n}=\int_0^a dx_\perp\int d^2\xx_\parallel\,
+\bigl[\hat\pi\,f_{\pp_\parallel,n}-\hat\varphi\,\dot f_{\pp_\parallel,n}\bigr]\,,
+\]
+and similarly for $\hat A^\dagger_{\pp_\parallel,n}$, with
+$f^*_{\pp_\parallel,n}$ replacing $f_{\pp_\parallel,n}$. It is not difficult
+then to show that
+\[
+\bigl[\hat A_{\pp_\parallel,n},\hat A^\dagger_{\pp'_\parallel,n'}\bigr]
+=2\omega_{\pp_\parallel,n}\,\delta_{nn'}\,(2\pi)^2\,\delta(\pp_\parallel-\pp'_\parallel)\,,
+\]
+and to compute the Hamiltonian of the part of the system residing between the
+plates,
+\[
+\hat H=\sum_{n=1}^\infty\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,\frac14\,
+\Bigl(\hat A^\dagger_{\pp_\parallel,n}\hat A_{\pp_\parallel,n}+\hat A_{\pp_\parallel,n}\hat A^\dagger_{\pp_\parallel,n}\Bigr)
++a\,L^2\,(\varepsilon-\varepsilon_0)\,,
+\]
+where the last term comes from vacuum energy counterterm
+\[
+(\varepsilon-\varepsilon_0)\int_0^a dx_\perp\int d^2\xx_\parallel=a\,L^2\,(\varepsilon-\varepsilon_0)\,.
+\]
+We still have to demand that all the operators $\hat A_{\pp_\parallel,n}$
+nullify the ground state, since otherwise $\hat H$ is unbounded from below.
+Therefore the vacuum eigenvalue of this Hamiltonian is
+\[
+E_{\text{vac}}=\frac{L^2}{2}\sum_{n=1}^\infty\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+\sqrt{\pp_\parallel^2+\frac{\pi^2n^2}{a^2}}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2n^2/a^2}{\Lambda^2}\biggr)
+-a\,L^2\,\varepsilon_0+a\,L^2\,\varepsilon\,,
+\]
+where I have introduced again the cutoff factor $\Phi$; without it this
+expression is as divergent as it was in the absence of the boundaries.
+
+Now, the term $-a\,L^2\,\varepsilon_0$ is the divergent part of the vacuum
+energy counterterm. It is
+\[
+-a\,L^2\,\varepsilon_0=-\frac{L^2}{2}\,a\int\frac{dp_\perp}{(2\pi)}\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+\sqrt{\pp_\parallel^2+p_\perp^2}\;\Phi\biggl(\frac{\pp_\parallel^2+p_\perp^2}{\Lambda^2}\biggr)\,,
+\]
+where I have separated the $dp_\perp$ and $d^2\pp_\parallel$ parts of the
+integral over $d^3\pp=dp_\perp\,d^2\pp_\parallel$. After the change of
+variables
+\[
+p_\perp=\pi\,\tau/a
+\]
+it takes the form
+\[
+-\frac{L^2}{2}\int_0^\infty d\tau\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+\sqrt{\pp_\parallel^2+\frac{\pi^2\tau^2}{a^2}}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\biggr)\,.
+\]
+We see that the interesting part of the ground-state energy (rather, of the
+energy per unit area of the plates) can be written as
+\[
+\frac{E}{L^2}-a\,\varepsilon=\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+\biggl[\sum_{n=1}^\infty F_{\pp_\parallel}(n)-\int_0^\infty F_{\pp_\parallel}(\tau)\,d\tau\biggr]\,,
+\]
+where
+\[
+F_{\pp_\parallel}(\tau)=\frac12\,\sqrt{\pp_\parallel^2+\pi^2\tau^2/a^2}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\biggr)\,.
+\]
+The $\sum F(n)-\int F(\tau)$ expression above can be handled with the help of
+the Abel-Plana summation formula (see the Appendix to this section)
+\begin{equation}\label{eq:AbelPlana}
+\sum_{n=1}^\infty F(n)-\int_0^\infty F(\tau)\,d\tau
+=-\frac12\,F(0)+i\int_0^\infty\frac{F(it+0)-F(-it+0)}{e^{2\pi t}-1}\,dt\,,
+\end{equation}
+which is valid provided $F(\tau)$ is analytic in the right half-plane of
+complex $\tau$. The first term
+\[
+-\frac12\,F_{\pp_\parallel}(0)\ \to\ -\frac14\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+\sqrt{\pp_\parallel^2}\;\Phi(\pp_\parallel^2/\Lambda^2)
+\]
+does not depend on the separation $a$; it is interpreted as the surface
+energy. It diverges, again signaling ambiguity. When there is a surface, a
+constant surface term can be added to the action. We ignore this term since,
+being independent of $a$, it does not contribute to the force.
+
+The interesting contribution is extracted from the second term, which involves
+\[
+i\int_0^\infty\frac{F_{\pp_\parallel}(it+0)-F_{\pp_\parallel}(-it+0)}{e^{2\pi t}-1}\,dt\,.
+\]
+The shift ``$+0$'' in the arguments in \eqref{eq:AbelPlana} is important
+since the function $F_{\pp_\parallel}(\tau)$ has square-root branch points at
+the imaginary axis. Note that if it was regular, the integral would vanish in
+view of the obvious $\tau\to-\tau$ symmetry of $F_{\pp_\parallel}(\tau)$. In
+fact, one can take advantage of this symmetry to write the integrand as
+\[
+i\int_0^\infty\frac{F(it+0)-F(it-0)}{e^{2\pi t}-1}\,dt
+=-2\int_{|\pp_\parallel|a/\pi}^\infty\frac{\Im F(it+0)}{e^{2\pi t}-1}\,dt\,,
+\]
+where the last form reflects the fact that the function
+$F_{\pp_\parallel}(\tau)$ has the branch cut from $i|\pp_\parallel|a/\pi$ to
+$i\infty$ (and from $-i|\pp_\parallel|a/\pi$ to $-i\infty$). We have, at
+$|t|>a|\pp_\parallel|/\pi$,
+\[
+\Im F_{\pp_\parallel}(it+0)=\frac12\,\sqrt{\frac{\pi^2t^2}{a^2}-\pp_\parallel^2}\;
+\Phi\biggl(\frac{\pp_\parallel^2-\pi^2t^2/a^2}{\Lambda^2}\biggr):=\frac12\,G_{\pp_\parallel}(t)\,.
+\]
+Note that the factor $(e^{2\pi t}-1)^{-1}$ makes this integral fast
+convergent at large $t$, even without the cutoff factor $\Phi$. With large
+$\Lambda\gg a^{-1}$ the cutoff factor has no effect, and can be dropped,
+\[
+G_{\pp_\parallel}(t)\to\sqrt{\frac{\pi^2t^2}{a^2}-\pp_\parallel^2}\,.
+\]
+The interesting contribution to the vacuum energy then is
+\[
+-\int\frac{dt}{e^{2\pi t}-1}\int_{|\pp_\parallel|<\pi t/a}\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+\sqrt{\frac{\pi^2t^2}{a^2}-\pp_\parallel^2}\,,
+\]
+where I have interchanged the order in which the integrals are taken. The
+integral over $\pp_\parallel$ is evaluated in closed form
+\[
+\int_0^{\pi^2t^2/a^2}\frac{dp^2}{4\pi}\,\sqrt{\frac{\pi^2t^2}{a^2}-p^2}=\frac1{6\pi}\Bigl(\frac{\pi t}{a}\Bigr)^3\,.
+\]
+The contribution to the energy is
+\[
+-\frac{\pi^2}{6\,a^3}\int_0^\infty\frac{t^3\,dt}{e^{2\pi t}-1}=-\frac{\pi^2}{6\,a^3}\,\frac{\Gamma(4)\,\zeta(4)}{(2\pi)^4}\,,
+\]
+where I have used
+\[
+\int_0^\infty\frac{x^{s-1}\,dx}{e^x-1}=\Gamma(s)\,\zeta(s)
+\]
+($\zeta(4)=\pi^4/90$). Thus we find
+\[
+\frac{E}{L^2}=a\,\varepsilon-\frac12\,F(0)-\frac{\pi^2}{1440\,a^3}\,,
+\]
+where $F(0)$ stands for the surface term $\int\frac{d^2\pp_\parallel}{(2\pi)^2}F_{\pp_\parallel}(0)$.
+
+The contribution $a\,\varepsilon$ is not too interesting: there is the same
+term in the vacuum energy density outside the space between the plates, and
+hence this term does not lead to any force. The interesting term
+$-\pi^2/1440\,a^3$ shows that the plates attract; the force (per unit plate
+area) is
+\[
+\frac{\text{Force}}{L^2}=-\frac{\partial}{\partial a}\Bigl(-\frac{\pi^2}{1440\,a^3}\Bigr)=-\frac{\pi^2\,\hbar c}{480\,a^4}\,.
+\]
+Let me stress that this result is completely independent of the form of
+auxiliary cutoff factor $\Phi$; this is exactly what we want from quantum
+field theory. Another useful observation is that in order to obtain this
+result we don't really need to send $\Lambda$ to Planck's energies or
+something, it suffices to have $a^2\gg1/\Lambda^2$.
+
+In the real case of electromagnetic field the calculations can be done in very
+similar way. The resulting force is twice as large, due to the fact that
+photon field has two degrees of freedom for each $\pp$, as the photon has two
+polarization states.
+
+Few words about the $a$-independent term
+\[
+-\frac12\,F(0)=-\frac1{16\pi}\int_0^\infty d\xi\,\sqrt\xi\;\Phi(\xi/\Lambda^2)\,.
+\]
+It does not contribute to the force, but still needs some interpretation. It
+is divergent, and it is easy to design special counter-term to absorb this
+divergence. But it is instructive to think about real case of electromagnetic
+field and real conducting plates made of atoms, conducting electrons, and all
+that. In this case the cutoff represents the limit of validity of the
+macroscopic electrodynamics, and the cutoff energy $\Lambda$ in this
+expression should be taken around atomic energy scale. Having sufficient
+knowledge about the microscopic structure of the conductor we could in
+principle calculate the cutoff factor and hence this contribution in terms of
+the atomic parameters. The nice feature of the above result is in that it
+predicts some attractive force between the plates which is completely
+independent of all these microscopic details. This points to another area
+where quantum field theory applies, when it is not that we can't know the
+short-distance physics, rather we don't want to know. In this area the
+quantum field theory describes universal, i.e.\ not too sensitive to
+microscopic details, properties of matter.
+
+\subsection*{Appendix to Sect.~3: Abel-Plana summation formula}
+
+Let $F(\tau)$ be a function analytic in the right half-plane, and decaying at
+$\Re\tau\to+\infty$ sufficiently fast, so that the integral
+$\int_0^\infty F(\tau)\,d\tau$ converges. Start with the integral
+\[
+I=\int_{C_0}\frac{F(\tau)\,d\tau}{e^{2\pi i\tau}-1}\,,
+\]
+where the integration is over the contour $C_0$ which encloses all positive
+integer points $\tau=1,2,3,\dots$, as shown in the left part of
+figure~\ref{fig:abelplana}.
+\begin{figure}[ht]
+\centering\figfile{abelplana}
+\caption{Left: the contour $C_0$ encircles the poles at $\tau=1,2,3,\dots$
+counterclockwise and passes to the right of $\tau=0$. Right: the deformed
+contour. The part $C_+$ above the real axis is turned onto the positive
+imaginary axis, and $C_-$ onto the negative imaginary axis. The small
+quarter-circles $C'_\pm$ go around $\tau=0$.}
+\label{fig:abelplana}
+\end{figure}
+The integrand has poles at the integer points $\tau=n$, with the residues
+$F(n)/2\pi i$. Therefore
+\[
+I=\sum_{n=1}^\infty F(n)\,.
+\]
+On the other hand, the integral can be split into two parts
+\[
+I=\int_{C_0}=\int_{C_+}+\int_{C_-}=I_++I_-\,,
+\]
+where $C_+$ is the part of the contour $C_0$ that lies above the real axis,
+and $C_-$ is the part below the real axis. Note that the factor
+\[
+\frac1{e^{2\pi i\tau}-1}
+\]
+decays fast into the lower half-plane, hence the contour $C_-$ can be rotated
+into the lower half-plane to go along the contour $\tilde C_-$,
+\[
+I_-=\int_{\tilde C_-}\frac{F(\tau)\,d\tau}{e^{2\pi i\tau}-1}
+=-i\int_\epsilon^\infty\frac{F(-it+0)\,dt}{e^{2\pi t}-1}+\int_{C'_-}\frac{F(\tau)\,d\tau}{e^{2\pi i\tau}-1}\,,
+\]
+where for the straight part of $\tilde C_-$ I have changed
+\[
+\tau=-it\,,
+\]
+and $C'_-$ is the small quarter-circle below the real axis, seen in the right
+part of the figure. It is easy to check that in the limit $\epsilon\to0$ this
+part of the integral yields $-F(0)/4$.
+
+On the other hand the factor $(e^{2\pi i\tau}-1)^{-1}$ does not decay into the
+upper half plane, but one can write
+\[
+\frac1{e^{2\pi i\tau}-1}=-1-\frac1{e^{-2\pi i\tau}-1}\,,
+\]
+where the second term does decay into the upper half-plane, so that
+\[
+I_+=-\int_{C_+}F(\tau)\,d\tau-\int_{\tilde C_+}\frac{F(\tau)\,d\tau}{e^{-2\pi i\tau}-1}
+=\int_\epsilon^\infty F(\tau)\,d\tau+i\int_\epsilon^\infty\frac{F(it+0)\,dt}{e^{2\pi t}-1}+\int_{C'_+}\,,
+\]
+where the second term in the last form represents the contribution of the
+straight part of $\tilde C_+$ (with $\tau=it+0$), and the last term is the
+contribution of the small quarter-circle above the real axis; again, it is
+easy to check that this last contribution is $-F(0)/4$ in the limit
+$\epsilon\to0$. Adding $I_+$ to $I_-$, and taking the limit $\epsilon=0$,
+yields \eqref{eq:AbelPlana}.
+
+\begin{hwproblem}{2}\label{hw:2}
+Derive Casimir force generated by massless scalar field theory in
+$d+1$-dimensional space-time ($d$ spatial dimensions plus time). Assume that
+the plates have $d-1$ spatial dimensions, i.e.\
+$\xx=(\xx_\parallel,x_\perp)$, $\xx_\parallel\in\R^{d-1}$.
+\end{hwproblem}

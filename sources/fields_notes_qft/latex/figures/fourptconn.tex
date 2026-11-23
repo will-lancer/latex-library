@@ -1,0 +1,17 @@
+\vcenter{\hbox{\begin{tikzpicture}[x=0.42cm,y=0.42cm,font=\small]
+  \def\X{\draw[prop] (-1.2,1.2)--(1.2,-1.2) (-1.2,-1.2)--(1.2,1.2); \node[vtx] at (0,0) {};
+         \foreach \p in {(-1.2,1.2),(1.2,-1.2),(-1.2,-1.2),(1.2,1.2)} \node[vtx] at \p {};}
+  \def\B{\draw[prop] (-1.6,1.2)--(-0.7,0)--(-1.6,-1.2) (1.6,1.2)--(0.7,0)--(1.6,-1.2); \draw[prop] (0,0) ellipse (0.7 and 0.5);
+         \node[vtx] at (-0.7,0) {}; \node[vtx] at (0.7,0) {};
+         \foreach \p in {(-1.6,1.2),(1.6,-1.2),(-1.6,-1.2),(1.6,1.2)} \node[vtx] at \p {};}
+  \begin{scope}\X \node at (0,-2.1) {(a)};\end{scope}
+  \node at (2.1,0) {$+$};
+  \begin{scope}[xshift=1.8cm]\X \draw[prop] (-0.6,0.6) ++(135:0.3) circle (0.3); \node[vtx] at (-0.6,0.6) {}; \node at (0,-2.1) {(b)};\end{scope}
+  \node at (6.4,0) {$+$};
+  \begin{scope}[xshift=3.6cm]\X \draw[prop] (-0.6,0.6) circle (0.38); \node[vtx] at ($(-0.6,0.6)+(135:0.38)$) {}; \node[vtx] at ($(-0.6,0.6)+(-45:0.38)$) {}; \node at (0,-2.1) {(c)};\end{scope}
+  \node at (11.3,0) {$+\cdots+$};
+  \begin{scope}[xshift=6.0cm]\B \node at (0,-2.1) {(d)};\end{scope}
+  \node at (16.6,0) {$+$};
+  \begin{scope}[xshift=8.0cm]\B \draw[prop] (-1.15,0.6) ++(135:0.3) circle (0.3); \node[vtx] at (-1.15,0.6) {}; \node at (0,-2.1) {(e)};\end{scope}
+  \node at (21.6,0) {$+\cdots$};
+\end{tikzpicture}}}

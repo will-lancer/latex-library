@@ -1,0 +1,11 @@
+\begin{tikzpicture}[line width=0.6pt]
+  \draw[fill=gray!8] (0,0) ellipse (3.2 and 0.45);
+  \node[right] at (3.3,0) {$\Sigma(\tau)$};
+  \foreach \x/\y/\l in {-2.4/1.3/{(\xx_1,\tau_1)},-0.6/1.5/{(\xx_2,\tau_2)},2.2/1.2/{(\xx_M,\tau_M)}}
+    {\fill (\x,\y) circle (1.6pt); \node[above] at (\x,\y) {\small$\l$};}
+  \node at (0.8,1.4) {$\cdots$};
+  \foreach \x/\y/\l in {-1.6/-1.3/{(\xx_{M+1},\tau_{M+1})},1.8/-1.5/{(\xx_N,\tau_N)}}
+    {\fill (\x,\y) circle (1.6pt); \node[below] at (\x,\y) {\small$\l$};}
+  \node at (0.1,-1.4) {$\cdots$};
+  \draw[axis,gray] (-4.0,-1.6) -- (-4.0,1.8) node[left,black] {$\tau$};
+\end{tikzpicture}

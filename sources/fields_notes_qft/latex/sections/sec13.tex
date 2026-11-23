@@ -1,0 +1,969 @@
+% Source pp. 111-134 (Lectures13-18.pdf).
+\section{Systematics of Renormalization}
+
+% local diagram pieces for this section
+\newcommand{\legs}[1]{\foreach \p/\a/\n in {#1} {\draw[prop,densely dashed] (\p) -- ++(\a:1.1) node[pos=1.18,font=\tiny] {\n};}}
+\newcommand{\bubS}{\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[vtx] at (L) {}; \node[vtx] at (R) {};}}
+\newcommand{\bubT}{\diac[0.4]{\coordinate (T) at (0,0.8); \coordinate (B) at (0,-0.8);
+  \draw[prop] (0,0) ellipse (0.55 and 0.8); \legs{T/150/1,T/30/3,B/210/2,B/330/4}
+  \node[vtx] at (T) {}; \node[vtx] at (B) {};}}
+\newcommand{\bubU}{\diac[0.4]{\coordinate (T) at (0,0.8); \coordinate (B) at (0,-0.8);
+  \draw[prop] (0,0) ellipse (0.55 and 0.8);
+  \draw[prop,densely dashed] (T) -- ++(150:1.1) node[pos=1.18,font=\tiny] {1};
+  \draw[prop,densely dashed] (B) -- ++(210:1.1) node[pos=1.18,font=\tiny] {2};
+  \draw[prop,densely dashed] (T) .. controls (0.9,0.6) and (0.7,-1.4) .. (1.2,-1.6) node[right,font=\tiny] {4};
+  \draw[prop,densely dashed] (B) .. controls (0.9,-0.6) and (0.7,1.4) .. (1.2,1.6) node[right,font=\tiny] {3};
+  \node[vtx] at (T) {}; \node[vtx] at (B) {};}}
+\newcommand{\ctX}[1]{\diac[0.4]{\coordinate (O) at (0,0); \legs{O/135/1,O/225/2,O/45/3,O/315/4}
+  \node[otimesv,minimum size=5pt] at (O) {}; \node[font=\tiny] at (0,0.55) {(#1)};}}
+\newcommand{\ctline}[1]{\dia[0.4]{\draw[prop,densely dashed] (-2,0) -- (2,0); \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.55) {(#1)};}}
+
+If the theory under consideration is renormalizable, like $\varphi^4$ theory in
+4 dimensions, one can develop renormalized perturbation theory. According to the
+program outlined above one has to start with the action in its ``bare'' form,
+implicitly equipped with some ``regularization'', or ``cutoff'', i.e.\ with some
+modification of the theory at the momenta $\ge\Lambda$ which makes all integrals
+in perturbation theory convergent. There are many possible implementations of
+the cutoff which can be more or less convenient depending on circumstances. Let
+us discuss some more frequently used ones.
+
+\subsection*{Regularization methods}
+
+\paragraph{Lattice regularization:} We already discussed this regularization in
+relation with the definition of the functional integral. In this approach
+continuous space $\R^d$ is replaced by $d$-dimensional, say hypercubic, lattice
+with some lattice spacing $\Delta$ which plays the role of inverse cutoff
+parameter $\Lambda^{-1}$,
+\[
+x\to x_n=\Delta\sum_{\mu=1,\dots,d}e_\mu\,n_\mu\,,
+\]
+where $e_\mu$ is the unit vector in the direction $\mu$ and $n_1,\dots,n_d$ are
+integers. The lattice action is obtained by replacing derivatives by finite
+differences,
+\begin{equation}\label{eq:Alat}
+\mathcal A_{\text{lat}}=\Delta^d\sum_{x\in\Delta\mathbb Z^d}\Bigl[\frac12\sum_{\mu=1,\dots,d}\Bigl(\frac{\varphi_0(x+\Delta e_\mu)-\varphi_0(x)}\Delta\Bigr)^2
++\frac{m_0^2}2\,\varphi_0^2(x)+V\bigl(\varphi_0(x)\bigr)\Bigr]
+\end{equation}
+and the integration measure in the functional integral is taken as
+\[
+[D\varphi]\to\prod_{x\in\Delta\mathbb Z^d}d\varphi_0(x)\,.
+\]
+Advantage of this method is that it makes sense non-perturbatively. The lattice
+theory \eqref{eq:Alat} is perfectly meaningful in classical statistical
+mechanics. Although it is hardly possible to calculate the integral
+analytically, one can try to apply numerical approach, say using the
+Monte-Carlo method. This approach is known as the lattice Field Theory. At the
+same time perturbative calculations on the lattice are relatively complicated.
+In addition, continuous space symmetries are broken, and one only expects them
+to be restored after the cutoff is removed.
+
+\paragraph{Proper-time regularization:} We have seen before that the
+momentum-space propagator $\tilde D(p)$ admits Schwinger's proper-time
+representation
+\[
+\tilde D(p)=\int_0^\infty ds\,e^{-s(p^2+m^2)}\,,
+\]
+where $s$ is interpreted as the rescaled length of the path of relativistic
+particle in the Euclidean space-time. One can exclude the paths which are
+``too short'' by replacing $\tilde D(p)\to\tilde D_\Lambda(p)$,
+\[
+\tilde D_\Lambda(p)=\int_{1/\Lambda^2}^\infty ds\,e^{-s(p^2+m^2)}\,.
+\]
+Note that this is particular case of the regularized propagator we considered
+before,
+\begin{equation}\label{eq:regprop}
+\frac1{p^2+m^2}\,\Phi(p^2/\Lambda^2)\,,
+\end{equation}
+with $\Phi(x)=e^{-x}$ (up to the constant factor $e^{-m^2/\Lambda^2}$, which
+tends to $1$ as $\Lambda\to\infty$).
+
+\paragraph{Pauli-Villars regularization} is another version of
+\eqref{eq:regprop}, with
+\begin{equation}\label{eq:PV}
+\Phi_{PV}(p^2/\Lambda^2)=\frac{\Lambda^2}{p^2+\Lambda^2}\,.
+\end{equation}
+In this case the cutoff propagator takes the form
+\[
+\tilde D(p)\to\frac1{p^2+m^2}\,\Phi_{PV}(p^2/\Lambda^2)\to\frac1{p^2+m^2}-\frac1{p^2+\Lambda^2}\,,
+\]
+equivalent to \eqref{eq:PV} when $\Lambda\gg m$.
+
+\paragraph{Dimensional regularization:} This is the most technically advanced
+(although perhaps the least physically transparent) regularization method. Its
+advantage is that it usually preserves important symmetries (in particular the
+gauge symmetry in the gauge theories) and significantly simplifies
+calculations, and for these reasons this method is used today in perturbative
+calculations more frequently than others. The idea is this. We have already
+observed that lowering the space dimension generally improves the
+large-momentum convergence of Feynman diagrams. Suppose that for $d$
+sufficiently low the momentum integral associated with given diagram is
+convergent without any additional cutoff. Suppose that in addition we have
+managed to calculate this integral as an analytic function of $d$. Then we can
+analytically continue the result to the ``physical value'' $d=4$; the
+4-dimensional divergences manifest themselves as singularities (poles) in the
+variable $d$ at $d=4$. On more formal level one can define the dimensional
+continuation of momentum integrals by three conditions, obviously valid for
+convergent integrals, and postulated for any $d$:
+\[
+\begin{array}{lll}
+\text{(i)} & \displaystyle\int d^dk\,F(k+p)=\int d^dk\,F(k) & \text{translation}\\[10pt]
+\text{(ii)} & \displaystyle\int d^dk\,F(Ck)=|C|^{-d}\int d^dk\,F(k) & \text{dilation}\\[10pt]
+\text{(iii)} & \displaystyle\int d^{d_1}k_1\,d^{d_2}k_2\,F(k_1)G(k_2)=\int d^{d_1}k\,F(k_1)\int d^{d_2}k_2\,G(k_2)\,,\quad d=d_1+d_2 & \text{factorization}
+\end{array}
+\]
+Let me illustrate this approach by simple example. Consider the integral
+\begin{equation}\label{eq:dimreg1}
+\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+m^2)^2}\,.
+\end{equation}
+This integral converges for $d<4$. For any $d<4$ it can be transformed as
+follows
+\begin{equation}\label{eq:dimreg2}
+\int_0^\infty s\,ds\int\frac{d^dk}{(2\pi)^d}\,e^{-s(k^2+m^2)}=\int_0^\infty s\,ds\,(4\pi s)^{-\frac d2}\,e^{-m^2s}\,,
+\end{equation}
+where the properties (iii) and (ii) were used in evaluating the $k$-integral.
+Using the definition of the Euler's Gamma function
+\[
+\Gamma(z)=\int_0^\infty dt\,t^{z-1}\,e^{-t}
+\]
+we obtain for $d<4$
+\begin{equation}\label{eq:dimreg3}
+\frac{(m^2)^{\frac d2-2}}{(4\pi)^{\frac d2}}\,\Gamma\Bigl(2-\frac d2\Bigr)\,.
+\end{equation}
+As is known the Gamma function $\Gamma(z)$ is analytic (actually, meromorphic)
+function of $z$ with poles at $z=0,-1,-2,\dots$. In particular, the above
+expression has pole at $d=4$, i.e.\ exactly where the integral diverges
+logarithmically. For $d=4-\epsilon$, $\epsilon\to0$
+\[
+\Gamma\Bigl(2-\frac d2\Bigr)=\frac2\epsilon-\gamma+O(\epsilon)
+\]
+where $\gamma=0.5772\ldots$ is the Euler's constant.
+
+It is interesting to explain on this example the interplay between dimensional
+continuation and cutoff regularization. If we regularize the propagators in
+\eqref{eq:dimreg1}, say by proper-time regularization (which amounts to
+replacing $\int_0^\infty ds\to\int_{1/\Lambda^2}^\infty ds$ in
+\eqref{eq:dimreg2}) the integral \eqref{eq:dimreg1} becomes regular function of
+$d$ for all $d$ including $d=4$. In the neighborhood of $d=4$ one would have
+instead of \eqref{eq:dimreg2}
+\[
+\frac{(m^2)^{\frac d2-2}}{(4\pi)^{\frac d2}}\int_{m^2/\Lambda^2}^\infty dt\,t^{1-\frac d2}\,e^{-t}\,,\qquad t=m^2s\,.
+\]
+The integral here can be transformed using integration by parts,
+\[
+\int_{m^2/\Lambda^2}^\infty dt\,t^{1-\frac d2}\,e^{-t}=\frac2{4-d}\Bigl(t^{2-\frac d2}\,e^{-t}\Big|_{m^2/\Lambda^2}^\infty+\int_{m^2/\Lambda^2}^\infty dt\,t^{2-\frac d2}\,e^{-t}\Bigr)\,.
+\]
+For $\epsilon=4-d\ll1$ and $m^2\ll\Lambda^2$ the cutoff integral becomes
+\[
+\frac1{(4\pi)^{\frac d2}}\,\frac2{4-d}\,\Bigl((m^2)^{\frac d2-2}-(\Lambda^2)^{\frac d2-2}\Bigr)\,.
+\]
+If at fixed $d<4$ we send the cutoff momentum $\Lambda$ to infinity we obtain
+the ``dimensionally continued'' expression with the pole at $d=4$. On the other
+hand, if at fixed $\Lambda$ we take the limit $d\to4$ we get a finite result
+with $\log\Lambda^2$ replacing the pole in $4-d$.
+
+With this understanding one can often use dimensional continuation to do the
+calculations efficiently and then interpret the results in terms of cutoff
+regularization. Instead of giving the bare parameters $m_0^2$, $\lambda_0$ and
+$Z$ dependence on the cutoff momentum $\Lambda$, within the framework of
+dimensional regularization one adjusts their dependence on $\epsilon=4-d$, so
+that the correlation functions of renormalized fields $\varphi$ have finite
+limit $d\to4$.
+
+Some generalizations of the integral \eqref{eq:dimreg1} will be useful in
+future calculations. For instance,
+\begin{equation}\label{eq:dimregalpha}
+\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+m^2)^\alpha}=\frac1{\Gamma(\alpha)}\int_0^\infty ds\,s^{\alpha-1}\int\frac{d^dk}{(2\pi)^d}\,e^{-s(k^2+m^2)}
+=\frac{(m^2)^{\frac d2-\alpha}}{(4\pi)^{\frac d2}}\,\frac{\Gamma(\alpha-\frac d2)}{\Gamma(\alpha)}\,,
+\end{equation}
+\begin{equation}\label{eq:dimregk2}
+\begin{split}
+\int\frac{d^dk}{(2\pi)^d}\,\frac{k^2}{(k^2+m^2)^\alpha}&=\int\frac{d^dk}{(2\pi)^d}\Bigl[\frac1{(k^2+m^2)^{\alpha-1}}-\frac{m^2}{(k^2+m^2)^\alpha}\Bigr]\\
+&=\frac{(m^2)^{\frac d2-\alpha+1}}{(4\pi)^{\frac d2}}\,\frac d2\,\frac{\Gamma(\alpha-\frac d2-1)}{\Gamma(\alpha)}\,.
+\end{split}
+\end{equation}
+In deriving \eqref{eq:dimregk2} the defining property of the $\Gamma$ function
+$\Gamma(z+1)=z\,\Gamma(z)$ was used.
+
+\subsection*{Renormalizations in \texorpdfstring{$\varphi^4$}{phi**4} theory, revisited}
+
+Let us recall the basic idea of the (perturbative) renormalization program. To
+develop renormalized perturbation theory, one starts with the action
+\[
+\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\text{counterterms}\Bigr]\,,
+\]
+expressed in terms of the renormalized quantities. I have written it in the
+$d$-dimensional form having in mind dimensional regularization. This action
+contains counterterms
+\[
+\text{counterterms}=\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta m^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4\,.
+\]
+We are planning to treat the theory perturbatively, with
+\[
+\mathcal A_I=\int_x\Bigl[\frac\lambda{4!}\,\varphi^4+\text{counterterms}\Bigr]
+\]
+taken as the perturbation.
+
+The counterterms bring in additional vertices, so the diagrams will contain the
+following elements (momentum $\delta$-functions are implicit)
+\[
+\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[arr] (-0.5,0.35) -- (0.5,0.35) node[above,pos=0.5] {\small$p$};}=\frac1{p^2+m^2}\,,\qquad
+\dia{\pic{xvertex};}=-\lambda\,,\qquad
+\dia{\draw[prop,densely dashed] (-1.6,0) -- (1.6,0); \node[otimesv] at (0,0) {};}=-\bigl(p^2\,\delta Z+\delta m^2\bigr)\,,\qquad
+\dia{\draw[prop] (-0.6,-0.6) -- (0.6,0.6); \draw[prop] (-0.6,0.6) -- (0.6,-0.6); \node[otimesv] at (0,0) {};}=-\delta\lambda\,.
+\]
+The counterterms $\delta Z$, $\delta m^2$, $\delta\lambda$ are assumed to be
+power series in $\lambda$, i.e.
+\begin{align*}
+\delta Z&=z^{(1)}\,\lambda+z^{(2)}\,\lambda^2+\cdots\,,\\
+\delta m^2&=b^{(1)}\,\lambda+b^{(2)}\,\lambda^2+\cdots\,,\\
+\delta\lambda&=a^{(1)}\,\lambda+a^{(2)}\,\lambda^2+\cdots\,,
+\end{align*}
+with the coefficients dependent on $\Lambda$, or, in dimensional
+regularization, on
+\[
+\epsilon=4-d\,,
+\]
+in such a way that all diagram contributions to the correlation functions of
+renormalized fields have finite limit as $\Lambda\to\infty$, or, respectively,
+$\epsilon\to0$ in dimensional regularization, order by order in $\lambda$. This
+is general strategy of renormalized perturbation theory. Specific calculations
+depend on the choice of the so called ``Renormalization Scheme''.
+
+\subsection*{Renormalization Schemes}
+
+Obviously, just satisfying this requirement (that the counterterms cancel all
+singular contributions of ordinary diagrams) is not sufficient to fix the
+counterterms uniquely. For instance, the renormalized field $\varphi$ always can
+be renormalized further by multiplying it by a finite (i.e.\ regular at
+$\epsilon=0$) constant
+\[
+\varphi=Z_{\text{finite}}^{\frac12}\,\tilde\varphi\,;
+\]
+similar finite renormalizations of $m^2$ and $\lambda$ are possible. Obviously,
+such renormalizations do not spoil finiteness of renormalized perturbation
+theory. We see that there is a whole class of renormalizable perturbation
+theories, related one to another by finite renormalizations. These different
+renormalized perturbation theories are called the \emph{Renormalization
+Schemes}. Of course all these renormalized perturbation theories describe the
+same field theory, and yield the correlation functions with identical physical
+content. What is different, besides finite renormalizations of the correlation
+functions due to the field renormalizations, is \emph{parametrization} of the
+correlation functions. If $\varphi$, $m^2$, $\lambda$ and $\tilde\varphi$,
+$\tilde m^2$, $\tilde\lambda$ are renormalized quantities in two different
+renormalization schemes, the corresponding correlation functions are related as
+\[
+\Gamma^{(n)}(p_i|m^2,\lambda)=\Bigl[Z_{\text{finite}}(m^2,\lambda)\Bigr]^{-\frac n2}\,
+\tilde\Gamma^{(n)}\bigl(p_i|\tilde m^2(m^2,\lambda),\tilde\lambda(m^2,\lambda)\bigr)\,.
+\]
+One can think of the parameters $(m^2,\lambda)$ as coordinates in the ``space
+of $\varphi^4$ theories''. Different renormalization schemes correspond to
+different coordinate systems in that space.
+
+A renormalization scheme is usually defined by certain \emph{Normalization
+conditions}.
+
+\subsection*{Normalization conditions}
+
+These are conditions that specify the choice of the renormalized parameters
+$m^2$, $\lambda$, as well as the overall normalization of $\varphi$. This is
+usually done by relating the renormalized parameters to the physical quantities
+(this is not so in the so called ``minimal subtraction scheme'' which has more
+technical definition; we will discuss it in some details later). In practice,
+the schemes where these relations are simple are more convenient.
+
+One such normalization condition we have discussed already when we defined the
+renormalized mass parameter $m^2$ as the physical mass squared. Namely,
+assuming that $\tilde\Gamma^{(2)}(p^2)$ has zero at some negative value of
+$p^2$ we have defined $-m^2$ as the position of this zero. Note that this
+condition does not depend on the overall normalization of $\varphi$. The latter
+must be fixed by a separate condition. One can fix for instance the slope of
+$\tilde\Gamma^{(2)}(p^2)$ at this zero $p^2=-m^2$; a convenient normalization
+condition is to set this slope equal 1, i.e.
+\begin{equation}\label{eq:SIa}
+\tilde\Gamma^{(2)}(p^2)=p^2+m^2+O\bigl((p^2+m^2)^2\bigr)\qquad\text{as}\qquad p^2+m^2\to0\,.
+\end{equation}
+Equivalently, this condition means that the two-point correlation function
+\begin{equation}\label{eq:SIW}
+\tilde W(p)=\frac1{p^2+m^2}+O(1)\qquad\text{as}\qquad p^2+m^2\to0
+\end{equation}
+has a pole at $p^2=-m^2$ with the residue one. We also need to fix
+normalization of $\lambda$. This is usually done by imposing certain condition
+on $\tilde\Gamma^{(4)}$. The condition often taken in high-energy theory
+calculations is
+\begin{equation}\label{eq:SIb}
+\tilde\Gamma^{(4)}(p,p,-p,-p)\Big|_{p^2=-m^2}=\lambda
+\end{equation}
+(the quantity in the left-hand side is related to $2\to2$ forward scattering
+amplitude at zero energy). The equations \eqref{eq:SIW} and \eqref{eq:SIb} above
+specify one possible renormalization scheme (I will refer to it as the scheme
+SI).
+
+Of course there are other schemes. Another scheme which is more frequently used
+in statistical mechanics context is specified by the normalization conditions
+\begin{align}
+\tilde\Gamma^{(2)}(p^2)&=\tilde m^2+p^2+O(p^4)\,,\label{eq:SIIa0}\\
+\tilde\Gamma^{(4)}(0,0,0,0)&=\tilde\lambda\,.\label{eq:SIIb0}
+\end{align}
+Here I have used the notations $\tilde m^2$ and $\tilde\lambda$ for the
+associated renormalized parameters to stress that these parameters are
+different from those defined in the scheme (SI) (in particular $\tilde m^2$
+does not coincide with the physical mass), i.e.\ it defines different
+``coordinates''. Henceforth this scheme is referred to as SII.
+
+Let us see how this program works in few leading orders in the coupling
+constant. The following calculation is equivalent to the one in PS, \S10.2,
+10.5. There it is done using the normalization condition (SI). For the sake of
+diversity I will instead adopt (SII). To facilitate the comparison I will use
+notations $\tilde m^2$ and $\tilde\lambda$ for the renormalized parameters.
+Also, to simplify notations I will write $\Gamma^{(n)}$ for the \emph{momentum
+space} proper vertices (omitting the tilde).
+
+\subsection*{Renormalization of \texorpdfstring{$\varphi^4$}{phi**4} at the leading (one loop) order}
+
+Let me describe in some details the renormalization of the $\varphi^4$ theory
+using dimensional regularization. For this illustration I will adopt the
+renormalization scheme SII, as was described above. For reference, that scheme
+is defined by the normalization conditions
+\begin{align}
+\tilde\Gamma^{(2)}(p^2)&=\tilde m^2+p^2+O(p^4)\,,\label{eq:SIIa}\\
+\tilde\Gamma^{(4)}(0,0,0,0)&=\tilde\lambda\,.\label{eq:SIIb}
+\end{align}
+The normalization conditions specify the meaning of the renormalized parameters
+$\tilde m^2$, $\tilde\lambda$, as well as the normalization of the field
+$\varphi(x)$.
+
+Consider first the two-point function,
+\[
+\Gamma^{(2)}(p^2)=p^2+\tilde m^2+\Sigma(p^2)\,.
+\]
+The normalization condition \eqref{eq:SIIa} states
+\begin{equation}\label{eq:SIIsigma}
+\Sigma(0)=0\,;\qquad\Sigma'(0)=0\,.
+\end{equation}
+In the leading order in $\tilde\lambda$ there are two diagrams contributing to
+$\Sigma$,
+\[
+-\Bigl(\underbrace{\dia[0.4]{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}}_{(a)}
++\underbrace{\ctline{1}}_{(b)}\Bigr)\,,
+\]
+where the diagram (b) comes from the $\sim\tilde\lambda$ terms in $\delta Z$ and
+$\delta\tilde m^2$,
+\[
+\ctline{1}=-\tilde\lambda\,\bigl(z^{(1)}\,p^2+b^{(1)}\bigr)\,;
+\]
+The coefficients $z^{(1)}$ and $b^{(1)}$ are to be adjusted to satisfy
+\eqref{eq:SIIsigma}.
+
+We already have considered the diagram (a). It is a constant independent of
+$p^2$; its value is
+$(a)=-\frac{\tilde\lambda}2\int\frac{d^dk}{(2\pi)^d}\frac1{k^2+\tilde m^2}$.
+Therefore to satisfy \eqref{eq:SIIsigma} we have to choose
+\[
+z^{(1)}=0\,;\qquad b^{(1)}=\frac{(a)}{\tilde\lambda}=-\frac12\int\frac{d^dk}{(2\pi)^d}\,\frac1{k^2+\tilde m^2}
+=-\frac12\,\frac{(\tilde m^2)^{\frac d2-1}}{(4\pi)^{\frac d2}}\,\Gamma(1-d/2)\,,
+\]
+where the dimensional regularization was used to evaluate the integral. Note
+that at this order there is a trivial cancellation between the diagrams (a) and
+(b). Because of this, in considering higher-order diagrams we can in fact set
+$b^{(1)}=0$ if we at the same time decide to ignore the ``bubble'' contributions
+(a) in all propagators.
+
+Consider now the leading perturbative corrections to the four-point function
+$\Gamma^{(4)}$. At the tree level $\Gamma^{(4)}=\tilde\lambda$ and the
+normalization condition \eqref{eq:SIIb} is satisfied at this order if we set
+$a^{(1)}=0$, i.e.\ $\delta\tilde\lambda=O(\tilde\lambda^2)$. Nontrivial
+contributions appear at the order $\tilde\lambda^2$; the corresponding diagrams
+are
+\[
+\Gamma^{(4)}(p_1,\dots,p_4)=\tilde\lambda-\Bigl(\underset{(a)}{\bubS}+\underset{(b)}{\bubT}+\underset{(c)}{\bubU}+\underset{(d)}{\ctX{2}}\Bigr)
+\]
+where again the diagram (d) represents the contribution of the counterterm
+$\delta\lambda$ in the order $\tilde\lambda^2$,
+\begin{equation}\label{eq:a2vertex}
+\ctX{2}=-\tilde\lambda^2\,a^{(2)}\,.
+\end{equation}
+Each of the diagrams (a-c) can be expressed through the integral
+\begin{equation}\label{eq:Ip2}
+I(p^2)=\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+\tilde m^2)\bigl((p+k)^2+\tilde m^2\bigr)}\,,
+\end{equation}
+namely
+\[
+(a)+(b)+(c)=\frac{\tilde\lambda^2}2\,\Bigl(I(p_{12}^2)+I(p_{13}^2)+I(p_{14}^2)\Bigr)\,,
+\]
+where $p_{12}=p_1+p_2$, $p_{13}=p_1+p_3$, $p_{14}=p_1+p_4$.
+
+The normalization condition \eqref{eq:SIIb} requires that
+\[
+\Bigl[(a)+(b)+(c)+(d)\Bigr]_{p_i=0}=0\,,
+\]
+which fixes the value of the counterterm constant in \eqref{eq:a2vertex},
+\[
+a^{(2)}=\frac32\,I(0)\,.
+\]
+With this we obtain
+\begin{equation}\label{eq:G4oneloop}
+\Gamma^{(4)}(p_1,\dots,p_4)=\tilde\lambda-\frac{\tilde\lambda^2}2\,\Bigl(I_r(p_{12}^2)+I_r(p_{13}^2)+I_r(p_{14}^2)\Bigr)+O(\tilde\lambda^3)\,,
+\end{equation}
+where
+\[
+I_r(p^2)=I(p^2)-I(0)\,.
+\]
+Our goal now is to show that while the integral \eqref{eq:Ip2} is singular at
+$d=4$ the combination appearing in \eqref{eq:G4oneloop} has finite limit at
+$d=4$.
+
+The integrand in \eqref{eq:Ip2} can be transformed using the so called
+\emph{Feynman parametrization}. The identity\footnote{More general identity
+\begin{equation}\label{eq:FeynParGen}
+\frac1{A^\alpha}\,\frac1{B^\beta}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1\frac{dw\,w^{\alpha-1}(1-w)^{\beta-1}}{\bigl[wA+(1-w)B\bigr]^{\alpha+\beta}}
+\end{equation}
+is often useful. To verify it, change the integration variable to
+$w=Bz/(Bz+A(1-z))$ to reduce the integral to the Euler's ``beta integral''
+\[
+B(\alpha,\beta):=\int_0^1dz\,z^{\alpha-1}(1-z)^{\beta-1}=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}\,.
+\]}
+\[
+\frac1{AB}=\int_0^1\frac{du}{\bigl(uA+(1-u)B\bigr)^2}
+\]
+which can be checked by explicit evaluation of the integral in the r.h.s.,
+allows one to write the integral \eqref{eq:Ip2} as
+\begin{equation}\label{eq:IFeyn}
+I(p^2)=\int_0^1du\int\frac{d^dk}{(2\pi)^d}\,\frac1{\bigl(\tilde m^2+k^2+2u\,(kp)+u\,p^2\bigr)^2}\,.
+\end{equation}
+The combination in the denominator can be put in the form
+\[
+\tilde m^2+k^2+2u\,(kp)+u\,p^2=\tilde m^2+u(1-u)\,p^2+(k+up)^2\,,
+\]
+and by applying the translation property (i) of the dimensionally continued
+integrals we have
+\[
+I(p^2)=\int_0^1du\int\frac{d^dk}{(2\pi)^d}\,\frac1{\bigl(k^2+u(1-u)\,p^2+\tilde m^2\bigr)^2}\,.
+\]
+The momentum integral has the form \eqref{eq:dimregalpha} with $\alpha=2$, hence
+\[
+I(p^2)=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\,.
+\]
+We see that due to the factor $\Gamma(2-d/2)=2/\epsilon-\gamma+O(\epsilon)$,
+$\epsilon:=4-d$, this expression has pole at $d=4$. However the combination
+\[
+I_r(p^2)=I(p^2)-I(0)=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bigl(\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}-\bigl[\tilde m^2\bigr]^{\frac d2-2}\Bigr)
+\]
+has finite value at $d=4$ as the result of compensation between the pole of the
+gamma function and zero of the integrand. One finds
+\begin{align*}
+I_r(p^2)\Big|_{d=4}&=-\frac1{(4\pi)^2}\int_0^1du\,\log\Bigl(1+u(1-u)\,\frac{p^2}{\tilde m^2}\Bigr)\\
+&=-\frac1{16\pi^2}\biggl[\sqrt{\frac{p^2+4\tilde m^2}{p^2}}\,\log\frac{\sqrt{p^2+4\tilde m^2}+\sqrt{p^2}}{\sqrt{p^2+4\tilde m^2}-\sqrt{p^2}}-2\biggr]\,.
+\end{align*}
+I leave evaluating the last explicit expression as an \textbf{Exercise}. We see
+that by giving the counterterm coefficient $a^{(2)}$ certain dependence on $d$
+which is singular at $d=4$,
+\begin{equation}\label{eq:a2}
+a^{(2)}=\frac32\,I(0)=\frac32\,\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\,(\tilde m^2)^{\frac d2-2}\,,
+\end{equation}
+we compensated the singularities of the diagrams (a), (b), (c) above.
+
+\begin{exercise}
+Compare the above calculation with the one in \S10.2 of PS. Find the relation
+(to the order $\lambda^2$) between our renormalized parameters $\tilde m^2$,
+$\tilde\lambda$ and parameters $m^2$, $\lambda$ defined there, which correspond
+to the scheme (SI).
+\end{exercise}
+
+It is instructive to study renormalization at the next, two loop order. The two
+loop contributions correspond to the terms $\sim\lambda^2$ in $\Gamma^{(2)}$
+and $\lambda^3$ in $\Gamma^{(4)}$. Analysis of the two loop terms in
+$\Gamma^{(4)}$ can be found in PS Sect.~10.5. I repeat it in the Appendix
+below, along with the brief discussion of the two-loop divergences in
+$\Gamma^{(2)}$.
+
+To complete our analysis, we have to check that no new counterterms are
+required to compensate for divergences in higher proper vertices
+$\Gamma^{(6)}$, $\Gamma^{(8)}$, etc. At one-loop level the higher vertices are
+finite without any counterterms since the diagrams
+\[
+-\Gamma^{(2n)}_{\text{1-loop}}=\diac[0.62]{\draw[prop] (0,0) circle (1.1);
+  \foreach \a in {20,110,200,290} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\a+30:0.9); \draw[prop,densely dashed] (\a:1.1) -- ++(\a-30:0.9);}
+  \node[font=\tiny] at (245:1.6) {$\cdot\,\cdot$};}
+\]
+are convergent at $d=4$. The two-loop contributions to these vertices involve
+divergent diagrams, with the divergences coming from the 2- or 4-leg
+subdiagrams. For example, $\Gamma^{(6)}_{\text{2-loop}}$ receives contribution
+from the diagram
+\[
+-\Gamma^{(6)}=\cdots+\diac[0.62]{\draw[prop] (0,0) circle (1.1);
+  \draw[prop] (125:1.1) .. controls (0,0.2) .. (55:1.1);
+  \foreach \a/\b in {125/150,55/30} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9);}
+  \foreach \a/\b/\c in {200/180/240,320/290/350} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9); \draw[prop,densely dashed] (\a:1.1) -- ++(\c:0.9);}}
+\]
+which is singular as $1/\epsilon$. However, it is possible to check that the
+one-loop counterterms
+\[
+\frac{\lambda\,b^{(1)}(\epsilon)}2\,\varphi^2+\frac{\lambda^2\,a^{(2)}(\epsilon)}{4!}\,\varphi^4
+\]
+are sufficient to cancel all such divergences. For instance, the above divergent
+diagram comes along with two other divergent diagrams
+\[
+\diac[0.62]{\draw[prop] (0,0) circle (1.1); \draw[prop] (125:1.1) .. controls (0,0.2) .. (55:1.1);
+  \foreach \a/\b/\l in {125/150/1,55/30/2} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9) node[pos=1.3,font=\scriptsize] {\l};}
+  \foreach \a/\b/\c/\l/\m in {200/180/240/6/5,320/290/350/4/3} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9) node[pos=1.3,font=\scriptsize] {\l}; \draw[prop,densely dashed] (\a:1.1) -- ++(\c:0.9) node[pos=1.3,font=\scriptsize] {\m};}}
+\qquad
+\diac[0.62]{\draw[prop] (0,0) circle (1.1); \draw[prop] (125:1.1) .. controls (0,0.2) .. (55:1.1);
+  \foreach \a/\b/\l in {125/150/2,55/30/1} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9) node[pos=1.3,font=\scriptsize] {\l};}
+  \foreach \a/\b/\c/\l/\m in {200/180/240/6/5,320/290/350/4/3} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9) node[pos=1.3,font=\scriptsize] {\l}; \draw[prop,densely dashed] (\a:1.1) -- ++(\c:0.9) node[pos=1.3,font=\scriptsize] {\m};}}
+\qquad
+\diac[0.62]{\draw[prop] (0,0) circle (1.1); \draw[prop] (0,1.55) circle (0.45);
+  \node[vtx] at (0,1.1) {}; \node[vtx] at (0,2.0) {};
+  \draw[prop,densely dashed] (0,2.0) -- ++(135:0.9) node[pos=1.3,font=\scriptsize] {1}; \draw[prop,densely dashed] (0,2.0) -- ++(45:0.9) node[pos=1.3,font=\scriptsize] {2};
+  \foreach \a/\b/\c/\l/\m in {200/180/240/6/5,320/290/350/4/3} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9) node[pos=1.3,font=\scriptsize] {\l}; \draw[prop,densely dashed] (\a:1.1) -- ++(\c:0.9) node[pos=1.3,font=\scriptsize] {\m};}}
+\]
+The sum of the singular part of these three diagrams is canceled by the diagram
+\[
+\diac[0.62]{\draw[prop] (0,0) circle (1.1);
+  \node[otimesv] at (0,1.1) {};
+  \draw[prop,densely dashed] (0,1.1) -- ++(135:0.9) node[pos=1.3,font=\scriptsize] {1}; \draw[prop,densely dashed] (0,1.1) -- ++(45:0.9) node[pos=1.3,font=\scriptsize] {2};
+  \foreach \a/\b/\c/\l/\m in {200/180/240/6/5,320/290/350/4/3} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- ++(\b:0.9) node[pos=1.3,font=\scriptsize] {\l}; \draw[prop,densely dashed] (\a:1.1) -- ++(\c:0.9) node[pos=1.3,font=\scriptsize] {\m};}}
+\]
+involving the one-loop counterterm vertex.
+
+Similar situation persists to higher loops. Suppose we have renormalized the
+theory (i.e.\ determined all the counterterms as the functions of $\epsilon$) up
+to $L-1$ loops. Then contributions of all $L$-loop diagrams, with all
+$L-1$-loop counterterms, to the effective action $\Gamma[\phi]$ can be written
+as
+\[
+\Gamma^{\text{div}}_L[\phi]+\Gamma^{\text{finite}}_L[\phi]\,,
+\]
+where $\Gamma^{\text{div}}_L$ has the form
+\[
+-\tilde\lambda^L\int d^dx\,\Bigl[\frac{Z^{(L)}(\epsilon)}2\,(\partial\phi)^2+\frac{B^{(L)}(\epsilon)}2\,\phi^2+\frac{\tilde\lambda\,A^{(L)}(\epsilon)}{4!}\,\phi^4\Bigr]\,,
+\]
+with coefficients having $L$th order pole in $\epsilon$,
+\begin{equation}\label{eq:divpoles}
+Z^{(L)}=\sum_{k=1}^{L-1}\frac{Z^{(L)}_{-k}}{\epsilon^k}\,;\qquad
+B^{(L)}=\sum_{k=1}^L\frac{B^{(L)}_{-k}}{\epsilon^k}\,;\qquad
+A^{(L)}=\sum_{k=1}^L\frac{A^{(L)}_{-k}}{\epsilon^k}\,,
+\end{equation}
+and $\Gamma^{\text{finite}}$ is finite at $\epsilon=0$. It is clear then that the
+divergent part can be compensated for if one adds to the action the $L$-loop
+counterterm
+\[
+\mathcal A^{(L)}=\tilde\lambda^L\int d^dx\,\Bigl[\frac{z^{(L)}(\epsilon)}2\,(\partial\varphi)^2+\frac{b^{(L)}(\epsilon)}2\,\varphi^2+\frac{\tilde\lambda\,a^{(L)}(\epsilon)}{4!}\,\varphi^4\Bigr]\,,
+\]
+with
+\[
+z^{(L)}(\epsilon)=Z^{(L)}(\epsilon)+Z_0^{(L)}\,;\qquad
+b^{(L)}(\epsilon)=B^{(L)}(\epsilon)+B_0^{(L)}\,;\qquad
+a^{(L)}(\epsilon)=A^{(L)}(\epsilon)+A_0^{(L)}\,,
+\]
+where $Z_0^{(L)},B_0^{(L)},A_0^{(L)}$ are finite numbers.
+
+The freedom in the choice of these finite numbers represents the freedom in the
+choice of the renormalization scheme. In given scheme they are determined by the
+normalization conditions, like \eqref{eq:SIW}, \eqref{eq:SIb} or
+\eqref{eq:SIIa0}, \eqref{eq:SIIb0}, which usually directly relate the parameters
+$\lambda$ and $m^2$ to physical quantities. The form \eqref{eq:divpoles} of the
+divergent part of the effective action suggests another class of renormalization
+schemes. In so called \emph{Minimal Subtraction Scheme} one simply sets
+$Z_0^{(L)}=0$, $B_0^{(L)}=0$, $A_0^{(L)}=0$. In other words, in this scheme one
+chooses the $L$-loop counterterm to be exactly equal to the divergent part (i.e.\
+the singular part of the Laurent expansion around $\epsilon=0$) of the effective
+action renormalized to $L-1$ loops, as defined above, i.e.
+\[
+\mathcal A^{(L)}[\varphi]=\Gamma^{\text{div}}_L[\varphi]\,.
+\]
+In this scheme the parameters $m^2_{MS}$ and $\lambda_{MS}$ entering the action
+\[
+\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{m^2_{MS}}2\,\varphi^2+\frac{\lambda_{MS}}{4!}\,\varphi^4+\text{Counterterms in MS Scheme}\Bigr]\,,
+\]
+are not a priori related to physical quantities such as the particle mass and
+scattering amplitudes. This relation has to be calculated order by order in
+perturbation theory.
+
+Full proof that such procedure works to all orders is rather involved (it can be
+found e.g.\ in \emph{J.~Zinn-Justin, Quantum Field Theory and Critical
+Phenomena}, or in original papers quoted on p.~338 of PS). According to these
+general theorems similar renormalization procedure works to all orders in any
+field theory whose perturbation theory has only finitely many primitive
+divergences. We have seen that this is true if and only if the mass dimensions
+of all couplings are non-negative.
+
+\subsection*{Appendix A: Two loop analysis of \texorpdfstring{$\varphi^4$}{phi**4} (PS Sect.~10.5)}
+
+Here we carry out two-loop renormalization analysis in the $\varphi^4$ theory.
+Let us now start with the $\tilde\lambda^3$ contributions to $\Gamma^{(4)}$. I
+will still assume the renormalization scheme SII. Also, I will disregard the
+$b^{(1)}$ term in $\delta m^2$ counterterm and the ``trivial bubble diagram''; we
+saw that these cancel each other exactly. Then we have 16 diagrams contributing
+to $\Gamma^{(4)}$ in this order:
+\begin{multline*}
+-\Gamma^{(4)}(p_1,\dots,p_4)=\cdots+\Bigl(\underset{(a)}{\diac[0.4]{\coordinate (L) at (-1.6,0); \coordinate (M) at (0,0); \coordinate (R) at (1.6,0);
+  \draw[prop] (-0.8,0) ellipse (0.8 and 0.5); \draw[prop] (0.8,0) ellipse (0.8 and 0.5);
+  \legs{L/135/1,L/225/2,R/45/3,R/315/4} \foreach \p in {L,M,R} \node[vtx] at (\p) {};}}
++\underset{(b)}{\diac[0.4]{\coordinate (L) at (-0.8,0); \coordinate (T) at (0.55,0.6); \coordinate (B) at (0.55,-0.6);
+  \draw[prop] (0,0) circle (0.8); \draw[prop] (T) .. controls (0.25,0) .. (B);
+  \legs{L/135/1,L/225/2,T/45/3,B/315/4} \foreach \p in {L,T,B} \node[vtx] at (\p) {};}}
++\underset{(c)}{\diac[0.4]{\coordinate (R) at (0.8,0); \coordinate (T) at (-0.55,0.6); \coordinate (B) at (-0.55,-0.6);
+  \draw[prop] (0,0) circle (0.8); \draw[prop] (T) .. controls (-0.25,0) .. (B);
+  \legs{T/135/1,B/225/2,R/45/3,R/315/4} \foreach \p in {R,T,B} \node[vtx] at (\p) {};}}\\
++\underset{(d)}{\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[vtx] at (L) {}; \node[otimesv,minimum size=5pt] at (R) {}; \node[font=\tiny] at (1.25,0) {(2)};}}
++\underset{(e)}{\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[otimesv,minimum size=5pt] at (L) {}; \node[vtx] at (R) {}; \node[font=\tiny] at (-1.25,0) {(2)};}}\Bigr)\\
++\Bigl(\text{10 diagrams with permutations of the external legs}\Bigr)+\Bigl(\ctX{3}\Bigr)+\cdots
+\end{multline*}
+The diagrams (d) and (e) (and 4 similar diagrams with permutations of the
+external legs) involve the counterterm vertex $-\tilde\lambda^2a^{(2)}$ with the
+coefficient $a^{(2)}$ which was already determined in the one-loop analysis, see
+Eq.~\eqref{eq:a2} above.
+
+The last diagram shown above represents the contribution of the term
+$\tilde\lambda^3$ in $\delta\lambda$ counterterm. We must see that it is indeed
+possible to adjust this single coefficient $a^{(3)}$ in such a way that all
+divergences (i.e.\ all singularities at $d=4$) cancel. This last contribution is
+momentum independent constant. For our renormalization program to be successful
+to this order we must prove that all momentum-dependent divergences cancel out
+among the first 15 diagrams above.
+
+Consider 5 diagrams (a-e) above. It is useful to divide them into three groups
+as follows (the counterterm diagrams (d) and (e) are shared among the groups,
+with the weights shown)
+\begin{align*}
+\text{I)}&\quad\diac[0.4]{\coordinate (L) at (-1.6,0); \coordinate (M) at (0,0); \coordinate (R) at (1.6,0);
+  \draw[prop] (-0.8,0) ellipse (0.8 and 0.5); \draw[prop] (0.8,0) ellipse (0.8 and 0.5);
+  \legs{L/135/1,L/225/2,R/45/3,R/315/4} \foreach \p in {L,M,R} \node[vtx] at (\p) {};}
++\frac13\,\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[otimesv,minimum size=5pt] at (L) {}; \node[vtx] at (R) {}; \node[font=\tiny] at (-1.25,0) {(2)};}
++\frac13\,\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[vtx] at (L) {}; \node[otimesv,minimum size=5pt] at (R) {}; \node[font=\tiny] at (1.25,0) {(2)};}\,,\\
+\text{II)}&\quad\diac[0.4]{\coordinate (R) at (0.8,0); \coordinate (T) at (-0.55,0.6); \coordinate (B) at (-0.55,-0.6);
+  \draw[prop] (0,0) circle (0.8); \draw[prop] (T) .. controls (-0.25,0) .. (B);
+  \legs{T/135/1,B/225/2,R/45/3,R/315/4} \foreach \p in {R,T,B} \node[vtx] at (\p) {};}
++\frac23\,\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[otimesv,minimum size=5pt] at (L) {}; \node[vtx] at (R) {}; \node[font=\tiny] at (-1.25,0) {(2)};}\,,\\
+\text{III)}&\quad\diac[0.4]{\coordinate (L) at (-0.8,0); \coordinate (T) at (0.55,0.6); \coordinate (B) at (0.55,-0.6);
+  \draw[prop] (0,0) circle (0.8); \draw[prop] (T) .. controls (0.25,0) .. (B);
+  \legs{L/135/1,L/225/2,T/45/3,B/315/4} \foreach \p in {L,T,B} \node[vtx] at (\p) {};}
++\frac23\,\diac[0.4]{\coordinate (L) at (-0.9,0); \coordinate (R) at (0.9,0);
+  \draw[prop] (0,0) ellipse (0.9 and 0.55); \legs{L/135/1,L/225/2,R/45/3,R/315/4}
+  \node[vtx] at (L) {}; \node[otimesv,minimum size=5pt] at (R) {}; \node[font=\tiny] at (1.25,0) {(2)};}\,.
+\end{align*}
+Let us show that all momentum dependent divergences cancel separately within
+each group.
+
+Consider first the group I. The first diagram there is easily calculated to be
+\[
+-\frac{\tilde\lambda^3}4\,\bigl[I(p_{12}^2)\bigr]^2\,,
+\]
+the 4 in the denominator being the symmetry factor, $p_{12}=p_1+p_2$, and again
+\[
+I(p^2)=\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+\tilde m^2)\bigl((p+k)^2+\tilde m^2\bigr)}\,.
+\]
+Now, each of the other two diagrams in this group contribute
+\[
+\frac13\,\frac{\tilde\lambda^3}2\,a^{(2)}\,I(p_{12}^2)\,,
+\]
+so that the sum of all three diagrams in this group is
+\[
+\text{Group I}=-\frac{\tilde\lambda^3}4\,\bigl[I(p_{12}^2)\bigr]^2+\frac23\,\frac{\tilde\lambda^3}2\,\frac32\,I(0)\,I(p_{12}^2)
+=-\frac{\tilde\lambda^3}4\,\bigl[I(p_{12}^2)-I(0)\bigr]^2+\frac{\tilde\lambda^3}4\,\bigl[I(0)\bigr]^2
+\]
+where the expression $a^{(2)}=\frac32I(0)$, Eq.~\eqref{eq:a2}, is used. We know
+from the one-loop analysis that the difference $I_r(p^2)=I(p^2)-I(0)$ is finite
+at $d=4$ and therefore the divergent parts of the diagrams in the group I indeed
+sum up to a momentum independent constant (the last term in the expression
+above). Note that this divergent constant has second order pole at $d=4$, i.e.\
+it behaves as $1/\epsilon^2$ as $\epsilon\to0$.
+
+Consider now the group II. It contains the diagram
+\[
+\diac[0.45]{\coordinate (R) at (0.8,0); \coordinate (T) at (-0.55,0.6); \coordinate (B) at (-0.55,-0.6);
+  \draw[prop] (0,0) circle (0.8); \draw[prop] (T) .. controls (-0.25,0) .. (B);
+  \foreach \p/\a/\n in {T/135/p_2,B/225/p_1,R/45/p_3,R/315/p_4} {\draw[prop,densely dashed] (\p) -- ++(\a:1.1) node[pos=1.25,font=\tiny] {$\n$};}
+  \draw[arr] (60:1.15) arc[start angle=60,end angle=100,radius=1.15]; \node[font=\tiny] at (80:1.45) {$k$};
+  \draw[arr] (260:1.15) arc[start angle=260,end angle=300,radius=1.15]; \node[font=\tiny] at (280:1.5) {$p_{12}+k$};
+  \foreach \p in {R,T,B} \node[vtx] at (\p) {};}
+=-\frac{\tilde\lambda^3}2\int\frac{d^dk}{(2\pi)^d}\,\frac1{k^2+\tilde m^2}\,\frac1{(p_{12}+k)^2+\tilde m^2}\,I\bigl((k+p_1)^2\bigr)\,,
+\]
+where $I(p^2)$ is the integral \eqref{eq:Ip2}, which we already found equal to
+\[
+I(p^2)=\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bigl[\tilde m^2+u(1-u)\,p^2\Bigr]^{\frac d2-2}\,.
+\]
+Using this formula and combining the propagators with the help of Feynman
+parametrization we obtain for the above diagram
+\begin{multline*}
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}
+\int_0^1du\int_0^1dv\int\frac{d^dk}{(2\pi)^d}\,\frac1{\bigl(k^2+2v\,(kp_{12})+v\,p_{12}^2+\tilde m^2\bigr)^2}\\
+\times\frac1{\bigl(\tilde m^2+u(1-u)\,(k+p_1)^2\bigr)^{2-\frac d2}}\,.
+\end{multline*}
+The $k$ integral here can be evaluated by using the transformation generalizing
+the Feynman parametrization. Namely, consider the identity
+\eqref{eq:FeynParGen},
+\begin{equation}\label{eq:FeynParGen2}
+\frac1{A^\alpha\,B^\beta}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1\frac{dw\,w^{\alpha-1}(1-w)^{\beta-1}}{\bigl[wA+(1-w)B\bigr]^{\alpha+\beta}}\,.
+\end{equation}
+It can be derived by explicit evaluation of the integral in the right-hand side:
+projective transformation of the integration variable $w=Bz/(Bz+A(1-z))$ brings
+it to the form of the Beta-integral
+\[
+B(\alpha,\beta)=\int_0^1dz\,z^{\alpha-1}(1-z)^{\beta-1}=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
+\]
+(details can be found in \S\,10.5 of PS). Using this identity (with
+$\alpha=2-\frac d2$, $\beta=2$) one can write the above integral as
+\begin{multline*}
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\,dv\,dw\\
+\times\int\frac{d^dk}{(2\pi)^d}\,\frac{w^{1-\frac d2}\,(1-w)}{\Bigl[w\bigl(\tilde m^2+u(1-u)\,(k+p_1)^2\bigr)+(1-w)\bigl(\tilde m^2+k^2+2v\,(kp_{12})+v\,p_{12}^2\bigr)\Bigr]^{4-\frac d2}}\,.
+\end{multline*}
+By appropriate shift of the $d$-momentum integration variable the denominator
+can be brought to the form
+\[
+A\,q^2+P^2+\tilde m^2
+\]
+where
+\[
+A=(1-w)+w\,u(1-u)\,,\qquad A\big|_{w=0}=1\,,
+\]
+and $P$ is complicated function of $p_{12}$, $p_1$ and the parameters $u,v,w$.
+We only need to know that
+\[
+P^2\Big|_{w=0}=v(1-v)\,p_{12}^2\,.
+\]
+In this representation the integral over $q$ is readily evaluated,
+\[
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1du\,dv\,dw\,\frac{w^{1-\frac d2}\,(1-w)}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2\bigr)^{d-4}\,.
+\]
+Evidently this expression is singular at $d=4$. First, there is a pole at $d=4$
+in the factor
+\[
+\Gamma(4-d)=\Gamma(\epsilon)=\frac1\epsilon+O(1)
+\]
+in front. In addition, at $d=4$ the integral over $w$ diverges at $w\to0$
+because of the factor $w^{1-\frac d2}$ in the integrand; as the result the
+integral over $w$ has additional pole at $d=4$, i.e.\ the whole diagram again
+has a second order pole at this point.
+
+To isolate the singular contributions let us write the integral over $w$ as
+\[
+\int_0^1dw\,w^{1-\frac d2}\,f(w)=f(0)\int_0^1dw\,w^{1-\frac d2}+\int_0^1dw\,w^{1-\frac d2}\,\bigl[f(w)-f(0)\bigr]\,.
+\]
+The second piece is
+\[
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1du\,dv\,dw\,w^{1-\frac d2}\,
+\Bigl[\frac{1-w}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2(w)\bigr)^{d-4}-\bigl(\tilde m^2+P^2(w=0)\bigr)^{d-4}\Bigr]\,.
+\]
+Here the integral over $u,v,w$ is convergent and brings in no additional
+singularity at $d=4$. Therefore the above expression has only simple pole at
+$\epsilon=0$. To evaluate the residue at this simple pole one can set $d=4$
+everywhere except in $\Gamma(4-d)$. It is clear then that this residue does not
+depend on external momenta, i.e.\ this part of the above diagram has the form
+\[
+\frac{C_0}\epsilon+C_1(p_1,\dots,p_4)\,,
+\]
+where $C_0$ does not depend on $p_i$, and the $C_1$ is finite at $\epsilon=0$.
+
+Let us take a look at the other piece, proportional to $f(0)$. It is
+\[
+f(0)\int_0^1dw\,w^{1-\frac d2}=\frac2\epsilon\,f(0)=-\frac2\epsilon\,\frac{\tilde\lambda^3}2\,\frac{\Gamma(\epsilon)}{(4\pi)^d}\int_0^1du\,dv\,\bigl(\tilde m^2+v(1-v)\,p_{12}^2\bigr)^{-\epsilon}
+\]
+The $u$ integral here is trivial. Now, for $\epsilon\to0$ the integral can be
+written as
+\[
+\int_0^1dv\,\Bigl(1-\epsilon\,\log\bigl(\tilde m^2+v(1-v)\,p_{12}^2\bigr)+O(\epsilon^2)\Bigr)\,,
+\]
+and therefore this piece of the diagram is
+\[
+-\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\Bigl(\frac1\epsilon-\gamma+\log4\pi-\int_0^1dv\,\log\bigl[\tilde m^2+v(1-v)\,p_{12}^2\bigr]\Bigr)+\text{finite terms.}
+\]
+We have to add here the second diagram in the group II, which is
+\[
+\frac23\,\frac{\tilde\lambda^3}2\,a^{(2)}\,I(p_{12}^2)=\frac{\tilde\lambda^3}2\,I(0)\,I(p_{12}^2)\,,
+\]
+where the expression \eqref{eq:a2} for the coefficient $a^{(2)}$ is used. Recall
+that
+\begin{align*}
+I(p^2)&=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\\
+&=\frac1{(4\pi)^{\frac d2}}\Bigl(\frac2\epsilon-\gamma-\int_0^1du\,\log\bigl(\tilde m^2+u(1-u)\,p^2\bigr)+O(\epsilon)\Bigr)\,.
+\end{align*}
+Therefore the contribution of this diagram is
+\[
+\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\Bigl(\frac2\epsilon-2\gamma+2\log4\pi-\log\tilde m^2-\int_0^1du\,\log\bigl[\tilde m^2+u(1-u)\,p_{12}^2\bigr]\Bigr)+\text{finite terms.}
+\]
+Adding the two diagrams of the group II we see that the $p_{12}$-dependent
+singular terms cancel out,
+\[
+\text{Group II}=\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\Bigl(\frac1\epsilon-\gamma+\log4\pi-\log\tilde m^2\Bigr)+\text{finite terms.}
+\]
+The group III can be analyzed similarly. We find that all singular parts of the
+first 15 diagrams are pole terms with the coefficients independent of external
+momenta,
+\begin{equation}\label{eq:15diagrams}
+\text{15 diagrams}=\tilde\lambda^3\Bigl(\frac{c_{-2}}{\epsilon^2}+\frac{c_{-1}}\epsilon+F(p_1,\dots,p_4)\Bigr)\,,
+\end{equation}
+where $c_{-2},c_{-1}$ do not depend on $p_i$, and $F$ is finite at $d=4$.
+Therefore the counterterm coefficient $a^{(3)}$ appearing in the 16th diagram
+always can be appropriately adjusted to compensate the singular terms. In fact,
+according to our normalization condition \eqref{eq:SIIb}
+($\Gamma^{(4)}(0,0,0,0)=\tilde\lambda$), this coefficient is determined as
+\[
+a^{(3)}=\frac{c_{-2}}{\epsilon^2}+\frac{c_{-1}}\epsilon+F(0,\dots,0)
+\]
+and hence
+\[
+\text{All 16 diagrams}=\tilde\lambda^3\Bigl(F(p_1,\dots,p_4)-F(0,\dots,0)\Bigr)\,.
+\]
+
+\begin{exercise}
+Verify these two-loop calculations. Evaluate $c_{-2}$ and $c_{-1}$.
+\end{exercise}
+
+Let us briefly consider the $\tilde\lambda^2$ contributions to $\Gamma^{(2)}$.
+These are given by three diagrams
+\[
+\Gamma^{(2)}(p^2)=p^2+\tilde m^2-\Bigl(\underset{(a)}{\diac[0.45]{\draw[prop,densely dashed] (-2.3,0) -- (-1.1,0) (1.1,0) -- (2.3,0);
+  \draw[prop] (-1.1,0) -- (1.1,0); \draw[prop] (0,0) ellipse (1.1 and 0.7);
+  \node[above,font=\tiny] at (0,0.75) {$p+k_1+k_2$}; \node[font=\tiny] at (0,0.25) {$k_1$}; \node[below,font=\tiny] at (0,-0.75) {$k_2$};
+  \node[vtx] at (-1.1,0) {}; \node[vtx] at (1.1,0) {};}}
++\underset{(b)}{\diac[0.45]{\draw[prop,densely dashed] (-1.8,0) -- (1.8,0); \draw[prop] (0,0.6) circle (0.6);
+  \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(2)};}}
++\underset{(c)}{\ctline{2}}\Bigr)
+\]
+The diagram (b) involves the counterterm vertex $-\tilde\lambda^2a^{(2)}$, and
+the diagram (c) contains the $\tilde\lambda^2$ part of the counterterms $\delta Z$
+and $\delta m^2$,
+\[
+\ctline{2}=-\tilde\lambda^2\,\bigl(z^{(2)}\,p^2+b^{(2)}\bigr)\,.
+\]
+Again, the coefficients here must be determined from the normalization condition
+\eqref{eq:SIIa}.
+
+Let us denote $\Sigma_a(p^2)$ the contribution of the diagram (a) to the mass
+operator. One can write it as
+\[
+\Sigma_a(p^2)=\Sigma_a(0)+p^2\,\Sigma_a'(0)+\Sigma_r(p^2)\,,
+\]
+where by the definition
+\[
+\Sigma_r(p^2)=O(p^4)\qquad\text{as}\qquad p^2\to0\,.
+\]
+Let us analyse the diagram (a) and show that $\Sigma_r(p^2)$ has finite value at
+$d=4$. The contribution of the diagram (a) is given by the integral
+\[
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\int\frac{d^dk_1\,d^dk_2}{(2\pi)^{2d}}\,\frac1{(k_1^2+\tilde m^2)(k_2^2+\tilde m^2)\bigl((p+k_1+k_2)^2+\tilde m^2\bigr)}\,.
+\]
+One of the $k$-integrations, say over $k_2$, can be done exactly the way we did
+one-loop integrals for $\Gamma^{(4)}$:
+\begin{align*}
+&\int\frac{d^dk_2}{(2\pi)^d}\,\frac1{(k_2^2+\tilde m^2)\bigl((p+k_1+k_2)^2+\tilde m^2\bigr)}=I\bigl((p+k_1)^2\bigr)\\
+&\qquad=\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bigl[\tilde m^2+u(1-u)\,(p+k_1)^2\Bigr]^{\frac d2-2}\,.
+\end{align*}
+We find
+\[
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\int\frac{d^dk_1}{(2\pi)^d}\,
+\frac1{\bigl(u(1-u)\,(p+k_1)^2+\tilde m^2\bigr)^{2-d/2}\,(k_1^2+\tilde m^2)}\,.
+\]
+The remaining integral over $k_1$ can be done using \eqref{eq:FeynParGen2} which
+allows one to transform the integral as
+\[
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\,\frac{\Gamma(3-d/2)}{\Gamma(2-d/2)\,\Gamma(1)}\int_0^1du\int_0^1dw\,J(u,w)\,,
+\]
+\[
+J(u,w)=\int\frac{d^dk_1}{(2\pi)^d}\,\frac{w^{1-\frac d2}}{\bigl[\tilde m^2+(1-w)\,k_1^2+w\,u(1-u)\,(k_1+p)^2\bigr]^{3-\frac d2}}\,.
+\]
+The integral over $k_1$ can be evaluated after the shift of this momentum
+variable
+\[
+q=k_1+\frac{w\,u(1-u)}A\,p\,,
+\]
+where again
+\[
+A=(1-w)+w\,u(1-u)\,.
+\]
+One obtains
+\[
+J(u,w)=\int\frac{d^dq}{(2\pi)^d}\,\frac{w^{1-d/2}}{\Bigl(A\,q^2+w(1-w)\,u(1-u)\,p^2/A+\tilde m^2\Bigr)^{3-\frac d2}}\,.
+\]
+With appropriate rescaling of $q$ one can bring this integral to the form
+\eqref{eq:dimregalpha}, and obtain
+\[
+J(u,w)=\frac{A^{3-\frac{3d}2}}{(4\pi)^{\frac d2}}\,\frac{\Gamma(3-d)}{\Gamma(3-d/2)}\,w^{1-d/2}\,\Bigl[w(1-w)\,u(1-u)\,p^2+A\,\tilde m^2\Bigr]^{d-3}\,.
+\]
+Combining these results we get
+\[
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(3-d)}{(4\pi)^d}\int_0^1dw\,du\,w^{1-\frac d2}\,A^{3-\frac{3d}2}\,\Bigl[u(1-u)\,w(1-w)\,p^2+A\,\tilde m^2\Bigr]^{d-3}\,.
+\]
+This quantity has second order pole in $\epsilon$, one singular factor coming
+from the Gamma function
+\[
+\Gamma(3-d)=-\frac1\epsilon+O(1)\,,
+\]
+and another appearing due to the divergence of the integral over $w$ at
+$w\to0$. However, subtracting $\Sigma_a(0)$ and $p^2\Sigma_a'(0)$ one obtains
+\[
+\Sigma_r(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(3-d)}{(4\pi)^d}\,(\tilde m^2)^{d-3}\int_0^1du\,dw\,w^{1-\frac d2}\,A^{-\frac d2}\,H(u,w)\,,
+\]
+where
+\[
+H(u,w)=(1+p^2B)^{d-3}-1-(d-3)\,p^2B\,,\qquad\text{and}\qquad B=\frac{u(1-u)\,w(1-w)}{\tilde m^2\,A}\,.
+\]
+Note that $H(u,w=0)=0$ and therefore the $w$ integration does not produce
+singularity in this expression. Moreover, one can see that $H=O(\epsilon)$,
+\[
+H(u,w)=\epsilon\,\Bigl[p^2B-(1+p^2B)\,\log(1+p^2B)\Bigr]+O(\epsilon^2)\,,
+\]
+and therefore $\Sigma_r$ has finite value at $d=4$,
+\[
+\Sigma_r(p^2)\Big|_{d=4}=\frac{\tilde\lambda^2}{3!}\,\frac{\tilde m^2}{(4\pi)^4}\int_0^1\frac{du\,dw}{w\,A^2}\,\Bigl[p^2B-(1+p^2B)\,\log(1+p^2B)\Bigr]
+\]
+At the same time the subtracted terms $\Sigma_a(0)$ and $\Sigma_a'(0)$ are
+singular at $d=4$. The contributions of two diagrams (a) and (b) to $\Sigma$ then
+have the form
+\[
+\Sigma_a(p^2)+\Sigma_b(p^2)=\Sigma_r(p^2)+\tilde\lambda^2\,\bigl(M(\epsilon)+p^2N(\epsilon)\bigr)\,,
+\]
+where the constants $M(\epsilon)$ and $N(\epsilon)$ have poles in $\epsilon$,
+\begin{equation}\label{eq:MN}
+M(\epsilon)=\frac{M_{-2}}{\epsilon^2}+\frac{M_{-1}}\epsilon+O(1)\,;\qquad
+N(\epsilon)=\frac{N_{-1}}\epsilon+O(1)\,.
+\end{equation}
+The diagram (c) brings the contribution
+\[
+\Sigma_c(p^2)=\tilde\lambda^2\,\bigl(p^2z^{(2)}+b^{(2)}\bigr)\,,
+\]
+and our normalization condition
+\[
+\Sigma(0)=\Sigma'(0)=0
+\]
+requires the choice
+\[
+b^{(2)}=-M(\epsilon)\,;\qquad z^{(2)}=-N(\epsilon)
+\]
+of the counterterm coefficients at this order. For the proper vertex we then
+have simply
+\[
+\Gamma^{(2)}(p^2)=p^2+\tilde m^2+\Sigma_r(p^2)+O(\tilde\lambda^3)\,.
+\]
+
+\begin{hwproblem}{4}\label{hw:4}
+Within the original perturbation theory (i.e.\ with the bare mass in the
+propagator $1/(p^2+m_0^2)$, and no counterterm vertices) consider the sum of all
+``cactus diagrams''
+\[
+-\Sigma_{\text{cactus}}=
+\dia[0.35]{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}
++\dia[0.35]{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \draw[prop] (0,1.8) circle (0.6); \node[vtx] at (0,0) {}; \node[vtx] at (0,1.2) {};}
++\dia[0.35]{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \draw[prop] (-0.75,1.6) circle (0.5); \draw[prop] (0.75,1.6) circle (0.5);
+  \node[vtx] at (0,0) {}; \node[vtx] at (-0.42,1.02) {}; \node[vtx] at (0.42,1.02) {};}
++\dia[0.35]{\draw[prop,densely dashed] (-2,0) -- (2.6,0); \draw[prop] (0,0.6) circle (0.6); \draw[prop] (-0.75,1.6) circle (0.5); \draw[prop] (0.75,1.6) circle (0.5);
+  \draw[prop] (1.75,1.6) circle (0.5); \node[vtx] at (0,0) {}; \node[vtx] at (-0.42,1.02) {}; \node[vtx] at (0.42,1.02) {}; \node[vtx] at (1.25,1.6) {};}
++\dots
+\]
+and ignore all other diagrams for the mass operator. In this ``cactus
+approximation'', find the relation between $m_0^2$ and $m^2$ to all orders in
+$\lambda$. Use Schwinger's regularization $\Phi(p^2/\Lambda^2)=\exp(-p^2/\Lambda^2)$.
+\end{hwproblem}

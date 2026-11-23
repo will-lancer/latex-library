@@ -1,0 +1,738 @@
+% Source pp. 144-160 (Lectures13-18.pdf).
+\section[Perturbative Renormalization Group]{Perturbative Renormalization Group\protect\footnote{PS Sect's 12.2, 12.3.}}
+
+\subsection*{Finite renormalizations}
+
+Renormalized perturbation theory allows one to obtain the correlation functions
+of $\varphi^4$ theory as power series in the renormalized coupling parameter
+$\lambda$ with well defined finite coefficients. This concerns the correlation
+functions of the field $\varphi$ as well as the ones involving appropriately
+renormalized composite fields. This is achieved by adjusting the counterterm
+coefficients $\delta m^2$, $\delta\lambda$, $\delta Z$ in the action (and,
+additionally, the renormalization factors in the composite fields) as the
+functions of regularization parameter ($\epsilon=4-d$ in dimensional
+regularization, or $\Lambda$ if some cutoff regularization is assumed).
+Renormalized correlation functions appearing in this way depend on two
+parameters, $\lambda$ and $m^2$, named the ``renormalized coupling'' and the
+``renormalized mass parameter''. Precise relation of these parameters to
+physical quantities, as well as the field normalizations, are specified
+(explicitly or implicitly) by the \emph{renormalization scheme}.
+
+By doing calculations in two different renormalization schemes we are not
+solving two different field theories; rather, we are describing the same theory
+in terms of different parameters. One can think of two-dimensional (because two
+parameters, $m^2$ and $\lambda$, are involved) ``manifold of $\varphi^4$
+theories'', with the parameters $m^2$ and $\lambda$ playing the role of (local)
+coordinates on this manifold (the latter is often called the ``theory space'').
+
+Each point of this manifold represents a field theory, i.e.\ a collection of all
+correlation functions, defined up to finite field renormalizations
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\ \sim\ Z_{\text{finite}}^{\frac n2}\,\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\,.
+\]
+To simplify things one can consider the ratios like
+\[
+R(x_1,x_2;x_3,\dots,x_n)=\bigl\langle\varphi(x_1)\varphi(x_2)\cdots\varphi(x_{2n})\bigr\rangle\big/\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle^n
+\]
+which do not depend on the normalizations of the fields. Different
+renormalization schemes correspond to different choices of the coordinate system
+on the above manifold. Once the coordinate system (i.e.\ renormalization scheme)
+is fixed, that is the points are somehow ``labeled'' by two parameters $m^2$ and
+$\lambda$, the above ratios become functions of these parameters,
+\[
+R(x_i|m^2,\lambda)\,.
+\]
+Relation between the parameters $(m^2,\lambda)$ and $(\tilde m^2,\tilde\lambda)$,
+associated with two different renormalization schemes, is just a coordinate
+transformation,
+\[
+m^2\to\tilde m^2(m^2,\lambda)\,,\qquad\lambda\to\tilde\lambda(m^2,\lambda)\,.
+\]
+At $d=4$ this relation has the form (by dimensional analysis)
+\begin{equation}\label{eq:schemechange}
+\tilde m^2=m^2\,f(\lambda)\,,\qquad\tilde\lambda=g(\lambda)\,,
+\end{equation}
+where the functions $f,g$ can in principle be computed order by order in
+$\lambda$,
+\begin{align*}
+f(\lambda)&=f_0+\lambda\,f_1+\lambda^2\,f_2+\cdots\,,\\
+g(\lambda)&=\lambda+\lambda^2\,g_2+\lambda^3\,g_3+\cdots\,,
+\end{align*}
+the coefficients $f_k$, $g_k$ being finite numbers. The correlation functions
+(or rather the above ratios $R$) computed in the two schemes are related as
+\[
+\tilde R\bigl(x_i|m^2f(\lambda),g(\lambda)\bigr)=R(x_i|m^2,\lambda)\,,
+\]
+so that these are the same correlation functions expressed in terms of different
+parameters, that is, coordinates in the space of $\varphi^4$ theories.
+
+\subsection*{Short distance problem}
+
+Renormalized perturbation theory, no matter what scheme is assumed, yields the
+correlation functions as formal power series in the coupling parameter
+$\lambda$. Although in each given order these series give finite and well
+behaved correlation functions, the problem of overall \emph{non-perturbative}
+consistency of the theory is a separate question. There is an issue of
+convergence of the perturbative expansion. It is possible to show that the
+series in $\varphi^4$ have in fact zero radius of convergence, and at the best
+they can be understood as asymptotic series. If so, there is an important
+question if these series can be understood as asymptotic expansions of some
+non-perturbative correlation functions which are compatible with requirements of
+\emph{locality} and with \emph{quantum mechanical interpretation} (the property
+usually called \emph{positivity}). Although one can show that these properties
+(locality and positivity) are preserved at the perturbative level, i.e.\ in each
+given order in $\lambda$, it is conceivable that they can break down after
+summing the series up.
+
+We have seen that in Euclidean version of quantum field theory locality implies
+in particular that the correlation function
+\[
+\bigl\langle\varphi(x_1)\varphi(x_2)\cdots\varphi(x_{2n})\bigr\rangle\,,
+\]
+viewed as the function of, say, $x_1$, has only point-like singularities at
+$x_1=x_2,x_3,\dots,x_{2n}$. (We have observed this in the free Klein-Gordon
+theory (see Section~4) for the two-point function, but the arguments we have
+applied in that analysis depend only on general properties of the
+energy-momentum spectrum, and are generalized straightforwardly to general
+interacting theories; I hope to come back to this point later.) This is because
+upon continuation to complex coordinates and ultimately to the Minkowski
+space-time these singularities translate into the singularities at the light
+cones associated with the points $x_2,\dots,x_{2n}$; we have seen that these
+singularities are directly related to commutators of the field operators (see
+again the analysis in Section~4). Locality states that the commutators of
+Heisenberg field operators must vanish outside the light cone,
+\[
+\bigl[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)\bigr]=0\qquad\text{for}\qquad t^2<\xx^2\,.
+\]
+This property of locality is preserved in the renormalized perturbation theory at
+each order in $\lambda$ but there is no guarantee it will not break down in full
+non-perturbative theory. It is very well conceivable that upon summing the
+perturbative series up singularities at finite space-like separations may be
+generated, leading to violations of the local commutativity.
+
+The following example demonstrates this possibility. Consider the power series
+\[
+\sum_{n=0}^\infty(-\lambda)^n\,\Bigl(\log m|x_1-x_2|\Bigr)^n\,,
+\]
+which models a perturbative series for some correlation function. At each given
+order the above expression has point-like singularity at $x_1=x_2$. However its
+sum is
+\[
+\frac1{1+\lambda\log m|x_1-x_2|}\,.
+\]
+This function is singular at
+\[
+|x_1-x_2|=x_0\equiv m^{-1}\,e^{-\frac1\lambda}\,.
+\]
+As the result, if one continues to the Minkowski space-time the light cone
+``fattens'' and causality is broken at short scales $\simeq x_0$.\footnote{One
+can take different attitudes toward such possibility. One pragmatic attitude is
+that we do not know what describes short-distance physics anyway. After all, at
+short distances quantum gravity must play important role, perhaps along with
+extra dimensions, superstrings, D-branes, and whatnot. And therefore we do not
+care about possible inconsistencies at these short distances. With this attitude
+quantum field theory is viewed as a way of producing (renormalized) perturbative
+expansions in the coupling parameter. Such expansions of course are useful only
+if the coupling parameter is small. In quantum electrodynamics (QED) where the
+analog of $\lambda$ is the fine structure constant which is small indeed, this is
+valid point of view. And if the interaction is not small in any sense, according
+to this philosophy one would conclude that quantum field theory is not useful at
+all.\par
+In the past, at certain stage of development, such was prevailing attitude.
+Discovery of \emph{Asymptotic Freedom} in nonabelian gauge theories, along with
+better understanding of \emph{Renormalization Group} has changed that. On the
+face of it, the discovery of the asymptotic freedom was pure perturbative result,
+obtained by computing few diagrams, but through understanding the Renormalization
+Group one can see that it actually guaranteed full nonperturbative consistency of
+quantum nonabelian gauge theories. More generally, renormalization allows one to
+understand quantum field theory in terms of criticality, or vice versa, to the
+extent that from theoretical point of view quantum field theory and theory of
+critical phenomena are much one and the same thing. Moreover, main idea of the
+Wilson's renormalization group has proved very useful in theoretical physics well
+beyond quantum field theory. This is why I hope to devote significant part of this
+course to it.}
+
+The problem of the short-distance consistency of a quantum field theory requires
+analysis of its behavior under changes of the length scale. The latter is
+generally understood in terms of \emph{Renormalization Group}. Here I will
+briefly discuss the basics of this approach, in its perturbative version, and
+applied to $\varphi^4$ theory. The analysis is substantially simpler in the case
+of \emph{massless theory}.
+
+\subsection*{Massless \texorpdfstring{$\varphi^4$}{phi**4}}
+
+As a preparation, let us discuss what happens with our renormalized perturbation
+if one sets the renormalized mass parameter $m^2$ to zero. Although precise
+meaning of $m^2$ depends on the renormalization scheme, the condition
+\[
+m^2=0
+\]
+is \emph{scheme independent}, i.e.\ once it is satisfied in one scheme, it is
+satisfied in any other scheme, as the Eq.~\eqref{eq:schemechange} suggests.
+There are at least two reasons why this case is interesting.
+\begin{itemize}
+\item Potential problem with locality can occur at short scales, much shorter
+than $m^{-1}$. The mass term is not important at such scales, and by analyzing
+this case one can understand the general situation.
+\item We will see that in applications to critical phenomena the case $m^2=0$
+describes physics at exactly critical point, and therefore it is of central
+interest.
+\end{itemize}
+
+Taking a look at our previous perturbative results we discover that it is not
+possible to just set $m^2=0$ there, since nearly all quantities we have computed
+are singular at this point. Consider for instance the 4-point vertex,
+\[
+\Gamma^{(4)}(p_1,\dots,p_4)=\lambda-\frac{\lambda^2}2\Bigl(I_r(p_{12}^2)+I_r(p_{13}^2)+I_r(p_{14}^2)\Bigr)+O(\lambda^3)\,,
+\]
+where again
+\[
+I_r(p^2)=-\frac1{(4\pi)^2}\int_0^1du\,\log\Bigl(1+u(1-u)\,\frac{p^2}{m^2}\Bigr)\,.
+\]
+Obviously, there is a singularity at $m^2=0$. This can signal one of two things.
+Either the theory itself becomes sick at this point, or our coordinate system
+does not extend smoothly to this case. I want to argue that $m^2=0$
+singularities of the perturbative correlation functions originate from a
+coordinate singularity.\footnote{Think of some a function $f(x,y)$ written in new
+coordinates $(x',y')$, $x=x'$, $y=y'+y'^2\log x'^2$.}
+
+Indeed, a particular coordinate system is determined by the normalization
+conditions. For example, in our scheme SII we have assumed
+\begin{equation}\label{eq:SIIrecall}
+\Gamma^{(2)}(p^2)\Big|_{p^2=0}=m^2\,,\qquad\text{and}\qquad\frac{d\Gamma^{(2)}(p^2)}{dp^2}\Big|_{p^2=0}=1\,.
+\end{equation}
+At $m^2=0$ the first of these conditions remains useful, just stating that
+$\Gamma^{(2)}(p^2)$ turns to zero at $p^2=0$, which can be considered as a
+scheme-independent definition of the ``massless theory'', but at $m^2=0$ this is
+no longer a simple zero, being replaced by more complicated singular point. We
+will see in a moment that at $m^2=0$ $\Gamma^{(2)}$ contains terms like
+$p^2\log p^2$ and therefore the second of the conditions \eqref{eq:SIIrecall}
+cannot be imposed. The coordinate system associated with our scheme is singular
+at $m^2=0$.
+
+It is useful to have a scheme which admits smooth limit $m^2\to0$. Such scheme
+must involve dimensional parameter different from $m^2$. Let us denote it
+$\mu^2$, $[\mu]=1$. Since $\mu$ can be chosen arbitrarily, we will have families
+of schemes, parameterized by auxiliary scale $\mu$. Let us take one such
+$\mu$-dependent scheme, defined by the normalization conditions
+\begin{align}
+\frac{d\Gamma^{(2)}(p^2)}{dp^2}\Big|_{p^2=\mu^2}&=1\,,\label{eq:mu1}\\
+\Gamma^{(4)}(p_1,\dots,p_4)\Big|_{p_i=\mu e_i}&=\lambda_{(\mu)}\,,\label{eq:mu2}
+\end{align}
+where $e_i$ is some set of four fixed 4-vectors, which satisfy
+$e_1+e_2+e_3+e_4=0$, but have no other linear dependencies. To be specific, we
+can choose symmetric arrangement,
+\[
+e_i^2=3\qquad\text{and}\qquad(e_ie_j)=-1\quad\text{for}\quad i\neq j\,.
+\]
+I write $\lambda_{(\mu)}$ for the renormalized coupling constant as the reminder
+about the scale $\mu$ associated with this scheme. It is conventional to refer to
+this auxiliary scale as the ``normalization scale''. It is perfectly legitimate
+to use such scheme in general case, but we will apply it to massless theory,
+which is singled out by the condition
+\begin{equation}\label{eq:mu3}
+\Gamma^{(2)}(0)=0\,.
+\end{equation}
+
+We can now develop renormalized perturbation theory for massless $\varphi^4$
+theory taking exact same steps we did before. We start with the action in its
+bare form,
+\[
+\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\Bigr]\,,
+\]
+with some bare mass parameter (yet to be adjusted), and write it as
+\[
+\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{\lambda_{(\mu)}}{4!}\,\varphi^4+\text{counterterms}\Bigr]\,,
+\]
+where
+\[
+\varphi=Z_{(\mu)}^{-1/2}\,\varphi_0\,,
+\]
+and the counterterms are
+\[
+\text{counterterms}=\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta m^2_{(\mu)}}2\,\varphi^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\,,
+\]
+with
+\[
+\delta Z_{(\mu)}=Z_{(\mu)}-1\,,\qquad
+\delta m^2_{(\mu)}=m_0^2\,Z_{(\mu)}\,,\qquad
+\delta\lambda_{(\mu)}=\lambda_0\,Z_{(\mu)}^2-\lambda_{(\mu)}\,.
+\]
+Again, we assume that all the counterterm coefficients are power series in the
+renormalized coupling $\lambda_{(\mu)}$,
+\begin{align*}
+\delta Z_{(\mu)}&=z^{(2)}_{(\mu)}\,\lambda_{(\mu)}^2+\cdots\,,\\
+\delta\lambda_{(\mu)}&=a^{(2)}_{(\mu)}\,\lambda_{(\mu)}^2+\cdots\,,\\
+\delta m^2_{(\mu)}&=b^{(1)}_{(\mu)}\,\lambda_{(\mu)}+\cdots\,,
+\end{align*}
+with the coefficients determined from the normalization conditions
+\eqref{eq:mu1}, \eqref{eq:mu2}, \eqref{eq:mu3}.
+
+A remark is in order. We have put two parameters, $m_0^2$ and $\lambda_0$, in the
+bare action. Renormalized massless theory depends on a single parameter, the
+renormalized coupling $\lambda_{(\mu)}$, only. The normalization scale $\mu$ is
+not a parameter of the theory, in that it is an attribute of the renormalization
+scheme, rather than the theory itself. We have imposed three normalization
+conditions Eqs.~\eqref{eq:mu1}--\eqref{eq:mu3}. While Eq.~\eqref{eq:mu2} defines
+the renormalized coupling $\lambda_{(\mu)}$ and Eq.~\eqref{eq:mu1} fixes
+normalization of $\varphi$, the Eq.~\eqref{eq:mu3} states that the theory is
+massless, and thus it imposes restriction on the theory itself. In principle,
+this last condition can be translated into certain relation between the bare
+parameters $m_0^2$ and $\lambda_0$. The bare theory is implicitly equipped with
+some regularization, and precise form of such relation depends on the
+regularization method. For instance, if some cutoff regularization is implied,
+with the cutoff momentum $\Lambda$, at $d=4$ the relation has general form
+\begin{equation}\label{eq:critbare}
+m_0^2=\Lambda^2\,C(\lambda_0)\,.
+\end{equation}
+Precise shape of $C(\lambda_0)$ heavily depends on specific implementation of the
+cutoff. Subset of $\varphi^4$ theories selected by this condition corresponds to
+critical domain in the theory of second order phase transitions. In dimensional
+regularization there is no cutoff parameter $\Lambda$, and simple dimensional
+analysis shows that this relation must take simple form
+\[
+m_0^2=0\qquad\text{(dimensional regularization)}.
+\]
+This means in particular that $\delta m^2=0$, and we do not have to bother with
+the mass renormalization at all. This is one of the technical advantages of the
+dimensional regularization technique.
+
+Again, thinking in terms of the ``two-dimensional manifold of $\varphi^4$
+theories'', the massless $\varphi^4$ theories correspond to certain
+one-dimensional ``critical'' submanifold (critical curve, in our case),
+figure~\ref{fig:critcurve}.
+\begin{figure}[ht]
+\centering\figfile{critcurve}
+\caption{The two-dimensional space of $\varphi^4$ theories, with coordinates
+$(m^2,\lambda)$. The massless theories form the critical curve $m^2=0$.}
+\label{fig:critcurve}
+\end{figure}
+In statistical mechanics, the ``bare action'' models microscopic interaction, and
+the parameters $m_0^2$ and $\lambda_0$, as well as the cutoff energy $\Lambda$,
+are related to the temperature and the microscopic physical characteristics of
+the matter under consideration (e.g.\ molecular interactions in a gas/liquid).
+When these parameters cross the ``critical submanifold'' the macroscopic system
+undergoes a second order phase transition.
+
+\subsection*{Renormalization as the scale transformation. Callan-Symanzik equation}
+
+Although in general $\varphi^4$ theory the coordinates $(m^2,\lambda)$ depend on
+the renormalization scheme, the ``critical submanifold'' $m^2=0$ is scheme
+independent. It is because the condition \eqref{eq:mu3}, being a physical
+statement, is scheme independent. But even within the critical curve there still
+is a freedom in the choice of the coordinate $\lambda$ along the curve. Within
+the above class of schemes \eqref{eq:mu1}--\eqref{eq:mu2} this choice is
+controlled by the choice of the normalization scale $\mu$. If $\mu$ and
+$\tilde\mu$ are two different values of the normalization scale, the associated
+renormalized couplings constants
+\[
+\lambda=\lambda_{(\mu)}\qquad\text{and}\qquad\tilde\lambda=\lambda_{(\tilde\mu)}
+\]
+are related as
+\[
+\tilde\lambda=g(\lambda)=g(\lambda|\tilde\mu/\mu)\,,
+\]
+where at $d=4$, by dimensional counting, the function $g$ can depend on
+$\lambda$ and the dimensionless ratio $\tilde\mu/\mu$. And if $\tilde\mu$ is
+infinitesimally close to $\mu$, i.e.\ $\tilde\mu=\mu+\delta\mu$, then
+\[
+\tilde\lambda=\lambda+\frac{\delta\mu}\mu\,\beta(\lambda)\,,\qquad\text{where}\qquad
+\beta(\lambda)=\frac{dg(\lambda|\xi)}{d\xi}\Big|_{\xi=1}
+\]
+is a function of $\lambda$ alone.
+
+Of course the correlation functions are essentially independent of the
+renormalization scheme, in the present context of the choice of the scale $\mu$.
+More precisely, the ratios of the correlation functions, e.g.
+\begin{equation}\label{eq:Rratio}
+R(x_i|\lambda_{(\mu)},\mu)=\frac{\bigl\langle\varphi(x_1)\cdots\varphi(x_{2n})\bigr\rangle_{(\mu)}}{\langle\varphi\varphi\rangle^n_{(\mu)}}
+\end{equation}
+which are insensitive to the normalization of $\varphi$, do not change under
+substitutions
+\[
+\mu\to\tilde\mu\,,\qquad\lambda_{(\mu)}\to\lambda_{(\tilde\mu)}\,.
+\]
+Here the index $\mu$ in $\langle\cdots\rangle_{(\mu)}$ signifies that the
+correlation function is calculated in the scheme with the normalization scale
+$\mu$. This independence can be expressed in the form of partial differential
+equation
+\[
+\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}\Bigr)R(x_i|\lambda,\mu)=0\,,
+\]
+where now $\lambda$ and $\mu$ are viewed as two independent variables.
+
+These equations can be extended to the correlation functions themselves if one
+recalls that a change in renormalization scheme in general induces a finite
+change in normalization of $\varphi$,
+\[
+\varphi_{(\tilde\mu)}=Z^{-\frac12}_{\text{finite}}(\lambda|\tilde\mu/\mu)\,\varphi_{(\mu)}\,,
+\]
+where again at $d=4$ the constant $Z_{\text{finite}}$ can depend on $\lambda$ and
+dimensionless ratio $\tilde\mu/\mu$. For an infinitesimal change
+$\tilde\mu=\mu+\delta\mu$
+\[
+\varphi_{(\mu+\delta\mu)}=\Bigl(1-\frac{\delta\mu}\mu\,\gamma(\lambda)\Bigr)\,\varphi_{(\mu)}\,,
+\qquad\text{with}\qquad
+\gamma(\lambda)=\frac12\,\frac{dZ_{\text{finite}}(\lambda,\xi)}{d\xi}\Big|_{\xi=1}\,.
+\]
+Taking into account this transformation of $\varphi$ we obtain the so-called
+\emph{Callan-Symanzik equation}:
+\begin{equation}\label{eq:CS}
+\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{(\mu)}=0
+\end{equation}
+where the correlation function is viewed as depending on two parameters,
+$\lambda$ and $\mu$.
+
+At the first glance the Callan-Symanzik equation contains strictly zero physical
+information. Indeed, in order to make a meaningful renormalized perturbation
+theory we have introduced an auxiliary scale $\mu$ having in mind that nothing
+physical can depend on this arbitrary scale, and then the equation \eqref{eq:CS}
+just states that yes indeed nothing physical depends on $\mu$. This is
+absolutely true if no information about the functions $\beta(\lambda)$ and
+$\gamma(\lambda)$ is added. However, if something is known about those functions
+the Callan-Symanzik equation becomes useful.
+
+To see this let us first notice that by dimensional counting any correlation
+function of the $d=4$ massless theory can be written as
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{(\mu)}=\mu^n\,C^{(n)}(\mu x_1,\dots,\mu x_n|\lambda)\,,
+\]
+where $C^{(n)}$ is dimensionless function of dimensionless variables $\mu x_i$
+and $\lambda$. Therefore the Callan-Symanzik equation \eqref{eq:CS} can be written
+as
+\begin{equation}\label{eq:CSdil}
+\Bigl(\sum_{i=1}^nx_i\frac\partial{\partial x_i}+n\bigl(1+\gamma(\lambda)\bigr)+\beta(\lambda)\,\frac\partial{\partial\lambda}\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,,
+\end{equation}
+where the coordinate derivative operators have the following exact meaning
+\[
+x_i\frac\partial{\partial x_i}=\sum_{\mu=1}^4x_i^\mu\,\frac\partial{\partial x_i^\mu}\,.
+\]
+Note that the differential operator $\sum_ix_i\partial/\partial x_i$ describes
+infinitesimal dilation of the coordinates $x_i$ and therefore the equation
+\eqref{eq:CSdil} is the statement that such dilation can be essentially
+compensated (up to the field renormalization) by appropriate change of the
+coupling parameter $\lambda$. More precisely, an infinitesimal dilation of the
+coordinates is equivalent to certain infinitesimal shift of $\lambda$ plus an
+infinitesimal renormalization of $\varphi$,
+\[
+x^\mu\to(1+\delta L)\,x^\mu\quad\Longleftrightarrow\quad
+\lambda\to\lambda-\beta(\lambda)\,\delta L\,,\quad\varphi\to\varphi-\bigl(1+\gamma(\lambda)\bigr)\,\varphi\,\delta L\,.
+\]
+Let $\lambda(L)$ be a solution of the following differential equation and initial
+condition
+\begin{equation}\label{eq:flow1}
+L\frac d{dL}\,\lambda(L)=-\beta\bigl(\lambda(L)\bigr)\,,\qquad\lambda(1)=\lambda\,.
+\end{equation}
+Then the Callan-Symanzik equation states that
+\begin{equation}\label{eq:CSsol}
+Z^{\frac n2}(L)\,\bigl\langle\varphi(x_1/L)\cdots\varphi(x_n/L)\bigr\rangle_{\lambda(L)}=\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_\lambda\,,
+\end{equation}
+where the index $\lambda$ now shows the value of renormalized coupling constant,
+and $Z(L)$ solves the linear differential equation
+\begin{equation}\label{eq:ZL}
+L\frac d{dL}\,Z^{\frac12}(L)=-\Bigl(1+\gamma\bigl(\lambda(L)\bigr)\Bigr)\,Z^{\frac12}(L)\,,\qquad Z^{\frac12}(1)=1\,.
+\end{equation}
+It is assumed that the correlation functions in \eqref{eq:CSsol} are computed
+within the same scheme, with the same normalization scale $\mu$, but with
+different values, $\lambda(L)$ and $\lambda$, of the renormalized coupling
+parameter. Note that $\mu$ does not appear in \eqref{eq:CSsol}, i.e.\ in this form
+the Callan-Symanzik equation is not a statement about scheme dependence but
+rather determines how the theory behaves when one goes from one scale to
+another.
+
+\subsection*{Renormalization group flow}
+
+We can give this equation the following geometric interpretation. The coupling
+constants $\lambda$ and $\lambda(L)$ are coordinates representing two points, $P$
+and $P(L)$, of the critical submanifold (figure~\ref{fig:flowpoints}).
+\begin{figure}[ht]
+\centering\figfile{flowpoints}
+\caption{Two points $P$ and $P(L)$ on the critical curve, with coordinates
+$\lambda$ and $\lambda(L)$.}
+\label{fig:flowpoints}
+\end{figure}
+The equation \eqref{eq:CSsol} then states that the two field theories $P$ and
+$P(L)$ are related by the scale transformation
+\begin{equation}\label{eq:scaletr}
+x\to L\,x
+\end{equation}
+(the field renormalizations obviously do not affect the physical content of the
+theory). The equation
+\begin{equation}\label{eq:RGflow}
+L\frac d{dL}\,\lambda(L)=-\beta\bigl(\lambda(L)\bigr)
+\end{equation}
+describes, in given coordinate system, the ``flow'' in the space of field
+theories generated by the scale transformations. It is called the
+\emph{renormalization group flow}, and the equation \eqref{eq:RGflow} is usually
+referred to as the \emph{renormalization group flow equation}. The quantity
+$\lambda(L)$ is often referred to as ``running'', or ``scale-dependent'' coupling
+constant. The fact that the scale transformations \eqref{eq:scaletr} generate a
+``flow'' is not limited to the massless theory; we will see shortly that the
+Callan-Symanzik equation generalizes to the case $m^2\neq0$.
+
+We have seen that the functions $\beta(\lambda)$ and $\gamma(\lambda)$ contain
+most important information about the scale dependence of the massless theory.
+Unfortunately, these functions are not known exactly. However we can compute them
+perturbatively, order by order in the coupling parameter $\lambda$.
+
+There are many ways to do this. The simplest is just to compute the correlation
+functions perturbatively and then determine the functions $\beta$ and $\gamma$
+from the Callan-Symanzik equation \eqref{eq:CS} itself. Let us first note that the
+Callan-Symanzik equation in the form analogous to \eqref{eq:CS} applies to the
+momentum-space correlation functions as well as to coordinate-space ones (the
+Fourier transform relating the two depends neither on $\lambda$ nor on $\mu$).
+Moreover, simple calculation shows that this equation can be written as the
+equation
+\begin{equation}\label{eq:CSGamma}
+\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}-n\,\gamma(\lambda)\Bigr)\Gamma^{(n)}(p_1,\dots,p_n)=0
+\end{equation}
+involving the proper vertices.
+
+To the order $\lambda^2$ the proper vertices $\Gamma^{(2)}$ and $\Gamma^{(4)}$,
+when computed in the scheme \eqref{eq:mu1}--\eqref{eq:mu2}, are (I ask you to
+carry out the calculations as the homework Problem~\ref{hw:5})
+\begin{align}
+\Gamma^{(2)}(p^2)&=p^2+\frac1{12}\,\frac{\lambda^2}{(4\pi)^4}\,p^2\,\Bigl(\log(\mu^2/p^2)+1\Bigr)+O(\lambda^3)\,,\label{eq:G2mu}\\
+\Gamma^{(4)}(p_1,\dots,p_4)&=\lambda+\frac{\lambda^2}{2\,(4\pi)^2}\Bigl[\log\Bigl(\frac{p_{12}^2}{4\mu^2}\Bigr)+\log\Bigl(\frac{p_{13}^2}{4\mu^2}\Bigr)+\log\Bigl(\frac{p_{14}^2}{4\mu^2}\Bigr)\Bigr]+O(\lambda^3)\,,\label{eq:G4mu}
+\end{align}
+where $p_{12}^2=(p_1+p_2)^2$, etc. Let us first plug \eqref{eq:G2mu} into
+\eqref{eq:CSGamma}. The result is
+\[
+\frac2{12}\,\frac{\lambda^2}{(4\pi)^4}\,p^2+\beta(\lambda)\,\frac2{12}\,\frac\lambda{(4\pi)^4}\,p^2\,\bigl[\log(\mu^2/p^2)+1\bigr]-2\gamma(\lambda)\,p^2+O(\lambda^3)=0\,,
+\]
+where the first term came from the $\mu\partial/\partial\mu$ term in
+\eqref{eq:CSGamma}. The second term contains $p^2\log\mu^2/p^2$; this dependence
+cannot be canceled by two other terms exposed in the above equation. The only way
+to satisfy this equation in the order $\lambda^2$ is to assume that
+$\beta(\lambda)\sim\lambda^2$ so that the second term has to be attributed to the
+$O(\lambda^3)$ corrections. We then find
+\begin{equation}\label{eq:gamma1}
+\gamma(\lambda)=\frac1{12}\,\frac{\lambda^2}{(4\pi)^4}+O(\lambda^3)\,.
+\end{equation}
+Similarly, substitute the above perturbative result for $\Gamma^{(4)}$ into
+\eqref{eq:CSGamma}. We have
+\[
+-3\,\frac{\lambda^2}{(4\pi)^2}+\beta(\lambda)-4\lambda\,\gamma(\lambda)+O(\lambda^3)=0\,.
+\]
+We already know that $\gamma(\lambda)\sim\lambda^2$ and so the term involving this
+function is $O(\lambda^3)$. Therefore
+\begin{equation}\label{eq:beta1}
+\beta(\lambda)=3\,\frac{\lambda^2}{(4\pi)^2}+O(\lambda^3)\,.
+\end{equation}
+
+Note that the leading term \eqref{eq:beta1} of the $\beta$-function is
+\emph{positive}. This is the feature of $\varphi^4$ theory. The flow equation
+\eqref{eq:flow1} then shows that for small $\lambda$ the scale-dependent coupling
+constant $\lambda(L)$ \emph{decreases} with $L$. The equation \eqref{eq:CSsol}
+shows that larger $L$ correspond to \emph{longer} length scales (this is clear if
+one rewrites \eqref{eq:CSsol} in equivalent form
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{\lambda(L)}\sim\bigl\langle\varphi(Lx_1)\cdots\varphi(Lx_n)\bigr\rangle_\lambda
+\]
+showing that the correlation functions computed with $\lambda(L)$ are equivalent
+to the correlation functions computed with $\lambda$, with the separations
+``stretched'' by the scale factor $L$).
+
+If one ignores the higher order corrections in \eqref{eq:beta1} the flow equation
+\eqref{eq:flow1} is easily integrated,
+\begin{equation}\label{eq:running}
+\lambda(L)=\frac\lambda{1+3\frac\lambda{(4\pi)^2}\log L}\,.
+\end{equation}
+At sufficiently small $L$ (i.e.\ sufficiently short distances) the function
+$\lambda(L)$ diverges. This signals potential trouble with locality which we
+discussed earlier. Of course when $\lambda(L)$ becomes large one cannot ignore the
+higher-order corrections in \eqref{eq:beta1}; in fact in order to understand
+short-distance behavior of $\varphi^4$ theory we need to know the shape of the
+$\beta$-function at large $\lambda$. We see that the question of consistency of
+$\varphi^4$ theory cannot be settled on the perturbative level.
+
+In nonabelian gauge theories the leading term of the $\beta$-function turns out
+to be \emph{negative}, meaning that the running coupling constant
+\emph{decreases} at short distances (instead it increases at large distances); as
+a result, although nonabelian gauge theory usually cannot be solved by means of
+perturbation theory, the question of its \emph{consistency} as a local field
+theory can be positively answered on the basis of perturbative calculations. We
+will discuss this phenomenon known as \emph{asymptotic freedom} in greater details
+later.
+
+\subsection*{Mass perturbation}
+
+Let us refine our techniques further. So far we have considered the
+renormalization group flow in massless $\varphi^4$ theory. We would like to
+generalize this picture to the massive case. The most natural way to do this is
+to consider the massive $\varphi^4$ theory as the massless theory perturbed by
+adding the term $\frac{m^2}2\varphi^2$ to the action density. We already know that
+the field $\varphi^2$ requires renormalization. Let us discuss how this field
+renormalizes in our $\mu$-dependent scheme.
+
+In the massless theory the normalization condition
+$\Gamma^{(\varphi^2_R,2)}(0,0)=1$ we have used before has to be replaced by some
+nonsingular $\mu$ dependent condition. One can take for example
+\begin{equation}\label{eq:phi2mu}
+\Gamma^{(\varphi^2_R,2)}(p_1,p_2)\Big|_{\substack{p_i^2=2\mu^2\\(p_1p_2)=-\mu^2}}=1\,.
+\end{equation}
+The renormalized field $[\varphi^2]_{(\mu)}$ defined by this condition differs
+from the bare field $\varphi_0^2$ by the renormalization
+constant\footnote{Note that this definition of the $\varphi^2$ renormalization
+constant differs from that introduced in Section~14, Eq.~\eqref{eq:phi2Rinv}.
+There, we have defined the constant $Z_{\varphi^2}$ as the coefficient between
+$[\varphi^2]_R$ and $\varphi^2$. The new $Z^{\varphi^2}$ differs from
+$Z_{\varphi^2}$ in Section~14 by the factor of $Z$.},
+\[
+[\varphi^2]_{(\mu)}=\bigl(Z^{\varphi^2}_{(\mu)}\bigr)^{-1}\,\varphi_0^2\,.
+\]
+Simple calculation similar to that discussed in the previous Section shows that
+in the leading order
+\begin{equation}\label{eq:Zphi2mu}
+Z^{\varphi^2}_{(\mu)}=1-\frac12\,\frac\lambda{(4\pi)^{\frac d2}}\,(2\mu^2)^{\frac d2-2}\,\frac{\Gamma(2-d/2)\,\Gamma^2(d/2-1)}{\Gamma(d-2)}+O(\lambda^2)
+\end{equation}
+Although $Z^{\varphi^2}_{(\mu)}$ is divergent at $d=4$, the ratio
+$Z^{\varphi^2}_{(\tilde\mu)}/Z^{\varphi^2}_{(\mu)}$ is expected to be finite. An
+infinitesimal change of the renormalization scale $\mu\to\mu+\delta\mu$ then leads
+to infinitesimal renormalization
+\[
+[\varphi^2]_{(\mu+\delta\mu)}=\Bigl(1-\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\Bigr)\,[\varphi^2]_{(\mu)}\,,
+\]
+where
+\begin{equation}\label{eq:gammaphi2}
+\gamma_{\varphi^2}(\lambda)=\bigl(Z^{\varphi^2}_{(\mu)}\bigr)^{-1}\,\mu\frac d{d\mu}\,Z^{\varphi^2}_{(\mu)}
+\end{equation}
+is finite function of $\lambda$. From \eqref{eq:Zphi2mu} we obtain
+\begin{equation}\label{eq:gammaphi2val}
+\gamma_{\varphi^2}(\lambda)=\frac\lambda{(4\pi)^2}+O(\lambda^2)\,.
+\end{equation}
+Repeating our previous calculations we find that a correlation function with $N$
+insertions of $[\varphi^2]_{(\mu)}$ and $n$ insertions of $\varphi$, satisfies the
+modified Callan-Symanzik equation
+\[
+\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)+N\,\gamma_{\varphi^2}(\lambda)\Bigr)
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\,[\varphi^2]_{(\mu)}(y_1)\cdots[\varphi^2]_{(\mu)}(y_N)\bigr\rangle_{(\mu)}=0\,.
+\]
+
+Let us now introduce the mass term as
+\[
+\mathcal A_{M^2}=\mathcal A_0+\int d^dx\,\frac{M^2}2\,[\varphi^2]_{(\mu)}\,,
+\]
+where $\mathcal A_0$ is the massless action
+\[
+\mathcal A_0=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac\lambda{4!}\,\varphi^4+\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\Bigr]\,.
+\]
+Here $\delta Z_{(\mu)}$ and $\delta\lambda_{(\mu)}$ are counterterms computed in the
+massless theory, within the above $\mu$-dependent renormalization scheme (and I
+assumed dimensional regularization and therefore the $\delta m^2$ counterterm is
+not included). Recalling that
+\[
+[\varphi^2]_{(\mu)}=\frac{Z_{(\mu)}}{Z^{\varphi^2}_{(\mu)}}\,\varphi^2\,,\qquad Z_{(\mu)}=1+\delta Z_{(\mu)}\,,
+\]
+the massive action can be written as
+\[
+\mathcal A_{M^2}=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{M^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta M^2_{(\mu)}}2\,\varphi^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\Bigr]\,,
+\]
+where
+\begin{equation}\label{eq:deltaM2}
+\delta M^2_{(\mu)}=M^2\Bigl(\frac{Z_{(\mu)}}{Z^{\varphi^2}_{(\mu)}}-1\Bigr)\,.
+\end{equation}
+This action can be used now to develop a renormalized perturbation theory in the
+massive case. Note that the above definition of the mass parameter corresponds to
+specific renormalization scheme in which
+\begin{itemize}
+\item The counterterms $\delta Z_{(\mu)}$ and $\delta\lambda_{(\mu)}$ are borrowed
+from the massless theory; in particular these coefficients do not depend on $M^2$.
+\item The counterterm $\delta M^2_{(\mu)}$ is expressed by \eqref{eq:deltaM2}
+through the $\varphi^2$-renormalization constant $Z^{\varphi^2}_{(\mu)}$; again,
+this constant has to be computed upfront in the massless theory, and
+$\delta M^2_{(\mu)}$ depends on $M^2$ linearly.
+\end{itemize}
+Although it is possible to show that the counterterms thus defined indeed
+compensate for the divergences in the renormalized perturbation theory, no
+explicit normalization conditions are imposed in the massive theory. Relation
+between $M^2$, $\lambda$ and physical quantities in this scheme is not specified
+in advance but must be computed order by order in the perturbation theory. In
+this sense this renormalization scheme is similar to the ``minimal subtraction''
+scheme.
+
+Note that in this scheme the correlation functions depend on two mass
+parameters, $M$ and our auxiliary scale $\mu$, although we know only one is
+needed. This is the price we pay for defining specific coordinate system
+$(M^2,\lambda)$ which is nonsingular on the critical submanifold $M^2=0$. It is
+not difficult to check that correlation functions computed within this scheme
+admit smooth limit $M^2=0$; in fact it is clear in advance: at $M^2=0$ this
+perturbation theory simply reduces to the massless renormalized perturbation
+theory.
+
+Like in the massless case, nothing except for normalizations depends on the
+auxiliary scale $\mu$. Under the infinitesimal change
+\[
+\mu\to\mu+\delta\mu
+\]
+the renormalized field $[\varphi^2]_{(\mu)}$ transforms as
+\[
+[\varphi^2]_{(\mu+\delta\mu)}=\Bigl(1-\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\Bigr)\,[\varphi^2]_{(\mu)}\,.
+\]
+This brings in certain change in the action, which however is compensated if we
+simultaneously change the mass parameter,
+\[
+M^2\to\Bigl(1+\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\Bigr)\,M^2\,.
+\]
+Invariance of the action w.r.t.\ the above simultaneous change in $\mu$ and $M^2$
+leads to the equation
+\[
+\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)+\gamma_{\varphi^2}(\lambda)\,M^2\frac\partial{\partial M^2}\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,,
+\]
+or, equivalently (using $\langle\varphi(x_1)\cdots\varphi(x_n)\rangle=\mu^n\,C^{(n)}(\mu x_i,M^2/\mu^2|\lambda)$),
+\[
+\Bigl(\sum_ix_i\frac\partial{\partial x_i}+n\bigl(1+\gamma(\lambda)\bigr)+\beta(\lambda)\,\frac\partial{\partial\lambda}+\bigl(-2+\gamma_{\varphi^2}\bigr)\,M^2\frac\partial{\partial M^2}\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,.
+\]
+This equation shows that in the massive case the scale transformations induce the
+``flow'' in the two-dimensional space of $\varphi^4$ theories,
+\begin{equation}\label{eq:massflow}
+L\frac d{dL}\,\lambda=-\beta(\lambda)\,,\qquad L\frac d{dL}\,M^2=\bigl(2-\gamma_{\varphi^2}(\lambda)\bigr)\,M^2\,.
+\end{equation}
+Note that $\beta(\lambda)$ and $\gamma(\lambda)$ here are exactly the same as in the
+massless theory, while $\gamma_{\varphi^2}(\lambda)$ is also determined from the
+massless theory via Eq.~\eqref{eq:gammaphi2}.
+
+\begin{hwproblem}{5}\label{hw:5}
+In the massless $\varphi^4$ theory calculate $\Gamma^{(2)}$ and $\Gamma^{(4)}$
+explicitly, to the order $\lambda_{(\mu)}^2$. Use dimensional regularization, and
+the $\mu$-dependent scheme defined by Eqs.~\eqref{eq:mu1}, \eqref{eq:mu2}. In
+particular, calculate the counterterm coefficients $z^{(2)}_{(\mu)}$ and
+$a^{(2)}_{(\mu)}$, and confirm that $b^{(1)}_{(\mu)}=b^{(2)}_{(\mu)}=0$.
+
+In solving this problem the following dimensionally continued integral is useful
+\[
+\int\frac{d^dk}{k^2}=0\,.
+\]
+\end{hwproblem}
+
+\begin{hwproblem}{6}\label{hw:6}
+Consider a scalar field theory with $N$-component field
+$\vec\varphi=(\varphi_1,\dots,\varphi_N)$, and $O(N)$-symmetric action
+\[
+\mathcal A=\int d^dx\,\Bigl[\frac12\,\bigl(\partial\vec\varphi\bigr)^2+\frac{M^2}2\,\vec\varphi^{\,2}+\frac\lambda8\,\bigl(\vec\varphi^{\,2}\bigr)^2\Bigr]\,.
+\]
+\begin{hwparts}
+\item Use the $O(N)$ symmetry to show that the two- and four-point correlation
+functions $\tilde W^{(2)}_{ij}(p)$ and $\tilde W^{(4)}_{ijkl}(p_1,p_2,p_3,p_4)$
+defined as
+\begin{align*}
+\tilde W^{(2)}_{ij}(p)&:=\text{f.t.}\,\bigl\langle\varphi_i(x)\varphi_j(x')\bigr\rangle\,,\\
+\tilde W^{(4)}_{ijkl}(p_1,p_2,p_3,p_4)&:=\text{f.t.}\,\bigl\langle\varphi_i(x_1)\varphi_j(x_2)\varphi_k(x_3)\varphi_l(x_4)\bigr\rangle
+\end{align*}
+enjoy the following structures
+\begin{align*}
+\tilde W^{(2)}_{ij}(p)&=\delta_{ij}\,\tilde W^{(2)}(p)\,,\\
+\tilde W^{(4)}_{ijkl}(p_1,p_2,p_3,p_4)&=\delta_{ij}\delta_{kl}\,\tilde W^{(4)}(p_1,p_2;p_3,p_4)+\delta_{ik}\delta_{jl}\,\tilde W^{(4)}(p_1,p_3;p_2,p_4)\\
+&\qquad+\delta_{il}\delta_{jk}\,\tilde W^{(4)}(p_1,p_4;p_2,p_3)
+\end{align*}
+with scalar functions $\tilde W^{(2)}(p)$ and $\tilde W^{(4)}(p_1,p_2;p_3,p_4)$.
+Define the scalar proper vertices $\Gamma^{(2)}(p)$ and
+$\Gamma^{(4)}(p_1,p_2,p_3,p_4)$.
+\item Introduce all elements of Feynman diagram technique (in the momentum space)
+for this model, i.e.\ propagators and vertices.
+\item For the massless theory write down the Callan-Symanzik equations for the
+proper vertices $\Gamma^{(2)}(p)$ and $\Gamma^{(4)}(p_1,p_2,p_3,p_4)$.
+\item At $d=4$ compute the functions $\beta(\lambda)$ and $\gamma(\lambda)$ to the
+order $\lambda^2$.
+\end{hwparts}
+\end{hwproblem}

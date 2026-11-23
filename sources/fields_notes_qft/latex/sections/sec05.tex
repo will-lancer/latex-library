@@ -1,0 +1,434 @@
+% Source pp. 38-48 (Lectures1-6.pdf).
+\section{Path Integrals}
+
+Let me briefly review the method of path integral in ordinary quantum
+mechanics. Here I will combine it with the idea of analytic continuation in
+the time variable. We will start with the ``time evolution'' in pure imaginary
+values of the time parameter. (Besides technical advantage of improving
+convergence of the integral, the imaginary-time path integral makes evident
+remarkable relation to classical statistical mechanics, see below.) The
+real-time transition amplitudes can be recovered by analyticity. For
+derivation directly in real time see \textbf{Sect.~9.1 of PS}.
+
+\subsection*{Path integral in Quantum Mechanics}
+
+Given a quantum mechanical system, with the space of states $\Ham$ and the
+time-independent Hamiltonian $\hat H$, many problems can be reduced to the
+calculations of appropriate matrix elements of its time-evolution operator,
+\[
+\bra{f}e^{-\frac i\hbar\hat Ht}\ket{i}\,.
+\]
+In terms of the stationary states $\ket n$ this can be written as
+\[
+\sum_n\braket{f}{n}\braket{n}{i}\,e^{-\frac i\hbar E_nt}\,.
+\]
+In a typical problem, the energy spectrum $E_n$ is bounded from below,
+$E_n\ge E_0$, and $E_n$ grow to infinity with $n$. The above expression is a
+sum of oscillating terms, and we would like to have an efficient mathematical
+tool to sort them out. It is useful to consider this sum at complex values of
+$t$. If the number of states does not grow exponentially with $E$ (and in
+ordinary quantum system it never does), this sum converges absolutely if $t$
+has negative imaginary part; thus it defines an analytic function of $t$ in
+the lower half-plane. The real-time matrix element is the limiting value of
+this analytic function. One can start with pure imaginary $t$,
+\[
+t=-i\tau\,,
+\]
+and try to evaluate the matrix elements of the corresponding bounded Hermitian
+operator
+\[
+\bra{f}e^{-\frac1\hbar\hat H\tau}\ket{i}\,,
+\]
+anticipating that the real-time answer will be then obtained by analytic
+continuation.
+
+Consider a system with one degree of freedom $q$, and assume that the
+Hamiltonian operator is ``local'' in the basis which diagonalizes $\hat q$;
+this means that the matrix elements
+\[
+\bra{q}\hat H\ket{q'}
+\]
+have a support restricted to $q=q'$. Most typical Hamiltonians belong to this
+class, for instance for $H=\frac12p^2+V(q)$ the above matrix element is
+($\hbar=1$ from now on)
+\[
+-\frac12\,\delta''(q-q')+V(q)\,\delta(q-q')\,.
+\]
+In such cases it is possible to develop a path-integral representation for the
+matrix element
+\[
+\bra{q_f}e^{-\hat H\tau}\ket{q_i}\,.
+\]
+The composition property (which follows from $\mathbb{I}=\int dq\,\ket q\bra q$)
+\[
+\bra{q_f}e^{-\hat H(\tau_1+\tau_2)}\ket{q_i}=\int\bra{q_f}e^{-\hat H\tau_1}\ket{q}\,\bra{q}e^{-\hat H\tau_2}\ket{q_i}\,dq
+\]
+can be applied repeatedly to reduce the above matrix element to the
+composition of the matrix elements with arbitrarily small ``time'' intervals
+$\Delta\tau$,
+\[
+\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\int\prod_{k=1}^{n-1}dq_k\,\prod_{k=1}^n\bra{q_k}e^{-\hat H\Delta\tau}\ket{q_{k-1}}\,,
+\]
+where $q_0=q_i$, $q_n=q_f$, and $\Delta\tau=\tau/n$. In the limit of small
+$\Delta\tau$, as the consequence of the ``locality'' of $\hat H$ in the
+$q$-space, only the matrix elements $\bra{q'}\exp(-\hat H\Delta\tau)\ket{q}$
+with $q'$ close to $q$ will bring significant contributions to the integral.
+
+To see this, consider again the Hamiltonian of the form
+\[
+\hat H=\frac12\,\hat p^2+V(\hat q)\,.
+\]
+It is straightforward to show that in this case the matrix element
+\[
+G(q,q'|\tau)=\bra{q}e^{-\hat H\tau}\ket{q'}
+\]
+satisfies the differential equation of the diffusion type
+\[
+-\frac{\partial}{\partial\tau}\,G(q,q'|\tau)=\Bigl(-\frac12\,\frac{\partial^2}{\partial q^2}+V(q)\Bigr)\,G(q,q'|\tau)\,,
+\]
+with the initial condition
+\[
+G(q,q'|0)=\delta(q-q')\,.
+\]
+For $V(q)=0$ the problem is easily solved,
+\[
+G(q,q'|\tau)=\frac1{\sqrt{2\pi\tau}}\,e^{-\frac{(q-q')^2}{2\tau}}\,.
+\]
+This function indeed decays fast at $|q-q'|\gg\sqrt\tau$. In the case of
+nonzero potential $V$ the problem still can be solved in the limit of small
+$\tau$. We write
+\[
+G(q,q'|\tau)=e^{-\sigma(q,q'|\tau)}
+\]
+and look for $\sigma$ of the form of the following small-$\tau$ expansion
+\[
+\sigma(q,q'|\tau)=\frac{\sigma_0(q,q')}{\tau}+a\,\log\tau+b+\tau\,\sigma_1(q,q')+\dots\,.
+\]
+Substituting this ansatz into the above diffusion equation one finds (I
+suggest doing it as an \textbf{Exercise})
+\[
+\sigma_0(q,q')=\frac{(q-q')^2}{2}\,,\qquad a=1/2\,,\qquad
+\sigma_1(q,q')=\frac1{q-q'}\int_{q'}^qV(y)\,dy\,,\qquad\text{etc.}
+\]
+The leading terms do not depend on $V$, and are the same as for the free case,
+and $\sigma_1$ is the potential $V$ averaged over the interval $[q',q]$. The
+constant $b=\frac12\log2\pi$ is determined by the initial condition at
+$\tau=0$.
+
+Because of the factor $\exp(-\sigma_0(q,q')/\tau)$ the function
+$G(q,q'|\tau)$ at small $\tau$ is sharply peaked around $|q-q'|=0$ with the
+width $\sqrt\tau$. This is typical for the \emph{Brownian motion}, where
+$\bar R\sim\sqrt t$ (our equation \emph{is} the diffusion equation). If the
+potential $V$ is differentiable (which we assume), we have
+\[
+\sigma_1(q,q')=\frac12\,V(q)+\frac12\,V(q')+O(\tau)
+\]
+(I have used the fact that $(q-q')^2\sim\tau$). Therefore, for finite $\tau$
+but large $n$ (i.e.\ small $\Delta\tau=\tau/n$) we can write
+\[
+\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\lim_{n\to\infty}\Bigl(\frac1{2\pi\Delta\tau}\Bigr)^{n/2}\int\Bigl(\prod_{k=1}^{n-1}dq_k\Bigr)\,e^{-\mathcal A\{q_k\}}\,,
+\]
+where
+\[
+\mathcal A\{q_k\}=\sum_{k=1}^n\biggl[\frac{(q_k-q_{k-1})^2}{2\,\Delta\tau}+\Delta\tau\,\frac{V(q_k)+V(q_{k-1})}{2}\biggr]\,,
+\]
+and $\Delta\tau=\tau/n$, and it is understood that
+\[
+q_0=q_i\,,\qquad\text{and}\qquad q_n=q_f\,.
+\]
+Before the limit $n\to\infty$ is taken, the integration in this formula can be
+understood as going over the piecewise linear ``trajectories'' $q(\tau)$
+running from $q_i$ to $q_f$ (figure~\ref{fig:piecewise}).
+\begin{figure}[ht]
+\centering\figfile{piecewise}
+\caption{A piecewise linear trajectory from $q_i$ at $\tau_0$ to $q_f$ at
+$\tau_n$. The intermediate values $q_k=q(\tau_k)$ are integrated over.}
+\label{fig:piecewise}
+\end{figure}
+
+When $n\to\infty$, $\Delta\tau\to0$, the function $\mathcal A\{q_k\}$ in the
+exponential has formal limit
+\[
+\mathcal A[q(\tau)]=\int_0^\tau d\tau\,\Bigl[\frac12\,\bigl(dq(\tau)/d\tau\bigr)^2+V\bigl(q(\tau)\bigr)\Bigr]\,.
+\]
+It coincides with the ``imaginary time action'', i.e.\ the action associated
+with our system, with $t$ replaced by $-i\tau$,
+\[
+e^{\frac i\hbar S[q(t)]}\ \xrightarrow{\ t\to-i\tau\ }\ e^{-\mathcal A[q(\tau)]}\,.
+\]
+It is conventional to write the $n\to\infty$ limit of the above $n$-fold
+integral as
+\[
+\bra{q_f}e^{-\hat H(\tau_f-\tau_i)}\ket{q_i}=\int\bigl[Dq(\tau)\bigr]_{\substack{q(\tau_i)=q_i\\q(\tau_f)=q_f}}\,e^{-\mathcal A[q(\tau)]}\,,
+\]
+and to call it the (imaginary time) path integral, since the r.h.s.\ involves
+the continuous path $q(\tau)$ from $q_i$ to $q_f$.
+
+Few remarks.
+
+1. The path integral method makes the most explicit use of the
+\emph{superposition principle} of quantum theory. The latter states that if
+some process can go several distinct ways, the full transition amplitude is
+the sum of the amplitudes associated with each possible way. Here (when
+returning back to real time) we sum the amplitudes associated with all
+distinct paths from $q_i$ to $q_f$.
+
+2. What kind of paths enter the path integral in the limit $n\to\infty$?
+Although it is correct to think of the limiting paths as continuous functions
+$q(\tau)$, absolute majority of the paths entering the integral are not smooth
+curves. This can be observed directly from the fact that for
+$\tau_1-\tau_2\to0$ we have $|q(\tau_1)-q(\tau_2)|\sim\sqrt{|\tau_1-\tau_2|}$,
+not $\sim|\tau_1-\tau_2|$ as should be true for a continuously differentiable
+function. From this point of view the two terms in the action play
+significantly different role. The ``kinetic'' term $\frac12\int(dq/d\tau)^2\,d\tau$
+selects the class of the paths entering the integral, i.e.\ those paths for
+which $\bigl(q(\tau+\Delta\tau)-q(\tau)\bigr)^2/\Delta\tau$ remains finite as
+$\Delta\tau\to0$; in this sense the factor
+$\exp\bigl(-\frac12\int(dq/d\tau)^2\,d\tau\bigr)$ should be regarded as a part
+of the functional measure. The factor $\exp\bigl(-\int V(q(\tau))\,d\tau\bigr)$
+weights the paths according to their average potential energy.
+
+3. Note that the symbol
+\[
+\bigl[Dq(\tau)\bigr]=\lim_{n\to\infty}\Bigl(\frac1{2\pi\Delta\tau}\Bigr)^{n/2}\prod_{k=1}^{n-1}dq_k
+\]
+contains divergent (in the limit) factor
+\[
+\Bigl(\frac1{2\pi\Delta\tau}\Bigr)^{n/2}=e^{-\frac{\log(2\pi\Delta\tau)}{2\,\Delta\tau}\,L}\,,
+\]
+where $L=(\tau_f-\tau_i)=n\,\Delta\tau$ is the ``volume'' of the imaginary
+time interval. This factor is reminiscent of the irritating infinity we had
+for the vacuum energy in the KG theory, and absorbing it into $[Dq(\tau)]$ is
+analogous to subtracting $E_0$ from $\hat H$.
+
+4. We have derived the above path integral representation of the evolution
+operator in the imaginary time $\tau$. But one can repeat the above
+calculation step by step, considering the paths in the real time $t$ instead
+of $\tau$ (this is the form in which the path integral is usually introduced
+in quantum mechanics, see for instance \S9.1 of the textbook). In this way one
+arrives at the expression
+\[
+\bra{q_f}e^{-\frac i\hbar HT}\ket{q_i}=\int\bigl[Dq(t)\bigr]\,e^{\frac i\hbar S[q(t)]}\,,
+\]
+with the phase $e^{\frac i\hbar S}$ replacing $e^{-\mathcal A}$. This of
+course is equivalent approach, although, unlike the imaginary time scheme, the
+integrals involved are not absolutely convergent. Usually, the most efficient
+way to handle such integrals is through analytic continuation (in variables or
+parameters) which makes the integral absolutely convergent, with subsequent
+taking the limiting values. The imaginary-time approach simply makes this
+procedure explicit.
+
+5. Generalization of the above construction to the systems with many degrees
+of freedom $q_a$ is straightforward, if the Hamiltonian is of the form
+\[
+H=\sum_a\frac12\,p_a^2+V(q_a)\,;
+\]
+one obtains
+\[
+\int\bigl[Dq_a\bigr]\,e^{-\mathcal A[q_a(\tau)]}
+\]
+for the evolution operator. In more complicated cases the path integral in the
+phase space can be useful; this is briefly discussed in Sect.~9.1 of PS.
+
+\subsection*{Relation to Classical Statistical Mechanics}
+
+At this point, let me deviate to discuss remarkable relation which exists
+between the \textbf{Path Integral in Quantum Mechanics} (in its imaginary time
+version) and the \textbf{Classical Statistical Mechanics}. Let us recall some
+generalities of the classical statistical mechanics.
+
+Suppose we have a classical dynamical system with the phase-space coordinates
+$\{P_i,Q_i\}$ (I will use capitals here because the relation between these
+$Q_i$ and $q_a$ appearing in the path integral is not going to be
+straightforward), and the Hamiltonian $\Ham(P_i,Q_i)$. In a thermal
+equilibrium state at a temperature $T$ the probability distribution of
+microscopic states is given by the Gibbs formula
+\[
+\mathcal P(P_i,Q_i)\prod_i dP_i\,dQ_i=Z^{-1}\,e^{-\beta\Ham(P_i,Q_i)}\,\frac1{N!}\prod_i dP_i\,dQ_i\,,
+\]
+where $\beta=1/kT$, and $Z$ is the partition function
+\[
+Z=\int\frac{\prod_i dP_i\,dQ_i}{N!}\,e^{-\beta\Ham(P_i,Q_i)}\,.
+\]
+Calculating the partition function is one of the main problems in statistical
+mechanics because the thermodynamic quantities are expressed through $Z$, say
+the free energy is $\beta F=-\log Z$. Again, a typical form of the Hamiltonian
+is
+\[
+\Ham(P_i,Q_i)=\sum_i\frac12\,P_i^2+U(\{Q_i\})\,.
+\]
+In this case the integration over $P_i$ is easy to perform,
+\[
+Z=\frac1{N!}\Bigl(\frac{2\pi}{\beta}\Bigr)^{\frac N2}Z_{\text{conf}}\,,
+\]
+where $N$ is the number of the degrees of freedom, $i=1,2,\dots,N$, and
+$Z_{\text{conf}}$ is the configuration-space integral
+\[
+Z_{\text{conf}}=\int\prod_i dQ_i\,e^{-\beta U(\{Q_i\})}
+\]
+which contains most of interesting physics.
+
+As a special example of such system, consider an elastic string whose
+configuration is described by a function $q(\tau)$, $\tau\in[0,L]$; the values
+$q(\tau)$ for all $\tau$ within this interval play the role of the
+configuration-space coordinates (figure~\ref{fig:string}),
+\[
+\{Q_i\}\to q(\tau)\,.
+\]
+\begin{figure}[ht]
+\centering\figfile{string}
+\caption{A configuration $q(\tau)$ of the elastic string on $[0,L]$ with the
+ends held at $q(0)=q_i$ and $q(L)=q_f$.}
+\label{fig:string}
+\end{figure}
+We also assume that the string lies in a potential well $V(q)$, so that the
+potential energy of the string is
+\[
+U[q(\tau)]=\int_0^Ld\tau\,\biggl[V\bigl(q(\tau)\bigr)+\frac12\,\Bigl(\frac{dq(\tau)}{d\tau}\Bigr)^2\biggr]\,,
+\]
+where the last term accounts for the elastic energy; to simplify the equations
+I have assumed that the elastic string tension equals 1.
+
+To evaluate the configuration part of the partition function, we must
+integrate over the functions $q(\tau)$ satisfying given boundary conditions at
+the ends of the interval $[0,L]$, say
+\[
+q(0)=q_i\,,\qquad q(L)=q_f\,,
+\]
+with the statistical weights $\exp(-\beta\,U[q(\tau)])$. Thus
+\[
+Z_{\text{conf}}=\int\bigl[Dq(\tau)\bigr]\,e^{-\beta U[q(\tau)]}\,.
+\]
+With the above form of $U[q(\tau)]=\mathcal A[q(\tau)]$, this expression is
+identical to the path integral for the imaginary time transition amplitude,
+\[
+Z_{\text{conf}}\sim\bra{q_f}e^{-\frac1\hbar\hat HL}\ket{q_i}\,,
+\]
+provided we also identify
+\[
+\beta=1/\hbar\,.
+\]
+We see that quantum mechanics with a single degree of freedom $q$, and the
+Hamiltonian operator
+\[
+\hat H=\frac12\,\hat p^2+V(\hat q)\,,
+\]
+is related in this way to classical statistical mechanics of a system with
+continuously many degrees of freedom $q(\tau)$.
+
+\subsection*{Correlation Functions}
+
+In statistical mechanics one may also be interested in \emph{correlation
+functions}. In our example one may ask how the string positions $q(\tau)$ at
+different points, say at $\tau_1,\tau_2,\dots,\tau_N$, are correlated in the
+thermal equilibrium state. In figure~\ref{fig:stringcorr} I made a trivial
+shift of the variable $\tau$, so that from now on $\tau\in[-L/2,L/2]$.
+\begin{figure}[ht]
+\centering\figfile{stringcorr}
+\caption{The string on $[-L/2,L/2]$, with its positions $q(\tau_1),\dots,q(\tau_N)$
+marked at $\tau_1\le\tau_2\le\dots\le\tau_N$.}
+\label{fig:stringcorr}
+\end{figure}
+
+The correlations are described by the averaged products
+$q(\tau_1)q(\tau_2)\cdots q(\tau_N)$, which in turn are given by the integrals
+\[
+\bigl\langle q(\tau_1)\,q(\tau_2)\cdots q(\tau_N)\bigr\rangle
+=Z^{-1}\int q(\tau_1)q(\tau_2)\cdots q(\tau_N)\,e^{-\mathcal A[q(\tau)]}\,\bigl[Dq(\tau)\bigr]\,,
+\]
+because $Z^{-1}e^{-\mathcal A[q(\tau)]}\,[Dq(\tau)]$ is the statistical
+weight of the microstate $q(\tau)$. It is instructive to find out how these
+correlation functions are interpreted in associated quantum mechanical
+problem.
+
+Without loss of generality we can assume that
+\[
+-L/2\le\tau_1\le\tau_2\le\dots\le\tau_N\le L/2\,.
+\]
+The integration over all microstates $q(\tau)$ can be performed in two steps:
+First, we fix the values of $q(\tau)$ at the points $\tau_1,\tau_2,\dots,\tau_N$
+to be
+\[
+q(\tau_1)=q_1\,,\quad q(\tau_2)=q_2\,,\quad\dots\quad q(\tau_N)=q_N\,,
+\]
+and integrate over all $q(\tau)$ subject to these constraints. After that, the
+integration over $q_1,q_2,\dots,q_N$ is performed to complete the integral.
+Comparing this with the path integral representation for the evolution
+operator, say
+\[
+\bra{q_2}e^{-\hat H(\tau_2-\tau_1)}\ket{q_1}=\int\bigl[Dq(\tau)\bigr]_{\substack{q(\tau_1)=q_1\\q(\tau_2)=q_2}}\,e^{-\mathcal A[q(\tau)]}\,,
+\]
+we find
+\begin{multline*}
+\bigl\langle q(\tau_1)q(\tau_2)\cdots q(\tau_N)\bigr\rangle=Z^{-1}\int\Bigl[\prod_{k=1}^Ndq_k\Bigr]\times q_1q_2\cdots q_N\\
+\times\bra{q_f}e^{-\hat H(L/2-\tau_N)}\ket{q_N}\bra{q_N}e^{-\hat H(\tau_N-\tau_{N-1})}\ket{q_{N-1}}\cdots\bra{q_1}e^{-\hat H(\tau_1+L/2)}\ket{q_i}\,.
+\end{multline*}
+Recall that in the coordinate representation the operator $\hat q$ acts by
+multiplication
+\[
+\hat q\,\Psi(q)=q\,\Psi(q)\,,
+\]
+so that in this expression we can replace
+\[
+\int dq\,\ket{q}\,q\,\bra{q}=\hat q\,.
+\]
+Then the above expression can be written as
+\[
+\bra{q_f}e^{-\hat H(L/2-\tau_N)}\,\hat q\,e^{-\hat H(\tau_N-\tau_{N-1})}\,\hat q\cdots\hat q\,e^{-\hat H(\tau_1+L/2)}\ket{q_i}
+\]
+which is best expressed in terms of the ``Euclidean'' (i.e.\ imaginary time)
+Heisenberg operators
+\[
+\hat q_E(\tau)=e^{\hat H\tau}\,\hat q\,e^{-\hat H\tau}
+\]
+($\tau=it$), allowing one to write the above formula as
+\[
+\bra{q_f}e^{-\hat H\frac L2}\,\hat q_E(\tau_N)\,\hat q_E(\tau_{N-1})\cdots\hat q_E(\tau_1)\,e^{-\hat H\frac L2}\ket{q_i}\,.
+\]
+To simplify things further, let's take the limit $L\to\infty$, thus turning to
+the correlation functions of the infinite string. In this limit the exact
+boundary conditions, e.g.\ the values $q_i$ and $q_f$, become unimportant.
+Indeed, the states $\ket{q_i}$ and $\ket{q_f}$ can be expanded in the
+stationary states $\ket n$ of the Hamiltonian $\hat H$, say
+\[
+\ket{q_i}=\sum_n\ket n\braket{n}{q_i}=\sum_n\ket n\,\Psi_n^*(q_i)\,,
+\]
+where it is assumed that
+\[
+\braket{n}{m}=\delta_{n,m}\,.
+\]
+In the limit $L\to\infty$ the contribution of the ground state $\ket0$
+dominates, since all other states are suppressed by the factor
+$\sim e^{-(E_n-E_0)\frac L2}$. Thus we have
+\[
+\bigl\langle q(\tau_1)q(\tau_2)\cdots q(\tau_N)\bigr\rangle=\frac{\braket{q_f}{0}\braket{0}{q_i}}{Z}\,e^{-E_0L}\,
+\bra0\hat q_E(\tau_N)\,\hat q_E(\tau_{N-1})\cdots\hat q_E(\tau_1)\ket0\,.
+\]
+Furthermore, note that
+\[
+Z=\bra{q_f}e^{-\hat HL}\ket{q_i}\ \to\ \braket{q_f}{0}\braket{0}{q_i}\,e^{-E_0L}\,,
+\]
+hence the first factor in the above equation equals 1 (in the limit
+$L=\infty$), and we have
+\[
+\bigl\langle q(\tau_1)\cdots q(\tau_N)\bigr\rangle=\bra0\hat q_E(\tau_N)\,\hat q_E(\tau_{N-1})\cdots\hat q_E(\tau_1)\ket0\,.
+\]
+Note that the operators here are arranged in the order of $\tau$ increasing
+from the right to the left. Let me stress that the Euclidean Heisenberg
+operators can not be arranged any other way, as otherwise the product of the
+operators (the sum over the intermediate states) does not converge. More
+generally, if we consider complex values of $\tau_i$ (which we will), the above
+product of the operators makes direct sense in the domain
+\[
+\Re\tau_1\le\Re\tau_2\le\dots\le\Re\tau_N
+\]
+where the sums over the intermediate states converge (hence the sums yield
+analytic function).
+
+To relate the above Euclidean correlation function to the real-time ones one
+analytically continues to pure imaginary values of $\tau$,
+\[
+\tau_k=it_k+0\,,
+\]
+where ``$+0$'' shift indicates that if there is a branch cut along the
+imaginary axis the values at the right edge are to be taken.

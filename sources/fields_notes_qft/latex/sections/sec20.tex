@@ -1,0 +1,226 @@
+% Source pp. 208-213 (Lectures19-25.pdf).
+\section{Fixed Points and Criticality}
+
+It is possible to establish direct relation between the singular behavior of
+thermodynamic quantities near critical points and the fixed points of the
+Wilson's RG. This relation explains experimentally observed \emph{universality}
+of critical singularities.
+
+Let us consider again a magnet. As we have seen few lectures ago, the long-range
+fluctuations of local magnetization $M(x)$ can be taken into account by
+considering the statistical integral
+\[
+Z=\int[D\varphi_0]\,e^{-\mathcal A_0[\varphi_0]}\,,
+\]
+where the field $\varphi_0(x)$ is proportional to $M(x)$,
+\[
+\varphi_0(x)=C(T)\,M(x)\,,
+\]
+with some temperature-dependent coefficient. It is assumed that this functional
+integral has cutoff, with the cutoff parameter $\Lambda$ such that
+\[
+\Lambda^{-1}\gg a\,,
+\]
+the atomic scale. Exact form of the action $\mathcal A_0$ is not known; it
+combines statistical contributions of all microscopic fluctuations and depends
+significantly on all details of the microscopic interactions. In Landau-Ginzburg
+approximation one takes
+\[
+\mathcal A_0=\int d^dx\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2(T)}2\,\varphi_0^2+\frac{\lambda_0(T)}{4!}\,\varphi_0^4\Bigr]\,,
+\]
+where $m_0^2(T)$, $\lambda_0(T)$ are unknown functions of $T$, but it can be any
+other combination of powers of $\varphi_0$ and its derivatives. What is important,
+all the coefficients are some (generally unknown) functions of the temperature
+$T$. This means that the actions describing real physical system, with all its
+microscopic details, being functions of the temperature, form one-dimensional
+submanifold in $\Sigma$; I will call it the ``physical curve'' (Wilson used the
+term ``canonical curve'').
+
+Now let us assume that there is a fixed point $\mathcal A_*$ out there in
+$\Sigma$. At this point we actually will consider a subspace
+$\Sigma_{\text{symm}}\subset\Sigma$ which contains only actions invariant under
+$\varphi_0\to-\varphi_0$. We assume that there is a fixed point
+$\mathcal A_*\in\Sigma_{\text{symm}}$ such that it has only one (symmetric)
+relevant (or marginally relevant) field $\Phi_0$, with dimension $D_0<d$. In
+other words, the unstable manifold in $\Sigma_{\text{symm}}$ is one-dimensional,
+and correspondingly the critical surface $\Sigma_c$ has codimension one. This
+means that the physical curve generally intersects this critical surface at some
+point. This is illustrated in figure~\ref{fig:physcurve}.
+\begin{figure}[ht]
+\centering\figfile{physcurve}
+\caption{The critical surface $\Sigma_c$ with the fixed point $\mathcal A_*$ and
+its one-dimensional unstable manifold $U(\mathcal A_*)$. The physical curve,
+parametrized by the temperature, crosses $\Sigma_c$ at $T=T_c$.}
+\label{fig:physcurve}
+\end{figure}
+
+Let us denote $T_c$ the temperature corresponding to the intersection point. The
+large-distance properties of the system can be understood if we can follow the RG
+flow which starts at any point of the physical curve. Let us consider a typical
+pattern of the RG flow in this situation. Besides the critical fixed point
+$\mathcal A_*$, there are two non-critical ($R_c=0$) fixed points,
+$P_{\text{high}}$ and $P_{\text{low}}$\footnote{For a magnetic transition
+$P_{\text{high}}$ corresponds to the probability distribution
+$P_{\text{high}}[\varphi_0]\sim\prod_x\delta(\varphi_0(x))$, and
+$P_{\text{low}}[\varphi_0]\sim\prod_x\delta(\varphi_0(x)-\bar\varphi_0)+\prod_x\delta(\varphi_0(x)+\bar\varphi_0)$.}
+(figure~\ref{fig:critflow}).
+\begin{figure}[ht]
+\centering\figfile{critflow}
+\caption{RG flow near a critical point. Trajectories starting on the physical
+curve above $T_c$ go to $P_{\text{high}}$, those below $T_c$ go to
+$P_{\text{low}}$. The trajectory $C$ starting at $T_c$ stays in $\Sigma_c$ and
+ends at $\mathcal A_*$; a trajectory $C_\tau$ starting close to $T_c$ follows $C$,
+lingers near $\mathcal A_*$, and leaves along the unstable manifold.}
+\label{fig:critflow}
+\end{figure}
+
+A trajectory starting at any point on the physical curve corresponding to $T>T_c$,
+and far enough from $T_c$, converges quickly to the noncritical fixed point
+$P_{\text{high}}$. Similarly, starting at any point with $T<T_c$ one quickly
+reaches $P_{\text{low}}$. The only trajectory which behaves qualitatively
+differently is the one that starts at the point $T_c$ itself. This trajectory $C$
+lies entirely at the critical surface, and converges to the critical fixed point
+$\mathcal A_*$ as $l\to\infty$. This means that the large-distance physics exactly
+at the critical temperature is completely determined by the fixed-point action
+$\mathcal A_*$. In particular, the two-point correlation function will have the
+scale-invariant form
+\[
+\bigl\langle M(x)M(x')\bigr\rangle_{T=T_c}=\frac\Const{|x-x'|^{2D_\varphi}}
+\]
+for $|x-x'|\gg a\,e^{l_0}$, where $l_0$ is some finite amount of the RG ``time''
+$l$ needed to arrive at close proximity of $\mathcal A_*$. Here $D_\varphi$ is the
+dimension of $\varphi$ at this fixed point.
+
+Consider now a trajectory $C_\tau$ which starts at some point $T$ very close to
+$T_c$,
+\begin{equation}\label{eq:tau}
+\tau=\frac{T_c-T}{T_c}\ll1\,.
+\end{equation}
+To be definite I will assume that $T<T_c$. There are three distinct stages of the
+RG ``evolution'' for such trajectory. At the first stage it goes very close to $C$
+approaching $\mathcal A_*$, until it comes to close proximity of this fixed point.
+It then stays near $\mathcal A_*$ for very long RG ``time'' $l$. This is the
+second stage. Finally, in the third stage it departs toward $P_{\text{low}}$
+staying close to the unstable manifold $U$.
+
+The second stage is the most important one; that is where the critical
+singularities are formed. Because at this stage the trajectory stays close to the
+fixed point, we can use linear analysis. Let us assume that in some finite amount
+$l_0$ of RG ``time'' the trajectory $C_\tau$ comes close to $\mathcal A_*$, where
+the corresponding action can be written as
+\begin{equation}\label{eq:nearfp}
+\mathcal A=\mathcal A_*+y_0\int d^dx\,\Phi_0(x)+\sum_{\alpha\neq0}y_\alpha\int d^dx\,\Phi_\alpha(x)\,,
+\end{equation}
+where the constants $y$ depend on $\tau$, the deviation \eqref{eq:tau} from the
+critical point. It is important to note that this dependence is analytic because
+it comes from integrating the RG flow equations for finite ``time'' $l_0$. As for
+$\tau=0$ one must stay at the critical surface, which in the linear approximation
+corresponds to $y_0=0$, for small $\tau$ we can assume
+\begin{equation}\label{eq:y0T}
+y_0=\Const\times(T_c-T)\,,
+\end{equation}
+and neglect the $\tau$-dependence of all $y_\alpha$ with $\alpha\neq0$.
+
+In the second stage the RG flow is described by the equations
+\[
+\frac d{dl}\,y_0=\kappa_0\,y_0\,,\qquad\frac d{dl}\,y_\alpha=\kappa_\alpha\,y_\alpha\,,
+\]
+where the coefficients $\kappa$ are related to the dimensions $D_\alpha$ of the
+fields $\Phi_\alpha$,
+\[
+\kappa_0=d-D_0>0\,,\qquad\kappa_\alpha=d-D_\alpha<0\quad\text{for}\quad\alpha\neq0\,.
+\]
+During this second stage all irrelevant terms in \eqref{eq:nearfp} die out, while
+the coefficient $y_0$ increases as
+\begin{equation}\label{eq:y0l}
+y_0(l)=y_0\,e^{\kappa_0(l-l_0)}\,.
+\end{equation}
+Recall that if $R_c$ is the correlation length corresponding to the initial action
+on the physical curve, the correlation length corresponding to the time $l$ along
+the trajectory is
+\[
+R_c(l)=R_c\,e^{-l}\,.
+\]
+From this and \eqref{eq:y0l} one can find\footnote{Observe that within the linear
+approximation \eqref{eq:nearfp} the ratio $R_c(l)/y_0^{-\nu}(l)$ is a constant
+independent of $l$.}
+\begin{equation}\label{eq:Rcnu}
+R_c\sim y_0^{-\nu}\,,\qquad\text{where}\qquad\nu=\frac1{\kappa_0}=\frac1{d-D_0}\,,
+\end{equation}
+and from the linear dependence \eqref{eq:y0T}
+\[
+R_c\sim|T_c-T|^{-\nu}\,.
+\]
+Thus, the correlation length diverges near $T_c$, with the exponent determined by
+the dimension $D_0$ of the relevant field $\Phi_0$. This divergence is in full
+agreement with the idea that it is the large-scale fluctuations which are
+responsible for the critical behavior.
+
+Similar way one can relate other critical exponents to the dimensions of various
+fields at the fixed point $\mathcal A_*$. For example, the spontaneous
+magnetization
+\[
+\bar M\sim\langle\varphi_0\rangle
+\]
+(nonzero in the low-$T$ phase) must satisfy the CS equation, which in this case
+reads
+\[
+\Bigl[D_\varphi-\kappa_0\,y_0\,\frac\partial{\partial y_0}\Bigr]\bar M=0\,,
+\]
+i.e.
+\begin{equation}\label{eq:Mbar}
+\bar M\sim y_0^{\frac{D_\varphi}{\kappa_0}}\,.
+\end{equation}
+Again, taking into account \eqref{eq:y0T} we find (for $T<T_c$)
+\[
+\bar M\sim(T_c-T)^\beta\,,\qquad\text{where}\qquad\beta=\frac{D_\varphi}{d-D_0}\,.
+\]
+It is useful to note that the relations \eqref{eq:Rcnu}, \eqref{eq:Mbar} can be
+obtained by simple dimensional counting, if one assumes that the coupling constant
+$y_0$ has the dimension $\kappa_0$ and the field $\varphi_0$ has the dimension
+$D_\varphi$. This follows from the CS equation with the linear approximation for
+the RG functions $\beta$; in fact it is valid beyond the linear approximation, as
+it follows from the existence of ``canonical coordinates''.
+
+As another example of this dimensional counting let us find some other critical
+exponents in terms of dimensions. If, at $T=T_c$, one adds an external field,
+i.e.\ the term
+\[
+H\int d^dx\,\varphi_0(x)\,,
+\]
+the dimensional counting implies that $H$ has dimension $d-D_\varphi$, and so the
+magnetization as the function of $H$ must have the following singular behavior
+\[
+\bar M\sim H^{\frac1\delta}\,,\qquad\text{where}\qquad\delta=\frac{d-D_\varphi}{D_\varphi}\,.
+\]
+Similar way one finds for the specific heat at $H=0$
+\[
+C\sim|T_c-T|^{-\alpha}
+\]
+with
+\begin{equation}\label{eq:alpha}
+\alpha=2-d\,\nu\,.
+\end{equation}
+Note that all these exponents are expressed through just two numbers, the
+dimensions of the fields $\varphi$ and $\Phi_0$. Therefore no matter what the
+values of these dimensions are, the critical exponents must obey certain
+\emph{scaling relations}, the relation \eqref{eq:alpha} being one example. These
+relations are confirmed in experiment.
+
+Note that the above analysis relies on the properties of the fixed point
+$\mathcal A_*$, as well as on general topological properties of RG. Very little
+indeed depends on the details of the original actions on the ``physical curve'',
+and hence on the details of the microscopic structure of the magnet. One expects
+therefore that the most important characteristics of the critical singularities
+must not be different for phase transitions in different magnetic materials (with
+the same symmetry). One fixed point may represent the criticality in the whole
+class of physical systems. It is said it describes a \emph{universality class} of
+critical behavior. In fact, systems of very different physical nature can belong
+to the same universality class. For example, the liquid-gas critical point is
+likely to represent the same universality class as the phase transition in axial
+ferromagnet.
+
+This all shows that understanding the fixed points is of crucial importance both
+in statistical mechanics and in quantum field theory. Unfortunately, analysis and
+classification of all fixed points are not yet achieved. In fact, at present very
+few nontrivial fixed points can be analyzed on a systematic level.

@@ -1,0 +1,520 @@
+% Source pp. 161-172 (Lectures13-18.pdf).
+\section{Wilson's Renormalization Group}
+
+\subsection*{On Second Order Phase Transitions}
+
+Let us briefly discuss the so called \emph{continuous} or \emph{second order}
+phase transitions, because it is the theory of continuous phase transitions in
+statistical mechanics which is related to (Euclidean) quantum field theory in
+most close way.
+
+Consider a magnet, i.e.\ a piece of a magnetic material. It can be thought of
+as consisting of ``micromagnets'', i.e.\ small elements having nonzero magnetic
+moments. Although in reality the structure of ``micromagnets'' is usually rather
+complex, for the sake of this discussion we can think of, say, a cubic lattice
+with each cell representing a ``micromagnet'' having a magnetic moment
+(proportional to the volume of the cell),
+\[
+\diac[0.55]{\draw[prop] (0,0) rectangle (2,2); \draw[prop] (0,2) -- (0.8,2.8) -- (2.8,2.8) -- (2,2); \draw[prop] (2.8,2.8) -- (2.8,0.8) -- (2,0);
+  \draw[densely dashed] (0,0) -- (0.8,0.8) -- (2.8,0.8) (0.8,0.8) -- (0.8,2.8);
+  \draw[{Stealth[length=1.4mm]}-{Stealth[length=1.4mm]}] (3.2,0.8) -- node[right] {\small$a$} (3.2,2.8);}
+\qquad\longrightarrow\qquad a^3\cdot\mathbf m_i
+\]
+The interaction between the ``micromagnets'' is such that they tend to align,
+thus producing an overall magnetic moment
+\[
+V\,\mathbf M=V\,\langle\mathbf m_i\rangle\,,
+\]
+where $\mathbf M$ denotes specific (per unit volume) magnetization, and the
+expectation value in the r.h.s.\ is taken over thermal equilibrium state. The
+thermal fluctuations tend to put the directions of $\mathbf m_i$ at random, and
+as the result of this competition the ferromagnet has two phases, the low
+temperature, or \emph{ordered} phase with nonvanishing local magnetization
+$\mathbf M$, and high-temperature \emph{disordered} phase with $\mathbf M=0$.
+
+The most important qualitative features of this phase transition, which occurs
+at certain critical temperature
+\[
+T=T_c\,,
+\]
+can be understood through the \emph{Landau Theory}.
+
+\paragraph{Landau Theory:} Consider the thermodynamic potential
+\[
+V\,\Omega(\mathbf M,T)
+\]
+as the function of specific magnetization $\mathbf M$ and temperature $T$;
+$\Omega$ denotes the \emph{specific} (per unit volume) thermodynamic potential.
+The equilibrium value of $\mathbf M$ is determined by the equation
+\[
+\frac{\partial\Omega(\mathbf M,T)}{\partial\mathbf M}=0\,.
+\]
+Consider the high-temperature phase $T>T_c$, where the solution of this equation
+is $\mathbf M=0$, and assume that one can expand $\Omega(\mathbf M,T)$ in powers
+of $\mathbf M$ near this minimum,
+\[
+\Omega(\mathbf M,T)=A(T)+B(T)\,\mathbf M^2+C(T)\,\mathbf M^4+\cdots
+\]
+(I assume here isotropy of the problem, hence the expansion is in powers of
+$\mathbf M^2$). It is clear that $\mathbf M=0$ is the right solution (i.e.\ the
+minimum of $\Omega$) only as long as
+\[
+B(T)>0\ \to\ \mathbf M=0\,.
+\]
+When $B(T)$ becomes negative (as it happens at $T<T_c$, according to this
+theory), the minimum occurs at nonzero $\mathbf M$ such that
+\[
+|\mathbf M|=\sqrt{\frac{-B}{2C}}\,;
+\]
+in fact there is a continuum of degenerate minima corresponding to different
+directions of $\mathbf M$. This situation represents the low-temperature phase
+where spontaneous magnetization appears. Thus, in the Landau theory the critical
+temperature $T_c$ is the point where $B(T)$ changes its sign,
+\[
+\begin{array}{lll}
+B(T)>0 & \text{at} & T>T_c\\
+B(T)<0 & \text{at} & T<T_c
+\end{array}
+\]
+Landau has assumed that near $T_c$ one can write $B(T)$ as
+\[
+B(T)=b\,(T-T_c)+\cdots\,,
+\]
+with some positive constant $b$. Then it follows that
+\[
+\begin{array}{lll}
+|\mathbf M|=0 & \text{at} & T>T_c\\
+|\mathbf M|\sim(T_c-T)^{1/2} & \text{at} & T<T_c
+\end{array}
+\]
+It is not difficult to calculate the entropy at $T\approx T_c$,
+\[
+S/V=-\frac{\partial\Omega(\mathbf M,T)}{\partial T}\approx S_0/V+
+\begin{cases}0 & \text{for}\quad T>T_c\\ \frac{b^2}{2C}\,(T-T_c) & \text{for}\quad T<T_c\end{cases}
+\]
+where $S_0$ refers to the critical point. The entropy (and hence the internal
+energy) is continuous at $T_c$, so there is no latent heat. This is the
+characteristic property of a second order phase transition. The specific heat
+\[
+C=T\,\frac{\partial S}{\partial T}
+\]
+has finite discontinuity at $T=T_c$.
+
+\paragraph{Critical behavior:} Although the Landau theory explains existence and
+the ``continuous'' nature of the critical point, in real systems the singularity
+of the thermodynamic functions at $T_c$ turns out to be more complicated than the
+above arguments predict. Experiment shows that
+\[
+|\mathbf M|\sim(T_c-T)^\beta\qquad\text{for}\quad T<T_c\,,
+\]
+with $\beta\approx0.35\pm0.03$, definitely different from $0.5$. The specific heat
+is not only discontinuous, but in fact diverges near $T_c$,
+\[
+C\sim|T_c-T|^{-\alpha}\,,
+\]
+with $\alpha\approx0.12$, not 0.
+
+The Landau theory does not take into account prominent role of the
+\emph{long-range fluctuations} of the magnetization near critical point.
+According to the thermodynamic theory of fluctuations, the probability to have
+some non-equilibrium value $\mathbf M$ of the magnetization is (for $T>T_c$)
+\[
+P(\mathbf M)\sim e^{-\frac{V\Omega(\mathbf M,T)}{kT}}\sim e^{-\frac{VB(T)}{kT}\,\mathbf M^2}
+\]
+If $B>0$, in the limit $V\to\infty$ the fluctuations are totally suppressed.
+Vanishing of $B(T)$ at $T=T_c$ indicates that in the critical domain the
+fluctuations must play significant role.
+
+\subsection*{Fluctuation Theory of Phase Transitions}
+
+Previously, we have given a brief discussion of critical behavior near a second
+order phase transition. We have pointed out singular character of the
+thermodynamic functions near the critical point, and suggested that the origin of
+the singularities is in the enhanced role of fluctuations.
+
+The qualitative picture of the fluctuations is as follows. In the vicinity of
+$T_c$ the competition between the energetic tendency of the micromagnets to
+align, and the thermal fluctuations leads to formation of large domains of
+approximately collinear micromagnets (figure~\ref{fig:domains}),
+\begin{figure}[ht]
+\centering\figfile{domains}
+\caption{Two distant domains near $T_c$. Inside each domain the micromagnets are
+nearly aligned; the average directions in different domains differ.}
+\label{fig:domains}
+\end{figure}
+so that if one looks inside one domain the magnets are almost aligned, but their
+average directions can be largely different in two distant domains. Near $T_c$
+the average sizes of the domains become much larger than any microscopic scales,
+and the domains involve macroscopic numbers of the micromagnets. The orientations
+of the domains experience fluctuations which vary slowly in space (in the
+microscopic scale). These long-range fluctuations lead to formation of the
+critical singularities at $T_c$.
+
+Having this picture in mind, one can consider local magnetization
+$\mathbf M(x)$, a slow varying function of the spatial coordinates (meaning that
+the distance at which $\mathbf M(x)$ changes significantly must involve
+macroscopic number of the micromagnets). One then replaces the homogeneous
+magnetization $\mathbf M$ by the local magnetization
+\[
+V\,\Omega(\mathbf M,T)\ \to\ \int d^3x\,\Omega\bigl(\mathbf M(x),T\bigr)\,.
+\]
+Once $\mathbf M$ is not a constant, one may include the spatial derivatives of
+$\mathbf M(x)$, and assume that the long-range fluctuations have the probability
+distribution
+\[
+P[\mathbf M(x)]\sim Z^{-1}\exp\Bigl(-\frac{\Ham[\mathbf M(x)]}{kT}\Bigr)
+\]
+with the ``effective energy'' of the form
+\[
+\Ham[\mathbf M(x)]=\int d^3x\,\Omega\bigl(\mathbf M(x),\nabla\mathbf M(x),\dots;T\bigr)
+\]
+where $\Omega$ now is a local density. In the spirit of the Landau theory we can
+write
+\[
+\Omega=A(T)+B(T)\,\mathbf M^2(x)+C(T)\,\mathbf M^4(x)+D(T)\,\bigl(\nabla\mathbf M(x)\bigr)^2+\dots
+\]
+where the dots may involve higher powers of $\mathbf M^2$ as well as terms with
+higher derivatives. Neglecting all but the terms explicitly shown above
+corresponds to the so-called Landau-Ginzburg model.
+
+With this probability distribution, the free energy of the magnet is to be
+computed as some sort of functional integral
+\[
+Z=e^{-\frac F{kT}}=\int\bigl[D\mathbf M(x)\bigr]\,e^{-\frac1{kT}\Ham[\mathbf M(x)]}
+\]
+where the integration is over the functions $\mathbf M(x)$ which vary slowly in
+terms of the microscopic scale.
+
+Note that this expression differs mostly in notations from the functional
+integral in Euclidean scalar field theory. After the rescaling
+\[
+\sqrt{\frac{2D(T)}{kT}}\,\mathbf M(x)=\varphi_0(x)
+\]
+it becomes
+\[
+Z=\int\bigl[D\varphi_0\bigr]\,e^{-\mathcal A[\varphi_0]}\,,
+\]
+where in the Landau-Ginzburg approximation
+\[
+\mathcal A=\int\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\Bigr]
+\]
+has the familiar form, with
+\[
+m_0^2=m_0^2(T)\,,\qquad\lambda_0=\lambda_0(T)
+\]
+some functions of $T$, whose form depends on microscopic details of the magnetic
+system. On the superficial level the main difference is in the dimensionality of
+the space (3 instead of 4), and the number of components of the scalar field (3
+instead of 1). As for the difference in $d$, we have already seen that the idea
+of studying QFT in spaces of different (even non-integer) dimensions $d$ is
+useful. The problematic of the phase transition theory, in its application to
+condensed matter physics, usually corresponds to the case $d=3$. But it is
+interesting and instructive to study criticality at any $d$, in particular to see
+how the characteristics of a phase transition change with $d$. Also, in the above
+simple model of magnet, the direction of $\mathbf M$ is completely decoupled from
+any space direction. Therefore formally the dimensionality of the vector
+$\mathbf M$, or equivalently the number of components of
+\[
+\varphi_0=\{\varphi_{0,i}\}\,,\qquad i=1,2,\dots,N
+\]
+can be any number, not necessarily $d$. In fact, there are magnets with
+anisotropy of the type of ``easy plane'' or ``easy axis'', which correspond to
+$N=2$ and $N=1$, respectively. In most of the following discussion I will assume
+$N=1$ for simplicity of notations.
+
+On a deeper level, one can raise two objections against this picture. First, the
+above formulation assumes integration only over the ``slow varying'' fields
+$\varphi_0(x)$. This is similar to the idea of cutoff in field theory, but here
+it seems to be dictated by physics of the problem. Indeed, in our approach the
+``thermodynamic potential''
+\[
+\Ham([\mathbf M(x)],T)
+\]
+already takes into account ``microscopic'' thermal fluctuations in our system,
+while the ``macroscopic'' fluctuations are left to be accounted for in the
+functional integral over $D[\mathbf M(x)]$. But how these two types of
+fluctuations are separated? We have said that $\mathbf M(x)$ can vary on the
+scale ``much larger than the microscopic scales''. But how much larger? Should we
+take the cutoff parameter $\Lambda=(100\,a)^{-1}$, or $(10^4\,a)^{-1}$? The second
+objection is that it is not clear what makes it possible to neglect the higher
+order (both in $\mathbf M$ and derivatives) terms in $\Ham$.
+
+These questions are at the heart of the Wilson's approach to the Renormalization
+Group.
+
+\subsection*{Wilson's Approach\protect\footnote{Discussion in this and following
+Sections has overlap with \S12.1 in PS. More systematic treatment is in K.~Wilson,
+J.~Kogut, ``The RG and epsilon expansion'', Phys.\ Rep.\ \textbf{12C} (1974)
+(highly recommended!). See also L.~Kadanoff, ``Statistics, Dynamics, and
+Renormalization'', WS.}}
+
+To come to the idea of this approach let us ask instead \emph{what difference
+does it make} if we take
+\[
+\Lambda=\Lambda_0=(100\,a)^{-1}\qquad\text{or}\qquad\Lambda=\Lambda_1=(10^4\,a)^{-1}\,.
+\]
+In other words, if we consider say $\varphi^4$ theory, and write down the
+functional integral
+\[
+\int D[\varphi_0]\,e^{-\mathcal A[\varphi_0]}\,(\dots)
+\]
+in its bare form, with some cutoff regularization implied, how the theory depends
+on the value of the cutoff parameter $\Lambda$?
+
+Because basic ideas of the Wilson's RG do not depend very much on precise way how
+the cutoff regularization is implemented, let me assume specific one. Let me
+assume that the field $\varphi_0$ can be written as the Fourier-like integral
+\[
+\varphi_0(x)=\int_{|k|<\Lambda}\frac{d^dk}{(2\pi)^d}\,\phi(k)\,e^{ikx}\,,
+\]
+where only the wave-vectors with $|k|<\Lambda$ contribute to the integral. This
+can be named (as I will) the ``Sharp momentum cutoff'', because in perturbation
+theory it corresponds to the cutoff propagator
+\[
+D_\Lambda(k)=\frac{\Phi(k^2/\Lambda^2)}{k^2+m_0^2}
+\]
+with $\Phi(x)=\Theta(1-x)$ being the step function. (We did not consider this
+regularization before because it is not very convenient in evaluating usual
+Feynman diagrams).
+
+So our question now is how the functional integral depends on $\Lambda$, or what
+is the difference between the integral with $\Lambda=\Lambda_0$ and
+$\Lambda=\Lambda_1$. Let us temporarily use the notations
+\[
+\varphi_0(x)=\int_{|k|<\Lambda_0}\phi(k)\,e^{ikx}\,,\qquad
+\varphi_1(x)=\int_{|k|<\Lambda_1}\phi(k)\,e^{ikx}\,.
+\]
+If $\Lambda_0>\Lambda_1$ the difference of course is that the integration over
+$\varphi_0$ includes the integration over all modes with the momenta
+\[
+\Lambda_0>|k|>\Lambda_1\,,
+\]
+while the integral over $\varphi_1$ does not. We can write
+\[
+\varphi_0(x)=\varphi_1(x)+\tilde\varphi(x)\,,\qquad\text{where}\qquad
+\tilde\varphi(x)=\int_{\Lambda_0>|k|>\Lambda_1}\phi(k)\,e^{ikx}\,.
+\]
+In this context, the parts $\varphi_1(x)$ and $\tilde\varphi$ are often called
+the ``slow part'' and the ``fast part'', respectively. We have
+\[
+D[\varphi_0]=D[\varphi_1]\,D[\tilde\varphi]\,.
+\]
+Suppose we want to calculate some correlation function in the theory with the
+cutoff $\Lambda_0$,
+\[
+\bigl\langle\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr\rangle=\frac1{Z_0}\int D[\varphi_0]\,\varphi_0(x_1)\cdots\varphi_0(x_n)\,e^{-\mathcal A_0[\varphi_0]}\,,
+\]
+where $\mathcal A_0$ is some action, say $\varphi^4$ action above. We are
+interested in low-momentum behaviour of the associated proper vertices, with the
+momenta conjugated to $x_1,\dots,x_n$ much smaller than both $\Lambda_0$ and
+$\Lambda_1$. Therefore in the insertions we can replace
+\[
+\varphi_0(x_1)\cdots\varphi_0(x_n)\to\varphi_1(x_1)\cdots\varphi_1(x_n)\,.
+\]
+Then the functional integral for this correlation function becomes
+\[
+\frac1{Z_0}\int D[\varphi_1]\,\varphi_1(x_1)\cdots\varphi_1(x_n)\int D[\tilde\varphi]\,e^{-\mathcal A_0[\varphi_1+\tilde\varphi]}\,.
+\]
+Now, the idea is to integrate over the fast part $\tilde\varphi$ first. This
+operation defines the new ``effective action'' $\mathcal A_1[\varphi_1]$ for the
+slow part,
+\[
+\int D[\tilde\varphi]\,e^{-\mathcal A_0[\varphi_1+\tilde\varphi]}=\Const\,e^{-\mathcal A_1[\varphi_1]}\,.
+\]
+The constant factor here is not important, because after the same operation it
+appears in $Z_0$ as well. Thus, we have
+\[
+\text{f.t.}\,\bigl\langle\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr\rangle\Big|_{\mathcal A_0,\Lambda_0}
+=\text{f.t.}\,\bigl\langle\varphi_1(x_1)\cdots\varphi_1(x_n)\bigr\rangle\Big|_{\mathcal A_1,\Lambda_1}\,,\qquad p_i\ll\Lambda\,.
+\]
+In other words, if only the low-momentum correlation functions are of concern,
+the theory with cutoff $\Lambda_0$ and action $\mathcal A_0$ is equivalent to the
+theory with lower cutoff $\Lambda_1$ and new action $\mathcal A_1$,
+\[
+\mathcal A_0,\Lambda_0\ \to\ \mathcal A_1,\Lambda_1\,.
+\]
+Note that I am not writing $\leftrightarrow$ here, because this operation can not
+be undone. Information about the short-distance interactions, of the scales
+between $\Lambda_0^{-1}$ and $\Lambda_1^{-1}$ is lost.
+
+The new action $\mathcal A_1$ is defined through the functional integral over the
+fast part $\tilde\varphi$. Although at this level of discussion precise form of
+$\mathcal A_0$ is not important, to get some idea what this operation amounts to,
+let us assume for the moment that $\mathcal A_0$ is the $\varphi^4$ action.
+Substituting
+\[
+\varphi_0=\varphi_1+\tilde\varphi
+\]
+we find
+\[
+\mathcal A_0[\varphi_0]=\mathcal A_0[\varphi_1]+\tilde{\mathcal A}[\tilde\varphi,\varphi_1]\,,
+\]
+and after the integration over $\tilde\varphi$
+\[
+\mathcal A_1[\varphi_1]=\mathcal A_0[\varphi_1]+\mathcal A'[\varphi_1]\,,\qquad\text{where}\qquad
+\Const\,e^{-\mathcal A'[\varphi_1]}=\int[D\tilde\varphi]\,e^{-\tilde{\mathcal A}[\tilde\varphi,\varphi_1]}\,.
+\]
+For $\mathcal A_0$ of the $\varphi^4$ form
+\[
+\tilde{\mathcal A}=\int d^dx\,\Bigl[\frac12\,(\partial\tilde\varphi)^2+\frac{m_0^2}2\,\tilde\varphi^2
++\frac{\lambda_0}{4!}\,\bigl(4\varphi_1^3\tilde\varphi+6\varphi_1^2\tilde\varphi^2+4\varphi_1\tilde\varphi^3+\tilde\varphi^4\bigr)\Bigr]
+\]
+The terms $\partial\varphi_1\partial\tilde\varphi$ and $\varphi_1\tilde\varphi$ do
+not appear because by definition $\varphi_1$ and $\tilde\varphi$ carry different
+momenta.
+
+The integral over $\tilde\varphi$ is complicated non-gaussian integral. The
+functional $\tilde{\mathcal A}[\tilde\varphi,\varphi_1]$ in this context should be
+regarded as the action for $\tilde\varphi$, with $\varphi_1$ determining the
+``source terms'' (linear, quadratic and cubic in $\tilde\varphi$).
+
+As usual, the functional integral over $\tilde\varphi$ can be represented as a sum
+of the Feynman diagrams. Let us denote the $\tilde\varphi$-propagator by a solid
+line,
+\[
+\langle\tilde\varphi\tilde\varphi\rangle\ \to\
+\dia{\draw[line width=0.9pt] (-1.6,0) -- (1.6,0); \node[above] at (0,0.05) {\small$k$};}
+=\frac{\Theta(\Lambda_0>|k|>\Lambda_1)}{k^2+m_0^2}\,,
+\]
+with obvious meaning of the step-function $\Theta$. The remaining terms in
+$\tilde{\mathcal A}$ give rise to the vertices
+\begin{align*}
+\dia[0.45]{\foreach \a in {150,180,210} \draw[prop,densely dashed] (0,0) -- (\a:1.4); \draw[line width=0.9pt] (0,0) -- (1.6,0); \node[vtx] at (0,0) {};}
+&=-\frac{\lambda_0}{3!}\int_x\varphi_1^3(x)\,,&
+\dia[0.45]{\foreach \a in {135,225} \draw[prop,densely dashed] (0,0) -- (\a:1.4); \foreach \a in {45,315} \draw[line width=0.9pt] (0,0) -- (\a:1.4); \node[vtx] at (0,0) {};}
+&=-\frac{\lambda_0}2\int_x\varphi_1^2(x)\,,\\
+\dia[0.45]{\draw[prop,densely dashed] (-1.4,0) -- (0,0); \foreach \a in {45,0,-45} \draw[line width=0.9pt] (0,0) -- (\a:1.4); \node[vtx] at (0,0) {};}
+&=-\lambda_0\int_x\varphi_1(x)\,,&
+\dia[0.45]{\foreach \a in {45,135,225,315} \draw[line width=0.9pt] (0,0) -- (\a:1.4); \node[vtx] at (0,0) {};}
+&=-\lambda_0\int_x\,.
+\end{align*}
+Here the dashed line represents the field $\varphi_1$, the number of the dashed
+lines showing the power of $\varphi_1$. Each dashed line carries momentum with
+$|k|<\Lambda_1$.
+
+We have to integrate over $\tilde\varphi$, with $\varphi_1$ fixed. Therefore all
+the solid lines in the diagrams are contracted, while all the dashed lines are
+left as external legs.
+
+As usual, the sum of all the diagrams exponentiate in terms of the sum of
+connected diagrams, i.e.\ the functional $\mathcal A'[\varphi_1]$ is given by the
+sum of all connected diagrams,
+\[
+\mathcal A'[\varphi_1]=-\bigl(\text{sum of all connected diagrams}\bigr)
+\]
+Also, the diagrams with no external legs can be ignored, because they only
+contribute to the constant factor in $\exp(-\mathcal A')$.
+
+It is obvious that the new action $\mathcal A_1=\mathcal A_0+\mathcal A'$ does not
+have simple form of the $\varphi^4$ action. The contributions to $\mathcal A'$
+contain all powers of $\varphi_1$, from diagrams like this
+\[
+\diac[0.45]{\draw[line width=0.9pt] (0,0) circle (1); \coordinate (a) at (180:1); \coordinate (b) at (50:1); \coordinate (c) at (-60:1); \coordinate (d) at (-115:1);
+  \draw[line width=0.9pt] (d) .. controls (0,-0.2) .. (c);
+  \foreach \p/\q in {a/135,a/225,b/90,b/20,c/-20,d/-110} \draw[prop,densely dashed] (\p) -- ++(\q:1.3);
+  \foreach \p in {a,b,c,d} \node[vtx] at (\p) {};}
+\ \sim\varphi^6
+\]
+Moreover, the action $\mathcal A_1$ is not even formally local. For example, the
+diagram
+\[
+\diac[0.45]{\draw[line width=0.9pt] (0,0) ellipse (1 and 0.7); \coordinate (L) at (-1,0); \coordinate (R) at (1,0);
+  \foreach \p/\q in {L/135,L/225,R/45,R/315} \draw[prop,densely dashed] (\p) -- ++(\q:1.4);
+  \node[vtx] at (L) {}; \node[vtx] at (R) {};}
+\]
+brings in the contribution
+\[
+-\frac{\lambda_0^2}{16}\int d^dx\,d^dx'\,\varphi_1^2(x)\,\tilde D^2(x-x')\,\varphi_1^2(x')\,,
+\]
+where $\tilde D$ is the $\tilde\varphi$ propagator,
+\[
+\tilde D(x)=\int_{\Lambda_0>|k|>\Lambda_1}\frac{d^dk}{(2\pi)^d}\,\frac{e^{ikx}}{k^2+m_0^2}\,.
+\]
+This non-locality, albeit unpleasant, is not disastrous. Recall that we have
+already violated the locality by introducing the cutoff. It is important however
+that the additional nonlocality in $\mathcal A_1$ is of short-range nature. More
+precise statement is that the new non-local terms generated in this way admit
+convergent derivative expansion.
+
+This means the following. Suppose we have some diagram evaluated in the momentum
+space,
+\[
+\diac[0.45]{\draw[line width=0.9pt] (0,0) circle (0.8); \node[font=\tiny] at (0,0) {diagram};
+  \foreach \a/\l in {135/p_n,90/p_1,45/p_2,0/p_3} {\draw[prop] (\a:0.8) -- (\a:2.2); \node[vtx] at (\a:0.8) {}; \node at (\a:2.6) {\small$\l$};}
+  \draw[densely dotted] (165:1.5) arc[start angle=165,end angle=330,radius=1.5];}
+=\mathcal D(p_1,\dots,p_n)\,.
+\]
+One can expand $\mathcal D(p_1,\dots,p_n)$ in a simultaneous power series in all
+the external momenta $p_i$, and the series will converge all the way up to the
+momenta $|p_i|\le\Lambda_1$. This convergence is the consequence of the fact that
+all the integration momenta in the diagram lie above $\Lambda_1$. Note that
+should the integration involve all momenta, as in usual Feynman diagrams, similar
+expansion would converge only up to $|p_i|<m_0$, at the best.
+
+This convergence of the expansions of $\mathcal D(p_1,\dots,p_n)$ implies that the
+new action $\mathcal A_1$ admits meaningful expansion in terms of local
+composites,
+\[
+\mathcal A_1[\varphi_1]=\int d^dx\,\Bigl[\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_1^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_1^{2k}(x)\,\bigl(\partial\varphi_1(x)\bigr)^2+\text{higher terms}\Bigr]
+\]
+where the ``higher terms'' involve both the higher powers of $\partial\varphi_1$,
+and the terms with the higher derivatives of $\varphi_1$. The most significant
+difference from truly local action is that these higher terms include derivatives
+of arbitrarily high order. However it is assumed that the full expansion
+converges for the fields $\varphi_1$, in which only the Fourier modes with
+$|k|<\Lambda_1$ are present. I will call this form ``quasi-local''.
+
+Our conclusion at this point is that by integrating out the fast part
+$\tilde\varphi$, the theory described originally by the action $\mathcal A_0$,
+with the cutoff $\Lambda_0$, can be equivalently described by new action
+$\mathcal A_1$, with the lower cutoff $\Lambda_1$,
+\[
+\mathcal A_0,\Lambda_0\ \to\ \mathcal A_1,\Lambda_1\,.
+\]
+The new action however has complicated quasi-local form.
+
+At first glance it may look as a step in wrong direction. But it becomes very
+powerful move when combined with another step, which is to make a variable
+transformation
+\[
+\varphi_1(x)=Z^{-1/2}(L)\,\varphi'_0(x/L)
+\]
+in the functional integral
+\[
+\frac1{Z_1}\int[D\varphi_1]\,\varphi_1(x_1)\cdots\varphi_1(x_n)\,e^{-\mathcal A_1[\varphi_1]}\,,
+\]
+where $L$ is the ratio
+\[
+L=\Lambda_0/\Lambda_1>1\,,
+\]
+and $Z^{1/2}(L)$ is a factor to be discussed later. This is the dilation with the
+factor $1/L$, which returns the cutoff from $\Lambda_1$ back to the original value
+$\Lambda_0$. We have
+\[
+\varphi_1(x)=\int_{|k|<\Lambda_1}\phi(k)\,e^{ikx}=\int_{|k|<\Lambda_1}\phi(k)\,e^{i(Lk)(x/L)}=L^{-d}\int_{|q|<\Lambda_0}\phi(q/L)\,e^{iq(x/L)}\,,
+\]
+so that
+\[
+\varphi'_0(x)=L^{-d}\,Z^{1/2}(L)\int_{|k|<\Lambda_0}\phi(k/L)\,e^{ikx}
+\]
+indeed contains all the wave-vectors with $|k|<\Lambda_0$.
+
+For the action this amounts to transformation
+\[
+\mathcal A_1[\varphi_1]=\mathcal A'_0[\varphi'_0]\,,
+\]
+where $\mathcal A'_0$ is obtained from $\mathcal A_1$ simply by re-scaling of the
+coordinates, plus the field renormalization. We then have for correlation
+functions
+\[
+\bigl\langle\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr\rangle\Big|_{\mathcal A_0,\Lambda_0}
+=Z^{-n/2}(L)\,\bigl\langle\varphi_0(x_1/L)\cdots\varphi_0(x_n/L)\bigr\rangle\Big|_{\mathcal A'_0,\Lambda_0}\,,
+\]
+i.e.\ the theories described by $\mathcal A_0$ and $\mathcal A'_0$, \emph{with the
+same cutoff} $\Lambda_0$ are different only by the scale transformation, with the
+scale factor $L$. The transformation
+\[
+RG(L):\quad\mathcal A_0\to\mathcal A'_0
+\]
+is the Wilson's RG transformation. It represents the scale transformation in the
+space of effective actions.

@@ -1,0 +1,29 @@
+\begin{tikzpicture}[line width=0.6pt]
+  % ---- left: contour C0 around the positive integers
+  \begin{scope}
+    \draw[axis] (-0.8,0)--(5.2,0) node[below] {$\Re\tau$};
+    \draw[axis] (0,-1.4)--(0,1.6) node[left] {$\Im\tau$};
+    \foreach \n in {1,...,5} {\fill (\n*0.8,0) circle (1.4pt); \node[above] at (\n*0.8,0.05) {\scriptsize $\n$};}
+    \fill (0,0) circle (1.4pt);
+    \draw[midarrow] (0.35,-0.45) -- (4.9,-0.45);
+    \draw[midarrow] (4.9,0.45) -- (0.35,0.45);
+    \draw (0.35,0.45) arc[start angle=90,end angle=270,radius=0.45];
+    \node at (4.5,0.75) {$C_+$};
+    \node at (4.5,-0.75) {$C_-$};
+  \end{scope}
+  % ---- right: deformed contour along the imaginary axis
+  \begin{scope}[xshift=7.2cm]
+    \draw[axis] (-0.8,0)--(5.2,0) node[below] {$\Re\tau$};
+    \draw[axis,gray] (0,-1.4)--(0,1.6) node[left,black] {$\Im\tau$};
+    \foreach \n in {1,...,5} {\fill (\n*0.8,0) circle (1.4pt);}
+    \fill (0,0) circle (1.4pt);
+    \draw[line width=0.9pt,midarrow] (0.1,1.5) -- (0.1,0.4);
+    \draw[line width=0.9pt] (0.1,0.4) arc[start angle=90,end angle=0,radius=0.4];
+    \draw[line width=0.9pt] (0.5,0) arc[start angle=0,end angle=-90,radius=0.4];
+    \draw[line width=0.9pt,midarrow] (0.1,-0.4) -- (0.1,-1.3);
+    \node[right] at (0.2,1.15) {$\tilde C_+$};
+    \node[right] at (0.2,-1.0) {$\tilde C_-$};
+    \draw[gray] (0.42,0.3)--(1.1,0.75) node[right,black] {\scriptsize $C'_+$};
+    \draw[gray] (0.42,-0.3)--(1.1,-0.75) node[right,black] {\scriptsize $C'_-$};
+  \end{scope}
+\end{tikzpicture}

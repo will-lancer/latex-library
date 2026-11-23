@@ -1,0 +1,466 @@
+% Source pp. 61-72 (Lectures7-12.pdf).
+\section{Interaction. \texorpdfstring{$\varphi^4$}{phi**4} theory}
+
+The KG theory describes free particles. Its action is quadratic in the field
+variables. We want to add interactions. This is done by adding new terms to the
+action. It should be done in a way that preserves the locality. We can modify
+the Lagrangian density by adding local terms involving higher powers of the
+field(s). The simplest example is known as the $\varphi^4$ theory, which we
+consider next.
+
+The $\varphi^4$ theory is described by the Euclidean action
+\[
+\mathcal A[\varphi]=\int d^4x\,\Bigl[\frac12\,(\partial_\mu\varphi)^2+\frac{m^2}{2}\,\varphi^2+\frac{\lambda}{4!}\,\varphi^4\Bigr]\,.
+\]
+Here $\lambda$ is a new parameter, the ``coupling constant''.
+
+As in the KG theory, one can be interested in the correlation functions
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle=Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\cdots\varphi(x_N)\,e^{-\mathcal A[\varphi]}\,,\qquad
+Z=\int\bigl[D\varphi\bigr]\,e^{-\mathcal A[\varphi]}\,.
+\]
+Now the action is not quadratic in the integration variables $\varphi$, and
+the integral cannot be evaluated in an explicit form.
+
+\begin{exercise}
+Performing the change of variables $\varphi(x)\to\varphi(x)+\varepsilon(x)$
+in the functional integral defining the $N$-point correlation functions in
+$\varphi^4$ theory, derive the equation
+\begin{multline*}
+\bigl(m^2-\partial_\mu^2\bigr)\bigl\langle\varphi(x)\,\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle
++\frac{\lambda}{3!}\,\bigl\langle\varphi^3(x)\,\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle\\
+=\sum_{i=1}^N\delta^{(4)}(x-x_i)\,\bigl\langle\varphi(x_1)\cdots\widehat{\varphi(x_i)}\cdots\varphi(x_N)\bigr\rangle\,.
+\end{multline*}
+Equations of this kind are generally known as the \emph{Schwinger-Dyson
+equations}.
+\end{exercise}
+
+Unlike the KG theory, the Schwinger-Dyson equation in the interacting theory is
+not closed equation for the correlation function $\langle\varphi(x)\dots\rangle$,
+since it involves $\langle\varphi^3(x)\dots\rangle$ which has no useful
+expression in terms of the function $\langle\varphi(x)\dots\rangle$ itself.
+Even the definition of the composite field $\varphi^3$ may be a non-trivial
+problem (we are going to consider it later on).
+
+Practical way of computations is the \emph{perturbation theory}, which
+generates a power series expansion in the coupling parameter $\lambda$.
+
+\subsection*{Perturbation Theory}
+
+Perturbation theory allows one to evaluate the correlation functions as the
+power series in the coupling parameter $\lambda$. One splits the action into
+the free-field part (quadratic in the field variables $\varphi$), and the
+interaction part, which includes the terms of higher order:
+\[
+\mathcal A=\mathcal A_0+\mathcal A_I\,.
+\]
+The exponential $\exp(-\mathcal A)$ is then expanded as
+\[
+e^{-\mathcal A}=e^{-\mathcal A_0}\Bigl(1-\mathcal A_I+\frac12\,\mathcal A_I^2+\dots\Bigr)\,.
+\]
+Since $\mathcal A_0$ is quadratic, each term can be evaluated using the Wick's
+theorem.
+
+To see how it works, consider the $\varphi^4$ theory. In this case the natural
+way of splitting is
+\[
+\mathcal A_0=\mathcal A_{\mathrm{KG}}\,,\qquad \mathcal A_I=\frac{\lambda}{4!}\int\varphi^4(x)\,d^4x
+\]
+(later we will see that in actual calculations it is more convenient to include
+certain parts of the quadratic action, the so called counterterms, into
+$\mathcal A_I$, but at the moment we ignore this subtlety). With this
+splitting, the power series expansion of $\exp(-\mathcal A_I)$ generates
+expansion in the powers of $\lambda$.
+
+Suppose we want to calculate such expansion of the two-point correlation
+function $\langle\varphi(x_1)\varphi(x_2)\rangle$. By its definition
+\[
+\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle=Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\,e^{-\mathcal A_0}\,e^{-\mathcal A_I}\,.
+\]
+Expanding the last exponential as prescribed, we have
+\[
+Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\Bigl(1-\frac{\lambda}{4!}\int\varphi^4(x)\,d^4x+O(\lambda^2)\Bigr)\,e^{-\mathcal A_0}\,.
+\]
+The zero-order term is just the functional integral for the two-point function
+of the KG theory. We can rewrite the previous expression as
+\begin{equation}\label{eq:pt2}
+\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle=\frac{Z_0}{Z}\Bigl[\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle_0
+-\frac{\lambda}{4!}\int\bigl\langle\varphi(x_1)\varphi(x_2)\varphi^4(x)\bigr\rangle_0\,d^4x+\dots\Bigr]\,,
+\end{equation}
+where $Z_0=\int D[\varphi]\,e^{-\mathcal A_0}$ and $\langle\cdots\rangle_0$
+stand for the partition function and correlation functions in the free theory.
+This expression gives an example of the general situation: the perturbation
+theory allows one to write the correlation functions of interacting theory as a
+power series in the coupling parameter, the coefficients being certain
+integrals of the correlation functions of the free theory. The role of the
+factor $\frac{Z_0}{Z}$ will be clarified later.
+
+The correlation functions of the free theory are computed using the Wick's
+rules. In the above example, the first-order in $\lambda$ term involves the
+$d^4x$ integral of the correlation function
+\[
+\bigl\langle\varphi(x_1)\varphi(x_2)\,\varphi^4(x)\bigr\rangle_0=\bigl\langle\varphi(x_1)\varphi(x_2)\varphi(x)\varphi(x)\varphi(x)\varphi(x)\bigr\rangle_0\,.
+\]
+This is a six-point correlation function of the free theory, with four points
+coincident at $x$. According to the Wick's rule, it can be written as the sum
+of
+\[
+5!!=15
+\]
+terms corresponding to different ways of pairwise contractions of the six field
+insertions involved. Many different contractions lead to identical
+contributions. There are two classes of such contractions with essentially
+different contributions:
+
+(i) First, one can contract $\varphi(x_1)\varphi(x_2)\to
+\contraction{}{\varphi(x_1)}{}{\varphi(x_2)}\varphi(x_1)\varphi(x_2)$, and then
+contract four factors $\varphi(x)$ among themselves. There are three
+possibilities for contracting. Say, one first contracts the first factor in
+$\varphi(x)\varphi(x)\varphi(x)\varphi(x)$ with any one of the other three (3
+ways), and once that one is chosen, there is only one way to contract the
+remaining two insertions. We find that such contractions bring in the
+contribution
+\[
+3\times
+\contraction{}{\varphi(x_1)}{}{\varphi(x_2)}
+\contraction{\varphi(x_1)\varphi(x_2)\,}{\varphi(x)}{}{\varphi(x)}
+\contraction{\varphi(x_1)\varphi(x_2)\,\varphi(x)\varphi(x)\,}{\varphi(x)}{}{\varphi(x)}
+\varphi(x_1)\varphi(x_2)\,\varphi(x)\varphi(x)\,\varphi(x)\varphi(x)
+=3\,D(x_1-x_2)\,D(x-x)\,D(x-x)\,.
+\]
+
+(ii) Alternatively, one can contract $\varphi(x_1)$ with one of the four
+identical factors $\varphi(x)$ (4 ways), and $\varphi(x_2)$ with any one of the
+remaining three factors $\varphi(x)$ (3 ways); this leaves just two insertions
+$\varphi(x)$, with only one way of contractions. Therefore there are
+$4\times3=12$ identical contributions
+\[
+12\times
+\contraction[2ex]{}{\varphi(x_1)}{\varphi(x_2)}{\varphi(x)}
+\contraction{\varphi(x_1)}{\varphi(x_2)}{\varphi(x)}{\varphi(x)}
+\contraction{\varphi(x_1)\varphi(x_2)\varphi(x)\varphi(x)}{\varphi(x)}{}{\varphi(x)}
+\varphi(x_1)\varphi(x_2)\varphi(x)\varphi(x)\varphi(x)\varphi(x)
+=12\,D(x_1-x)\,D(x_2-x)\,D(x-x)\,.
+\]
+The resulting contribution $\sim\lambda$ in the brackets in \eqref{eq:pt2}
+then reads
+\begin{equation}\label{eq:pt2first}
+-\frac{\lambda}{4!}\Bigl[3\,D(x_1-x_2)\int d^4x\,D^2(x-x)+12\int d^4x\,D(x_1-x)\,D(x_2-x)\,D(x-x)\Bigr]\,.
+\end{equation}
+Depicting contractions as solid lines
+\[
+\contraction{}{\varphi(x)}{}{\varphi(x')}\varphi(x)\varphi(x')
+=\ x\;\dia{\pic{line};}\;x'\ \to\ D(x-x')
+\]
+the two terms are represented by two diagrams
+\begin{equation}\label{eq:pt2diag}
+3\times\Bigl[\,\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2} \pic at (3.4,0) {eight};}\,\Bigr]
++12\times\Bigl[\,\dia{\pic{tadline}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}\,\Bigr]
+\end{equation}
+where the loop represents the contraction
+\[
+\contraction{}{\varphi(x)}{}{\varphi(x)}\varphi(x)\varphi(x)
+=\dia{\draw[prop] (0,0.42) circle (0.42); \node[vtx] at (0,0) {};}\ \to\ D(x-x)\,.
+\]
+Recalling the overall factor
+\[
+-\frac{\lambda}{4!}=-\frac{\lambda}{24}
+\]
+in \eqref{eq:pt2}, we find that the two diagrams in \eqref{eq:pt2diag} come with
+the factors $-\lambda/S_1$ and $-\lambda/S_2$, respectively, where the so
+called ``symmetry factors'' here are
+\[
+\frac1{S_1}=\frac18\,,\qquad\frac1{S_2}=\frac12\,.
+\]
+
+Similar structure is found in the higher orders of the $\lambda$-expansion. The
+$n$-th order term has the form
+\begin{equation}\label{eq:ptn}
+\frac1{n!}\Bigl(-\frac{\lambda}{4!}\Bigr)^n\Bigl\langle\varphi(x_1)\varphi(x_2)\Bigl[\int\varphi^4(y)\,d^4y\Bigr]^n\Bigr\rangle_0
+\end{equation}
+which involves the $n$-fold 4-space integration
+\[
+\Bigl[\int\varphi^4(y)\,d^4y\Bigr]^n=\int\varphi^4(y_1)\varphi^4(y_2)\cdots\varphi^4(y_n)\,d^4y_1\cdots d^4y_n\,.
+\]
+The correlation function in the integrand is that of the product of $2+4n$
+factors $\varphi$, two at $x_1$ and $x_2$, and $4n$ at the integration points
+$y_1,\dots,y_n$, four factors at each point.
+
+Contractions of these field factors are represented by diagrams. The diagrams
+are built from $2n+1$ contraction lines connecting two types of ``vertices'':
+
+There are two ``external vertices'' associated with the points $x_1$ and
+$x_2$, with exactly one of the contraction lines attached to each,
+\[
+\text{External points:}\qquad x_1\ \dia{\draw[prop] (0,0) node[vtx]{} -- (1.4,0);}
+\qquad\qquad \dia{\draw[prop] (0,0) -- (1.4,0) node[vtx]{};}\ x_2
+\]
+and $n$ ``interaction vertices'', associated with $n$ integration points
+$y_1,y_2,\dots,y_n$, with four contraction lines connected to each of them:
+\[
+\text{Interaction points:}\qquad
+\dia{\pic{xvertex}; \lab[right]{0.3,-0.05}{y_1}}\quad
+\dia{\pic{xvertex}; \lab[right]{0.3,-0.05}{y_2}}\quad\cdots\quad
+\dia{\pic{xvertex}; \lab[right]{0.3,-0.05}{y_n}}
+\]
+Thus, in the order $\lambda^2$ the diagrams involve two external and two
+interaction vertices, for example
+\[
+x_1\ \dia{\pic{sunline};}\ x_2
+\]
+Again, many distinct contractions are represented by identical diagrams. For
+instance, the above diagram may represent the contraction
+\[
+\contraction{}{\varphi(x_1)}{}{\varphi(y_1)}
+\contraction[4ex]{\varphi(x_1)\varphi(y_1)}{\varphi(y_1)}{\varphi(y_1)\varphi(y_1)\varphi(y_2)\varphi(y_2)}{\varphi(y_2)}
+\contraction[3ex]{\varphi(x_1)\varphi(y_1)\varphi(y_1)}{\varphi(y_1)}{\varphi(y_1)\varphi(y_2)}{\varphi(y_2)}
+\contraction[2ex]{\varphi(x_1)\varphi(y_1)\varphi(y_1)\varphi(y_1)}{\varphi(y_1)}{}{\varphi(y_2)}
+\contraction{\varphi(x_1)\varphi(y_1)\varphi(y_1)\varphi(y_1)\varphi(y_1)\varphi(y_2)\varphi(y_2)\varphi(y_2)}{\varphi(y_2)}{}{\varphi(x_2)}
+\varphi(x_1)\varphi(y_1)\varphi(y_1)\varphi(y_1)\varphi(y_1)\varphi(y_2)\varphi(y_2)\varphi(y_2)\varphi(y_2)\varphi(x_2)
+\]
+as well as any one of
+\[
+4\times4\times3!
+\]
+equivalent contractions related to this one by interchanging of the contracted
+factors $\varphi$ inside $\varphi^4(y_1)$ and $\varphi^4(y_2)$. Every such
+contraction corresponds to the same product of the propagators
+\[
+D(x_1-y_1)\,D^3(y_1-y_2)\,D(y_2-x_2)\,,
+\]
+and since the contributions involve the integrations over the interaction
+points
+\[
+\int d^4y_1\,d^4y_2\,(\dots)
+\]
+the diagrams related by the interchange $y_1\leftrightarrow y_2$ yield
+identical contributions. Therefore the above contraction comes with the
+multiplicity factor
+\[
+2\cdot4\cdot4!\,.
+\]
+This factor almost entirely cancels the denominators in the overall factors
+$(1/n!)(-\lambda/4!)^n$ in \eqref{eq:ptn}, which for $n=2$ is
+\[
+\frac1{2!}\Bigl(-\frac{\lambda}{4!}\Bigr)^2\,,
+\]
+leaving behind the factor $(-\lambda)^2/3!$. Finally, total contribution of
+the contractions corresponding to the diagram in this example is
+\[
+\frac{(-\lambda)^2}{S}\int d^4y_1\,d^4y_2\,D(x_1-y_1)\,D^3(y_1-y_2)\,D(y_2-x_2)\,,
+\]
+with the ``symmetry factor'' $\frac1S=\frac1{3!}$.
+
+This example illustrates the general rules of the diagrammatic representations
+of the contributions in the perturbation theory, known as the
+
+\subsection*{Feynman Rules (for \texorpdfstring{$\varphi^4$}{phi**4})}
+
+To find $\lambda^n$ contribution to
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle
+\]
+\begin{enumerate}
+\item Draw all diagrams with $N$ external vertices associated with the points
+$x_1,\dots,x_N$, and with $n$ interaction vertices. Exclude disconnected
+diagrams with ``vacuum fragments'' (see below).
+\item For each diagram, associate
+\begin{enumerate}[label=\roman*.]
+\item $x\ \dia{\pic{line};}\ x'=D(x-x')$;
+\item $\dia{\pic{xvertex}; \lab[right]{0.3,-0.05}{y}}=-\lambda\int d^4y$;
+\item Multiply by the ``symmetry factor'' $1/S$.
+\end{enumerate}
+\item Sum the contributions of all the diagrams.
+\end{enumerate}
+
+\begin{remark}
+These rules are generalized in a straightforward way to interactions involving
+any powers of the field $\varphi$ (possibly including terms linear and
+quadratic in $\varphi$)
+\begin{equation}\label{eq:genint}
+\mathcal A_I=\int d^4y\,\Bigl[\lambda_1(y)\,\varphi(y)+\frac{\lambda_2(y)}{2!}\,\varphi^2(y)+\frac{\lambda_3(y)}{3!}\,\varphi^3(y)+\frac{\lambda_4(y)}{4!}\,\varphi^4(y)+\cdots\Bigr]\,.
+\end{equation}
+Here I allowed the coupling parameters $\lambda_k=\lambda_k(y)$ to be
+arbitrary functions of $y$. (This generally breaks space-time translation and
+rotation symmetries of the theory, but otherwise defines quite meaningful
+quantity. Later, these generalizations will allow us to use diagrammatic
+representations of the generating functional and effective action.) The
+Feynman rules generalize to the case \eqref{eq:genint} by including $k$-leg
+vertices
+\begin{equation}\label{eq:kleg}
+\begin{gathered}
+\dia{\draw[prop] (-1.4,0) -- (0,0) node[vtx]{};}=-\int d^4y\,\lambda_1(y)\dots\,,\qquad
+\dia{\draw[prop] (-1.4,0) -- (1.4,0); \node[vtx] at (0,0) {};}=-\int d^4y\,\lambda_2(y)\dots\,,\\[4pt]
+\dia{\draw[prop] (-1,0.8) -- (0,0) -- (-1,-0.8); \draw[prop] (0,0) -- (1.3,0); \node[vtx] at (0,0) {};}=-\int d^4y\,\lambda_3(y)\dots\,,\qquad\cdots\,,\qquad
+\dia{\foreach \a in {20,60,100,140,250,290} \draw[prop] (0,0) -- (\a:1.1);
+     \draw[densely dotted] (165:0.7) arc[start angle=165,end angle=230,radius=0.7];
+     \node[vtx] at (0,0) {}; \lab[below]{0.25,-0.9}{k}}=-\int d^4y\,\lambda_k(y)\dots\,.
+\end{gathered}
+\end{equation}
+\end{remark}
+
+\subsection*{Vacuum Diagrams}
+
+Returning back to the homogeneous $\varphi^4$ theory, let us take another look
+at the diagrams contributing to the two-point function. We write
+\begin{equation}\label{eq:twofactors}
+\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle
+=\Bigl[\frac1{Z_0}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\,e^{-\mathcal A_0-\mathcal A_I}\Bigr]\times\Bigl[\frac{Z_0}{Z}\Bigr]\,,
+\end{equation}
+where $Z_0$ is the partition function of the free theory defined by
+$\mathcal A_0=\mathcal A_{\mathrm{KG}}$. The diagrams we wrote down above
+actually correspond to the first factor in \eqref{eq:twofactors}. For this
+first factor we have
+\[
+\underbrace{\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}}_{(a)}
++\frac12\,\Bigl(\underbrace{\dia{\pic{tadline}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}}_{(b)}\Bigr)
++\frac18\,\Bigl(\underbrace{\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2} \pic at (3.3,0) {eight};}}_{(c)}\Bigr)+\cdots\,.
+\]
+Observe that there are diagrams containing disconnected pieces, like the
+diagram (c) above. This diagram has a fragment
+\[
+\dia{\pic{eight};}
+\]
+which is not connected to any of the ``external'' points ($x_1,x_2$ in this
+case). Such fragments are called ``vacuum diagrams'' (or ``vacuum
+fragments''). The value
+\[
+D(x_1-x_2)\times\Bigl(-\frac{\lambda}{8}\int d^4x\,D(x-x)\,D(x-x)\Bigr)
+\]
+associated with the diagram (c) above is the product of the values of its
+parts,
+\begin{equation}\label{eq:eightvalue}
+\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}=D(x_1-x_2)\,;\qquad
+\dia{\pic{eight};}=-\frac{\lambda}{8}\int d^4x\,D^2(x-x)\,.
+\end{equation}
+As follows directly from the Feynman rules above, this holds in general: the
+value of any disconnected diagram is the product of the values of its
+connected fragments. In fact, in computing the correlation function
+\eqref{eq:twofactors} the vacuum fragments should be ignored because their
+contributions are canceled exactly by the second factor in the r.h.s.\ of
+\eqref{eq:twofactors}, which contains the partition function $Z$ of the full
+theory. To see this, consider again the diagram (c) above. In higher orders of
+the perturbation theory we obtain infinitely many diagrams in which the vacuum
+fragment in (c) is repeated many times,
+\[
+\Bigl(\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}\quad
+\underbrace{\dia{\pic{eight}; \pic at (1.3,0) {eight}; \node at (2.25,0) {$\cdots$}; \pic at (3.2,0) {eight};}}_{n\ \text{times}}\Bigr)
+\]
+The value corresponding to $n$ copies of the vacuum fragment is just
+\[
+\underbrace{\dia{\pic{eight}; \pic at (1.3,0) {eight}; \node at (2.25,0) {$\cdots$}; \pic at (3.2,0) {eight};}}_{n\ \text{times}}
+=\frac1{n!}\,\Bigl[\dia{\pic{eight};}\Bigr]^n\,,
+\]
+the factor $1/n!$ being the extra symmetry factor associated with the
+permutations of the fragments. The sum over $n$ therefore yields
+\[
+\Bigl(\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}\Bigr)\times\exp\Bigl(\dia{\pic{eight};}\Bigr)
+\]
+This simple analysis can be repeated with any other vacuum fragment. As the
+result we obtain for the first factor in \eqref{eq:twofactors}
+\begin{multline*}
+\Bigl(\underbrace{\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}
++\dia{\pic{tadline}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}
++\dia{\pic{sunline}; \lab[left]{-1.7,0}{x_1} \lab[right]{1.7,0}{x_2}}+\cdots}_{\text{sum of all connected diagrams}}\Bigr)\\
+\times\exp\Bigl(\underbrace{\dia{\pic{eight};}+\dia{\pic{melon};}+\dia{\pic{chain3};}+\cdots}_{\text{sum of all connected vacuum diagrams}}\Bigr)
+\end{multline*}
+Consider now the second factor in \eqref{eq:twofactors},
+\[
+\frac Z{Z_0}=\frac1{Z_0}\int\bigl[D\varphi\bigr]\,e^{-\mathcal A_0}\,e^{-\mathcal A_I}\,.
+\]
+Expanding in $\mathcal A_I$ we find that this quantity is given by the sum of
+all vacuum diagrams, which again exponentiates in terms of the connected
+vacuum diagrams. That is
+\begin{equation}\label{eq:ZZ0}
+Z/Z_0=\exp\Bigl(\text{sum of all connected vacuum diagrams}\Bigr)
+\end{equation}
+so that the second factor in \eqref{eq:twofactors} cancels the contributions of
+all vacuum fragments. Thus, if we are interested in the correlation function,
+the factor $Z^{-1}$ in the definition of the correlation function can indeed be
+ignored if we simultaneously drop all the diagrams with disconnected vacuum
+fragments.
+
+Note that the above analysis of the ``vacuum fragments'' generalizes
+straightforwardly to the case of interaction \eqref{eq:genint} with arbitrary
+$x$-dependent coupling constants. In particular it is still true that the
+partition function of this more general theory exponentiates in terms of the
+connected vacuum diagrams, as in \eqref{eq:ZZ0}. Of course in this case the
+diagrams involve all the vertices in \eqref{eq:kleg}.
+
+Let me comment on the interpretation of the above formula \eqref{eq:ZZ0} for
+$Z$. The first of the connected vacuum diagrams is given by the vacuum
+fragment in \eqref{eq:eightvalue}, i.e.
+\[
+\dia{\pic{eight};}=-\frac{\lambda}{8}\,D^2(0)\int d^4x
+\]
+Clearly, it contains an infinite factor
+\[
+\int d^4x=V^{(4)}\,,
+\]
+where $V^{(4)}$ is the volume of the 4-dimensional space. This is the common
+feature of the connected vacuum diagrams
+\[
+\dia{\pic{eight};}\,,\qquad\dia{\pic{melon};}\,,\qquad\dia{\pic{chain3};}\,,\qquad\dots
+\]
+As a consequence of translational invariance each of them contains this volume
+factor. Therefore
+\begin{equation}\label{eq:Zvac}
+Z=Z_0\,\exp\bigl(-\varepsilon_I\,V^{(4)}\bigr)
+\end{equation}
+where $\varepsilon_I$ is just the sum of all connected vacuum diagrams with the
+volume factored out (and with the sign reversed).
+
+The functional integral
+\[
+Z=\int\bigl[D\varphi\bigr]\,e^{-\mathcal A}
+\]
+can be interpreted as a (configuration) partition function of a classical
+statistical mechanics. The classical system in this interpretation is a field
+$\varphi(x)$ in 4-dimensional (Euclidean) space, with the potential energy
+$U[\varphi]$,
+\[
+\beta\,U[\varphi]:=\frac1\hbar\,\mathcal A[\varphi]\,,
+\]
+where $\beta$ is interpreted as the inverse temperature. ($\beta$ can be set
+equal to 1, again by suitable choice of the energy units.) This is a spatially
+homogeneous system with infinitely many degrees of freedom associated with all
+points in the 4-dimensional space. Naturally, its free energy is an intensive
+quantity proportional to $V^{(4)}$. We see that the quantity
+\[
+\varepsilon_0+\varepsilon_I\,,\qquad\text{where}\qquad \varepsilon_0=-\log Z_0/V^{(4)}
+\]
+is interpreted as the specific (per unit volume) free energy of this system,
+the first term being the specific free energy of the free theory and
+$\varepsilon_I$ incorporating all corrections due to the interaction.
+
+Another way to look at the formula \eqref{eq:ZZ0} is to recall the relation
+between the path integrals and the matrix elements of the (imaginary) time
+evolution operator. The path integral defining $Z$ can be thought of as the
+$T\to\infty$ limit of the path integral
+\[
+\int\bigl[D\varphi\bigr]_{\substack{\varphi(\xx,-T/2)=\varphi_i(\xx)\\\varphi(\xx,+T/2)=\varphi_f(\xx)}}\,e^{-\mathcal A}
+\]
+which represents the matrix element
+\[
+\bra{\varphi_f(\xx)}e^{-T\hat H}\ket{\varphi_i(\xx)}\,.
+\]
+Here $\varphi_i$ and $\varphi_f$ are arbitrary ``initial'' and ``final''
+field configurations. The evolution operator inside can be written as
+\[
+e^{-T\hat H}=\sum_n\ket n\bra n\,e^{-TE_n}\,,
+\]
+where $\ket n$ is a complete set of the stationary states; its $T\to\infty$
+limit then is
+\[
+e^{-E_0T}\,\ket0\bra0\,,\qquad\text{where}\qquad E_0=\varepsilon\,V^{(3)}
+\]
+($V^{(3)}$ is the volume of the 3-dimensional ``equal time'' section of our
+4-dimensional space). Because $V^{(4)}=T\times V^{(3)}$, comparison with the
+above formula \eqref{eq:ZZ0} shows that vacuum diagrams represent the
+expansion of the ground state energy in the powers of $\lambda$ (hence the term
+``vacuum diagrams''). We will see later that all the vacuum diagrams are highly
+divergent at short distances. This is similar to the short-distance (high
+momenta) divergence of the vacuum energy of the Klein-Gordon theory which we
+observed before. Proper understanding of the physical content of these
+divergent terms is important in certain problems like the Casimir effect or
+interaction with gravity.

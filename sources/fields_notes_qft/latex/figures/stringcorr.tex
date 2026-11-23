@@ -1,0 +1,15 @@
+\begin{tikzpicture}[xscale=1.0,yscale=0.9,line width=0.6pt]
+  \draw[axis] (-0.3,0)--(8.6,0) node[right] {$\tau$};
+  \draw[densely dotted,gray] (0,0)--(0,3.1) (8,0)--(8,3.1);
+  \draw[line width=0.9pt] (0,1.8) .. controls (0.8,1.9) and (1.2,1.8) .. (1.5,1.6)
+     .. controls (2.0,1.3) and (2.3,0.9) .. (2.9,1.1)
+     .. controls (3.6,1.3) and (3.8,2.3) .. (4.4,1.9)
+     .. controls (5.0,1.5) and (5.1,0.8) .. (6.0,0.7)
+     .. controls (6.9,0.6) and (7.3,2.6) .. (8,2.7);
+  \foreach \x/\y/\l in {1.5/1.6/1,2.9/1.1/2,6.0/0.7/N} {
+    \draw[densely dotted] (\x,0)--(\x,\y); \fill (\x,\y) circle (1.7pt);
+    \node[below] at (\x,0) {$\tau_{\l}$}; \node[above] at (\x,\y+0.05) {$q(\tau_{\l})$};}
+  \node at (4.45,0.4) {$\cdots$};
+  \node[below] at (0,0) {$-L/2$};
+  \node[below] at (8,0) {$L/2$};
+\end{tikzpicture}

@@ -1,0 +1,346 @@
+% Source pp. 135-143 (Lectures13-18.pdf).
+\section[Renormalization of Composite Fields (\texorpdfstring{$\varphi^4$}{phi**4} theory)]{Renormalization of Composite Fields (\texorpdfstring{$\varphi^4$}{phi**4} theory)}
+
+% insertion vertices
+\newcommand{\insv}[2][]{\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0);
+  \draw[prop] (0,0) -- (1.4,1.4); \draw[prop] (0,0) -- (1.4,-1.4); #2 \node[font=\tiny] at (-2.6,0.45) {#1};}}
+
+In many cases one may be interested in correlation functions involving composite
+fields, such as powers of $\varphi^n(x)$, or energy-momentum tensor. Such
+correlation functions can be computed perturbatively, as the power series in the
+coupling constant $\lambda$. However new renormalizations, in addition to the
+basic renormalizations of the parameters $m^2$, $\lambda$ and the field
+$\varphi$, have to be made to make such correlation functions finite. Let us
+demonstrate this for the simplest case of the composite field
+\[
+\varphi^2(x)
+\]
+in the $\varphi^4$ theory.
+
+Consider the 3-point connected correlation function
+\[
+\Bigl\langle\frac12\,\varphi^2(x)\,\varphi(x_1)\,\varphi(x_2)\Bigr\rangle_c
+\]
+where $\varphi(x)$ stands for the renormalized field, $\varphi=Z^{-1/2}\varphi_0$,
+$Z=1+\delta Z$, with $Z$ chosen according to some scheme, say SII. Diagrams can
+be used to describe perturbative contributions to this correlation function if
+one introduces additional ``external'' vertex
+\[
+\insv[$\varphi^2$]{\node[vtx,minimum size=4.5pt] at (0,0) {};}=1
+\]
+associated with the insertion $\frac12\varphi^2$. As before, it is useful to
+switch to the momentum representation, and introduce the associated amputated
+vertex
+\begin{equation}\label{eq:Gphi2}
+-\Gamma^{(\varphi^2,2)}(p_1,p_2)=\frac{W^{(\varphi^2,2)}(p_1,p_2)}{W(p_1)\,W(p_2)}\,,
+\end{equation}
+where
+\[
+(2\pi)^4\delta^{(4)}(q-p_1-p_2)\,W^{(\varphi^2,2)}(p_1,p_2)=\text{f.t.}\,\Bigl\langle\frac12\,\varphi^2(x)\,\varphi(x_1)\varphi(x_2)\Bigr\rangle_c\,,
+\]
+with $q,p_1,p_2$ being the momenta corresponding to $x,x_1,x_2$, respectively.
+It is given by the sum of all one-particle irreducible diagrams
+\begin{multline*}
+-\Gamma^{(\varphi^2,2)}(p_1,p_2)=
+\underset{(a)}{\diac[0.4]{\draw[prop,wavy] (-2,0) -- (0,0); \draw[prop,densely dashed] (0,0) -- (1.2,1.2); \draw[prop,densely dashed] (0,0) -- (1.2,-1.2); \node[vtx] at (0,0) {};}}
++\underset{(b)}{\diac[0.4]{\draw[prop,wavy] (-2.8,0) -- (-1.6,0); \draw[prop] (-0.8,0) ellipse (0.8 and 0.5);
+  \draw[prop,densely dashed] (0,0) -- (1.2,1.2); \draw[prop,densely dashed] (0,0) -- (1.2,-1.2); \node[vtx] at (-1.6,0) {}; \node[vtx] at (0,0) {};}}
++\underset{(c)}{\diac[0.4]{\draw[prop,wavy] (-4.4,0) -- (-3.2,0); \draw[prop] (-2.4,0) ellipse (0.8 and 0.5); \draw[prop] (-0.8,0) ellipse (0.8 and 0.5);
+  \draw[prop,densely dashed] (0,0) -- (1.2,1.2); \draw[prop,densely dashed] (0,0) -- (1.2,-1.2); \foreach \x in {-3.2,-1.6,0} \node[vtx] at (\x,0) {};}}\\
++\underset{(d)}{\diac[0.4]{\draw[prop,wavy] (-2.8,0) -- (-1.6,0); \coordinate (T) at (-0.25,0.6); \coordinate (B) at (-0.25,-0.6);
+  \draw[prop] (-0.8,0) circle (0.8); \draw[prop] (T) .. controls (-0.55,0) .. (B);
+  \draw[prop,densely dashed] (T) -- ++(45:1.2); \draw[prop,densely dashed] (B) -- ++(-45:1.2); \foreach \p in {(-1.6,0),(T),(B)} \node[vtx] at \p {};}}
++\underset{(e)}{\diac[0.4]{\draw[prop,wavy] (-2.8,0) -- (-1.6,0); \draw[prop] (-0.8,0) ellipse (0.8 and 0.5);
+  \draw[prop,densely dashed] (0,0) -- (1.2,1.2); \draw[prop,densely dashed] (0,0) -- (1.2,-1.2); \node[vtx] at (-1.6,0) {}; \node[otimesv,minimum size=5pt] at (0,0) {};}}
++\cdots
+\end{multline*}
+Most of these diagrams are singular at $d=4$, and a quick look reveals that these
+singularities can not be eliminated by renormalizations of the parameters $m^2$,
+$\lambda$, and the field $\varphi$. This is already seen in the order
+$\sim\lambda$. All the counterterm vertices that we have introduced already show
+up at the order $\lambda^2$ (diagram (e)) and higher. But the diagram (b), which
+is $\sim\lambda$, is singular. Indeed its contribution is
+\[
+-\Gamma^{(\varphi^2,2)}(p_1,p_2)=1-\frac\lambda2\,I(p_{12}^2)+O(\lambda^2)
+\]
+where $I(p^2)$ is the same integral \eqref{eq:Ip2} which we encountered
+previously. We know that
+\[
+I(p_{12}^2)=I(0)+I_r(p_{12}^2)\,,
+\]
+where $I_r(p^2)$ has finite limit at $d=4$, while $I(0)$ diverges as $1/\epsilon$.
+In fact this shows what we need to do. We write
+\[
+-\Gamma^{(\varphi^2,2)}(p_1,p_2)=\Bigl(1-\frac\lambda2\,I(0)+O(\lambda^2)\Bigr)\Bigl(1-\frac\lambda2\,I_r(p_{12}^2)+O(\lambda^2)\Bigr)+O(\lambda^2)\,.
+\]
+Therefore, at least to the leading order, we can handle the problem by defining
+the renormalized field $[\varphi^2]_R$,
+\begin{equation}\label{eq:phi2R}
+\varphi^2=Z_{\varphi^2}^{-1}\,[\varphi^2]_R\,,
+\end{equation}
+where
+\[
+Z_{\varphi^2}^{-1}=1-\frac\lambda2\,I(0)+O(\lambda^2)\,,\qquad
+I(0)=\frac{\Gamma(2-d/2)}{(4\pi)^{d/2}}\,(m^2)^{d/2-2}\,.
+\]
+Then
+\[
+\Gamma^{(\varphi^2,2)}=Z_{\varphi^2}^{-1}\,\Gamma^{([\varphi^2]_R,2)}\,,
+\]
+where the vertex function of the renormalized field $[\varphi^2]_R$ is finite,
+to the order $\lambda$.
+
+It is convenient to invert the above relation,
+\begin{equation}\label{eq:phi2Rinv}
+[\varphi^2]_R(x)=Z_{\varphi^2}\,\varphi^2=Z_{\varphi^2}\,Z^{-1}\,\varphi_0^2\,.
+\end{equation}
+(Note that in the ratio \eqref{eq:Gphi2} defining $\Gamma^{(\varphi^2,2)}(p_1,p_2)$
+the field renormalization factor $Z$ cancels out.) As with other renormalization
+parameters, we assume that $Z_{\varphi^2}$ expands in power series in $\lambda$,
+\[
+Z_{\varphi^2}=z^{(0)}_{\varphi^2}+\lambda\,z^{(1)}_{\varphi^2}+\lambda^2\,z^{(2)}_{\varphi^2}+\dots
+\]
+In the above calculation we have set $z^{(0)}_{\varphi^2}=1$; with this we have
+\[
+z^{(1)}_{\varphi^2}=\frac12\,I(0)+\text{finite}\,.
+\]
+By inserting the renormalized field $[\varphi^2]_R(x)$ instead of $\varphi^2(x)$
+we replace the $\varphi^2$ vertex with
+\[
+\insv[$\varphi^2$]{\node[vtx,minimum size=4.5pt] at (0,0) {};}=1\ \longrightarrow\
+\insv{\node[circle,draw,fill=white,inner sep=0pt,minimum size=6pt] at (0,0) {}; \fill (0,0) circle (0.7pt);}=Z_{\varphi^2}\,,
+\]
+In the perturbation theory (i.e.\ expansion in $\lambda$), this new vertex is
+represented as the series in $\lambda$,
+\[
+\insv{\node[circle,draw,fill=white,inner sep=0pt,minimum size=6pt] at (0,0) {}; \fill (0,0) circle (0.7pt);}
+=\insv{\node[circle,draw,fill=white,inner sep=0pt,minimum size=6pt] at (0,0) {}; \fill (0,0) circle (0.7pt); \node[font=\tiny] at (0,0.6) {(0)};}
++\insv{\node[circle,draw,fill=white,inner sep=0pt,minimum size=6pt] at (0,0) {}; \fill (0,0) circle (0.7pt); \node[font=\tiny] at (0,0.6) {(1)};}
++\insv{\node[circle,draw,fill=white,inner sep=0pt,minimum size=6pt] at (0,0) {}; \fill (0,0) circle (0.7pt); \node[font=\tiny] at (0,0.6) {(2)};}
++\cdots
+\]
+where
+\[
+\insv{\node[circle,draw,fill=white,inner sep=0pt,minimum size=6pt] at (0,0) {}; \fill (0,0) circle (0.7pt); \node[font=\tiny] at (0,0.6) {$(n)$};}
+=\lambda^n\,z^{(n)}_{\varphi^2}
+\]
+In computing the correlation functions with the insertion of $[\varphi^2]_R$ one
+has to take into account these new field renormalization vertices along with
+the counterterm vertices associated with the counterterm part of the action. The
+field renormalization constants $z^{(n)}_{\varphi^2}$ are to be adjusted, order
+by order in the perturbation theory, to cancel the divergent parts of the
+diagrams.
+
+As in the case of the renormalizations of the parameters of the action, there
+is freedom of finite renormalizations
+\[
+[\varphi^2]_R\to Z_{\text{finite}}\,[\varphi^2]_R\,.
+\]
+This ambiguity can be fixed by imposing some normalization condition. For
+instance, one can fix the normalization of the field $[\varphi^2]_R$ by
+\[
+-\Gamma^{([\varphi^2]_R,2)}(0,0)=1\,,
+\]
+where $-\Gamma^{([\varphi^2]_R,2)}(p_1,p_2)$ is the momentum-space amputated
+correlation function
+\[
+-\Gamma^{([\varphi^2]_R,2)}(p_1,p_2)\,W(p_1)\,W(p_2)=\text{f.t.}\,\Bigl\langle\frac12\,[\varphi^2]_R(x)\,\varphi(x_1)\varphi(x_2)\Bigr\rangle_c
+\]
+Under this condition we have
+\[
+z^{(0)}_{\varphi^2}=1\,,\qquad z^{(1)}_{\varphi^2}=\frac12\,I(0)\,.
+\]
+Renormalizations of higher composite fields follow the same idea but are more
+complicated. In particular, it generally involves the phenomenon of ``operator
+mixing'': renormalizations of higher composite fields may require forming
+linear combinations of them, with renormalization factors becoming matrices.
+Brief discussion of the simplest case of this phenomenon, mixing of the fields
+$\varphi^3$ and $\Delta\varphi$, is given below. More systematically this
+phenomenon is discussed in the context of \emph{Renormalization Group}.
+
+\subsection*{Higher composite fields. Operator mixing}
+
+Simple multiplicative renormalization of the field $\varphi^3$, i.e.\ the form
+$[\varphi^3]_R=Z_3(\epsilon)\,\varphi^3$, is not sufficient for removing
+divergences in all correlation functions. Instead, one has to look for the
+renormalized field in the form of the linear combination
+\begin{equation}\label{eq:phi3R}
+\frac1{3!}\,[\varphi^3]_R=\frac{Z_3}{3!}\,\varphi^3+Z_{3,1}\,\varphi-Z_{3,1''}\,\partial_\mu^2\varphi\,.
+\end{equation}
+The reason for adding the term $\sim\partial^2\varphi$ will become clear in a
+moment. As usual, the coefficients $Z$ are assumed to be certain power series in
+the renormalized coupling constant,
+\begin{align*}
+Z_3&=1+\lambda\,z^{(1)}_3+\cdots\,,\\
+Z_{3,1}&=z^{(0)}_{3,1}+\lambda\,z^{(1)}_{3,1}+\cdots\,,\\
+Z_{3,1''}&=\lambda\,z^{(1)}_{3,1''}+\cdots\,.
+\end{align*}
+Therefore, insertion of the renormalized field $\frac1{3!}[\varphi^3]_R$ gives
+rise to series of vertices,
+\[
+\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop] (0,0) -- (1.4,1.4); \draw[prop] (0,0) -- (1.8,0); \draw[prop] (0,0) -- (1.4,-1.4);
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}=1\,,\qquad
+\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop] (0,0) -- (1.4,1.4); \draw[prop] (0,0) -- (1.8,0); \draw[prop] (0,0) -- (1.4,-1.4);
+  \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(1)}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}=\lambda\,z^{(1)}_3\,,\qquad\text{etc}
+\]
+and
+\[
+\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop] (0,0) -- (2,0); \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(0)}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}=z^{(0)}_{3,1}\,,\qquad
+\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop] (0,0) -- (2,0); \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(1)}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}
+=\lambda\,\bigl(z^{(1)}_{3,1}+p^2\,z^{(1)}_{3,1''}\bigr)\,,\qquad\text{etc.}
+\]
+Then, for the vertex $\Gamma^{(\varphi^3_R,1)}$ we have the following series of
+diagrams
+\begin{multline*}
+\underbrace{\Bigl(\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop,densely dashed] (0,0) -- (1.8,0); \draw[prop] (0,0.6) circle (0.6);
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}
++\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop,densely dashed] (0,0) -- (1.8,0); \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(0)}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}\Bigr)}_{\sim\lambda^0}\\
++\underbrace{\Bigl(\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop] (0,0) -- (2,0); \draw[prop] (1,0) ellipse (1 and 0.55); \draw[prop,densely dashed] (2,0) -- (3.2,0);
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[vtx] at (2,0) {}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}
++\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop,densely dashed] (0,0) -- (1.8,0); \draw[prop] (0,0.6) circle (0.6);
+  \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(1)}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}
++\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop,densely dashed] (0,0) -- (1.8,0); \node[otimesv,minimum size=5pt] at (0,0) {}; \node[font=\tiny] at (0,0.6) {(1)}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}\Bigr)}_{\sim\lambda^1}+\cdots
+\end{multline*}
+We already know from the free theory that
+\begin{equation}\label{eq:z031}
+z^{(0)}_{3,1}=-\frac12\,D(0)+\text{finite}=-\frac12\int\frac{d^dk/(2\pi)^d}{k^2+m^2}+\text{finite}\,.
+\end{equation}
+The finite parts here, and in higher order counterterms are arbitrary in that
+they are not constrained by general requirement of locality. After all, finite
+renormalization of $[\varphi^3]_R$, or adding finite portions of (already
+renormalized) fields $\varphi$ and $\partial^2\varphi$ produces equally good
+local field that one can take for renormalized $\varphi^3$. One can fix this
+ambiguity by adopting minimal subtraction scheme, or by imposing some
+normalization conditions, say
+\begin{equation}\label{eq:phi3norm}
+-\Gamma^{\varphi^3_R,1}(p^2)=O(p^4)\,,
+\end{equation}
+in addition to the one we have taken already,
+\[
+-\Gamma^{\varphi^3_R,3}(0,0,0)=1\,.
+\]
+With this normalization condition, the finite term in \eqref{eq:z031} must be
+zero, so that the two diagrams $\sim\lambda^0$ cancel exactly. At the order
+$\lambda^1$, the first of the above diagrams is
+\[
+\dia[0.4]{\draw[prop,wavy] (-2.2,0) -- (0,0); \draw[prop] (0,0) -- (2,0); \draw[prop] (1,0) ellipse (1 and 0.55); \draw[prop,densely dashed] (2,0) -- (3.2,0);
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[vtx] at (2,0) {}; \node[font=\tiny] at (-2.6,0.45) {$\varphi^3$};}
+=-\frac\lambda{3!}\,\Pi(p^2)\,,
+\]
+where $\Pi(p^2)$ is already familiar integral
+\[
+\Pi(p^2)=\int\frac{d^dk_1\,d^dk_2}{(2\pi)^{2d}}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)\bigl((p+k_1+k_2)^2+m^2\bigr)}\,.
+\]
+We have found that
+\[
+\Pi_r(p^2)=\Pi(p^2)-\Pi(0)-p^2\,\Pi'(0)
+\]
+is finite, and the above normalization condition is satisfied by the choice
+\[
+z^{(1)}_{3,1}=\frac1{3!}\,\Pi(0)-\frac{z^{(1)}_3}2\,D(0)\,,\qquad
+z^{(1)}_{3,1''}=\frac1{3!}\,\Pi'(0)\,,
+\]
+where $z^{(1)}_3=\frac32I(0)$ is the first-order counterterm associated with
+$Z_3$. Under this choice all singular parts cancel, and the above three diagrams
+$\sim\lambda^1$ sum to finite quantity $-\frac\lambda{3!}\Pi_r(p^2)$.
+
+We have seen few lectures ago that the fields in the correlation functions
+satisfy the equation of motion in the ``weak sense'',
+\begin{equation}\label{eq:weakEOM}
+\bigl(m_0^2-\partial_\mu^2\bigr)\varphi_0(x)+\frac{\lambda_0}{3!}\,\varphi_0^3(x)\simeq0\,,
+\end{equation}
+the ``weak'' equation $F(x)\simeq0$ means that
+\[
+\bigl\langle F(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle=0\qquad\text{for}\quad x\neq x_1,\dots,x_n\,,
+\]
+with any local fields $\mathcal O_i$. The above ``weak'' equation was obtained by
+formal manipulations with the functional integral, namely by performing the
+change of variables
+\[
+\varphi_0(x)\to\varphi_0(x)+\epsilon(x)
+\]
+in the functional integral written in its ``bare'' form. It involves therefore
+the bare parameters and the bare field $\varphi_0$. As it stands it makes sense
+only if some regularization is present. One can repeat the same manipulation with
+the functional integral expressed through the renormalized field and
+renormalized parameters. This way one obtains
+\[
+\bigl(m^2+\delta m^2\bigr)\varphi(x)-(1+\delta Z)\,\partial_\mu^2\varphi(x)+\frac{\lambda+\delta\lambda}{3!}\,\varphi^3(x)\simeq0\,,
+\]
+which of course is just the same ``bare'' equation \eqref{eq:weakEOM} expressed
+through renormalized parameters and renormalized $\varphi$. It contains the
+singular counterterm coefficients as well as the field $\varphi^3$ which, before
+renormalization, is also singular. Again, it makes sense only in regularized
+theory. However now we can use \eqref{eq:phi3R} to exclude the field $\varphi^3$
+in favor of the renormalized field $[\varphi^3]_R$. One then obtains the
+equation
+\begin{equation}\label{eq:renEOM}
+m^2B_{m^2}\,\varphi(x)-\partial_\mu^2\varphi(x)+\frac\lambda{3!}\,B_\lambda\,[\varphi^3]_R(x)\simeq0\,,
+\end{equation}
+where
+\[
+B_{m^2}=\frac1{m^2}\,\frac{(m^2+\delta m^2)\,Z_3-(\lambda+\delta\lambda)\,Z_{3,1}}{(1+\delta Z)\,Z_3-(\lambda+\delta\lambda)\,Z_{3,1''}}\,,\qquad
+B_\lambda=\frac{1+\delta\lambda/\lambda}{(1+\delta Z)\,Z_3-(\lambda+\delta\lambda)\,Z_{3,1''}}\,.
+\]
+The equation \eqref{eq:renEOM} states certain relation between the correlation
+functions of fully renormalized fields which remain finite when the
+regularization is removed (i.e.\ when $\epsilon$ is set equal 0). This suggests
+that the coefficients $B_{m^2}$ and $B_\lambda$, which appear as complicated
+combination of singular counterterms, are in fact finite. This finiteness is
+direct consequence of the existence of renormalized perturbation theory. Let us
+check it in the leading order in $\lambda$. As $\delta\lambda/\lambda=a^{(2)}\lambda+O(\lambda^2)$,
+$Z_3=1+z_3^{(1)}\lambda+O(\lambda^2)$ and $\delta Z=O(\lambda^2)$ we find for
+example
+\[
+B_\lambda=1+\bigl(a^{(2)}-z^{(1)}_3\bigr)\,\lambda+O(\lambda^2)\,.
+\]
+It is not difficult to check that the difference $a^{(2)}-z^{(1)}_3$ is finite
+in any renormalization scheme.
+
+Note that canonical mass dimension of $\varphi^3$ at $d=4$ is
+\[
+[\varphi_0^3]=3\,,\qquad\text{and}\qquad[\varphi]=1\,,\qquad[\partial^2\varphi]=3\,.
+\]
+The renormalized field $[\varphi^3]_R$ is a linear combination of the bare fields
+of canonical dimension 3 or lower, which have the same symmetries as
+$\varphi^3$. It is not difficult to check that there are no other composite
+fields, besides $\varphi_0$, $\partial^2\varphi_0$, and $\varphi_0^3$ itself,
+which i) have canonical dimension $\le3$, ii) transform as scalars under
+coordinate rotations, and iii) change sign under obvious symmetry of the
+$\varphi^4$ theory: $\varphi\to-\varphi$. This is a general feature of
+renormalization of composite fields. In order to eliminate divergences, it is
+sufficient to look for renormalized fields in the forms of linear combinations of
+the bare fields of the same or lower canonical dimensions, and of the same
+symmetries. In doing so one usually assumes that the fields of lower dimensions
+are already renormalized, and so renormalizations of composite fields goes step
+by step, from lower dimensions up.
+
+To illustrate this further, let us briefly discuss renormalization of the fields
+of canonical dimension 4. There are two new fields of this dimension,
+\begin{equation}\label{eq:dim4ops}
+\mathcal O_I=\frac12\,(\partial\varphi)^2\,,\qquad\mathcal O_{II}=\frac1{4!}\,\varphi^4\,.
+\end{equation}
+Along with these we must consider two other fields
+\[
+\mathcal O_{III}=\frac12\,\partial^2\varphi^2\,,\qquad\mathcal O_{IV}=\frac12\,\varphi^2\,,
+\]
+because the first of them also has canonical dimension 4, and canonical
+dimension of the second is 2 which is lower than 4, and both have the same
+$\varphi\to-\varphi$ symmetry. Of course renormalization of these last two fields
+is completely determined by the renormalization of the field $\varphi^2$ which we
+already considered. At the same time renormalized fields corresponding to
+\eqref{eq:dim4ops} must be obtained as linear combinations of the bare fields
+$\mathcal O_{A,0}$, $A=I,II,III,IV$, i.e.
+\[
+\mathcal O_{A,R}=\sum_B\bigl[Z^{-1}\bigr]_{AB}\,\mathcal O_{B,0}\,,
+\]
+where $Z$ is $4\times4$ matrix
+\[
+Z=\begin{pmatrix}\mathbf A&\mathbf B\\0&\mathbf C\end{pmatrix}\,.
+\]
+Here $\mathbf C=\operatorname{diag}(Z_{\varphi^2},Z_{\varphi^2})$, and $2\times2$
+matrices $\mathbf A$ and $\mathbf B$ must be found from suitable normalization
+conditions order by order in $\lambda$. Note that this matrix has triangular (in
+terms of dimensions) form: fields of higher dimensions do not mix into the fields
+of lower dimensions. Renormalizations of composite fields of yet higher canonical
+dimensions, and renormalizations of tensor fields, follow the same pattern.

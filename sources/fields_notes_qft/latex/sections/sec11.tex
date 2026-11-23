@@ -1,0 +1,333 @@
+% Source pp. 93-101 (Lectures7-12.pdf).
+\section{Diagram Evaluation. Divergences}
+
+Now we turn to actual evaluation of the diagram contributions. For this purpose
+in most cases it is much more convenient to use the Feynman rules in the
+momentum space, evaluating the Fourier transformed correlation functions
+\begin{multline}\label{eq:FTW}
+\int W^{(n)}(x_1,\dots,x_n)\,e^{-ip_1x_1}\cdots e^{-ip_nx_n}\,d^4x_1\cdots d^4x_n\\
+=(2\pi)^4\,\delta^{(4)}(p_1+\dots+p_n)\,\tilde W^{(n)}(p_1,\dots,p_n)\,.
+\end{multline}
+Here again $W^{(n)}$ denotes \emph{connected} $n$-point correlation function.
+The delta function in the r.h.s.\ appears because of the translation
+invariance: $W^{(n)}(x_1,\dots,x_n)$ depends only on the differences
+$x_i-x_j$.
+
+I will skip detailed derivation of the diagram rules in the momentum space
+(look up \textbf{Sect.~4.4 of PS} for the details). Very briefly, in any
+diagram one uses the Fourier transform
+\[
+D(x-x')=\int\frac{d^4p}{(2\pi)^4}\,\tilde D(p)\,e^{ip(x-x')}\,,\qquad
+\tilde D(p)=\frac1{p^2+m^2}
+\]
+of all propagators. Then the integral over all $x$ associated with vertices, as
+well as over all ``external'' points $x_i$, can be evaluated explicitly yielding
+the momentum delta-functions. As the result one obtains the
+
+\subsection*{Momentum-space Feynman rules:}
+
+(i) ``Internal'' propagators carry (directed) momentum to be integrated over,
+\[
+\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[arr] (-0.5,0.35) -- (0.5,0.35) node[above,pos=0.5] {\small$p$};}
+=\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[arr] (0.5,0.35) -- (-0.5,0.35) node[above,pos=0.5] {\small$-p$};}
+=\int\frac{d^4p}{(2\pi)^4}\,\frac1{p^2+m^2}\,.
+\]
+(ii) ``External'' legs carry fixed momenta
+\[
+\tilde W^{(n)}(p_1,\dots,p_n)=
+\diac{\foreach \a/\l in {135/p_1,90/p_2,45/p_3,0/p_4} {\draw[prop] (0,0) -- (\a:2.2);
+  \draw[arr] (\a:2.0) ++(\a+90:0.35) -- ++(\a+180:0.8); \node at ($(\a:2.2)+(\a-90:0.5)$) {\small$\l$};}
+  \node[circle,draw,fill=white,inner sep=1.3pt] at (0,0) {};
+  \draw[densely dotted] (165:1.4) arc[start angle=165,end angle=345,radius=1.4];}\,,
+\]
+(iii) The vertices conserve the momentum
+\[
+\diac{\foreach \a/\l in {135/p_1,45/p_2,315/p_3,225/p_4} {\draw[prop] (0,0) -- (\a:2);
+  \draw[arr] (\a:1.9) ++(\a+90:0.3) -- ++(\a+180:0.7); \node at ($(\a:1.9)+(\a+90:0.75)$) {\small$\l$};}
+  \node[vtx] at (0,0) {};}
+=-\lambda\,(2\pi)^4\,\delta^{(4)}(p_1+\dots+p_4)\,,
+\]
+(iv) Integration $\int\frac{d^4p_i}{(2\pi)^4}$ is performed over all the
+momenta associated with the ``internal'' propagators.
+
+\subsection*{Some properties of \texorpdfstring{$\tilde W^{(n)}$}{W(n)}}
+
+In the momentum representation many operations simplify. For example the
+``amputation'' takes very simple form
+\[
+\tilde W^{(n)}(p_1,\dots,p_n)=\Bigl[\prod_{i=1}^n\tilde W(p_i)\Bigr]\,\tilde W^{(n)}_{\text{amp}}(p_1,\dots,p_n)\,,
+\]
+where $\tilde W(p)$ is the Fourier transform of $W(x-x')$. Similar
+simplification occurs to the relation to proper vertices.
+
+\begin{exercise}
+Express $\tilde W^{(6)}(p_1,\dots,p_6)$ in terms of
+$\tilde\Gamma^{(6)}(p_1,\dots,p_6)$, $\tilde\Gamma^{(4)}$ and $\tilde W$.
+\end{exercise}
+
+The momentum space $\tilde\Gamma^{(2)}(p)$ is just the inverse of
+$\tilde W(p)$ in usual sense,
+\[
+\tilde\Gamma^{(2)}(p)=\frac1{\tilde W(p)}=p^2+m^2+\tilde\Sigma(p)\,,
+\]
+where $-\tilde\Sigma(p)$ is the sum of all one-particle irreducible two-leg
+diagrams in the momentum space.
+
+\subsection*{Leading contribution to \texorpdfstring{$\tilde\Sigma$}{Sigma}. Mass renormalization}
+
+Let us calculate some perturbative contributions to $\tilde\Sigma(p)$. In the
+leading order we have
+\[
+\tilde\Sigma(p)=-\Bigl(\,\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6);
+  \draw[arr] (-0.3,1.45) -- (0.3,1.45); \node[above] at (0,1.45) {\small$k$}; \node[vtx] at (0,0) {};}\,\Bigr)
+=\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac1{k^2+m^2}
+=\frac{\lambda}{16\pi^2}\int_0^\infty\frac{|k|^3\,d|k|}{|k|^2+m^2}\,.
+\]
+This integral is badly divergent as $k\to\infty$. What should we do about it?
+We can get rid of the meaningless expression by introducing a ``cutoff'', say,
+replacing
+\[
+\frac1{k^2+m^2}\ \to\ \frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)\,,
+\]
+with the ``cutoff factor'' $\Phi(\xi)$ decaying at $\xi\to\infty$ fast enough
+to make the integral convergent. Then
+\[
+\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)=\frac\lambda2\,m^2\,F(\Lambda^2/m^2)\,.
+\]
+Just as in the case of KG vacuum energy, this move alone brings no real
+progress: it replaces something meaningless by something undetermined.
+
+In this simple diagram one can note that the contribution has no momentum
+dependence, and enters the quantity $\tilde\Gamma^{(2)}(p)$ in the combination
+\[
+\tilde\Gamma^{(2)}(p)=p^2+m^2+\frac\lambda2\,m^2\,F(\Lambda^2/m^2)+O(\lambda^2)\,.
+\]
+We see that no matter what $\Phi$ and $\Lambda$ are, the parameter $m$ in our
+action is not actual mass of the particle; the interaction leads to a shift
+that happens to depend on the cutoff. (We will explain later that actual mass
+$m_{\mathrm{ph}}$ of the particle in interacting theory is determined through
+the equation $\tilde\Gamma^{(2)}(p)\big|_{-p^2=m^2_{\mathrm{ph}}}=0$.)
+Therefore it is reasonable to change the notations, denoting $m_0^2$ the
+coefficient in front of $\varphi^2$ in the action. Then, up to terms
+$\sim\lambda^2$ and higher
+\[
+\tilde\Gamma^{(2)}(p)=p^2+\underbrace{m_0^2+\frac\lambda2\,m_0^2\,F(\Lambda^2/m_0^2)}_{m^2}
+\]
+Recall that we have already observed similar phenomenon in our path integral
+representation of the free propagator $D$. We started with a discrete
+approximation of the path integral (an analog of the cutoff), and we were
+forced to take some parameter $m_0$ instead of $m$ in the cutoff action
+\[
+\mathcal A=m_0\,\text{Length}\,;
+\]
+we then found that $m_0$ had to be given some dependence on the cutoff
+parameter $\Delta$ (which plays the same role as $\Lambda^{-1}$ here) to keep
+actual mass $m$ finite in the limit $\Delta\to0$.
+
+Similar idea can be applied here. Assume that the parameter $m_0^2$ in the
+action ($m_0$ is usually called the ``bare mass'') depends on $\Lambda$ in such
+a way that the actual mass
+\[
+m^2=m_0^2+\frac\lambda2\,m_0^2\,F(\Lambda^2/m_0^2)+O(\lambda^2)
+\]
+remains finite as $\Lambda\to\infty$. Then, to this order,
+\[
+\tilde\Gamma^{(2)}(p)=p^2+m^2+O(\lambda^2)
+\]
+has finite limit. The result is expressed in terms of the actual mass; all
+ambiguities associated with the cutoff are ``absorbed'' by the ``bare'' mass
+parameter.
+
+This idea can be refined as follows. We start with the action
+\[
+\mathcal A=\int\Bigl[\frac12\,(\partial\varphi)^2+\frac{m_0^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4\Bigr]\,.
+\]
+Let us write
+\[
+m_0^2=m^2+\delta m^2\,,
+\]
+where $m^2$ is assumed to coincide with actual mass squared; at this point the
+term $\delta m^2$ is just our way to acknowledge that the mass parameter in the
+action need not be equal to $m^2$. We then split the action into the free and
+interaction parts as follows
+\[
+\mathcal A=\int\Bigl[\underbrace{\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2}_{\mathcal A_0}
++\underbrace{\frac{\delta m^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4}_{\mathcal A_I}\Bigr]\,,
+\]
+Now the propagator is
+\[
+\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[arr] (-0.5,0.35) -- (0.5,0.35) node[above,pos=0.5] {\small$p$};}
+=\frac1{p^2+m^2}\,,
+\]
+not $\frac1{p^2+m_0^2}$, as it was in the original perturbation theory, but we
+have an additional two-leg vertex
+\[
+\dia{\draw[prop] (-1.8,0) -- (1.8,0); \node[xvtx] at (0,0) {};
+  \draw[arr] (-1.4,0.35) -- (-0.6,0.35) node[above,pos=0.5] {\small$p_1$}; \draw[arr] (1.4,0.35) -- (0.6,0.35) node[above,pos=0.5] {\small$p_2$};}
+=-\delta m^2\,(2\pi)^4\,\delta^{(4)}(p_1+p_2)\,,
+\]
+which we will rather write in a shorter form
+\[
+\dia{\draw[prop] (-1.8,0) -- (1.8,0); \node[xvtx] at (0,0) {};
+  \draw[arr] (-1.4,0.35) -- (-0.6,0.35) node[above,pos=0.5] {\small$p$}; \draw[arr] (0.6,0.35) -- (1.4,0.35) node[above,pos=0.5] {\small$p$};}
+=-\delta m^2\,,
+\]
+reflecting the fact that in this case the momentum delta function is easily
+integrated out.
+
+The term $\frac{\delta m^2}2\varphi^2$ in the action is the simplest
+\emph{counterterm}, and the associated two-leg vertex is called the counterterm
+vertex. In this modified perturbation theory we have (up to terms
+$\sim\lambda^2$ and higher)
+\begin{align*}
+\tilde\Sigma(p)&=-\Bigl(\,\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}
++\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \node[xvtx] at (0,0) {};}\,\Bigr)\\
+&=\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)+\delta m^2=\frac\lambda2\,m^2\,F(\Lambda^2/m^2)+\delta m^2\,.
+\end{align*}
+Since we insist that $m$ is the actual mass, we have to set
+\[
+\delta m^2=-\frac\lambda2\,m^2\,F(\Lambda^2/m^2)+O(\lambda^2)\,.
+\]
+Note that this looks different from the relation
+\[
+m_0^2=m^2-\frac\lambda2\,m_0^2\,F(\Lambda^2/m_0^2)+O(\lambda^2)
+\]
+we have obtained within the original perturbation theory; however these two
+relations are consistent since the difference is $\sim\lambda^2$.
+
+As we have seen, in the modified perturbation theory, to the order $\sim\lambda$
+the counterterm diagram exactly cancels the cutoff dependent bubble diagram,
+\[
+\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \node[xvtx] at (0,0) {}; \node[above] at (0,0.2) {\scriptsize$\delta m^2$};}
++\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}=0\,,
+\]
+by choice of the parameter $\delta m^2$. The result has no dependence on
+$\Lambda$ and $\Phi$. Note also that this cancellation occurs inside more
+complicated diagrams, like
+\[
+\diac{\draw[prop,densely dashed] (-3,0) -- (-1.8,0) (1.8,0) -- (3,0);
+  \draw[prop] (-1.8,0) -- (1.8,0); \draw[prop] (1.8,0) arc[start angle=0,end angle=180,radius=1.8];
+  \draw[prop] (0,0) arc[start angle=0,end angle=-180,radius=0.9]; \draw[prop] (1.8,0) arc[start angle=0,end angle=-180,radius=0.9];
+  \draw[prop] (0,2.4) circle (0.6); \foreach \p in {(-1.8,0),(0,0),(1.8,0),(0,1.8)} \node[vtx] at \p {};}
++\diac{\draw[prop,densely dashed] (-3,0) -- (-1.8,0) (1.8,0) -- (3,0);
+  \draw[prop] (-1.8,0) -- (1.8,0); \draw[prop] (1.8,0) arc[start angle=0,end angle=180,radius=1.8];
+  \draw[prop] (0,0) arc[start angle=0,end angle=-180,radius=0.9]; \draw[prop] (1.8,0) arc[start angle=0,end angle=-180,radius=0.9];
+  \node[xvtx] at (0,1.8) {}; \foreach \p in {(-1.8,0),(0,0),(1.8,0)} \node[vtx] at \p {};}
+=0
+\]
+For this reason the diagrams involving the bubble can be ignored in
+calculations, if we keep in mind that their contributions are canceled by the
+mass counterterm.
+
+The idea behind this modified perturbation theory can be extended to obtain the
+so called \emph{renormalized perturbation theory}, in which all divergences of
+original perturbation theory are eliminated. But first let's find out exactly
+what diagrams diverge.
+
+\subsection*{Divergences in \texorpdfstring{$\varphi^4$}{phi**4}}
+
+Consider $n$-leg proper vertex
+\[
+\tilde\Gamma^{(n)}(p_1,\dots,p_n)=
+\diac{\foreach \a/\l in {135/p_1,90/p_2,45/p_3,0/p_4} {\draw[prop] (\a:0.8) -- (\a:2.2);
+  \draw[arr] (\a:2.0) ++(\a+90:0.35) -- ++(\a+180:0.8); \node at ($(\a:2.2)+(\a-90:0.5)$) {\small$\l$};}
+  \draw[prop,pattern=north east lines] (0,0) circle (0.8);
+  \foreach \a in {135,90,45,0} \node[vtx,minimum size=4pt] at (\a:0.8) {};
+  \draw[densely dotted] (165:1.4) arc[start angle=165,end angle=345,radius=1.4];}\,.
+\]
+How to characterize diagrams which contribute to this vertex? Assume that the
+diagram contains
+\[
+\begin{array}{lll}
+V & \text{vertices} & \dia{\pic{xvertex};}\\[8pt]
+P & \text{propagators} & \dia{\draw[prop] (0,0) -- (2,0);}\\[8pt]
+I & \text{momentum integrals} & \displaystyle\int\frac{d^4k}{(2\pi)^4}\,.
+\end{array}
+\]
+These numbers are not all independent. First, $V$ vertices must absorb exactly
+$4V$ lines, $2P$ coming from the propagators, and $n$ from the external
+(amputated) legs, i.e.\ $4V=2P+n$, or
+\[
+2P=4V-n\,.
+\]
+Next, there is a 4-momentum flowing in each propagator, but there is also a
+momentum delta-function associated with each vertex. Each of these
+delta-functions reduces the number of 4-momentum integrations by 1. This is
+true for all delta-constraints but one, because the momentum-space connected
+correlation functions must have one overall delta function left, namely
+\[
+(2\pi)^4\,\delta^{(4)}(p_1+\dots+p_n)\,.
+\]
+Therefore
+\[
+I=P-V+1=\bigl(P=2V-n/2\bigr)=V-n/2+1\,.
+\]
+Thus we have two equations
+\[
+\begin{cases}
+2P=4V-n\\
+4I=4V-2n+4
+\end{cases}
+\]
+Now, the expression for the diagram has the following general form
+\[
+\int\frac{d^4k'_1\cdots d^4k'_I}{(q_1^2+m^2)\cdots(q_P^2+m^2)}\,,
+\]
+where $k'_1,\dots,k'_I$ are the integration momenta left over after eliminating
+the delta-functions, and $q_1,\dots,q_P$ are some linear combinations of $k'_j$
+and the external momenta $p_i$. For our present analysis it is irrelevant if we
+have $m^2$ or $m_0^2$ in the propagators.
+
+We are concerned with possible divergence as $k'_j\to\infty$ (which generally
+implies $q_i\to\infty$). Roughly speaking, the above integral diverges if the
+overall power of the momenta in the integration measure in the numerator
+exceeds or equals the overall power in the denominator. Therefore let us define
+the \emph{superficial degree of divergence} $D$ as
+\[
+D=4I-2P\,.
+\]
+The integral definitely diverges if $D\ge0$ (but $D<0$ does not guarantee
+convergence, see below). If we introduce a cutoff momentum $\Lambda$, the
+diagram of the superficial degree of divergence $D$ is $\sim\Lambda^D$.
+
+Substituting the above expressions for $P$ and $I$, we find
+\[
+D=4V-2n+4-4V+n=4-n\,.
+\]
+We see that the number of the vertices $V$ cancels, and the superficial degree
+of divergence depends on $n$ only. In addition, we see that only finite number
+of the proper vertices ($n=0$, $n=2$ and $n=4$) are superficially divergent.
+
+Incidentally, if a perturbation theory has finitely many superficially
+divergent vertices (as the $\varphi^4$ perturbation theory does), it is called
+\emph{renormalizable}, for the reason which will become clear later. Otherwise,
+when infinitely many proper vertices are superficially divergent, we are
+dealing with \emph{non-renormalizable} perturbation theory.
+
+\begin{exercise}
+Analyze the superficial degree of divergence for all proper vertices in
+$\varphi^6$ theory.
+\end{exercise}
+
+In the $\varphi^4$ perturbation theory, the proper vertices with $n>4$ are
+superficially convergent. This does not mean all the diagrams for these
+vertices are given by convergent integrals (that is why we use the name
+``superficial'' for that, essentially dimensional, analysis). The reason is
+that the diagrams for $\Gamma^{(n)}$ with $n\ge6$ still can have 2- or 4-leg
+subdiagrams. For example, the diagram series for $\Gamma^{(6)}$ contains the
+diagrams like these
+\[
+\diac{\coordinate (a) at (-1.5,1.5); \coordinate (b) at (1.5,1.5); \coordinate (c) at (0,-1);
+  \draw[prop] (a) -- (b) -- (c) -- (a); \draw[prop] (0,1.5) ellipse (0.55 and 0.32);
+  \draw[densely dotted] (-0.9,1.0) rectangle (0.9,2.0);
+  \foreach \p/\q in {a/180,a/120,b/0,b/60,c/240,c/300} \draw[prop,densely dashed] (\p) -- ++(\q:0.9);
+  \foreach \p in {(a),(b),(c),(-0.55,1.5),(0.55,1.5)} \node[vtx] at \p {};}
+\qquad\qquad
+\diac{\coordinate (a) at (-1,1); \coordinate (b) at (1,1); \coordinate (c) at (-1,-1); \coordinate (d) at (1,-1);
+  \draw[prop] (a) -- (c) -- (d) -- (b); \draw[prop] (0,1) ellipse (1 and 0.3);
+  \draw[densely dotted] (-1.5,0.5) rectangle (1.5,1.6);
+  \foreach \p/\q in {a/135,b/45,c/180,c/270,d/0,d/270} \draw[prop,densely dashed] (\p) -- ++(\q:0.9);
+  \foreach \p in {a,b,c,d} \node[vtx] at (\p) {};}
+\]
+which contain divergent blocks with two or four legs. We will come back to
+decide how to handle such subdiagrams later.

@@ -1,0 +1,191 @@
+% Source pp. 56-60 (Lectures7-12.pdf).
+\section{Path Integral in Klein-Gordon Theory}
+
+Let us now apply the idea of the (Euclidean) path integral to the KG field
+theory. In this case the role of the generalized coordinates $q$ is taken by
+the field degrees of freedom $\varphi(\xx)$, thus we have to replace
+\[
+q\to\varphi(\xx)\,,\qquad q(\tau)\to\varphi(\xx,\tau)=\varphi(x_E)\,,
+\]
+where $\tau$ is the ``imaginary time'' which I will denote $x_4$ below, and
+$x_E=(\xx,x_4)$. The Euclidean action is obtained by substituting $t=-ix_4$ in
+the KG action, i.e.
+\[
+\mathcal A=\int dx_4\,d\xx\,\frac12\Bigl[(\partial_4\varphi)^2+(\nabla\varphi)^2+m^2\varphi^2\Bigr]
+=\int d^4x_E\,\Bigl[\frac12\,(\partial_\mu\varphi)^2+\frac{m^2}{2}\,\varphi^2\Bigr]\,,
+\]
+where now $\mu=1,2,3,4$. We are interested in the path integral
+\[
+Z=\int\bigl[D\varphi(x)\bigr]\,e^{-\mathcal A[\varphi(x)]}\,.
+\]
+More generally, we will be interested in the correlation functions defined as
+the ratios
+\begin{equation}\label{eq:corrdef}
+\bigl\langle\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\bigr\rangle
+=\frac1Z\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\,e^{-\mathcal A[\varphi]}\,.
+\end{equation}
+Here and below I drop the subscript $E$ and use the notation $x_i$ for the
+\emph{Euclidean} vectors, unless stated otherwise. As we discussed before, when
+continued to complex values of $(x_i)_4$ and specialized to $(x_i)_4=it_i$,
+these correlation functions yield the time-ordered expectation values
+\[
+\bra0\Tprod\bigl(\hat\varphi(\xx_1,t_1)\cdots\hat\varphi(\xx_N,t_N)\bigr)\ket0\,,
+\]
+where $\hat\varphi(\xx,t)$ denotes the real-time Heisenberg field operator.
+
+Few words about the definition of the path integral in the case of fields. For
+the path integral in quantum mechanics we had a definition in terms of a limit
+$\Delta\tau\to0$ of a finite-dimensional integral with discretized ``time''
+$\tau$. In principle, there are many ways to build finite approximations in
+quantum field theory. For example, the 4-dimensional space can be replaced by,
+say, the hypercubic lattice, in which $x^\mu$ take discrete values
+\[
+x^\mu=\Delta\,n^\mu\,,\qquad n^\mu\in\mathbb Z\,.
+\]
+The derivatives and the integration in the action can be replaced by finite
+differences and summations, i.e.
+\[
+\partial_\mu\varphi(x)\to\frac1\Delta\,\bigl(\varphi(x+e^\mu\Delta)-\varphi(x)\bigr)\,;\qquad
+\int d^4x\to\Delta^4\sum_x
+\]
+($e^\mu$ is the unit vector in the direction $\mu$); with this one can set
+\begin{equation}\label{eq:latticemeasure}
+\bigl[D\varphi\bigr]=\lim_{\Delta\to0}\prod_xd\varphi(x)\,.
+\end{equation}
+In the Klein-Gordon theory such definition works more or less
+straightforwardly. In more interesting cases with an interaction defining the
+integral over $[D\varphi]$ can become highly nontrivial problem, which is
+closely related to the problem of \emph{critical behavior}; many subsequent
+lectures will be devoted to this subject. Let me also note here that in the
+context of field theory the integrals like those above are usually referred to
+as \emph{functional integrals} (the term ``path integral'' is used
+interchangeably).
+
+The action $\mathcal A$ of the KG theory is quadratic in $\varphi$. This makes it
+possible to evaluate the above path integrals explicitly. I am not going to
+explain how these integrals are actually evaluated; this calculation is
+presented in \textbf{PS, \S\,9.2}. Instead I will derive the above correlation
+functions using formal properties of the functional integral. The resulting
+formula is known as the
+
+\subsection*{Wick's Theorem}
+
+\begin{itemize}
+\item The correlation function of any odd number of fields vanishes,
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_{2N+1})\bigr\rangle=0\,.
+\]
+This follows from the fact that the action $\mathcal A$ is an even functional
+of $\varphi$, while in this case the product of an odd number of factors
+$\varphi$ in the integrand is odd.
+\item The two-point correlation function is
+\[
+\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle=D_E(x_1-x_2)\,,
+\]
+where $D_E(x)$ is the familiar function
+\[
+D_E(x)=\int\frac{d^4p}{(2\pi)^4}\,\frac1{p^2+m^2}\,e^{ipx}\,.
+\]
+From now on I will usually drop the subscript $E$, so that $D(x)$ will stand
+for this function. Also, $x$ and $p$ now stand for the Euclidean vectors
+$x^\mu=(\xx,x_4)$, $p^\mu=(\pp,p_4)$, with $xp:=\xx\cdot\pp+x_4p_4$.
+\item The $2N$-point correlation function
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_{2N})\bigr\rangle
+\]
+is a sum of $(2N-1)!!\equiv1\cdot3\cdot\ldots\cdot(2N-1)$ terms, each term
+corresponding to one of $(2N-1)!!$ distinct ways of ``pairing'' (or
+``contracting'') between $2N$ field insertions
+$\varphi(x_1)\cdots\varphi(x_{2N})$. A pairing of the insertions
+$\varphi(x_i)$ with $\varphi(x_j)$ is usually denoted by an overbrace
+\[
+\dots\contraction{}{\varphi(x_i)}{\cdots}{\varphi(x_j)}\varphi(x_i)\cdots\varphi(x_j)\dots\,.
+\]
+Every contraction gives rise to the factor $D(x-x')$,
+\[
+\contraction{}{\varphi(x)}{\,}{\varphi(x')}\varphi(x)\,\varphi(x')=D(x-x')\,.
+\]
+\end{itemize}
+The last rule of pairing can be expressed in a compact form, in terms of the
+following
+
+\subsection*{(Wick's) Recursion Relation}
+\begin{equation}\label{eq:WickRec}
+\bigl\langle\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\bigr\rangle
+=\sum_{k=2}^ND(x_1-x_k)\,\bigl\langle\varphi(x_2)\cdots\widehat{\varphi(x_k)}\cdots\varphi(x_N)\bigr\rangle\,,
+\end{equation}
+where the hat indicates that this insertion is dropped. This relation
+expresses $N$-point correlation function in terms of the $N-2$-point ones.
+When supplemented with the condition $\langle\varphi(x)\rangle=0$, it contains
+all the statements of the Wick's theorem ($\langle1\rangle=1$ by definition).
+
+Let us derive this relation. The main assumption will be the invariance of the
+functional measure $D[\varphi]=D[\varphi']$ under the functional shifts
+\[
+\varphi(x)\to\varphi'(x):=\varphi(x)+c(x)
+\]
+with arbitrary fixed function $c(x)$. This invariance is an evident property
+of the discrete approximation \eqref{eq:latticemeasure}, so we assume it.
+
+Consider the functional integral representing the $N-1$-point correlation
+function,
+\[
+Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_2)\cdots\varphi(x_N)\,e^{-\mathcal A[\varphi]}\,.
+\]
+Note that the product of the insertions starts with $\varphi(x_2)$, and
+involves $N-1$ terms. Make the following change of the integration variables
+\[
+\varphi(x)\to\varphi'(x)=\varphi(x)+\epsilon(x)\,,
+\]
+where $\epsilon(x)$ is an arbitrary infinitesimal function. The action changes
+as follows
+\[
+\mathcal A[\varphi+\epsilon]=\mathcal A[\varphi]+\int d^4x_1\,\epsilon(x_1)\,\bigl[m^2-\Delta_{x_1}\bigr]\varphi(x_1)+O(\epsilon^2)\,,
+\]
+where I have assumed that the function $\epsilon(x)$ decays sufficiently fast
+making the integration by parts possible. Here
+\[
+\Delta_x:=\sum_{\mu=1}^4\Bigl(\frac{\partial}{\partial x^\mu}\Bigr)^2
+\]
+is 4D Laplace operator. Since the change of integration variables does not
+change the value of the integral, we have the identity
+\begin{multline*}
+0=\sum_{k=2}^N\epsilon(x_k)\int\bigl[D\varphi\bigr]\,\varphi(x_2)\cdots\widehat{\varphi(x_k)}\cdots\varphi(x_N)\,e^{-\mathcal A}\\
+-\int d^4x_1\,\epsilon(x_1)\,\bigl(m^2-\Delta_{x_1}\bigr)\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\,e^{-\mathcal A}\,.
+\end{multline*}
+As the function $\epsilon(x)$ is arbitrary, we must have
+\begin{equation}\label{eq:WickSD}
+\bigl(m^2-\Delta_{x_1}\bigr)\bigl\langle\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\bigr\rangle
+=\sum_{k=2}^N\delta^{(4)}(x_1-x_k)\,\bigl\langle\varphi(x_2)\cdots\widehat{\varphi(x_k)}\cdots\varphi(x_N)\bigr\rangle\,.
+\end{equation}
+Assuming that the $N-2$-point correlation functions in the right hand side are
+known, we can think of this identity as of the equation for the $N$-point
+correlation function in the left hand side. The solution has the form of our
+recursion relation \eqref{eq:WickRec}, where the function $D(x-x')$ solves the
+equation
+\[
+\bigl(m^2-\Delta_x\bigr)\,D(x-x')=\delta^{(4)}(x-x')\,.
+\]
+
+The Wick's theorem can be derived in many other ways. Direct evaluation of the
+Gaussian functional integral is performed in the \textbf{Section 9.2 of PS}.
+Derivation of equivalent rules in the operator formalism is explained in
+\textbf{Sect.~4.3 of PS}.
+
+The rules of the Wick's theorem are conveniently represented in terms of
+diagrams. With every factor $D(x-x')$ one associates a line connecting the
+points $x$ and $x'$,
+\[
+D(x-x')=\contraction{}{\varphi(x)}{}{\varphi(x')}\varphi(x)\varphi(x')
+=\ x\;\dia{\draw[prop] (0,0) node[vtx]{} -- (3,0) node[vtx]{};}\;x'\,.
+\]
+The diagram consists of the lines representing the contractions. For example
+\begin{align*}
+\bigl\langle\varphi(x_1)\varphi(x_2)\varphi(x_3)\varphi(x_4)\bigr\rangle
+&=\contraction{}{\varphi(x_1)}{}{\varphi(x_2)}\varphi(x_1)\varphi(x_2)\,
+\contraction{}{\varphi(x_3)}{}{\varphi(x_4)}\varphi(x_3)\varphi(x_4)
++\ \text{two other ways of contractions}\\[4pt]
+&=\figfile{wick4}
+\end{align*}
+Likewise, $2N$-point correlation function is represented as the sum of
+$(2N-1)!!$ diagrams involving $N$ lines.

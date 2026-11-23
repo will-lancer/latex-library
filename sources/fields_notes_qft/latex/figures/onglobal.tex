@@ -1,0 +1,18 @@
+\begin{tikzpicture}[line width=0.6pt]
+  \draw[axis] (0,-1.9) -- (0,2.1) node[left] {$M^2$};
+  \draw[line width=0.8pt] (-1.2,0) -- (5.6,0) node[right] {$\lambda$};
+  \draw[arr] (-0.2,0) -- (-1.1,0);
+  \draw[midarrow] (0,0) -- (3.6,0); \draw[arr] (5.4,0) -- (4.4,0);
+  \draw[line width=0.8pt] (3.6,-2.2) -- (3.6,2.2);
+  \draw[arr] (3.6,0.2) -- (3.6,2.0); \draw[arr] (3.6,-0.2) -- (3.6,-2.0);
+  \draw[arr] (0,0.2) -- (0,1.8); \draw[arr] (0,-0.2) -- (0,-1.7);
+  \draw[midarrow] (0.3,0.25) .. controls (2.2,0.35) and (3.0,0.6) .. (3.4,2.0);
+  \draw[midarrow] (0.3,-0.25) .. controls (2.2,-0.35) and (3.0,-0.6) .. (3.4,-2.0);
+  \draw[midarrow] (5.4,0.6) .. controls (4.2,0.9) and (3.9,1.2) .. (3.8,2.0);
+  \draw[midarrow] (5.4,-0.6) .. controls (4.2,-0.9) and (3.9,-1.2) .. (3.8,-2.0);
+  \fill (0,0) circle (2.2pt); \fill (3.6,0) circle (2.2pt);
+  \fill (3.6,2.35) circle (2.2pt) node[right] {$P_{\text{high}}$};
+  \fill (3.6,-2.35) circle (2.2pt) node[right] {$\mathcal A_{*,GS}$};
+  \node[above left] at (0,0) {$\mathcal A_{*,G}$};
+  \node[above right] at (3.6,0) {$\mathcal A_{*,WF}$};
+\end{tikzpicture}

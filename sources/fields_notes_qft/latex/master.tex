@@ -1,0 +1,152 @@
+\pdfoutput=1
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{jheppub}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{slashed}
+\usepackage{simplewick}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.markings,decorations.pathmorphing,decorations.pathreplacing,patterns,positioning,shapes.geometric,shapes.misc}
+\hypersetup{hypertexnames=false,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,
+ pdftitle={Quantum Theory of Fields: Lecture Notes},
+ pdfsubject={Lecture notes on quantum field theory with the homework problems}}
+
+% Edition of the typed course notes "Quantum Theory of Fields" (Spring 2026),
+% retyped from the printed PDFs in originals/fields-notes-qft/lectures. Section and equation numbers
+% follow the notes, so references such as "Eqs. (15.3), (15.4)" in the
+% homework still point at the same formulas. Every change of substance is
+% listed in ../CORRECTIONS.md; ../SOURCE_MAP.md gives the page coverage.
+
+\numberwithin{equation}{section}
+
+% ------------------------------------------------------------ notation
+\newcommand{\dd}{\mathop{}\!d}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\PPv}{\mathbf{P}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\Dcal}{\mathcal{D}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Texp}{\operatorname{T}\!\exp}
+\newcommand{\Tprod}{\operatorname{T}}
+\newcommand{\Const}{\text{Const}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\braket}[2]{\langle #1|#2\rangle}
+\newcommand{\vev}[1]{\langle #1\rangle}
+\newcommand{\half}{\tfrac12}
+\newcommand{\order}{\mathcal{O}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+% ------------------------------------------------------- remarks, problems
+\theoremstyle{definition}
+\newtheorem*{remark}{Remark}
+\newtheorem*{exercise}{Exercise}
+\newcounter{hwproblem}
+\newenvironment{hwproblem}[1]
+ {\par\bigskip\Needspace{6\baselineskip}%
+  \noindent\begin{minipage}{\linewidth}\hrule\smallskip
+  \noindent\textbf{Homework Problem #1.}\enspace\ignorespaces}
+ {\par\smallskip\hrule\end{minipage}\par\bigskip}
+\newlist{hwparts}{enumerate}{1}
+\setlist[hwparts]{label=(\alph*),leftmargin=*,topsep=3pt,itemsep=2pt}
+
+% ---------------------------------------------------------- figures
+\newcommand{\figfile}[1]{\input{figures/#1.tex}}
+\tikzset{
+  prop/.style={line width=0.6pt},
+  vtx/.style={circle,fill=black,inner sep=0pt,minimum size=3.2pt},
+  xvtx/.style={cross out,draw,line width=0.7pt,inner sep=0pt,minimum size=5pt},
+  ext/.style={circle,draw,fill=white,inner sep=0pt,minimum size=4pt},
+  blob/.style={circle,draw,line width=0.6pt,fill=gray!25,inner sep=0pt},
+  pblob/.style={circle,draw,line width=0.6pt,pattern=north east lines,inner sep=0pt},
+  wblob/.style={circle,draw,line width=0.6pt,fill=white,inner sep=0pt},
+  axis/.style={-{Stealth[length=2.2mm]},line width=0.5pt},
+  arr/.style={-{Stealth[length=2mm]},line width=0.6pt},
+  otimesv/.style={circle,draw,fill=white,inner sep=0pt,minimum size=7pt,path picture={\draw (path picture bounding box.north west)--(path picture bounding box.south east) (path picture bounding box.south west)--(path picture bounding box.north east);}},
+  wavy/.style={decorate,decoration={snake,amplitude=1.2pt,segment length=5pt}},
+  midarrow/.style={postaction={decorate},decoration={markings,mark=at position 0.55 with {\arrow{Stealth[length=2mm]}}}},
+}
+% ---------------------------------------------------------- diagram pieces
+% Coordinates are in units of the enclosing picture; \dia scales by 0.5.
+\tikzset{
+  pics/eight/.style={code={%
+    \draw[prop] (0,0.42) circle (0.42); \draw[prop] (0,-0.42) circle (0.42);
+    \node[vtx] at (0,0) {};}},
+  pics/chain3/.style={code={%
+    \draw[prop] (0,0.84) circle (0.42); \draw[prop] (0,0) circle (0.42); \draw[prop] (0,-0.84) circle (0.42);
+    \node[vtx] at (0,0.42) {}; \node[vtx] at (0,-0.42) {};}},
+  pics/melon/.style={code={%
+    \draw[prop] (0,0) ellipse (0.8 and 0.55);
+    \draw[prop] (-0.8,0) .. controls (-0.3,0.22) and (0.3,0.22) .. (0.8,0);
+    \draw[prop] (-0.8,0) .. controls (-0.3,-0.22) and (0.3,-0.22) .. (0.8,0);
+    \node[vtx] at (-0.8,0) {}; \node[vtx] at (0.8,0) {};}},
+  pics/tadline/.style={code={%
+    \draw[prop] (-1.4,0) -- (1.4,0); \draw[prop] (0,0.42) circle (0.42);
+    \node[vtx] at (0,0) {}; \node[vtx] at (-1.4,0) {}; \node[vtx] at (1.4,0) {};}},
+  pics/sunline/.style={code={%
+    \draw[prop] (-1.7,0) -- (1.7,0); \draw[prop] (0,0) ellipse (0.7 and 0.4);
+    \node[vtx] at (-0.7,0) {}; \node[vtx] at (0.7,0) {};
+    \node[vtx] at (-1.7,0) {}; \node[vtx] at (1.7,0) {};}},
+  pics/line/.style={code={%
+    \draw[prop] (-1.4,0) -- (1.4,0); \node[vtx] at (-1.4,0) {}; \node[vtx] at (1.4,0) {};}},
+  % blob with legs: \pic{legblob={<radius>}{<angles>}{<leg length>}{<fill style>}}
+  pics/legblob/.style n args={4}{code={%
+    \foreach \a in {#2} \draw[prop] (\a:#1) -- (\a:#1+#3) node[vtx] {};
+    \draw[prop,#4] (0,0) circle (#1);}},
+  % proper-vertex blob with dressed legs: \pic{dressed={<radius>}{<angles>}}
+  pics/dressed/.style n args={2}{code={%
+    \foreach \a in {#2} {\draw[prop] (\a:#1) -- (\a:#1+1.6) node[vtx] {};
+      \draw[prop,fill=white] (\a:#1+0.8) circle (0.26);}
+    \draw[prop,pattern=north east lines] (0,0) circle (#1);
+    \foreach \a in {#2} \node[vtx,minimum size=4pt] at (\a:#1) {};}},
+  pics/xvertex/.style={code={%
+    \draw[prop] (-0.5,-0.5) -- (0.5,0.5); \draw[prop] (-0.5,0.5) -- (0.5,-0.5); \node[vtx] at (0,0) {};}},
+}
+\newcommand{\lab}[3][]{\node[#1] at (#2) {\small$#3$};}
+% inline diagram: \dia{tikz code}
+\newcommand{\dia}[2][0.5]{\begin{tikzpicture}[x=#1cm,y=#1cm,baseline={([yshift=-0.55ex]0,0)}]#2\end{tikzpicture}}
+% centred on its bounding box instead of on y=0
+\newcommand{\diac}[2][0.5]{\vcenter{\hbox{\begin{tikzpicture}[x=#1cm,y=#1cm]#2\end{tikzpicture}}}}
+
+% ---------------------------------------------------------- layout
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=2pt,parsep=0pt,topsep=4pt,partopsep=0pt}
+\setlength{\jot}{5pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=5000
+\allowdisplaybreaks[2]
+\renewcommand\afterProceedingsSpace{\vspace{20pt}}
+\renewcommand\afterTitleSpace{\vspace{14pt}}
+\renewcommand\afterRuleSpace{\vspace{16pt}}
+\renewcommand\afterEmailSpace{\vspace{24pt}}
+
+\title{Quantum Theory of Fields\\[4pt]\large Lecture notes with homework problems}
+\author{Course notes, Spring 2026}
+\abstract{These are the course notes on classical and quantum field theory,
+retyped from the printed lectures. The figures have been redrawn, errors in
+the formulas and text have been corrected, and the nine homework problems
+of the course appear at the points in the notes where the material they use
+has been covered. A list of corrections is kept with the source files.}
+\setcounter{tocdepth}{2}
+\begin{document}
+\maketitle
+\flushbottom
+
+\input{sections/inputs.tex}
+
+\end{document}

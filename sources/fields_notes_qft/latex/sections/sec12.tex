@@ -1,0 +1,359 @@
+% Source pp. 102-110 (Lectures7-12.pdf).
+\section{Renormalized Perturbation Theory}
+
+In $\varphi^4$ theory, the vertices with positive superficial degree of
+divergence $D\ge0$ (the so called \emph{primitive divergences}) are
+$\Gamma^{(2)}$ and $\Gamma^{(4)}$. We have already reviewed the simplest
+divergent diagram for $\Gamma^{(2)}$. The diagrams for $\Gamma^{(4)}$ have the
+superficial degree of divergence $D=0$; this means these diagrams are
+\emph{logarithmically divergent}. To clarify the meaning of this term, let us
+consider the simplest connected diagrams for this vertex,
+\[
+-\tilde\Gamma^{(4)}(p_1,p_2,p_3,p_4)=
+\diac{\foreach \a/\l in {135/p_1,45/p_2,315/p_3,225/p_4} {\draw[prop,densely dashed] (0,0) -- (\a:1.6);
+  \node at ($(\a:1.7)+(\a+90:0.45)$) {\scriptsize$\l$};} \node[vtx] at (0,0) {};}
++\Bigl(\diac{\draw[prop] (0,0) ellipse (1.2 and 0.7);
+  \foreach \a/\l in {135/p_1,225/p_4} {\draw[prop,densely dashed] (-1.2,0) -- ++(\a:1.4); \node at ($(-1.2,0)+(\a:1.6)+(\a+90:0.4)$) {\scriptsize$\l$};}
+  \foreach \a/\l in {45/p_2,315/p_3} {\draw[prop,densely dashed] (1.2,0) -- ++(\a:1.4); \node at ($(1.2,0)+(\a:1.6)+(\a-90:0.4)$) {\scriptsize$\l$};}
+  \draw[arr] (-0.4,1.0) -- (0.4,1.0); \node[above] at (0,1.05) {\scriptsize$p_1+p_2-k$};
+  \draw[arr] (-0.4,-1.0) -- (0.4,-1.0); \node[below] at (0,-1.05) {\scriptsize$k$};
+  \node[vtx] at (-1.2,0) {}; \node[vtx] at (1.2,0) {};}
++\text{permutations}\Bigr)+\cdots
+\]
+The explicitly shown loop diagram represents the momentum integral
+\[
+\frac{(-\lambda)^2}2\int\frac{d^4k}{(2\pi)^4}\,\frac1{(k^2+m^2)\bigl((p_1+p_2-k)^2+m^2\bigr)}\,.
+\]
+When $|k|\gg|p_1+p_2|$ and $|k|\gg m$ this reduces to
+\[
+\frac{\lambda^2}{2\,(2\pi)^4}\int\frac{d^4k}{k^2\,k^2}\,.
+\]
+Note that $d^4k=d\Omega_4\,|k|^3\,d|k|$, where $d\Omega_4$ is the surface
+element of a unit 3-sphere $S^3$, $\int_{S^3}d\Omega_4=2\pi^2$. We have
+\[
+\frac{\lambda^2\,2\pi^2}{2\,(2\pi)^4}\int\frac{|k|^3\,d|k|}{|k|^4}=\frac{\lambda^2}{16\pi^2}\int\frac{d|k|}{|k|}\,.
+\]
+The integral diverges at large $|k|$ (one shouldn't worry about its divergence
+at $|k|\to0$; the above simplified form is not valid at small $|k|$). If one
+introduces a cutoff, say replaces
+\[
+\frac1{k^2+m^2}\ \to\ \frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)
+\]
+with some $\Phi(x)$ such that $\Phi(x)=1$ for $x\ll1$, but decays fast at
+$x\gg1$, the integral evaluates as
+\[
+\frac{\lambda^2}{32\pi^2}\Bigl(\log\frac{\Lambda^2}{m^2}+f(p_{12})\Bigr)\,,
+\]
+where $f(p_{12})$ (I use $p_{12}=p_1+p_2$) has finite limit as
+$\Lambda\to\infty$. Including the ``permutations'' terms, we then have
+\[
+\tilde\Gamma^{(4)}=\lambda-\frac{\lambda^2}{32\pi^2}\Bigl(3\log\frac{\Lambda^2}{m^2}+f(p_{12})+f(p_{13})+f(p_{14})\Bigr)\,.
+\]
+
+One can observe that the divergent term carries no dependence on the external
+momenta, and in this respect comes on the same footing as the leading
+contribution $\lambda$. Therefore at least at the order $\lambda^2$ the
+$\Lambda$-dependent term can be absorbed into some redefinition of the coupling
+constant $\lambda$. This can be formulated more precisely as follows. Just as
+in the case of the mass renormalization discussed above, we should start with
+the action
+\[
+\mathcal A=\int\Bigl[\frac12\,(\partial\varphi)^2+\frac{m_0^2}2\,\varphi^2+\frac{\lambda_0}{4!}\,\varphi^4\Bigr]\,,
+\]
+with some ``bare'' coupling constant $\lambda_0$ (as well as the ``bare'' mass
+parameter $m_0^2$). Then it is possible to give $\lambda_0$ certain dependence
+on the cutoff momentum $\Lambda$,
+\[
+\lambda_0=\lambda_0(\Lambda)\,,
+\]
+such that the limit $\Lambda\to\infty$ of $\tilde\Gamma^{(4)}$ in this order of
+the perturbation theory is finite. Namely, let us set
+\[
+\lambda_0(\Lambda)=\lambda+\frac{3\lambda^2}{32\pi^2}\Bigl(\log\frac{\Lambda^2}{m^2}+C\Bigr)+O(\lambda^3)\,,
+\]
+where new parameter $\lambda$ is called the \emph{renormalized} coupling
+constant, and $C$ is arbitrary number. We then have
+\begin{align*}
+\tilde\Gamma^{(4)}&=\lambda_0-\frac{\lambda_0^2}{32\pi^2}\Bigl(3\log\frac{\Lambda^2}{m^2}+\tilde f(p)\Bigr)+O(\lambda_0^3)\\
+&=\lambda+\frac{3\lambda^2}{32\pi^2}\Bigl(\log\frac{\Lambda^2}{m^2}+C\Bigr)-\frac{\lambda^2}{32\pi^2}\Bigl(3\log\frac{\Lambda^2}{m^2}+\tilde f(p)\Bigr)+O(\lambda^3)\,.
+\end{align*}
+(Here $\tilde f(p)=f(p_{12})+f(p_{13})+f(p_{14})$.) The $\Lambda$-dependent term
+cancels out. Assuming that $\lambda$ is fixed in the limit $\Lambda\to\infty$,
+the above proper vertex has finite limit when the cutoff is removed.
+
+Later we shall formulate this renormalization prescription with full
+precision, and in particular explain the meaning of this constant $C$. But for
+now we still have one more divergence to deal with.
+
+Consider the diagram
+\[
+\diac{\draw[prop,densely dashed] (-2.4,0) -- (-1.2,0) (1.2,0) -- (2.4,0);
+  \draw[prop] (-1.2,0) -- (1.2,0); \draw[prop] (0,0) ellipse (1.2 and 0.75);
+  \node[above] at (-2.0,0) {\small$p$};
+  \draw[arr] (-0.4,1.05) -- (0.4,1.05); \node[above] at (0,1.1) {\small$p-k_1-k_2$};
+  \draw[arr] (-0.4,0.25) -- (0.4,0.25); \node[below] at (0,0.05) {\scriptsize$k_2$};
+  \draw[arr] (-0.4,-1.05) -- (0.4,-1.05); \node[below] at (0,-1.1) {\small$k_1$};
+  \node[vtx] at (-1.2,0) {}; \node[vtx] at (1.2,0) {};}\,,
+\]
+contributing to $-\tilde\Sigma(p)$ in the order $\lambda^2$. I will denote this
+contribution as $-\tilde\Sigma_2(p)$. According to the general counting above,
+this diagram has superficial degree of divergence $D=2$, i.e.\ with the cutoff
+introduced it behaves as $\Lambda^2$ as $\Lambda\to\infty$. We can see this
+writing the contribution explicitly,
+\[
+-\tilde\Sigma_2(p)=\frac{(-\lambda)^2}{3!}\int\frac{d^4k_1}{(2\pi)^4}\,\frac{d^4k_2}{(2\pi)^4}\,
+\frac1{(k_1^2+m^2)(k_2^2+m^2)\bigl((p-k_1-k_2)^2+m^2\bigr)}
+\]
+(note the symmetry factor $1/3!$). For $k_1,k_2\gg p,m$ the integrand
+simplifies as
+\[
+\sim\int\frac{d^4k_1\,d^4k_2}{k_1^2\,k_2^2\,(k_1+k_2)^2}\sim\Lambda^2\,.
+\]
+Let us write
+\[
+\tilde\Sigma_2(p)=\tilde\Sigma_2(0)+\bigl(\tilde\Sigma_2(p)-\tilde\Sigma_2(0)\bigr)\,.
+\]
+Here
+\[
+\tilde\Sigma_2(0)=-\frac{\lambda^2}{3!}\int\frac{d^4k_1\,d^4k_2}{(2\pi)^8}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)\bigl((k_1+k_2)^2+m^2\bigr)}\,.
+\]
+This divergent term does not depend on $p$; in this respect it is similar to
+the contribution of the diagram
+\[
+\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}
+\]
+Clearly, it also can be absorbed into the mass renormalization, by suitable
+modification of the counterterm
+\[
+\frac{\delta m^2(\Lambda)}2\,\varphi^2\,.
+\]
+The difference
+\begin{multline*}
+\tilde\Sigma_2(p)-\tilde\Sigma_2(0)\\
+=-\frac{\lambda^2}{3!}\int\frac{d^4k_1\,d^4k_2}{(2\pi)^8}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)}\,
+\frac{2(pk_1)+2(pk_2)-p^2}{\bigl((k_1+k_2)^2+m^2\bigr)\bigl((k_1+k_2-p)^2+m^2\bigr)}
+\end{multline*}
+still diverges (logarithmically). If the cutoff is introduced, this
+contribution is written as
+\[
+\sim p^2\log\frac{\Lambda^2}{m^2}+\text{finite}\,.
+\]
+This divergent term cannot be absorbed by the mass renormalization, since it
+depends on the momentum $p$. Note however that this dependence has simple form
+$\sim p^2$.
+
+Recall that the proper vertex $\Gamma^{(2)}$ has the form
+\[
+\tilde\Gamma^{(2)}(p)=p^2+m^2+\text{loop corrections}\,,
+\]
+where the $p^2$ term originates from the term
+\[
+\frac12\,(\partial\varphi)^2
+\]
+term in the original action. This suggests that the above divergent term
+$\sim p^2$ can be understood in terms of the ``field renormalization''.
+Originally, the field $\varphi$ appeared in the theory as the integration
+variable in the functional integral. Let us rename this integration variable as
+$\varphi_0$, and call it the ``bare field''. The new divergent term shows that
+the correlation functions of this bare field retains the dependence on the
+cutoff parameter $\Lambda$, even after the mass and coupling renormalizations
+are carried out. The way this dependence appears (through the $p^2$ term)
+suggests that one can define renormalized field,
+\[
+\varphi(x)=Z^{-1/2}(\Lambda)\,\varphi_0(x)\,,
+\]
+with certain cutoff-dependent renormalization constant $Z(\Lambda)$, such that
+the correlation functions
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle
+\]
+admit finite $\Lambda\to\infty$ limit.
+
+We are ready to formulate the \emph{renormalization program}.
+
+\subsection*{Renormalization program (\texorpdfstring{$\varphi^4$}{phi**4} theory)}
+
+1. We start with the action
+\[
+\mathcal A=\int d^4x\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\Bigr]\,,
+\]
+which involves the bare field $\varphi_0$, the bare mass $m_0$, and the bare
+coupling constant $\lambda_0$.
+
+2. We introduce some cutoff, with the cutoff momentum $\Lambda$, to make all
+diagram contributions finite but cutoff-dependent (this can be done in many
+ways, as we shall discuss later).
+
+3. The bare parameters $m_0^2$, $\lambda_0$, and the field renormalization
+constant $Z$ should be given certain dependence on the cutoff momentum
+$\Lambda$,
+\[
+m_0^2(\Lambda)\,,\qquad\lambda_0(\Lambda)\,,\qquad Z(\Lambda)\,,
+\]
+such that the correlation functions of the renormalized field
+$\varphi(x)=Z^{-1/2}\varphi_0(x)$ will have finite $\Lambda\to\infty$ limit.
+
+In practice, one uses the perturbation theory to evaluate the correlation
+functions. The above program can be further reformulated as the
+
+\subsection*{Renormalized perturbation theory}
+
+Let us rewrite the action as
+\[
+\mathcal A=\int d^4x\,\Bigl[\underbrace{\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2}_{\text{free part}}
++\underbrace{\frac\lambda{4!}\,\varphi^4}_{\text{interaction part}}
++\underbrace{\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta m^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4}_{\text{counterterms}}\Bigr]\,,
+\]
+where $m$ is the actual mass and $\lambda$ is suitably defined renormalized
+coupling constant (to be discussed later), and $\varphi$ is the renormalized
+field. The last three terms are the \emph{counterterms}. The identity with the
+original action implies
+\[
+1+\delta Z=Z\,,\qquad m^2+\delta m^2=Z\,m_0^2\,,\qquad\lambda+\delta\lambda=Z^2\,\lambda_0\,.
+\]
+In perspective, the renormalized perturbation theory is an expansion in the
+renormalized coupling constant $\lambda$. We should assume that the
+counterterm coefficients $\delta Z$, $\delta m^2$, and $\delta\lambda$
+themselves depend perturbatively (i.e.\ as the power series) on $\lambda$,
+\[
+\delta Z=z_2\,\lambda^2+z_3\,\lambda^3+\cdots\,,\qquad
+\delta m^2=b_1\,\lambda+b_2\,\lambda^2+\cdots\,,\qquad
+\delta\lambda=a_2\,\lambda^2+a_3\,\lambda^3+\cdots\,,
+\]
+with $\Lambda$-dependent coefficients. We must show that these coefficients can
+be adjusted in such a way that the correlation functions of the renormalized
+field $\varphi$ are $\Lambda$-independent order by order in $\lambda$.
+
+Let me stress that this renormalization program is based on our observation
+that the $\varphi^4$ perturbation theory contains only finitely many basic
+types of divergent diagrams (the ``primitive divergences''). Namely, the
+primitively divergent diagrams are in $\Gamma^{(2)}$ and $\Gamma^{(4)}$. The
+diagrams for higher vertices $\Gamma^{(n)}$ can be divergent only through
+subdiagrams of the $\Gamma^{(2)}$ and $\Gamma^{(4)}$ types. The idea of the
+renormalization program is that the three primitive divergences discussed above
+can be absorbed in three renormalizations
+\[
+m_0^2(\Lambda)=Z^{-1}(\Lambda)\,\bigl(m^2+\delta m^2(\Lambda)\bigr)\,;\qquad
+\lambda_0(\Lambda)=Z^{-2}(\Lambda)\,\bigl(\lambda+\delta\lambda(\Lambda)\bigr)\,;\qquad
+\varphi_0=Z^{\frac12}(\Lambda)\,\varphi\,,
+\]
+order by order in the renormalized coupling constant $\lambda$.
+
+Before we turn to execution of this program in $\varphi^4$ theory let us briefly
+discuss divergences and renormalizations in a scalar field theory whose
+interaction term is more general polynomial in $\varphi$.
+
+\subsection*{Divergences in Scalar Theories}
+
+It is instructive to consider such field theory in the space of $d$
+dimensions, with generic $d$. We will consider general scalar theories with the
+actions of the form
+\begin{equation}\label{eq:genscalar}
+\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\sum_{k=3}^N\frac{\lambda_{0\,k}}{k!}\,\varphi_0^k\Bigr]\,.
+\end{equation}
+The Feynman rules remain the same as in 4-dimensional theory, except for the
+momentum integrations go over $d$-dimensional momentum space,
+\[
+\frac{d^4k}{(2\pi)^4}\ \to\ \frac{d^dk}{(2\pi)^d}\,,
+\]
+and of course the diagrams contain $k$-leg vertices associated with the
+couplings $\lambda_{0\,k}$.
+
+As before, we can consider a generic diagram contributing to
+$\tilde\Gamma^{(n)}$, containing $P$ propagators and $I$ $d$-momentum
+integrations. Because now the momenta are $d$-dimensional, the superficial
+degree of divergence of this diagram is
+\[
+D=d\cdot I-2\cdot P\,.
+\]
+Assume that the diagram contains $V_k$ $k$-leg vertices. Analysis similar to
+that we have made for $\varphi^4$ theory reveals two identities
+\[
+2P+n=\sum_kk\cdot V_k\,,\qquad I=P-\sum_kV_k+1\,.
+\]
+Combining these equations one finds
+\[
+D=\sum_k\Bigl(\frac{d-2}2\,k-d\Bigr)V_k-\frac{d-2}2\,n+d\,.
+\]
+This formula admits simple interpretation in terms of dimensional counting.
+Note that in our units $c=\hbar=1$ there is only one independent unit, which we
+take to be mass unit. I will denote by $[X]$ the mass dimension of a quantity
+$X$, for example
+\[
+[\textit{mass}]=1\,,\qquad[\textit{length}]=-1\,.
+\]
+The action is dimensionless and therefore it follows from its form that
+\begin{equation}\label{eq:engdim}
+[\varphi_0]=\frac{d-2}2\,,\qquad[m_0^2]=2\,,\qquad[\lambda_{0\,k}]=d-\frac{d-2}2\,k\,.
+\end{equation}
+I want to note in passing that this simple dimensional analysis is applied to
+the \emph{bare} quantities. We will see later that because of renormalization
+constant $Z(\Lambda)$ the renormalized field $\varphi$ can have different
+dimension. This is why the above dimensions in \eqref{eq:engdim} are often
+referred to as canonical (or ``engineering'') dimensions.
+
+It is easy to check that
+\[
+\bigl[\tilde\Gamma^{(n)}\bigr]=d-\frac{d-2}2\,n\,.
+\]
+Therefore the equation for the superficial degree can be written as
+\begin{equation}\label{eq:Ddim}
+D=\bigl[\tilde\Gamma^{(n)}\bigr]-\sum_k\bigl[\lambda_{0\,k}\bigr]\cdot V_k\,.
+\end{equation}
+Now the meaning of this equation must be obvious. For $\Lambda\gg|p_i|$ the
+dominating contribution of the diagram with $V_k$ vertices $\lambda_k$ is
+\begin{equation}\label{eq:GammaLambda}
+\tilde\Gamma^{(n)}\sim\Bigl[\prod_k\lambda_{0\,k}^{V_k}\Bigr]\,\Lambda^D\,,
+\end{equation}
+and our equation simply describes the balance of dimensions.
+
+It is clear from the Eq.~\eqref{eq:Ddim} that the mass dimensions of the
+coupling constants $\lambda_{0\,k}$ must play the key role in the analysis of
+the perturbative divergences. Suppose some coupling $\lambda_{0\,k}$ in the
+action have strictly negative mass dimension, $[\lambda_{0\,k}]<0$. Then there
+are divergent contributions to $\tilde\Gamma^{(n)}$ with any $n$ which come
+from the diagrams with sufficiently large $V_k$. In other words such theory has
+infinitely many primitive divergences which of course cannot be absorbed by any
+finite number of counterterms. Quantum field theories of this type are called
+(perturbatively) \emph{non-renormalizable}. Overall consistency of
+non-renormalizable theories is questionable (but not impossible). From pure
+pragmatic point of view, the necessity to introduce infinitely many
+counterterms brings in also infinitely many free parameters, and predictive
+power of such theories is limited.
+
+If mass dimensions of all coupling constants in the action are non-negative,
+the equation \eqref{eq:Ddim} shows that there is only finite number of
+primitively divergent proper vertices (this is true if $d>2$, the case $d=2$ is
+exceptional and must be studied separately); these divergences then can be
+absorbed by finitely many renormalization constants. For this reason such
+theories are called (perturbatively) \emph{renormalizable}. Moreover, if all
+$\lambda_{0\,k}$ have strictly positive mass dimensions there is only finite
+number of divergent diagrams. The theories of this last kind are often referred
+to as \emph{super-renormalizable}, in which case the term ``renormalizable'' is
+reserved for the theories with infinitely many divergent diagrams but finitely
+many primitive divergences; in view of \eqref{eq:Ddim} this requires that at
+least one of the coupling constants is dimensionless. We will see later when
+studying renormalization group that super-renormalizable scalar theories (with
+the polynomial $V(\varphi_0)$ bounded from below) are consistent field
+theories. Overall consistency of renormalizable theories requires more subtle
+analysis, but at least they make sense perturbatively.
+
+One observes from \eqref{eq:engdim} that for $d>6$ there are no (interacting)
+renormalizable scalar theories. For $6\ge d>2$ renormalizable field theories
+are
+\[
+\begin{array}{ll}
+\varphi^3 & \text{in}\quad d=6\quad\text{dimensions,}\\
+\varphi^3,\ \varphi^4 & \text{in}\quad d=4\quad\text{dimensions,}\\
+\varphi^3,\ \varphi^4,\ \varphi^5,\ \varphi^6 & \text{in}\quad d=3\quad\text{dimensions.}
+\end{array}
+\]
+It is not difficult to show that any polynomial in $\varphi$ is
+super-renormalizable in $d=2$ dimensions.
+
+I want to stress here that nonexistence of perturbatively renormalizable field
+theories in high dimensionalities does not imply that consistent field
+theories are limited to low space-time dimensions; there may exist perfectly
+consistent field theories which are just ``too far'' from free field theory to
+admit meaningful perturbative interpretation. I hope to discuss this
+possibility in greater detail later.

@@ -1,0 +1,9 @@
+\input{figures/sigmablob.tex}
+\begin{tikzpicture}[line width=0.6pt,scale=0.8]
+  \draw[fill=gray!5] \SigmaBlob;
+  \draw[fill=white] (-1.6,0.2) -- (0,1.1) -- (1.6,0.2) -- (0,-0.7) -- cycle;
+  \fill (-0.2,0.15) circle (1.8pt);
+  \draw[line width=0.9pt,-{Stealth[length=2mm]}] (-0.2,0.15) -- (0.6,0.5) node[above] {$\delta\mathcal A$};
+  \node[left] at (-1.6,0.3) {$T\Sigma|_{\mathcal A_*}$};
+  \node at (2.6,-0.5) {$\Sigma$};
+\end{tikzpicture}

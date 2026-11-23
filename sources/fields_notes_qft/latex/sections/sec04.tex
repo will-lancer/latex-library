@@ -1,0 +1,464 @@
+% Source pp. 27-37 (Lectures1-6.pdf).
+\section{More on Quantum Klein-Gordon Theory}
+
+The space of states $\Ham$ of the quantum KG theory is the Fock space, defined
+as the linear envelope of the basic states
+\[
+\ket{\pp_1,\dots,\pp_N}=\hat A^\dagger_{\pp_1}\cdots\hat A^\dagger_{\pp_N}\ket{0}\,,
+\]
+where the vacuum $\ket0$ satisfies
+\[
+\hat A_\pp\ket0=0\qquad\text{for all}\quad\pp\,.
+\]
+Here I have returned to the default case of the infinite Minkowski space-time,
+so that the 3-momenta $\pp_i$ may take continuous unrestricted values.
+
+The states $\ket{\pp_1,\dots,\pp_N}$ are interpreted as $N$-particle states.
+Their scalar products follow from the commutation relations
+$[\hat A_\pp,\hat A^\dagger_{\pp'}]=2\omega_\pp\,(2\pi)^3\,\delta^{(3)}(\pp-\pp')$.
+In particular, for the one-particle states
+\[
+\braket{\pp}{\pp'}=2\omega_\pp\,(2\pi)^3\,\delta^{(3)}(\pp-\pp')\,.
+\]
+Since the operators $\hat A^\dagger_\pp$ are Lorentz invariant (only the
+momentum $\pp$ transforms under the Lorentz transformations), the particles
+have zero spin. Since the creation operators $\hat A^\dagger_\pp$ commute, the
+$N$-particle states are symmetric with respect to permutations of the momenta
+$\pp_i$: the particles are bosons.
+
+The spectrum of the energy-momentum operator $(\hat H-E_0,\hat{\PPv})$ is the
+composition of spectra of the $N$-particle states. In the space of vectors
+$(E-E_0,\PPv)$ the vacuum resides at the origin of coordinates, the one
+particle states form the mass-shell hyperboloid $(E-E_0)^2-\PPv^2=m^2$, the
+two-particle states fill the inside of the hyperboloid
+$(E-E_0)^2-\PPv^2=4m^2$, etc.\ (figure~\ref{fig:spectrum}).
+\begin{figure}[ht]
+\centering\figfile{spectrum}
+\caption{Spectrum of $(\hat H-E_0,\hat{\PPv})$ in the quantum KG theory. The
+vacuum sits at the origin and the one-particle states $\ket{\pp}$ on the mass
+shell $(E-E_0)^2-\PPv^2=m^2$. The two-particle states $\ket{\pp_1\pp_2}$ fill
+the region $(E-E_0)^2-\PPv^2\ge4m^2$, the three-particle states the region
+$(E-E_0)^2-\PPv^2\ge9m^2$, and so on.}
+\label{fig:spectrum}
+\end{figure}
+Correspondingly, the spectrum of the operator
+$\hat M^2=(\hat H-E_0)^2-\hat{\PPv}^2$ has two discrete components, $0$ and
+$m^2$, and continuous part from $4m^2$ to infinity.
+
+\subsection*{Klein-Gordon propagator}
+
+By their definition, the creation and annihilation operators
+$\hat A^\dagger_\pp,\hat A_\pp$ are the Fourier components of the local field
+operators $\hat\varphi(\xx)$ and $\hat\pi(\xx)$,
+\begin{align*}
+\hat\varphi(\xx)&=\int d\mu(\pp)\,\bigl[\hat A_\pp+\hat A^\dagger_{-\pp}\bigr]\,e^{i\pp\cdot\xx}\,,\\
+\hat\pi(\xx)&=\int d\mu(\pp)\,i\omega_\pp\,\bigl[-\hat A_\pp+\hat A^\dagger_{-\pp}\bigr]\,e^{i\pp\cdot\xx}\,,
+\end{align*}
+where I have introduced special notation for the Lorentz-invariant measure on
+the mass shell,
+\[
+d\mu(\pp)=\frac1{2\omega_\pp}\,\frac{d^3\pp}{(2\pi)^3}\,.
+\]
+
+\begin{exercise}
+Check that the measure $d\mu(\pp)$ is Lorentz-invariant. An instructive way to
+do that is to check the identity
+\[
+d\mu(\pp)=\int_{p^0>0}\frac{dp^0}{2\pi}\;2\pi\,\delta(p^\mu p_\mu-m^2)\,\frac{d^3\pp}{(2\pi)^3}\,,
+\]
+i.e.\ we have
+\[
+\int d\mu(\pp)\,F(\pp,\omega_\pp)=\int_{p^0>0}\frac{d^4p}{(2\pi)^4}\,2\pi\,\delta(p^\mu p_\mu-m^2)\,F(\pp,p^0)\,.
+\]
+\end{exercise}
+
+The operators $\hat\varphi(\xx)$ and $\hat\pi(\xx)$ are the
+``Schroedinger'', or the ``equal time'' field operators. As defined, they obey
+the canonical commutation relations
+\[
+\bigl[\hat\pi(\xx),\hat\varphi(\xx')\bigr]=-i\,\delta^{(3)}(\xx-\xx')\,.
+\]
+As is common in quantum mechanics, it is often useful to trade the time
+evolution of the states for the time evolution of the operators. This is known
+as the Heisenberg picture. In our case, introduce the Heisenberg field
+operator
+\[
+\hat\varphi(x)=\hat\varphi(\xx,t)=e^{i\hat Ht}\,\hat\varphi(\xx)\,e^{-i\hat Ht}\,,\qquad x=(\xx,t)\,.
+\]
+In terms of the creation and annihilation operators it is
+\[
+\hat\varphi(x)=\int d\mu(\pp)\,\bigl[\hat A_\pp\,f^*_\pp(x)+\hat A^\dagger_\pp\,f_\pp(x)\bigr]\,,
+\]
+where as before $f_\pp(x)=e^{i\omega_\pp t-i\pp\cdot\xx}$. Then
+\[
+\hat\varphi(\xx)=\hat\varphi(\xx,t=0)\,,\qquad \hat\pi(\xx)=\partial_t\hat\varphi(\xx,t)\big|_{t=0}\,.
+\]
+
+\subsection*{Commutators}
+
+It is interesting and instructive to see how the canonical commutators of the
+``Schroedinger'' operators extend to the Heisenberg field operators
+$\hat\varphi(x)$. For this calculation, it is useful to write
+\[
+\hat\varphi(x)=\hat\varphi_-(x)+\hat\varphi_+(x)\,,
+\]
+where
+\[
+\hat\varphi_-(x)=\int d\mu(\pp)\,\hat A_\pp\,f^*_\pp(x)\,,\qquad
+\hat\varphi_+(x)=\int d\mu(\pp)\,\hat A^\dagger_\pp\,f_\pp(x)\,.
+\]
+The operator $\hat\varphi_+(x)$ contains only the creation operators
+$\hat A^\dagger_\pp$; it can be interpreted as an operator creating particle
+at the space-time point $x$; likewise, $\hat\varphi_-(x)$ absorbs the particle
+at the space-time point $x$.\footnote{A subtlety in this interpretation will
+be discussed later in Lecture~6.} Since $\hat\varphi_-(x)$ obviously commutes
+with $\hat\varphi_-(x')$, and the same is true for the $\hat\varphi_+$
+component, we have
+\[
+\bigl[\hat\varphi(x),\hat\varphi(x')\bigr]=D_-(x-x')-D_+(x-x')\,,
+\]
+where
+\begin{align*}
+D_-(x-x')&=\bigl[\hat\varphi_-(x),\hat\varphi_+(x')\bigr]\,,\\
+D_+(x-x')&=\bigl[\hat\varphi_-(x'),\hat\varphi_+(x)\bigr]\equiv D_-(x'-x)\,.
+\end{align*}
+Explicitly
+\begin{align*}
+D_-(\xx,t)&=\int d\mu(\pp)\,e^{-i\omega_\pp t+i\pp\cdot\xx}\,,\\
+D_+(\xx,t)&=\int d\mu(\pp)\,e^{i\omega_\pp t-i\pp\cdot\xx}\,.
+\end{align*}
+Some properties of these integrals are worth mentioning.
+
+i) The integrals for $D_-(x)$ and $D_+(x)$ are Lorentz-invariant, i.e.\ if two
+4-vectors $x$ and $x'$ are related by a Lorentz transformation, $x'=\Lambda x$,
+then $D(x)=D(x')$. Indeed, the integrals can be written in explicitly
+covariant form, say
+\[
+D_-(x)=\int_{p^0>0}\frac{d^4p}{(2\pi)^4}\,2\pi\,\delta(p^\mu p_\mu-m^2)\,e^{-ip_\mu x^\mu}\,.
+\]
+Then the change of the integration variables $p=\Lambda^{-1}p'$ verifies that
+$D_-(x)=D_-(\Lambda x)$. Similar representation exists for $D_+(x)$.
+
+ii) The integrals are not absolutely convergent. It is usually convenient to
+compute such integrals as limiting values of absolutely convergent integrals.
+In our case it can be done by considering the integrals at complex values of
+the time variable $t$. For instance, the above integral defining
+$D_-(\xx,t)$ converges absolutely if $t$ has \textbf{negative imaginary part}
+(remember that $\omega_\pp$ is positive), therefore this integral defines the
+function $D_-(\xx,t)$ of complex variable $t$ which is analytic in the lower
+half-plane of the complex $t$-plane. Then, for real $t$ we need to take the
+limit $\lim_{\epsilon\to-0}D_-(\xx,t+i\epsilon)$ (this is usually written as
+$D_-(\xx,t-i0)$). Likewise, the integral for $D_+$ defines the function
+$D_+(\xx,t)$ of complex $t$, analytic in the upper half-plane, and for real
+$t$ we take $D_+(\xx,t+i0)$.
+
+Let us consider the case of real $t$ such that the 4-vector $x^\mu=(t,\xx)$ is
+space-like,
+\[
+x^\mu x_\mu=t^2-\xx^2<0
+\]
+(in this consideration we assume that $\xx$ is real). In the complex $t$-plane
+we are looking at the segment
+\[
+-|\xx|<\Re t<|\xx|
+\]
+of the real axis. It is easy to show that at this segment we have
+\[
+D_+(\xx,t)=D_-(\xx,t)\qquad\text{for}\quad -|\xx|<t<|\xx|\,.
+\]
+It suffices to verify this identity at $t=0$, since one can always transform
+to the frame where $t=0$, as long as $x^\mu$ is space-like. For $t=0$ we have
+\[
+D_-(\xx,0)=\lim_{\epsilon\to+0}\int e^{-\omega_\pp\epsilon+i\pp\cdot\xx}\,d\mu(\pp)
+\qquad\text{and}\qquad
+D_+(\xx,0)=\lim_{\epsilon\to+0}\int e^{-\omega_\pp\epsilon-i\pp\cdot\xx}\,d\mu(\pp)\,,
+\]
+and the identity is established by the change of the integration variables
+$\pp\to-\pp$. Note that this argument also shows that $D_\pm(\xx,t)$ return
+real values when $t$ takes values within the above segment of the real axis.
+
+It follows that the function $D_-(\xx,t)$, which was originally defined (by
+our integral) in the lower half-plane of $t$, in fact can be analytically
+continued, through the above segment of the real axis, to the upper
+half-plane, and there it coincides with $D_+(\xx,t)$ (defined, again, through
+its integral representation written above); see figure~\ref{fig:tplane}.
+\begin{figure}[ht]
+\centering\figfile{tplane}
+\caption{The complex $t$-plane at fixed $\xx$. The function $D(\xx,t)$ is
+analytic away from the two cuts $t\le-|\xx|$ and $t\ge|\xx|$ along the real
+axis. Its values in the upper half-plane are given by the integral for
+$D_+(\xx,t)$, and in the lower half-plane by the integral for $D_-(\xx,t)$.
+The two continue into each other through the segment $-|\xx|<t<|\xx|$.}
+\label{fig:tplane}
+\end{figure}
+
+In other words, in fact there is a single function of complex $t$ (I will
+denote it as $D(\xx,t)$), analytic in both the upper and lower half-planes,
+including the segment $-|\xx|<t<|\xx|$ of the real axis, and $D_+(\xx,t)$
+($D_-(\xx,t)$) is given by its values in the upper (lower) half-plane. In
+particular, for real $t$
+\[
+D_+(\xx,t)=D(\xx,t+i0)\,,\qquad D_-(\xx,t)=D(\xx,t-i0)\,.
+\]
+As we have seen, these two limits coincide when $-|\xx|<t<|\xx|$, but outside
+this segment they don't. That means the function $D(\xx,t)$ has two branch
+cuts in the complex $t$-plane, from $-\infty$ to $-|\xx|$, and from $|\xx|$ to
+$+\infty$.
+
+It is not difficult to identify the geometric meaning of the branching points
+$t=\pm|\xx|$. They represent points on the future and past components of the
+light cone associated with the space-time point $0$, that is the geometric
+place of all points which can be connected to $0$ by light rays
+(figure~\ref{fig:lightcone}). At fixed $\xx$ the real $t$ line intersects the
+light cone at two points $\pm|\xx|$. When $t$ is regarded as the complex
+variable, the intersection points become exactly the branching points in the
+complex $t$ plane. At real $t$, when crossing the light cone one needs to
+choose the branch of the analytic function (similar to choosing a branch of
+$\sqrt z$ at negative $z$). The functions $D_+$ and $D_-$ are the two branches
+corresponding to two ways of going around the branching points in the complex
+$t$-plane.
+\begin{figure}[ht]
+\centering\figfile{lightcone}
+\caption{The light cone of the origin. At fixed $\xx$ the line of real $t$
+(thick) meets the future and past sheets of the cone at $t=|\xx|$ and
+$t=-|\xx|$. Between these points the separation from the origin is
+space-like.}
+\label{fig:lightcone}
+\end{figure}
+
+Let us come back to the commutator
+$[\hat\varphi(x),\hat\varphi(0)]=D_-(x)-D_+(x)$. Here I have set $x'=0$; in
+general case $x$ has to be replaced by the difference $x-x'$. We see that the
+commutator is equal to the discontinuity
+\[
+\bigl[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)\bigr]=D(\xx,t-i0)-D(\xx,t+i0)\,.
+\]
+When the separation $x=(t,\xx)$ is space-like the discontinuity vanishes, and
+we conclude that
+\[
+\bigl[\hat\varphi(x),\hat\varphi(x')\bigr]=0\qquad\text{for all space-like separations}\quad x-x'\,.
+\]
+This is important conclusion. Recall that in quantum mechanics commutator of
+two operators allows one to determine how, in a given state, the measurement
+of one observable can affect results of the measurements of another
+observable. Our calculation shows that the measurement at some space-time
+point $x$ can not affect measurements at the point $x'$ as long as the
+separation $x-x'$ is space-like. It expresses the \textbf{causality} of the
+quantum field theory. This is general requirement of quantum field theory
+called the \textbf{local commutativity}. It states that for any local fields
+$\mathcal O_1(x)$, $\mathcal O_2(x')$ we must have
+\[
+\bigl[\hat{\mathcal O}_1(x),\hat{\mathcal O}_2(x')\bigr]=0\qquad\text{for all space-like separations}\quad x-x'\,.
+\]
+The discontinuities across the branch cuts $|t|>|\xx|$ do not vanish, so when
+the separation is time-like the commutator takes non-zero values. We see that
+the commutator has its support inside the light cone.
+
+Consider now the expectation value $\bra0\hat\varphi(x)\,\hat\varphi(x')\ket0$
+of the product of two field operators. In the KG theory this expectation
+value can be expressed through the same analytic function $D(\xx,t)$. Indeed,
+since $\hat\varphi_-(x)\ket0=0$ and $\bra0\hat\varphi_+(x)=0$, we have
+\[
+\bra0\hat\varphi(x)\,\hat\varphi(x')\ket0=\bra0\hat\varphi_-(x)\,\hat\varphi_+(x')\ket0
+=D_-(x-x')=D(\xx-\xx',t-t'-i0)\,.
+\]
+If we interchange the positions of the operators, by similar calculation
+\[
+\bra0\hat\varphi(x')\,\hat\varphi(x)\ket0=D_+(x-x')=D(\xx-\xx',t-t'+i0)\,.
+\]
+Thus, these expectation values are described by the function $D(\xx,t)$ taken
+at the upper or lower edges of the light-cone branch cuts
+(figure~\ref{fig:tcontours}).
+\begin{figure}[ht]
+\centering\figfile{tcontours}
+\caption{Contours in the complex $t$-plane. Along $C_+$, just above both cuts,
+$D$ gives $\bra0\hat\varphi(\mathbf0,0)\,\hat\varphi(\xx,t)\ket0$; along
+$C_-$, just below both cuts, it gives
+$\bra0\hat\varphi(\xx,t)\,\hat\varphi(\mathbf0,0)\ket0$. The Feynman contour
+$C_F$ runs above the left cut and below the right cut.}
+\label{fig:tcontours}
+\end{figure}
+
+\subsection*{Feynman Propagator}
+
+Important role in our future studies will belong to the \textbf{time ordered}
+expectation values
+\[
+D_F(x-x')=D_F(\xx-\xx',t-t')=\bra0\Tprod\bigl(\hat\varphi(\xx,t)\,\hat\varphi(\xx',t')\bigr)\ket0\,,
+\]
+where the symbol $\Tprod$ signifies the time ordered product of the operators,
+\[
+\Tprod\bigl(\hat\varphi(\xx,t)\,\hat\varphi(\xx',t')\bigr)=
+\begin{cases}
+\hat\varphi(\xx,t)\,\hat\varphi(\xx',t') & \text{for}\quad t>t'\\
+\hat\varphi(\xx',t')\,\hat\varphi(\xx,t) & \text{for}\quad t<t'\,.
+\end{cases}
+\]
+This expectation value is also called the \textbf{Feynman propagator}. One can
+visualize it in figure~\ref{fig:tcontours} by first considering complex values
+of $t$ along the contour $C_F$, and then taking the limit when this contour is
+brought to the real axis; $D_F$ corresponds to the values of $D$ along $C_F$.
+
+The Feynman propagator can be written as
+\[
+D_F(\xx,t)=
+\begin{cases}
+D_-(\xx,t)=\int d\mu(\pp)\,e^{-i\omega_\pp t+i\pp\cdot\xx} & \text{for}\quad t>0\\[2pt]
+D_+(\xx,t)=\int d\mu(\pp)\,e^{i\omega_\pp t-i\pp\cdot\xx} & \text{for}\quad t<0\,,
+\end{cases}
+\]
+but the most convenient representation is given by the 4-dimensional integral
+\[
+D_F(\xx,t)=\int\frac{d^3\pp}{(2\pi)^3}\int_{\tilde C_F}\frac{d\omega}{2\pi}\,
+\frac{i\,e^{-i\omega t+i\pp\cdot\xx}}{\omega^2-\pp^2-m^2}\,.
+\]
+The integrand has two poles in $\omega$, at $\omega=\pm\omega_\pp$, and the
+integration contour $\tilde C_F$ for $\omega$ goes around these poles as shown
+in figure~\ref{fig:omegaF}.
+\begin{figure}[ht]
+\centering\figfile{omegaF}
+\caption{The contour $\tilde C_F$ in the complex $\omega$-plane passes below
+the pole at $\omega=-\omega_\pp$ and above the pole at $\omega=\omega_\pp$.}
+\label{fig:omegaF}
+\end{figure}
+
+If $t>0$ the integrand decays exponentially into the lower half-plane of the
+variable $\omega$, and one can perform the integration over this variable by
+closing the contour around $\omega=\omega_\pp$. The integral reduces to the
+residue at this pole, which yields $D_-(\xx,t)$. Similarly, when $t<0$ the
+integration contour can be closed around the pole $\omega=-\omega_\pp$, and the
+residue calculation yields $D_+(\xx,t)$.
+
+This integration prescription is usually expressed as
+\[
+D_F(x)=\int\frac{d\omega}{2\pi}\,\frac{d^3\pp}{(2\pi)^3}\,\frac{i\,e^{-i\omega t+i\pp\cdot\xx}}{\omega^2-\pp^2-m^2+i0}
+=\int\frac{d^4p}{(2\pi)^4}\,\frac{i\,e^{-ip_\mu x^\mu}}{p_\mu p^\mu-m^2+i0}\,.
+\]
+This form of the Feynman propagator is explicitly covariant. It also shows that
+$D_F(x)$ is the Green's function of the KG equation,
+\[
+\bigl(\partial_\mu\partial^\mu+m^2\bigr)\,D_F(x)=-i\,\delta^{(4)}(x)\,.
+\]
+Note that the functions $D_\pm(x)$ satisfy homogeneous KG equation
+\[
+\bigl(\partial_\mu\partial^\mu+m^2\bigr)\,D_\pm(x)=0\,,
+\]
+since in the KG theory the Heisenberg operator $\hat\varphi(x)$ itself
+satisfies homogeneous KG equation.
+
+\begin{exercise}
+The Feynman propagator is defined as
+\[
+D_F(\xx,t)=\theta(t)\,\bra0\hat\varphi(\xx,t)\,\hat\varphi(\mathbf0,0)\ket0+\theta(-t)\,\bra0\hat\varphi(\mathbf0,0)\,\hat\varphi(\xx,t)\ket0\,.
+\]
+Applying the differential operator $\partial_\mu\partial^\mu+m^2$ and using the
+equal-time commutation relations
+\[
+\bigl[\hat\pi(\xx,t),\hat\varphi(\xx',t)\bigr]=-i\,\delta^{(3)}(\xx-\xx')\,,
+\]
+confirm that
+\[
+\bigl(\partial_\mu\partial^\mu+m^2\bigr)\,D_F(x)=-i\,\delta^{(4)}(x)\,.
+\]
+\end{exercise}
+
+Finally, let us consider the ``euclidean'', or ``imaginary time'' correlation
+function. It is defined in terms of the function $D(\xx,t)$ taken at pure
+imaginary values of the time variable. Namely, let
+\[
+t=-i\,x_4\,,
+\]
+with real $x_4$. Then
+\[
+D_E(\xx,x_4)=D(\xx,-ix_4)\,,
+\]
+i.e.\ $D_E$ is the function $D$ with $t$ taken along the contour $C_E$ in the
+complex $t$-plane (figure~\ref{fig:tE}).
+\begin{figure}[ht]
+\centering\figfile{tE}
+\caption{The Euclidean contour $C_E$ runs along the imaginary $t$ axis,
+between the two light-cone cuts.}
+\label{fig:tE}
+\end{figure}
+Note that this contour can be obtained from $C_F$ by $90^\circ$ rotation.
+
+As is well known, by taking pure imaginary values of $t$ one converts the
+Minkowski space-time into 4-dimensional Euclidean space, since
+\[
+-d\tau^2\to ds^2=dx_4^2+d\xx^2\,,
+\]
+and the Lorentz symmetry becomes the orthogonal group $O(4)$ of rotations of
+the Euclidean 4-vectors
+\[
+x_E=(\xx,x_4)\,.
+\]
+
+The function $D_E(x_E)$ is called the Euclidean correlation function of the KG
+theory. We will discuss its significance later. For now, let us observe that
+since $D_E$ is related to $D_F$ simply by rotating the time contour, it
+satisfies the Euclidean-space version of the inhomogeneous KG equation
+\[
+\Bigl(m^2-\frac{\partial^2}{\partial x_4^2}-\nabla^2\Bigr)\,D_E(\xx,x_4)=\delta(x_4)\,\delta^{(3)}(\xx)\,,
+\]
+or in symmetric form
+\[
+\bigl(m^2-\Delta_E\bigr)\,D_E(x_E)=\delta^{(4)}(x_E)\,,
+\]
+where $\Delta_E$ stands for the 4-dimensional Laplacian. This equation is
+easily solved by Fourier transformation
+\[
+D_E(x_E)=\int\frac{d^4p_E}{(2\pi)^4}\,\frac{e^{ip_Ex_E}}{p_E^2+m^2}\,,
+\]
+where the integration is over the 4-dimensional Euclidean momentum space,
+$p_E=(\pp,p_4)$, and $p_E^2=\pp^2+p_4^2$. Note that now the integrand does not
+have singularities in the integration domain. Also, unlike the Minkowski space
+version of this equation, the solution is unique if we demand that $D_E(x_E)$
+decays at the Euclidean infinity $x_E\to\infty$. By introducing auxiliary
+integration, one can write this function as
+\begin{equation}\label{eq:Schwinger}
+D_E(x_E)=\int_0^\infty d\tau\int\frac{d^4p_E}{(2\pi)^4}\,e^{-\tau(p_E^2+m^2)}\,e^{ip_Ex_E}\,.
+\end{equation}
+This form is known as the Schwinger's proper-time representation.
+
+Clearly, the above Euclidean momentum space integral for $D_E(x_E)$ is related
+to the covariant 4-momentum integral for the Feynman propagator. The
+correlation function $D_E(\xx,x_4)$ is the analytic continuation of
+$D_F(\xx,t)$ obtained by rotating the time contour $C_F$ to $C_E$.
+Correspondingly, the integration contour $\tilde C_F$ in the complex
+$\omega$-plane is rotated by $90^\circ$ to the contour $\tilde C_E$
+(figure~\ref{fig:omegaE}).
+\begin{figure}[ht]
+\centering\figfile{omegaE}
+\caption{Wick rotation in the $\omega$-plane. The contour $\tilde C_F$ can be
+turned counterclockwise by $90^\circ$ into $\tilde C_E$, along the imaginary
+axis, without crossing the poles at $\omega=\pm\omega_\pp$.}
+\label{fig:omegaE}
+\end{figure}
+
+This example suggests that some analytic characteristics of the KG theory,
+and perhaps more general QFT, may take simpler and more symmetric form when
+continued to pure imaginary time. This idea can be refined with the help of
+the path integral formulation of quantum mechanics, which we consider next.
+
+\begin{hwproblem}{7}\label{hw:7}
+\begin{hwparts}
+\item Show that the Euclidean Klein-Gordon propagator
+\[
+D_E(x_E):=\int\frac{d^4p}{(2\pi)^4}\,\frac{e^{ipx_E}}{p^2+m^2}
+\]
+behaves as
+\[
+D_E(x_E)\to\Const\,\frac{m^{1/2}}{R^{3/2}}\,e^{-mR}\qquad\text{for}\quad mR\to\infty\,,
+\]
+where $R$ stands for $|x_E|$. Evaluate the $\Const$.
+\item Using the Schwinger's representation, find $D_E$ explicitly in terms of
+the Bessel's functions. (Consult e.g.\ A.~Erd\'elyi, H.~Bateman, ``Higher
+Transcendental Functions'', Volume~II,
+\url{https://authors.library.caltech.edu/43491/}).
+\item Analyze the singularity at $x_E^2=0$. For $x_E=(\xx,x_4)$, consider
+analytic continuation to complex $x_4=it$. Describe analytic structure of
+$D(\xx,t)$ as the function of complex $t$. Find the discontinuity across the
+branch cuts associated with the future and past components of the light cone
+$t^2=\xx^2$.
+\end{hwparts}
+\end{hwproblem}

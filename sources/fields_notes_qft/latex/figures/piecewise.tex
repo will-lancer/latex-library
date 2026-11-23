@@ -1,0 +1,14 @@
+\begin{tikzpicture}[xscale=1.0,yscale=0.9,line width=0.6pt]
+  \draw[axis] (-0.3,0)--(8.6,0) node[right] {$\tau$};
+  \def\pts{(0,1.6),(1,1.9),(2,2.0),(3,0.8),(4,2.4),(5,3.4),(6,1.6),(7,2.4),(8,1.8)}
+  \foreach \x/\y in {0/1.6,1/1.9,2/2.0,3/0.8,4/2.4,5/3.4,6/1.6,7/2.4,8/1.8}
+    {\draw[densely dotted,gray] (\x,0)--(\x,\y); \fill (\x,\y) circle (1.5pt);}
+  \draw[line width=0.8pt] (0,1.6)--(1,1.9)--(2,2.0)--(3,0.8)--(4,2.4)--(5,3.4)--(6,1.6)--(7,2.4)--(8,1.8);
+  \node[left] at (0,1.6) {$q_i$};
+  \node[above] at (1,1.9) {$q_1$};
+  \node[above] at (2,2.0) {$q_2$};
+  \node[above] at (7,2.4) {$q_{n-1}$};
+  \node[right] at (8,1.8) {$q_f$};
+  \foreach \x/\l in {0/\tau_0,1/\tau_1,2/\tau_2,7/\tau_{n-1},8/\tau_n} \node[below] at (\x,0) {$\l$};
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]}] (3,-0.55)--node[below] {\scriptsize $\Delta\tau$} (4,-0.55);
+\end{tikzpicture}

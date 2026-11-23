@@ -1,0 +1,19 @@
+\begin{tikzpicture}[line width=0.6pt]
+  \def\hyp#1{plot[domain=-3.4:3.4,samples=70] ({\x},{sqrt(\x*\x+#1*#1)})}
+  \begin{scope}
+    \clip (-3.4,0) rectangle (3.4,4.6);
+    \fill[gray!18] \hyp{1.4} -- (3.4,4.6) -- (-3.4,4.6) -- cycle;
+    \fill[gray!32] \hyp{1.8} -- (3.4,4.6) -- (-3.4,4.6) -- cycle;
+    \fill[gray!48] \hyp{2.2} -- (3.4,4.6) -- (-3.4,4.6) -- cycle;
+  \end{scope}
+  \draw[line width=0.9pt] \hyp{0.7};
+  \draw[line width=0.9pt] \hyp{1.1};
+  \draw[densely dashed] (-3.4,3.4)--(0,0)--(3.4,3.4);
+  \draw[axis] (-3.7,0)--(3.8,0) node[right] {$|\PPv|$};
+  \draw[axis] (0,0)--(0,4.9) node[left] {$E$};
+  \fill (0,0) circle (1.6pt);
+  \foreach \y/\l in {0.7/m_1,1.1/m_2,1.4/2m_1,1.8/m_1+m_2,2.2/2m_2}
+    {\draw (0,\y) -- (-0.12,\y); \node[left,font=\scriptsize,fill=white,inner sep=1pt] at (-0.16,\y) {$\l$};}
+  \draw[gray] (2.6,{sqrt(2.6*2.6+0.49)}) -- (3.8,1.9) node[right,black] {$\mathcal P_{m_1^2}$};
+  \draw[gray] (2.2,{sqrt(2.2*2.2+1.21)}) -- (3.8,2.9) node[right,black] {$\mathcal P_{m_2^2}$};
+\end{tikzpicture}

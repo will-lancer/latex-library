@@ -1,0 +1,14 @@
+\begin{tikzpicture}[line width=0.6pt]
+  \draw[gray] (-4.6,0)--(4.6,0);
+  \draw[line width=1.6pt] (-4.6,0)--(-1.6,0);
+  \draw[line width=1.6pt] (1.6,0)--(4.6,0);
+  \fill (-1.6,0) circle (1.6pt);
+  \fill (1.6,0) circle (1.6pt);
+  \node[below] at (-1.6,-0.05) {$-|\xx|$};
+  \node[below] at (1.6,-0.05) {$|\xx|$};
+  \draw[midarrow] (-4.6,0.55)--(4.6,0.55) node[right] {$C_+$};
+  \draw[midarrow] (-4.6,-0.85)--(4.6,-0.85) node[right] {$C_-$};
+  \draw[line width=0.9pt,-{Stealth[length=2.2mm]}] (-4.6,0.22) -- (-1.9,0.22) .. controls (-0.6,0.22) and (0.6,-0.22) .. (1.9,-0.22) -- (4.6,-0.22) node[right] {$C_F$};
+  \node[above] at (0,0.6) {$\bra0\hat O_2(\mathbf0,0)\,\hat O_1(\xx,t)\ket0$};
+  \node[below] at (0,-0.9) {$\bra0\hat O_1(\xx,t)\,\hat O_2(\mathbf0,0)\ket0$};
+\end{tikzpicture}

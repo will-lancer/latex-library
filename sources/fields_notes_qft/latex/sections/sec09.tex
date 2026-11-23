@@ -1,0 +1,268 @@
+% Source pp. 73-79 (Lectures7-12.pdf).
+\section{More on Feynman Diagrams. Generating Functional}
+
+Continuing our analysis of the diagrammatic representation of the correlation
+functions let us consider the diagram expansion of the four-point function
+\[
+\bigl\langle\varphi(x_1)\varphi(x_2)\varphi(x_3)\varphi(x_4)\bigr\rangle:=Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\varphi(x_3)\varphi(x_4)\,e^{-\mathcal A[\varphi]}
+\]
+in the $\varphi^4$ theory. First, by applying the same arguments as before it
+is easy to show that in this case (and indeed for any correlation function)
+the ``vacuum fragments'' again get canceled by the expansion of $Z$ in the
+denominator. However, in this case the disconnected diagrams remain even after
+we drop the vacuum fragments. Consider the first few diagrams for the above
+four-point function, shown in figure~\ref{fig:fourpt}.
+\begin{figure}[ht]
+\centering\figfile{fourpt}
+\caption{The first few diagrams for the four-point function in the $\varphi^4$
+theory. (a)--(c) are the free-theory terms, (d) is a disconnected diagram
+with a correction to one of the propagators, and (e), (f) are connected.}
+\label{fig:fourpt}
+\end{figure}
+
+The first three diagrams here represent the four point function in the free
+theory; they consist of the propagators which being connected to the external
+points are not connected to each other. These contributions are expressed in a
+simple way through the free-field two-point functions $D$. The diagram (d) and
+similar diagrams are also disconnected; they represent corrections to those
+two-point functions. The diagrams (e) and (f) represent the class of truly
+connected diagrams. By the structure of the above diagram series it is natural
+to write
+\begin{multline*}
+\bigl\langle\varphi(x_1)\varphi(x_2)\varphi(x_3)\varphi(x_4)\bigr\rangle
+=\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle\bigl\langle\varphi(x_3)\varphi(x_4)\bigr\rangle
++\bigl\langle\varphi(x_1)\varphi(x_3)\bigr\rangle\bigl\langle\varphi(x_2)\varphi(x_4)\bigr\rangle\\
++\bigl\langle\varphi(x_1)\varphi(x_4)\bigr\rangle\bigl\langle\varphi(x_2)\varphi(x_3)\bigr\rangle
++\bigl\langle\varphi(x_1)\varphi(x_2)\varphi(x_3)\varphi(x_4)\bigr\rangle_{\text{conn}}
+\end{multline*}
+where the first three terms combine the contributions of the disconnected
+diagrams; they are expressed in terms of the two-point functions. The connected
+diagrams are incorporated in the last term which is called the
+\emph{connected} correlation function.
+
+Similar pattern is observed for the higher-order correlation functions. There
+are disconnected diagrams which sum up into the lower-order correlation
+functions, and besides there are truly connected ones, their sums define the
+connected correlation functions.
+
+In fact the disconnected diagrams can be efficiently sorted out by using the so
+called Generating Functional.
+
+\subsection*{Generating Functional (PS Sect.~9.2, 9.3)}
+
+Perturbation theory represents any correlation function as the sum of the
+Feynman diagrams. There are connected and disconnected diagrams. The vacuum
+bubbles can be ignored as they are canceled out by the expansion of the
+normalization factor $Z^{-1}$. The remaining disconnected diagrams are
+efficiently sorted out by using the method of Generating Functional. Although
+the following analysis is done for the case of $\varphi^4$ theory, it is useful
+to keep in mind that all the arguments below can be repeated step by step for
+the generic interaction.
+
+Let us define the Generating Functional as follows. Introduce the functional
+\begin{equation}\label{eq:zetaJ}
+\zeta[J]=\sum_{n=0}^\infty\frac1{n!}\int d^4x_1\cdots d^4x_n\,\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\,J(x_1)\cdots J(x_n)\,.
+\end{equation}
+It depends on the auxiliary function $J$, and incorporates all $n$-point
+correlation functions. By the definition
+\begin{equation}\label{eq:zetader}
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=\frac{\delta}{\delta J(x_1)}\cdots\frac{\delta}{\delta J(x_n)}\,\zeta[J]\Big|_{J=0}\,.
+\end{equation}
+The generating functional can be written as
+\[
+\zeta[J]=\Bigl\langle\exp\Bigl(\int J(x)\varphi(x)\,d^4x\Bigr)\Bigr\rangle
+\]
+and therefore it is expressed as the ratio
+\[
+\zeta[J]=Z[J]/Z[0]\,;
+\]
+where
+\begin{equation}\label{eq:ZJ}
+Z[J]=\int\bigl[D\varphi\bigr]\,e^{\int J(x)\varphi(x)\,d^4x}\,e^{-\mathcal A[\varphi]}
+\end{equation}
+is a partition function associated with the action
+\[
+\mathcal A_J=\mathcal A-\int J(x)\varphi(x)\,d^4x\,.
+\]
+For this reason the function $J(x)$ is usually referred to as an ``external
+source''.
+
+The source-dependent action above is a particular case of generic theory with
+$x$-dependent coupling $\lambda_1(x)=-J(x)$,
+\[
+\mathcal A_I=\int d^4x\,\Bigl[-J(x)\varphi(x)+\frac{\lambda}{4!}\,\varphi^4(x)\Bigr]\,.
+\]
+Therefore its partition function $Z[J]$ (more precisely $Z[J]/Z_0$) is given by
+a sum of all vacuum diagrams which now contain two kinds of vertices,
+\[
+\dia{\draw[prop] (-1.6,0) -- (0,0) node[vtx]{};}=\int d^4x\,J(x)\dots\,,\qquad\qquad
+\dia{\pic{xvertex};}=-\lambda\int d^4x\dots\,.
+\]
+By taking the variational derivatives with respect to $J(x)$ we just convert
+the one-leg vertices above into the external legs; this is the meaning of the
+formula \eqref{eq:zetader} above. Now, the sum of all the vacuum diagrams
+exponentiates in terms of the sum of connected vacuum
+diagrams.\footnote{Formal proof of this statement can be found e.g.\ in
+``Quantum Field Theory and Critical Phenomena'' by J.~Zinn-Justin, Oxford
+Univ.\ Press 1996, \S6.1.} Defining
+\begin{equation}\label{eq:Wdef}
+\zeta[J]=\exp W[J]
+\end{equation}
+we conclude that the expansion of this new functional $W[J]$ in terms of $J$
+will generate the \emph{connected} correlation functions, namely
+\[
+W[J]=\sum_{n=0}^\infty\frac1{n!}\int d^4x_1\cdots d^4x_n\,W^{(n)}(x_1,\dots,x_n)\,J(x_1)\cdots J(x_n)\,,
+\]
+where
+\[
+W^{(n)}(x_1,\dots,x_n)=\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{\text{conn}}\,.
+\]
+The functional $W[J]$ is called the generating functional for the
+\emph{connected} correlation functions. In the KG theory one can evaluate the
+Gaussian functional integral \eqref{eq:ZJ} for $Z[J]$ explicitly and find
+\[
+W_{\mathrm{KG}}[J]=\frac12\int d^4x\,d^4x'\,J(x)\,D(x-x')\,J(x')\,,
+\]
+which shows again that in the free theory all connected correlation functions
+but the two-point one vanish.
+
+\begin{exercise}
+Using $\zeta[J]=\exp W[J]$, check by direct calculation that
+\begin{align*}
+W^{(2)}(x_1,x_2)&=\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle\,,\\
+W^{(4)}(x_1,\dots,x_4)&=\bigl\langle\varphi(x_1)\cdots\varphi(x_4)\bigr\rangle
+-\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle\bigl\langle\varphi(x_3)\varphi(x_4)\bigr\rangle\\
+&\qquad-\text{two other disconnected terms.}
+\end{align*}
+\end{exercise}
+
+In many cases it is useful to decompose the connected correlation functions
+further into more elementary ``blocks''. Consider the diagrams for the connected
+four-point function
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_4)\bigr\rangle_c=\figfile{fourptconn}
+\]
+It is clear that some of these diagrams (like (b), (c), and (e)) represent the
+corrections to the ``external legs''. This shows that the connected correlation
+functions can be expressed through so-called ``amputated'' correlation
+functions,
+\[
+W^{(n)}(x_1,\dots,x_n)=\int\Bigl[\prod_{i=1}^nd^4y_i\,W(x_i-y_i)\Bigr]\,W^{(n)}_{\text{amp}}(y_1,\dots,y_n)
+\]
+where I used the shorthand
+\[
+W(x-y)\equiv W^{(2)}(x,y)=\bigl\langle\varphi(x)\varphi(y)\bigr\rangle\,.
+\]
+Let us give a graphical representation of this relation. Denoting the connected
+$n$-point correlation function by an empty blob with $n$ legs,
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{\text{conn}}=
+\diac{\pic{legblob={0.8}{0,45,90,135}{1.1}{fill=white}};
+  \draw[densely dotted] (165:1.3) arc[start angle=165,end angle=330,radius=1.3];
+  \node at (300:1.75) {\small$n$};}\,,
+\]
+we have
+\[
+\diac{\pic{legblob={0.8}{0,45,90,135}{1.1}{fill=white}};
+  \draw[densely dotted] (165:1.3) arc[start angle=165,end angle=330,radius=1.3];
+  \node at (300:1.75) {\small$n$};}
+=\diac{\foreach \a in {0,45,90,135} {\draw[prop] (\a:0.9) -- (\a:2.5) node[vtx] {}; \draw[prop,fill=white] (\a:1.7) circle (0.3);}
+  \draw[prop,fill=white] (0,0) circle (0.9); \node at (0,0) {\small amp};
+  \draw[densely dotted] (165:1.4) arc[start angle=165,end angle=330,radius=1.4];
+  \node at (300:1.85) {\small$n$};}\;;\qquad\qquad
+x\ \dia{\draw[prop] (-1.6,0) node[vtx]{} -- (1.6,0) node[vtx]{}; \draw[prop,fill=white] (0,0) circle (0.4);}\ x'=W^{(2)}(x-x')\,.
+\]
+According to this definition the amputated correlation functions contain
+neither external legs nor the corrections to them. Note that by this definition
+$W^{(2)}_{\text{amp}}(x,y)=S(x-y)$ is inverse (in the operator sense) to the
+two-point function, i.e.
+\[
+\int d^4y\,S(x-y)\,W(y-x')=\delta^{(4)}(x-x')\,.
+\]
+In the free theory this is the inverse of the function $D$ i.e.\ just the
+(Euclidean) Klein-Gordon operator
+\[
+S_0(x-y)=\bigl(m^2-\Delta_x\bigr)\,\delta^{(4)}(x-y)\,.
+\]
+
+\paragraph{Proper vertices:} Finally, let us define the so called \emph{proper
+vertices} (also referred to as the ``one-particle irreducible correlation
+functions''). For $n>2$ the $n$-point proper vertex
+$-\Gamma^{(n)}(y_1,\dots,y_n)$ is the sum of all diagrams contributing to
+$W^{(n)}_{\text{amp}}(y_1,\dots,y_n)$ which cannot be made disconnected by
+cutting just one line (please pay attention to the minus sign in this
+definition). In particular, in the $\varphi^4$ theory
+$\Gamma^{(4)}=-W^{(4)}_{\text{amp}}$ (why?), i.e.\ diagrammatically
+\[
+\diac{\pic{legblob={0.8}{45,135,225,315}{1.4}{fill=white}};}
+=-\ \diac{\pic{dressed={0.8}{45,135,225,315}};}\,,
+\]
+but for the 6-point functions we have in graphic representation
+\[
+\diac[0.42]{\pic{legblob={0.8}{0,60,120,180,240,300}{1.4}{fill=white}};}
+=-\ \diac[0.42]{\pic{dressed={0.8}{0,60,120,180,240,300}};}
++\Bigl[\ \diac[0.42]{\pic{dressed={0.8}{60,120,180,240,300}};
+  \draw[prop] (0.8,0) -- (2.4,0); \draw[prop,fill=white] (1.6,0) circle (0.3);
+  \begin{scope}[xshift=3.2cm]\pic{dressed={0.8}{0,60,120,240,300}};\end{scope}
+  \node[vtx,minimum size=4pt] at (0.8,0) {}; \node[vtx,minimum size=4pt] at (2.4,0) {};}
+\ +\ 9\ \text{similar terms}\Bigr]\,,
+\]
+where each shadowed blob with $n$ fat points on it stands for the proper vertex
+$\Gamma^{(n)}$.
+
+For the reasons that will become clear later the two-point proper vertex
+deserves special definition, namely
+\[
+\Gamma^{(2)}(x,x')=S(x-x')\,.
+\]
+Its relation to the one-particle irreducible diagrams is as follows. Write
+\[
+S(x-x')=S_0(x-x')+\Sigma(x-x')\,.
+\]
+The function $\Sigma(x-x')$ is often referred to as the mass operator. It is
+the function $-\Sigma$ (again note the sign) which is equal to the sum of all
+one-particle irreducible diagrams for the two-point correlation function.
+Indeed, denoting $-\Sigma$ by the two-point shadowed blob we have
+\[
+x\ \dia{\draw[prop,pattern=north east lines] (0,0) circle (0.6); \node[vtx,minimum size=4pt] at (-0.6,0) {}; \node[vtx,minimum size=4pt] at (0.6,0) {};}\ x'
+=\underset{x,x'}{\dia{\draw[prop] (0,0.45) circle (0.45); \node[vtx] at (0,0) {};}}
++\underset{x,x'}{\dia{\draw[prop] (0,0.45) circle (0.45); \draw[prop] (0,1.35) circle (0.45); \node[vtx] at (0,0) {}; \node[vtx] at (0,0.9) {};}}
++\ x\ \dia{\pic{melon};}\ x'+\cdots\,.
+\]
+The full set of diagrams contributing to $W$,
+\[
+W(x-x')=x\,\dia{\pic{line};}\,x'
++x\,\dia{\pic{tadline};}\,x'
++x\,\dia{\draw[prop] (-2.2,0) -- (2.2,0); \draw[prop] (-0.8,0.42) circle (0.42); \draw[prop] (0.8,0.42) circle (0.42);
+  \foreach \p in {-2.2,-0.8,0.8,2.2} \node[vtx] at (\p,0) {};}\,x'+\cdots\,,
+\]
+can be obtained by repeating the one-particle irreducible diagrams in a
+chainlike manner,
+\[
+\dia{\draw[prop] (-1.6,0) node[vtx]{} -- (1.6,0) node[vtx]{}; \draw[prop,fill=white] (0,0) circle (0.5); \node[above] at (0,0.5) {\small$W$};}
+=\dia{\pic{line};}
++\dia{\draw[prop] (-1.8,0) node[vtx]{} -- (1.8,0) node[vtx]{}; \draw[prop,pattern=north east lines] (0,0) circle (0.5);
+  \node[vtx,minimum size=4pt] at (-0.5,0) {}; \node[vtx,minimum size=4pt] at (0.5,0) {};}
++\dia{\draw[prop] (-2.4,0) node[vtx]{} -- (2.4,0) node[vtx]{};
+  \foreach \c in {-0.9,0.9} {\draw[prop,pattern=north east lines] (\c,0) circle (0.45);
+  \node[vtx,minimum size=4pt] at (\c-0.45,0) {}; \node[vtx,minimum size=4pt] at (\c+0.45,0) {};}}
++\cdots\,.
+\]
+Explicitly,
+\[
+W=D-D*\Sigma*D+D*\Sigma*D*\Sigma*D-\cdots\,.
+\]
+Here $A*B$ denotes a convolution
+\[
+(A*B)(x-x')=\int d^4y\,A(x-y)\,B(y-x')\,.
+\]
+Using
+\[
+S_0*D=I
+\]
+where $I=\delta^{(4)}(x-y)$ is the unit operator, it is straightforward to check
+that $S_0+\Sigma$ is indeed an inverse of $W$.
+
+Similarly to the above generating functionals $\zeta$ and $W$ we can define a
+generating functional of the proper vertices. This functional, denoted
+$\Gamma[\phi]$, is called the ``Effective Action''.

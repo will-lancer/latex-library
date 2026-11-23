@@ -1,0 +1,364 @@
+% Source pp. 173-181 (Lectures13-18.pdf).
+\section{More on Wilson's RG}
+
+The last time we have defined the \emph{Wilson's Renormalization Group
+Transformation}. This transformation acts on the action functionals
+$\mathcal A[\varphi_0]$,
+\[
+\mathcal A\to\mathcal A'\,,
+\]
+which represent \emph{cutoff field theories}, i.e.\ field theories equipped with
+some cutoff regularization, with cutoff parameter $\Lambda$. The transformation
+depends on a parameter $L\ge1$ and a function $Z(L)$, and consists of two steps.
+
+\paragraph{STEP 1:} Integrating out the ``fast'' degrees of freedom.
+
+The field $\varphi_0(x)$ is split into its ``slow'' and ``fast'' parts,
+\[
+\varphi_0(x)=\varphi_1(x)+\tilde\varphi(x)\,,
+\]
+where
+\begin{equation}\label{eq:slowfast}
+\varphi_1(x)=\int_{|k|<\Lambda/L}\phi(k)\,e^{ikx}\,,\qquad
+\tilde\varphi(x)=\int_{\Lambda/L<|k|<\Lambda}\phi(k)\,e^{ikx}\,.
+\end{equation}
+Integrating the part $\tilde\varphi$ out one defines new action
+\begin{equation}\label{eq:A1def}
+\Const\,e^{-\mathcal A_1[\varphi_1]}=\int[D\tilde\varphi]\,e^{-\mathcal A[\varphi_1+\tilde\varphi]}
+\end{equation}
+which depends only on the ``slow'' degrees of freedom, with the cutoff parameter
+$\Lambda/L$.
+
+\paragraph{STEP 2:} Rescaling of the coordinates $x\to x/L$.
+
+One makes the field variable transformation
+\begin{equation}\label{eq:rescale}
+\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
+\end{equation}
+in the functional integral over $\varphi_1$, defining new integration variable
+$\varphi_0$. This transformation returns the cutoff parameter to its original
+value $\Lambda$, and yields new action
+\begin{equation}\label{eq:Aprime}
+\mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-\frac12}(L)\,\varphi_0(x/L)\bigr]\,.
+\end{equation}
+
+In principle, the factor $Z^{\frac12}(L)$ in \eqref{eq:rescale}, \eqref{eq:Aprime}
+is arbitrary. Field renormalizations $\varphi_0\to Z^{\frac12}\varphi_0$ do not
+change physical content of field theory, it can be thought of as some sort of
+gauge transformation.\footnote{Much more general class of ``gauge
+transformations'' can be applied to field theories, the so called ``field
+redefinitions''. One considers generic local change of variables of the form
+$\varphi_0(x)\to f\bigl(\varphi_0(x),\partial_\mu\varphi_0(x),\cdots\bigr)$, which
+leaves the quasilocal nature of the action \eqref{eq:quasilocal} intact. Here we
+will not consider implications of this huge ambiguity. Of course, it is not to be
+mixed with the usual gauge transformations in gauge field theories.} When we
+characterize field theories by their action functionals, two actions different
+only in such renormalization are equivalent,
+\[
+\mathcal A\bigl[Z^{\frac12}\varphi_0\bigr]\sim\mathcal A[\varphi_0]\,.
+\]
+In practice this redundancy is usually eliminated by some field normalization
+condition which plays role of gauge fixing condition. In this case the factor
+$Z^{\frac12}(L)$ must be adjusted so that the transformation
+$\mathcal A\to\mathcal A'$ does preserve that condition.
+
+It follows from the above definition that if $\mathcal A'$ is obtained from
+$\mathcal A$ by the Wilson's RG transformation, the corresponding correlation
+functions are related as,
+\[
+\text{f.t.}\,\bigl\langle\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr\rangle_{\mathcal A'}
+=\text{f.t.}\,Z^{\frac n2}(L)\,\bigl\langle\varphi_0(x_1L)\cdots\varphi_0(x_nL)\bigr\rangle_{\mathcal A}
+\]
+where it is understood that the Fourier transforms of the correlation functions
+are taken and the comparison is made at low values of the momenta
+$|p_i|\ll\Lambda$. In other words, the theory described by the action
+$\mathcal A'$ differs from that described by $\mathcal A$ by a scale
+transformation $x\to x/L$ only. The Wilson's RG shows what it takes to make such
+scale transformation in field theory. Just rescaling the coordinates in the
+action, as is done in \eqref{eq:rescale}, is not sufficient. The ``naive''
+scaling transformation, represented by the step 2 above, must be supplemented by
+the integration over the fast modes in the step 1. Roughly speaking, the dilation
+$x\to x/L$ increases the spatial density of the field degrees of freedom, and one
+has to ``dilute'' them back to the original density by performing the step 1. In
+this sense the step 1 can be thought of as representing the transformation of the
+measure in the functional integral.
+
+One remark is in order here. In general, implementation of the step 1 of the
+Wilson's RG (elimination of the fast modes) depends on particular form of the
+cutoff regularization implied. The definition \eqref{eq:slowfast} corresponds to
+the ``sharp momentum cutoff''. We know that other cutoff regularizations are
+possible. For example, in the lattice regularization, where the field degrees of
+freedom are associated with the lattice cells, the procedure described above is
+hardly natural. Instead, one can consider a sublattice whose cells consist of
+$L^d$ elementary cells ($L$ must be integer in this case). The ``slow'' field
+$\varphi_1$ is then defined as the original field averaged over these greater
+cells, and the step 1 amounts to integrating over $\varphi_0$ with $\varphi_1$
+fixed. I am mentioning this here to stress that the two step procedure of the
+Wilson's RG can be considered as a general idea rather than an exact
+prescription, the idea whose implementation depends on the problem in hand.
+However, in this discussion we will follow the particular implementation
+described in \eqref{eq:slowfast}.
+
+We have seen that even if the original action $\mathcal A$ has some simple form,
+say $\varphi^4$, the result of the Wilson's RG transformation is usually a
+complicated ``quasilocal'' action which contains all possible terms with
+arbitrarily high powers of the field and with arbitrarily high powers and orders
+of the derivatives. On the other hand, if $\mathcal A$ is generic quasilocal
+action, one can expect that the action $\mathcal A'$ will again be of the
+quasilocal form. Under this assumption, the Wilson's RG transformation acts in
+the space of all quasilocal action functionals. In what follows I will use the
+notation $\Sigma$ for this infinite-dimensional space, so that
+\[
+RG:\ \Sigma\to\Sigma\,.
+\]
+Also, I will denote the RG transformation as
+\[
+\mathcal A'=RG_l\{\mathcal A\}\,,
+\]
+using more convenient parameter
+\[
+l=\log L\ge0
+\]
+instead of $L$. It is not difficult to understand that these transformations
+obey the composition law
+\begin{equation}\label{eq:semigroup}
+RG_{l+l'}\{\mathcal A\}=RG_l\{RG_{l'}\{\mathcal A\}\}\,,\qquad RG_0\{\mathcal A\}=\mathcal A\,.
+\end{equation}
+These properties define one-parameter \emph{semigroup}. It is not a group
+because a group contains inverse elements, and inverse to $RG_l$ in general
+cannot be defined. The reason is simple but important: the step 1 of the RG
+transformation leads to a loss of information about the interactions at the
+cutoff scales; this step cannot be ``undone''.
+
+In general exact evaluation of the RG transformation for arbitrary $l$ is at
+least as difficult as exact evaluation of the full functional integral, i.e.\
+usually hopeless. If the interaction is not small no reliable approximations are
+even available. One can hope however to find good approximations for $RG_l$ with
+$l$ small enough. Then according to the composition law \eqref{eq:semigroup} the
+transformation $RG_{Nl}$ can be obtained as $N$th iteration of $RG_l$. While it
+is not clear how to evaluate the functional integral at once, maybe it is
+possible to do it step by step, integrating out the shortest scale degrees of
+freedom, and then repeating this again and again.
+
+It is usually most convenient to consider the infinitesimal RG transformation
+\[
+RG_{\delta l}\{\mathcal A\}=\mathcal A+B\{\mathcal A\}\,\delta l+O(\delta l^2)\,,
+\qquad\text{where}\qquad
+B\{\mathcal A\}=\frac d{dl}\,RG_l\{\mathcal A\}\Big|_{l=0}\,.
+\]
+It follows from \eqref{eq:semigroup} that the one-parameter family of actions
+\[
+\mathcal A_l=RG_l\{\mathcal A_0\}\,,
+\]
+where $\mathcal A_0$ is an arbitrary ``initial'' action, satisfies the differential
+equation
+\begin{equation}\label{eq:WilsonFlow}
+\frac d{dl}\,\mathcal A_l=B\{\mathcal A_l\}\,,
+\end{equation}
+which is usually referred to as \emph{Wilson's RG flow equation}. It generates the
+scale transformations in the space of quasilocal actions $\Sigma$, namely, two
+actions $\mathcal A_{l_1}$ and $\mathcal A_{l_2}$ belonging to the same integral
+curve $\mathcal A_l$ (sometimes called the \emph{RG trajectory}) describe the
+theories which differ by the scale transform $x\to x\exp(l_1-l_2)$. Thus the
+problem splits into two parts: (i) Evaluation of the RG operator
+$B\{\mathcal A\}$ and (ii) Integration of the RG flow equation
+\eqref{eq:WilsonFlow}.
+
+The RG flow equation \eqref{eq:WilsonFlow} is written above in very abstract
+form. To make it substantial one has to introduce some coordinates on $\Sigma$.
+Generic quasilocal action can be written as (I assume $\varphi_0\to-\varphi_0$
+symmetry)
+\begin{multline}\label{eq:quasilocal}
+\mathcal A[\varphi_0]=\int d^dx\,\Bigl[\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_0^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_0^{2k}\,(\partial\varphi_0)^2(x)\\
++\sum_{k=0}^\infty\frac{w_{2k+1}}{2k!}\,\varphi_0^{2k+1}\,(\partial\varphi_0)^2\,\partial^2\varphi_0(x)+\cdots\Bigr]\,.
+\end{multline}
+The coefficients (``coupling constants'') $u_{2k},v_{2k},w_{2k+1},\dots$ can be
+taken as such coordinates. In general there are infinitely many couplings and
+therefore the space $\Sigma$ is infinite-dimensional. One of these parameters
+can be eliminated by appropriate renormalization of $\varphi_0$, for instance one
+can use this freedom to set
+\[
+v_0=1
+\]
+(the ``gauge fixing'' discussed above).
+
+In terms of these coordinates the RG flow equation \eqref{eq:WilsonFlow} can be
+written as
+\begin{equation}\label{eq:Bfunctions}
+\begin{aligned}
+\frac d{dl}\,u_{2k}(l)&=B_{u_{2k}}\bigl(\{u_{2k}(l)\},\{v_{2k}(l)\},\{w_{2k+1}(l)\},\dots\bigr)\,;\\
+\frac d{dl}\,v_{2k}(l)&=B_{v_{2k}}\bigl(\{u_{2k}(l)\},\{v_{2k}(l)\},\{w_{2k+1}(l)\},\dots\bigr)\,;\\
+&\ \ \text{etc}
+\end{aligned}
+\end{equation}
+where $u_{2k}(l),v_{2k}(l),\dots$ are the coupling constants corresponding to the
+action $\mathcal A_l$, and $B$'s are some functions of all these infinitely many
+coordinates. Of course it is impossible to calculate exactly all these functions.
+Neither can one hope to integrate exactly all the RG flow equations. In practical
+calculations some approximations are necessary. Most importantly one must find
+some finite-dimensional approximation to the infinite-dimensional space $\Sigma$.
+But before doing any calculations it is useful to think about what are the
+properties of the RG flow we must be interested in.
+
+\subsection*{Topological properties of RG flow\protect\footnote{The discussion in
+this section follows closely that in K.~Wilson, J.~Kogut, ``The RG and epsilon
+expansion'', Phys.\ Rep.\ \textbf{12C} (1974).}}
+
+Some general topological properties of RG flow can be discussed in an abstract
+form without reference to specific form of the RG transformation. Some general
+assumptions will be made concerning the actions generated by the RG
+transformations. Most importantly, we will make an assumption already mentioned
+above, namely, that the RG transformation $RG_l$ applied to a quasilocal action
+$\mathcal A$ produces an action $\mathcal A_l$ which is quasilocal. In other
+words, our main assumption is that $RG:\Sigma\to\Sigma$. This is not a trivial
+assumption. I remind you that our term ``quasilocal action'' means not only an
+action which admits formal derivative expansion \eqref{eq:quasilocal}, but also
+that this expansion converges for all fields $\varphi_0$ which contain only
+Fourier components with $|k|\lesssim\Lambda$. Roughly speaking quasilocal action
+can contain nonlocal interactions of the range $\sim\Lambda^{-1}$ but not much
+larger. There is no proof to this statement, but it holds for many known
+implementations of the RG procedure, so we accept it.
+
+Under this assumption, if $\mathcal A_0\in\Sigma$, the associated RG trajectory
+$\mathcal A_l$, i.e.\ the solution of the flow equation \eqref{eq:WilsonFlow}
+with the initial condition $\mathcal A_{l=0}=\mathcal A_0$, lies inside $\Sigma$
+for all $l>0$ (figure~\ref{fig:trajectory}).
+\begin{figure}[ht]
+\centering\figfile{trajectory}
+\caption{An RG trajectory $\mathcal A_l$ starting at $\mathcal A_0$ stays inside
+the space $\Sigma$ of quasilocal actions.}
+\label{fig:trajectory}
+\end{figure}
+
+The trajectory $\mathcal A_l$, as a function of the parameter $l$, gives a set of
+actions which all describe essentially the same physical system, the only
+difference being in the coordinate rescalings. Namely one must make an $l$
+dependent change of scale when relating $\mathcal A_l$ to physics.
+
+It is useful to discuss in terms of physical mass $m$, or, as it is more common in
+statistical mechanics, in terms of the ``correlation length'' $R_c=m^{-1}$. This
+is defined as follows. Consider the two-point correlation function. Its typical
+large-distance behavior in Euclidean space is (recall for instance your solution
+of the behavior of the Klein-Gordon propagator $D(x)$ at $|x|\to\infty$)
+\[
+\bigl\langle\varphi_0(x)\varphi_0(0)\bigr\rangle\simeq e^{-\frac{|x|}{R_c}}\qquad\text{as}\qquad|x|\to\infty\,.
+\]
+Let $R_c$ be the correlation length associated with our system described by the
+action $\mathcal A_0$, with the cutoff $\Lambda$. Of course $\mathcal A_l$
+describes the same system, but in the units in which the cutoff associated with
+$\mathcal A_l$ is still $\Lambda$, the correlation length will be
+\[
+R_c(l)=e^{-l}\,R_c\,.
+\]
+One can define various subspaces, or ``surfaces'', in $\Sigma$. The elements of
+$\Sigma$ can be separated according to their correlation length.
+Figure~\ref{fig:Rcsurfaces} shows schematically the surfaces of constant $R_c$.
+\begin{figure}[ht]
+\centering\figfile{Rcsurfaces}
+\caption{Surfaces of constant correlation length in $\Sigma$. The thick curve is
+the critical surface $R_c=\infty$.}
+\label{fig:Rcsurfaces}
+\end{figure}
+
+Of special interest is the ``critical surface'' with $R_c=\infty$, or $m=0$. We
+denote it $\Sigma_c$.
+
+Important subspace is the subspace $\Sigma(l)$ generated by applying $RG_l$ to
+$\Sigma$ itself,
+\[
+\Sigma(l)=RG_l\{\Sigma\}\,,
+\]
+see figure~\ref{fig:nested}.
+\begin{figure}[ht]
+\centering\figfile{nested}
+\caption{The nested images $\Sigma\supset\Sigma(l)\supset\Sigma(l+l')\supset\dots$
+of $\Sigma$ under the RG transformations, shrinking to $\Sigma(\infty)$ (thick
+curve).}
+\label{fig:nested}
+\end{figure}
+As we have assumed that $RG_l$ acts in $\Sigma$,
+\[
+\Sigma(l)\subset\Sigma\,.
+\]
+Obviously the subspaces $\Sigma(l)$ are nested, i.e.
+\[
+\Sigma(l+l')\subset\Sigma(l)\qquad\text{for any}\qquad l,l'>0
+\]
+(this follows from $\Sigma(l+l')=RG_l\{\Sigma(l')\}$).
+
+Strictly speaking the space $\Sigma$ is infinite-dimensional. However we assume
+that in many important respects it can be treated as finite dimensional one. This
+is equivalent to the assumption that it is possible to build a system of
+approximations to the RG transformation in which $\Sigma$ is replaced by spaces of
+large but finite dimensionalities, and that such approximations converge to exact
+RG transformation when this dimensionality goes to infinity.\footnote{Of course
+these statements are formulated in a way which is less than satisfactory from
+mathematical point of view. Mathematical rigor can be achieved only in some
+simplified models of the RG transformation.} If dimensionality of $\Sigma$ is
+understood in this sense, the spaces $\Sigma(l)$ for finite $l$ have the same
+dimensionality as $\Sigma$ itself. However, the space $\Sigma(\infty)$, obtained
+as the limit $l\to\infty$ of $\Sigma(l)$, can be much smaller. The basic idea of
+the Wilson's RG approach is in the hope that $\Sigma(\infty)$ has far fewer
+dimensions than $\Sigma$. The reason why $\Sigma(\infty)$ is expected to be much
+smaller than $\Sigma$ is the following: For large $l$ the action $\mathcal A_l$
+describes the physical system with actual interactions of much shorter range than
+the range of interactions which appear in the action $\mathcal A_l$ itself.
+Remember, $\mathcal A_l$ is physically equivalent to $\mathcal A_0$, with the
+scales changed by the factor $e^{-l}$. It is unlikely that arbitrary action in
+$\Sigma$ has this property. Thus $\Sigma(\infty)$ is expected to be only a small
+subset in $\Sigma$.
+
+The differential equation \eqref{eq:WilsonFlow}, i.e.
+\[
+\frac d{dl}\,\mathcal A=B\{\mathcal A\}
+\]
+can be integrated backward in $l$ as well as forward. Suppose $\mathcal A$ is in
+$\Sigma$ but not in $\Sigma(l)$. Then $\mathcal A_{-l}$, obtained by integrating
+backwards, can not lie in $\Sigma$\footnote{If $\mathcal A_{-l}\in\Sigma$ then
+$\mathcal A=RG_l\{\mathcal A_{-l}\}\in\Sigma(l)$.} (figure~\ref{fig:backward}).
+\begin{figure}[ht]
+\centering\figfile{backward}
+\caption{An action $\mathcal A\in\Sigma$ outside $\Sigma(l)$: integrated backwards
+by $l$, its trajectory leaves $\Sigma$.}
+\label{fig:backward}
+\end{figure}
+
+The reason $\mathcal A_{-l}$ is not in $\Sigma$ is likely to be one of the
+following: $\mathcal A_{-l}$ can fail to be quasilocal, i.e.\ $\mathcal A_{-l}$
+may contain long-range interactions. Or $\mathcal A_{-l}$ can have other
+pathological properties, like some coefficients which control convergence of the
+functional integral can become such that the functional integral with
+$\mathcal A_{-l}$ no longer exists (like $\lambda$ in $\varphi^4$ theory can
+become negative), so that the action $\mathcal A_{-l}$ does not define meaningful
+theory. Anyhow, for large $l$ the actions $\mathcal A_{-l}$ are typically outside
+$\Sigma$.
+
+Important exceptions from this general rule are the actions belonging to the
+subspace $\Sigma(\infty)$. If one takes
+\[
+\mathcal A\in\Sigma(\infty)\,,
+\]
+and obtains $\mathcal A_{-l}$ by integrating backwards,
+\[
+\mathcal A_{-l}\in\Sigma(\infty)\,.
+\]
+This is true, for if $\mathcal A_{-l}$ is in $\Sigma$ but not in
+$\Sigma(\infty)$ we have
+\[
+RG_l\{\mathcal A_{-l}\}=\mathcal A\,,
+\]
+so that $\mathcal A$ can be reached in finite ``time'' $l$ from some point in
+$\Sigma$ outside $\Sigma(\infty)$, but this contradicts the definition of
+$\Sigma(\infty)$. In short, starting in $\Sigma(\infty)$ one can integrate back
+and forth, still remaining within $\Sigma(\infty)$.
+
+For this reason the subspace $\Sigma(\infty)$ is of central importance in local
+Quantum Field Theory. The problem of QFT is to obtain finite local theory in the
+limit $\Lambda\to\infty$, with appropriately adjusted ``bare action''
+$\mathcal A(\Lambda)$. ``Integrating backward'' is essentially considering the
+actions which lead to the same physics as the action $\mathcal A_0$ one starts
+with, but equipped with larger and larger cutoff $\Lambda$, measured in the units
+of $m$. It is then clear that finding renormalized local theories is equivalent
+to finding actions $\mathcal A$ from which one can ``integrate backward'' without
+limits. For this reason it is natural to identify $\Sigma(\infty)$ with the space
+of local QFT. We will come back to this point many times over.

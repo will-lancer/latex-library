@@ -1,0 +1,409 @@
+% Source pp. 10-19 (Lectures1-6.pdf).
+\section{Quantization}
+
+Before going to quantum theory, let us recall the Hamiltonian formalism of
+classical mechanics and see how it looks for fields.
+
+\subsection*{Hamiltonian Formalism}
+
+In Lagrangian dynamics with the generalized coordinates $q^i$ one passes to
+the Hamiltonian formalism through introducing the conjugate momenta
+\[
+p_i=\frac{\partial L(q,\dot q)}{\partial\dot q^i}\,,
+\]
+and then excluding $\dot q$ in favor of $p$, by solving these equations. The
+Hamiltonian function $H$ appears as the Legendre transform
+\[
+H(p,q)=\sum_i p_i\,\dot q^i-L\,.
+\]
+The equations of motion then take the canonical form
+\[
+\dot p_i=\bigl\{p_i,H\bigr\}=-\frac{\partial H}{\partial q^i}\,,\qquad
+\dot q^i=\bigl\{q^i,H\bigr\}=\frac{\partial H}{\partial p_i}\,,
+\]
+in terms of the Poisson brackets
+\[
+\bigl\{f,g\bigr\}:=\sum_i\frac{\partial f}{\partial q^i}\,\frac{\partial g}{\partial p_i}-\frac{\partial f}{\partial p_i}\,\frac{\partial g}{\partial q^i}\,.
+\]
+In a field theory we have continuously many generalized coordinates
+$\varphi(\xx)$ (I assume here a scalar field, for simplicity), labeled by the
+spatial coordinates $\xx$. In this case the conjugated momenta are defined as
+\[
+\pi(\xx)=\frac{\delta L}{\delta\dot\varphi(\xx)}\,,
+\]
+with the basic Poisson brackets
+\[
+\bigl\{\varphi(\xx),\pi(\xx')\bigr\}=\delta(\xx-\xx')\,.
+\]
+In the Klein-Gordon theory
+\[
+\pi(\xx)=\dot\varphi(\xx)\,,
+\]
+and the Hamiltonian is
+\begin{equation}\label{eq:HKG}
+H=\int d^3\xx\,\biggl[\frac12\,\pi^2(\xx)+\frac12\,\bigl(\nabla\varphi\bigr)^2(\xx)+\frac{m^2}{2}\,\varphi^2(\xx)\biggr].
+\end{equation}
+Of course, it coincides with the above expression for the energy,
+$E=\int T^{00}\,d^3\xx$, expressed through $\pi$ rather than $\dot\varphi$.
+
+\subsection*{Quantum Klein-Gordon field}
+
+We can try now to develop quantum theory of the Klein-Gordon field, following
+the usual rules of canonical quantization. One starts with the correspondence
+\begin{center}
+\begin{tabular}{ll}
+Classical Theory & Quantum Theory\\[2pt]
+Phase space & Hilbert space $\Ham$\\
+$p_i,\,q^i$ & Hermitian operators $\hat p_i,\hat q^i:\ \Ham\to\Ham$\\
+$H(p,q)$ & $\hat H(\hat p,\hat q):\ \Ham\to\Ham$
+\end{tabular}
+\end{center}
+where the Hermitian operators $\hat q,\hat p$ must obey the canonical
+commutation relations
+\[
+\bigl[\hat q^i,\hat p_j\bigr]=i\,\delta^i_j\,.
+\]
+
+\begin{remark}
+In QM with finitely many degrees of freedom, in the Schroedinger's
+quantization one can take the space of square-integrable functions $\Psi(q)$
+for $\Ham$, and define the corresponding representation
+\[
+\hat q^i\,\Psi(q)=q^i\,\Psi(q)\,,\qquad
+\hat p_i\,\Psi(q)=-i\,\frac{\partial}{\partial q^i}\,\Psi(q)\,,
+\]
+and $\hat H=H(\hat p,\hat q)$. The time evolution of the state $\Psi(q)$ is
+governed by the Schroedinger equation
+\[
+i\,\frac{\partial}{\partial t}\,\Psi(q)=\hat H\,\Psi(q)\,.
+\]
+\end{remark}
+
+In principle, one can follow this prescription and introduce the operators
+$\hat\varphi(\xx)$, $\hat\pi(\xx)$ and demand that they satisfy the canonical
+commutators in the form
+\[
+\bigl[\hat\varphi(\xx),\hat\pi(\xx')\bigr]=i\,\delta(\xx-\xx')\,.
+\]
+Furthermore, one can take the space of functionals $\Psi[\varphi(\xx)]$ as
+the Hilbert space $\Ham$; it provides a formal representation of the above
+canonical commutation relations through the identifications
+\[
+\hat\varphi(\xx)\,\Psi[\varphi]=\varphi(\xx)\,\Psi[\varphi]\,,\qquad
+\hat\pi(\xx)\,\Psi[\varphi]=-i\,\frac{\delta}{\delta\varphi(\xx)}\,\Psi[\varphi]\,.
+\]
+The Hamiltonian operator then is
+\[
+\hat H=\int d^3\xx\,\biggl[-\frac12\,\frac{\delta^2}{\delta\varphi(\xx)^2}+\frac12\,\bigl(\nabla\varphi\bigr)^2+\frac{m^2}{2}\,\varphi^2\biggr],
+\]
+and it remains to find all solutions of the stationary Schroedinger equation
+\[
+\hat H\,\Psi[\varphi]=E\,\Psi[\varphi]\,.
+\]
+
+\begin{exercise}
+Show that this Schroedinger equation admits formal solution of the form
+\[
+\Psi_0[\varphi]=\Const\,\exp\Bigl\{\int\varphi(\xx)\,G(\xx-\xx')\,\varphi(\xx')\,d^3\xx\,d^3\xx'\Bigr\}\,.
+\]
+Find the kernel $G(\xx-\xx')$. (At this point, do not worry when you discover
+divergent integrals). Try to look for further solutions in the form
+\[
+\Psi_n[\varphi]\sim\int F(\xx_1,\dots,\xx_n)\,\varphi(\xx_1)\cdots\varphi(\xx_n)\,
+\exp\Bigl\{\int\varphi(\xx)\,G(\xx-\xx')\,\varphi(\xx')\,d^3\xx\,d^3\xx'\Bigr\}\,.
+\]
+\end{exercise}
+
+Although this straightforward approach, with certain refinements, would work
+in the Klein-Gordon theory, it has a number of unpleasant features. One is
+that the scalar product in $\Ham$ has to be defined through the functional
+integral
+\[
+(\Psi_1,\Psi_2)\sim\int\Psi_1^*[\varphi]\,\Psi_2[\varphi]\,D[\varphi]\,,
+\]
+and certain care must be taken to give it a satisfactory definition (we are
+going to use functional integrals, in somewhat different context, though).
+This and other features of the above representation in terms of the
+variational derivatives makes this approach somewhat cumbersome. Much shorter
+route is based on explicit separation of variables, as we discuss below.
+
+One observes that the Hamiltonian functional $H[\varphi]$ of the
+Klein-Gordon theory is quadratic in the field variables $\varphi(\xx)$ and
+their conjugate momenta $\pi(\xx)$; this means that the theory can be
+understood as the \emph{collection of harmonic oscillators} (this observation
+actually suggests the Gaussian form of $\Psi_0[\varphi]$ in the above
+Exercise). It is then straightforward to make linear transformation of the
+canonical variables $\varphi(\xx),\pi(\xx)$ which separates the variables into
+a system of non-interacting harmonic oscillators, and then quantize the
+individual oscillators. This transformation is described in detail in PS,
+and I refer to \textbf{Sect.~2.3} there for the detailed calculation.
+
+Instead, here I will follow equivalent routine based on special symmetries of
+the KG theory. Recall that the Lagrangian density is
+\[
+\Lag=\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\,,
+\]
+and observe that the transformation of the field
+\[
+\varphi(x)\to\varphi'(x)=\varphi(x)+f(x)\,,
+\]
+where $f(x)$ is an arbitrary solution of the KG equation
+\[
+\partial_\mu\partial^\mu f(x)+m^2\,f(x)=0\,,
+\]
+changes the Lagrangian density by a total derivative term
+\[
+\Lag(\varphi',\partial\varphi')=\Lag(\varphi,\partial\varphi)+\partial_\mu\tilde J^\mu_f\,,
+\qquad\text{where}\qquad
+\tilde J^\mu_f(x)=\varphi(x)\,\partial^\mu f(x)
+\]
+(in writing this equation I have assumed that $f$ is infinitesimal and
+neglected the terms $\sim f^2$). The situation meets the conditions of the
+Noether's theorem. It follows that every solution $f$ of the KG equation
+generates a conserved current $J^\mu_f$, such that
+\[
+\partial_\mu J^\mu_f=0\qquad\text{on shell.}
+\]
+Explicitly
+\[
+J^\mu_f=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,f-\tilde J^\mu_f=\partial^\mu\varphi\,f-\varphi\,\partial^\mu f\,.
+\]
+The corresponding Integrals of Motion are (at a time $t$)
+\[
+A_f=\int d^3\xx\,\Bigl(\dot\varphi(\xx,t)\,f(\xx,t)-\varphi(\xx,t)\,\dot f(\xx,t)\Bigr)
+=\int d^3\xx\,\Bigl(\pi(\xx)\,f(\xx)-\varphi(\xx)\,\dot f(\xx)\Bigr)\,,
+\]
+where $\pi(\xx)=\dot\varphi(\xx)$ is the canonical momentum conjugate to
+$\varphi(\xx)$. The integrals $A_f$ are Lorentz scalars. This becomes explicit
+if one rewrites their definition in covariant form
+\[
+A_f=\int_\Sigma d\Sigma_\mu\,\bigl(\partial^\mu\varphi\,f-\varphi\,\partial^\mu f\bigr)\,,
+\]
+where $\Sigma$ is any space-like 3-surface (figure~\ref{fig:spacelike});
+because of the continuity equation the currents $J^\mu_f$ obey, the above
+integrals do not depend on specific choice of $\Sigma$.
+\begin{figure}[ht]
+\centering\figfile{spacelike}
+\caption{A space-like 3-surface $\Sigma$. The integral $A_f$ over $\Sigma$
+does not depend on the choice of $\Sigma$.}
+\label{fig:spacelike}
+\end{figure}
+
+In classical theory one straightforwardly evaluates the Poisson brackets
+\[
+\bigl\{A_f,A_g\bigr\}=\int d^3\xx\,\Bigl(f(\xx,t)\,\dot g(\xx,t)-\dot f(\xx,t)\,g(\xx,t)\Bigr)
+\]
+(this expression also can be written in the covariant form, in terms of the
+integral over arbitrary $\Sigma$). In quantum theory we should replace, as
+usual,
+\[
+\bigl\{A,B\bigr\}\to-i\,\bigl[\hat A,\hat B\bigr]\,,
+\]
+so that
+\[
+\bigl[\hat A_f,\hat A_g\bigr]=-i\int d^3\xx\,\Bigl(\dot f(\xx)\,g(\xx)-f(\xx)\,\dot g(\xx)\Bigr)\,.
+\]
+It is convenient to use standard plane-wave solutions of the Klein-Gordon
+equation
+\[
+f_\pp=e^{i\omega_\pp t-i\pp\cdot\xx}\,,\qquad f^*_\pp=e^{-i\omega_\pp t+i\pp\cdot\xx}\,,
+\qquad\text{where}\qquad \omega_\pp=\sqrt{\pp^2+m^2}\,.
+\]
+Denoting
+\[
+\hat A_\pp=\hat A_{f_\pp}\,,\qquad \hat A^\dagger_\pp=\hat A_{f^*_\pp}\,,
+\]
+we find the commutation relations
+\[
+\bigl[\hat A_\pp,\hat A^\dagger_{\pp'}\bigr]=(2\pi)^3\,2\omega_\pp\,\delta^{(3)}(\pp-\pp')\,;\qquad
+\bigl[\hat A_\pp,\hat A_{\pp'}\bigr]=0\,;\qquad
+\bigl[\hat A^\dagger_\pp,\hat A^\dagger_{\pp'}\bigr]=0\,.
+\]
+These are the \emph{creation and annihilation operators}. The above operators
+$\hat A_\pp$ and $\hat A^\dagger_\pp$ differ in normalization from $a_\pp$ and
+$a^\dagger_\pp$ used in PS (see \textbf{Sect.~2.3})
+\[
+\hat A_\pp=\sqrt{2\omega_\pp}\,a_\pp\,;\qquad \hat A^\dagger_\pp=\sqrt{2\omega_\pp}\,a^\dagger_\pp\,.
+\]
+Advantage of $A,A^\dagger$ is their Lorentz invariance.
+
+The Hamiltonian can be expressed through the creation and annihilation
+operators as
+\begin{equation}\label{eq:HAA}
+\hat H=\int\frac{d^3\pp}{(2\pi)^3}\,\frac14\,\Bigl(\hat A^\dagger_\pp\,\hat A_\pp+\hat A_\pp\,\hat A^\dagger_\pp\Bigr)\,,
+\end{equation}
+which indeed is the Hamiltonian of a collection of harmonic oscillators, one
+oscillator per each wave-vector $\pp$, the associated frequency being
+$\omega_\pp$. It is straightforward to check that $\hat A^\dagger_\pp$ raises
+(and $\hat A_\pp$ lowers) the energy by the amount $\omega_\pp$, namely
+\[
+\bigl[\hat H,\hat A^\dagger_\pp\bigr]=\omega_\pp\,\hat A^\dagger_\pp\,,\qquad
+\bigl[\hat H,\hat A_\pp\bigr]=-\,\omega_\pp\,\hat A_\pp\,.
+\]
+Similarly, for the momentum
+\[
+\hat{\PPv}=-\int d^3\xx\,\hat\pi(\xx)\,\nabla\hat\varphi(\xx)
+\]
+we have
+\[
+\hat{\PPv}=\int\frac{d^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,\Bigl(\hat A^\dagger_\pp\,\hat A_\pp+\hat A_\pp\,\hat A^\dagger_\pp\Bigr)\,.
+\]
+Hence
+\[
+\bigl[\hat{\PPv},\hat A^\dagger_\pp\bigr]=\pp\,\hat A^\dagger_\pp\,,\qquad
+\bigl[\hat{\PPv},\hat A_\pp\bigr]=-\,\pp\,\hat A_\pp\,,
+\]
+i.e.\ $\hat A^\dagger_\pp$ adds $\pp$ to the total momentum.
+
+To find a physically acceptable solution of quantum KG theory it remains to
+find appropriate representation of the above commutation relations in a
+Hilbert space $\Ham$. Classically, the Hamiltonian \eqref{eq:HKG} is
+non-negative definite. Correspondingly, under physically meaningful
+quantization the quantum Hamiltonian \eqref{eq:HAA} must be bounded from
+below. Recall from the theory of harmonic oscillator that in order to satisfy
+this property one has to assume that $\Ham$ contains the ground state
+$\ket{0}$ such that
+\[
+\hat A_\pp\ket{0}=0\qquad\text{for all}\quad\pp\,.
+\]
+Just as in the harmonic oscillator, by applying the operators
+$A^\dagger_\pp$ to $\ket{0}$ one generates the complete space of normalizable
+states. In QFT this is referred as the \emph{Fock space},
+\[
+\Ham_{\mathrm{KG}}=\text{Fock space}=\operatorname{Span}\Bigl\{\hat A^\dagger_{\pp_1}\hat A^\dagger_{\pp_2}\cdots\hat A^\dagger_{\pp_N}\ket{0}\Bigr\}\,.
+\]
+The state $\ket{0}$ is called \emph{vacuum state}, or \emph{Fock vacuum}. Note
+that the above basis already solves the diagonalization problem for $\hat H$:
+these vectors are the eigenstates of both $\hat H$ and $\hat{\PPv}$, with the
+eigenvalues
+\begin{align*}
+E&=\omega_{\pp_1}+\omega_{\pp_2}+\ldots+\omega_{\pp_N}+E_0\,,\\
+\PPv&=\pp_1+\pp_2+\ldots+\pp_N+\PPv_0\,,
+\end{align*}
+where $E_0$ and $\PPv_0$ are the eigenvalues associated with the vacuum state
+$\ket{0}$,
+\[
+\hat H\ket{0}=E_0\ket{0}\,,\qquad \hat{\PPv}\ket{0}=\PPv_0\ket{0}\,.
+\]
+The basic vectors $\hat A^\dagger_{\pp_1}\hat A^\dagger_{\pp_2}\cdots\hat A^\dagger_{\pp_N}\ket{0}$
+are interpreted as the states of $N$ identical free (Bose) particles, with
+the momenta $\pp_1,\dots,\pp_N$.
+
+The above expression for the Hamiltonian can be rewritten as
+\[
+\hat H=E_0+\int\frac{d^3\pp}{(2\pi)^3}\,\frac12\,\hat A^\dagger_\pp\,\hat A_\pp\,,
+\qquad\text{with}\qquad
+E_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac14\,\bigl[\hat A_\pp,\hat A^\dagger_\pp\bigr]\,,
+\]
+which of course is the sum of the zero-point energies of all the constituent
+oscillators.
+
+There are two evident problems with the last expression:
+
+(i) It is not zero, and moreover it contains seemingly meaningless factor
+$\delta^{(3)}(\mathbf{0})$ (recall that
+$[\hat A_\pp,\hat A^\dagger_{\pp'}]=2\omega_\pp\,(2\pi)^3\,\delta^{(3)}(\pp-\pp')$).
+
+(ii) The remaining integral over $\pp$ diverges at large $\pp$.
+
+Note that these problems don't seem to be as bad for $\PPv_0$, where we have
+\[
+\PPv_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,\bigl[\hat A_\pp,\hat A^\dagger_\pp\bigr]=0\,,
+\]
+since the contributions of $\pp$ and $-\pp$ cancel pairwise. This is good, as
+we do not want the vacuum to have any net momentum. But this seems to create
+another problem, if one thinks that the energy and momentum should be the
+components of 4-vector $(E_0,\PPv_0)$. If $\PPv_0=0$ and $E_0\neq0$, it seems
+the Lorentz invariance is broken.
+
+To sort this part of the problem out, let us recall that we are dealing with
+a system in which the degrees of freedom $\varphi(\xx)$ are attached to all
+points of the space. For such system one expects that its vacuum energy
+$E_0$, whatever it is, must be proportional to the volume of the space,
+\[
+E_0=\varepsilon\,V^{(3)}\,,
+\]
+where $\varepsilon$ is the vacuum energy density. This answers the question
+how to interpret the $\delta^{(3)}(\mathbf 0)$ factor: Recall that
+\[
+(2\pi)^3\,\delta^{(3)}(\pp-\pp')=\int d^3\xx\,e^{i(\pp-\pp')\cdot\xx}\,,
+\]
+and so the above nonsense factor in fact is
+\[
+(2\pi)^3\,\delta^{(3)}(\mathbf 0)=\int d^3\xx\ \to\ V^{(3)}\,.
+\]
+This also solves the problem of Lorentz invariance. The energy density
+$\varepsilon$ transforms as $00$ component of 4-tensor (the energy-momentum
+tensor),
+\[
+\varepsilon=\bra{0}T^{00}\ket{0}\,.
+\]
+The Lorentz-invariance of the vacuum state $\ket{0}$ only requires that
+\[
+\bra{0}T^{\mu\nu}\ket{0}=\varepsilon_0\,\eta^{\mu\nu}\,,\qquad
+\eta^{\mu\nu}=\operatorname{diag}(+1,-1,-1,-1)\,,
+\]
+and we soon will have techniques to check that this equation indeed holds in
+the KG theory. It is OK for a Lorentz-invariant state to have nonzero energy
+density.
+
+Still, something has to be done about the badly divergent integral for this
+energy density,
+\[
+\varepsilon_0=\frac12\int\frac{d^3\pp}{(2\pi)^3}\,\omega_\pp\,.
+\]
+The integral diverges at large momenta, i.e.\ the divergent contribution comes
+from small length scales. This is not too surprising, since our idea of the
+field theory was to associate a degree of freedom with every point of the
+space, and there are continuously many points in each finite part of it. One
+could assume that perhaps some microscopic physics takes care of the problem,
+replacing the above mathematically meaningless expression by the ``cutoff''
+integral
+\[
+\varepsilon_0=\frac12\int\frac{d^3\pp}{(2\pi)^3}\,\omega_\pp\,\Phi\Bigl(\frac{\pp^2}{\Lambda^2}\Bigr)\,,
+\]
+where the ``cutoff'' factor $\Phi(\xi)$ is close to 1 when $\xi\ll1$ and
+decays fast at large $\xi$, and $\Lambda$ represents the energy scale beyond
+which the unknown microscopic physics becomes essential.
+
+Whereas introducing the cutoff rids us of mathematically meaningless
+expression, needless to say it does not solve the problem of vacuum energy
+density, which now is finite but completely undetermined. In many practical
+cases one can simply ignore the problem. Large class of physical quantities
+are only sensitive to differences of energies, and in such problems the
+vacuum energy is invisible. But in fact the vacuum energy is measurable, in
+principle. Generally, if we want to be able to apply QFT to physics, we need
+to know what happens when we couple it to gravity, and gravity is very
+sensitive to the energy density. Even without gravity, suppose we can confine
+our system to finite part of the space, say inside a box. Then we want to know
+what forces it exerts upon the wall of that box. The last situation can
+actually be realized in laboratory, and it leads to a measurable effect, the
+so called Casimir effect. We are going to discuss it next, but let me make one
+more remark, in order to clarify the nature of the problem.
+
+When a divergent integral appears in otherwise sensible calculations, it
+usually signals some ambiguity in the theory. Indeed, there is an ambiguity
+in the definition of the KG theory. One can add a constant term to the
+Lagrangian density,
+\[
+\Lag\to\Lag+\Const\,.
+\]
+This extra term is fully consistent with both relativistic symmetry and
+locality. Of course this modification is irrelevant in the classical theory
+(again, as long as gravity is ignored), since it does not affect the
+equations of motion. But the Lagrangian density will pass this term to the
+energy-momentum tensor, and finally to the Hamiltonian,
+\[
+\hat H\to\hat H-\Const\int d^3\xx\,.
+\]
+One can now ``absorb'' the vacuum energy divergence into this constant. We
+write
+\[
+\Const=\varepsilon_0-\varepsilon\,,
+\]
+where $\varepsilon_0$ is the above ugly integral, and $\varepsilon$ is a
+finite constant (of the dimension $[\text{Mass}]^4$). The result is that the
+divergent integral disappears, but at the same time we learn that the quantum
+KG theory in fact has not one but two parameters, $m^2$ and $\varepsilon$.
+This extra term we added to the action is the simplest example of what we
+will call the \emph{counterterms}.

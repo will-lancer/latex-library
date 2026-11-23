@@ -1,0 +1,11 @@
+\begin{tikzpicture}[line width=0.6pt]
+  \draw[axis] (-4.3,0)--(4.5,0) node[below] {$\Re t$};
+  \draw[axis] (0,-1.7)--(0,1.9) node[left] {$\Im t$};
+  \draw[line width=1.6pt] (-4.2,0)--(-1.6,0);
+  \draw[line width=1.6pt] (1.6,0)--(4.2,0);
+  \fill (-1.6,0) circle (1.6pt) node[below=2pt] {$-|\xx|$};
+  \fill (1.6,0) circle (1.6pt) node[below=2pt] {$|\xx|$};
+  \node at (2.4,1.2) {$D_+(\xx,t)$};
+  \node at (2.4,-1.2) {$D_-(\xx,t)$};
+  \draw[arr,gray] (0.5,-0.8) to[bend right=40]  (0.5,0.8);
+\end{tikzpicture}

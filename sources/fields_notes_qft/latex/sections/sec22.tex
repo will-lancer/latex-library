@@ -1,0 +1,475 @@
+% Source pp. 227-238 (Lectures19-25.pdf).
+\section{Nonlinear Sigma Model at \texorpdfstring{$d=2+\epsilon$}{d=2+epsilon}}
+
+Now I would like to discuss how the RG transformation acts on the action of the
+$\sigma$-model at $d=2$. In this case the coupling constant $g$ in
+\[
+\mathcal A=\int d^2x\,\frac1{2g}\,(\partial\mathbf n)^2
+\]
+is dimensionless. I assume that $g$ is small, so that the fluctuations of
+$\mathbf n(x)$ are small, since at small $g$ the exponential factor
+$\exp(-\mathcal A)$ strongly suppresses configurations having large gradients
+$\partial\mathbf n$. I remind you that the field $\mathbf n(x)$ satisfies the
+non-linear constraint $\mathbf n^2(x)=1$.
+
+In principle, it is not difficult to develop renormalized perturbation theory in
+the coupling constant $g$, derive the CS equation and find the series expansion of
+associated flow function $\beta(g)$. This calculation is displayed in \S\,13.3 of
+PS. I will discuss the derivation based explicitly on the idea of integrating out
+the fast modes (also described in \S\,13.3 of PS), because it has some novel
+features as compared to what we have done before.
+
+First, we introduce cutoff,
+\[
+\mathbf n(x)=\int_{|k|<\Lambda}\mathbf n_k\,e^{ikx}\,\frac{d^2k}{(2\pi)^2}\,.
+\]
+Note that now the modes $\mathbf n_k$ are not all independent, but must obey
+complicated constraint $\int_q\mathbf n_q\mathbf n_{k-q}=\delta^{(2)}(k)$, because
+of the $\sigma$-model constraint $\mathbf n^2(x)=1$.
+
+Next, we want to split $\mathbf n(x)$ into its ``slow'' and ``fast'' components.
+The above nonlinear constraint makes this task less straightforward than we had it
+before in usual scalar theories. Physically transparent way to make the splitting
+is as follows. We define the ``slow'' component $\mathbf n_0(x)$ as the field of
+unit length,
+\begin{equation}\label{eq:n0unit}
+\mathbf n_0^2(x)=1\,,
+\end{equation}
+whose Fourier transform is restricted to $|k|<\Lambda/L$. To make further
+arguments transparent, I will assume that $L\gg1$; we will see that in this case
+the dominating contribution to the RG transformed action comes from the
+integration over the fast modes with $\Lambda/L\ll|k|\ll\Lambda$. More precisely,
+I will assume that $L\gg1$, but $g$ is so small that
+\[
+g\log L\ll1\,.
+\]
+At each spatial point $x$, one can choose a system of vectors $\mathbf e_i(x)$,
+$i=1,2,\dots,N-1$, such that $N$ vectors $(\mathbf n_0(x),\mathbf e_i(x))$ form a
+basis. It is convenient to take orthonormal basis,
+\begin{equation}\label{eq:ebasis}
+\bigl(\mathbf n_0(x)\,\mathbf e_i(x)\bigr)=0\,,\qquad\bigl(\mathbf e_i(x)\,\mathbf e_k(x)\bigr)=\delta_{ik}\,.
+\end{equation}
+Since $\mathbf e_i(x)$ only need to be orthogonal to the ``slow'' field
+$\mathbf n_0(x)$, one can always choose them to be ``slow'' fields as well,
+containing only Fourier modes with $|k|$ of the order of $\Lambda/L$ or smaller.
+The full field $\mathbf n(x)$ can be written as
+\begin{equation}\label{eq:nsplit}
+\mathbf n(x)=\mathbf n_0(x)\,\sqrt{1-(\phi_i)^2(x)}+\mathbf e^i(x)\,\phi_i(x)\,.
+\end{equation}
+This expression automatically satisfies the constraint $\mathbf n^2(x)=1$. $N-1$
+fields $\phi_i(x)$ represent the fast modes; they contain Fourier components with
+$|k|$ between $\Lambda/L$ and $\Lambda$. It is important that when $g$ is small we
+can assume $\phi_i(x)$ are small.
+
+In order to compute the action, we need spatial derivatives of $\mathbf n(x)$.
+These involve the derivatives of the vectors $\mathbf n_0(x)$ and $\mathbf e_i(x)$,
+as well as of the fields $\phi_i$. One can expand them in the basic vectors as
+\begin{align}
+\partial_\mu\mathbf n_0(x)&=B_\mu^i(x)\,\mathbf e_i(x)\,,\label{eq:dn0}\\
+\partial_\mu\mathbf e_i(x)&=A_\mu^{ik}(x)\,\mathbf e_k(x)-B_\mu^i(x)\,\mathbf n_0(x)\,,\label{eq:de}
+\end{align}
+where
+\begin{align}
+B_\mu^i(x)&=(\mathbf e_i\,\partial_\mu\mathbf n_0)=-(\mathbf n_0\,\partial_\mu\mathbf e_i)\,,\label{eq:Bdef}\\
+A_\mu^{ik}(x)&=(\mathbf e_k\,\partial_\mu\mathbf e_i)=-(\mathbf e_i\,\partial_\mu\mathbf e_k)\,.\label{eq:Adef}
+\end{align}
+Note that the fields $A_\mu^{ik}$ and $B_\mu^i$ are ``slow''. In terms of these
+variables the action is
+\[
+\mathcal A=\frac1{2g}\int d^2x\,\Bigl[\Bigl(\partial_\mu\sqrt{1-\phi^2}-B_\mu^i\partial_\mu\phi_i\Bigr)^2
++\Bigl(\partial_\mu\phi_i-A_\mu^{ik}\phi_k+B_\mu^i\sqrt{1-\phi^2}\Bigr)^2\Bigr]\,.
+\]
+For small $g$ one can neglect all terms beyond the terms quadratic in $\phi$,
+\[
+\mathcal A=\mathcal A[\mathbf n_0]+\tilde{\mathcal A}[\mathbf n_0,\phi_i]\,,
+\]
+where the first term comes from
+\[
+\frac1{2g}\int d^2x\,B_\mu^iB_\mu^i=\frac1{2g}\int d^2x\,(\partial_\mu\mathbf n_0)^2=\mathcal A[\mathbf n_0]\,,
+\]
+and
+\[
+\tilde{\mathcal A}=\frac1{2g}\int d^2x\,\Bigl[\bigl(\partial_\mu\phi_i-A_\mu^{ik}\phi_k\bigr)^2+B_\mu^iB_\mu^k\bigl(\phi_i\phi_k-\delta_{ik}\phi^2\bigr)\Bigr]\,.
+\]
+Our goal now is to integrate out the fast modes $\phi$. We treat the term
+$(1/2g)\int(\partial\phi)^2$ as the unperturbed action, yielding the propagator
+for the $\phi$-field
+\[
+i\ \dia{\draw[prop] (-1.6,0) -- (1.6,0);}\ k=\frac{g\,\delta_{ik}}{p^2}\,.
+\]
+The remaining terms are treated as perturbations, giving rise to vertices of
+three types:
+\begin{align*}
+\diac[0.45]{\draw[prop,densely dashed] (-2,0) -- (0,0); \draw[prop] (0,0) -- (1.3,1.3) node[above right] {\small$j$}; \draw[prop] (0,0) -- (1.3,-1.3) node[below right] {\small$k$};
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[left] at (-2,0) {\small$A$};
+  \draw[arr] (0.95,1.35) -- (0.45,0.85); \node[font=\tiny] at (0.4,1.3) {$p_1$};
+  \draw[arr] (0.95,-1.35) -- (0.45,-0.85); \node[font=\tiny] at (0.4,-1.3) {$p_2$};}
+&=\frac{i\,A_\mu^{jk}}g\,(p_1-p_2)_\mu\,,\\[4pt]
+\diac[0.45]{\draw[prop,densely dashed] (-2,0) -- (0,0); \draw[prop] (0,0) -- (1.3,1.3) node[above right] {\small$j$}; \draw[prop] (0,0) -- (1.3,-1.3) node[below right] {\small$k$};
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[left] at (-2,0) {\small$A^2$};}
+&=-\frac{A_\mu^{ij}A_\mu^{ik}}g\,,\\[4pt]
+\diac[0.45]{\draw[prop,densely dashed] (-2,0) -- (0,0); \draw[prop] (0,0) -- (1.3,1.3) node[above right] {\small$j$}; \draw[prop] (0,0) -- (1.3,-1.3) node[below right] {\small$k$};
+  \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[left] at (-2,0) {\small$B^2$};}
+&=\frac{\delta_{jk}\,B_\mu^iB_\mu^i-B_\mu^jB_\mu^k}g\,.
+\end{align*}
+As usual
+\[
+\mathcal A_1=\mathcal A-\text{sum of all connected diagrams}\,,
+\]
+with the dashed lines taken as the external legs.
+
+The leading order in $g$ comes from the one-loop diagrams. The simplest (and the
+most important) of those is
+\begin{align*}
+\dia[0.45]{\draw[prop,densely dashed] (-2,0) -- (0,0); \draw[prop] (0.9,0) circle (0.9); \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[left] at (-2,0) {\small$B^2$};}
+&=\frac{\delta_{jk}\,B_\mu^iB_\mu^i-B_\mu^jB_\mu^k}{2g}\int\frac{d^2p}{(2\pi)^2}\,\frac{g\,\delta_{jk}}{p^2}\\
+&=\frac{(N-2)\,(B_\mu^i)^2}2\,\frac1{4\pi}\int_{\Lambda^2/L^2}^{\Lambda^2}\frac{dp^2}{p^2}=\frac{N-2}{4\pi}\,(\partial_\mu\mathbf n_0)^2\,\log L\,.
+\end{align*}
+Thus, this diagram brings in a term identical in the form to the original action,
+i.e.\ it renormalizes the coupling parameter $g$.
+
+The diagram
+\[
+\dia[0.45]{\draw[prop,densely dashed] (-2.6,0) -- (-1.2,0) (1.2,0) -- (2.6,0); \draw[prop] (0,0) ellipse (1.2 and 0.75);
+  \node[vtx] at (-1.2,0) {}; \node[vtx] at (1.2,0) {}; \node[left] at (-2.6,0) {\small$B^2$}; \node[right] at (2.6,0) {\small$B^2$};}
+\]
+generates term $\sim B^4$ (with the coefficient $\sim1/\Lambda^2$); the field
+$B^4$ has dimension $4>d$ and hence it is an irrelevant field; it can be neglected
+in the leading approximation. Likewise, all the diagrams of the form
+\[
+\diac[0.45]{\draw[prop] (0,0) circle (1.1);
+  \foreach \a in {180,120,60,0} {\node[vtx] at (\a:1.1) {}; \draw[prop,densely dashed] (\a:1.1) -- (\a:2.2); \node at (\a:2.6) {\scriptsize$B^2$};}
+  \draw[densely dotted] (200:1.5) arc[start angle=200,end angle=340,radius=1.5];}
+\]
+can be ignored, for the same reason.
+
+Let us take a look at the diagrams with $A$-vertices. Consider the following ones
+\[
+\dia[0.45]{\draw[prop,densely dashed] (-2,0) -- (0,0); \draw[prop] (0.9,0) circle (0.9); \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[left] at (-2,0) {\small$A^2$};}\,,\qquad
+\dia[0.45]{\draw[prop,densely dashed] (-2.6,0) -- (-1.2,0) (1.2,0) -- (2.6,0); \draw[prop] (0,0) ellipse (1.2 and 0.75);
+  \node[vtx] at (-1.2,0) {}; \node[vtx] at (1.2,0) {}; \node[left] at (-2.6,0) {\small$A$}; \node[right] at (2.6,0) {\small$A$};}\,.
+\]
+Both these diagrams show logarithmic behavior,
+\[
+\int\frac{d^2k}{k^2}\sim\log L\,,\qquad\text{and}\qquad\int\frac{d^2k\,k^\mu k^\nu}{k^2\,k^2}\sim\log L\,.
+\]
+However, it is not difficult to show that these two logarithmic contributions in
+fact cancel each other. One can do it by a direct calculation, but it is easy to
+prove this statement on the basis of certain symmetry.
+
+The $\log L$ of each of these two diagrams is of the form
+\[
+\log(L)\,A_\mu^{ij}A_\mu^{ij}\,,
+\]
+where, as before,
+\[
+A_\mu^{ij}=\mathbf e^j\,\partial_\mu\mathbf e^i\,.
+\]
+Recall that $\mathbf e^i(x)$ are arbitrary vectors tangent to $S^{N-1}$ at
+$\mathbf n_0(x)$. They satisfy
+\[
+\mathbf e^i\mathbf n_0=0\,,\qquad\mathbf e^i\mathbf e^j=\delta^{ij}\,,
+\]
+but otherwise arbitrary. One can always choose them differently,
+\[
+\tilde{\mathbf e}^i(x)=\Omega_{ij}(x)\,\mathbf e^j(x)\,,
+\]
+where $\Omega_{ij}(x)$ is orthogonal $(N-1)\times(N-1)$ matrix,
+\[
+\Omega(x)\,\Omega^t(x)=I\,.
+\]
+$\Omega(x)$ is ``slow'' (for $\mathbf e^i(x)$ were assumed to be slow), but
+otherwise arbitrary function of $x$. Under these local orthogonal transformations,
+$A_\mu^{ij}(x)$ transforms as an $O(N-1)$ gauge potential,
+\[
+\tilde A_\mu(x)=\Omega(x)\,A_\mu(x)\,\Omega^t(x)+\Omega(x)\,\partial_\mu\Omega^t(x)\,,
+\]
+where $A_\mu(x)$ stands for $(N-1)\times(N-1)$ anti-symmetric matrix
+$A_\mu^{ij}(x)$.
+
+As this gauge transformation describes just the freedom in the choice of
+variables, the action $\mathcal A_1[\mathbf n_0]$ must be gauge invariant. It is
+easy to check that the combination
+\[
+A_\mu^{ij}A_\mu^{ij}=\tr\bigl(A_\mu A_\mu^t\bigr)
+\]
+is not gauge invariant, and thus it can not appear in $\mathcal A_1$. The simplest
+gauge invariant local combination of course is
+\[
+\tr\bigl(F_{\mu\nu}F_{\mu\nu}\bigr)\,,\qquad\text{with}\qquad
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu+[A_\mu,A_\nu]\,.
+\]
+However it involves extra derivative, and thus corresponds to an irrelevant term.
+
+Therefore, in this approximation the only interesting contribution comes from the
+above loop diagram with single $B^2$ vertex. We have
+\begin{equation}\label{eq:A1sigma}
+\mathcal A_1=\int\Bigl(\frac1{2g}-\frac{N-2}{4\pi}\,\log L\Bigr)\,(\partial_\mu\mathbf n_0)^2\,d^2x\,.
+\end{equation}
+Thus, the step 1 of the RG transformation leads to
+\[
+\frac1g\ \to\ \frac1{g_1}=\frac1g-\frac{N-2}{2\pi}\,\log L\,.
+\]
+The step 2 is nearly trivial. If one changes
+\[
+\mathbf n_0(x)=\mathbf n(x/L)
+\]
+the action does not change. Therefore
+\[
+RG_l:\qquad\frac1g\ \to\ \frac1g-\frac{N-2}{2\pi}\,l\,.
+\]
+In other words, the beta-function is
+\[
+\beta(g)=-\frac{N-2}{2\pi}\,g^2+O(g^3)\,,
+\]
+and for small $g$ the RG flow equation
+\[
+\frac{dg}{dl}=\frac{N-2}{2\pi}\,g^2
+\]
+shows that $g(l)$ \emph{increases} towards large distances; at $d=2$ the Goldstone
+fixed point becomes unstable.
+
+The above flow equation determines (in the leading order in $g$) the behavior of
+the action under the RG transformation. One might be interested in the behavior
+of correlation functions of, say, the field $\mathbf n(x)$. To that end one needs
+then to find the RG function $\gamma_{\mathbf n}(g)$ in the CS equation
+\[
+\Bigl(x\frac\partial{\partial x}+n\,\gamma_{\mathbf n}(g)+\beta(g)\,\frac\partial{\partial g}\Bigr)\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_c=0\,.
+\]
+It is defined in terms of the action of the RG transformation on the field
+$\mathbf n(x)$.
+
+Consider any correlation function involving $\mathbf n(x)$,
+\[
+\bigl\langle\mathbf n(x)\cdots\bigr\rangle\,,
+\]
+and assume again that the momentum $p$ associated with $x$ is $\ll\Lambda/L$.
+Then, splitting as before
+\[
+\mathbf n=\mathbf n_0\,\sqrt{1-\phi^2}+\mathbf e^i\,\phi_i\simeq\mathbf n_0\,\Bigl(1-\frac12\,\phi^2\Bigr)+\mathbf e^i\,\phi_i
+\]
+one needs to find expectation value of this combination over the ensemble of the
+fast modes $\phi$. The last term can be ignored (its expectation value is zero),
+and we have
+\[
+\mathbf n\ \to\ \mathbf n_0\,\Bigl(1-\frac12\,\langle\phi_i^2\rangle\Bigr):=Z_{\mathbf n}^{-\frac12}(L)\,\mathbf n_0\,,
+\qquad\text{where}\qquad
+Z_{\mathbf n}^{-\frac12}(L)=1-\frac12\,\langle\phi_i^2\rangle=1-\frac{N-1}2\,\frac g{2\pi}\,l\,.
+\]
+Since at $d=2$ $\mathbf n$ has zero canonical dimension, we then have
+\[
+\gamma_{\mathbf n}(g)=D_{\mathbf n}(g)=-\frac d{dl}\,Z_{\mathbf n}^{-\frac12}(l)\Big|_{l=0}=\frac{N-1}{4\pi}\,g\,.
+\]
+In the above calculation we have assumed that $gl\ll1$; that is why the
+higher-order terms in $\phi$ were neglected. But, as usual, we can extend it to
+larger $l$. Generally, we have
+\[
+RG_l\,\mathbf n=Z_{\mathbf n}^{-\frac12}(l)\,\mathbf n\,,
+\]
+where $Z_{\mathbf n}^{-\frac12}(l)$ is a solution of the equation
+\[
+-\frac d{dl}\,Z_{\mathbf n}^{-\frac12}(l)=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-\frac12}(l)\,,
+\]
+and $g(l)$ is the integral curve of the equation
+\[
+\frac{dg(l)}{dl}=-\beta\bigl(g(l)\bigr)\,.
+\]
+In our case
+\[
+\frac1{g(l)}=\frac1{g(0)}-\frac{N-2}{2\pi}\,l\,.
+\]
+Recall that the ``flow'' of $Z_{\mathbf n}^{-\frac12}(l)$ determines the scale
+dependence of the correlation functions
+\[
+\bigl\langle\mathbf n(x_1/L)\cdots\mathbf n(x_n/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{-\frac n2}(l)\,\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_{g(0)}\,,
+\]
+where $l=\log L$.
+
+\begin{exercise}
+For the $O(N)$ nonlinear sigma model,
+
+I. At $d=2$
+\begin{enumerate}[label=\alph*)]
+\item Assuming $g(l)\ll1$, find $Z_{\mathbf n}(l)$.
+\item Derive the following $|x|\to0$ asymptotic of the two-point correlation
+function
+\[
+\bigl\langle\mathbf n(x)\mathbf n(0)\bigr\rangle\sim\Bigl[\log\Bigl(\frac1{x^2}\Bigr)\Bigr]^{\frac{N-1}{N-2}}\,.
+\]
+Explain how this result is in agreement with the exact solution of the model at
+$N\to\infty$ (PS, \S13.3, pages 463--465).
+\end{enumerate}
+II. Find the flow equation for $g(l)$ and $Z_{\mathbf n}(l)$ at $d=2+\epsilon$,
+with $\epsilon\ll1$. Again, determine the $|x|\to0$ behavior of the two-point
+correlation function.
+\end{exercise}
+
+Coming back to the flow equation ($d=2$)
+\[
+\frac{dg}{dl}=\frac{N-2}{2\pi}\,g^2+\dots
+\]
+one observes that (at $N>2$) the flow of the coupling $g(l)$ looks like this:
+\[
+\diac[0.6]{\draw[line width=0.8pt] (0,0) -- (6.5,0) node[right] {$g$}; \draw[arr] (2.5,0) -- (3.6,0);
+  \fill (0,0) circle (2.4pt) node[above=2pt] {$0$};}
+\]
+At large distances $g$ increases, and the interaction becomes strong. Our weak
+coupling analysis is no longer valid (in particular the higher order terms in
+$\beta(g)$ can not be neglected). On the other hand, if we follow the flow of
+$g(l)$ backward, to $l\to-\infty$,
+\[
+g(l)=\Bigl(\Const-\frac{N-2}{2\pi}\,l\Bigr)^{-1}\ \to\ \frac{2\pi}{N-2}\,(-l)^{-1}\,,
+\]
+the interaction of the Goldstone modes becomes weaker, and the short-distance
+behavior is controlled by a free theory. For this reason, this type of RG flow is
+called \emph{asymptotic freedom}. Note that the situation is opposite to that in
+$\varphi^4$ theory at $d=4$, where instead $\lambda\to0$ at long scales, whereas
+perturbation theory breaks down at short distances.
+
+The asymptotic freedom allows one to establish existence of local field theory;
+indeed it shows that at short scales the fluctuations are suppressed, and the
+cutoff can be removed with no violation of locality. On the other hand, at longer
+scales the fluctuations become stronger. It is not possible to describe these
+large scale fluctuations by perturbation theory. Nonetheless, one can make
+intuitive picture based on this pattern of the RG flow. If one concentrates
+attention on very short scales, the vectors $\mathbf n(x)$ are nearly parallel,
+because at $l\to-\infty$ $g(l)$ is small, thus suppressing the gradients of
+$\mathbf n(x)$. However, if one looks at larger scales, the directions of
+$\mathbf n(x)$ at the points separated by distance $\sim R_c$ are much less
+correlated, and if the separation is even much larger, there is no correlation
+(figure~\ref{fig:sigmascales}).
+\begin{figure}[ht]
+\centering\figfile{sigmascales}
+\caption{At short scales the vectors $\mathbf n(x)$ are nearly parallel (left).
+At scales much larger than $R_c$ their directions are uncorrelated (right).}
+\label{fig:sigmascales}
+\end{figure}
+
+This picture suggests that at $d=2$ the phase with spontaneously broken $O(N)$
+symmetry does not exist. In other words, $d=2$ magnet has no ferromagnetic phase
+with spontaneous magnetization. Let me stress that the perturbative analysis of
+the RG flow does not prove this statement, which requires much more involved
+arguments. Note also that this picture is expected to apply only if
+$N>2$.\footnote{At $N=2$ the $g^2$ term in the $\beta$-function vanishes. In fact,
+it is easy to see that all higher terms vanish as well. At $N=2$ the direction
+$\mathbf n(x)$ can be parameterized by a single angle $\theta(x)$,
+$\mathbf n(x)=\bigl(\cos\theta(x),\sin\theta(x)\bigr)$, and formally
+$\mathcal A=\frac1{2g}\int(\partial_\mu\theta)^2\,d^2x$, which is just the action
+of free massless theory. The action of RG on a free theory is trivial. However,
+beyond the perturbation theory, the $N=2$ sigma model has more complex structure.
+This is because the field $\theta(x)$ is an angular variable,
+$\theta(x)\sim\theta(x)+2\pi N(x)$, where $N(x)$ is integer-valued. As the result,
+there are topologically nontrivial field configurations (``vortices'', or
+``instantons''). Their interaction leads to remarkable phase transition at finite
+$g=g_c$, the so called Berezinsky-Kosterlitz-Thouless transition (See e.g.\
+Kosterlitz, Thouless, ``Ordering, metastability and phase transitions in
+two-dimensional systems'', Journal of Physics C: Solid State Physics, Vol.~6 pages
+1181--1203 (1973)).}
+
+What is different at $d>2$? This question can be studied in details in formal case
+of $d=2+\epsilon$ with $\epsilon\ll1$. In this case we can repeat our calculation
+of the RG flow at small $g$. The step 1 (elimination of the fast part) yields
+essentially the same result,
+\begin{equation}\label{eq:A1sigmaeps}
+\mathcal A_1=\int\Bigl(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\Bigr)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
+\end{equation}
+However, the step 2 (scale transformation) is no longer exactly trivial. The change
+of variables
+\[
+\mathbf n_0(x)=\mathbf n(x/L)
+\]
+leads to
+\[
+\int(\partial_\mu\mathbf n_0)^2\,d^dx=L^{d-2}\int(\partial_\mu\mathbf n)^2\,d^dx\,.
+\]
+Therefore
+\[
+\mathcal A'=\int L^\epsilon\,\Bigl(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\Bigr)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
+\]
+Since
+\[
+L^\epsilon\approx1+\epsilon\log L
+\]
+one finds that under the RG transformation
+\[
+\frac1g\ \to\ \frac1g+\Bigl(\frac\epsilon g-\frac{N-2}{2\pi}\Bigr)\,\log L\,,
+\]
+where I have ignored the factor $\Lambda^\epsilon\approx1$.\footnote{One can get
+rid of this factor by changing to a dimensionless coupling $g\to\Lambda^{-\epsilon}g$.}
+The associated RG flow equation is
+\[
+\frac{dg}{dl}=-\epsilon\,g+\frac{N-2}{2\pi}\,g^2=\frac{N-2}{2\pi}\,g\,(g-g_*)\,,
+\qquad\text{where}\qquad
+g_*=\frac{2\pi\,\epsilon}{N-2}\,.
+\]
+Due to the small linear term, the flow now looks different at small $g\sim\epsilon$,
+\[
+\diac[0.6]{\draw[line width=0.8pt] (0,0) -- (6.5,0) node[right] {$g$};
+  \draw[arr] (2.0,0) -- (0.9,0); \draw[arr] (3.8,0) -- (5.0,0);
+  \node at (0,0) {$*$}; \node[above=2pt] at (0,0) {GS}; \node at (2.9,0) {$*$}; \node[above=2pt] at (2.9,0) {$g_*$};}
+\]
+Nontrivial new fixed point at $g=g_*$ appears, and if $g<g_*$ the theory flows
+towards the Goldstone fixed point at large scale.
+
+It is natural to identify the new fixed point $g_*$ with the Wilson-Fisher fixed
+point at $d=2+\epsilon$. Indeed, general pattern of RG flow in $O(N)$ $\varphi^4$
+theory suggested by our previous analysis was as shown in
+figure~\ref{fig:wfgs}.
+\begin{figure}[ht]
+\centering\figfile{wfgs}
+\caption{The flow from $\mathcal A_{*,WF}$ to the Goldstone point
+$\mathcal A_{*,GS}$; the deviation $g-g_*$ is the sigma-model coordinate along it.}
+\label{fig:wfgs}
+\end{figure}
+
+Here $M^2$ and $\lambda$ are two couplings in $\varphi^4$ theory. Closely below
+$d=4$ the Wilson-Fisher fixed point appears close to $\mathcal A_{*,G}$, while the
+Goldstone fixed point is located far away from it. When $d$ goes down from 4
+$\mathcal A_{*,G}$ departs from $\mathcal A_{*,WF}$, but $\mathcal A_{*,GS}$ gets
+closer (figure~\ref{fig:wfgs2}).
+\begin{figure}[ht]
+\centering\figfile{wfgs2}
+\caption{The same flow at $d=3.99$ (left) and $d=2.01$ (right). As $d$ decreases
+the Wilson-Fisher point moves away from the Gaussian point and towards the
+Goldstone point.}
+\label{fig:wfgs2}
+\end{figure}
+
+We can identify the coordinate along the trajectory going from
+$\mathcal A_{*,WF}$ to $\mathcal A_{*,GS}$ with the coupling $g$ of the
+non-linear sigma model, with the origin $g=0$ at $\mathcal A_{*,GS}$; then
+$\mathcal A_{*,WF}$ appears at some $g_*$. At $d=2+\epsilon$ with small $\epsilon$
+$\mathcal A_{*,GS}$ approaches $\mathcal A_{*,WF}$ ($g_*\sim\epsilon$). At $d=2$ the
+fixed points $\mathcal A_{*,GS}$ and $\mathcal A_{*,WF}$ merge, and the flow of $g$
+(at positive $g$) becomes marginally relevant. This pattern is confirmed by exact
+solution of the theory at $N\to\infty$ (partly described in \S13.3 of PS).
+
+\begin{hwproblem}{9}\label{hw:9}
+For the $O(N)$ sigma model,
+\[
+\mathcal A[\mathbf n(x)]=\int d^2x\,\frac1{2g}\,\bigl(\partial\mathbf n(x)\bigr)^2\,.
+\]
+Assume $N>2$.
+
+I. At $d=2$
+\begin{hwparts}
+\item Assuming $g(l)\ll1$, find $Z_{\mathbf n}(l)$ (see Section~22 for
+definition).
+\item Determine the $|x|\to0$ behaviour of the two-point correlation function
+$\langle\mathbf n(x)\mathbf n(0)\rangle$.
+\item \emph{Optional.} Explain how the result is in agreement with the exact
+solution of the model at $N\to\infty$ (PS, \S13.3, pages 463--465).
+\end{hwparts}
+\emph{Direction:} Find $Z_{\mathbf n}(l)$ from
+$-\frac d{dl}Z_{\mathbf n}^{-1/2}(l)=\gamma_{\mathbf n}(g(l))\,Z_{\mathbf n}^{-1/2}(l)$.
+Use the equation
+\[
+\bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{-1}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,
+\]
+and remember that this correlation function depends on the coordinates through the
+separation $|x_1-x_2|$ only.
+
+II. At $d=2+\epsilon$ with $\epsilon\ll1$, find the flow equation for
+$Z_{\mathbf n}(l)$. Again, determine the $|x|\to0$ behavior of the two-point
+correlation function.
+\end{hwproblem}

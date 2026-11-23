@@ -1,0 +1,308 @@
+% Source pp. 201-207 (Lectures19-25.pdf).
+\section{Some Properties of RG Flow}
+
+In the previous Section we have discussed the basic properties of the Gaussian
+fixed point $\mathcal A_{*G}$ at different dimensions $d$. At special values of
+$d$ the fixed point theory has marginal operators. Thus, at $d=4$ the field
+$\Phi_4\sim\varphi^4$ is marginal, and as more careful calculation shows, it is
+\emph{marginally irrelevant}. This is expressed by the RG flow equation
+\eqref{eq:WilsonBeta} (note that it is equivalent to the leading term in the beta
+function \eqref{eq:beta1}).
+
+\subsection*{RG flow and Poincar\'e-Dulac normal form}
+
+It is interesting to see, in general, what is special about the marginal
+deformations from the mathematical point of view. Discussing on the abstract
+level, let us assume that we have generic critical fixed point
+$\mathcal A_*\in\Sigma$. Let $y^\alpha$ be some local coordinates on $\Sigma$,
+covering some neighborhood of $\mathcal A_*$ and chosen in such a way that the
+fixed point corresponds to $y^\alpha=0$. One can think of $y^\alpha$ as the
+collection of coupling constants $u_{2k}-u_{2k,*}$, $v_{2k}-v_{2k,*}$, $\dots$,
+where $u$'s, $v$'s, etc, are the coefficients appearing in writing $\mathcal A$ in
+terms of various monomials in $\varphi_0$ and its derivatives, and $u_*$'s, etc,
+are their fixed-point values. Anyhow, the RG flow equation
+\[
+\frac d{dl}\,\mathcal A=B\{\mathcal A\}
+\]
+can be written in such coordinates as
+\begin{equation}\label{eq:flowy}
+\frac d{dl}\,y^\alpha=B^\alpha(\{y\})\,,
+\end{equation}
+where $B^\alpha$ are some functions of all $y$'s. As $y=0$ is assumed to be a fixed
+point, these functions satisfy the condition
+\[
+B^\alpha(\{0\})=0\,.
+\]
+Let us assume that these functions can be expanded into Taylor series around the
+fixed point,
+\[
+B^\alpha(\{y\})=K^\alpha_\beta\,y^\beta+C^\alpha_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
+\]
+where $K$, $C$, etc, are some constants, and summation over repeated indices is
+assumed. The coefficients $K^\alpha_\beta$ are the matrix elements of the operator
+$K$, the linearization of the RG generator $B$ near the fixed point,
+\[
+B\{\mathcal A_*+\delta\mathcal A\}=K\,\delta\mathcal A+O(\delta\mathcal A^2)\,.
+\]
+By appropriate linear transformation of the coordinates $y$:
+$y^\alpha\to M^\alpha_\beta y^\beta$ the matrix $K^\alpha_\beta$ can be brought to
+diagonal form.\footnote{Non-diagonalizable forms contradict unitarity (positivity
+of norms).} In these coordinates the flow equation \eqref{eq:flowy} takes the form
+\begin{equation}\label{eq:flowdiag}
+\frac d{dl}\,y^\alpha=\kappa_\alpha\,y^\alpha+c^\alpha_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
+\end{equation}
+where $\kappa_\alpha$ are the eigenvalues of $K$, and no summation over $\alpha$ is
+assumed in the first term in the r.h.s.; the coefficients $c$ are related to $C$
+by a linear transformation, in an obvious way.
+
+No further simplification of the linear term in the r.h.s.\ of \eqref{eq:flowdiag}
+is possible. However one may ask if the quadratic and higher order terms in the
+r.h.s.\ can be simplified by nonlinear coordinate transformation
+\[
+y^\alpha=y^\alpha(\{\tilde y\})=\tilde y^\alpha+a^\alpha_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,.
+\]
+Under coordinate transformations the functions $B^\alpha$ transform as components
+of a vector field on $\Sigma$. Simple calculation shows that in terms of $\tilde y$
+the RG flow equations take the form
+\[
+\frac d{dl}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+\tilde c^\alpha_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,,
+\qquad\text{where}\qquad
+\tilde c^\alpha_{\beta\gamma}=c^\alpha_{\beta\gamma}+(\kappa_\alpha-\kappa_\beta-\kappa_\gamma)\,a^\alpha_{\beta\gamma}\,.
+\]
+One can completely eliminate the quadratic term by taking
+\[
+a^\alpha_{\beta\gamma}=-\frac{c^\alpha_{\beta\gamma}}{\kappa_\alpha-\kappa_\beta-\kappa_\gamma}\,;
+\]
+with this choice
+\[
+\frac d{dl}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+O(\tilde y^3)\,.
+\]
+This is true provided the combinations of the eigenvalues appearing in the
+denominators do not vanish. However if some triplet of the eigenvalues satisfies
+the \emph{resonance condition}
+\[
+\kappa_\alpha-\kappa_\beta-\kappa_\gamma=0
+\]
+the ``resonance'' term
+\[
+c^\alpha_{\beta\gamma}\,y^\beta y^\gamma
+\]
+(no summation) cannot be eliminated.
+
+Similar situation takes place in the higher orders. If components $B^\alpha$ of a
+vector field $B$ can be written as power series
+\begin{equation}\label{eq:Bseries}
+B^\alpha(\{y\})=\kappa_\alpha\,y^\alpha+c^\alpha_{\beta_1\beta_2}\,y^{\beta_1}y^{\beta_2}+c^\alpha_{\beta_1\beta_2\beta_3}\,y^{\beta_1}y^{\beta_2}y^{\beta_3}+\cdots\,.
+\end{equation}
+in some local coordinates $y^\alpha$, then by means of appropriate analytic
+coordinate transformation
+\begin{equation}\label{eq:normaltr}
+y^\alpha\to y^\alpha+a^\alpha_{\beta_1\beta_2}\,y^{\beta_1}y^{\beta_2}+a^\alpha_{\beta_1\beta_2\beta_3}\,y^{\beta_1}y^{\beta_2}y^{\beta_3}+\cdots
+\end{equation}
+one can eliminate all nonlinear terms in \eqref{eq:Bseries}, except for the
+so-called resonance terms. A term
+\begin{equation}\label{eq:resterm}
+c^\alpha_{\beta_1\beta_2\cdots\beta_n}\,y^{\beta_1}y^{\beta_2}\cdots y^{\beta_n}
+\end{equation}
+in the function $B^\alpha$ is called the \emph{resonance term} if the following
+\emph{resonance condition}
+\begin{equation}\label{eq:rescond}
+\kappa_\alpha=\kappa_{\beta_1}+\kappa_{\beta_2}+\dots+\kappa_{\beta_n}
+\end{equation}
+is satisfied. One can always adjust the coefficients $a$ in \eqref{eq:normaltr},
+order by order in $y$, in such a way that in new coordinates
+\begin{equation}\label{eq:normalform}
+\frac d{dl}\,y^\alpha=\kappa_\alpha\,y^\alpha+\text{Resonance Terms}
+\end{equation}
+If there are no resonances, all nonlinear terms in \eqref{eq:Bseries} can be
+eliminated. This statement is known as \emph{Poincar\'e-Dulac
+theorem}.\footnote{See e.g.\ V.I.~Arnold, Geometrical Methods in the Theory of
+Ordinary Differential Equations, Springer, 1988.} I will call ``canonical'' the
+coordinates $y$ in which the flow equation takes the form \eqref{eq:normalform}.
+
+Two remarks are in order. First, the above theorem \emph{does not} suggest that
+the global structure of the RG flow is in any sense ``trivial'', even in
+non-resonance cases. The series \eqref{eq:normaltr} which defines the
+transformation converges at best in some finite neighborhood of the fixed point
+$y=0$. Other interesting irregularities the global RG flow may possess (like
+other fixed points) are located no closer than at the boundary of this domain of
+convergence; in the new coordinates where $B^\alpha$'s are ``trivial'' they are
+``pushed out to the infinity''. To get some idea consider the following
+
+\begin{exercise}
+Study the flow equation with just one coordinate,
+\[
+\frac d{dl}\,y=y-y^2
+\]
+(which has two fixed points $y=0$ and $y=1$). Find transformation
+$y=f(\tilde y)=\tilde y+\cdots$ such that
+\[
+\frac d{dl}\,\tilde y=\tilde y\,.
+\]
+Study the properties of the map $y\to\tilde y$.
+\end{exercise}
+
+Second remark concerns very simple interpretation which the above resonance
+conditions have in terms of ordinary dimensional analysis. In the neighborhood of
+$\mathcal A_*$ where the coordinates $y$ are defined, the action can be written as
+\[
+\mathcal A=\mathcal A_*+y^\alpha\int d^dx\,\Phi_\alpha(x)+O(y^2)\,,
+\]
+where $\Phi_\alpha(x)$ are the fields which diagonalize the operator $D$
+associated with the fixed point $\mathcal A_*$. The eigenvalues $D_\alpha$ (i.e.\
+the dimensions of the fields $\Phi_\alpha$) are related to $\kappa_\alpha$ as
+\[
+D_\alpha+\kappa_\alpha=d\,.
+\]
+Therefore the numbers $\kappa_\alpha$ can be interpreted as the mass dimensions of
+the ``coupling constants'' $y^\alpha$. The resonance condition \eqref{eq:rescond}
+then states that the resonance term \eqref{eq:resterm} has ``right dimension''. In
+this sense, the coordinate system in which the RG flow equations have the form
+\eqref{eq:normalform} respects the straightforward dimensional analysis.
+
+From this point of view, what distinguishes the marginal case is that the presence
+of a marginal field (i.e.\ the field $\Phi_\alpha$ with $D_\alpha=d$, or
+$\kappa_\alpha=0$) always leads to infinitely many resonances. Indeed, if, say,
+$\kappa_0=0$, the resonance condition \eqref{eq:rescond} with any $\alpha$ can be
+satisfied by taking $\beta_1=\alpha$ and $\beta_2=\beta_3=\dots=\beta_n=0$.
+
+To illustrate this point let us consider an example with only two coupling
+constants $y^0$, $y^1$, such that $\kappa_0=0$ and $\kappa_1=2$. I will use
+suggestive notations $y^0=\lambda$ and $y^1=M^2$. Then in the flow equation for
+$\lambda$ all terms $\lambda^n$ are resonant, so the coordinates exist in which
+this equation takes the form
+\begin{equation}\label{eq:normallambda}
+\frac d{dl}\,\lambda=\sum_{n=2}^\infty b_n\,\lambda^n=-\beta(\lambda)\,.
+\end{equation}
+Similarly, in the equation for $M^2$ all terms of the form $M^2\lambda^n$ are
+resonant, and in canonical coordinates one can write
+\begin{equation}\label{eq:normalM}
+\frac d{dl}\,M^2=2M^2-\sum_{n=1}^\infty\gamma_n\,M^2\lambda^n=\bigl(2-\gamma_{\varphi^2}(\lambda)\bigr)\,M^2\,.
+\end{equation}
+Note that with these notations these equations have exactly the form of the
+coupling and the mass ``flow'' equations associated with the Callan-Symanzik
+equation of the $d=4$ $\varphi^4$ theory.
+
+\begin{remark}
+In fact, in this important example a freedom still remains for further changes of
+coordinates $\lambda\to\tilde\lambda(\lambda)$, $M^2\to\tilde M^2=M^2f(\lambda)$,
+which doesn't change the above ``canonical'' form of the flow equations.
+\end{remark}
+
+\begin{exercise}
+Check (to the order $n=$ when you get bored, or see the pattern) that all terms
+$\sim\lambda^n$ with $n\ge4$ can be eliminated order by order, by suitable choice
+of coefficients $a_n$ in
+\[
+\tilde\lambda=\lambda+a_3\,\lambda^3+a_4\,\lambda^4+\cdots\,.
+\]
+Further, check that suitable redefinition of $M^2\to\tilde M^2$,
+\[
+\tilde M^2=M^2\,\bigl(1+c_1\,\lambda+c_2\,\lambda^2+\cdots\bigr)
+\]
+allows one to eliminate the terms with $n\ge2$ in the r.h.s.\ of
+\eqref{eq:normalM}. In reference to renormalization of the $\varphi^4$ theory at
+$d=4$, these results imply that a scheme exists in which all $n$th order
+corrections to the beta-function vanish starting from $n=4$, and all corrections
+to $\gamma_{\varphi^2}$ vanish starting from $n=2$. At the same time the
+coefficients $b_2$ and $b_3$, and $\gamma_1$, are scheme-independent.
+\end{exercise}
+
+Note that the statement of the Poincar\'e-Dulac theorem concerns formal power
+series. Existence of ``canonical coordinates'', even locally, depends on
+convergence of the series which in general is not guaranteed. For general RG flow
+in the full space $\Sigma$ the situation is indeed difficult. One of the problems
+lies again in the ``resonance denominators''
+$\kappa_\alpha-\kappa_{\beta_1}-\dots-\kappa_{\beta_n}$ which the coefficients $a$
+in the series \eqref{eq:normaltr} have. When both positive and negative
+$\kappa_\alpha$ are present, even if no resonance conditions \eqref{eq:rescond} are
+satisfied exactly, they often are ``almost satisfied'', in which case some
+denominators come very close to zero giving rise to anomalously large coefficients
+in \eqref{eq:normaltr}.
+
+The situation becomes much more favorable if, instead of the flow in the full
+space $\Sigma$, we concentrate attention on the RG flow in an unstable manifold
+$U(\mathcal A_*)$ associated with some fixed point $\mathcal A_*$. First,
+$U(\mathcal A_*)$ typically has finite dimensionality (as our study of
+$\mathcal A_{*,G}$ illustrates). Also, by the definition of unstable manifold all
+corresponding $\kappa$ are either positive (relevant) or zero (marginal). In this
+case the resonance denominators are under much better control and the series
+\eqref{eq:normaltr} defining the canonical coordinates usually converges in finite
+neighborhood of $\mathcal A_*$. Recall that $U(\mathcal A_*)$ is a part of
+$\Sigma(\infty)$, i.e.\ it describes finite local QFT. For local QFT generated by
+the fixed point $\mathcal A_*$ the canonical coordinates do exist.
+
+\subsection*{Callan-Symanzik equation revisited}
+
+The preceding analysis allows one to re-derive the Callan-Symanzik equation which
+we have obtained before on the basis of renormalized perturbation theory.
+
+Let $\mathcal A_*$ be a fixed point. Assuming that its unstable manifold is
+$n$-dimensional, let $\{\lambda^i\}$, $i=1,\dots,n$ be coordinates on
+$U(\mathcal A_*)$, such that $\mathcal A_*$ corresponds to $\lambda=0$. This
+unstable manifold describes $n$-parameter family of finite local field theories. I
+will denote the corresponding correlation functions as
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_\lambda\,,
+\]
+indicating their dependence on $n$ parameters $\lambda^i$.
+
+In the coordinates $\lambda$ the RG flow equation can be written as
+\begin{equation}\label{eq:flowlambdai}
+\frac d{dl}\,\lambda^i=-\beta^i(\lambda)\,,
+\end{equation}
+where $-\beta^i$ are components of the vector field $B^\alpha$ on
+$U(\mathcal A_*)$ (by definition of $U$, $B(U)$ is tangent to $U$), the minus sign
+is taken to match our previous notation for the beta-function. According to the
+definition of the Wilson's RG, if $\lambda(l)$ is a solution of
+\eqref{eq:flowlambdai} with some initial condition $\lambda(0)=\lambda$, the field
+theories corresponding to $\lambda$ and $\lambda(l)$ are related by the scale
+transformation $x\to x/L$. In particular, one can write for the correlation
+functions
+\[
+\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_{\lambda(l)}=Z^{\frac N2}(L)\,\bigl\langle\varphi(Lx_1)\cdots\varphi(Lx_N)\bigr\rangle_{\lambda(0)}\,,
+\]
+where $L=e^l$. Taking infinitesimal transformation $l=\delta l$, $L=1+\delta l$,
+$\lambda(l)=\lambda-\beta(\lambda)\,\delta l$, we have
+\begin{equation}\label{eq:CSgeneral}
+\Bigl[x\frac\partial{\partial x}+N\,D(\lambda)+\sum_{i=1}^n\beta^i(\lambda)\,\frac\partial{\partial\lambda^i}\Bigr]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_\lambda=0\,,
+\end{equation}
+where $x\frac\partial{\partial x}$ is the shorthand notation for
+\[
+x\frac\partial{\partial x}=\sum_{k=1}^Nx_k^\mu\,\frac\partial{\partial x_k^\mu}\,,
+\]
+and
+\[
+D(\lambda)=L\frac d{dL}\,Z^{\frac12}(L)\Big|_{L=1}\,.
+\]
+Note that $D(0)=D_\varphi$, the dimension of $\varphi$ at the fixed point
+$\mathcal A_*$. $D(\lambda)$ can be written as
+\[
+D(\lambda)=D_\varphi+\gamma(\lambda)\,,
+\]
+so that $\gamma(0)=0$.
+
+The equation \eqref{eq:CSgeneral} generalizes straightforwardly to correlation
+functions involving composite fields $\mathcal O_\alpha$. Repeating the same
+analysis we obtain
+\begin{multline}\label{eq:CScomposite}
+\sum_{k=1}^N\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots(\mathcal D\mathcal O)_{\alpha_k}(x_k)\cdots\mathcal O_{\alpha_N}(x_N)\bigr\rangle_\lambda\\
++\sum_{i=1}^n\beta^i(\lambda)\,\frac\partial{\partial\lambda^i}\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_N}(x_N)\bigr\rangle_\lambda=0\,,
+\end{multline}
+where
+\[
+(\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha^\beta(\lambda)\,\mathcal O_\beta(x)\,,
+\qquad\text{and}\qquad
+D_\alpha^\beta(\lambda)=-L\frac d{dL}\,z_\alpha^\beta(L)\Big|_{L=1}\,;
+\]
+$z_\alpha^\beta(L)$ describes the RG transformation of the composite fields
+$\mathcal O_\alpha$ (see Sect.~18). Again,
+\[
+D_\alpha^\beta=D_\alpha^\beta(\lambda)\big|_{\lambda=0}
+\]
+coincides with the matrix of dimensions at $\mathcal A_*$, whose eigenvalues are
+the dimensions of the fields $\Phi_\alpha$.
+
+We see that the CS equation is very general consequence of Wilson's RG theory and
+not just the property of the perturbation theory around the Gaussian fixed point
+(i.e.\ free field theory).

@@ -1,0 +1,536 @@
+% Source pp. 80-92 (Lectures7-12.pdf).
+\section[Effective Action. Loop expansion]{Effective Action. Loop expansion\protect\footnote{PS Sect.~11.3--11.5.}}
+
+The generating functional for the proper vertices
+\begin{equation}\label{eq:Gammadef}
+\Gamma[\phi]=\sum_{n=2}^\infty\frac1{n!}\int d^4x_1\cdots d^4x_n\,\Gamma^{(n)}(x_1,\dots,x_n)\,\phi(x_1)\cdots\phi(x_n)
+\end{equation}
+is called the \emph{Effective Action}. Here $-\Gamma^{(n)}(x_1,\dots,x_n)$ are
+defined as the sums of one-particle irreducible diagrams for $n$-point
+correlation functions, with amputated legs. It turns out that $\Gamma[\phi]$ is
+related to the functional $W[J]$ by the functional version of the
+\emph{Legendre transform}.
+
+The Legendre transform must be familiar from classical mechanics and classical
+thermodynamics. In the latter context it relates different thermodynamic
+functions. For example, consider a magnet which in the absence of an external
+field is described by a Hamiltonian $\Ham$, and let $\mu$ be its magnetic
+moment. If we add an external field $B$, its internal energy is
+\[
+U(B)=\langle\Ham\rangle-MB
+\]
+where $M:=\langle\mu\rangle$ is the magnetization,
+\[
+M=-\frac{\partial F}{\partial B}
+\]
+and $F=U-TS$ is the free energy. One can solve the above equation for $B$:
+$B=B(M)$, and define the thermodynamic potential (Gibbs free energy)
+\[
+\Phi(M)=\Bigl[F(B)+MB\Bigr]_{B=B(M)}=\langle\Ham\rangle_{B(M)}-TS\,,
+\qquad\text{so that}\qquad
+B(M)=\frac{\partial\Phi(M)}{\partial M}\,.
+\]
+In particular the equation
+\[
+\frac{\partial\Phi}{\partial M}=0
+\]
+determines spontaneous magnetization in the absence of external field. The
+transformation relating $\Phi(M)$ to $F(B)$ is the \emph{Legendre transform}.
+
+Note that the above functional $Z[J]$ is interpreted as the partition function
+of a field statistical system with the Hamiltonian
+\[
+\mathcal A[\varphi]-\int J(x)\varphi(x)\,d^4x\,,
+\]
+i.e.\ the source $J(x)$ plays the role of the external field in the above
+example. The generating functional $W[J]=\log\zeta[J]$ is then interpreted as
+minus free energy,
+\[
+W[J]=-F[J]\,.
+\]
+In particular
+\begin{equation}\label{eq:phiJ}
+\phi(x,[J])\equiv\bigl\langle\varphi(x)\bigr\rangle_J=\frac{\delta W[J]}{\delta J(x)}\,,
+\end{equation}
+where $\langle\cdots\rangle_J$ denotes the expectation value in the presence
+of the source $J$. Let us assume that the above equation can be solved for $J$,
+defining the inverse functional
+\[
+J=J(x,[\phi]):\qquad J\bigl(x,[\phi(x,[J_0(x)])]\bigr)=J_0(x)\,,\qquad
+\phi\bigl(x,[J(x,[\phi_0])]\bigr)=\phi_0(x)\,,
+\]
+for any functions $J_0(x)$ or $\phi_0(x)$. One can define then the analog of
+the thermodynamic potential
+\[
+\Gamma[\phi]=\Bigl[-W[J]+\int J(x)\phi(x)\,d^4x\Bigr]_{J(x)=J(x,[\phi])}
+\]
+It is not difficult to show that for $\Gamma[\phi]$ thus defined the relation
+holds
+\begin{equation}\label{eq:JGamma}
+J(x,[\phi])=\frac{\delta\Gamma[\phi]}{\delta\phi(x)}\,.
+\end{equation}
+Indeed, taking the variation of
+\[
+\Gamma[\phi]+W[J]-\int J(x)\phi(x)\,d^4x=0
+\]
+(where it is understood that $\phi$ and $J$ are related through
+\eqref{eq:phiJ}) we have
+\[
+\int d^4x\,\Bigl[\frac{\delta\Gamma}{\delta\phi(x)}\,\delta\phi(x)+\frac{\delta W}{\delta J(x)}\,\delta J(x)-\phi(x)\,\delta J(x)-J(x)\,\delta\phi(x)\Bigr]=0
+\]
+The second and the third terms here cancel each other in view of
+\eqref{eq:phiJ} and we obtain \eqref{eq:JGamma}.
+
+It can be shown that the functional $\Gamma[\phi]$ coincides with the
+generating functional of the proper vertices. Namely, its functional Taylor
+expansion in $\phi$, Eq.~\eqref{eq:Gammadef}, has the proper vertices
+$\Gamma^{(n)}$ as its coefficient functions. Let us see how it works for
+lower-order correlation functions, using $\varphi^4$ theory as an example. We
+have
+\begin{multline*}
+W[J]=\frac12\int d^4x_1\,d^4x_2\,W(x_1-x_2)\,J(x_1)J(x_2)\\
++\frac1{4!}\int\Bigl[\prod_{i=1}^4d^4x_i\Bigr]\,W^{(4)}(x_1,\dots,x_4)\,J(x_1)J(x_2)J(x_3)J(x_4)+O(J^6)
+\end{multline*}
+and
+\begin{multline*}
+\Gamma[\phi]=\frac12\int d^4x_1\,d^4x_2\,\Gamma^{(2)}(x_1-x_2)\,\phi(x_1)\phi(x_2)\\
++\frac1{4!}\int\Bigl[\prod_{i=1}^4d^4x_i\Bigr]\,\Gamma^{(4)}(x_1,\dots,x_4)\,\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)+O(\phi^6)\,.
+\end{multline*}
+Using the equation $\phi(x,[J])=\delta W/\delta J(x)$ we can express $\phi$ in
+terms of $J$ as
+\begin{multline*}
+\phi(x,[J])=\int d^4x_1\,W(x-x_1)\,J(x_1)\\
++\frac1{3!}\int\Bigl[\prod_{i=1}^3d^4x_i\Bigr]\,W^{(4)}(x,x_1,x_2,x_3)\,J(x_1)J(x_2)J(x_3)+O(J^5)\,.
+\end{multline*}
+Similarly, using $J(x,[\phi])=\delta\Gamma/\delta\phi(x)$, $J$ is expressed
+through $\phi$ as
+\begin{multline*}
+J(x,[\phi])=\int d^4x_1\,\Gamma^{(2)}(x-x_1)\,\phi(x_1)\\
++\frac1{3!}\int\Bigl[\prod_{i=1}^3d^4x_i\Bigr]\,\Gamma^{(4)}(x,x_1,x_2,x_3)\,\phi(x_1)\phi(x_2)\phi(x_3)+O(\phi^5)\,.
+\end{multline*}
+These two relations must be inverse one to another. Substituting the first into
+the second we have, schematically
+\begin{multline*}
+J(x)=\int_{y,y'}\Gamma^{(2)}(x-y)\,W(y-y')\,J(y')\\
++\frac1{3!}\int_{y,y_1,y_2,y_3}\Gamma^{(2)}(x-y)\,W^{(4)}(y,y_1,y_2,y_3)\,J(y_1)J(y_2)J(y_3)\\
++\frac1{3!}\int_{\substack{y'_1,y'_2,y'_3\\y_1,y_2,y_3}}\Gamma^{(4)}(x,y'_1,y'_2,y'_3)\,W(y'_1-y_1)\,W(y'_2-y_2)\\
+\times W(y'_3-y_3)\,J(y_1)J(y_2)J(y_3)+O(J^5)\,.
+\end{multline*}
+As this must be an identity, we find again
+\[
+\Gamma^{(2)}(x-x')=S(x-x')\,,
+\]
+and
+\[
+W^{(4)}(x_1,\dots,x_4)=-\int_{y_1,\dots,y_4}\Gamma^{(4)}(y_1,\dots,y_4)\,W(y_1-x_1)\,W(y_2-x_2)\,W(y_3-x_3)\,W(y_4-x_4)\,,
+\]
+which coincide with our definitions of the proper vertices $\Gamma^{(2)}$ and
+$\Gamma^{(4)}$.
+
+\begin{exercise}
+Carry out the Legendre transform to the order 6 in $J$ and $\phi$. Find
+$W^{(6)}$ in terms of $\Gamma^{(6)}$, $\Gamma^{(4)}$, $\Gamma^{(2)}$.
+\end{exercise}
+
+\subsection*{Semiclassical (or Loop) Expansion}
+
+There is a useful way to reorganize the diagrams contributing to $W[J]$ or
+$\Gamma[\phi]$ known as the loop expansion. Generally, classical limit appears
+as the leading term if one tries to estimate the functional integral using the
+saddle point approximation. Then, the integral is dominated by the field
+configurations close to the stationary point determined by solving the
+equation $\delta\mathcal A[\varphi]=0$, i.e.\ the equations of motion of
+classical field theory defined by the action $\mathcal A[\varphi]$. With this
+in mind, let us restore the quantum parameter $\hbar$ (previously set to 1) in
+the definition of the generating functional
+\begin{equation}\label{eq:ZJhbar}
+Z[J]=\int\bigl[D\varphi\bigr]\,e^{-\frac1\hbar\left(\mathcal A[\varphi]-\int_xJ(x)\varphi(x)\right)}
+\end{equation}
+The semiclassical approximation becomes exact in the limit $\hbar\to0$, while
+corrections to the leading semiclassical contribution can be developed in the
+form of a power series in $\hbar$. Note that as in statistical mechanics
+interpretation $\hbar\sim kT$, and we can also talk here about the
+low-temperature expansion. For this reason it is convenient to retain $\hbar$
+as the formal parameter.\footnote{It is of course always possible to choose
+units in which the actual Planck's constant is 1. Then formal parameter named
+$\hbar$ in \eqref{eq:ZJhbar} is dimensionless, and it looks like an additional
+parameter of the theory. In fact, such parameter can always be traded for
+coupling constants determining the strength of interaction. For example, the
+$\varphi^4$ action can be written as
+$\mathcal A=\frac1\lambda\int\bigl(\frac12(\partial\chi)^2+\frac{m^2}2\chi^2+\frac1{4!}\chi^4\bigr)\,d^4x$
+in terms of the rescaled field $\chi=\sqrt\lambda\,\varphi$.}
+
+For the purpose of the present analysis I will consider a generic action of the
+form
+\begin{equation}\label{eq:genericA}
+\mathcal A=\int\Bigl[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+V(\varphi)\Bigr]\,,
+\end{equation}
+with $V(\varphi)$ of general form
+\[
+V(\varphi)=\frac{\lambda_3}{3!}\,\varphi^3+\frac{\lambda_4}{4!}\,\varphi^4+\cdots
+\]
+with constants $\lambda_k$, although I will often give illustrations in terms
+of $\varphi^4$ theory.
+
+\subsubsection*{The leading (tree) approximation}
+
+For small $\hbar$ we calculate the above integral \eqref{eq:ZJhbar} for $Z[J]$
+using a saddle-point approximation. That is, one first finds the minimum of the
+action functional
+\[
+\mathcal A_J[\varphi]=\mathcal A[\varphi]-\int_xJ(x)\varphi(x)\,,
+\]
+i.e.\ the solution of the classical equation of motion
+\[
+\frac{\delta\mathcal A[\varphi]}{\delta\varphi(x)}=J(x)\,.
+\]
+The solution depends on $J$; I will denote it as
+\[
+\varphi_c(x)=\varphi_c(x,[J])\,.
+\]
+Then in the leading approximation
+\[
+\log Z[J]=\frac1\hbar\Bigl(-\mathcal A[\varphi_c]+\int_xJ(x)\varphi_c(x)\Bigr)+O(\hbar^0)
+\]
+When $\hbar$ is explicit it is convenient to normalize the generating
+functional $W[J]$ so that
+\[
+\frac{Z[J]}{Z[0]}=e^{\frac1\hbar W[J]}\,.
+\]
+We write
+\[
+W[J]=W_0[J]+\hbar\,W_1[J]+\cdots\,.
+\]
+In this notation we have
+\begin{equation}\label{eq:W0}
+W_0[J]=-\mathcal A[\varphi_c]+\int J(x)\varphi_c(x)\,,
+\end{equation}
+where it is understood that $\varphi_c=\varphi_c[J]$.
+
+The relation of this leading semiclassical approximation to the ordinary
+perturbation theory (expansion in $\lambda_i$) is recovered by expanding the
+solution $\varphi_c$ in the powers of $J$. In view of the chosen form of the
+action \eqref{eq:genericA} the classical equation has the form
+\[
+\bigl(m^2-\Delta_x\bigr)\varphi_c(x)+V'\bigl(\varphi_c(x)\bigr)=J(x)\,.
+\]
+This can be transformed to the integral equation
+\[
+\varphi_c(x)=\int_{x'}D(x-x')\,J(x')-\int_{x'}D(x-x')\,V'\bigl(\varphi_c(x')\bigr)
+\]
+which can be solved iteratively, with the last term with $V'$ taken as the
+perturbation. For example, if
+\[
+V=\frac{\lambda}{4!}\,\varphi^4\,,\qquad V'=\frac{\lambda}{3!}\,\varphi^3\,,
+\]
+we find
+\begin{multline*}
+\varphi_c(x,[J])=\int_{x'}D(x-x')\,J(x')\\
+-\frac{\lambda}{3!}\int_{x',x_1,x_2,x_3}D(x-x')\,D(x'-x_1)\,D(x'-x_2)\,D(x'-x_3)\,J(x_1)J(x_2)J(x_3)+\cdots\,.
+\end{multline*}
+Obviously, this generates the expansion in $J$. Also, this series is
+represented diagrammatically as
+\[
+\varphi_c(x,[J])=
+x\,\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (3,0) node[vtx] {};}
++x\,\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (2,0); \foreach \a in {50,0,-50} \draw[prop] (2,0) -- ++(\a:1.4) node[vtx] {}; \node[vtx] at (2,0) {};}
++x\,\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (2,0); \foreach \a in {50,0,-50} \draw[prop] (2,0) -- ++(\a:1.4) node[vtx] {}; \node[vtx] at (2,0) {};
+  \path (2,0) ++(50:1.4) coordinate (b); \foreach \a in {120,60,10} \draw[prop] (b) -- ++(\a:0.9) node[vtx] {}; \node[vtx] at (b) {};}
++\cdots\,.
+\]
+Here I mark the ``external point'' $x$ where $\varphi_c(x)$ sits by a cross to
+distinguish it from the one-leg vertex
+\[
+\dia{\draw[prop] (-2,0) -- (0,0) node[vtx] {};}=\int d^4x\,J(x)\,.
+\]
+It is easy to see that the diagrams appearing here have no loops (i.e.\ one
+cannot travel along the diagram and come back to the starting point never going
+the same line twice). Such diagrams are called the \emph{tree diagrams}.
+
+The easiest way to obtain the functional $W_0[J]$ \eqref{eq:W0} is to observe
+that
+\[
+\frac{\delta W_0}{\delta J}=\Bigl[-\frac{\delta\mathcal A}{\delta\varphi_c}+J\Bigr]\frac{\delta\varphi_c}{\delta J}+\varphi_c=\varphi_c\,,
+\]
+where the fact that $\varphi_c$ solves the classical equation is used.
+Integrating the above expansion of $\varphi_c(x,[J])$ term by term we find
+\[
+W_0[J]=\underbrace{\dia{\pic{line};}}_{W_0^{(2)}}
++\underbrace{\dia{\pic{legblob={0}{45,135,225,315}{1.4}{fill=none}}; \node[vtx] at (0,0) {};}}_{W_0^{(4)}}
++\underbrace{\Bigl(\dia{\draw[prop] (-0.8,0) -- (0.8,0); \foreach \a in {60,180,300} \draw[prop] (-0.8,0) -- ++(\a:1.1) node[vtx] {};
+  \foreach \a in {120,0,240} \draw[prop] (0.8,0) -- ++(\a:1.1) node[vtx] {}; \node[vtx] at (-0.8,0) {}; \node[vtx] at (0.8,0) {};}
+ +\dia{\pic{legblob={0}{0,60,120,180,240,300}{1.3}{fill=none}}; \node[vtx] at (0,0) {};}\Bigr)}_{W_0^{(6)}}+\cdots,
+\]
+i.e.\ the leading semiclassical approximation for $W$ is just the sum of all
+connected tree diagrams. For this reason the leading approximation is also
+called the \emph{tree approximation}.
+
+Let us find the effective action in this approximation. By the definition of
+the Legendre transform we have to set
+\[
+\phi=\frac{\delta W_0}{\delta J}=\varphi_c[J]\,.
+\]
+Then the effective action in this approximation is
+\[
+\Gamma_0[\phi]=-W_0[J]+J\phi=\mathcal A[\varphi_c]-J\varphi_c+J\varphi_c=\mathcal A[\phi]\,,
+\]
+i.e.\ in the leading semiclassical approximation the effective action
+$\Gamma_0[\phi]$ coincides with the action $\mathcal A[\phi]$. In particular
+\[
+\Gamma^{(2)}_0(x,x')=S_0(x-x')=\bigl(m^2-\Delta_x\bigr)\,\delta(x-x')\,;
+\]
+and assuming for example that
+$V(\varphi)=\frac{\lambda_4}{4!}\varphi^4+\frac{\lambda_6}{6!}\varphi^6+\cdots$,
+\[
+\Gamma^{(4)}_0=-\ \dia{\foreach \a in {45,135,225,315} \draw[prop,densely dashed] (0,0) -- (\a:1.4); \node[vtx,rectangle,minimum size=3.5pt] at (0,0) {};}\ ;\qquad
+\Gamma^{(6)}_0=-\ \dia{\foreach \a in {0,60,120,180,240,300} \draw[prop,densely dashed] (0,0) -- (\a:1.4); \node[vtx,rectangle,minimum size=3.5pt] at (0,0) {};}\ ;\qquad\dots,
+\]
+where I have shown where the amputated legs used to be by the dashed lines.
+Clearly, these are the simplest one-particle irreducible amputated diagrams for
+$\Gamma^{(n)}$.
+
+\subsubsection*{The first order (one-loop) correction}
+
+Let us now turn to the first subleading terms $W_1[J]$ and $\Gamma_1[\phi]$ in
+the expansions
+\[
+\frac{W[J]}\hbar=\frac{W_0[J]}\hbar+W_1[J]+O(\hbar)\,,\qquad
+\frac{\Gamma[\phi]}\hbar=\frac{\Gamma_0[\phi]}\hbar+\Gamma_1[\phi]+O(\hbar)\,.
+\]
+As we have previously seen, $W_0[J]$ is given by the sum of all connected tree
+diagrams, while $\Gamma_0[\phi]$ coincides with the action $\mathcal A[\phi]$.
+
+To evaluate the first correction to the effective action one must take into
+account the gaussian fluctuations around the classical solution $\varphi_c$. In
+the functional integral \eqref{eq:ZJhbar} defining $Z[J]$ set
+\[
+\varphi(x)=\varphi_c(x)+\chi(x)
+\]
+and expand the action $\mathcal A_J$ to the terms quadratic in $\chi$,
+\[
+\mathcal A_J[\varphi]=\mathcal A[\varphi_c]-J\varphi_c+\frac{\delta\mathcal A}{\delta\varphi}\Big|_{\varphi=\varphi_c}\chi-J\chi
++\int_{x,x'}\frac12\,\frac{\delta^2\mathcal A}{\delta\varphi(x)\,\delta\varphi(x')}\Big|_{\varphi=\varphi_c}\chi(x)\chi(x')+O(\chi^3)\,.
+\]
+As usual, the terms linear in $\chi$ cancel in view of the classical equation
+$\varphi_c$ satisfies, and we obtain in this approximation
+\[
+Z[J]=e^{\frac1\hbar W_0[J]}\int\bigl[D\chi\bigr]\,e^{-\frac1\hbar\mathcal A_1[\chi]}\,,
+\]
+where
+\begin{equation}\label{eq:A1}
+\mathcal A_1[\chi]=\int d^4x\,\Bigl[\frac12\,(\partial\chi)^2+\frac{m^2}2\,\chi^2+\frac12\,V''(\varphi_c)\,\chi^2\Bigr]
+\end{equation}
+Since the higher-order terms in $\chi$ are neglected the integral over $\chi$
+is gaussian and it can be evaluated explicitly in terms of the determinant of
+the operator
+\[
+K(x,x')=\frac{\delta^2\mathcal A}{\delta\varphi(x)\,\delta\varphi(x')}\Big|_{\varphi=\varphi_c}
+=\bigl(m^2-\Delta_x\bigr)\,\delta(x-x')+V''(\varphi_c)\,\delta(x-x')\,.
+\]
+
+\begin{exercise}
+Evaluate $n$-dimensional gaussian integral
+\[
+\prod_{i=1}^n\Bigl[\int_{-\infty}^\infty d\xi_i\Bigr]\,\exp\Bigl\{-\frac12\sum_{i,j=1}^ns_{ij}\,\xi_i\xi_j\Bigr\}
+\]
+where $s_{ij}$ are elements of a symmetric positive matrix, and show that it
+equals
+\[
+(2\pi)^{n/2}\,\bigl[\det(s_{ij})\bigr]^{-1/2}\,.
+\]
+\end{exercise}
+
+Actually, we are interested in the ratio $Z[J]/Z[0]$, therefore we need to
+evaluate the ratio of the determinants
+\begin{multline*}
+\biggl[\frac{\det\bigl(S_0(x-x')+\delta(x-x')\,V''(x')\bigr)}{\det\bigl(S_0(x-x')\bigr)}\biggr]^{-\frac12}
+\\=\exp\Bigl[-\frac12\log\det\Bigl(\delta(x-x')+D(x-x')\,V''\bigl(\varphi_c(x')\bigr)\Bigr)\Bigr]
+\end{multline*}
+This can be transformed with the help of the identity, valid for any positive
+Hermitian operator $M$:
+\[
+\log\bigl(\det M\bigr)=\tr\bigl(\log M\bigr)\,,
+\]
+which is established by bringing $M$ to the diagonal form,
+\[
+\log\Bigl(\prod_im_i\Bigr)=\sum_i\log m_i\,.
+\]
+Using this property, we obtain
+\begin{equation}\label{eq:W1}
+W_1[J]=-\frac12\,\tr\log\bigl(I+A(\varphi_c)\bigr)\,,
+\end{equation}
+where $A$ is an integral operator with the kernel
+\[
+A(x,x')=D(x-x')\,V''\bigl(\varphi_c(x')\bigr)\,,
+\]
+and $I$ is the identity operator, $I(x,x')=\delta(x-x')$. The logarithm expands
+as
+\[
+\log\bigl(I+A\bigr)=A-\frac{A^2}2+\frac{A^3}3-\dots-\frac{(-A)^n}n+\cdots\,.
+\]
+When taking the trace we obtain
+\[
+\tr A=\int_xD(x-x)\,V''(x)\,,\qquad
+\tr A^2=\int_{x,x'}D(x-x')\,V''(x')\,D(x'-x)\,V''(x)\,,\qquad\text{etc.}
+\]
+Here $V''(x)$ is the shorthand for $V''(\varphi_c(x))$. Obviously, this
+expansion can be represented in terms of diagrams
+\[
+W_1[J]=-\frac12\,\tr\log\bigl(I+A\bigr)
+=\dia{\draw[line width=1.2pt] (0,0) circle (1); \draw[prop,fill=white] (0:1) circle (0.25);}
++\dia{\draw[line width=1.2pt] (0,0) circle (1); \foreach \a in {0,180} \draw[prop,fill=white] (\a:1) circle (0.25);}
++\dia{\draw[line width=1.2pt] (0,0) circle (1); \foreach \a in {30,150,270} \draw[prop,fill=white] (\a:1) circle (0.25);}
++\cdots\,,
+\]
+with the line standing for $D$, as usual, but with the special two-leg vertex
+\[
+\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[prop,fill=white] (0,0) circle (0.4);}
+=-\int d^4x\,V''\bigl(\varphi_c(x)\bigr)\,.
+\]
+A diagram with $n$ such vertices comes with the factor (implicit in the above
+series)
+\[
+\frac1{2n}=\frac12\times\frac1n\,,
+\]
+$1/2$ already being a factor in \eqref{eq:W1}, and $1/n$ coming from the
+expansion coefficient of the log function; this factor can be interpreted as
+the symmetry factor of the $n$-vertex diagram. Of course the above diagram
+expansion can be obtained directly from the Feynman rules for the action
+\eqref{eq:A1}.
+
+To obtain $W_1[J]$, substitute
+\[
+\varphi_c=\varphi_c[J]=
+\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (3,0) node[vtx] {};}
++\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (2,0); \foreach \a in {50,0,-50} \draw[prop] (2,0) -- ++(\a:1.4) node[vtx] {}; \node[vtx] at (2,0) {};}
++\cdots\,,
+\]
+which, as we have seen, is a sum of the tree diagrams. For $\varphi^4$ theory
+\[
+V''(\varphi_c)=\frac\lambda2\,\varphi_c^2
+\]
+and so
+\[
+\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[prop,fill=white] (0,0) circle (0.4);}
+=\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[prop] (-0.8,1.4) node[vtx] {} -- (0,0) -- (0.8,1.4) node[vtx] {}; \node[vtx] at (0,0) {};}
++\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[prop] (-0.8,1.4) node[vtx] {} -- (0,0) -- (0.8,1.4); \node[vtx] at (0,0) {};
+  \foreach \a in {120,60,10} \draw[prop] (0.8,1.4) -- ++(\a:0.8) node[vtx] {}; \node[vtx] at (0.8,1.4) {};}
++\cdots\,.
+\]
+Therefore $W_1$ is the sum of the diagrams of the form
+\[
+\dia{\draw[line width=1.2pt] (0,0) circle (1); \foreach \a in {30,150,270} \draw[prop,fill=white] (\a:1) circle (0.25);}
+\ \longrightarrow\
+\dia{\draw[prop] (0,0) circle (1); \foreach \a in {30,150,270} \node[vtx] at (\a:1) {};
+  \draw[prop] (30:1) -- ++(60:0.9) node[vtx] {}; \draw[prop] (30:1) -- ++(0:0.9) node[vtx] {};
+  \draw[prop] (270:1) -- ++(240:0.9) node[vtx] {}; \draw[prop] (270:1) -- ++(300:0.9) node[vtx] {};
+  \draw[prop] (150:1) -- ++(150:0.9) coordinate (c) node[vtx] {}; \draw[prop] (150:1) -- ++(90:0.9) node[vtx] {};
+  \foreach \a in {200,150,100} \draw[prop] (c) -- ++(\a:0.7) node[vtx] {};}
+\]
+which have exactly one loop. This is why the $\sim\hbar$ correction to $W$ is
+called the ``one-loop correction''.
+
+It is not difficult to find the effective action in this approximation. We
+have
+\[
+\Gamma[\phi]=-W_0[J]-\hbar\,W_1[J]+\int J\phi+O(\hbar^2)\,,
+\]
+where we have to substitute $J=J[\phi]$. Note that by definition of the
+Legendre transform, the r.h.s.\ of this equation is stationary with respect to
+variations of $J$ with $\phi$ fixed. Therefore the correction $\sim\hbar$ to
+the relation between $J$ and $\phi$ will produce a change of the order of
+$\hbar^2$ to the r.h.s.\ of the above equation. Hence at order $\hbar$ we still
+can replace $J$ by the solution of the equation
+\[
+\phi(x)=\varphi_c(x,[J])\,.
+\]
+Then, again $-W_0+\int J\phi=\mathcal A[\phi]$, and
+\[
+\Gamma[\phi]=\mathcal A[\phi]+\hbar\,\Gamma_1[\phi]+O(\hbar^2)\,,
+\]
+where
+\[
+\Gamma_1[\phi]=\frac12\,\tr\log\bigl(I+A(\phi)\bigr)
+=-\Bigl(\dia{\draw[line width=1.2pt] (0,0) circle (1); \node[otimesv] at (0:1) {};}
++\dia{\draw[line width=1.2pt] (0,0) circle (1); \foreach \a in {0,180} \node[otimesv] at (\a:1) {};}
++\dia{\draw[line width=1.2pt] (0,0) circle (1); \foreach \a in {30,150,270} \node[otimesv] at (\a:1) {};}
++\cdots\Bigr)\,,
+\]
+with
+\[
+\dia{\node[otimesv] at (0,0) {};}
+=-V''(\phi)\,.
+\]
+Note that all these diagrams are one-particle irreducible.
+
+Similar analysis can be carried out in higher orders in $\hbar$. One finds that
+at the order $\hbar^n$ only the diagrams with exactly $n$ loops contribute to
+$W_n[J]$.
+
+\subsection*{Effective Action vs Generating Functional}
+
+We can now clarify the nature of the relation between $W[J]$ and
+$\Gamma[\phi]$. Write again
+\[
+\Gamma[\phi]=\sum_{n=2}^\infty\frac1{n!}\int\Gamma^{(n)}(x_1,\dots,x_n)\,\phi(x_1)\cdots\phi(x_n)\,,
+\]
+and represent $\Gamma^{(n)}$ as an $n$-point blob
+\[
+\Gamma^{(n)}=\diac{\draw[prop,pattern=north east lines] (0,0) circle (1);
+  \foreach \a/\l/\p in {180/x_1/left,125/x_2/above left,55/x_3/above right,0/x_4/right} {\node[vtx,minimum size=4pt] at (\a:1) {}; \node[\p] at (\a:1) {\small$\l$};}
+  \draw[densely dotted] (200:1.35) arc[start angle=200,end angle=340,radius=1.35];}\,.
+\]
+The generating functional $W[J]$ is related to $\Gamma[\phi]$ by a functional
+Legendre transform.
+\[
+W[J]=\Bigl[-\Gamma[\phi]+\int_xJ(x)\phi(x)\Bigr]_{\phi=\phi[J]}
+\]
+One first solves the equation
+\[
+J(x)=\frac{\delta\Gamma[\phi]}{\delta\phi(x)}
+\]
+with respect to $\phi(x)$. Exactly as was done when solving the classical
+equations of motion, the solution is represented as a sum of tree diagrams
+\[
+\phi(x,[J])=
+\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (3.2,0) node[vtx] {}; \draw[prop,fill=white] (1.6,0) circle (0.45);}
++\dia{\node[xvtx] at (-2.3,0) {}; \draw[prop] (-2.3,0) -- (-0.7,0); \draw[prop,fill=white] (-1.5,0) circle (0.28);
+  \pic{dressed={0.7}{60,0,-60}};}
++\cdots\,,
+\]
+this time with $W(x-x')$ (the inverse of $\Gamma^{(2)}$, i.e.\ the full
+two-point function) standing instead of the propagators $D$, and the functions
+$\Gamma^{(n)}$ playing the role of the vertices. In drawing the above diagrams
+I have assumed that the interaction was even, $V(\varphi)=V(-\varphi)$, so that
+odd order vertices are absent; of course, this limitation is not significant.
+Again, integrating the equation
+\[
+\frac{\delta W[J]}{\delta J(x)}=\phi(x,[J])
+\]
+term by term in $J$, one finds that $W[J]$ is a sum of all tree diagrams, again
+with $W$ for propagators and $\Gamma^{(n)}$ for vertices,
+\[
+W[J]=\dia{\draw[prop] (-1.6,0) node[vtx]{} -- (1.6,0) node[vtx]{}; \draw[prop,fill=white] (0,0) circle (0.45);}
++\diac{\pic{dressed={0.7}{45,135,225,315}};}
++\ \text{all tree diagrams}
+\]
+This is exactly what we expect to be the relation between the sum of all
+connected diagrams and the sum of all one-particle irreducible diagrams: one
+takes one-particle irreducible diagrams and connects them in a tree-like manner
+to produce all connected diagrams.
+
+\begin{hwproblem}{3}\label{hw:3}
+In the $\varphi^3$ theory
+\[
+\mathcal A_I=\frac{\lambda_3}{3!}\int\varphi^3(x)\,d^4x
+\]
+carry out the Legendre transform of $W[J]$ to the order 4 in $J$ and $\phi$.
+Define
+\[
+\hat\Gamma[\phi]:=\Gamma[\bar\phi+\phi]-\Gamma[\bar\phi]
+\qquad\text{where}\qquad \bar\phi=W^{(1)}(x)
+\]
+and $\Gamma[\phi]$ is the Legendre transform of $W[J]$. Express $W^{(3)}$ and
+$W^{(4)}$ in terms of $\hat\Gamma^{(4)}$, $\hat\Gamma^{(3)}$, $\hat\Gamma^{(2)}$.
+Give diagrammatic representation of your result.
+\end{hwproblem}

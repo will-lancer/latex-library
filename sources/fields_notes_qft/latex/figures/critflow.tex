@@ -1,0 +1,23 @@
+\begin{tikzpicture}[line width=0.6pt]
+  % critical surface
+  \draw (-4,-0.2) .. controls (-2,0.2) and (1,-0.1) .. (4.2,0.3) node[right] {};
+  \node[left] at (-4,-0.2) {$\Sigma_c$};
+  % physical curve
+  \draw[line width=0.9pt] (2.6,2.2) .. controls (1.9,1.0) and (1.7,0.3) .. (1.75,0.0) .. controls (1.8,-0.5) and (2.0,-1.2) .. (2.5,-2.0);
+  \node[right] at (2.6,2.2) {$T>T_c$};
+  \node[right] at (2.5,-2.0) {$T<T_c$};
+  \node[above right] at (1.8,0.0) {$T_c$};
+  % fixed points
+  \coordinate (As) at (-2.2,0.05); \coordinate (Ph) at (-2.0,2.6); \coordinate (Pl) at (-2.3,-2.4);
+  \draw[midarrow] (Ph) .. controls (-2.4,1.6) and (-2.3,0.8) .. (As);
+  \draw[midarrow] (As) .. controls (-2.1,-0.8) and (-2.2,-1.6) .. (Pl);
+  \draw[midarrow] (1.75,0.0) .. controls (0.5,0.0) and (-1.0,0.05) .. (As);
+  \node[above] at (-0.4,0.05) {$C$};
+  \draw[midarrow] (2.3,1.4) .. controls (0.6,1.2) and (-1.0,1.6) .. (Ph);
+  \draw[midarrow] (1.85,-0.4) .. controls (0.2,-0.35) and (-1.8,-0.5) .. (-1.95,-1.2) .. controls (-2.0,-1.7) .. (Pl);
+  \node[below] at (-0.4,-0.4) {$C_\tau$};
+  \draw[midarrow] (2.2,-1.6) .. controls (0.6,-1.7) and (-1.0,-2.0) .. (Pl);
+  \fill (As) circle (2.2pt) node[above left] {$\mathcal A_*$};
+  \fill (Ph) circle (2.2pt) node[left] {$P_{\text{high}}$};
+  \fill (Pl) circle (2.2pt) node[left] {$P_{\text{low}}$};
+\end{tikzpicture}

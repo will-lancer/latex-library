@@ -1,0 +1,609 @@
+% Source pp. 239-253 (Lectures19-25.pdf).
+\section{RG and Energy-Momentum Tensor}
+
+Renormalization Group describes the way the scale transformations are realized in
+QFT. The scale transformations
+\[
+x^\mu\to\tilde x^\mu=x^\mu/L
+\]
+constitute particular class of general coordinate transformations
+\[
+x^\mu\to\tilde x^\mu=f^\mu(x)\,,
+\]
+where $f^\mu$ are arbitrary smooth functions. Variations of the action
+functional\footnote{The sign minus in this formula corresponds to the relation
+$-\mathcal A=iS=i\int dt\,d\xx\,\Lag(x)=\int dx^4\,d\xx\,\Lag(x)=-\int dx^4\,d\xx\,\Lag_E(x)$,
+where $\Lag(x)$ is the usual Lagrangian density with $t$ replaced by $-ix_4$, see
+Section~7.}
+\begin{equation}\label{eq:Aminus}
+\mathcal A=-\int d^dx\,\Lag(x)
+\end{equation}
+under these coordinate transformations in a local field theory is generally
+described in terms of its energy-momentum tensor $T^{\mu\nu}(x)$. Therefore this
+field, and in particular its trace
+\[
+\Theta(x):=T^\mu_{\ \mu}(x)\,,
+\]
+plays important role in RG theory. In fact, all basic equations of RG theory in
+local QFT can be expressed as certain properties of this field.
+
+In the first lecture of this course we have defined the Energy-Momentum tensor (or
+EM tensor, for shortness), in a classical field theory, as the Noether's current
+associated with the translational symmetry $x^\mu\to x^\mu+a^\mu$,
+\[
+T^\mu_{\ \nu}=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,\partial_\nu\varphi-\delta^\mu_\nu\,\Lag\,,
+\]
+which satisfies the continuity equation
+\begin{equation}\label{eq:Tcont}
+\partial_\mu T^\mu_{\ \nu}=0
+\end{equation}
+as a consequence of the classical equations of motion. Generally, there is an
+important ambiguity in the definition of the local EM tensor. One can redefine
+$T^\mu_{\ \nu}$ by adding a total derivative
+\[
+T^\mu_{\ \nu}\to T^\mu_{\ \nu}+\partial_\lambda\psi^{\mu\lambda}_{\ \ \nu}\,,\qquad\psi^{\mu\lambda}_{\ \ \nu}=-\psi^{\lambda\mu}_{\ \ \nu}\,.
+\]
+The new tensor still satisfies the continuity equation \eqref{eq:Tcont}. By
+appropriate choice of $\psi$ the modified EM tensor can always be made symmetric,
+$T^{\mu\nu}=T^{\nu\mu}$.
+
+More general way to define the EM tensor is to consider the field theory in the
+space with nontrivial metric
+\begin{equation}\label{eq:metric}
+ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu\,.
+\end{equation}
+In this case the action
+\[
+\mathcal A[\varphi,g]=-\int d^dx\,\sqrt g\,\Lag(\varphi,\partial_\mu\varphi,g_{\mu\nu})
+\]
+becomes a functional of the metric tensor $g$ also.
+
+For instance, for generic scalar field theory, in the presence of the metric
+background \eqref{eq:metric}, the simplest action is
+\[
+\mathcal A=\int\sqrt g\,\Bigl[\frac12\,g^{\mu\nu}\,\partial_\mu\varphi\,\partial_\nu\varphi+V(\varphi)\Bigr]\,.
+\]
+This form is called the ``minimal coupling to gravity''.
+
+In any case, the field $T^{\mu\nu}(x)$ is defined in terms of the variation of the
+action with respect to the metric (sign!),
+\begin{equation}\label{eq:Tdef}
+\delta\mathcal A=-\frac12\int d^dx\,\sqrt g\,T^{\mu\nu}(x)\,\delta g_{\mu\nu}(x)\,.
+\end{equation}
+Note that $T^{\mu\nu}$ defined this way is automatically symmetric,
+\[
+T^{\mu\nu}(x)=T^{\nu\mu}(x)\,,
+\]
+as $g_{\mu\nu}$ is.
+
+Note that for flat space this definition is still ambiguous, as one could couple
+the theory to the external metric in many different ways. For example, in the
+scalar field theory one could add the ``non-minimal'' terms like
+\[
+\int d^dx\,\sqrt g\,R\,W(\varphi)\,,\qquad\text{or}\qquad\int d^dx\,\sqrt g\,R_{[\mu\lambda][\nu\rho]}\,W^{[\mu\lambda][\nu\rho]}(\varphi)
+\]
+where $R$ is the curvature, and $W$ is arbitrary. These terms disappear in the flat
+space, however they affect the variation \eqref{eq:Tdef} even when the metric is
+set back to the flat Euclidean one. It is possible to show that all such
+``non-minimal'' modifications of the action in curved space lead to modifications
+of the EM tensor of the form
+\begin{equation}\label{eq:Tambig}
+T^{\mu\nu}\to T^{\mu\nu}+\partial_\lambda\partial_\rho\,Y^{[\mu\lambda][\nu\rho]}\,,
+\end{equation}
+where $Y$ is antisymmetric in $[\mu\lambda]$ and in $[\nu\rho]$ but symmetric
+w.r.t.\ the interchange of these pairs (this is exactly the symmetry of the
+Riemann's curvature tensor $R_{[\mu\lambda][\nu\rho]}$).
+
+This is intrinsic ambiguity which cannot be resolved unless we specify exactly how
+the system behaves in curved space. Note that if $Y$ decays sufficiently fast at
+$x\to\infty$, such modifications do not affect the notions of energy and momentum,
+\[
+E=\int d^{d-1}\xx\,T^{00}\,,\qquad P^i=\int d^{d-1}\xx\,T^{0i}\,,
+\]
+as they add total derivatives to the integrands. If we are interested just in the
+theory in flat metric, fixing this ambiguity is a matter of convenience.
+
+Consider now quantum field theory. The correlation functions are defined through
+the functional integrals
+\begin{equation}\label{eq:corrg}
+\bigl\langle\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle=Z^{-1}\int[D\varphi]\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\,e^{-\mathcal A[\varphi,g]}\,,
+\end{equation}
+where for the moment I consider the system in external gravitational field
+$g_{\mu\nu}(x)$. Here $\mathcal O(x)$ are some local fields, which can be the field
+$\varphi(x)$ itself, or some composite fields built from $\varphi$ and its
+derivatives at the point $x$. In the presence of the external metric these
+composite fields may depend on this metric in a local way, i.e.\ they may involve
+$g_{\mu\nu}(x)$ and its derivatives at the point $x$.
+
+Consider a small variation around the flat metric,
+\[
+g_{\mu\nu}(x)=\delta_{\mu\nu}+\delta g_{\mu\nu}(x)\,.
+\]
+For generic variation the correlation functions change in a nontrivial way because
+the theory indeed depends on the background metric. However, the change is simple
+if we take $\delta g_{\mu\nu}(x)$ corresponding to pure coordinate transformation
+\begin{equation}\label{eq:coordtr}
+x^\mu\to x^\mu+\varepsilon^\mu(x)
+\end{equation}
+with infinitesimal $\varepsilon^\mu(x)$; in this case
+\[
+-\delta g_{\mu\nu}(x)=\partial_\mu\varepsilon_\nu(x)+\partial_\nu\varepsilon_\mu(x)\,.
+\]
+The coordinate transformation is just a relabeling of the degrees of freedom
+$\varphi(x)$, so it amounts to a change of variables in the functional integral
+\eqref{eq:corrg}. Therefore the numerical value of this integral does not change.
+This leads to the identity
+\begin{multline}\label{eq:Ward}
+0=\sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle\\
++\int d^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,,
+\end{multline}
+where $\delta_\varepsilon\mathcal O_i(x)$ stand for local variations of the fields
+$\mathcal O_i(x_i)$ under the coordinate transformation \eqref{eq:coordtr}. The
+identities of this type are generally known as the \emph{Ward identities}.
+
+What can be said about the variations $\delta_\varepsilon\mathcal O_i(x)$ on
+general grounds? These again are local fields which depend on $\varepsilon^\mu(x)$
+\begin{itemize}
+\item[(i)] linearly, i.e.\
+$\delta_{\varepsilon_1+\varepsilon_2}\mathcal O=\delta_{\varepsilon_1}\mathcal O+\delta_{\varepsilon_2}\mathcal O$,
+and
+\item[(ii)] locally, i.e.\ $\delta_\varepsilon\mathcal O(x)$ depends on
+$\varepsilon^\mu(x)$ and its derivatives taken at the point $x$.
+\end{itemize}
+In fact, the part of $\delta_\varepsilon\mathcal O(x)$ which contains just
+$\varepsilon^\mu(x)$, with no derivatives, is completely fixed,
+\[
+\delta_\varepsilon\mathcal O(x)=\varepsilon^\mu(x)\,\partial_\mu\mathcal O(x)+\text{terms with }\partial_\nu\varepsilon^\mu(x)\text{ and higher derivatives}\,,
+\]
+because for constant $\varepsilon^\mu(x)=\varepsilon^\mu$ we have
+\[
+\mathcal O(x)\to\mathcal O(x+\varepsilon)=\mathcal O(x)+\varepsilon^\mu\,\partial_\mu\mathcal O(x)\,.
+\]
+Moreover, the part which contains the first derivatives $\partial_\nu\varepsilon^\mu(x)$
+is also severely restricted. For instance, if $\varphi(x)$ is a scalar field, and we
+assume that it transforms independently of other fields, we can write
+\[
+\delta_\varepsilon\varphi(x)=\varepsilon^\mu(x)\,\partial_\mu\varphi(x)+\frac Dd\,(\partial_\mu\varepsilon^\mu)\,\varphi(x)\,,
+\]
+where $d$ is the dimensionality of the space, and the parameter $D$ is related to
+the dimension of $\varphi$. This generalizes to more complicated scalar composite
+fields $\mathcal O_\alpha$ as follows
+\[
+\delta_\varepsilon\mathcal O_\alpha(x)=\varepsilon^\mu(x)\,\partial_\mu\mathcal O_\alpha(x)+\frac{D_\alpha^\beta}d\,(\partial_\mu\varepsilon^\mu)\,\mathcal O_\beta(x)+\text{terms with }\partial_\nu\partial_\lambda\varepsilon^\mu\,,\ \text{etc.}
+\]
+For tensor fields the terms involving local rotations
+\[
+\omega_{\mu\nu}(x)=\partial_\mu\varepsilon_\nu(x)-\partial_\nu\varepsilon_\mu(x)
+\]
+will also appear.
+
+Going back to the Ward Identity \eqref{eq:Ward}, we observe that integral there can
+be transformed by parts, hence we have
+\begin{multline}\label{eq:Ward2}
+0=\sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle\\
+-\int d^dx\,\varepsilon_\nu(x)\,\bigl\langle\partial_\mu T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,.
+\end{multline}
+As the first term here depends only on $\varepsilon(x)$ (and its derivatives) at the
+points $x_1,\dots,x_n$ only, we conclude that
+\[
+\bigl\langle\partial_\mu T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle=0\qquad\text{for}\quad x\neq x_1,\dots,x_n\,,
+\]
+i.e.\ in quantum field theory the continuity equation \eqref{eq:Tcont} is satisfied
+in the weak sense,
+\[
+\partial_\mu T^{\mu\nu}(x)\simeq0\,,
+\]
+exactly as the equations of motion do.
+
+Now let us consider particular case of the coordinate transformations, the scale
+transformations (also called the dilations)
+\[
+x^\mu\to x^\mu+\varepsilon\,x^\mu\,.
+\]
+In this case
+\[
+\partial_\mu\varepsilon_\nu(x)=\delta_{\mu\nu}\,\varepsilon\,,
+\]
+while all higher derivatives of $\varepsilon(x)$ vanish, and so for scalar fields
+$\mathcal O_\alpha$ we have
+\[
+\delta_\varepsilon\mathcal O_\alpha(x)=\varepsilon\,(\mathcal D\mathcal O)_\alpha(x)\,,
+\]
+where by definition
+\begin{equation}\label{eq:DO}
+(\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha^\beta\,\mathcal O_\beta(x)\,.
+\end{equation}
+Then the Ward identity \eqref{eq:Ward} reduces to
+\begin{equation}\label{eq:WardTheta}
+\sum_{i=1}^n\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots(\mathcal D\mathcal O)_{\alpha_i}(x_i)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
+=-\int d^dx\,\bigl\langle\Theta(x)\,\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
+\end{equation}
+where
+\[
+\Theta(x)=T^\mu_{\ \mu}(x)
+\]
+is the trace component of the EM tensor.
+
+Now let us assume that our QFT depends on some number $N$ of parameters (the
+``coupling constants'') $\lambda^k$, $k=1,\dots,N$. These parameters enter the
+action $\mathcal A$. The derivatives
+\[
+\Phi_k(x)=-\frac\partial{\partial\lambda^k}\,\Lag(x)
+\]
+are in general some scalar composite fields. Then\footnote{Of course, in general
+the fields $\mathcal O_\alpha(x)$ may depend on the couplings $\lambda$. If such
+dependence is present, the derivatives of $\mathcal O_\alpha$ would add to the
+matrix $D_\alpha^\beta$, but otherwise would not change our argument. Here I ignore
+this contribution for simplicity.}
+\[
+\frac\partial{\partial\lambda^k}\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
+=-\int d^dx\,\bigl\langle\Phi_k(x)\,\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
+\]
+If we assume that $\Theta(x)$ can be expanded in terms of $\Phi_k(x)$,
+\begin{equation}\label{eq:ThetaBeta}
+\Theta(x)=-\sum_{k=1}^N\beta^k(\lambda)\,\Phi_k(x)\,,
+\end{equation}
+one arrives again at the Callan-Symanzik equation, i.e.
+\begin{multline}\label{eq:CSTheta}
+\sum_{i=1}^n\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots(\mathcal D\mathcal O)_{\alpha_i}(x_i)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle\\
++\sum_{k=1}^N\beta^k(\lambda)\,\frac\partial{\partial\lambda^k}\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle=0\,,
+\end{multline}
+where the coefficients $D_\alpha^\beta(\lambda)$ in the operator $\mathcal D$ in
+\eqref{eq:DO} can of course depend on the parameters $\lambda$. The possibility to
+expand the field $\Theta(x)$ in terms of finitely many ``basic'' fields
+$\Phi_k(x)$ is the statement of renormalizability of the field theory.
+
+The energy-momentum tensor $T^{\mu\nu}(x)$ is special composite field. As we know,
+in interacting field theory composite fields in general may require infinite
+renormalizations. However, the above derivation of the Ward identity
+\eqref{eq:Ward} suggests that in the case of the EM tensor no infinite
+renormalization is needed. Indeed, the correlation functions in \eqref{eq:Ward}
+are understood as the correlation functions of fully renormalized fields
+$\mathcal O_\alpha$, they remain finite when the regularization is removed.
+Therefore the EM tensor defined through the variation \eqref{eq:Tdef} must have
+finite correlation functions without additional renormalization. It is possible to
+check this statement in renormalized perturbation theory in $d=4$ $\varphi^4$
+theory.
+
+\subsection*{Conformal invariance at the fixed-point}
+
+If $\lambda^k=\lambda^k_*$ such that
+\[
+\beta^k(\lambda_*)=0\,,
+\]
+the trace of the EM tensor vanishes in view of \eqref{eq:ThetaBeta}
+\begin{equation}\label{eq:Theta0}
+\Theta(x)=0\,.
+\end{equation}
+
+\begin{remark}
+The above statement ignores important subtlety. The derivation of the
+Callan-Symanzik equation \eqref{eq:CSTheta} relies in fact on the integrated version
+of \eqref{eq:ThetaBeta}. Locally, Eq.~\eqref{eq:ThetaBeta} may hold only up to total
+derivatives, i.e.\ the terms of the form $\partial_\mu K^\mu(x)$, with $K^\mu(x)$
+being some local field. Thus, vanishing of the beta-functions only implies that
+$\Theta(x)=\partial_\mu K^\mu(x)$. Unless $K^\mu$ is itself a total derivative
+(i.e.\ $\Theta=\partial_\mu\partial_\nu L$, in which case the ambiguity
+\eqref{eq:Tambig} can be used to redefine $T_{\mu\nu}$ to eliminate its trace),
+presence of such a term would spoil the argument for conformal invariance. In some
+cases (in particular, in $d=2$ unitary quantum field theories) this possibility can
+be excluded. Generally it is not excluded, and therefore vanishing of the
+beta-functions does not guarantee conformal invariance. Moreover, in general,
+counterexamples can be found. For more on this subtlety, see \emph{J.~Polchinski,
+Renormalization and effective Lagrangians, Nucl.\ Phys.\ B231, 269 (1984)}. In the
+following discussion I assume that the fixed point in question admits the EM tensor
+which satisfies \eqref{eq:Theta0}.
+\end{remark}
+
+The correlation functions of this fixed-point theory enjoy scale invariance with
+the dimensions of the fields $\mathcal O_\alpha$ determined by the eigenvalues of
+the matrix
+\[
+D_\alpha^\beta=D_\alpha^\beta(\lambda_*)\,.
+\]
+In fact, vanishing of the trace component $\Theta(x)$ in the fixed-point theory
+guarantees much bigger symmetry. Namely, let $v^\mu(x)$ be any vector field which
+satisfies the equation
+\begin{equation}\label{eq:CKV}
+\partial_\mu v_\nu(x)+\partial_\nu v_\mu(x)=\rho(x)\,\delta_{\mu\nu}=\frac2d\,\delta_{\mu\nu}\,\bigl(\partial_\lambda v^\lambda(x)\bigr)\,.
+\end{equation}
+Consider the coordinate transformation
+\begin{equation}\label{eq:confeps}
+x^\mu\to x^\mu+\varepsilon^\mu(x)\qquad\text{with}\qquad\varepsilon^\mu(x)=\varepsilon\,v^\mu(x)\,,
+\end{equation}
+where $\varepsilon$ is infinitesimal parameter. For such $\varepsilon^\mu$
+\[
+\partial_\mu\varepsilon_\nu\,T^{\mu\nu}=\frac\varepsilon2\,\rho(x)\,\Theta(x)=0\,,
+\]
+and the second term in the Ward identity \eqref{eq:Ward} disappears, i.e.
+\begin{equation}\label{eq:WardConf}
+\sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle=0\,.
+\end{equation}
+We obtain the closed equation
+\begin{equation}\label{eq:WardConf2}
+\sum_{i=1}^n\bigl\langle\Phi_{\alpha_1}(x_1)\cdots\mathcal D_v\Phi_{\alpha_i}(x_i)\cdots\Phi_{\alpha_n}(x_n)\bigr\rangle=0\,,
+\end{equation}
+where
+\[
+\mathcal D_v\Phi_\alpha(x)=\Bigl(v^\mu(x)\,\frac\partial{\partial x^\mu}+\frac{D_\alpha}d\,\bigl(\partial_\mu v^\mu(x)\bigr)\Bigr)\,\Phi_\alpha(x)\,,
+\]
+and $\Phi_\alpha(x)$ are the fields which diagonalize the matrix $D_\alpha^\beta$,
+and $D_\alpha$ are corresponding eigenvalues.
+
+The coordinate transformations \eqref{eq:confeps} which satisfy the equation
+\eqref{eq:CKV} are called the \emph{conformal transformations}. It is possible to
+find all solutions of this equation. The situation turns out to be rather different
+in the cases $d>2$ and $d=2$.
+
+If $d>2$ the general solution has the form\footnote{The Lie algebra of these vector
+fields is isomorphic to $so(d+1,1)$, the algebra of infinitesimal Lorentz
+transformations of $d+2$-dimensional space-time.}
+\[
+v^\mu(x)=a^\mu+\omega^{\mu\nu}x^\nu+l\,x^\mu+\bigl(b^\mu x^2-2x^\mu(bx)\bigr)\,,
+\]
+where $\omega^{\mu\nu}=-\omega^{\nu\mu}$. The parameters $a,\omega,l,b$ are
+interpreted as follows:
+\begin{center}
+\begin{tabular}{lll}
+$a^\mu$ & -- & translations\\
+$\omega^{\mu\nu}$ & -- & rotations\\
+$l$ & -- & dilations\\
+$b^\mu$ & -- & special conformal transformations
+\end{tabular}
+\end{center}
+As the first three are very familiar, I will present only the finite version of the
+special conformal transformations,
+\[
+x^\mu\to\tilde x^\mu=\frac{x^\mu+B^\mu x^2}{1+2(Bx)+B^2x^2}\,,
+\]
+where $B^\mu$ is an arbitrary vector.
+
+Invariance of the fixed-point theory w.r.t.\ the special conformal transformations
+provides further limitations on the correlation functions. Consider the Ward
+identity \eqref{eq:WardConf2} with
+\[
+v^\mu(x)=b^\mu x^2-2x^\mu(bx)\,.
+\]
+In this case
+\[
+\mathcal D_v\Phi_\alpha(x)=\Bigl[\bigl(b^\mu x^2-2x^\mu(bx)\bigr)\frac\partial{\partial x^\mu}-2D_\alpha\,(bx)\Bigr]\,\Phi_\alpha(x)\,,
+\]
+and \eqref{eq:WardConf2} becomes nontrivial closed differential equation for the
+correlation functions. In fact, this equation completely determines one-, two- and
+three-point correlation functions, up to overall constant factors (this is left as
+an exercise).
+
+If $d=2$ the equation
+\begin{equation}\label{eq:CKV2}
+\partial_\mu v_\nu+\partial_\nu v_\mu-\delta_{\mu\nu}\,(\partial_\lambda v^\lambda)=0
+\end{equation}
+has infinitely many solutions. This is very easy to see by going to the complex
+coordinates in $d=2$ space,
+\[
+z=x^1+ix^2\,,\qquad\bar z=x^1-ix^2\,.
+\]
+Then \eqref{eq:CKV2} leads to two equations
+\[
+\partial_{\bar z}v^z=0\,,\qquad\partial_zv^{\bar z}=0\,,
+\]
+which shows that $v^z(z)$ ($v^{\bar z}(\bar z)$) can be arbitrary holomorphic
+(anti-holomorphic) function. This rich symmetry has important consequences for
+the structure of $d=2$ conformal field theories.
+
+Scale invariance of the fixed-point theory allows one to establish some important
+properties of QFT associated with its unstable manifold.
+
+\subsection*{Scale invariance and density of states}
+
+Important conclusion can be made about its density of states. The density of
+states is directly related to the equilibrium state entropy $S(E)$ of the system.
+The form of $S(E)$ in a scale invariant quantum field theory can be established
+directly by general arguments. However, I will use this opportunity to display some
+general features of QFT at finite temperature.
+
+The functional integral of $d$-dimensional Euclidean quantum field theory
+\[
+\langle\dots\rangle=Z^{-1}\int D[\varphi]\,(\dots)\,e^{-\mathcal A[\varphi]}
+\]
+has formal interpretation as expectation value over a thermal equilibrium ensemble
+in \emph{classical} statistical mechanics in $d$ spatial dimensions. We have used
+this interpretation many times already. Here I would like to discuss Euclidean
+functional integral representation of \emph{quantum} statistical mechanics of
+fields in $d$ dimensional space-time (i.e.\ $d-1$ dimensional space).
+
+Recall that the density matrix of thermal equilibrium state in quantum statistics
+has the general form\footnote{The normalization factor $Z(\beta)$ here is different
+from the factor $Z$ in e.g.\ Eq.~\eqref{eq:corrdef}. $Z(\beta)$ goes to $Z$ in the
+low temperature limit $\beta\to\infty$ (see below).}
+\begin{equation}\label{eq:density}
+\hat P=Z^{-1}(\beta)\,e^{-\beta\hat H}\,,
+\end{equation}
+where $\beta=(kT)^{-1}$. The exponential here coincides with the time evolution
+operator at pure imaginary value of time $t=-i\hbar\beta$ (I set $\hbar=1$
+henceforth). This form is still valid if one is dealing with the equilibrium state
+of quantum fields. The imaginary-time evolution operator has representation as the
+functional integral,
+\begin{equation}\label{eq:PIbeta}
+\bigl\langle\varphi_f(\xx)\big|e^{-\beta\hat H}\big|\varphi_i(\xx)\bigr\rangle=\int D[\varphi(\xx,\tau)]\Big|_{\substack{\varphi(\xx,0)=\varphi_i(\xx)\\\varphi(\xx,\beta)=\varphi_f(\xx)}}\,e^{-\mathcal A[\varphi]}
+\end{equation}
+Here $\xx$ are $d-1$ dimensional ``spatial'' coordinates, and $\tau$ is the
+imaginary time (so that $x=(\xx,\tau)$). The integration is over the functions
+$\varphi(x)=\varphi(\xx,\tau)$ in the slab $0\le\tau\le\beta$, with the boundary
+conditions
+\[
+\varphi(\xx,0)=\varphi_i(\xx)\,,\qquad\varphi(\xx,\beta)=\varphi_f(\xx)\,.
+\]
+The partition sum of the quantum system at the finite temperature is the trace
+\begin{equation}\label{eq:Zbeta}
+Z(\beta)=\tr\bigl(e^{-\beta\hat H}\bigr)\,,
+\end{equation}
+i.e.\ the sum of its diagonal matrix elements
+\begin{equation}\label{eq:Ztrace}
+\int D[\varphi(\xx)]\,\bigl\langle\varphi(\xx)\big|e^{-\beta\hat H}\big|\varphi(\xx)\bigr\rangle\,.
+\end{equation}
+If the representation \eqref{eq:PIbeta} is used, the integration over
+$\varphi(\xx)$ in \eqref{eq:Ztrace} combines with the integral $D[\varphi(x)]$ in
+\eqref{eq:PIbeta} to produce integral over all fields $\varphi(\xx,\tau)$, with
+$0\le\tau\le\beta$, satisfying the periodic boundary condition
+\begin{equation}\label{eq:periodic}
+\varphi(\xx,0)=\varphi(\xx,\beta)\,.
+\end{equation}
+Thus, we have
+\begin{equation}\label{eq:Zcyl}
+Z(\beta)=\int D[\varphi(\xx,\tau)]\big|_{\varphi(\xx,0)=\varphi(\xx,\beta)}\,e^{-\mathcal A[\varphi]}\,.
+\end{equation}
+Geometrically, this is the functional integral over the functions $\varphi(x)$ on a
+$d$-dimensional cylinder $\R^{d-1}\times S^1$, with $\tau$ being the coordinate on
+the circle of circumference $\beta$, $\tau\sim\tau+\beta$. Of course this is nothing
+but the Matsubara representation specialized to the quantum field theory at hand.
+
+Now, let us change interpretation of the functional integral \eqref{eq:Zcyl}. We
+can take one of the coordinates on $\R^{d-1}$, say $x_1$, and claim it to be the
+imaginary time. The coordinate $\tau$ will be treated as one of the spatial
+coordinates. In this interpretation the imaginary time spans infinite range,
+$-\infty<x_1<\infty$, while the ``space'' $\R^{d-2}\times S^1$ is the $d-1$
+dimensional cylinder, with the coordinates $(\xx_\parallel,x_\perp)$. Here
+$\xx_\parallel=(x_2,\dots,x_{d-1})$, and $x_\perp=\tau$. The latter is
+compactified,
+\[
+x_\perp\sim x_\perp+\beta\,.
+\]
+Since now the imaginary time spans large (in the limit, infinite) range,
+\eqref{eq:Zcyl} is dominated by the contribution from the ground state,
+\begin{equation}\label{eq:ZE0}
+Z(\beta)\sim e^{-L\,E_0(\beta)}\,,
+\end{equation}
+where $L\to\infty$ is the range of $x_1$, and $E_0(\beta)$ is the ground state
+energy of the quantum field in the spatial geometry $\R^{d-2}\times S^1$.
+
+This geometric setting is similar to that we discussed in the context of the
+Casimir effect, with $\beta$ replacing the separation between the plates $a$. The
+difference is that in the Casimir case we had a fixed boundary condition
+$\varphi=0$ at the plates, which now is replaced by the periodic boundary condition
+\eqref{eq:periodic}. For the free massless field it is easy to repeat the
+calculation of the Casimir energy (I recommend it as an Exercise), with the result
+\begin{equation}\label{eq:E0beta}
+E_0(\beta)=-\frac{C\,V_\parallel}{\beta^{d-1}}\,,
+\end{equation}
+where $C$ is some dimensionless ($d$-dependent) constant, and
+\[
+V_\parallel=\int d^{d-2}\xx_\parallel
+\]
+is the volume of the $\R^{d-2}$ component of the space. In fact, apart from the
+value of the constant, the form \eqref{eq:E0beta} is dictated by scale invariance
+of the theory. Indeed, the ground state energy is an extensive quantity, which at
+large $V_\parallel$ must be proportional to this volume. Since the theory has no
+intrinsic scale, the $\beta$-dependence then follows from the dimensional analysis.
+This simple argument shows that the form \eqref{eq:E0beta} applies to any
+scale-invariant field theory, id est fixed point field theory. The constant $C$ of
+course would be different for different fixed points.
+
+Returning to original interpretation (the quantum field at finite temperature
+$kT=\beta^{-1}$), and using \eqref{eq:ZE0} we have for the free energy of a
+scale-invariant field theory
+\begin{equation}\label{eq:Fbeta}
+\beta F(\beta)=-\log\bigl(Z(\beta)\bigr)=-\frac{C\,V_{d-1}}{\beta^{d-1}}\,,
+\end{equation}
+where $V_{d-1}=V_\parallel\times L$ is the volume of the space. Of course, one could
+have established the form \eqref{eq:Fbeta} directly, by dimensional analysis (the
+free energy $F$, being extensive characteristic, must be $\sim V_{d-1}$, whereas
+the quantity \eqref{eq:Fbeta} is dimensionless), but I believe our detour through
+the Casimir energy was instructive.
+
+The finite temperature partition function is closely related to the energy density
+of states. We have
+\[
+Z(\beta)=\int_0^\infty e^{-\beta E}\,\rho(E)\,dE\,,
+\]
+where $\rho(E)\,\Delta E$ is the number of states in the energy interval between
+$E$ and $E+\Delta E$. Mathematically, $Z(\beta)$ is the Laplace transform of
+$\rho(E)$. The inverse transform is
+\[
+\rho(E)=\int_{-i\infty}^{+i\infty}e^{\beta E}\,Z(\beta)\,\frac{d\beta}{2\pi i}
+=\int_{-i\infty}^{+i\infty}e^{\beta E}\,e^{\frac{C\,V_{d-1}}{\beta^{d-1}}}\,\frac{d\beta}{2\pi i}\,.
+\]
+At large $V_{d-1}$ the integral is dominated by the saddle point at
+\[
+\beta=\beta_0(E):=\Bigl(\frac{C\,(d-1)\,V_{d-1}}E\Bigr)^{1/d}\,,
+\]
+and we find
+\begin{equation}\label{eq:rhoE}
+\rho(E)\sim e^{S(E)}\,,
+\end{equation}
+where
+\begin{equation}\label{eq:SE}
+S(E)=\tilde C\,V_{d-1}^{1/d}\,E^{1-1/d}
+\end{equation}
+where $\tilde C$ is another constant, related to $C$ in
+\eqref{eq:E0beta}.\footnote{$\tilde C=\frac d{d-1}\,\bigl(C\,(d-1)\bigr)^{1/d}$.}
+
+By the definition, the quantity $S(E)$ in \eqref{eq:rhoE} coincides with the
+equilibrium state entropy of the system at the temperature $kT=1/\beta_0(E)$. The
+equation \eqref{eq:SE} expresses the universal scale invariant form of the entropy.
+Indeed, the entropy is an extensive property which must have the form
+$V_{d-1}\,\sigma$, where the entropy density $\sigma=\sigma(\varepsilon)$ can depend
+on the energy density $\varepsilon:=E/V_{d-1}$. On the other hand $S(E)$, being a
+dimensionless quantity, can only depend on the dimensionless combination
+$V_{d-1}E^{d-1}$. Eq.~\eqref{eq:SE} is the only form that satisfies these
+conditions. Thus, the asymptotic density of states \eqref{eq:rhoE}, \eqref{eq:SE}
+can be deduced directly, from the scale invariance of the fixed point theory.
+Nonetheless, our previous discussion is instructive as it displays some basics of
+the finite-temperature formalism of QFT.
+
+Note that in any dimensionality $S(E)$ grows slower than the exponential $\sim E$.
+This observation is useful in comparing to the string theories, whose typical
+energy density is the exponential.\footnote{Stringy density of states
+$S(E)\simeq E/kT_H$ has manifestation in the so called \emph{Hagedorn transition}
+at $T=T_H$.}
+
+It is straightforward to argue that the energy density \eqref{eq:rhoE},
+\eqref{eq:SE} is valid asymptotically, at large $E$, in any quantum field theory
+originating at certain critical fixed point (i.e.\ associated with
+$U(\mathcal A_*)$). And if we adopt the Wilsonian idea of quantum field theories as
+RG flows on the unstable manifolds of fixed points, the above equation \eqref{eq:SE}
+becomes general limitation on the asymptotic density of states in quantum field
+theory.
+
+Let me make here a remark on the status of this idea. In our discussion of the
+Renormalization Group we (following Wilson) found it natural to identify local field
+theories with the special class of RG flows in $\Sigma$, the flows that can be
+``integrated backward'' without limit. A critical fixed point $\mathcal A_*$ gives
+simple mechanism for generating such flows. There can be several fixed points, or
+even continuous manifold of fixed points.\footnote{About limit cycles,
+$C$-theorems, etc.} In any case, the above conclusion about the high energy density
+of states, which follows from the scale invariance of the fixed point theory,
+remains valid.
+
+However, another, somewhat more intricate behavior is conceivable. Let me briefly
+discuss it, just in the way of entertainment. To start with, let us imagine a slice
+of the critical surface passing through a fixed point $\mathcal A_*$. All RG
+trajectories in some domain around $\mathcal A_*$ flow to $\mathcal A_*$ at
+$l\to+\infty$, see figure~\ref{fig:nestedfp}. Let's also assume that there is
+another fixed point $\mathcal A'_*$ lying in the same critical surface, such that
+$\mathcal A_*\in U(\mathcal A'_*)$. Furthermore, assume there is yet another fixed
+point $\mathcal A''_*\in U(\mathcal A'_*)$.
+\begin{figure}[ht]
+\centering\figfile{nestedfp}
+\caption{An RG trajectory starting at $\mathcal A''_*$, passing close to
+$\mathcal A'_*$, and ending at $\mathcal A_*$.}
+\label{fig:nestedfp}
+\end{figure}
+
+This figure shows an RG trajectory which originates at $\mathcal A''_*$, then passes
+very close to $\mathcal A'_*$, finally converging to $\mathcal A_*$. Starting from
+any point on this trajectory, one can ``integrate backward'' without limit, i.e.\
+it defines local QFT. While the large scale properties of this QFT are controlled by
+the ``infrared'' fixed point $\mathcal A_*$, its behavior at shorter scales is more
+intricate. When traced backwards, the RG trajectory stays long ``time'' near the
+fixed point $\mathcal A'_*$, before departing towards $\mathcal A''_*$ at
+$l\to-\infty$. The associated QFT has its asymptotic short distance behavior
+determined by the ``ultraviolet'' fixed point $\mathcal A''_*$, but in some wide
+range of intermediate scales it has scaling properties associated with
+$\mathcal A'_*$.
+
+One can imagine yet more complicated sequence of nested fixed points, giving rise to
+QFT with many different intermediate regimes corresponding to the trajectory passing
+close to consecutive fixed points. Ultimately, then, a flow is conceivable which
+passes successively near infinitely many fixed points. While such trajectory can be
+integrated backward with no limit, its short distance behavior is not controlled by
+any given fixed point.

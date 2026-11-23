@@ -1,0 +1,762 @@
+% Source pp. 182-200 (Lectures13-18.pdf).
+\section{Fixed Points of RG}
+
+At generic point in $\Sigma$ the pattern of the RG flow is rather boring: it just
+flows. Something interesting is expected to happen near singular points of the
+flow. Of these the simplest and probably the most important ones are so called
+\emph{Fixed Points}.
+
+A fixed point is an action $\mathcal A_*$ which satisfies the equation
+\[
+B\{\mathcal A_*\}=0\,.
+\]
+Associated trajectory is trivial,
+\[
+\mathcal A_l=\mathcal A_*\qquad\text{for all}\quad l\,.
+\]
+As the correlation length measured in the units $\Lambda$ is
+\[
+R_c(l)=e^{-l}\,R_c
+\]
+for $\mathcal A_l$, this means that for $\mathcal A_*$ we must have
+\[
+\text{either}\quad R_c=0\qquad\text{or}\quad R_c=\infty\,.
+\]
+By the definition, $\mathcal A_*$ with $R_c=\infty$ belongs to the ``critical
+surface'',
+\[
+\mathcal A_*\in\Sigma_c\qquad\text{if}\qquad R_c=\infty\,.
+\]
+We call the fixed points $\mathcal A_*$ with $R_c=\infty$ the ``critical'' fixed
+points.
+
+To illustrate the topological ideas related to the Wilson's RG, I will describe
+the simplest possible form of topology. There are many ways in which topology of
+the RG flow can be more complicated but complications can be understood once the
+simplest picture is grasped. In this analysis I will assume continuity of the RG
+flow, i.e.\ the functions $B$ in \eqref{eq:Bfunctions} are continuous functions of
+their arguments. Again, general proof of this statement is not available, but
+various examples support this assumption.
+
+Assume there are only two fixed points, one with $R_c=0$ and one with
+$R_c=\infty$. Denote them $P_0$ and $P_\infty$ (figure~\ref{fig:twofixed}, left).
+\begin{figure}[ht]
+\centering\figfile{twofixed}
+\caption{Left: surfaces of constant $R_c$ with the two fixed points $P_0$
+($R_c=0$) and $P_\infty$ on the critical surface ($R_c=\infty$). Right: the
+trajectory $U$ leaving $\Sigma_c$ at $P_\infty$, and a generic trajectory $G$
+starting close to $\Sigma_c$.}
+\label{fig:twofixed}
+\end{figure}
+
+As $R_c(l)=e^{-l}R_c$, any trajectory which starts at finite $R_c$ will approach
+$R_c=0$ and then $P_0$. On the other hand trajectories which start on $\Sigma_c$
+will approach $P_\infty$. The only point where some trajectory can leave
+$\Sigma_c$ is $P_\infty$.\footnote{Suppose a trajectory ``leaves'' $\Sigma_c$ at
+some $P_c\in\Sigma_c$. Obviously $P_c=\lim_{l\to\infty}RG_{-l}\{P\}$ for any $P$ on
+such trajectory.} So there must be a trajectory (let's call it $U$) going from
+$P_\infty$ to $P_0$ (figure~\ref{fig:twofixed}, right).
+
+Consider also a trajectory $G$ which starts close to $\Sigma_c$. This one first
+approaches $P_\infty$ while staying close to $\Sigma_c$, then spends very long
+``time'' $l$ in the vicinity of $P_\infty$ (by continuity $B\{\mathcal A\}$ is
+small when $\mathcal A$ is close to $P_\infty$) and then departs along some way
+close to $U$ (recall that $U$ is the only trajectory that leaves $\Sigma_c$),
+finally going towards $P_0$.
+
+Now let us look for the space $\Sigma(\infty)$ in this picture. It is clear that
+$\Sigma(\infty)$ is $U$, with the points $P_\infty$ and $P_0$ included. Starting
+with any action $\mathcal A$ on the curve $U$ one can go back along the trajectory
+arbitrary amount of ``time'' $l$ without leaving the space $\Sigma$ (actually,
+without leaving $U$). The reason is that $R_c=\infty$ on $U$ only at the point
+$P_\infty$. To reach $P_\infty$ from any point on $U$ with finite $R_c$ takes
+infinite ``time'' $l$ (when moving backwards). Starting from other point in
+$\Sigma$ and integrating backwards, one generally leaves $\Sigma$ in sufficient
+amount of ``time''.
+
+We see from this example the role played by critical fixed points in the
+formation of the space $\Sigma(\infty)$. Therefore finding critical fixed points
+is of central importance in the RG approach.
+
+\subsection*{Critical Fixed Points}
+
+Suppose $\mathcal A_*$ is a critical fixed point, i.e.
+\[
+B\{\mathcal A_*\}=0\,.
+\]
+and associated $R_c=\infty$. Consider vicinity of $\mathcal A_*$. Let
+\[
+\mathcal A=\mathcal A_*+\delta\mathcal A\,,
+\]
+where $\delta\mathcal A$ is infinitesimal. The variation $\delta\mathcal A$ must be
+thought of as a vector in the tangent space $T\Sigma$ taken at the point
+$\mathcal A_*$ (figure~\ref{fig:tangent}),
+\[
+\delta\mathcal A\in T\Sigma|_{\mathcal A_*}\,.
+\]
+\begin{figure}[ht]
+\centering\figfile{tangent}
+\caption{A variation $\delta\mathcal A$ of the fixed-point action is a vector in
+the tangent space $T\Sigma|_{\mathcal A_*}$.}
+\label{fig:tangent}
+\end{figure}
+One can linearize the RG transformation near $\mathcal A_*$,
+\[
+B\{\mathcal A_*+\delta\mathcal A\}=K\{\delta\mathcal A\}+O(\delta\mathcal A^2)\,,
+\]
+where $K$ is a linear operator acting in this tangent space,
+\[
+K:\ T\Sigma|_{\mathcal A_*}\to T\Sigma|_{\mathcal A_*}\,.
+\]
+As it is conventional in the theory of linear operators, I will write
+\begin{equation}\label{eq:Klin}
+K\{\delta\mathcal A\}\equiv K\,\delta\mathcal A\,.
+\end{equation}
+The RG flow in this close vicinity of $\mathcal A_*$ is then described by linear
+differential equation
+\[
+\frac d{dl}\,(\delta\mathcal A)=K\,\delta\mathcal A\,.
+\]
+This equation is easily solved provided one can find eigenvectors $\Psi_\alpha$
+and associated eigenvalues $\kappa_\alpha$ of the operator $K$,
+\[
+K\,\Psi_\alpha=\kappa_\alpha\,\Psi_\alpha\,.
+\]
+The solution takes the form
+\begin{equation}\label{eq:linsol}
+\delta\mathcal A(l)=\sum_\alpha C_\alpha\,e^{\kappa_\alpha l}\,\Psi_\alpha\,,
+\end{equation}
+where the constants $C_\alpha$ are determined by the initial vector
+$\delta\mathcal A(0)=\delta\mathcal A_0$.
+
+It is easy to understand that the pattern of the RG flow in the vicinity of
+$\mathcal A_*$ is directly related to the eigenvalues $\kappa_\alpha$. To
+illustrate this let us assume that there are only two eigenvalues (this
+corresponds to a two-dimensional approximation to $\Sigma$), both real, one
+positive and one negative,
+\[
+\kappa_+>0\,,\qquad\kappa_-<0\,.
+\]
+Figure~\ref{fig:saddle} shows the pattern of corresponding RG flow in the vicinity
+of the fixed point. There is a natural coordinate system on
+$T\Sigma|_{\mathcal A_*}$ associated with the eigenvectors $\Psi_+$ and $\Psi_-$.
+\begin{figure}[ht]
+\centering\figfile{saddle}
+\caption{RG flow near a critical fixed point with one positive and one negative
+eigenvalue. The $\Psi_-$ axis lies in the critical surface $\Sigma_c$ and flows
+into the fixed point; the $\Psi_+$ axis is the trajectory $U$ leaving it. A
+generic trajectory $G$ passes near the fixed point and leaves along $U$.}
+\label{fig:saddle}
+\end{figure}
+
+All trajectories starting at the $\Psi_-$ axis never leave it; they flow towards
+the fixed point $\mathcal A_*$. As the correlation length can only decrease with
+$l$, the entire axis $\Psi_-$ must belong to $\Sigma_c$. The trajectories
+starting at the $\Psi_+$ also remain at this axis, but they flow away from the
+fixed point. For sufficiently large $l$ these trajectories leave the domain of
+validity of the linear approximation \eqref{eq:Klin}, and \eqref{eq:linsol} says
+nothing about their ultimate destination. The same is true for any generic
+trajectory $G$ starting at neither axis: at sufficiently large $l$ it leaves the
+vicinity of the fixed point and its fate cannot be predicted within the linear
+approximation. However there is an important difference between the generic
+trajectories like $G$ and any trajectory $U$ that lies on the axis $\Psi_+$.
+Starting at any point on the axis $\Psi_+$ one can ``integrate backward'' for
+indefinite negative $l$ without leaving the vicinity of the fixed point
+$\mathcal A_*$; in fact corresponding $\mathcal A_{-l}$ approaches $\mathcal A_*$
+as $l\to\infty$. This is in contrast with the negative $l$ behavior of generic
+trajectories; associated $\mathcal A_{-l}$ leave the vicinity of $\mathcal A_*$
+for sufficiently large $l$, and the question if they remain in $\Sigma$ for
+$l\to\infty$ cannot be answered within the linear approximation. On the other
+hand the linear approximation is good enough to recognize in this example at
+least one-dimensional component of the subspace $\Sigma(\infty)$ associated with
+the fixed point $\mathcal A_*$; the axis $\Psi_+$ is the linear approximation to
+this component. Precise statement is
+\[
+\Psi_+\subset T\Sigma(\infty)|_{\mathcal A_*}\,.
+\]
+
+It is not difficult to generalize the conclusions obtained in the example above.
+It is useful to define two special subspaces of the tangent space
+$T\Sigma|_{\mathcal A_*}$. Let $\mathcal F_+$ be the linear envelope of the
+eigenvectors of $K$ corresponding to positive eigenvalues $\kappa$; with some
+abuse of notations we can write
+\[
+\mathcal F_+=\oplus_{\alpha:\kappa_\alpha>0}\,\Psi_\alpha\,.
+\]
+Similarly, let $\mathcal F_-$ be the sum of eigenspaces corresponding to negative
+$\kappa_\alpha$, i.e.
+\[
+\mathcal F_-=\oplus_{\alpha:\kappa_\alpha<0}\,\Psi_\alpha\,.
+\]
+This separation leaves unaccounted very interesting possibility of having zero
+eigenvalues, later we will discuss it separately. Also, it is assumed that all
+eigenvalues of $K$ are real. At this point this assumption looks arbitrary. We
+will see later that having complex eigenvalues contradicts quantum mechanical
+interpretation of field theory.
+
+Simple analysis of \eqref{eq:linsol} shows that
+\begin{itemize}
+\item The fixed point $\mathcal A_*$ belongs to a critical surface $\Sigma_c$ whose
+dimensionality coincides with the dimensionality of $\mathcal F_-$, and
+\[
+\mathcal F_-=T\Sigma_c|_{\mathcal A_*}\,.
+\]
+\item The fixed point $\mathcal A_*$ also belongs to some component of
+$\Sigma(\infty)$; the dimensionality of this component is equal or greater than
+the dimensionality of $\mathcal F_+$, and
+\[
+\mathcal F_+\subset T\Sigma(\infty)|_{\mathcal A_*}\,.
+\]
+\end{itemize}
+
+Let us define the subspace $U(\mathcal A_*)\subset\Sigma(\infty)$ by the condition
+that all points of $U(\mathcal A_*)$ lie on RG trajectories which, when
+``integrated backward'', converge to the fixed point $\mathcal A_*$, i.e.
+\[
+\mathcal A_0\in U(\mathcal A_*)\ \Rightarrow\ \mathcal A_l\to\mathcal A_*\quad\text{as}\quad l\to-\infty
+\]
+The subspace $U(\mathcal A_*)$ is called the \emph{unstable manifold of the fixed
+point $\mathcal A_*$}. Obviously $\mathcal A_*\in U(\mathcal A_*)$. If we ignore
+the possibility of zero eigenvalues then the tangent space to $U(\mathcal A_*)$
+taken at the fixed point $\mathcal A_*$ itself coincides with the space
+$\mathcal F_+$, i.e.
+\[
+\mathcal F_+=TU(\mathcal A_*)|_{\mathcal A_*}\,.
+\]
+
+The reason why $\Sigma(\infty)$ can have dimensionality greater than that of the
+unstable manifold $U(\mathcal A_*)$ is illustrated by the following simple
+example. Suppose we have two fixed points, the $\mathcal A_*$ and another one,
+$\mathcal A'_*$, such that $\mathcal A_*\in U(\mathcal A'_*)$
+(figure~\ref{fig:twofp}).
+\begin{figure}[ht]
+\centering\figfile{twofp}
+\caption{Two fixed points with $\mathcal A_*\in U(\mathcal A'_*)$. One
+trajectory of $U(\mathcal A'_*)$ flows into $\mathcal A_*$.}
+\label{fig:twofp}
+\end{figure}
+Then there must be at least one RG trajectory in $U(\mathcal A'_*)$ which flows to
+$\mathcal A_*$ (this is by the definition of unstable manifold $U$). This
+trajectory has $R_c=\infty$ and therefore it simultaneously belongs to
+$\Sigma(\infty)$ and $\Sigma_c$. It follows that the unstable manifold
+$U(\mathcal A_*)$ has at least one dimension less than $U(\mathcal A'_*)$.
+
+Understanding the global topological properties of the RG flow, like the one
+illustrated in the above example, is beyond the capabilities of linear analysis.
+However, as we have seen, it is within the power of linear analysis to prove that
+each fixed point $\mathcal A_*$ generates a manifold $U(\mathcal A_*)$ which
+belongs to $\Sigma(\infty)$. The dimensionality $n$ of this manifold equals the
+number of positive eigenvalues of the operator $K$. In other words, the fixed
+point $\mathcal A_*$ generates $n$-parameter family of finite local QFT.
+
+The above discussion was somewhat abstract. It is useful to understand the
+meaning of the abstract notions of the above linear analysis, like tangent
+spaces, in terms of local field degrees of freedom.
+
+Recall that generic quasilocal action $\mathcal A$ can be written as integral
+\[
+\mathcal A=\int d^dx\,\Lag(x)\,,
+\]
+where
+\[
+\Lag(x)=\Lag\bigl(\varphi_0(x),\partial_\mu\varphi_0(x),\partial_\mu\partial_\nu\varphi_0(x),\dots\bigr)
+=\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_0^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_0^{2k}(x)\,(\partial\varphi_0)^2(x)+\cdots
+\]
+is a scalar function of the $\varphi_0(x)$ and all its derivatives. The variation
+$\delta\mathcal A$ has similar form,
+\[
+\delta\mathcal A=\int d^dx\,\delta\Lag(x)\,,\qquad
+\delta\Lag(x)=\sum_{k=1}^\infty\frac{\delta u_{2k}}{2k!}\,\varphi_0^{2k}(x)+\sum_{k=0}^\infty\frac{\delta v_{2k}}{2k!}\,\varphi_0^{2k}(x)\,(\partial\varphi_0)^2(x)+\cdots\,.
+\]
+In other words $\delta\mathcal A$ is an integral of (infinite) linear combination
+of local composite fields; we can write it as
+\[
+\delta\mathcal A=\int d^dx\,\sum_\alpha\delta\lambda_\alpha\,\mathcal O_\alpha(x)\,,
+\]
+where
+$\{\mathcal O_\alpha\}=\{\varphi_0^{2n},\varphi_0^{2n}(\partial\varphi_0)^2,\dots\}$,
+and $\{\delta\lambda_\alpha\}$ are variations of corresponding coupling
+constants. Thus the tangent space $T\Sigma|_{\mathcal A_*}$ can be identified
+with the space of scalar composite fields spanned by $\{\mathcal O_\alpha\}$. I
+will use notation $\mathcal F$ for this space of local fields; we have
+\[
+T\Sigma|_{\mathcal A_*}=\mathcal F\,.
+\]
+
+How the RG transformation acts on these composite fields? Consider a correlation
+function involving the field $\mathcal O_\alpha(x)$, say
+\[
+\bigl\langle\mathcal O_\alpha(x)\cdots\bigr\rangle=\frac1Z\int[D\varphi_0]\,\bigl[\mathcal O_\alpha(x)\,\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr]\,e^{-\mathcal A[\varphi_0]}\,,
+\]
+To perform the step 1 of the Wilson's RG transformation we must split the field
+$\varphi_0$ into its ``slow'' and ``fast'' parts,
+\[
+\varphi_0(x)=\varphi_1(x)+\tilde\varphi(x)\,,
+\]
+and then integrate the ``fast'' part $\tilde\varphi$ out.
+
+Recall that $\mathcal O_\alpha(x)$ in general is a polynomial function of
+$\varphi_0$ and its derivatives at the point $x$,
+\[
+\mathcal O_\alpha(x)=\mathcal O_\alpha\bigl(\varphi_0(x),\partial_\mu\varphi_0(x),\dots\bigr)
+\]
+and therefore
+\[
+\mathcal O_\alpha\bigl(\varphi_1(x)+\tilde\varphi(x),\ \text{derivatives}\bigr)=\sum_\beta Y_\alpha^\beta\bigl(\tilde\varphi(x),\ \text{derivatives}\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,,
+\]
+where $Y_\alpha^\beta$ are polynomials of the ``fast'' field $\tilde\varphi(x)$ and
+its derivatives. Example is the field $\varphi_0^n$,
+\[
+\bigl(\varphi_1(x)+\tilde\varphi(x)\bigr)^n=\sum_{k=0}^nY_n^k\bigl(\tilde\varphi(x)\bigr)\,\varphi_1^{n-k}(x)\,,\qquad Y_n^k(\tilde\varphi)=C_n^k\,\tilde\varphi^k\,.
+\]
+Assuming again that we are interested in the case when all external momenta
+$p_1,\dots,p_n\ll\Lambda$, one can write the result of $\tilde\varphi$ integration
+as
+\begin{multline}\label{eq:Ostep1}
+\frac1Z\int[D\tilde\varphi]\,\bigl[\mathcal O_\alpha\bigl(\varphi_1(x)+\tilde\varphi(x),\ \text{derivatives}\bigr)\,\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr]\,e^{-\mathcal A[\varphi_1+\tilde\varphi]}\\
+=\frac1{Z_1}\Bigl[\sum_\beta\bar Y_\alpha^\beta\bigl(L|[\varphi_1]\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,\varphi_1(x_1)\cdots\varphi_1(x_n)\Bigr]\,e^{-\mathcal A_1[\varphi_1]}\,,
+\end{multline}
+where $\mathcal A_1$ is the action appearing in the step 1 of the Wilson's RG
+transformation with the parameter $L$, and
+\[
+\bar Y_\alpha^\beta\bigl(L|[\varphi_1]\bigr)=\bigl\langle Y_\alpha^\beta(\tilde\varphi,\ \text{derivatives})\bigr\rangle_{\tilde\varphi,c}
+\]
+are the expectation values of $Y_\alpha^\beta$ over the ensemble of the fast mode
+fluctuations taken at fixed $\varphi_1$; the subscript $c$ signifies that all
+diagrams disconnected from the insertion point $x$ must be disregarded (they are
+already accounted for by the factor $\exp(-\mathcal A_1)$). Although these
+expectation values depend on the slow modes $\varphi_1$, this dependence is
+``quasilocal'', i.e.\ they can be written as series in powers of $\varphi_1(x)$
+and its derivatives taken at the point $x$. Therefore the result of
+$\tilde\varphi$ integration has the form
+\[
+\frac1{Z_1}\sum_\beta y_\alpha^\beta(L)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,\varphi_1(x_1)\cdots\varphi_1(x_n)\,e^{-\mathcal A_1[\varphi_1]}\,,
+\]
+where in general the sum involves infinitely many terms, and $y_\alpha^\beta(L)$
+are complicated sums of Feynman diagrams. Thus, in the step 1 of RG procedure the
+insertion of the composite field $\mathcal O_\alpha(x)$ gets replaced by certain
+linear combinations of slow-mode composite fields, with $L$-dependent
+coefficients.
+
+This structure holds true after we perform the step 2, which amounts to the change
+of variables
+\[
+\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)\,.
+\]
+As $\mathcal O_\beta$ in \eqref{eq:Ostep1} are polynomials of $\varphi_1$ and its
+derivatives taken at $x$, we have
+\begin{multline*}
+\sum_\beta y_\alpha^\beta(L)\,\mathcal O_\beta\Bigl(Z^{-\frac12}(L)\,\varphi_0(x/L),\ Z^{-\frac12}(L)\,\frac\partial{\partial x^\mu}\varphi_0(x/L),\dots\Bigr)\\
+=\sum_\beta z_\alpha^\beta(L)\,\mathcal O_\beta\Bigl(\varphi_0(x/L),\ \frac\partial{\partial(x^\mu/L)}\varphi_0(x/L),\dots\Bigr)\,,
+\end{multline*}
+i.e.\ under the full RG transformation
+\begin{equation}\label{eq:RGfields}
+\bigl\langle\mathcal O_\alpha(x)\cdots\bigr\rangle\big|_{\mathcal A}=\Bigl\langle\sum_\beta z_\alpha^\beta(L)\,\mathcal O_\beta(x/L)\cdots\Bigr\rangle\Big|_{\mathcal A'}\,,
+\end{equation}
+where $\mathcal A'$ is RG transformed action,
+\[
+\mathcal A'=RG_l\{\mathcal A\}\,,\qquad l=\log L\,.
+\]
+We will write
+\begin{equation}\label{eq:RGop}
+RG_{l,\mathcal A}\,\mathcal O_\alpha=\sum_\beta z_\alpha^\beta(L)\,\mathcal O_\beta\,,\qquad L=e^l\,,
+\end{equation}
+stressing the fact that $RG$ transformation acts on the fields linearly;
+additional index $\mathcal A$ is written down to remind that this transformation
+depends on the action $\mathcal A$.
+
+Let us assume now that $\mathcal A$ is the fixed-point action,
+\[
+\mathcal A=\mathcal A_*\,.
+\]
+Then $\mathcal A'$ coincides with $\mathcal A$, and \eqref{eq:RGop} yields linear
+relation for the correlation functions of the composite fields. Recall that by the
+composition law of the RG transformations,
+\[
+RG_{l+l'}\{*\}=RG_l\{RG_{l'}\{*\}\}\,,
+\]
+in this case the coefficients $z$ must obey the equation
+\[
+z_\alpha^\beta(l+l')=\sum_\gamma z_\alpha^\gamma(l')\,z_\gamma^\beta(l)\,,
+\]
+where I changed the notations $z(l)=z(L=e^l)$. In other words these coefficients,
+as the functions of $l$, must satisfy linear differential equation with constant
+coefficients,
+\[
+\frac d{dl}\,z_\alpha^\beta(l)=-\sum_\gamma D_\alpha^\gamma\,z_\gamma^\beta(l)\,,
+\qquad\text{where}\qquad
+D_\alpha^\beta=-\frac d{dl}\,z_\alpha^\beta(l)\Big|_{l=0}\,.
+\]
+The coefficients $D_\alpha^\beta$ are matrix elements of the linear operator $D$
+corresponding to the infinitesimal transformation \eqref{eq:RGop}
+\[
+RG_{\delta l,\mathcal A_*}=I-\delta l\,D+O(\delta l^2)\,.
+\]
+Let us denote $\Phi_\alpha(x)$ the eigenvectors of the operator $D$, i.e.\ special
+linear combinations of the composite fields $\mathcal O_\alpha(x)$ which satisfy
+the equations
+\[
+D\,\Phi_\alpha\equiv D_\alpha^\beta\,\Phi_\beta=D_\alpha\,\Phi_\alpha\,,
+\]
+where I use the notation $D_\alpha$ for the corresponding eigenvalues of $D$. Then
+\[
+RG_{l,\mathcal A_*}\,\Phi_\alpha=e^{-lD_\alpha}\,\Phi_\alpha\,,
+\]
+and for the fixed-point theory the equation \eqref{eq:RGop} reads
+\begin{equation}\label{eq:scaling}
+\bigl\langle\Phi_{\alpha_1}(x_1)\cdots\Phi_{\alpha_n}(x_n)\bigr\rangle\big|_{\mathcal A_*}
+=L^{-D_{\alpha_1}}\cdots L^{-D_{\alpha_n}}\,\bigl\langle\Phi_{\alpha_1}(x_1/L)\cdots\Phi_{\alpha_n}(x_n/L)\bigr\rangle\big|_{\mathcal A_*}\,,
+\end{equation}
+i.e.\ the above correlation functions are homogeneous functions of the coordinates
+$x_1,\dots,x_n$, of the degree $-(D_{\alpha_1}+\dots+D_{\alpha_n})$. For the
+two-point correlation functions, which depend only on the distance between the two
+points, it follows from \eqref{eq:scaling}
+\[
+\bigl\langle\Phi_\alpha(x)\Phi_\beta(x')\bigr\rangle\big|_{\mathcal A_*}=\frac{G_{\alpha,\beta}}{|x-x'|^{D_\alpha+D_\beta}}\,,
+\]
+where $G_{\alpha,\beta}$ are constants. In general, the equation expresses the
+\emph{scale invariance} of the theory described by the fixed-point action
+$\mathcal A_*$. The eigenvalues $D_\alpha$ are called the \emph{scale dimensions}
+(or \emph{anomalous scale dimensions}) of the fields $\Phi_\alpha$. If
+$\mathcal A_*$ is not a free-field theory, there is no reason to expect them to
+coincide with ``canonical dimensions''. I'd like to stress that these anomalous
+dimensions as well as the basic ``scaling'' fields $\Phi_\alpha$ are defined
+relative to given fixed point $\mathcal A_*$. We will see that in the theory of
+continuous phase transitions these dimensions determine the critical exponents.
+
+We have seen that the space $\mathcal F$ is identical to the tangent space
+$T\Sigma_{\mathcal A_*}$ and therefore the above operator $D$ must be closely
+related to the operator $K$ which is the linearization of the RG generator
+$B\{\mathcal A\}$ near the fixed point,
+\begin{equation}\label{eq:BK}
+B\{\mathcal A_*+\delta\mathcal A\}=K\,\delta\mathcal A\,.
+\end{equation}
+The relation is very simple. Any eigenvector $\Psi_\alpha$ of $K$,
+\[
+K\,\Psi_\alpha=\kappa_\alpha\,\Psi_\alpha\,,
+\]
+is the integral
+\[
+\Psi_\alpha=\int d^dx\,\Phi_\alpha(x)\,.
+\]
+Therefore the eigenvalues are related as
+\[
+\kappa_\alpha=d-D_\alpha\,,
+\]
+where $d$ is the number of the space dimensions. The term $d$ appears because in
+the step 2 of the RG transformation of the integral $\int d^dx\,\Phi(x)$ we have to
+make additional transformation of the integration measure $d^dx$,
+\[
+\int d^dx\,\Phi(x/L)=L^d\int d^dx\,\Phi(x)\,.
+\]
+
+As we have seen, the roles played by positive and negative eigenvalues of $K$ in
+the formation of the RG flow near $\mathcal A_*$ are very different. The
+negative-eigenvalue subspace $\mathcal F_-$ corresponds to the critical surface,
+whereas the positive-eigenvalue subspace $\mathcal F_+$ is the linear
+approximation to the unstable manifold $U(\mathcal A_*)\subset\Sigma(\infty)$. The
+common terminology is as follows. One refers to
+\[
+\begin{array}{llll}
+\Phi_\alpha & \text{with}\quad D_\alpha>d & \text{(i.e.\ with }\kappa_\alpha<0) & \text{as the ``irrelevant'' field,}\\
+\Phi_\alpha & \text{with}\quad D_\alpha=d & \text{(i.e.\ with }\kappa_\alpha=0) & \text{as the ``marginal'' field,}\\
+\Phi_\alpha & \text{with}\quad D_\alpha<d & \text{(i.e.\ with }\kappa_\alpha>0) & \text{as the ``relevant'' field.}
+\end{array}
+\]
+If marginal fields are absent, the dimensionality of $U(\mathcal A_*)$ equals the
+number of relevant fields.
+
+The situation is more complex if the marginal fields are present. Let me assume
+that there is only one marginal field $\Phi_M$. By definition, the relevant
+(irrelevant) fields correspond to deformations $\delta\mathcal A$ of the
+fixed-point action which increase (decrease) with the RG flow in the linear
+approximation in $\delta\mathcal A$. The deformation
+\[
+\delta\mathcal A_M=\lambda_M\int d^dx\,\Phi_M(x)
+\]
+corresponding to the marginal field does not change in the linear approximation,
+but it may well increase or decrease with the RG flow if we go beyond the linear
+approximation, say take into account the terms $\sim\delta\mathcal A_M^2$. If
+$\delta\mathcal A_M$ increases with the RG flow for $\lambda_M$ small enough, the
+deformation $\delta\mathcal A_M$ (and the field $\Phi_M$) is called
+\emph{marginally relevant}; similarly, if it decreases, one refers to $\Phi_M$ as
+\emph{marginally irrelevant} field.
+
+In many important respects the marginally relevant (marginally irrelevant) field
+can be treated on the same footing with the relevant (irrelevant) ones. Thus, if a
+marginally relevant field is present, the unstable manifold $U(\mathcal A_*)$ is
+generated by the subspace $\mathcal F'_+$ which includes this marginally relevant
+field along with all the relevant fields,
+\[
+\mathcal F'_+=TU(\mathcal A_*)|_{\mathcal A_*}\,.
+\]
+We are going to have more precise statements after studying some examples.
+
+\subsection*{Gaussian fixed point}
+
+Let us consider the simplest fixed point for which all calculations can be
+performed explicitly, the so called \emph{Gaussian fixed point}. It is described
+by the massless free action
+\[
+\mathcal A_{*,G}=\int d^dx\,\frac12\,(\partial\varphi_0)^2
+\]
+It is straightforward to check that it is indeed a fixed point. If we split
+$\varphi_0$ into the slow and the fast components, these modes completely
+decouple,
+\[
+\mathcal A_{*,G}=\int d^dx\,\Bigl(\frac12\,(\partial\varphi_1)^2+\frac12\,(\partial\tilde\varphi)^2\Bigr)\,,
+\]
+and therefore the step 1 of the RG procedure does not change the action
+$\mathcal A_{*,G}$ at all,
+\[
+\mathcal A_1=\int d^dx\,\frac12\,(\partial\varphi_1)^2
+\]
+The step 2 is also easy to perform. Setting
+\[
+\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
+\]
+we obtain
+\[
+\mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-\frac12}(L)\,\varphi_0(x/L)\bigr]\,,
+\]
+\[
+\mathcal A'=Z^{-1}(L)\int d^dx\,\frac12\Bigl(\frac\partial{\partial x^\mu}\varphi_0(x/L)\Bigr)^2=\frac{L^{d-2}}{Z(L)}\int d^dx\,\frac12\Bigl(\frac\partial{\partial x^\mu}\varphi_0(x)\Bigr)^2\,.
+\]
+where the change of the coordinates $x\to Lx$ is made in the last step. Under the
+choice
+\[
+Z^{\frac12}(L)=L^{\frac{d-2}2}
+\]
+$\mathcal A'$ coincides with the original action $\mathcal A_{*,G}$, so it indeed
+is a fixed point.
+
+It is not too difficult to find the RG action on the composite fields in this
+fixed-point theory. It will be sufficient for us to consider the fields
+\[
+\mathcal O_n=\frac1{n!}\,\varphi_0^n\,.
+\]
+The step 1 of the RG transformation yields for $\mathcal O_n$
+\[
+\frac1{n!}\,\varphi_1^n+\sum_{k=1}^n\frac1{k!}\,\langle\tilde\varphi^k\rangle_{\tilde\varphi}\,\frac1{(n-k)!}\,\varphi_1^{n-k}\,.
+\]
+In the case of infinitesimal transformation $L=1+\delta l$ we have
+\[
+\langle\tilde\varphi^2\rangle_{\tilde\varphi}=\int_{\Lambda(1-\delta l)<|k|<\Lambda}\frac{d^dk}{(2\pi)^d}\,\frac1{k^2}=N_d\,\Lambda^{d-2}\,\delta l\,,
+\]
+where
+\[
+N_d=\frac{\Omega_d}{(2\pi)^d}\,,\qquad\text{and}\qquad\Omega_d=\frac{2\pi^{\frac d2}}{\Gamma(\frac d2)}
+\]
+is the area of $S^{d-1}$. Therefore we have in this case
+\[
+\frac1{n!}\,\varphi_1^n+\frac1{(n-2)!}\,\varphi_1^{n-2}\,\frac{N_d\Lambda^{d-2}}2\,\delta l\,.
+\]
+As this field does not involve derivatives the step 2 amounts to multiplying
+$\varphi_1$ by $Z^{-\frac12}(L)\sim1-\frac{d-2}2\,\delta l$. Therefore the operator
+$D$ acts on $\mathcal O_n$ as
+\begin{equation}\label{eq:DOn}
+D\,\mathcal O_n=n\,\frac{d-2}2\,\mathcal O_n-\frac{N_d\Lambda^{d-2}}2\,\mathcal O_{n-2}\,.
+\end{equation}
+It is not difficult to diagonalize this operator.
+
+\begin{exercise}
+Find the linear combinations
+\[
+\Phi_n=\mathcal O_n+\sum_{k=1}^na_k\,\mathcal O_{n-k}
+\]
+such that
+\[
+D\,\Phi_n=D_n\,\Phi_n\,.
+\]
+Show that
+\begin{equation}\label{eq:Phi4}
+\Phi_4=\frac1{4!}\,\varphi_0^4-\frac14\,\langle\varphi_0^2\rangle\,\varphi_0^2+\frac18\,\langle\varphi_0^2\rangle^2\,,
+\qquad\langle\varphi_0^2\rangle=\int_{|k|<\Lambda}\frac{d^dk}{(2\pi)^d}\,\frac1{k^2}=\frac{N_d\Lambda^{d-2}}{d-2}\,,
+\end{equation}
+and generally
+\[
+\Phi_n=\frac1{n!}\,{:}\varphi_0^n{:}\ :=\ \frac1{n!}\,\varphi_0^n-\frac1{2!\,(n-2)!}\,\langle\varphi_0^2\rangle\,\varphi_0^{n-2}-\text{further self-contractions.}
+\]
+Calculate $\langle\Phi_n(x)\Phi_{n'}(0)\rangle$.
+\end{exercise}
+
+The eigenvalues $D_n$ are found immediately, without computing exact form of the
+eigenvectors $\Phi_n$. Indeed, the eq.~\eqref{eq:DOn} shows that the operator $D$
+acts on the fields $\mathcal O_n$ as triangular matrix (i.e.\ it mixes
+$\varphi_0^n$ with itself and lower powers of $\varphi_0$), and so its eigenvalues
+coincide with its diagonal elements. We find
+\[
+D_n=n\,\frac{d-2}2\,.
+\]
+Note that $D_1=\frac{d-2}2$ is the canonical dimension of $\varphi_0$ in
+$d$-dimensional space. The dimensions $D_n$ coincide with the canonical dimensions
+of the composite fields $\varphi_0^n$, which is not surprising because we are
+considering the free massless field theory $\mathcal A_{*,G}$.
+
+Dimensionality of the space $\mathcal F_+$ (i.e.\ the space of relevant fields)
+associated with the fixed point $\mathcal A_{*,G}$ depends on $d$. The field
+$\Phi_2=\frac12{:}\varphi_0^2{:}$ is always relevant; its dimension
+\[
+D_2=d-2<d\,.
+\]
+It remains the only relevant field for all $d>6$. For $d<6$ the field
+$\Phi_3=\frac1{3!}{:}\varphi_0^3{:}$ with the dimension
+\[
+D_3=\frac32\,(d-2)
+\]
+becomes relevant, too. For $d<4$ it is joined by the field
+$\Phi_4=\frac1{4!}{:}\varphi_0^4{:}$. The situation is summarized in the table
+\begin{center}
+\begin{tabular}{cc}
+$d$ & relevant fields\\[4pt]
+$d>6$ & $\varphi_0^2$\\
+$6>d>4$ & $\varphi_0^2,\ \varphi_0^3$\\
+$4>d>10/3$ & $\varphi_0^2,\ \varphi_0^3,\ \varphi_0^4$\\
+$10/3>d>3$ & $\varphi_0^2,\ \varphi_0^3,\ \varphi_0^4,\ \varphi_0^5$\\
+$\cdots$ & \\
+$\frac{2n}{n-2}>d>\frac{2(n+1)}{n-1}$ & $\varphi_0^2,\ \varphi_0^3,\dots,\varphi_0^n$
+\end{tabular}
+\end{center}
+At $d=2$ all polynomials of $\varphi_0$ are relevant.
+
+Note that the above classification coincides with our earlier classification of
+the perturbatively renormalizable scalar field theories. We see that in generic
+dimensionality $d$ the perturbatively renormalizable field theories correspond to
+the unstable manifold $U(\mathcal A_{*,G})$ of the gaussian fixed point. Also, we
+realize now that this classification of renormalizable field theories is relevant
+only to the vicinity of the gaussian fixed point (after all the perturbative
+expansion is developed around this point); if we manage to find more complex fixed
+point, its own unstable manifold will give rise to a family of finite local field
+theories which may be not too similar to the perturbatively defined renormalizable
+field theories we considered before.
+
+Thus we have a correspondence between the unstable manifold $U(\mathcal A_{*,G})$
+associated with the Gaussian fixed point and perturbatively renormalizable scalar
+field theories in different dimensions $d$. This correspondence is more subtle if
+$d$ takes special values such that one of the fields $\Phi_n$ acquires the
+dimension $D_n=d$, i.e.\ becomes marginal. This happens for instance at $d=6$ with
+$\Phi_3\sim\varphi_0^3$ and at $d=4$ with $\Phi_4\sim\varphi_0^4$. The last case is
+of most interest to us, and we take it as main example.
+
+\subsection*{\texorpdfstring{$\varphi^4$}{phi**4} flow at \texorpdfstring{$d=4$}{d=4}}
+
+As at $d=4$ the field $\Phi_4$ is marginal, we have
+\begin{equation}\label{eq:marginal4}
+RG_l\Bigl\{\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)\Bigr\}=\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)+O(\lambda^2)\,,
+\end{equation}
+i.e.\ in the order $\lambda$ the perturbed action does not flow at all. However,
+nontrivial flow can be generated beyond the linear approximation, in the higher
+orders in $\lambda$. Let us estimate this flow in the order $\lambda^2$.
+
+To perform the step 1 of the RG transformation we have to integrate over the fast
+component $\tilde\varphi$ in
+\[
+\varphi_0=\varphi_1+\tilde\varphi\,.
+\]
+Consider the action $\mathcal A_0$ of the form
+\begin{equation}\label{eq:A0phi4}
+\mathcal A_0=\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)=\int d^4x\,\Bigl(\frac12\,(\partial\varphi_0)^2+\frac\lambda{4!}\,\varphi_0^4-\frac{\lambda\,b}4\,\varphi_0^2+\Const\Bigr)
+\end{equation}
+where
+\[
+b=\langle\varphi_0^2\rangle_{\mathcal A_{*,G}}=\int_{|k|<\Lambda}\frac{d^4k}{(2\pi)^4\,k^2}=\frac{\Lambda^2}{16\pi^2}
+\]
+(recall that $\Phi_4=\frac1{4!}\varphi_0^4-\frac14\langle\varphi_0^2\rangle_{*,G}\,\varphi_0^2+\Const$,
+as we should have found in the Exercise above). We have
+\begin{multline}\label{eq:A1phi4}
+e^{-\mathcal A_1[\varphi_1]}\sim e^{-\mathcal A_0[\varphi_1]}\times\int[D\tilde\varphi]\\
+\times\exp\Bigl\{-\int d^4x\,\Bigl[\frac12\,(\partial\tilde\varphi)^2+\lambda\Bigl(\frac1{4!}\,\tilde\varphi^4-\frac b4\,\tilde\varphi^2+\frac16\,\varphi_1\tilde\varphi^3+\frac14\,\varphi_1^2\tilde\varphi^2+\frac16\,\varphi_1^3\tilde\varphi\Bigr)\Bigr]\Bigr\}\,.
+\end{multline}
+As we discussed already in Section~16, integration over $\tilde\varphi$ yields
+\[
+\mathcal A_1=\mathcal A_0-\text{sum of all connected diagrams;}
+\]
+the diagrams being built from the vertices
+\[
+\dia[0.45]{\draw[line width=0.9pt] (-1.4,0) -- (1.4,0); \node[vtx] at (0,0) {};}\qquad
+\dia[0.45]{\foreach \a in {45,135,225,315} \draw[line width=0.9pt] (0,0) -- (\a:1.4); \node[vtx] at (0,0) {};}\qquad
+\dia[0.45]{\draw[prop,densely dashed] (-1.4,0) -- (0,0); \foreach \a in {45,0,-45} \draw[line width=0.9pt] (0,0) -- (\a:1.4); \node[vtx] at (0,0) {};}\qquad
+\dia[0.45]{\foreach \a in {135,225} \draw[prop,densely dashed] (0,0) -- (\a:1.4); \foreach \a in {45,315} \draw[line width=0.9pt] (0,0) -- (\a:1.4); \node[vtx] at (0,0) {};}\qquad
+\dia[0.45]{\foreach \a in {150,180,210} \draw[prop,densely dashed] (0,0) -- (\a:1.4); \draw[line width=0.9pt] (0,0) -- (1.6,0); \node[vtx] at (0,0) {};}\,,
+\]
+where the solid lines correspond to the fast field $\tilde\varphi$ (and thus all
+solid lines must be contracted), and the dashed lines represent the field
+$\varphi_1$ which plays the role of an external field (i.e.\ the diagrams involve
+no contractions of the dashed lines).
+
+It is not difficult to check that the equation \eqref{eq:marginal4} indeed holds
+to the order $\lambda$. The constant $b$ in the $\varphi^2$ term in
+\eqref{eq:A0phi4} is such that the contribution of the diagram
+\[
+\dia[0.45]{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[line width=0.9pt] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}\ \sim\ \varphi_1^2
+\]
+is compensated exactly by the transformation of the term
+$\frac{\lambda b}4\varphi_1^2$ in the step 2 of the RG procedure.
+
+In the order $\lambda^2$ many new terms in $\mathcal A_1$ are generated. For
+example the diagram
+\begin{equation}\label{eq:tree6}
+\diac[0.45]{\coordinate (L) at (-1.2,0); \coordinate (R) at (1.2,0); \draw[line width=0.9pt] (L) -- (R);
+  \foreach \a in {120,180,240} \draw[prop,densely dashed] (L) -- ++(\a:1.1);
+  \foreach \a in {60,0,-60} \draw[prop,densely dashed] (R) -- ++(\a:1.1);
+  \node[vtx] at (L) {}; \node[vtx] at (R) {};}
+\end{equation}
+gives rise to the terms $\sim\varphi_1^6$. All such fields are irrelevant. The
+diagram contributing to the terms $\sim\varphi_1^4$ is
+\begin{equation}\label{eq:bubble4}
+\diac[0.45]{\coordinate (L) at (-1,0); \coordinate (R) at (1,0); \draw[line width=0.9pt] (0,0) ellipse (1 and 0.7);
+  \foreach \a in {135,225} \draw[prop,densely dashed] (L) -- ++(\a:1.1);
+  \foreach \a in {45,-45} \draw[prop,densely dashed] (R) -- ++(\a:1.1);
+  \node[vtx] at (L) {}; \node[vtx] at (R) {};}
+\end{equation}
+This diagram admits Taylor expansion in the external momenta. The zeroth term of
+this expansion brings in the term $\varphi_1^4$ (without derivatives) into
+$\mathcal A_1$, while the higher terms give rise to the irrelevant contributions
+like $\varphi_1^2(\partial\varphi_1)^2$. I am going to use approximation in which
+all irrelevant terms in $\mathcal A$ are neglected. Intuitive reason for this
+approximation is that irrelevant terms die out very fast with the RG flow. Within
+this approximation the diagram \eqref{eq:tree6} can be neglected, and the diagram
+\eqref{eq:bubble4} can be evaluated at zero external momenta only, yielding the
+following contribution to $\mathcal A_1$
+\[
+\frac{\Delta\lambda}{4!}\int d^4x\,\varphi_1^4(x)\,,
+\]
+where
+\begin{equation}\label{eq:Dlambda}
+\frac{\Delta\lambda}{4!}=-\frac{\lambda^2}{16}\int_{\Lambda>|k|>\Lambda/L}\frac{d^4k}{(2\pi)^4}\,\frac1{k^2}\,\frac1{k^2}\,.
+\end{equation}
+The factor $\lambda^2/16$ in this formula appears as follows. The term in
+\eqref{eq:A1phi4} responsible for the vertices in the diagram \eqref{eq:bubble4}
+is $\frac\lambda4\varphi_1^2\tilde\varphi^2$, so each vertex comes with the factor
+$-\lambda/4$. One has to expand the exponential to the second order to get the
+diagram \eqref{eq:bubble4}, this brings in additional factor $1/2!$. Finally, a
+factor of 2 comes from the combinatorics of contractions in
+$\langle\tilde\varphi^2\tilde\varphi^2\rangle$. The momentum integral in
+\eqref{eq:Dlambda} is easy to evaluate, and we obtain
+\[
+\Delta\lambda=-3\,\frac{\lambda^2}{(4\pi)^2}\,\log L\,.
+\]
+In this order in $\lambda$ the step 2 is trivial. For the marginal term
+$\int d^4x\,\varphi_1^4(x)$ the factor $Z^{-2}(L)$ which comes from the
+transformation
+\[
+\varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
+\]
+is exactly compensated by the transformation of the integration measure $d^4x$
+(recall that $Z^{\frac12}=L$ at $d=4$; it is easy to see that possible corrections
+to this formula are $\sim\lambda^2$).
+
+Thus, in our approximation the result of the RG transformation of the action
+\eqref{eq:A0phi4} again has the form \eqref{eq:A0phi4} with $\lambda$ replaced by
+\[
+\lambda'=\lambda-3\,\frac{\lambda^2}{(4\pi)^2}\,\log L\,.
+\]
+Taking $L=1+\delta l$ we see that $\lambda$ \emph{decreases} with the RG flow,
+according to the equation
+\begin{equation}\label{eq:WilsonBeta}
+-\frac d{dl}\,\lambda(l)=3\,\frac{\lambda(l)^2}{(4\pi)^2}\,,
+\end{equation}
+i.e.\ at $d=4$ the field $\Phi_4$ is \emph{marginally irrelevant}. Note that the
+r.h.s.\ of \eqref{eq:WilsonBeta} coincides with the $\lambda^2$ term
+\eqref{eq:beta1} of the Callan-Symanzik $\beta$ function of $\varphi^4$ theory
+which we obtained in Section~15.

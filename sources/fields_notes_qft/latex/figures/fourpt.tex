@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=0.5cm,y=0.5cm,font=\small]
+  \def\pts{\coordinate (p1) at (0,2.4); \coordinate (p2) at (3,2.4); \coordinate (p3) at (0,0); \coordinate (p4) at (3,0);}
+  \def\labs{\node[left] at (p1) {$x_1$}; \node[right] at (p2) {$x_2$}; \node[left] at (p3) {$x_3$}; \node[right] at (p4) {$x_4$};
+            \foreach \i in {1,...,4} \node[vtx] at (p\i) {};}
+  % (a)
+  \begin{scope}\pts \draw[prop] (p1)--(p2) (p3)--(p4); \labs \node at (1.5,-1.2) {(a)};\end{scope}
+  % (b)
+  \begin{scope}[xshift=4.0cm]\pts \draw[prop] (p1)--(p3) (p2)--(p4); \labs \node at (1.5,-1.2) {(b)};\end{scope}
+  % (c)
+  \begin{scope}[xshift=8.0cm]\pts \draw[prop] (p1)--(p4); \draw[prop] (p2)--(1.65,1.35); \draw[prop] (1.35,1.05)--(p3); \labs \node at (1.5,-1.2) {(c)};\end{scope}
+  % (d)
+  \begin{scope}[yshift=-2.6cm]\pts \draw[prop] (p1)--(p2) (p3)--(p4); \draw[prop] (1.5,2.95) circle (0.55); \node[vtx] at (1.5,2.4) {}; \labs \node at (1.5,-1.2) {(d)};\end{scope}
+  % (e)
+  \begin{scope}[xshift=4.0cm,yshift=-2.6cm]\pts \draw[prop] (p1)--(p4) (p2)--(p3); \node[vtx] at (1.5,1.2) {}; \labs \node at (1.5,-1.2) {(e)};\end{scope}
+  % (f)
+  \begin{scope}[xshift=8.0cm,yshift=-2.6cm]\pts \draw[prop] (p1)--(0.8,1.2)--(p3); \draw[prop] (p2)--(2.2,1.2)--(p4);
+     \draw[prop] (1.5,1.2) ellipse (0.7 and 0.5); \node[vtx] at (0.8,1.2) {}; \node[vtx] at (2.2,1.2) {}; \labs \node at (1.5,-1.2) {(f)};\end{scope}
+\end{tikzpicture}

@@ -1,0 +1,10 @@
+\input{figures/sigmablob.tex}
+\begin{tikzpicture}[line width=0.6pt]
+  \draw[fill=gray!4] \SigmaBlob;
+  \begin{scope}[scale=0.45,xshift=0.6cm]\draw[fill=gray!14] \SigmaBlob;\end{scope}
+  \node at (-2.4,0) {$\Sigma$};
+  \node at (0.3,0) {$\Sigma(l)$};
+  \fill (2.2,0.8) circle (1.6pt) node[below] {$\mathcal A$};
+  \draw[line width=0.9pt,-{Stealth[length=2mm]}] (4.6,2.0) .. controls (3.6,2.0) and (2.8,1.4) .. (2.25,0.85);
+  \node[right,font=\small] at (4.6,2.0) {$\mathcal A_{-l}$};
+\end{tikzpicture}

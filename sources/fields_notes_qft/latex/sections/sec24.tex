@@ -1,0 +1,400 @@
+% Source pp. 254-263 (Lectures19-25.pdf).
+\section{Operator Formalism vs Functional Integral in QFT}
+
+So far we have discussed QFT mostly from the perspective of (Euclidean space-time)
+functional integral. There are aspects which are better understood within the
+formalism based on the notions of the Hilbert space of states which supports the
+algebra of local field operators. In the previous discussion I made occasional
+references to statements that follow from the operator formalism, mostly from the
+positivity of norms in the Hilbert space, as well as from the so called spectral
+condition. Here I would like to recollect the basics of that formalism, and
+clarify its relation to the functional integral.
+
+\subsection*{Operator formalism}
+
+As was stated before (Section~7), the correlation functions defined by the
+functional integrals
+\begin{equation}\label{eq:corrPhi}
+\bigl\langle O_1(x_1)\cdots O_N(x_N)\bigr\rangle:=Z^{-1}\int[D\Phi]\,O_1(x_1)\cdots O_N(x_N)\,e^{-\mathcal A[\Phi]}
+\end{equation}
+can be interpreted as the vacuum-vacuum matrix element of the ``T-ordered'' product
+\begin{equation}\label{eq:Tordered}
+\bigl\langle O_1(x_1)\cdots O_N(x_N)\bigr\rangle=\bra0T_\tau\bigl(\hat O_1(x_1)\cdots\hat O_N(x_N)\bigr)\ket0
+\end{equation}
+of the Heisenberg field operators $\hat O(x)$. The latter notions involve
+nominating one of the coordinates to the role of the ``Euclidean time'' $\tau$, so
+that $x=(\xx,\tau)$. Usually, the Heisenberg picture is developed in the real time
+$t$ which relates to $\tau$ by the analytic continuation to $\tau=it$, but in most
+of the development below this specification is not necessary; we generally will
+regard $\tau$ as a complex number. Then
+\begin{equation}\label{eq:Heis}
+\hat O(\xx,\tau)=e^{\hat H\tau}\,\hat O(\xx)\,e^{-\hat H\tau}\,.
+\end{equation}
+By construction, the field operators satisfy Heisenberg ``equation of motion''
+\begin{equation}\label{eq:HeisEOM}
+\frac\partial{\partial\tau}\,\hat O(\xx,\tau)=\bigl[\hat H,\hat O(\xx,\tau)\bigr]
+\end{equation}
+In fact, most of the calculations can be done at real $\tau$ (``imaginary time'').
+In that case the ``time ordering'' $T_\tau$ means that the operators in
+\eqref{eq:Tordered} are ordered according to decreasing values of $\tau$: the
+operators with greater $\tau$ are placed to the left.
+
+We have derived this relation in quantum mechanics (Section~5), and then assumed
+that it can be extended to QFT. In fact, such extension is not straightforward,
+and involves many subtleties mostly related to regularization and renormalization
+(our brief inspection of the Wilson's RG gives the idea of the size of the
+problem). Here I would like to revisit the relation \eqref{eq:Tordered} from more
+general perspective. Starting from the functional integral definition of the
+correlation functions, we will try to recover basic notions of the operator
+formalism. Eq.~\eqref{eq:Heis} involves the Hamiltonian, and we would like to see
+how the Hamiltonian, or more generally, the Energy-Momentum $P^\mu$, can be
+introduced in terms of the correlation functions.
+
+\subsection*{Correlation Functions and Energy-Momentum}
+
+Consider the correlation function
+\[
+\bigl\langle T^{\mu\nu}(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle
+\]
+involving the energy-momentum tensor field $T^{\mu\nu}(x)$. As we have seen in the
+previous Section, it satisfies the Ward Identity \eqref{eq:Ward2}, in particular
+\[
+\bigl\langle\partial_\mu T^{\mu\nu}(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle=0\qquad\text{for}\quad x\neq x_1,\dots,x_N\,,
+\]
+As a consequence, the integral
+\[
+\int_\Sigma d\Sigma_\mu(x)\,\bigl\langle T^{\mu\nu}(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle
+\]
+taken over a $(d-1)$-hypersurface $\Sigma$ does not change under topologically
+trivial deformations of $\Sigma$. The hypersurface $\Sigma$ divides the space
+$\R^d$ into two parts, and correspondingly splits the set of insertion points
+$x_1,\dots,x_N$ into two subsets, according to their locations within the parts.
+Topologically trivial are those deformations which do not change this splitting,
+or, in other words the deformations which do not make the hypersurface ``cross
+over'' any of the insertion points. For the sake of our present discussion it is
+convenient to choose $\Sigma$ to be an ``equal-time slice''. As before, we
+nominate one of the coordinates in $\R^d$ to be the (imaginary) ``time'' $\tau$,
+i.e.\ $x=(\xx,\tau)$, and define $\Sigma(\tau)$ as the union of points with given
+$\tau$. Define\footnote{The factor $i$ is added to this notation to agree with the
+conventional notation $P^\mu$ for the energy-momentum in real Minkowski space time.
+Upon continuation $\tau=it$ the components of the energy-momentum tensor transform
+so that $T^{\tau k}=iT^{0k}$, $k=1,2,\dots,d-1$, and $T^{\tau\tau}=-T^{00}$.}
+\begin{equation}\label{eq:Pslice}
+iP^\mu(\tau):=\int_{\Sigma(\tau)}d\Sigma_\nu(x)\,T^{\mu\nu}(x)=\int_{\Sigma(\tau)}d^{d-1}\xx\,T^{\mu\tau}(\xx,\tau)\,,
+\end{equation}
+and assume that
+\begin{equation}\label{eq:tauorder}
+\tau_1>\tau_2>\dots>\tau_M>\tau>\tau_{M+1}>\dots>\tau_N\,,
+\end{equation}
+as illustrated in figure~\ref{fig:slice}.
+\begin{figure}[ht]
+\centering\figfile{slice}
+\caption{The equal-time slice $\Sigma(\tau)$ separates the insertion points with
+$\tau_i>\tau$ from those with $\tau_i<\tau$.}
+\label{fig:slice}
+\end{figure}
+Then the correlation function
+\begin{equation}\label{eq:Pcorr}
+\bigl\langle P^\mu(\tau)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle
+\end{equation}
+does not change if one changes the value of $\tau$, as long as the order
+\eqref{eq:tauorder} is preserved. We therefore drop the argument $\tau$ writing in
+the notation for $P^\mu:=P^\mu(\tau)$, but adopt the convention that the position of
+the insertion $P^\mu$ in the correlation function corresponds to the order
+\eqref{eq:tauorder}, i.e.\ \eqref{eq:Pcorr} is written as
+\begin{equation}\label{eq:Pinsert}
+\bigl\langle O_1(x_1)\cdots O_M(x_M)\,P^\mu\,O_{M+1}(x_{M+1})\cdots O_N(x_N)\bigr\rangle
+\end{equation}
+With this convention the position of the insertion $P^\mu$ represents the
+topological class of the surface $\Sigma$ in \eqref{eq:Pslice} relative to the
+points $x_i$.
+
+Now that the position of $P^\mu$ in the correlation function \eqref{eq:Pcorr}
+matters, one may ask about the ``commutators'' of $P^\mu$ with the local field
+insertions. We have formally (see figure~\ref{fig:commslab})
+\begin{multline*}
+iP^\mu O(\xx,\tau)-O(\xx,\tau)\,iP^\mu\\
+=\int d^{d-1}\yy\,T^{\tau\mu}(\yy,\tau+\Delta\tau)\,O(\xx,\tau)-\int d^{d-1}\yy\,T^{\tau\mu}(\yy,\tau-\Delta\tau)\,O(\xx,\tau)\,,
+\end{multline*}
+\begin{figure}[ht]
+\centering\figfile{commslab}
+\caption{The commutator with $P^\mu$ is the difference of the slices at
+$\tau+\Delta\tau$ and $\tau-\Delta\tau$, which can be closed into a small surface
+around $x$.}
+\label{fig:commslab}
+\end{figure}
+or, by closing the hypersurface
+\begin{equation}\label{eq:Pcomm}
+i\bigl[P^\mu,O(x)\bigr]=\int_{\Sigma_x}d\Sigma_\nu(y)\,T^{\mu\nu}(y)\,O(x)
+\end{equation}
+where $\Sigma_x$ is an arbitrary small closed hypersurface wrapped around the point
+$x$. Again, this relation is understood as being valid for the insertions in the
+correlation functions, with the above ordering convention.
+
+The integral in the r.h.s.\ can be calculated as follows. Consider again the Ward
+identity \eqref{eq:Ward},
+\begin{equation}\label{eq:Ward3}
+\sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle
+=-\int d^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,.
+\end{equation}
+where $\delta_\varepsilon O(x)$ stand for the variations of the fields $O(x)$ under
+the coordinate transformation $x^\mu\to x^\mu+\varepsilon^\mu(x)$. The integration
+in the r.h.s.\ is over the whole space $D:=\R^d$. Let us split this domain into
+several pieces, as follows
+\[
+D:=\R^d=\sum_{i=1}^ND_i+D_{\text{out}}\,,
+\]
+where $D_i$ is a small domain containing the point $x_i$, and $D_{\text{out}}$ is
+the remaining part of $D$ left after removing all $D_i$\footnote{In conventional
+set theory symbolics the decomposition reads
+$D_{\text{out}}:=D\setminus(\cup_iD_i)$.} (figure~\ref{fig:Di}).
+\begin{figure}[ht]
+\centering\figfile{Di}
+\caption{Left: a small domain $D_i$ around the insertion point $x_i$. Right: the
+normal element $d\Sigma_\mu$ of its boundary $\partial D_i$.}
+\label{fig:Di}
+\end{figure}
+The integral splits accordingly, as
+\[
+\int d^dx=\sum_{i=1}^N\int_{D_i}d^dx+\int_{D_{\text{out}}}d^dx
+\]
+For all $x\in D_{\text{out}}$ we have
+\[
+\partial_\mu T^{\mu\nu}(x)=0\qquad\text{for}\quad x\in D_{\text{out}}\,,
+\]
+and hence the integral over $D_{\text{out}}$ can be transformed via the Stokes
+theorem, as
+\[
+\int_{D_{\text{out}}}d^dx\,\partial_\mu\bigl\langle\bigl(\varepsilon_\nu(x)\,T^{\mu\nu}(x)\bigr)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle=-\sum_{i=1}^NI_i\,,
+\]
+where $I_i$ stand for the surface integrals over the boundaries of $D_i$,
+\[
+I_i=\int_{\partial D_i}d\Sigma_\mu(x)\,\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\cdots O_i(x_i)\cdots\bigr\rangle
+\]
+and $d\Sigma_\mu(x)$ is the normal element of the boundary $\partial D_i$. Hence,
+the r.h.s.\ of the Eq.~\eqref{eq:Ward3} splits into the sum
+\begin{equation}\label{eq:splitsum}
+\sum_{i=1}^N\Bigl(I_i-\int_{D_i}d^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\cdots\bigr\rangle\Bigr)\,.
+\end{equation}
+By construction, each of the terms here is independent of the shape of the domain
+$D_i$, which can be made arbitrary small. This implies that each of these terms
+depends on $\varepsilon(x)$ in a local way, i.e.\ the term associated with $D_i$
+depends on $\varepsilon(x_i)$, $\partial\varepsilon(x_i)$, $\dots$. Comparing
+\eqref{eq:splitsum} with the l.h.s.\ of \eqref{eq:Ward3} we conclude that the
+equality is satisfied term by term in the sum over $i$. This leads to the following
+representation of the variations $\delta_\varepsilon O(x)$
+\begin{equation}\label{eq:deltaO}
+\delta_\varepsilon O(x)=\int_{\partial D_x}d\Sigma_\mu(y)\,\varepsilon_\nu(y)\,T^{\mu\nu}(y)\,O(x)-\int_{D_x}d^dy\,\partial_\mu\varepsilon_\nu(y)\,T^{\mu\nu}(y)\,O(x)\,.
+\end{equation}
+The relation is understood as valid for the correlation functions. Let me note again
+that the r.h.s.\ is in fact independent of the choice of the (small) domain $D_x$.
+
+As was already mentioned, the variation $\delta_\varepsilon O(x)$ admits expansion in
+the derivatives of $\varepsilon$ taken at the point $x$, with the leading term
+\[
+\delta_\varepsilon O(x)=\varepsilon^\mu(x)\,\partial_\mu O(x)+\text{terms involving }\partial\varepsilon(x),\dots
+\]
+In particular, for a constant $\varepsilon^\mu(x)=\varepsilon^\mu$ the terms with
+the derivatives do not contribute. On the other hand, in this case the second term
+in \eqref{eq:deltaO} vanishes, and we obtain
+\[
+\partial^\mu O(x)=\int_{\partial D_x}d\Sigma_\nu(y)\,T^{\mu\nu}(y)\,O(x)
+\]
+The r.h.s.\ here coincides with the expression in \eqref{eq:Pcomm}. Finally, we
+find
+\[
+\bigl[P^\mu,O(x)\bigr]=-i\,\partial^\mu O(x)\,.
+\]
+Taking $\mu$ to be the ``time'' index $\tau$, and recalling that $P^\tau=iP^0=iH$,
+one recovers \eqref{eq:HeisEOM}.\footnote{Up to the overall sign. With the sign
+conventions used in this and the previous Section one finds
+$\partial_\tau O=-[H,O]$; the sign in \eqref{eq:HeisEOM} is recovered by reversing
+the overall sign of $T^{\mu\nu}$ in \eqref{eq:Tdef}. The notes flag this sign
+without resolving it.} The ``spatial'' components of this equation
+\[
+i\nabla O(\xx,\tau)=\bigl[\PPv,O(\xx,\tau)\bigr]
+\]
+reproduce the well known (see e.g.\ Chapter 2 of PS) representation of the
+Heisenberg field operators
+\[
+\hat O(\xx,t)=e^{-i\PPv\cdot\xx+iHt}\,\hat O(\mathbf0,0)\,e^{i\PPv\cdot\xx-iHt}
+\]
+which I chose here to write directly in Minkowski space-time.
+
+\subsection*{Space of States\protect\footnote{The ideas displayed in this section
+are borrowed from the construction in K.~Osterwalder, R.~Schrader, ``Axioms for
+Euclidean Greens functions,'' Comm.\ Math.\ Phys.\ \textbf{31} (1973), 83--112;
+\textbf{42} (1975), 281--305.}}
+
+The functional integral is particularly suitable for dealing with the correlation
+functions \eqref{eq:corrPhi}. Calculations in the previous paragraphs suggest a
+natural way to construct the space of states $\Ham$ and an algebra of operators, in
+terms of the Euclidean space correlation functions, as follows.
+
+Let us again split the whole space $\R^d$, with the coordinates
+$x^\mu=(\xx,\tau)$, into two half-spaces
+\[
+\R^d=\R^d_+\cup\R^d_-
+\]
+separated by the ``equal time'' slice, the hypersurface $\tau=0$. Namely
+\[
+\R^d_+:\ (\xx,\tau)\,,\ \tau\ge0\,,\qquad\R^d_-:\ (\xx,\tau)\,,\ \tau\le0\,,
+\]
+We associate states with the product of field insertions
+$\varphi(x_1)\cdots\varphi(x_M)$ at the points $x_1,x_2,\dots,x_M\in\R^d_-$,
+\begin{equation}\label{eq:states}
+\varphi(x_1)\cdots\varphi(x_M)\ \to\ \ket{\varphi(x_1)\cdots\varphi(x_M)}\,.
+\end{equation}
+At this point, the above equation just provides notation for the states. We define
+$\Ham$ as the linear envelope of the above states
+\[
+\Ham=\operatorname{Span}\bigl\{\ket{\varphi(x_1)\cdots\varphi(x_M)}:\ x_i\in\R^d_-\bigr\}
+\]
+The intuition behind this construction comes from the simple minded idea of $\Ham$
+as the space of functionals
+\[
+\Ham=\text{Space of }\Psi[\varphi(\xx)]
+\]
+of the field configurations $\varphi(\xx)$, $\xx\in\R^{d-1}$. Let
+$x_i=(\xx_i,\tau_i)\in\R^d_-$, and consider the functional integral
+\begin{equation}\label{eq:Psiint}
+\int_{\varphi(\xx,0)=\varphi(\xx)}[D\varphi(x)]\,\varphi(x_1)\cdots\varphi(x_M)\,e^{-\mathcal A[\varphi(x)]}
+\end{equation}
+over all field configurations $\varphi(x)$ in the half-space $x\in\R^d_-$. This
+integral defines (up to overall normalization) the functional
+\[
+\Psi_{\varphi(x_1)\cdots\varphi(x_M)}[\varphi(\xx)]
+\]
+which may be regarded as the Schroedinger wave function representing the state
+\eqref{eq:states}. In particular, the integral \eqref{eq:Psiint} with no insertions
+represents the vacuum state,
+\[
+\Psi_0[\varphi(\xx)]=\int_{\varphi(\xx,0)=\varphi(\xx)}[D\varphi(x)]\,e^{-\mathcal A[\varphi(x)]}\ \to\ \ket0\in\Ham\,.
+\]
+The problem with this representation is in the definition of the scalar products.
+The simple minded definition
+\begin{equation}\label{eq:naiveprod}
+\braket{\Psi_2}{\Psi_1}:=\int[D\varphi(\xx)]\,\Psi_2^*[\varphi(\xx)]\,\Psi_1[\varphi(\xx)]
+\end{equation}
+has all required formal properties, but involves the functional integration which,
+as we already know, requires regularization and renormalization. In this context
+the problem of renormalization looks much harder than that in the functional
+integral \eqref{eq:corrPhi} because the functionals $\Psi[\varphi(\xx)]$ do not have
+(quasi) local structure, and generally are far more complicated than
+$e^{-\mathcal A}$.
+
+Instead, one defines the scalar product of the states \eqref{eq:states} as
+\begin{equation}\label{eq:OSprod}
+\bigl\langle\varphi(y_1)\cdots\varphi(y_N)\big|\varphi(x_1)\cdots\varphi(x_M)\bigr\rangle
+:=\bigl\langle\varphi(\bar y_1)\cdots\varphi(\bar y_N)\,\varphi(x_1)\cdots\varphi(x_M)\bigr\rangle
+\end{equation}
+Here the ``mirror image'' points $\bar x$ are defined as follows:
+\begin{equation}\label{eq:reflection}
+\text{``Reflection'':}\qquad x=(\xx,\tau)\ \leftrightarrow\ \bar x=(\xx,-\tau)
+\end{equation}
+Then, if all the points $x_1,\dots,x_M,y_1,\dots,y_N$ in \eqref{eq:OSprod} are in
+$\R^d_-$, the ``mirror'' points $\bar y_1,\dots,\bar y_N$ are all in $\R^d_+$. The
+configuration of the points in the correlation function in the r.h.s.\ of
+\eqref{eq:OSprod} is exactly as in \eqref{eq:tauorder}, see figure~\ref{fig:slice}
+above.
+
+The most important property of the scalar product is its \emph{positivity},
+\[
+\braket\Psi\Psi>0
+\]
+for any $\ket\Psi\in\Ham$, $\ket\Psi\neq0$. For the formal representation
+\eqref{eq:naiveprod} the positivity is obvious: Eq.~\eqref{eq:naiveprod} with
+$\Psi_1=\Psi_2$ is explicitly positive. For the scalar product defined in terms of
+the correlation functions this property is postulated as the \textbf{reflection
+positivity}
+\[
+\sum_{N,M}\int_{x_i,y_k\in\R^d_-}\bigl\langle\varphi(\bar y_1)\cdots\varphi(\bar y_N)\,\varphi(x_1)\cdots\varphi(x_M)\bigr\rangle\,f_N^*(y_1,\dots,y_N)\,f_M(x_1,\dots,x_M)\ge0
+\]
+for any sequence of functions $f_N(x_1,\dots,x_N)$, which expresses positivity of the
+norm of the state
+\[
+\ket\Psi=\sum_N\int_{x_i\in\R^d_-}f_N(x_1,\dots,x_N)\,\ket{\varphi(x_1)\cdots\varphi(x_N)}\,.
+\]
+More generally, we can associate states with general products of local fields
+$O_a(x)$,
+\begin{equation}\label{eq:Ostates}
+O_{a_1}(x_1)\cdots O_{a_N}(x_N)\ \to\ \ket{O_{a_1}(x_1)\cdots O_{a_N}(x_N)}\in\Ham\,,\qquad x_1,\dots,x_N\in\R^d_-
+\end{equation}
+according to the same idea
+\[
+\Psi_{O_1(x_1)\cdots O_N(x_N)}[\varphi(\xx)]=\int_{\varphi(\xx,0)=\varphi(\xx)}[D\varphi(x)]\,O_1(x_1)\cdots O_N(x_N)\,e^{-\mathcal A[\varphi(x)]}
+\]
+with the scalar product related to their correlation functions similarly,
+\[
+\bigl\langle O_{b_1}(y_1)\cdots O_{b_M}(y_M)\big|O_{a_1}(x_1)\cdots O_{a_N}(x_N)\bigr\rangle
+:=\bigl\langle\bar O_{b_1}(\bar y_1)\cdots\bar O_{b_M}(\bar y_M)\,O_{a_1}(x_1)\cdots O_{a_N}(x_N)\bigr\rangle
+\]
+where again $x_1,\dots,x_N;y_1,\dots,y_M\in\R^d_-$, and the points
+$\bar y_i\in\R^d_+$ are the ``mirror images'' of $y_i$, as in
+Eq.~\eqref{eq:reflection}. However, when the fields $O_i(x_i)$ are not all scalars,
+the fields $\bar O_b$ are related to $O_b$ by certain ``reflection''. To get an idea
+assume that the field $O(x)$ is real-valued vector with the components $O^\mu(x)$.
+Then, if $\mu=1,2,\dots,d-1$ represent ``spatial'' components,
+\[
+\bar O^\mu(\bar x)=O^\mu(\bar x)\,,\qquad\bar O^\tau(\bar x)=-O^\tau(\bar x)\,,
+\]
+i.e.\ the sign of the ``temporal'' component $O^\tau$ gets flipped upon reflection.
+For example,
+\[
+\overline{\partial_\tau\varphi}(x)=-\partial_\tau\varphi(x)
+\]
+so that
+\[
+\bigl\langle\partial_\nu\varphi(y)\big|\partial_\mu\varphi(x)\bigr\rangle=\pm\bigl\langle\partial_\nu\varphi(\bar y)\,\partial_\mu\varphi(x)\bigr\rangle
+\]
+where the sign $+$ applies when both $\mu$ and $\nu$ are ``spatial'' or both are
+``temporal'', otherwise the sign is $-$. Similar rule applies to higher rank tensors.
+For complex valued fields the ``reflection'' involves complex conjugation. The
+correlation functions of composite fields $O_a$ obey then the suitably generalized
+reflection positivity conditions, which follow from the positivity of the norms of
+the states \eqref{eq:Ostates}.
+
+As an elementary application, let us show that in a scale invariant (i.e.\ RG fixed
+point) theory the mass dimensions $D_\alpha$ of all nontrivial fields
+$\Phi_\alpha(x)$ are positive (we denote $\Phi_\alpha(x)$ the scalar fields that
+diagonalize the matrix of anomalous dimensions, see Section~18). From the scale
+invariance
+\[
+\bigl\langle\Phi_\alpha(x)\Phi_\alpha(y)\bigr\rangle=\frac{C_\alpha}{|x-y|^{2D_\alpha}}
+\]
+where $|x-y|$ is the Euclidean distance between the points $x$ and $y$. Let us take
+$\tau>0$, so that $x=(\xx,-\tau/2)\in\R^d_-$. Set $y=\bar x=(\xx,\tau/2)$. We have
+\[
+\braket{\Phi_\alpha(x)}{\Phi_\alpha(x)}=\frac{C_\alpha}{(\tau^2)^{D_\alpha}}\,.
+\]
+The positivity requires $C_\alpha>0$; one can set $C_\alpha=1$ by adjusting
+normalization of $\Phi_\alpha$. Consider the norm
+\begin{equation}\label{eq:normdPhi}
+\Bigl\langle\frac\partial{\partial x^1}\Phi_\alpha(\xx,-\tau/2)\Big|\frac\partial{\partial x^1}\Phi_\alpha(\xx,-\tau/2)\Bigr\rangle
+\end{equation}
+where $x^1$ is one of the spatial coordinates in $\xx=(x^1,x^2,\dots,x^{d-1})$. This
+norm is expressed as the second derivative of the correlation function
+\[
+\frac{\partial^2}{\partial x^1\,\partial y^1}\bigl\langle\Phi_\alpha(\xx,\tau/2)\,\Phi_\alpha(\yy,-\tau/2)\bigr\rangle
+\]
+evaluated at $\yy=\xx$. Elementary calculation yields for \eqref{eq:normdPhi}
+\[
+\frac{2D_\alpha}{(\tau^2)^{D_\alpha+1}}
+\]
+which must be positive, hence $D_\alpha\ge0$.
+
+The case $D=0$ is instructive. If the field $\Phi$ has mass dimension $D=0$ it
+follows that
+\[
+\Bigl|\frac\partial{\partial x^1}\Phi(x)\Bigr\rangle=0\,.
+\]
+It is then easy to prove that any correlation function involving the derivative of
+$\Phi(x)$ vanishes
+\[
+\bigl\langle\partial_\mu\Phi(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle=0\,,\qquad\Rightarrow\qquad\partial_\mu\Phi(x)\simeq0\,.
+\]
+Then one can show (using cluster factorization, see below) that
+\[
+\bigl\langle\Phi(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle=\bigl\langle O_1(x_1)\cdots O_N(x_N)\bigr\rangle
+\]
+i.e.\ the only field with zero mass dimension is the identity operator.

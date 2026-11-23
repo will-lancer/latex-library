@@ -1,0 +1,15 @@
+\begin{tikzpicture}[line width=0.6pt]
+  \draw[gray] (-4,0)--(4,0);
+  \fill (-1.8,0) circle (1.7pt) node[above=3pt] {$-\omega_\pp$};
+  \fill (1.8,0) circle (1.7pt) node[below=3pt] {$\omega_\pp$};
+  \draw[midarrow] (-4,0)--(-2.2,0);
+  \draw (-2.2,0) arc[start angle=180,end angle=360,radius=0.4];
+  \draw[midarrow] (-1.4,0)--(1.4,0);
+  \draw (1.4,0) arc[start angle=180,end angle=0,radius=0.4];
+  \draw[-{Stealth[length=2mm]}] (2.2,0)--(4,0);
+  \node at (-3.6,0.3) {$\tilde C_F$};
+  \draw[line width=0.9pt,-{Stealth[length=2.2mm]}] (0,-1.6)--(0,1.7) node[right] {$\tilde C_E$};
+  \draw[arr,gray] (2.5,0.25) arc[start angle=5,end angle=80,radius=2.5];
+  \draw[arr,gray] (-2.5,-0.25) arc[start angle=185,end angle=260,radius=2.5];
+  \node[draw,circle,inner sep=1pt] at (3.6,1.2) {$\omega$};
+\end{tikzpicture}
