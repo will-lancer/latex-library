@@ -6,7 +6,7 @@ The subject of Field Theory is the dynamical systems (classical or quantum)
 with continuously many degrees of freedom. That is, there is some number of
 degrees of freedom associated with each point of space $\xx\in\R^3$. Examples
 are:
-\begin{enumerate}[label=\roman*)]
+\begin{enumerate}[label=(\roman*)]
 \item Electromagnetic Theory
 \[
 \text{Degrees of Freedom:}\qquad \mathbf{E}(\xx,t),\ \mathbf{H}(\xx,t)\,.
@@ -31,7 +31,7 @@ the basis of particle theory.
 We start with a brief review of basic aspects of classical field theory.
 Fundamental object in classical mechanics is the \textbf{action},
 \[
-S=\int L\bigl(q(t),\dot q(t)\bigr)\,dt\,;
+S=\int L\bigl(q(t),\dot q(t)\bigr)\dd t\,;
 \]
 the equations of motion are derived from the extremal action principle
 $\delta S=0$. In field theory the coordinates are replaced by the field
@@ -41,7 +41,7 @@ q(t)=\{q^i(t)\}\to \Phi(\xx,t)\,,\qquad (i\to\xx)
 \]
 and the action is written as a space-time integral
 \[
-S=\int \Lag\bigl(\Phi(\xx,t),\dot\Phi(\xx,t),\nabla\Phi(\xx,t)\bigr)\,d^3\xx\,dt\,.
+S=\int \Lag\bigl(\Phi(\xx,t),\dot\Phi(\xx,t),\nabla\Phi(\xx,t)\bigr)\dd^3\xx\dd t\,.
 \]
 Here $\Phi=\Phi(\xx,t)$ stands for a collection of fields (functions of
 $\xx,t$, representing local degrees of freedom), which may include scalar
@@ -50,11 +50,11 @@ assumed that $\Phi$ has finitely many individual components. The function
 $\Lag$ is called the \textbf{Lagrangian density}; it depends on $\Phi(\xx,t)$
 and its derivatives over $\xx$ and $t$, taken at the same space-time point
 $(\xx,t)$. Two remarks are in order.
-
-1. The above expression is suitable for imposing conditions of the special
+\begin{enumerate}
+\item The above expression is suitable for imposing conditions of the special
 relativity. The integration is over the 4-dimensional Minkowskian space-time,
 \[
-d^3\xx\,dt=d^4x\,.
+\dd^3\xx\dd t=\dd^4x\,.
 \]
 Recall that in relativistic theory one deals with 4-dimensional space-time
 with the coordinates
@@ -63,10 +63,10 @@ x^\mu=(x^0,x^1,x^2,x^3)=(t,\xx)\,,
 \]
 equipped with the ``pseudo-metric''
 \[
-ds^2=-c^2\,dt^2+(dx^1)^2+(dx^2)^2+(dx^3)^2\,.
+\dd s^2=-c^2\dd t^2+(\dd x^1)^2+(\dd x^2)^2+(\dd x^3)^2\,.
 \]
 The Lorentz transformations are those linear transformations of the
-coordinates $x^\mu$ which preserve $ds^2$. In what follows I will use the
+coordinates $x^\mu$ which preserve $\dd s^2$. In what follows I will use the
 units in which\footnote{These conditions are simply the convention to measure
 spatial distances and energy in the units
 $[\text{unit of length}]=c\times[\text{unit of time}]$,
@@ -76,7 +76,7 @@ c=1\,,\qquad \hbar=1\,.
 \]
 Then
 \[
-ds^2=\eta_{\mu\nu}\,dx^\mu dx^\nu=dx^\mu\,dx_\mu\,,\qquad\text{where}\qquad x^\mu=(t,\xx)\,,\quad x_\mu=(-t,\xx)\,,
+\dd s^2=\eta_{\mu\nu}\dd x^\mu \dd x^\nu=\dd x^\mu\dd x_\mu\,,\qquad\text{where}\qquad x^\mu=(t,\xx)\,,\quad x_\mu=(-t,\xx)\,,
 \]
 and $\eta_{\mu\nu}=\operatorname{diag}(-1,+1,+1,+1)$ is the Minkowski metric.
 Throughout these notes the metric is ``mostly plus'', so a timelike vector
@@ -85,33 +85,33 @@ convention $px=-p^0x^0+\pp\cdot\xx$.
 To ensure relativistic invariance of the classical field theory it suffices
 to choose $\Lag$ to be a Lorentz scalar.
 
-2. In writing the above action I already accepted severe restrictions,
+\item In writing the above action I already accepted severe restrictions,
 namely,
 \[
-S=\int dt\,L\,,\qquad\text{with}\qquad
-L=\int d^3\xx\,\Lag\bigl(\Phi(\xx,t),\dot\Phi(\xx,t),\nabla\Phi(\xx,t)\bigr)\,,
+S=\int \dd t\,L\,,\qquad\text{with}\qquad
+L=\int \dd^3\xx\,\Lag\bigl(\Phi(\xx,t),\dot\Phi(\xx,t),\nabla\Phi(\xx,t)\bigr)\,,
 \]
-i.e.\ $L$ is a $d^3\xx$ integral of a \emph{spatial density} $\Lag$, which
+i.e.\ $L$ is a $\dd^3\xx$ integral of a \emph{spatial density} $\Lag$, which
 depends on $\Phi$, $\dot\Phi$, and $\nabla\Phi$, all taken \emph{at the same
 point} $\xx$. This means that the field degrees of freedom $\Phi(\xx)$ at
 some point $\xx$ do not have a direct interaction with $\Phi(\xx')$ located
 at some other point $\xx'$, with $|\xx-\xx'|$ greater than zero. Allowing
 such interactions would lead to possible terms in $L$ like
 \[
-L_{\text{nonlocal}}=\int F\bigl(\Phi(\xx,t),\Phi(\xx',t)\bigr)\,d^3\xx\,d^3\xx'
+L_{\text{nonlocal}}=\int F\bigl(\Phi(\xx,t),\Phi(\xx',t)\bigr)\dd^3\xx\dd^3\xx'
 \]
 (``nonlocal interactions''). Nonlocal interactions do not go well along with
 the relativistic invariance. For if $S$ includes, say, double integrals over
 $\xx$ (as above), relativistic invariance of $S$ forces one to include the
 terms which are nonlocal in time as well, like
 \[
-\int F'\bigl(\Phi(t),\Phi(t')\bigr)\,dt\,dt'\,,
+\int F'\bigl(\Phi(t),\Phi(t')\bigr)\dd t\dd t'\,,
 \]
 which may violate \emph{causality}: The state in the future affects the
 dynamics now. Locality and causality are deeply connected.
 
 The above local form,
-$L=\int\Lag\bigl(\Phi(\xx,t),\dot\Phi(\xx,t),\nabla\Phi(\xx,t)\bigr)\,d^3\xx$,
+$L=\int\Lag\bigl(\Phi(\xx,t),\dot\Phi(\xx,t),\nabla\Phi(\xx,t)\bigr)\dd^3\xx$,
 describes the dynamics in which the interaction occurs only between the
 degrees of freedom associated with ``infinitely close'' spatial points
 (through the $\nabla\Phi$ in $L$).
@@ -123,6 +123,7 @@ would require to add higher time derivatives, like $\ddot\Phi$, as well. Such
 dependence is not allowed in conventional Lagrangian dynamics, which requires
 that the time evolution $\Phi(\xx,t)$ is completely determined by the initial
 values of $\Phi(\xx)$ and $\dot\Phi(\xx)$ at $t=t_0$.
+\end{enumerate}
 
 Anyhow, we start with the above local form of the action. In classical field
 theory the field equations of motion follow from the action principle
@@ -147,7 +148,7 @@ PS) yields the classical field equations of motion
 Essential step in deriving \eqref{eq:EL} is integrating by parts. The total
 derivative term
 \[
-\int d^4x\,\frac{\partial}{\partial x^\mu}\left(\delta\Phi(x)\,\frac{\partial\Lag}{\partial(\partial_\mu\Phi(x))}\right)
+\int \dd^4x\,\frac{\partial}{\partial x^\mu}\left(\delta\Phi(x)\,\frac{\partial\Lag}{\partial(\partial_\mu\Phi(x))}\right)
 \]
 can be reduced to the integral over the boundary (Gauss theorem), which
 depends only on the variations $\delta\Phi(x)$ at the boundary; this term does
@@ -157,10 +158,10 @@ space-time domain $D$, with the boundary $\partial D$, the above term
 contributes to the variation of $S$ via the variations of the boundary values
 $\delta\Phi(x)\,|_{x\in\partial D}$ of the fields,
 \[
-\int_D d^4x\,\partial_\mu(\dots)=\int_{\partial D}\delta\Phi(x)\,\frac{\partial\Lag}{\partial\,\partial_\mu\Phi(x)}\,d\Sigma_\mu(x)\,,
+\int_D \dd^4x\,\partial_\mu(\dots)=\int_{\partial D}\delta\Phi(x)\,\frac{\partial\Lag}{\partial\,\partial_\mu\Phi(x)}\dd\Sigma_\mu(x)\,,
 \]
-where $d\Sigma_\mu(x)$ is the normal\footnote{``Normal'' means that
-$d\Sigma_\mu(x)\,T^\mu(x)=0$ for any $T^\mu(x)$ tangent to the boundary
+where $\dd\Sigma_\mu(x)$ is the normal\footnote{``Normal'' means that
+$\dd\Sigma_\mu(x)\,T^\mu(x)=0$ for any $T^\mu(x)$ tangent to the boundary
 $\partial D$, at any point $x\in\partial D$.} element of the boundary
 hypersurface $\partial D$. In this situation the total derivative term
 contributes to the boundary conditions (see the homework
@@ -197,7 +198,7 @@ transformation
 \[
 \Phi(x)\to\Phi'(x)=\Phi(x)+\epsilon\,E\bigl(x,\Phi(x)\bigr)\,,
 \qquad\text{where}\qquad
-E=\frac{d}{ds}F\Big|_{s=0}\,,
+E=\frac{\dd}{\dd s}F\Big|_{s=0}\,,
 \]
 with an infinitesimal $\epsilon$. Substituting in the Lagrangian density, one
 finds
@@ -206,7 +207,7 @@ finds
 +\epsilon\left[\frac{\partial\Lag}{\partial\Phi}\,E(x,\Phi)+\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,\partial_\mu E(x,\Phi)\right]+O(\epsilon^2)\,.
 \]
 
-The invariance (i.e.\ the requirement that the action $S=\int\Lag\,d^4x$
+The invariance (i.e.\ the requirement that the action $S=\int\Lag\dd^4x$
 does not change) implies
 \[
 \bigl[\cdots\bigr]=\partial_\mu\tilde J^\mu(\Phi,\partial_\mu\Phi,x)\,,
@@ -231,11 +232,11 @@ which holds as long as $\Phi$ solves the classical field equations.
 The continuity equation then implies a conservation law. Indeed, by the Gauss
 theorem
 \[
-\oint_\Sigma J^\mu\,d\Sigma_\mu=\int_D\partial_\mu J^\mu\,d^4x=0\,.
+\oint_\Sigma J^\mu\dd\Sigma_\mu=\int_D\partial_\mu J^\mu\dd^4x=0\,.
 \]
 Here $\Sigma=\partial D$ is any closed 3-dimensional hypersurface in the
 4-dimensional space-time, and
-$d\Sigma_\mu=\frac{1}{3!}\,\epsilon_{\mu\nu\lambda\rho}\,dx^\nu dx^\lambda dx^\rho$
+$\dd\Sigma_\mu=\frac{1}{3!}\,\epsilon_{\mu\nu\lambda\rho}\dd x^\nu \dd x^\lambda \dd x^\rho$
 is the normal element of this hypersurface. Taking the hypersurface to be a
 big slab between two equal-time hyperplanes and bringing the spatial boundary
 to the spatial infinity (figure~\ref{fig:slab}),
@@ -249,11 +250,11 @@ through the bottom and top faces.}
 \end{figure}
 and also assuming that all fields decay at $\xx\to\infty$, one finds
 \[
-Q_{t_1}=Q_{t_2}\,,\qquad\text{where}\qquad Q_t=\int J^0\,d^3\xx\,,
+Q_{t_1}=Q_{t_2}\,,\qquad\text{where}\qquad Q_t=\int J^0\dd^3\xx\,,
 \]
 that is $Q$ is an integral of motion for the classical field equations. Let
 me stress again that both the continuity equation $\partial_\mu J^\mu=0$ and
-the conservation law $\frac{d}{dt}Q=0$ are satisfied only if we take
+the conservation law $\frac{\dd}{\dd t}Q=0$ are satisfied only if we take
 $\Phi=\Phi_c$ (in terminology of QFT they are said to hold ``on shell'').
 
 \subsection*{Energy-Momentum}
@@ -274,13 +275,13 @@ to the following transformation of the field variables
 which leaves the action invariant. This field transformation has the
 infinitesimal form
 \[
-\Phi'(x)=\Phi(x)+da^\mu\,\partial_\mu\Phi(x)\,,
+\Phi'(x)=\Phi(x)+\dd a^\mu\,\partial_\mu\Phi(x)\,,
 \]
 i.e.\ in this example $E(\Phi,\partial\Phi)=\partial_\mu\Phi$. When we do
 this transformation the action is going to stay invariant, but the Lagrangian
 density changes by the total derivative
 \[
-\Lag'=\Lag+da^\nu\,\partial_\nu\Lag\,,
+\Lag'=\Lag+\dd a^\nu\,\partial_\nu\Lag\,,
 \]
 where the derivative in the last term can be written as
 $\partial_\mu(\delta^\mu_\nu\,\Lag)$, and has the same meaning as
@@ -298,9 +299,9 @@ which therefore satisfy the continuity equations
 This object is known as the \textbf{energy-momentum tensor}. It leads to four
 conserved charges
 \[
-E=-\int T^0{}_0\,d^3\xx\,,
+E=-\int T^0{}_0\dd^3\xx\,,
 \qquad\text{and}\qquad
-P^i=\int T^0{}_i\,d^3\xx\,,\quad\text{with}\quad i=1,2,3\,.
+P^i=\int T^0{}_i\dd^3\xx\,,\quad\text{with}\quad i=1,2,3\,.
 \]
 Of these, $E$ is interpreted as the energy of the field configuration
 $\Phi(\xx,t)$, and $\mathbf{P}$ is interpreted as its momentum. Therefore one
@@ -313,18 +314,18 @@ The spatial components $T^{ij}$ constitute the (spatial) \emph{stress tensor}.
 It is interpreted as usual: Consider any domain $D=D^3$ in the 3-dimensional
 space (at a given time). The momentum of the field inside this domain is
 \[
-P^i_D=\int_D\mathcal{P}^i(\xx)\,d^3\xx\,.
+P^i_D=\int_D\mathcal{P}^i(\xx)\dd^3\xx\,.
 \]
 According to the momentum theorem (Newton's second law),
 \[
-\frac{d}{dt}P^i_D=F^i_D\,,\qquad\text{the net force applied to the field inside }D\,.
+\frac{\dd}{\dd t}P^i_D=F^i_D\,,\qquad\text{the net force applied to the field inside }D\,.
 \]
 Since the interaction is local, this force must come from the surface forces,
 \[
-F^i_D=-\int_{\partial D}T^{ij}(\xx)\,d\sigma_j=-\int_D\partial_jT^{ij}(\xx)\,d^3\xx\,.
+F^i_D=-\int_{\partial D}T^{ij}(\xx)\dd\sigma_j=-\int_D\partial_jT^{ij}(\xx)\dd^3\xx\,.
 \]
-Thus, $dF^i=T^{ij}(\xx)\,d\sigma_j$ is the force exerted by the field on the
-surface element $d\sigma_j$.
+Thus, $\dd F^i=T^{ij}(\xx)\dd\sigma_j$ is the force exerted by the field on the
+surface element $\dd\sigma_j$.
 
 \subsection*{Klein-Gordon Field}
 
@@ -332,8 +333,8 @@ Let us consider a simple field theory known as the \emph{Klein-Gordon} theory
 (it will be our main example for some time). It involves a single-component
 scalar field $\Phi(x)=\varphi(\xx,t)$, and the action is
 \[
-S=\int d^4x\,\left[-\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\right]
-\equiv\int dt\,d^3\xx\,\left[\frac12\,\dot\varphi^2-\frac12\,(\nabla\varphi)^2-\frac{m^2}{2}\,\varphi^2\right].
+S=\int \dd^4x\,\left[-\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\right]
+\equiv\int \dd t\dd^3\xx\,\left[\frac12\,\dot\varphi^2-\frac12\,(\nabla\varphi)^2-\frac{m^2}{2}\,\varphi^2\right].
 \]
 This form of the action shows that the theory is Lorentz-invariant, and the
 field $\varphi$ is a scalar (i.e.\ $\varphi(x)$ has definite value at each
@@ -365,7 +366,7 @@ $\varphi(x)$ the energy-momentum tensor always comes out symmetric,
 $T_{\mu\nu}=T_{\nu\mu}$. Check that in such theory all components of the
 antisymmetric tensor
 \[
-M^{\mu\nu}=\int\bigl[x^\mu\,T^{\nu0}-x^\nu\,T^{\mu0}\bigr]\,d^3\xx
+M^{\mu\nu}=\int\bigl[x^\mu\,T^{\nu0}-x^\nu\,T^{\mu0}\bigr]\dd^3\xx
 \]
 are conserved on-shell.
 \end{exercise}
@@ -383,7 +384,7 @@ e^{ipx}=e^{-ip^0x^0+i\pp\cdot\xx}\qquad\text{with}\qquad p^0=\omega_\pp:=\sqrt{\
 \]
 as well as the complex-conjugate waves
 \begin{equation}\label{eq:KGgeneral}
-\varphi(x)=\int\frac{d^3\pp}{2\omega_\pp\,(2\pi)^3}\,\bigl(A_\pp\,e^{ipx}+A^*_\pp\,e^{-ipx}\bigr)\,.
+\varphi(x)=\int\frac{\dd^3\pp}{2\omega_\pp\,(2\pi)^3}\,\bigl(A_\pp\,e^{ipx}+A^*_\pp\,e^{-ipx}\bigr)\,.
 \end{equation}
 This form represents general solution of the Klein-Gordon equation, which is
 bounded at the spatial infinity.
@@ -394,8 +395,8 @@ $x^1,x^2\in(-\infty,\infty)$ but $x^3\in[0,\infty)$, with the boundary at
 $x^3=0$. Assume that there is a single scalar field $\varphi(\xx,t)$, and the
 Lagrangian has the form
 \[
-L=\int_0^\infty dz\int d^2x_\parallel\,\left[\frac12\,\dot\varphi^2-\frac12\,\bigl(\nabla\varphi\bigr)^2-\frac{m^2}{2}\,\varphi^2\right]
--\int d^2x_\parallel\,V\bigl(\varphi_B(x_\parallel,t)\bigr)\,,
+L=\int_0^\infty \dd z\int \dd^2x_\parallel\,\left[\frac12\,\dot\varphi^2-\frac12\,\bigl(\nabla\varphi\bigr)^2-\frac{m^2}{2}\,\varphi^2\right]
+-\int \dd^2x_\parallel\,V\bigl(\varphi_B(x_\parallel,t)\bigr)\,,
 \]
 with some function $V(\varphi_B)$. Here $z\equiv x^3$, and
 $x_\parallel=(x^1,x^2)$ are the coordinates along the boundary $z=0$, and

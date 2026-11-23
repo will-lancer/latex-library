@@ -61,7 +61,7 @@ f_{\pp_\parallel,n}\big|_{x_\perp=a}=0\,.
 \]
 Exactly as we did in the infinite-volume case, we now introduce the operators
 \[
-\hat A_{\pp_\parallel,n}=\int_0^a dx_\perp\int d^2\xx_\parallel\,
+\hat A_{\pp_\parallel,n}=\int_0^a \dd x_\perp\int \dd^2\xx_\parallel\,
 \bigl[\hat\pi\,f_{\pp_\parallel,n}-\hat\varphi\,\dot f_{\pp_\parallel,n}\bigr]\,,
 \]
 and similarly for $\hat A^\dagger_{\pp_\parallel,n}$, with
@@ -74,19 +74,19 @@ then to show that
 and to compute the Hamiltonian of the part of the system residing between the
 plates,
 \[
-\hat H=\sum_{n=1}^\infty\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,\frac14\,
+\hat H=\sum_{n=1}^\infty\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,\frac14\,
 \Bigl(\hat A^\dagger_{\pp_\parallel,n}\hat A_{\pp_\parallel,n}+\hat A_{\pp_\parallel,n}\hat A^\dagger_{\pp_\parallel,n}\Bigr)
 +a\,L^2\,(\varepsilon-\varepsilon_0)\,,
 \]
 where the last term comes from vacuum energy counterterm
 \[
-(\varepsilon-\varepsilon_0)\int_0^a dx_\perp\int d^2\xx_\parallel=a\,L^2\,(\varepsilon-\varepsilon_0)\,.
+(\varepsilon-\varepsilon_0)\int_0^a \dd x_\perp\int \dd^2\xx_\parallel=a\,L^2\,(\varepsilon-\varepsilon_0)\,.
 \]
 We still have to demand that all the operators $\hat A_{\pp_\parallel,n}$
 nullify the ground state, since otherwise $\hat H$ is unbounded from below.
 Therefore the vacuum eigenvalue of this Hamiltonian is
 \[
-E_{\text{vac}}=\frac{L^2}{2}\sum_{n=1}^\infty\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+E_{\text{vac}}=\frac{L^2}{2}\sum_{n=1}^\infty\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,
 \sqrt{\pp_\parallel^2+\frac{\pi^2n^2}{a^2}}\;\Phi\left(\frac{\pp_\parallel^2+\pi^2n^2/a^2}{\Lambda^2}\right)
 -a\,L^2\,\varepsilon_0+a\,L^2\,\varepsilon\,,
 \]
@@ -96,25 +96,25 @@ expression is as divergent as it was in the absence of the boundaries.
 Now, the term $-a\,L^2\,\varepsilon_0$ is the divergent part of the vacuum
 energy counterterm. It is
 \[
--a\,L^2\,\varepsilon_0=-\frac{L^2}{2}\,a\int\frac{dp_\perp}{(2\pi)}\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+-a\,L^2\,\varepsilon_0=-\frac{L^2}{2}\,a\int\frac{\dd p_\perp}{(2\pi)}\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,
 \sqrt{\pp_\parallel^2+p_\perp^2}\;\Phi\left(\frac{\pp_\parallel^2+p_\perp^2}{\Lambda^2}\right)\,,
 \]
-where I have separated the $dp_\perp$ and $d^2\pp_\parallel$ parts of the
-integral over $d^3\pp=dp_\perp\,d^2\pp_\parallel$. After the change of
+where I have separated the $\dd p_\perp$ and $\dd^2\pp_\parallel$ parts of the
+integral over $\dd^3\pp=\dd p_\perp\dd^2\pp_\parallel$. After the change of
 variables
 \[
 p_\perp=\pi\,\tau/a
 \]
 it takes the form
 \[
--\frac{L^2}{2}\int_0^\infty d\tau\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+-\frac{L^2}{2}\int_0^\infty \dd\tau\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,
 \sqrt{\pp_\parallel^2+\frac{\pi^2\tau^2}{a^2}}\;\Phi\left(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\right)\,.
 \]
 We see that the interesting part of the ground-state energy (rather, of the
 energy per unit area of the plates) can be written as
 \[
-\frac{E}{L^2}-a\,\varepsilon=\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
-\biggl[\sum_{n=1}^\infty F_{\pp_\parallel}(n)-\int_0^\infty F_{\pp_\parallel}(\tau)\,d\tau\biggr]\,,
+\frac{E}{L^2}-a\,\varepsilon=\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,
+\left[\sum_{n=1}^\infty F_{\pp_\parallel}(n)-\int_0^\infty F_{\pp_\parallel}(\tau)\dd\tau\right]\,,
 \]
 where
 \[
@@ -123,13 +123,13 @@ F_{\pp_\parallel}(\tau)=\frac12\,\sqrt{\pp_\parallel^2+\pi^2\tau^2/a^2}\;\Phi\le
 The $\sum F(n)-\int F(\tau)$ expression above can be handled with the help of
 the Abel-Plana summation formula (see the Appendix to this section)
 \begin{equation}\label{eq:AbelPlana}
-\sum_{n=1}^\infty F(n)-\int_0^\infty F(\tau)\,d\tau
-=-\frac12\,F(0)+i\int_0^\infty\frac{F(it+0)-F(-it+0)}{e^{2\pi t}-1}\,dt\,,
+\sum_{n=1}^\infty F(n)-\int_0^\infty F(\tau)\dd\tau
+=-\frac12\,F(0)+i\int_0^\infty\frac{F(it+0)-F(-it+0)}{e^{2\pi t}-1}\dd t\,,
 \end{equation}
 which is valid provided $F(\tau)$ is analytic in the right half-plane of
 complex $\tau$. The first term
 \[
--\frac12\,F_{\pp_\parallel}(0)\ \to\ -\frac14\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+-\frac12\,F_{\pp_\parallel}(0)\ \to\ -\frac14\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,
 \sqrt{\pp_\parallel^2}\;\Phi(\pp_\parallel^2/\Lambda^2)
 \]
 does not depend on the separation $a$; it is interpreted as the surface
@@ -139,7 +139,7 @@ being independent of $a$, it does not contribute to the force.
 
 The interesting contribution is extracted from the second term, which involves
 \[
-i\int_0^\infty\frac{F_{\pp_\parallel}(it+0)-F_{\pp_\parallel}(-it+0)}{e^{2\pi t}-1}\,dt\,.
+i\int_0^\infty\frac{F_{\pp_\parallel}(it+0)-F_{\pp_\parallel}(-it+0)}{e^{2\pi t}-1}\dd t\,.
 \]
 The shift ``$+0$'' in the arguments in \eqref{eq:AbelPlana} is important
 since the function $F_{\pp_\parallel}(\tau)$ has square-root branch points at
@@ -147,8 +147,8 @@ the imaginary axis. Note that if it was regular, the integral would vanish in
 view of the obvious $\tau\to-\tau$ symmetry of $F_{\pp_\parallel}(\tau)$. In
 fact, one can take advantage of this symmetry to write the integrand as
 \[
-i\int_0^\infty\frac{F(it+0)-F(it-0)}{e^{2\pi t}-1}\,dt
-=-2\int_{|\pp_\parallel|a/\pi}^\infty\frac{\Im F(it+0)}{e^{2\pi t}-1}\,dt\,,
+i\int_0^\infty\frac{F(it+0)-F(it-0)}{e^{2\pi t}-1}\dd t
+=-2\int_{|\pp_\parallel|a/\pi}^\infty\frac{\Im F(it+0)}{e^{2\pi t}-1}\dd t\,,
 \]
 where the last form reflects the fact that the function
 $F_{\pp_\parallel}(\tau)$ has the branch cut from $i|\pp_\parallel|a/\pi$ to
@@ -166,27 +166,27 @@ G_{\pp_\parallel}(t)\to\sqrt{\frac{\pi^2t^2}{a^2}-\pp_\parallel^2}\,.
 \]
 The interesting contribution to the vacuum energy then is
 \[
--\int\frac{dt}{e^{2\pi t}-1}\int_{|\pp_\parallel|<\pi t/a}\frac{d^2\pp_\parallel}{(2\pi)^2}\,
+-\int\frac{\dd t}{e^{2\pi t}-1}\int_{|\pp_\parallel|<\pi t/a}\frac{\dd^2\pp_\parallel}{(2\pi)^2}\,
 \sqrt{\frac{\pi^2t^2}{a^2}-\pp_\parallel^2}\,,
 \]
 where I have interchanged the order in which the integrals are taken. The
 integral over $\pp_\parallel$ is evaluated in closed form
 \[
-\int_0^{\pi^2t^2/a^2}\frac{dp^2}{4\pi}\,\sqrt{\frac{\pi^2t^2}{a^2}-p^2}=\frac1{6\pi}\left(\frac{\pi t}{a}\right)^3\,.
+\int_0^{\pi^2t^2/a^2}\frac{\dd p^2}{4\pi}\,\sqrt{\frac{\pi^2t^2}{a^2}-p^2}=\frac1{6\pi}\left(\frac{\pi t}{a}\right)^3\,.
 \]
 The contribution to the energy is
 \[
--\frac{\pi^2}{6\,a^3}\int_0^\infty\frac{t^3\,dt}{e^{2\pi t}-1}=-\frac{\pi^2}{6\,a^3}\,\frac{\Gamma(4)\,\zeta(4)}{(2\pi)^4}\,,
+-\frac{\pi^2}{6\,a^3}\int_0^\infty\frac{t^3\dd t}{e^{2\pi t}-1}=-\frac{\pi^2}{6\,a^3}\,\frac{\Gamma(4)\,\zeta(4)}{(2\pi)^4}\,,
 \]
 where I have used
 \[
-\int_0^\infty\frac{x^{s-1}\,dx}{e^x-1}=\Gamma(s)\,\zeta(s)
+\int_0^\infty\frac{x^{s-1}\dd x}{e^x-1}=\Gamma(s)\,\zeta(s)
 \]
 ($\zeta(4)=\pi^4/90$). Thus we find
 \[
 \frac{E}{L^2}=a\,\varepsilon-\frac12\,F(0)-\frac{\pi^2}{1440\,a^3}\,,
 \]
-where $F(0)$ stands for the surface term $\int\frac{d^2\pp_\parallel}{(2\pi)^2}F_{\pp_\parallel}(0)$.
+where $F(0)$ stands for the surface term $\int\frac{\dd^2\pp_\parallel}{(2\pi)^2}F_{\pp_\parallel}(0)$.
 
 The contribution $a\,\varepsilon$ is not too interesting: there is the same
 term in the vacuum energy density outside the space between the plates, and
@@ -209,7 +209,7 @@ polarization states.
 
 Few words about the $a$-independent term
 \[
--\frac12\,F(0)=-\frac1{16\pi}\int_0^\infty d\xi\,\sqrt\xi\;\Phi(\xi/\Lambda^2)\,.
+-\frac12\,F(0)=-\frac1{16\pi}\int_0^\infty \dd\xi\,\sqrt\xi\;\Phi(\xi/\Lambda^2)\,.
 \]
 It does not contribute to the force, but still needs some interpretation. It
 is divergent, and it is easy to design special counter-term to absorb this
@@ -232,9 +232,9 @@ microscopic details, properties of matter.
 
 Let $F(\tau)$ be a function analytic in the right half-plane, and decaying at
 $\Re\tau\to+\infty$ sufficiently fast, so that the integral
-$\int_0^\infty F(\tau)\,d\tau$ converges. Start with the integral
+$\int_0^\infty F(\tau)\dd\tau$ converges. Start with the integral
 \[
-I=\int_{C_0}\frac{F(\tau)\,d\tau}{e^{2\pi i\tau}-1}\,,
+I=\int_{C_0}\frac{F(\tau)\dd\tau}{e^{2\pi i\tau}-1}\,,
 \]
 where the integration is over the contour $C_0$ which encloses all positive
 integer points $\tau=1,2,3,\dots$, as shown in the left part of
@@ -265,8 +265,8 @@ and $C_-$ is the part below the real axis. Note that the factor
 decays fast into the lower half-plane, hence the contour $C_-$ can be rotated
 into the lower half-plane to go along the contour $\tilde C_-$,
 \[
-I_-=\int_{\tilde C_-}\frac{F(\tau)\,d\tau}{e^{2\pi i\tau}-1}
-=-i\int_\epsilon^\infty\frac{F(-it+0)\,dt}{e^{2\pi t}-1}+\int_{C'_-}\frac{F(\tau)\,d\tau}{e^{2\pi i\tau}-1}\,,
+I_-=\int_{\tilde C_-}\frac{F(\tau)\dd\tau}{e^{2\pi i\tau}-1}
+=-i\int_\epsilon^\infty\frac{F(-it+0)\dd t}{e^{2\pi t}-1}+\int_{C'_-}\frac{F(\tau)\dd\tau}{e^{2\pi i\tau}-1}\,,
 \]
 where for the straight part of $\tilde C_-$ I have changed
 \[
@@ -283,8 +283,8 @@ upper half plane, but one can write
 \]
 where the second term does decay into the upper half-plane, so that
 \[
-I_+=-\int_{C_+}F(\tau)\,d\tau-\int_{\tilde C_+}\frac{F(\tau)\,d\tau}{e^{-2\pi i\tau}-1}
-=\int_\epsilon^\infty F(\tau)\,d\tau+i\int_\epsilon^\infty\frac{F(it+0)\,dt}{e^{2\pi t}-1}+\int_{C'_+}\,,
+I_+=-\int_{C_+}F(\tau)\dd\tau-\int_{\tilde C_+}\frac{F(\tau)\dd\tau}{e^{-2\pi i\tau}-1}
+=\int_\epsilon^\infty F(\tau)\dd\tau+i\int_\epsilon^\infty\frac{F(it+0)\dd t}{e^{2\pi t}-1}+\int_{C'_+}\,,
 \]
 where the second term in the last form represents the contribution of the
 straight part of $\tilde C_+$ (with $\tau=it+0$), and the last term is the

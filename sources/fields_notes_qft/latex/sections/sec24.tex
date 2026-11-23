@@ -63,7 +63,7 @@ previous Section, it satisfies the Ward Identity \eqref{eq:Ward2}, in particular
 \]
 As a consequence, the integral
 \[
-\int_\Sigma d\Sigma_\mu(x)\,\bigl\langle T^{\mu\nu}(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle
+\int_\Sigma \dd\Sigma_\mu(x)\,\bigl\langle T^{\mu\nu}(x)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle
 \]
 taken over a $(d-1)$-hypersurface $\Sigma$ does not change under topologically
 trivial deformations of $\Sigma$. The hypersurface $\Sigma$ divides the space
@@ -80,7 +80,7 @@ conventional notation $P^\mu$ for the energy-momentum in real Minkowski space ti
 Upon continuation $\tau=it$ the components of the energy-momentum tensor transform
 so that $T^{\tau k}=iT^{0k}$, $k=1,2,\dots,d-1$, and $T^{\tau\tau}=-T^{00}$.}
 \begin{equation}\label{eq:Pslice}
-iP^\mu(\tau):=\int_{\Sigma(\tau)}d\Sigma_\nu(x)\,T^{\mu\nu}(x)=\int_{\Sigma(\tau)}d^{d-1}\xx\,T^{\mu\tau}(\xx,\tau)\,,
+iP^\mu(\tau):=\int_{\Sigma(\tau)}\dd\Sigma_\nu(x)\,T^{\mu\nu}(x)=\int_{\Sigma(\tau)}\dd^{d-1}\xx\,T^{\mu\tau}(\xx,\tau)\,,
 \end{equation}
 and assume that
 \begin{equation}\label{eq:tauorder}
@@ -114,7 +114,7 @@ matters, one may ask about the ``commutators'' of $P^\mu$ with the local field
 insertions. We have formally (see figure~\ref{fig:commslab})
 \begin{multline*}
 iP^\mu O(\xx,\tau)-O(\xx,\tau)\,iP^\mu\\
-=\int d^{d-1}\yy\,T^{\tau\mu}(\yy,\tau+\Delta\tau)\,O(\xx,\tau)-\int d^{d-1}\yy\,T^{\tau\mu}(\yy,\tau-\Delta\tau)\,O(\xx,\tau)\,,
+=\int \dd^{d-1}\yy\,T^{\tau\mu}(\yy,\tau+\Delta\tau)\,O(\xx,\tau)-\int \dd^{d-1}\yy\,T^{\tau\mu}(\yy,\tau-\Delta\tau)\,O(\xx,\tau)\,,
 \end{multline*}
 \begin{figure}[ht]
 \centering\figfile{commslab}
@@ -125,7 +125,7 @@ around $x$.}
 \end{figure}
 or, by closing the hypersurface
 \begin{equation}\label{eq:Pcomm}
-i[P^\mu,O(x)]=\int_{\Sigma_x}d\Sigma_\nu(y)\,T^{\mu\nu}(y)\,O(x)
+i[P^\mu,O(x)]=\int_{\Sigma_x}\dd\Sigma_\nu(y)\,T^{\mu\nu}(y)\,O(x)
 \end{equation}
 where $\Sigma_x$ is an arbitrary small closed hypersurface wrapped around the point
 $x$. Again, this relation is understood as being valid for the insertions in the
@@ -135,7 +135,7 @@ The integral in the r.h.s.\ can be calculated as follows. Consider again the War
 identity \eqref{eq:Ward},
 \begin{equation}\label{eq:Ward3}
 \sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle
-=-\int d^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,.
+=-\int \dd^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,.
 \end{equation}
 where $\delta_\varepsilon O(x)$ stand for the variations of the fields $O(x)$ under
 the coordinate transformation $x^\mu\to x^\mu+\varepsilon^\mu(x)$. The integration
@@ -151,12 +151,12 @@ $D_{\text{out}}:=D\setminus(\cup_iD_i)$.} (figure~\ref{fig:Di}).
 \begin{figure}[ht]
 \centering\figfile{Di}
 \caption{Left: a small domain $D_i$ around the insertion point $x_i$. Right: the
-normal element $d\Sigma_\mu$ of its boundary $\partial D_i$.}
+normal element $\dd\Sigma_\mu$ of its boundary $\partial D_i$.}
 \label{fig:Di}
 \end{figure}
 The integral splits accordingly, as
 \[
-\int d^dx=\sum_{i=1}^N\int_{D_i}d^dx+\int_{D_{\text{out}}}d^dx
+\int \dd^dx=\sum_{i=1}^N\int_{D_i}\dd^dx+\int_{D_{\text{out}}}\dd^dx
 \]
 For all $x\in D_{\text{out}}$ we have
 \[
@@ -165,16 +165,16 @@ For all $x\in D_{\text{out}}$ we have
 and hence the integral over $D_{\text{out}}$ can be transformed via the Stokes
 theorem, as
 \[
-\int_{D_{\text{out}}}d^dx\,\partial_\mu\bigl\langle\bigl(\varepsilon_\nu(x)\,T^{\mu\nu}(x)\bigr)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle=-\sum_{i=1}^NI_i\,,
+\int_{D_{\text{out}}}\dd^dx\,\partial_\mu\bigl\langle\bigl(\varepsilon_\nu(x)\,T^{\mu\nu}(x)\bigr)\,O_1(x_1)\cdots O_N(x_N)\bigr\rangle=-\sum_{i=1}^NI_i\,,
 \]
 where $I_i$ stand for the surface integrals over the boundaries of $D_i$,
 \[
-I_i=\int_{\partial D_i}d\Sigma_\mu(x)\,\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\cdots O_i(x_i)\cdots\bigr\rangle
+I_i=\int_{\partial D_i}\dd\Sigma_\mu(x)\,\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\cdots O_i(x_i)\cdots\bigr\rangle
 \]
-and $d\Sigma_\mu(x)$ is the normal element of the boundary $\partial D_i$. Hence,
+and $\dd\Sigma_\mu(x)$ is the normal element of the boundary $\partial D_i$. Hence,
 the r.h.s.\ of the Eq.~\eqref{eq:Ward3} splits into the sum
 \begin{equation}\label{eq:splitsum}
-\sum_{i=1}^N\Bigl(I_i-\int_{D_i}d^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\cdots\bigr\rangle\Bigr)\,.
+\sum_{i=1}^N\left(I_i-\int_{D_i}\dd^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\cdots\bigr\rangle\right)\,.
 \end{equation}
 By construction, each of the terms here is independent of the shape of the domain
 $D_i$, which can be made arbitrary small. This implies that each of these terms
@@ -184,7 +184,7 @@ depends on $\varepsilon(x_i)$, $\partial\varepsilon(x_i)$, $\dots$. Comparing
 equality is satisfied term by term in the sum over $i$. This leads to the following
 representation of the variations $\delta_\varepsilon O(x)$
 \begin{equation}\label{eq:deltaO}
-\delta_\varepsilon O(x)=\int_{\partial D_x}d\Sigma_\mu(y)\,\varepsilon_\nu(y)\,T^{\mu\nu}(y)\,O(x)-\int_{D_x}d^dy\,\partial_\mu\varepsilon_\nu(y)\,T^{\mu\nu}(y)\,O(x)\,.
+\delta_\varepsilon O(x)=\int_{\partial D_x}\dd\Sigma_\mu(y)\,\varepsilon_\nu(y)\,T^{\mu\nu}(y)\,O(x)-\int_{D_x}\dd^dy\,\partial_\mu\varepsilon_\nu(y)\,T^{\mu\nu}(y)\,O(x)\,.
 \end{equation}
 The relation is understood as valid for the correlation functions. Let me note again
 that the r.h.s.\ is in fact independent of the choice of the (small) domain $D_x$.
@@ -198,7 +198,7 @@ In particular, for a constant $\varepsilon^\mu(x)=\varepsilon^\mu$ the terms wit
 the derivatives do not contribute. On the other hand, in this case the second term
 in \eqref{eq:deltaO} vanishes, and we obtain
 \[
-\partial^\mu O(x)=\int_{\partial D_x}d\Sigma_\nu(y)\,T^{\mu\nu}(y)\,O(x)
+\partial^\mu O(x)=\int_{\partial D_x}\dd\Sigma_\nu(y)\,T^{\mu\nu}(y)\,O(x)
 \]
 The r.h.s.\ here coincides with the expression in \eqref{eq:Pcomm}. Finally, we
 find
@@ -370,7 +370,7 @@ $\tau>0$, so that $x=(\xx,-\tau/2)\in\R^d_-$. Set $y=\bar x=(\xx,\tau/2)$. We ha
 The positivity requires $C_\alpha>0$; one can set $C_\alpha=1$ by adjusting
 normalization of $\Phi_\alpha$. Consider the norm
 \begin{equation}\label{eq:normdPhi}
-\Bigl\langle\frac\partial{\partial x^1}\Phi_\alpha(\xx,-\tau/2)\Big|\frac\partial{\partial x^1}\Phi_\alpha(\xx,-\tau/2)\Bigr\rangle
+\left\langle\frac\partial{\partial x^1}\Phi_\alpha(\xx,-\tau/2)\,\middle|\,\frac\partial{\partial x^1}\Phi_\alpha(\xx,-\tau/2)\right\rangle
 \end{equation}
 where $x^1$ is one of the spatial coordinates in $\xx=(x^1,x^2,\dots,x^{d-1})$. This
 norm is expressed as the second derivative of the correlation function

@@ -115,7 +115,7 @@ K\{\delta\mathcal A\}\equiv K\,\delta\mathcal A\,.
 The RG flow in this close vicinity of $\mathcal A_*$ is then described by linear
 differential equation
 \[
-\frac d{dl}\,(\delta\mathcal A)=K\,\delta\mathcal A\,.
+\frac{\dd}{\dd l}\,(\delta\mathcal A)=K\,\delta\mathcal A\,.
 \]
 This equation is easily solved provided one can find eigenvectors $\Psi_\alpha$
 and associated eigenvalues $\kappa_\alpha$ of the operator $K$,
@@ -255,7 +255,7 @@ spaces, in terms of local field degrees of freedom.
 
 Recall that generic quasilocal action $\mathcal A$ can be written as integral
 \[
-\mathcal A=\int d^dx\,\Lag(x)\,,
+\mathcal A=\int \dd^dx\,\Lag(x)\,,
 \]
 where
 \[
@@ -265,13 +265,13 @@ where
 is a scalar function of the $\varphi_0(x)$ and all its derivatives. The variation
 $\delta\mathcal A$ has similar form,
 \[
-\delta\mathcal A=\int d^dx\,\delta\Lag(x)\,,\qquad
+\delta\mathcal A=\int \dd^dx\,\delta\Lag(x)\,,\qquad
 \delta\Lag(x)=\sum_{k=1}^\infty\frac{\delta u_{2k}}{2k!}\,\varphi_0^{2k}(x)+\sum_{k=0}^\infty\frac{\delta v_{2k}}{2k!}\,\varphi_0^{2k}(x)\,(\partial\varphi_0)^2(x)+\cdots\,.
 \]
 In other words $\delta\mathcal A$ is an integral of (infinite) linear combination
 of local composite fields; we can write it as
 \[
-\delta\mathcal A=\int d^dx\,\sum_\alpha\delta\lambda_\alpha\,\mathcal O_\alpha(x)\,,
+\delta\mathcal A=\int \dd^dx\,\sum_\alpha\delta\lambda_\alpha\,\mathcal O_\alpha(x)\,,
 \]
 where
 $\{\mathcal O_\alpha\}=\{\varphi_0^{2n},\varphi_0^{2n}(\partial\varphi_0)^2,\dots\}$,
@@ -314,7 +314,7 @@ $p_1,\dots,p_n\ll\Lambda$, one can write the result of $\tilde\varphi$ integrati
 as
 \begin{multline}\label{eq:Ostep1}
 \frac1Z\int[D\tilde\varphi]\,\bigl[\mathcal O_\alpha\bigl(\varphi_1(x)+\tilde\varphi(x),\ \text{derivatives}\bigr)\,\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr]\,e^{-\mathcal A[\varphi_1+\tilde\varphi]}\\
-=\frac1{Z_1}\Bigl[\sum_\beta\bar Y_\alpha{}^\beta\bigl(L|[\varphi_1]\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,\varphi_1(x_1)\cdots\varphi_1(x_n)\Bigr]\,e^{-\mathcal A_1[\varphi_1]}\,,
+=\frac1{Z_1}\left[\sum_\beta\bar Y_\alpha{}^\beta\bigl(L|[\varphi_1]\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,\varphi_1(x_1)\cdots\varphi_1(x_n)\right]\,e^{-\mathcal A_1[\varphi_1]}\,,
 \end{multline}
 where $\mathcal A_1$ is the action appearing in the step 1 of the Wilson's RG
 transformation with the parameter $L$, and
@@ -351,7 +351,7 @@ derivatives taken at $x$, we have
 \end{multline*}
 i.e.\ under the full RG transformation
 \begin{equation}\label{eq:RGfields}
-\bigl\langle\mathcal O_\alpha(x)\cdots\bigr\rangle\big|_{\mathcal A}=\Bigl\langle\sum_\beta z_\alpha{}^\beta(L)\,\mathcal O_\beta(x/L)\cdots\Bigr\rangle\Big|_{\mathcal A'}\,,
+\bigl\langle\mathcal O_\alpha(x)\cdots\bigr\rangle\big|_{\mathcal A}=\left\langle\sum_\beta z_\alpha{}^\beta(L)\,\mathcal O_\beta(x/L)\cdots\right\rangle\Big|_{\mathcal A'}\,,
 \end{equation}
 where $\mathcal A'$ is RG transformed action,
 \[
@@ -383,9 +383,9 @@ where I changed the notations $z(l)=z(L=e^l)$. In other words these coefficients
 as the functions of $l$, must satisfy linear differential equation with constant
 coefficients,
 \[
-\frac d{dl}\,z_\alpha{}^\beta(l)=-\sum_\gamma D_\alpha{}^\gamma\,z_\gamma{}^\beta(l)\,,
+\frac{\dd}{\dd l}\,z_\alpha{}^\beta(l)=-\sum_\gamma D_\alpha{}^\gamma\,z_\gamma{}^\beta(l)\,,
 \qquad\text{where}\qquad
-D_\alpha{}^\beta=-\frac d{dl}\,z_\alpha{}^\beta(l)\Big|_{l=0}\,.
+D_\alpha{}^\beta=-\frac{\dd}{\dd l}\,z_\alpha{}^\beta(l)\Big|_{l=0}\,.
 \]
 The coefficients $D_\alpha{}^\beta$ are matrix elements of the linear operator $D$
 corresponding to the infinitesimal transformation \eqref{eq:RGop}
@@ -437,17 +437,17 @@ K\,\Psi_\alpha=\kappa_\alpha\,\Psi_\alpha\,,
 \]
 is the integral
 \[
-\Psi_\alpha=\int d^dx\,\Phi_\alpha(x)\,.
+\Psi_\alpha=\int \dd^dx\,\Phi_\alpha(x)\,.
 \]
 Therefore the eigenvalues are related as
 \[
 \kappa_\alpha=d-D_\alpha\,,
 \]
 where $d$ is the number of the space dimensions. The term $d$ appears because in
-the step 2 of the RG transformation of the integral $\int d^dx\,\Phi(x)$ we have to
-make additional transformation of the integration measure $d^dx$,
+the step 2 of the RG transformation of the integral $\int \dd^dx\,\Phi(x)$ we have to
+make additional transformation of the integration measure $\dd^dx$,
 \[
-\int d^dx\,\Phi(x/L)=L^d\int d^dx\,\Phi(x)\,.
+\int \dd^dx\,\Phi(x/L)=L^d\int \dd^dx\,\Phi(x)\,.
 \]
 
 As we have seen, the roles played by positive and negative eigenvalues of $K$ in
@@ -472,7 +472,7 @@ that there is only one marginal field $\Phi_M$. By definition, the relevant
 fixed-point action which increase (decrease) with the RG flow in the linear
 approximation in $\delta\mathcal A$. The deformation
 \[
-\delta\mathcal A_M=\lambda_M\int d^dx\,\Phi_M(x)
+\delta\mathcal A_M=\lambda_M\int \dd^dx\,\Phi_M(x)
 \]
 corresponding to the marginal field does not change in the linear approximation,
 but it may well increase or decrease with the RG flow if we go beyond the linear
@@ -498,18 +498,18 @@ Let us consider the simplest fixed point for which all calculations can be
 performed explicitly, the so called \emph{Gaussian fixed point}. It is described
 by the massless free action
 \[
-\mathcal A_{*,G}=\int d^dx\,\frac12\,(\partial\varphi_0)^2
+\mathcal A_{*,G}=\int \dd^dx\,\frac12\,(\partial\varphi_0)^2
 \]
 It is straightforward to check that it is indeed a fixed point. If we split
 $\varphi_0$ into the slow and the fast components, these modes completely
 decouple,
 \[
-\mathcal A_{*,G}=\int d^dx\,\left(\frac12\,(\partial\varphi_1)^2+\frac12\,(\partial\tilde\varphi)^2\right)\,,
+\mathcal A_{*,G}=\int \dd^dx\,\left(\frac12\,(\partial\varphi_1)^2+\frac12\,(\partial\tilde\varphi)^2\right)\,,
 \]
 and therefore the step 1 of the RG procedure does not change the action
 $\mathcal A_{*,G}$ at all,
 \[
-\mathcal A_1=\int d^dx\,\frac12\,(\partial\varphi_1)^2
+\mathcal A_1=\int \dd^dx\,\frac12\,(\partial\varphi_1)^2
 \]
 The step 2 is also easy to perform. Setting
 \[
@@ -520,7 +520,7 @@ we obtain
 \mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-\frac12}(L)\,\varphi_0(x/L)\bigr]\,,
 \]
 \[
-\mathcal A'=Z^{-1}(L)\int d^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x/L)\right)^2=\frac{L^{d-2}}{Z(L)}\int d^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x)\right)^2\,.
+\mathcal A'=Z^{-1}(L)\int \dd^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x/L)\right)^2=\frac{L^{d-2}}{Z(L)}\int \dd^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x)\right)^2\,.
 \]
 where the change of the coordinates $x\to Lx$ is made in the last step. Under the
 choice
@@ -541,11 +541,11 @@ The step 1 of the RG transformation yields for $\mathcal O_n$
 \]
 In the case of infinitesimal transformation $L=1+\delta l$ we have
 \[
-\langle\tilde\varphi^2\rangle_{\tilde\varphi}=\int_{\Lambda(1-\delta l)<|k|<\Lambda}\frac{d^dk}{(2\pi)^d}\,\frac1{k^2}=N_d\,\Lambda^{d-2}\,\delta l\,,
+\langle\tilde\varphi^2\rangle_{\tilde\varphi}=\int_{\Lambda(1-\delta l)<|k|<\Lambda}\frac{\dd^dk}{(2\pi)^d}\,\frac1{k^2}=N_d\,\Lambda^{d-2}\,\delta l\,,
 \]
 where
 \[
-N_d=\frac{\Omega_d}{(2\pi)^d}\,,\qquad\text{and}\qquad\Omega_d=\frac{2\pi^{\frac d2}}{\Gamma(\frac d2)}
+N_d=\frac{\Omega_d}{(2\pi)^d}\,,\qquad\text{and}\qquad\Omega_d=\frac{2\pi^{\frac d2}}{\Gamma\left(\frac d2\right)}
 \]
 is the area of $S^{d-1}$. Therefore we have in this case
 \[
@@ -571,7 +571,7 @@ D\,\Phi_n=D_n\,\Phi_n\,.
 Show that
 \begin{equation}\label{eq:Phi4}
 \Phi_4=\frac1{4!}\,\varphi_0^4-\frac14\,\langle\varphi_0^2\rangle\,\varphi_0^2+\frac18\,\langle\varphi_0^2\rangle^2\,,
-\qquad\langle\varphi_0^2\rangle=\int_{|k|<\Lambda}\frac{d^dk}{(2\pi)^d}\,\frac1{k^2}=\frac{N_d\Lambda^{d-2}}{d-2}\,,
+\qquad\langle\varphi_0^2\rangle=\int_{|k|<\Lambda}\frac{\dd^dk}{(2\pi)^d}\,\frac1{k^2}=\frac{N_d\Lambda^{d-2}}{d-2}\,,
 \end{equation}
 and generally
 \[
@@ -642,7 +642,7 @@ of most interest to us, and we take it as main example.
 
 As at $d=4$ the field $\Phi_4$ is marginal, we have
 \begin{equation}\label{eq:marginal4}
-RG_l\Bigl\{\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)\Bigr\}=\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)+O(\lambda^2)\,,
+RG_l\left\{\mathcal A_{*,G}+\lambda\int \dd^4x\,\Phi_4(x)\right\}=\mathcal A_{*,G}+\lambda\int \dd^4x\,\Phi_4(x)+O(\lambda^2)\,,
 \end{equation}
 i.e.\ in the order $\lambda$ the perturbed action does not flow at all. However,
 nontrivial flow can be generated beyond the linear approximation, in the higher
@@ -655,17 +655,17 @@ component $\tilde\varphi$ in
 \]
 Consider the action $\mathcal A_0$ of the form
 \begin{equation}\label{eq:A0phi4}
-\mathcal A_0=\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)=\int d^4x\,\left(\frac12\,(\partial\varphi_0)^2+\frac\lambda{4!}\,\varphi_0^4-\frac{\lambda\,b}4\,\varphi_0^2+\Const\right)
+\mathcal A_0=\mathcal A_{*,G}+\lambda\int \dd^4x\,\Phi_4(x)=\int \dd^4x\,\left(\frac12\,(\partial\varphi_0)^2+\frac\lambda{4!}\,\varphi_0^4-\frac{\lambda\,b}4\,\varphi_0^2+\Const\right)
 \end{equation}
 where
 \[
-b=\langle\varphi_0^2\rangle_{\mathcal A_{*,G}}=\int_{|k|<\Lambda}\frac{d^4k}{(2\pi)^4\,k^2}=\frac{\Lambda^2}{16\pi^2}
+b=\langle\varphi_0^2\rangle_{\mathcal A_{*,G}}=\int_{|k|<\Lambda}\frac{\dd^4k}{(2\pi)^4\,k^2}=\frac{\Lambda^2}{16\pi^2}
 \]
 (recall that $\Phi_4=\frac1{4!}\varphi_0^4-\frac14\langle\varphi_0^2\rangle_{*,G}\,\varphi_0^2+\Const$,
 as we should have found in the Exercise above). We have
 \begin{multline}\label{eq:A1phi4}
 e^{-\mathcal A_1[\varphi_1]}\sim e^{-\mathcal A_0[\varphi_1]}\times\int[D\tilde\varphi]\\
-\times\exp\left\{-\int d^4x\,\left[\frac12\,(\partial\tilde\varphi)^2+\lambda\left(\frac1{4!}\,\tilde\varphi^4-\frac b4\,\tilde\varphi^2+\frac16\,\varphi_1\tilde\varphi^3+\frac14\,\varphi_1^2\tilde\varphi^2+\frac16\,\varphi_1^3\tilde\varphi\right)\right]\right\}\,.
+\times\exp\left\{-\int \dd^4x\,\left[\frac12\,(\partial\tilde\varphi)^2+\lambda\left(\frac1{4!}\,\tilde\varphi^4-\frac b4\,\tilde\varphi^2+\frac16\,\varphi_1\tilde\varphi^3+\frac14\,\varphi_1^2\tilde\varphi^2+\frac16\,\varphi_1^3\tilde\varphi\right)\right]\right\}\,.
 \end{multline}
 As we discussed already in Section~16, integration over $\tilde\varphi$ yields
 \[
@@ -719,11 +719,11 @@ this approximation the diagram \eqref{eq:tree6} can be neglected, and the diagra
 \eqref{eq:bubble4} can be evaluated at zero external momenta only, yielding the
 following contribution to $\mathcal A_1$
 \[
-\frac{\Delta\lambda}{4!}\int d^4x\,\varphi_1^4(x)\,,
+\frac{\Delta\lambda}{4!}\int \dd^4x\,\varphi_1^4(x)\,,
 \]
 where
 \begin{equation}\label{eq:Dlambda}
-\frac{\Delta\lambda}{4!}=-\frac{\lambda^2}{16}\int_{\Lambda>|k|>\Lambda/L}\frac{d^4k}{(2\pi)^4}\,\frac1{k^2}\,\frac1{k^2}\,.
+\frac{\Delta\lambda}{4!}=-\frac{\lambda^2}{16}\int_{\Lambda>|k|>\Lambda/L}\frac{\dd^4k}{(2\pi)^4}\,\frac1{k^2}\,\frac1{k^2}\,.
 \end{equation}
 The factor $\lambda^2/16$ in this formula appears as follows. The term in
 \eqref{eq:A1phi4} responsible for the vertices in the diagram \eqref{eq:bubble4}
@@ -737,12 +737,12 @@ $\langle\tilde\varphi^2\tilde\varphi^2\rangle$. The momentum integral in
 \Delta\lambda=-3\,\frac{\lambda^2}{(4\pi)^2}\,\log L\,.
 \]
 In this order in $\lambda$ the step 2 is trivial. For the marginal term
-$\int d^4x\,\varphi_1^4(x)$ the factor $Z^{-2}(L)$ which comes from the
+$\int \dd^4x\,\varphi_1^4(x)$ the factor $Z^{-2}(L)$ which comes from the
 transformation
 \[
 \varphi_1(x)=Z^{-\frac12}(L)\,\varphi_0(x/L)
 \]
-is exactly compensated by the transformation of the integration measure $d^4x$
+is exactly compensated by the transformation of the integration measure $\dd^4x$
 (recall that $Z^{\frac12}=L$ at $d=4$; it is easy to see that possible corrections
 to this formula are $\sim\lambda^2$).
 
@@ -754,7 +754,7 @@ Thus, in our approximation the result of the RG transformation of the action
 Taking $L=1+\delta l$ we see that $\lambda$ \emph{decreases} with the RG flow,
 according to the equation
 \begin{equation}\label{eq:WilsonBeta}
--\frac d{dl}\,\lambda(l)=3\,\frac{\lambda(l)^2}{(4\pi)^2}\,,
+-\frac{\dd}{\dd l}\,\lambda(l)=3\,\frac{\lambda(l)^2}{(4\pi)^2}\,,
 \end{equation}
 i.e.\ at $d=4$ the field $\Phi_4$ is \emph{marginally irrelevant}. Note that the
 r.h.s.\ of \eqref{eq:WilsonBeta} coincides with the $\lambda^2$ term

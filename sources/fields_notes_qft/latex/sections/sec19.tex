@@ -22,11 +22,11 @@ where $u$'s, $v$'s, etc, are the coefficients appearing in writing $\mathcal A$ 
 terms of various monomials in $\varphi_0$ and its derivatives, and $u_*$'s, etc,
 are their fixed-point values. Anyhow, the RG flow equation
 \[
-\frac d{dl}\,\mathcal A=B\{\mathcal A\}
+\frac{\dd}{\dd l}\,\mathcal A=B\{\mathcal A\}
 \]
 can be written in such coordinates as
 \begin{equation}\label{eq:flowy}
-\frac d{dl}\,y^\alpha=B^\alpha(\{y\})\,,
+\frac{\dd}{\dd l}\,y^\alpha=B^\alpha(\{y\})\,,
 \end{equation}
 where $B^\alpha$ are some functions of all $y$'s. As $y=0$ is assumed to be a fixed
 point, these functions satisfy the condition
@@ -49,7 +49,7 @@ $y^\alpha\to M^\alpha{}_\beta y^\beta$ the matrix $K^\alpha{}_\beta$ can be brou
 diagonal form.\footnote{Non-diagonalizable forms contradict unitarity (positivity
 of norms).} In these coordinates the flow equation \eqref{eq:flowy} takes the form
 \begin{equation}\label{eq:flowdiag}
-\frac d{dl}\,y^\alpha=\kappa_\alpha\,y^\alpha+c^\alpha{}_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
+\frac{\dd}{\dd l}\,y^\alpha=\kappa_\alpha\,y^\alpha+c^\alpha{}_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
 \end{equation}
 where $\kappa_\alpha$ are the eigenvalues of $K$, and no summation over $\alpha$ is
 assumed in the first term in the r.h.s.; the coefficients $c$ are related to $C$
@@ -65,7 +65,7 @@ Under coordinate transformations the functions $B^\alpha$ transform as component
 of a vector field on $\Sigma$. Simple calculation shows that in terms of $\tilde y$
 the RG flow equations take the form
 \[
-\frac d{dl}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+\tilde c^\alpha{}_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,,
+\frac{\dd}{\dd l}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+\tilde c^\alpha{}_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,,
 \qquad\text{where}\qquad
 \tilde c^\alpha{}_{\beta\gamma}=c^\alpha{}_{\beta\gamma}+(\kappa_\alpha-\kappa_\beta-\kappa_\gamma)\,a^\alpha{}_{\beta\gamma}\,.
 \]
@@ -75,7 +75,7 @@ a^\alpha{}_{\beta\gamma}=-\frac{c^\alpha{}_{\beta\gamma}}{\kappa_\alpha-\kappa_\
 \]
 with this choice
 \[
-\frac d{dl}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+O(\tilde y^3)\,.
+\frac{\dd}{\dd l}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+O(\tilde y^3)\,.
 \]
 This is true provided the combinations of the eigenvalues appearing in the
 denominators do not vanish. However if some triplet of the eigenvalues satisfies
@@ -112,7 +112,7 @@ in the function $B^\alpha$ is called the \emph{resonance term} if the following
 is satisfied. One can always adjust the coefficients $a$ in \eqref{eq:normaltr},
 order by order in $y$, in such a way that in new coordinates
 \begin{equation}\label{eq:normalform}
-\frac d{dl}\,y^\alpha=\kappa_\alpha\,y^\alpha+\text{Resonance Terms}
+\frac{\dd}{\dd l}\,y^\alpha=\kappa_\alpha\,y^\alpha+\text{Resonance Terms}
 \end{equation}
 If there are no resonances, all nonlinear terms in \eqref{eq:Bseries} can be
 eliminated. This statement is known as \emph{Poincar\'e-Dulac
@@ -132,12 +132,12 @@ convergence; in the new coordinates where $B^\alpha$'s are ``trivial'' they are
 \begin{exercise}
 Study the flow equation with just one coordinate,
 \[
-\frac d{dl}\,y=y-y^2
+\frac{\dd}{\dd l}\,y=y-y^2
 \]
 (which has two fixed points $y=0$ and $y=1$). Find transformation
 $y=f(\tilde y)=\tilde y+\cdots$ such that
 \[
-\frac d{dl}\,\tilde y=\tilde y\,.
+\frac{\dd}{\dd l}\,\tilde y=\tilde y\,.
 \]
 Study the properties of the map $y\to\tilde y$.
 \end{exercise}
@@ -146,7 +146,7 @@ Second remark concerns very simple interpretation which the above resonance
 conditions have in terms of ordinary dimensional analysis. In the neighborhood of
 $\mathcal A_*$ where the coordinates $y$ are defined, the action can be written as
 \[
-\mathcal A=\mathcal A_*+y^\alpha\int d^dx\,\Phi_\alpha(x)+O(y^2)\,,
+\mathcal A=\mathcal A_*+y^\alpha\int \dd^dx\,\Phi_\alpha(x)+O(y^2)\,,
 \]
 where $\Phi_\alpha(x)$ are the fields which diagonalize the operator $D$
 associated with the fixed point $\mathcal A_*$. The eigenvalues $D_\alpha$ (i.e.\
@@ -172,12 +172,12 @@ suggestive notations $y^0=\lambda$ and $y^1=M^2$. Then in the flow equation for
 $\lambda$ all terms $\lambda^n$ are resonant, so the coordinates exist in which
 this equation takes the form
 \begin{equation}\label{eq:normallambda}
-\frac d{dl}\,\lambda=\sum_{n=2}^\infty b_n\,\lambda^n=-\beta(\lambda)\,.
+\frac{\dd}{\dd l}\,\lambda=\sum_{n=2}^\infty b_n\,\lambda^n=-\beta(\lambda)\,.
 \end{equation}
 Similarly, in the equation for $M^2$ all terms of the form $M^2\lambda^n$ are
 resonant, and in canonical coordinates one can write
 \begin{equation}\label{eq:normalM}
-\frac d{dl}\,M^2=2M^2-\sum_{n=1}^\infty\gamma_n\,M^2\lambda^n=\bigl(2-\gamma_{\varphi^2}(\lambda)\bigr)\,M^2\,.
+\frac{\dd}{\dd l}\,M^2=2M^2-\sum_{n=1}^\infty\gamma_n\,M^2\lambda^n=\bigl(2-\gamma_{\varphi^2}(\lambda)\bigr)\,M^2\,.
 \end{equation}
 Note that with these notations these equations have exactly the form of the
 coupling and the mass ``flow'' equations associated with the Callan-Symanzik
@@ -249,7 +249,7 @@ indicating their dependence on $n$ parameters $\lambda^i$.
 
 In the coordinates $\lambda$ the RG flow equation can be written as
 \begin{equation}\label{eq:flowlambdai}
-\frac d{dl}\,\lambda^i=-\beta^i(\lambda)\,,
+\frac{\dd}{\dd l}\,\lambda^i=-\beta^i(\lambda)\,,
 \end{equation}
 where $-\beta^i$ are components of the vector field $B^\alpha$ on
 $U(\mathcal A_*)$ (by definition of $U$, $B(U)$ is tangent to $U$), the minus sign
@@ -273,7 +273,7 @@ x\frac\partial{\partial x}=\sum_{k=1}^Nx_k^\mu\,\frac\partial{\partial x_k^\mu}\
 \]
 and
 \[
-D(\lambda)=L\frac d{dL}\,Z^{\frac12}(L)\Big|_{L=1}\,.
+D(\lambda)=L\frac{\dd}{\dd L}\,Z^{\frac12}(L)\Big|_{L=1}\,.
 \]
 Note that $D(0)=D_\varphi$, the dimension of $\varphi$ at the fixed point
 $\mathcal A_*$. $D(\lambda)$ can be written as
@@ -293,7 +293,7 @@ where
 \[
 (\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha{}^\beta(\lambda)\,\mathcal O_\beta(x)\,,
 \qquad\text{and}\qquad
-D_\alpha{}^\beta(\lambda)=-L\frac d{dL}\,z_\alpha{}^\beta(L)\Big|_{L=1}\,;
+D_\alpha{}^\beta(\lambda)=-L\frac{\dd}{\dd L}\,z_\alpha{}^\beta(L)\Big|_{L=1}\,;
 \]
 $z_\alpha{}^\beta(L)$ describes the RG transformation of the composite fields
 $\mathcal O_\alpha$ (see Sect.~18). Again,

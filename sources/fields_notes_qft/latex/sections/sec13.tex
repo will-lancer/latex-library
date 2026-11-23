@@ -48,7 +48,7 @@ differences,
 \end{equation}
 and the integration measure in the functional integral is taken as
 \[
-[D\varphi]\to\prod_{x\in\Delta\mathbb Z^d}d\varphi_0(x)\,.
+[D\varphi]\to\prod_{x\in\Delta\mathbb Z^d}\dd\varphi_0(x)\,.
 \]
 Advantage of this method is that it makes sense non-perturbatively. The lattice
 theory \eqref{eq:Alat} is perfectly meaningful in classical statistical
@@ -63,13 +63,13 @@ to be restored after the cutoff is removed.
 momentum-space propagator $\tilde D(p)$ admits Schwinger's proper-time
 representation
 \[
-\tilde D(p)=\int_0^\infty ds\,e^{-s(p^2+m^2)}\,,
+\tilde D(p)=\int_0^\infty \dd s\,e^{-s(p^2+m^2)}\,,
 \]
 where $s$ is interpreted as the rescaled length of the path of relativistic
 particle in the Euclidean space-time. One can exclude the paths which are
 ``too short'' by replacing $\tilde D(p)\to\tilde D_\Lambda(p)$,
 \[
-\tilde D_\Lambda(p)=\int_{1/\Lambda^2}^\infty ds\,e^{-s(p^2+m^2)}\,.
+\tilde D_\Lambda(p)=\int_{1/\Lambda^2}^\infty \dd s\,e^{-s(p^2+m^2)}\,.
 \]
 Note that this is particular case of the regularized propagator we considered
 before,
@@ -108,24 +108,24 @@ continuation of momentum integrals by three conditions, obviously valid for
 convergent integrals, and postulated for any $d$:
 \[
 \begin{array}{lll}
-\text{(i)} & \displaystyle\int d^dk\,F(k+p)=\int d^dk\,F(k) & \text{translation}\\[10pt]
-\text{(ii)} & \displaystyle\int d^dk\,F(Ck)=|C|^{-d}\int d^dk\,F(k) & \text{dilation}\\[10pt]
-\text{(iii)} & \displaystyle\int d^{d_1}k_1\,d^{d_2}k_2\,F(k_1)G(k_2)=\int d^{d_1}k\,F(k_1)\int d^{d_2}k_2\,G(k_2)\,,\quad d=d_1+d_2 & \text{factorization}
+\text{(i)} & \displaystyle\int \dd^dk\,F(k+p)=\int \dd^dk\,F(k) & \text{translation}\\[10pt]
+\text{(ii)} & \displaystyle\int \dd^dk\,F(Ck)=|C|^{-d}\int \dd^dk\,F(k) & \text{dilation}\\[10pt]
+\text{(iii)} & \displaystyle\int \dd^{d_1}k_1\dd^{d_2}k_2\,F(k_1)G(k_2)=\int \dd^{d_1}k_1\,F(k_1)\int \dd^{d_2}k_2\,G(k_2) & \text{factorization, $d=d_1+d_2$}
 \end{array}
 \]
 Let me illustrate this approach by simple example. Consider the integral
 \begin{equation}\label{eq:dimreg1}
-\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+m^2)^2}\,.
+\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{(k^2+m^2)^2}\,.
 \end{equation}
 This integral converges for $d<4$. For any $d<4$ it can be transformed as
 follows
 \begin{equation}\label{eq:dimreg2}
-\int_0^\infty s\,ds\int\frac{d^dk}{(2\pi)^d}\,e^{-s(k^2+m^2)}=\int_0^\infty s\,ds\,(4\pi s)^{-\frac d2}\,e^{-m^2s}\,,
+\int_0^\infty s\dd s\int\frac{\dd^dk}{(2\pi)^d}\,e^{-s(k^2+m^2)}=\int_0^\infty s\dd s\,(4\pi s)^{-\frac d2}\,e^{-m^2s}\,,
 \end{equation}
 where the properties (iii) and (ii) were used in evaluating the $k$-integral.
 Using the definition of the Euler's Gamma function
 \[
-\Gamma(z)=\int_0^\infty dt\,t^{z-1}\,e^{-t}
+\Gamma(z)=\int_0^\infty \dd t\,t^{z-1}\,e^{-t}
 \]
 we obtain for $d<4$
 \begin{equation}\label{eq:dimreg3}
@@ -143,16 +143,16 @@ where $\gamma=0.5772\ldots$ is the Euler's constant.
 It is interesting to explain on this example the interplay between dimensional
 continuation and cutoff regularization. If we regularize the propagators in
 \eqref{eq:dimreg1}, say by proper-time regularization (which amounts to
-replacing $\int_0^\infty ds\to\int_{1/\Lambda^2}^\infty ds$ in
+replacing $\int_0^\infty \dd s\to\int_{1/\Lambda^2}^\infty \dd s$ in
 \eqref{eq:dimreg2}) the integral \eqref{eq:dimreg1} becomes regular function of
 $d$ for all $d$ including $d=4$. In the neighborhood of $d=4$ one would have
 instead of \eqref{eq:dimreg2}
 \[
-\frac{(m^2)^{\frac d2-2}}{(4\pi)^{\frac d2}}\int_{m^2/\Lambda^2}^\infty dt\,t^{1-\frac d2}\,e^{-t}\,,\qquad t=m^2s\,.
+\frac{(m^2)^{\frac d2-2}}{(4\pi)^{\frac d2}}\int_{m^2/\Lambda^2}^\infty \dd t\,t^{1-\frac d2}\,e^{-t}\,,\qquad t=m^2s\,.
 \]
 The integral here can be transformed using integration by parts,
 \[
-\int_{m^2/\Lambda^2}^\infty dt\,t^{1-\frac d2}\,e^{-t}=\frac2{4-d}\Bigl(t^{2-\frac d2}\,e^{-t}\Big|_{m^2/\Lambda^2}^\infty+\int_{m^2/\Lambda^2}^\infty dt\,t^{2-\frac d2}\,e^{-t}\Bigr)\,.
+\int_{m^2/\Lambda^2}^\infty \dd t\,t^{1-\frac d2}\,e^{-t}=\frac2{4-d}\left(t^{2-\frac d2}\,e^{-t}\Big|_{m^2/\Lambda^2}^\infty+\int_{m^2/\Lambda^2}^\infty \dd t\,t^{2-\frac d2}\,e^{-t}\right)\,.
 \]
 For $\epsilon=4-d\ll1$ and $m^2\ll\Lambda^2$ the cutoff integral becomes
 \[
@@ -174,13 +174,13 @@ limit $d\to4$.
 Some generalizations of the integral \eqref{eq:dimreg1} will be useful in
 future calculations. For instance,
 \begin{equation}\label{eq:dimregalpha}
-\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+m^2)^\alpha}=\frac1{\Gamma(\alpha)}\int_0^\infty ds\,s^{\alpha-1}\int\frac{d^dk}{(2\pi)^d}\,e^{-s(k^2+m^2)}
-=\frac{(m^2)^{\frac d2-\alpha}}{(4\pi)^{\frac d2}}\,\frac{\Gamma(\alpha-\frac d2)}{\Gamma(\alpha)}\,,
+\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{(k^2+m^2)^\alpha}=\frac1{\Gamma(\alpha)}\int_0^\infty \dd s\,s^{\alpha-1}\int\frac{\dd^dk}{(2\pi)^d}\,e^{-s(k^2+m^2)}
+=\frac{(m^2)^{\frac d2-\alpha}}{(4\pi)^{\frac d2}}\,\frac{\Gamma\left(\alpha-\frac d2\right)}{\Gamma(\alpha)}\,,
 \end{equation}
 \begin{equation}\label{eq:dimregk2}
 \begin{split}
-\int\frac{d^dk}{(2\pi)^d}\,\frac{k^2}{(k^2+m^2)^\alpha}&=\int\frac{d^dk}{(2\pi)^d}\left[\frac1{(k^2+m^2)^{\alpha-1}}-\frac{m^2}{(k^2+m^2)^\alpha}\right]\\
-&=\frac{(m^2)^{\frac d2-\alpha+1}}{(4\pi)^{\frac d2}}\,\frac d2\,\frac{\Gamma(\alpha-\frac d2-1)}{\Gamma(\alpha)}\,.
+\int\frac{\dd^dk}{(2\pi)^d}\,\frac{k^2}{(k^2+m^2)^\alpha}&=\int\frac{\dd^dk}{(2\pi)^d}\left[\frac1{(k^2+m^2)^{\alpha-1}}-\frac{m^2}{(k^2+m^2)^\alpha}\right]\\
+&=\frac{(m^2)^{\frac d2-\alpha+1}}{(4\pi)^{\frac d2}}\,\frac d2\,\frac{\Gamma\left(\alpha-\frac d2-1\right)}{\Gamma(\alpha)}\,.
 \end{split}
 \end{equation}
 In deriving \eqref{eq:dimregk2} the defining property of the $\Gamma$ function
@@ -191,7 +191,7 @@ $\Gamma(z+1)=z\,\Gamma(z)$ was used.
 Let us recall the basic idea of the (perturbative) renormalization program. To
 develop renormalized perturbation theory, one starts with the action
 \[
-\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\text{counterterms}\right]\,,
+\mathcal A=\int \dd^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\text{counterterms}\right]\,,
 \]
 expressed in terms of the renormalized quantities. I have written it in the
 $d$-dimensional form having in mind dimensional regularization. This action
@@ -358,10 +358,10 @@ The coefficients $z^{(1)}$ and $b^{(1)}$ are to be adjusted to satisfy
 
 We already have considered the diagram (a). It is a constant independent of
 $p^2$; its value is
-$(a)=-\frac{\tilde\lambda}2\int\frac{d^dk}{(2\pi)^d}\frac1{k^2+\tilde m^2}$.
+$(a)=-\frac{\tilde\lambda}2\int\frac{\dd^dk}{(2\pi)^d}\frac1{k^2+\tilde m^2}$.
 Therefore to satisfy \eqref{eq:SIIsigma} we have to choose
 \[
-z^{(1)}=0\,;\qquad b^{(1)}=\frac{(a)}{\tilde\lambda}=-\frac12\int\frac{d^dk}{(2\pi)^d}\,\frac1{k^2+\tilde m^2}
+z^{(1)}=0\,;\qquad b^{(1)}=\frac{(a)}{\tilde\lambda}=-\frac12\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{k^2+\tilde m^2}
 =-\frac12\,\frac{(\tilde m^2)^{\frac d2-1}}{(4\pi)^{\frac d2}}\,\Gamma(1-d/2)\,,
 \]
 where the dimensional regularization was used to evaluate the integral. Note
@@ -386,7 +386,7 @@ $\delta\lambda$ in the order $\tilde\lambda^2$,
 \end{equation}
 Each of the diagrams (a-c) can be expressed through the integral
 \begin{equation}\label{eq:Ip2}
-I(p^2)=\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+\tilde m^2)\bigl((p+k)^2+\tilde m^2\bigr)}\,,
+I(p^2)=\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{(k^2+\tilde m^2)\bigl((p+k)^2+\tilde m^2\bigr)}\,,
 \end{equation}
 namely
 \[
@@ -417,20 +417,20 @@ $d=4$.
 The integrand in \eqref{eq:Ip2} can be transformed using the so called
 \emph{Feynman parametrization}. The identity\footnote{More general identity
 \begin{equation}\label{eq:FeynParGen}
-\frac1{A^\alpha}\,\frac1{B^\beta}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1\frac{dw\,w^{\alpha-1}(1-w)^{\beta-1}}{\bigl[wA+(1-w)B\bigr]^{\alpha+\beta}}
+\frac1{A^\alpha}\,\frac1{B^\beta}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1\frac{\dd w\,w^{\alpha-1}(1-w)^{\beta-1}}{\bigl[wA+(1-w)B\bigr]^{\alpha+\beta}}
 \end{equation}
 is often useful. To verify it, change the integration variable to
 $w=Bz/(Bz+A(1-z))$ to reduce the integral to the Euler's ``beta integral''
 \[
-B(\alpha,\beta):=\int_0^1dz\,z^{\alpha-1}(1-z)^{\beta-1}=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}\,.
+B(\alpha,\beta):=\int_0^1\dd z\,z^{\alpha-1}(1-z)^{\beta-1}=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}\,.
 \]}
 \[
-\frac1{AB}=\int_0^1\frac{du}{\bigl(uA+(1-u)B\bigr)^2}
+\frac1{AB}=\int_0^1\frac{\dd u}{\bigl(uA+(1-u)B\bigr)^2}
 \]
 which can be checked by explicit evaluation of the integral in the r.h.s.,
 allows one to write the integral \eqref{eq:Ip2} as
 \begin{equation}\label{eq:IFeyn}
-I(p^2)=\int_0^1du\int\frac{d^dk}{(2\pi)^d}\,\frac1{\bigl(\tilde m^2+k^2+2u\,(kp)+u\,p^2\bigr)^2}\,.
+I(p^2)=\int_0^1\dd u\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{\bigl(\tilde m^2+k^2+2u\,(kp)+u\,p^2\bigr)^2}\,.
 \end{equation}
 The combination in the denominator can be put in the form
 \[
@@ -439,28 +439,28 @@ The combination in the denominator can be put in the form
 and by applying the translation property (i) of the dimensionally continued
 integrals we have
 \[
-I(p^2)=\int_0^1du\int\frac{d^dk}{(2\pi)^d}\,\frac1{\bigl(k^2+u(1-u)\,p^2+\tilde m^2\bigr)^2}\,.
+I(p^2)=\int_0^1\dd u\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{\bigl(k^2+u(1-u)\,p^2+\tilde m^2\bigr)^2}\,.
 \]
 The momentum integral has the form \eqref{eq:dimregalpha} with $\alpha=2$, hence
 \[
-I(p^2)=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\,.
+I(p^2)=\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{\frac d2}}\int_0^1\dd u\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\,.
 \]
 We see that due to the factor $\Gamma(2-d/2)=2/\epsilon-\gamma+O(\epsilon)$,
 $\epsilon:=4-d$, this expression has pole at $d=4$. However the combination
 \[
-I_r(p^2)=I(p^2)-I(0)=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bigl(\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}-\bigl[\tilde m^2\bigr]^{\frac d2-2}\Bigr)
+I_r(p^2)=I(p^2)-I(0)=\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{\frac d2}}\int_0^1\dd u\,\Bigl(\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}-\bigl[\tilde m^2\bigr]^{\frac d2-2}\Bigr)
 \]
 has finite value at $d=4$ as the result of compensation between the pole of the
 gamma function and zero of the integrand. One finds
 \begin{align*}
-I_r(p^2)\Big|_{d=4}&=-\frac1{(4\pi)^2}\int_0^1du\,\log\left(1+u(1-u)\,\frac{p^2}{\tilde m^2}\right)\\
+I_r(p^2)\Big|_{d=4}&=-\frac1{(4\pi)^2}\int_0^1\dd u\,\log\left(1+u(1-u)\,\frac{p^2}{\tilde m^2}\right)\\
 &=-\frac1{16\pi^2}\left[\sqrt{\frac{p^2+4\tilde m^2}{p^2}}\,\log\frac{\sqrt{p^2+4\tilde m^2}+\sqrt{p^2}}{\sqrt{p^2+4\tilde m^2}-\sqrt{p^2}}-2\right]\,.
 \end{align*}
 I leave evaluating the last explicit expression as an \textbf{Exercise}. We see
 that by giving the counterterm coefficient $a^{(2)}$ certain dependence on $d$
 which is singular at $d=4$,
 \begin{equation}\label{eq:a2}
-a^{(2)}=\frac32\,I(0)=\frac32\,\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\,(\tilde m^2)^{\frac d2-2}\,,
+a^{(2)}=\frac32\,I(0)=\frac32\,\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{\frac d2}}\,(\tilde m^2)^{\frac d2-2}\,,
 \end{equation}
 we compensated the singularities of the diagrams (a), (b), (c) above.
 
@@ -537,7 +537,7 @@ as
 \]
 where $\Gamma^{\text{div}}_L$ has the form
 \[
--\tilde\lambda^L\int d^dx\,\left[\frac{Z^{(L)}(\epsilon)}2\,(\partial\phi)^2+\frac{B^{(L)}(\epsilon)}2\,\phi^2+\frac{\tilde\lambda\,A^{(L)}(\epsilon)}{4!}\,\phi^4\right]\,,
+-\tilde\lambda^L\int \dd^dx\,\left[\frac{Z^{(L)}(\epsilon)}2\,(\partial\phi)^2+\frac{B^{(L)}(\epsilon)}2\,\phi^2+\frac{\tilde\lambda\,A^{(L)}(\epsilon)}{4!}\,\phi^4\right]\,,
 \]
 with coefficients having $L$th order pole in $\epsilon$,
 \begin{equation}\label{eq:divpoles}
@@ -549,7 +549,7 @@ and $\Gamma^{\text{finite}}$ is finite at $\epsilon=0$. It is clear then that th
 divergent part can be compensated for if one adds to the action the $L$-loop
 counterterm
 \[
-\mathcal A^{(L)}=\tilde\lambda^L\int d^dx\,\left[\frac{z^{(L)}(\epsilon)}2\,(\partial\varphi)^2+\frac{b^{(L)}(\epsilon)}2\,\varphi^2+\frac{\tilde\lambda\,a^{(L)}(\epsilon)}{4!}\,\varphi^4\right]\,,
+\mathcal A^{(L)}=\tilde\lambda^L\int \dd^dx\,\left[\frac{z^{(L)}(\epsilon)}2\,(\partial\varphi)^2+\frac{b^{(L)}(\epsilon)}2\,\varphi^2+\frac{\tilde\lambda\,a^{(L)}(\epsilon)}{4!}\,\varphi^4\right]\,,
 \]
 with
 \[
@@ -575,7 +575,7 @@ action renormalized to $L-1$ loops, as defined above, i.e.
 \]
 In this scheme the parameters $m^2_{MS}$ and $\lambda_{MS}$ entering the action
 \[
-\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{m^2_{MS}}2\,\varphi^2+\frac{\lambda_{MS}}{4!}\,\varphi^4+\text{Counterterms in MS Scheme}\right]\,,
+\mathcal A=\int \dd^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{m^2_{MS}}2\,\varphi^2+\frac{\lambda_{MS}}{4!}\,\varphi^4+\text{Counterterms in MS Scheme}\right]\,,
 \]
 are not a priori related to physical quantities such as the particle mass and
 scattering amplitudes. This relation has to be calculated order by order in
@@ -663,7 +663,7 @@ Consider first the group I. The first diagram there is easily calculated to be
 \]
 the 4 in the denominator being the symmetry factor, $p_{12}=p_1+p_2$, and again
 \[
-I(p^2)=\int\frac{d^dk}{(2\pi)^d}\,\frac1{(k^2+\tilde m^2)\bigl((p+k)^2+\tilde m^2\bigr)}\,.
+I(p^2)=\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{(k^2+\tilde m^2)\bigl((p+k)^2+\tilde m^2\bigr)}\,.
 \]
 Now, each of the other two diagrams in this group contribute
 \[
@@ -689,36 +689,36 @@ Consider now the group II. It contains the diagram
   \draw[arr] (60:1.15) arc[start angle=60,end angle=100,radius=1.15]; \node[font=\tiny] at (80:1.45) {$k$};
   \draw[arr] (260:1.15) arc[start angle=260,end angle=300,radius=1.15]; \node[font=\tiny] at (280:1.5) {$p_{12}+k$};
   \foreach \p in {R,T,B} \node[vtx] at (\p) {};}
-=-\frac{\tilde\lambda^3}2\int\frac{d^dk}{(2\pi)^d}\,\frac1{k^2+\tilde m^2}\,\frac1{(p_{12}+k)^2+\tilde m^2}\,I\bigl((k+p_1)^2\bigr)\,,
+=-\frac{\tilde\lambda^3}2\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{k^2+\tilde m^2}\,\frac1{(p_{12}+k)^2+\tilde m^2}\,I\bigl((k+p_1)^2\bigr)\,,
 \]
 where $I(p^2)$ is the integral \eqref{eq:Ip2}, which we already found equal to
 \[
-I(p^2)=\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bigl[\tilde m^2+u(1-u)\,p^2\Bigr]^{\frac d2-2}\,.
+I(p^2)=\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1\dd u\,\Bigl[\tilde m^2+u(1-u)\,p^2\Bigr]^{\frac d2-2}\,.
 \]
 Using this formula and combining the propagators with the help of Feynman
 parametrization we obtain for the above diagram
 \begin{multline*}
 -\frac{\tilde\lambda^3}2\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}
-\int_0^1du\int_0^1dv\int\frac{d^dk}{(2\pi)^d}\,\frac1{\bigl(k^2+2v\,(kp_{12})+v\,p_{12}^2+\tilde m^2\bigr)^2}\\
+\int_0^1\dd u\int_0^1\dd v\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{\bigl(k^2+2v\,(kp_{12})+v\,p_{12}^2+\tilde m^2\bigr)^2}\\
 \times\frac1{\bigl(\tilde m^2+u(1-u)\,(k+p_1)^2\bigr)^{2-\frac d2}}\,.
 \end{multline*}
 The $k$ integral here can be evaluated by using the transformation generalizing
 the Feynman parametrization. Namely, consider the identity
 \eqref{eq:FeynParGen},
 \begin{equation}\label{eq:FeynParGen2}
-\frac1{A^\alpha\,B^\beta}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1\frac{dw\,w^{\alpha-1}(1-w)^{\beta-1}}{\bigl[wA+(1-w)B\bigr]^{\alpha+\beta}}\,.
+\frac1{A^\alpha\,B^\beta}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_0^1\frac{\dd w\,w^{\alpha-1}(1-w)^{\beta-1}}{\bigl[wA+(1-w)B\bigr]^{\alpha+\beta}}\,.
 \end{equation}
 It can be derived by explicit evaluation of the integral in the right-hand side:
 projective transformation of the integration variable $w=Bz/(Bz+A(1-z))$ brings
 it to the form of the Beta-integral
 \[
-B(\alpha,\beta)=\int_0^1dz\,z^{\alpha-1}(1-z)^{\beta-1}=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
+B(\alpha,\beta)=\int_0^1\dd z\,z^{\alpha-1}(1-z)^{\beta-1}=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
 \]
 (details can be found in \S\,10.5 of PS). Using this identity (with
 $\alpha=2-\frac d2$, $\beta=2$) one can write the above integral as
 \begin{multline*}
--\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\,dv\,dw\\
-\times\int\frac{d^dk}{(2\pi)^d}\,\frac{w^{1-\frac d2}\,(1-w)}{\Bigl[w\bigl(\tilde m^2+u(1-u)\,(k+p_1)^2\bigr)+(1-w)\bigl(\tilde m^2+k^2+2v\,(kp_{12})+v\,p_{12}^2\bigr)\Bigr]^{4-\frac d2}}\,.
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d/2)}{(4\pi)^{\frac d2}}\int_0^1\dd u\dd v\dd w\\
+\times\int\frac{\dd^dk}{(2\pi)^d}\,\frac{w^{1-\frac d2}\,(1-w)}{\Bigl[w\bigl(\tilde m^2+u(1-u)\,(k+p_1)^2\bigr)+(1-w)\bigl(\tilde m^2+k^2+2v\,(kp_{12})+v\,p_{12}^2\bigr)\Bigr]^{4-\frac d2}}\,.
 \end{multline*}
 By appropriate shift of the $d$-momentum integration variable the denominator
 can be brought to the form
@@ -736,7 +736,7 @@ P^2\Big|_{w=0}=v(1-v)\,p_{12}^2\,.
 \]
 In this representation the integral over $q$ is readily evaluated,
 \[
--\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1du\,dv\,dw\,\frac{w^{1-\frac d2}\,(1-w)}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2\bigr)^{d-4}\,.
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1\dd u\dd v\dd w\,\frac{w^{1-\frac d2}\,(1-w)}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2\bigr)^{d-4}\,.
 \]
 Evidently this expression is singular at $d=4$. First, there is a pole at $d=4$
 in the factor
@@ -750,11 +750,11 @@ has a second order pole at this point.
 
 To isolate the singular contributions let us write the integral over $w$ as
 \[
-\int_0^1dw\,w^{1-\frac d2}\,f(w)=f(0)\int_0^1dw\,w^{1-\frac d2}+\int_0^1dw\,w^{1-\frac d2}\,\bigl[f(w)-f(0)\bigr]\,.
+\int_0^1\dd w\,w^{1-\frac d2}\,f(w)=f(0)\int_0^1\dd w\,w^{1-\frac d2}+\int_0^1\dd w\,w^{1-\frac d2}\,\bigl[f(w)-f(0)\bigr]\,.
 \]
 The second piece is
 \[
--\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1du\,dv\,dw\,w^{1-\frac d2}\,
+-\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1\dd u\dd v\dd w\,w^{1-\frac d2}\,
 \left[\frac{1-w}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2(w)\bigr)^{d-4}-\bigl(\tilde m^2+P^2(w=0)\bigr)^{d-4}\right]\,.
 \]
 Here the integral over $u,v,w$ is convergent and brings in no additional
@@ -769,16 +769,16 @@ where $C_0$ does not depend on $p_i$, and the $C_1$ is finite at $\epsilon=0$.
 
 Let us take a look at the other piece, proportional to $f(0)$. It is
 \[
-f(0)\int_0^1dw\,w^{1-\frac d2}=\frac2\epsilon\,f(0)=-\frac2\epsilon\,\frac{\tilde\lambda^3}2\,\frac{\Gamma(\epsilon)}{(4\pi)^d}\int_0^1du\,dv\,\bigl(\tilde m^2+v(1-v)\,p_{12}^2\bigr)^{-\epsilon}
+f(0)\int_0^1\dd w\,w^{1-\frac d2}=\frac2\epsilon\,f(0)=-\frac2\epsilon\,\frac{\tilde\lambda^3}2\,\frac{\Gamma(\epsilon)}{(4\pi)^d}\int_0^1\dd u\dd v\,\bigl(\tilde m^2+v(1-v)\,p_{12}^2\bigr)^{-\epsilon}
 \]
 The $u$ integral here is trivial. Now, for $\epsilon\to0$ the integral can be
 written as
 \[
-\int_0^1dv\,\Bigl(1-\epsilon\,\log\bigl(\tilde m^2+v(1-v)\,p_{12}^2\bigr)+O(\epsilon^2)\Bigr)\,,
+\int_0^1\dd v\,\Bigl(1-\epsilon\,\log\bigl(\tilde m^2+v(1-v)\,p_{12}^2\bigr)+O(\epsilon^2)\Bigr)\,,
 \]
 and therefore this piece of the diagram is
 \[
--\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac1\epsilon-\gamma+\log4\pi-\int_0^1dv\,\log\bigl[\tilde m^2+v(1-v)\,p_{12}^2\bigr]\right)+\text{finite terms.}
+-\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac1\epsilon-\gamma+\log4\pi-\int_0^1\dd v\,\log\bigl[\tilde m^2+v(1-v)\,p_{12}^2\bigr]\right)+\text{finite terms.}
 \]
 We have to add here the second diagram in the group II, which is
 \[
@@ -787,12 +787,12 @@ We have to add here the second diagram in the group II, which is
 where the expression \eqref{eq:a2} for the coefficient $a^{(2)}$ is used. Recall
 that
 \begin{align*}
-I(p^2)&=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\\
-&=\frac1{(4\pi)^{\frac d2}}\left(\frac2\epsilon-\gamma-\int_0^1du\,\log\bigl(\tilde m^2+u(1-u)\,p^2\bigr)+O(\epsilon)\right)\,.
+I(p^2)&=\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{\frac d2}}\int_0^1\dd u\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\\
+&=\frac1{(4\pi)^{\frac d2}}\left(\frac2\epsilon-\gamma-\int_0^1\dd u\,\log\bigl(\tilde m^2+u(1-u)\,p^2\bigr)+O(\epsilon)\right)\,.
 \end{align*}
 Therefore the contribution of this diagram is
 \[
-\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac2\epsilon-2\gamma+2\log4\pi-\log\tilde m^2-\int_0^1du\,\log\bigl[\tilde m^2+u(1-u)\,p_{12}^2\bigr]\right)+\text{finite terms.}
+\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac2\epsilon-2\gamma+2\log4\pi-\log\tilde m^2-\int_0^1\dd u\,\log\bigl[\tilde m^2+u(1-u)\,p_{12}^2\bigr]\right)+\text{finite terms.}
 \]
 Adding the two diagrams of the group II we see that the $p_{12}$-dependent
 singular terms cancel out,
@@ -854,26 +854,26 @@ where by the definition
 Let us analyse the diagram (a) and show that $\Sigma_r(p^2)$ has finite value at
 $d=4$. The contribution of the diagram (a) is given by the integral
 \[
-\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\int\frac{d^dk_1\,d^dk_2}{(2\pi)^{2d}}\,\frac1{(k_1^2+\tilde m^2)(k_2^2+\tilde m^2)\bigl((p+k_1+k_2)^2+\tilde m^2\bigr)}\,.
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\int\frac{\dd^dk_1\dd^dk_2}{(2\pi)^{2d}}\,\frac1{(k_1^2+\tilde m^2)(k_2^2+\tilde m^2)\bigl((p+k_1+k_2)^2+\tilde m^2\bigr)}\,.
 \]
 One of the $k$-integrations, say over $k_2$, can be done exactly the way we did
 one-loop integrals for $\Gamma^{(4)}$:
 \begin{align*}
-&\int\frac{d^dk_2}{(2\pi)^d}\,\frac1{(k_2^2+\tilde m^2)\bigl((p+k_1+k_2)^2+\tilde m^2\bigr)}=I\bigl((p+k_1)^2\bigr)\\
-&\qquad=\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bigl[\tilde m^2+u(1-u)\,(p+k_1)^2\Bigr]^{\frac d2-2}\,.
+&\int\frac{\dd^dk_2}{(2\pi)^d}\,\frac1{(k_2^2+\tilde m^2)\bigl((p+k_1+k_2)^2+\tilde m^2\bigr)}=I\bigl((p+k_1)^2\bigr)\\
+&\qquad=\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1\dd u\,\Bigl[\tilde m^2+u(1-u)\,(p+k_1)^2\Bigr]^{\frac d2-2}\,.
 \end{align*}
 We find
 \[
-\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1du\int\frac{d^dk_1}{(2\pi)^d}\,
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\int_0^1\dd u\int\frac{\dd^dk_1}{(2\pi)^d}\,
 \frac1{\bigl(u(1-u)\,(p+k_1)^2+\tilde m^2\bigr)^{2-d/2}\,(k_1^2+\tilde m^2)}\,.
 \]
 The remaining integral over $k_1$ can be done using \eqref{eq:FeynParGen2} which
 allows one to transform the integral as
 \[
-\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\,\frac{\Gamma(3-d/2)}{\Gamma(2-d/2)\,\Gamma(1)}\int_0^1du\int_0^1dw\,J(u,w)\,,
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(2-d/2)}{(4\pi)^{\frac d2}}\,\frac{\Gamma(3-d/2)}{\Gamma(2-d/2)\,\Gamma(1)}\int_0^1\dd u\int_0^1\dd w\,J(u,w)\,,
 \]
 \[
-J(u,w)=\int\frac{d^dk_1}{(2\pi)^d}\,\frac{w^{1-\frac d2}}{\bigl[\tilde m^2+(1-w)\,k_1^2+w\,u(1-u)\,(k_1+p)^2\bigr]^{3-\frac d2}}\,.
+J(u,w)=\int\frac{\dd^dk_1}{(2\pi)^d}\,\frac{w^{1-\frac d2}}{\bigl[\tilde m^2+(1-w)\,k_1^2+w\,u(1-u)\,(k_1+p)^2\bigr]^{3-\frac d2}}\,.
 \]
 The integral over $k_1$ can be evaluated after the shift of this momentum
 variable
@@ -886,7 +886,7 @@ A=(1-w)+w\,u(1-u)\,.
 \]
 One obtains
 \[
-J(u,w)=\int\frac{d^dq}{(2\pi)^d}\,\frac{w^{1-d/2}}{\Bigl(A\,q^2+w(1-w)\,u(1-u)\,p^2/A+\tilde m^2\Bigr)^{3-\frac d2}}\,.
+J(u,w)=\int\frac{\dd^dq}{(2\pi)^d}\,\frac{w^{1-d/2}}{\Bigl(A\,q^2+w(1-w)\,u(1-u)\,p^2/A+\tilde m^2\Bigr)^{3-\frac d2}}\,.
 \]
 With appropriate rescaling of $q$ one can bring this integral to the form
 \eqref{eq:dimregalpha}, and obtain
@@ -895,7 +895,7 @@ J(u,w)=\frac{A^{3-\frac{3d}2}}{(4\pi)^{\frac d2}}\,\frac{\Gamma(3-d)}{\Gamma(3-d
 \]
 Combining these results we get
 \[
-\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(3-d)}{(4\pi)^d}\int_0^1dw\,du\,w^{1-\frac d2}\,A^{3-\frac{3d}2}\,\Bigl[u(1-u)\,w(1-w)\,p^2+A\,\tilde m^2\Bigr]^{d-3}\,.
+\Sigma_a(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(3-d)}{(4\pi)^d}\int_0^1\dd w\dd u\,w^{1-\frac d2}\,A^{3-\frac{3d}2}\,\Bigl[u(1-u)\,w(1-w)\,p^2+A\,\tilde m^2\Bigr]^{d-3}\,.
 \]
 This quantity has second order pole in $\epsilon$, one singular factor coming
 from the Gamma function
@@ -905,7 +905,7 @@ from the Gamma function
 and another appearing due to the divergence of the integral over $w$ at
 $w\to0$. However, subtracting $\Sigma_a(0)$ and $p^2\Sigma_a'(0)$ one obtains
 \[
-\Sigma_r(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(3-d)}{(4\pi)^d}\,(\tilde m^2)^{d-3}\int_0^1du\,dw\,w^{1-\frac d2}\,A^{-\frac d2}\,H(u,w)\,,
+\Sigma_r(p^2)=-\frac{\tilde\lambda^2}{3!}\,\frac{\Gamma(3-d)}{(4\pi)^d}\,(\tilde m^2)^{d-3}\int_0^1\dd u\dd w\,w^{1-\frac d2}\,A^{-\frac d2}\,H(u,w)\,,
 \]
 where
 \[
@@ -918,7 +918,7 @@ H(u,w)=\epsilon\,\Bigl[p^2B-(1+p^2B)\,\log(1+p^2B)\Bigr]+O(\epsilon^2)\,,
 \]
 and therefore $\Sigma_r$ has finite value at $d=4$,
 \[
-\Sigma_r(p^2)\Big|_{d=4}=\frac{\tilde\lambda^2}{3!}\,\frac{\tilde m^2}{(4\pi)^4}\int_0^1\frac{du\,dw}{w\,A^2}\,\Bigl[p^2B-(1+p^2B)\,\log(1+p^2B)\Bigr]
+\Sigma_r(p^2)\Big|_{d=4}=\frac{\tilde\lambda^2}{3!}\,\frac{\tilde m^2}{(4\pi)^4}\int_0^1\frac{\dd u\dd w}{w\,A^2}\,\Bigl[p^2B-(1+p^2B)\,\log(1+p^2B)\Bigr]
 \]
 At the same time the subtracted terms $\Sigma_a(0)$ and $\Sigma_a'(0)$ are
 singular at $d=4$. The contributions of two diagrams (a) and (b) to $\Sigma$ then

@@ -26,7 +26,7 @@ combines statistical contributions of all microscopic fluctuations and depends
 significantly on all details of the microscopic interactions. In Landau-Ginzburg
 approximation one takes
 \[
-\mathcal A_0=\int d^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2(T)}2\,\varphi_0^2+\frac{\lambda_0(T)}{4!}\,\varphi_0^4\right]\,,
+\mathcal A_0=\int \dd^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2(T)}2\,\varphi_0^2+\frac{\lambda_0(T)}{4!}\,\varphi_0^4\right]\,,
 \]
 where $m_0^2(T)$, $\lambda_0(T)$ are unknown functions of $T$, but it can be any
 other combination of powers of $\varphi_0$ and its derivatives. What is important,
@@ -109,7 +109,7 @@ fixed point, we can use linear analysis. Let us assume that in some finite amoun
 $l_0$ of RG ``time'' the trajectory $C_\tau$ comes close to $\mathcal A_*$, where
 the corresponding action can be written as
 \begin{equation}\label{eq:nearfp}
-\mathcal A=\mathcal A_*+y_0\int d^dx\,\Phi_0(x)+\sum_{\alpha\neq0}y_\alpha\int d^dx\,\Phi_\alpha(x)\,,
+\mathcal A=\mathcal A_*+y_0\int \dd^dx\,\Phi_0(x)+\sum_{\alpha\neq0}y_\alpha\int \dd^dx\,\Phi_\alpha(x)\,,
 \end{equation}
 where the constants $y$ depend on $\tau$, the deviation \eqref{eq:tau} from the
 critical point. It is important to note that this dependence is analytic because
@@ -123,7 +123,7 @@ and neglect the $\tau$-dependence of all $y_\alpha$ with $\alpha\neq0$.
 
 In the second stage the RG flow is described by the equations
 \[
-\frac d{dl}\,y_0=\kappa_0\,y_0\,,\qquad\frac d{dl}\,y_\alpha=\kappa_\alpha\,y_\alpha\,,
+\frac{\dd}{\dd l}\,y_0=\kappa_0\,y_0\,,\qquad\frac{\dd}{\dd l}\,y_\alpha=\kappa_\alpha\,y_\alpha\,,
 \]
 where the coefficients $\kappa$ are related to the dimensions $D_\alpha$ of the
 fields $\Phi_\alpha$,
@@ -186,7 +186,7 @@ As another example of this dimensional counting let us find some other critical
 exponents in terms of dimensions. If, at $T=T_c$, one adds an external field,
 i.e.\ the term
 \[
-H\int d^dx\,\varphi_0(x)\,,
+H\int \dd^dx\,\varphi_0(x)\,,
 \]
 the dimensional counting implies that $H$ has dimension $d-D_\varphi$, and so the
 magnetization as the function of $H$ must have the following singular behavior

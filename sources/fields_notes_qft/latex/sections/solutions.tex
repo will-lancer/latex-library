@@ -7,6 +7,7 @@
 These solutions use the conventions of the sections where the problems appear.
 The link at the end of each solution leads back to the problem.
 
+\newcommand{\solpart}[1]{\par\medskip\noindent\textbf{#1}\enspace\ignorespaces}
 \tikzset{
   % tree with two proper three-point vertices joined by a full propagator
   pics/gtree/.style={code={%
@@ -20,468 +21,895 @@ The link at the end of each solution leads back to the problem.
     \draw[prop,pattern=north east lines] (0.9,0) circle (0.35);}},
 }
 
+% ======================================================================
 \subsection{Problem 1}\label{sol:1}
 
-\emph{(a)} Vary $S=\int dt\,L$. In the bulk term, integrate by parts in $t$,
-$x_\parallel$ and $z$. The $z$ integration of
-$-\partial_z\varphi\,\partial_z\delta\varphi$ leaves the boundary term
-$+\partial_z\varphi\,\delta\varphi\big|_{z=0}$, because the fields vanish at
-$z\to\infty$. The boundary potential contributes $-V'(\varphi_B)\,\delta\varphi_B$.
-So
+Write $z=x^3$, let $a,b=1,2$ label the directions along the boundary, and let
+the action be $S=\int \dd t\,L$. All fields are assumed to fall off at
+$z\to\infty$ and at $|x_\parallel|\to\infty$.
+
+\solpart{(a)} The variation of the action is
 \[
-\delta S=\int dt\int_0^\infty dz\int d^2x_\parallel\,\bigl(-\ddot\varphi+\nabla^2\varphi-m^2\varphi\bigr)\,\delta\varphi
-+\int dt\int d^2x_\parallel\,\bigl(\partial_z\varphi\big|_{z=0}-V'(\varphi_B)\bigr)\,\delta\varphi_B\,.
+\delta S=\int \dd t\int_0^\infty \dd z\int \dd^2x_\parallel\,
+\bigl(\dot\varphi\,\delta\dot\varphi-\nabla\varphi\cdot\nabla\delta\varphi-m^2\varphi\,\delta\varphi\bigr)
+-\int \dd t\int \dd^2x_\parallel\,V'(\varphi_B)\,\delta\varphi_B\,.
 \]
-The bulk and boundary variations are independent, so
+We integrate by parts in each variable. The time integration moves the dot
+onto $\varphi$, and the variation vanishes at the initial and final times. The
+integrations along $x^a$ give $\partial_a^2\varphi\,\delta\varphi$, with no
+surface terms. The $z$ integration is where the boundary shows up:
+\[
+-\int_0^\infty \dd z\,\partial_z\varphi\,\partial_z\delta\varphi
+=-\Bigl[\partial_z\varphi\,\delta\varphi\Bigr]_{z=0}^{z=\infty}+\int_0^\infty \dd z\,\partial_z^2\varphi\,\delta\varphi
+=\partial_z\varphi\big|_{z=0}\,\delta\varphi_B+\int_0^\infty \dd z\,\partial_z^2\varphi\,\delta\varphi\,.
+\]
+Collecting terms,
+\[
+\delta S=\int \dd t\int_0^\infty \dd z\int \dd^2x_\parallel\,\bigl(-\ddot\varphi+\nabla^2\varphi-m^2\varphi\bigr)\,\delta\varphi
++\int \dd t\int \dd^2x_\parallel\,\Bigl(\partial_z\varphi\big|_{z=0}-V'(\varphi_B)\Bigr)\,\delta\varphi_B\,.
+\]
+The values of $\delta\varphi$ inside the region and on the boundary can be
+chosen independently, so each bracket has to vanish:
 \[
 \ddot\varphi-\nabla^2\varphi+m^2\varphi=0\quad(z>0)\,,\qquad
 \partial_z\varphi\big|_{z=0}=V'(\varphi_B)\,.
 \]
-For $V=0$ this is the Neumann condition.
+The bulk equation is the Klein-Gordon equation. The boundary condition
+depends on $V$. For $V=0$ it is the Neumann condition
+$\partial_z\varphi=0$, and for a quadratic $V$ it is a Robin condition, linear
+in $\varphi$ and $\partial_z\varphi$.
 
-\emph{(b)} Time translations and translations along $x^1,x^2$ are still
-symmetries, so $E$, $P^1$ and $P^2$ are conserved. The boundary breaks
-translations in $z$. The energy has to include the boundary term,
-\[
-E=\int_0^\infty dz\int d^2x_\parallel\,\Bigl[\tfrac12\dot\varphi^2+\tfrac12(\nabla\varphi)^2+\tfrac{m^2}2\varphi^2\Bigr]+\int d^2x_\parallel\,V(\varphi_B)\,.
-\]
-Using the field equation, the time derivative of the bulk part is
-$-\int d^2x_\parallel\,\dot\varphi_B\,\partial_z\varphi_B=-\int d^2x_\parallel\,\dot\varphi_B\,V'(\varphi_B)$,
-which cancels $\frac d{dt}\int V(\varphi_B)$. For $P^a=-\int\dot\varphi\,\partial_a\varphi$
-($a=1,2$) the same manipulation leaves $-\int d^2x_\parallel\,\partial_aV(\varphi_B)=0$.
-For $P^3=-\int\dot\varphi\,\partial_z\varphi$ one finds instead
-\[
-\frac{dP^3}{dt}=\frac12\int d^2x_\parallel\,\Bigl[\dot\varphi_B^2-(\partial_a\varphi_B)^2-m^2\varphi_B^2+V'(\varphi_B)^2\Bigr]\,,
-\]
-the force with which the boundary pushes on the field. It does not vanish in
-general, even for $V=0$, so $P^3$ is not conserved.
+\solpart{(b)} The Lagrangian does not depend explicitly on $t$, and it is
+unchanged by shifts of $x^1$ and $x^2$. The boundary at $z=0$ breaks shifts of
+$z$. So we expect $E$, $P^1$ and $P^2$ to survive, and $P^3$ to fail. We check
+this directly, using the field equations from part~(a).
 
-\emph{(c)} With $V=M\varphi_B^2$ the boundary condition is
-$\partial_z\varphi=2M\varphi$ at $z=0$. Separate variables,
-$\varphi=\Re\bigl[A\,e^{i\kk\cdot x_\parallel-i\omega t}f(z)\bigr]$, so that
-$f''=(\kk^2+m^2-\omega^2)f$. A bounded $f$ is either oscillating, $f\propto e^{\pm iqz}$
-with $\omega^2=\kk^2+q^2+m^2$, or decaying, $f=e^{-\kappa z}$ with $\kappa>0$. The
-decaying one would need $-\kappa=2M$, which is impossible for $M>0$. The oscillating
-solutions satisfy the boundary condition in the combination
+The energy has to include the boundary potential,
 \[
-f_q(z)=q\cos qz+2M\sin qz=\sqrt{q^2+4M^2}\,\cos(qz-\delta_q)\,,\qquad\tan\delta_q=\frac{2M}q\,,
+E=\int_0^\infty \dd z\int \dd^2x_\parallel\left[\frac12\,\dot\varphi^2+\frac12\,(\nabla\varphi)^2+\frac{m^2}2\,\varphi^2\right]+\int \dd^2x_\parallel\,V(\varphi_B)\,.
 \]
-an incident wave plus a reflected wave with a phase shift. The general bounded
-solution is the superposition
+Differentiating the bulk part and integrating the gradient term by parts,
 \[
-\varphi(\xx,t)=\int\frac{d^2\kk}{(2\pi)^2}\int_0^\infty\frac{dq}{2\pi}\,
-\Bigl[A(\kk,q)\,e^{i\kk\cdot x_\parallel-i\omega t}+\text{c.c.}\Bigr]f_q(z)\,,\qquad
+\frac{\dd}{\dd t}\,E_{\text{bulk}}=\int_0^\infty \dd z\int \dd^2x_\parallel\,\dot\varphi\,\bigl(\ddot\varphi-\nabla^2\varphi+m^2\varphi\bigr)
+-\int \dd^2x_\parallel\,\dot\varphi_B\,\partial_z\varphi_B\,.
+\]
+The first integral vanishes by the field equation. The boundary condition
+turns the second into $-\int \dot\varphi_B\,V'(\varphi_B)$, and this is exactly
+minus the rate of change of $\int V(\varphi_B)$. So $E$ is conserved.
+
+For the momentum we use $P^i=\int T^0{}_i\,\dd^3\xx=-\int\dot\varphi\,\partial_i\varphi\,\dd^3\xx$.
+Then
+\[
+\frac{\dd P^i}{\dd t}=-\int_0^\infty \dd z\int \dd^2x_\parallel\,\bigl(\ddot\varphi\,\partial_i\varphi+\dot\varphi\,\partial_i\dot\varphi\bigr)
+=-\int_0^\infty \dd z\int \dd^2x_\parallel\,\Bigl((\nabla^2\varphi-m^2\varphi)\,\partial_i\varphi+\frac12\,\partial_i\dot\varphi^2\Bigr)\,.
+\]
+For $i=a$ everything except one term is a total derivative along $x^a$, and
+those integrate to zero. The remaining term comes from $\partial_z^2\varphi$,
+which after an integration by parts in $z$ leaves a boundary piece,
+\[
+\frac{\dd P^a}{\dd t}=\int \dd^2x_\parallel\,\partial_z\varphi_B\,\partial_a\varphi_B
+=\int \dd^2x_\parallel\,V'(\varphi_B)\,\partial_a\varphi_B
+=\int \dd^2x_\parallel\,\partial_a V(\varphi_B)=0\,.
+\]
+So $P^1$ and $P^2$ are conserved. For $i=3$ the $z$ integrals produce boundary
+values of each term, since $\int_0^\infty \dd z\,\partial_z f=-f\big|_{z=0}$:
+\[
+\frac{\dd P^3}{\dd t}=\frac12\int \dd^2x_\parallel\Bigl[\dot\varphi_B^2-(\partial_a\varphi_B)^2-m^2\varphi_B^2+V'(\varphi_B)^2\Bigr]\,.
+\]
+This is $\int T^{33}\big|_{z=0}\,\dd^2x_\parallel$, the flux of $z$-momentum
+through the boundary, where
+$T^{33}=\frac12\bigl[\dot\varphi^2-(\partial_a\varphi)^2+(\partial_z\varphi)^2-m^2\varphi^2\bigr]$.
+In other words it is the force with which the wall pushes on the field. It
+does not vanish in general, even when $V=0$, so $P^3$ is not conserved.
+
+\solpart{(c)} Now $V=M\varphi_B^2$ and the boundary condition reads
+$\partial_z\varphi=2M\varphi$ at $z=0$. The equations are linear and invariant
+under translations in $t$ and $x_\parallel$, so we look for solutions of the
+form
+\[
+\varphi=\Re\left[A\,e^{i\kk\cdot x_\parallel-i\omega t}\,f(z)\right]\,,\qquad
+f''(z)=(\kk^2+m^2-\omega^2)\,f(z)\,,\qquad f'(0)=2M\,f(0)\,.
+\]
+If $\omega^2>\kk^2+m^2$ we write $\omega^2=\kk^2+q^2+m^2$ with $q>0$, and $f$
+oscillates. If $\omega^2<\kk^2+m^2$, the only solution bounded at large $z$ is
+$f=e^{-\kappa z}$ with $\kappa>0$. Take the decaying case first. The boundary
+condition gives $-\kappa=2M$, which has no solution for $M>0$. So only the
+oscillating functions are left. Writing $f=\alpha\cos qz+\beta\sin qz$, the
+boundary condition says $q\beta=2M\alpha$, so up to normalization
+\[
+f_q(z)=q\cos qz+2M\sin qz=\sqrt{q^2+4M^2}\,\cos(qz-\delta_q)\,,\qquad\tan\delta_q=\frac{2M}q\,.
+\]
+Each $f_q$ is an incoming wave and a reflected wave, and $\delta_q$ is the
+phase shift picked up at the wall. In the limit $M\to0$ the functions become
+$\cos qz$ (the Neumann problem), and for $M\to\infty$ they become $\sin qz$
+(the Dirichlet problem). The general bounded solution is the superposition
+\[
+\varphi(\xx,t)=\int\frac{\dd^2\kk}{(2\pi)^2}\int_0^\infty\frac{\dd q}{2\pi}\,
+\Bigl[A(\kk,q)\,e^{i\kk\cdot x_\parallel-i\omega t}+\text{c.c.}\Bigr]\,f_q(z)\,,\qquad
 \omega=\sqrt{\kk^2+q^2+m^2}\,.
 \]
+For $M>0$ the functions $f_q$ with $q>0$ are complete on the half line, so this
+covers all solutions.
 
-\emph{(d)} For $M<0$ the decaying solution exists, with $\kappa=-2M=2|M|$:
+\solpart{(d)} For $M<0$ the oscillating solutions of part~(c) are still there,
+and now the decaying one exists too, with $\kappa=-2M=2|M|$:
 \[
-\varphi=\Re\bigl[A\,e^{i\kk\cdot x_\parallel-i\omega t}\bigr]\,e^{-2|M|z}\,,\qquad\omega^2=\kk^2+m^2-4M^2\,.
+\varphi=\Re\left[A\,e^{i\kk\cdot x_\parallel-i\omega t}\right]\,e^{-2|M|z}\,,\qquad
+\omega^2=\kk^2+m^2-4M^2\,.
 \]
-These are waves bound to the boundary within a depth $1/2|M|$. If $4M^2<m^2$
-they propagate along the surface with the gap $\sqrt{m^2-4M^2}$. If $4M^2>m^2$
-then $\omega^2<0$ for $\kk^2<4M^2-m^2$, and the solutions grow as $e^{\Omega t}$
-with $\Omega=\sqrt{4M^2-m^2-\kk^2}$. The negative boundary energy
-$M\varphi_B^2$ then makes $E$ unbounded below, and the configuration
-$\varphi=0$ is unstable.
+These are surface waves. They are bound to the wall within a depth $1/2|M|$
+and travel along it. What happens next depends on the size of $|M|$.
+
+If $4M^2<m^2$, then $\omega^2>0$ for every $\kk$. The surface waves propagate
+with a smaller gap, $\sqrt{m^2-4M^2}$, than the bulk waves.
+
+If $4M^2>m^2$, then $\omega^2<0$ for $\kk^2<4M^2-m^2$. In that range
+$\omega=\pm i\Omega$ with $\Omega=\sqrt{4M^2-m^2-\kk^2}$, and the solutions
+grow like $e^{\Omega t}$. The state $\varphi=0$ is unstable. We can see the
+same thing from the energy. Take the static configuration
+$\varphi=c\,e^{-\kappa z}$, uniform along the wall. Its energy per unit area is
+\[
+\frac EA=c^2\left[\frac{\kappa^2+m^2}{4\kappa}+M\right]\,,
+\]
+which is smallest at $\kappa=m$, where it equals $c^2\left(\frac m2+M\right)$.
+This is negative as soon as $|M|>m/2$, and then it can be made as negative as we
+like by increasing $c$. The energy is unbounded below.
 
 \noindent\hyperref[hw:1]{$\leftarrow$ Back to Problem 1}
 
+% ======================================================================
 \subsection{Problem 2}\label{sol:2}
 
-Take Dirichlet plates at $x_\perp=0$ and $x_\perp=a$, each of area $A=L^{d-1}$.
-As in Section~3, the modes between the plates have
-$\omega=\sqrt{\pp_\parallel^2+\pi^2n^2/a^2}$ with $n=1,2,\dots$, and the
-regularized zero-point energy per unit area is $\sum_{n\ge1}F(n)$ with
+We follow the steps of Section~3, keeping the number of space dimensions $d$
+general. Put Dirichlet plates at $x_\perp=0$ and $x_\perp=a$, each of area
+$A=L^{d-1}$.
+
+\solpart{Modes.} The field has to vanish on both plates, so the normal modes are
 \[
-F(\tau)=\frac12\int\frac{d^{d-1}\pp_\parallel}{(2\pi)^{d-1}}\,\sqrt{\pp_\parallel^2+\frac{\pi^2\tau^2}{a^2}}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\biggr)\,.
+f_{\pp_\parallel,n}\propto e^{i\omega t-i\pp_\parallel\cdot\xx_\parallel}\,\sin\frac{\pi n\,x_\perp}a\,,\qquad
+\omega_{\pp_\parallel,n}=\sqrt{\pp_\parallel^2+\frac{\pi^2n^2}{a^2}}\,,\qquad n=1,2,\dots
 \]
-The Abel-Plana formula gives
+Each mode is an oscillator with zero-point energy $\frac12\,\omega$. With a
+cutoff factor $\Phi$ in place, the vacuum energy between the plates per unit
+area is $\sum_{n\ge1}F(n)$, where
 \[
-\sum_{n=1}^\infty F(n)=\int_0^\infty F(\tau)\,d\tau-\frac12\,F(0)
-+i\int_0^\infty\frac{F(it+0)-F(-it+0)}{e^{2\pi t}-1}\,dt\,.
+F(\tau)=\frac12\int\frac{\dd^{d-1}\pp_\parallel}{(2\pi)^{d-1}}\,\sqrt{\pp_\parallel^2+\frac{\pi^2\tau^2}{a^2}}\;\Phi\left(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\right)\,.
 \]
-The first term is proportional to $a$ and is absorbed into the bulk vacuum
-energy. The second does not depend on $a$. The last term is finite as
-$\Lambda\to\infty$, and it is the Casimir energy. On the two sides of the cut the
-square root equals $\pm i\sqrt{\pi^2t^2/a^2-\pp_\parallel^2}$ when
-$|\pp_\parallel|<\pi t/a$, and is analytic otherwise. Hence
+
+\solpart{Abel-Plana.} The Abel-Plana formula \eqref{eq:AbelPlana} turns the sum
+into
 \[
-\frac{E_{\text{Cas}}}A=-\int_0^\infty\frac{dt}{e^{2\pi t}-1}\int_{|\pp|<\pi t/a}\frac{d^{d-1}\pp}{(2\pi)^{d-1}}\,\sqrt{\frac{\pi^2t^2}{a^2}-\pp^2}\,.
+\sum_{n=1}^\infty F(n)=\int_0^\infty F(\tau)\dd\tau-\frac12\,F(0)
++i\int_0^\infty\frac{F(it+0)-F(-it+0)}{e^{2\pi t}-1}\dd t\,.
 \]
-The inner integral over the $(d-1)$-ball of radius $R=\pi t/a$ is
+The three terms play different roles. The first is the integral that a
+continuum of modes would give. It is proportional to $a$, so it is the energy
+density of empty space times the volume, and it is the same with or without
+the plates. The second does not depend on $a$ at all, so it is an energy of
+the surfaces and gives no force. The third term is finite as $\Lambda\to\infty$,
+so we can set $\Phi=1$ in it. It is the Casimir energy.
+
+\solpart{The cut.} For $\tau=\pm it+0$ the square root is
+$\sqrt{\pp_\parallel^2-\pi^2t^2/a^2\pm i0}$. When $|\pp_\parallel|>\pi t/a$ the
+argument is positive and the two values agree, so those momenta drop out of
+the difference. When $|\pp_\parallel|<\pi t/a$ the argument is negative, and the
+two values are $\pm i\sqrt{\pi^2t^2/a^2-\pp_\parallel^2}$. So
 \[
-\int_{|\pp|<R}\frac{d^{d-1}\pp}{(2\pi)^{d-1}}\,\sqrt{R^2-\pp^2}
-=\frac{\pi^{d/2}\,R^d}{2\,(2\pi)^{d-1}\,\Gamma\bigl(\frac d2+1\bigr)}\,,
+i\,\bigl[F(it+0)-F(-it+0)\bigr]=-\int_{|\pp|<\pi t/a}\frac{\dd^{d-1}\pp}{(2\pi)^{d-1}}\,\sqrt{\frac{\pi^2t^2}{a^2}-\pp^2}\,,
 \]
-and $\int_0^\infty t^d\,dt/(e^{2\pi t}-1)=\Gamma(d+1)\,\zeta(d+1)/(2\pi)^{d+1}$.
-With the duplication formula for $\Gamma(d+1)$ the result simplifies to
+and
 \[
-\frac{E_{\text{Cas}}}A=-\frac{\Gamma\bigl(\frac{d+1}2\bigr)\,\zeta(d+1)}{(4\pi)^{\frac{d+1}2}\,a^d}\,,
-\qquad
+\frac{E_{\text{Cas}}}A=-\int_0^\infty\frac{\dd t}{e^{2\pi t}-1}\int_{|\pp|<\pi t/a}\frac{\dd^{d-1}\pp}{(2\pi)^{d-1}}\,\sqrt{\frac{\pi^2t^2}{a^2}-\pp^2}\,.
+\]
+
+\solpart{The integrals.} Put $n=d-1$ and $R=\pi t/a$. In spherical coordinates
+the momentum integral is
+\begin{align*}
+\int_{|\pp|<R}\dd^n\pp\,\sqrt{R^2-\pp^2}
+&=\frac{2\pi^{n/2}}{\Gamma\left(\frac n2\right)}\int_0^R p^{n-1}\sqrt{R^2-p^2}\,\dd p\\
+&=\frac{2\pi^{n/2}}{\Gamma\left(\frac n2\right)}\,\frac{R^{n+1}}2\,\frac{\Gamma\left(\frac n2\right)\Gamma\left(\frac32\right)}{\Gamma\left(\frac{n+3}2\right)}
+=\frac{\pi^{d/2}\,R^d}{2\,\Gamma\left(\frac d2+1\right)}\,,
+\end{align*}
+where the $p$ integral is a beta function. The remaining $t$ integral is the
+standard one,
+\[
+\int_0^\infty\frac{t^d\,\dd t}{e^{2\pi t}-1}=\frac{\Gamma(d+1)\,\zeta(d+1)}{(2\pi)^{d+1}}\,.
+\]
+Putting the pieces together,
+\[
+\frac{E_{\text{Cas}}}A=-\frac{\pi^{d/2}}{2\,(2\pi)^{d-1}\,\Gamma\left(\frac d2+1\right)}\,\frac{\pi^d}{a^d}\,
+\frac{\Gamma(d+1)\,\zeta(d+1)}{(2\pi)^{d+1}}\,.
+\]
+The duplication formula
+$\Gamma(d+1)=2^d\,\pi^{-1/2}\,\Gamma\left(\frac{d+1}2\right)\Gamma\left(\frac d2+1\right)$
+cancels the $\Gamma\left(\frac d2+1\right)$, and the powers of $2$ and $\pi$
+combine into a single factor:
+\[
+\frac{E_{\text{Cas}}}A=-\frac{\Gamma\left(\frac{d+1}2\right)\,\zeta(d+1)}{(4\pi)^{\frac{d+1}2}\,a^d}\,.
+\]
+
+\solpart{The force.} The force per unit area is minus the derivative with respect
+to the separation,
+\[
 \frac{\text{Force}}A=-\frac{\partial}{\partial a}\,\frac{E_{\text{Cas}}}A
-=-\frac{d\;\Gamma\bigl(\frac{d+1}2\bigr)\,\zeta(d+1)}{(4\pi)^{\frac{d+1}2}\,a^{d+1}}\,.
+=-\frac{d\;\Gamma\left(\frac{d+1}2\right)\,\zeta(d+1)}{(4\pi)^{\frac{d+1}2}\,a^{d+1}}\,.
 \]
-The force is attractive in every dimension. For $d=3$ this gives
-$E/A=-\pi^2/1440\,a^3$ and $\text{Force}/A=-\pi^2/480\,a^4$, as in
-Section~3. For $d=1$ it gives $E=-\pi/24a$.
+It is negative, so the plates attract in every dimension. For $d=3$ we have
+$\Gamma(2)\,\zeta(4)/(4\pi)^2=\pi^2/1440$, so $E/A=-\pi^2/1440\,a^3$ and
+$\text{Force}/A=-\pi^2/480\,a^4$, which is the scalar result of Section~3 at
+$\hbar=c=1$. The two polarizations of the photon double it to the
+$\pi^2/240\,a^4$ quoted there for the electromagnetic field. For $d=1$ the formula gives $E=-\pi/24a$, the familiar Casimir
+energy of a string with fixed ends.
 
 \noindent\hyperref[hw:2]{$\leftarrow$ Back to Problem 2}
 
+% ======================================================================
 \subsection{Problem 3}\label{sol:3}
 
-Write $W^{(n)}$ for the connected functions at $J=0$, and expand
+\solpart{Setting up.} Write $W^{(n)}$ for the connected functions at $J=0$. In
+the $\varphi^3$ theory the one-point function $\bar\phi=W^{(1)}$ is not zero,
+because the interaction is odd in $\varphi$. That is why the Legendre transform
+is expanded around $\bar\phi$. To keep the formulas short we use condensed
+notation: a lower index stands for a space-time point, and repeated indices are
+integrated over. So $W_{xy}=W^{(2)}(x,y)$, $W_{xyz}=W^{(3)}(x,y,z)$, and so on,
+and the same for $\hat\Gamma$. In this notation
 \[
-W[J]=W[0]+\int_x\bar\phi\,J+\frac12\int W^{(2)}JJ+\frac1{3!}\int W^{(3)}JJJ+\frac1{4!}\int W^{(4)}JJJJ+O(J^5)\,,
+W[J]=W[0]+\bar\phi_xJ_x+\frac12\,W_{xy}J_xJ_y+\frac1{3!}\,W_{xyz}J_xJ_yJ_z+\frac1{4!}\,W_{xyzw}J_xJ_yJ_zJ_w+O(J^5)\,.
 \]
-with $\int W^{(2)}JJ:=\int d^4x\,d^4y\,W^{(2)}(x,y)\,J(x)J(y)$ and so on. In the
-$\varphi^3$ theory $\bar\phi=W^{(1)}\neq0$, which is why the transform is
-expanded around $\bar\phi$. Since $\delta\Gamma/\delta\phi=J$ vanishes at
-$\phi=\bar\phi$, the expansion of $\hat\Gamma$ starts at second order,
+Let $\phi$ now denote the deviation from $\bar\phi$. The relation
+$J=\delta\Gamma/\delta\phi$ of Section~10 says that the first derivative of
+$\Gamma$ at $\bar\phi$ is the source that produces $\bar\phi$, which is zero.
+So $\hat\Gamma$ starts at second order,
 \[
-\hat\Gamma[\phi]=\frac12\int\hat\Gamma^{(2)}\phi\phi+\frac1{3!}\int\hat\Gamma^{(3)}\phi\phi\phi+\frac1{4!}\int\hat\Gamma^{(4)}\phi\phi\phi\phi+O(\phi^5)\,.
+\hat\Gamma[\phi]=\frac12\,\hat\Gamma_{xy}\phi_x\phi_y+\frac1{3!}\,\hat\Gamma_{xyz}\phi_x\phi_y\phi_z+\frac1{4!}\,\hat\Gamma_{xyzw}\phi_x\phi_y\phi_z\phi_w+O(\phi^5)\,.
 \]
-The Legendre transform pairs the two series through
+
+\solpart{Inverting the series.} The two functionals are tied together by
+$\phi=\delta W/\delta J-\bar\phi$ and $J=\delta\hat\Gamma/\delta\phi$:
 \begin{align*}
-\phi&=\frac{\delta W}{\delta J}-\bar\phi=W^{(2)}J+\frac12\,W^{(3)}JJ+\frac16\,W^{(4)}JJJ+\dots\,,\\
-J&=\frac{\delta\hat\Gamma}{\delta\phi}=\hat\Gamma^{(2)}\phi+\frac12\,\hat\Gamma^{(3)}\phi\phi+\frac16\,\hat\Gamma^{(4)}\phi\phi\phi+\dots\,.
+\phi_x&=W_{xy}J_y+\frac12\,W_{xyz}J_yJ_z+\frac16\,W_{xyzw}J_yJ_zJ_w+O(J^4)\,,\\
+J_x&=\hat\Gamma_{xy}\phi_y+\frac12\,\hat\Gamma_{xyz}\phi_y\phi_z+\frac16\,\hat\Gamma_{xyzw}\phi_y\phi_z\phi_w+O(\phi^4)\,.
 \end{align*}
-Substitute the second line into the first and collect powers of $\phi$. At first
-order $W^{(2)}\hat\Gamma^{(2)}=1$, as before. At second order
+We substitute the second line into the first. The result has to be the
+identity $\phi_x=\phi_x$, so the coefficient of each power of $\phi$ beyond the
+first has to vanish. Write $(\hat\Gamma\phi)_y$ for $\hat\Gamma_{yu}\phi_u$.
+
+At first order, $W_{xy}\hat\Gamma_{yz}=\delta_{xz}$. The full propagator is
+the inverse of $\hat\Gamma^{(2)}$, as before.
+
+At second order,
 \[
-W^{(3)}(x_1,x_2,x_3)=-\int_{y_1,y_2,y_3}W^{(2)}(x_1,y_1)\,W^{(2)}(x_2,y_2)\,W^{(2)}(x_3,y_3)\,\hat\Gamma^{(3)}(y_1,y_2,y_3)\,,
+\frac12\,W_{xa}\hat\Gamma_{auv}\phi_u\phi_v+\frac12\,W_{xyz}\,(\hat\Gamma\phi)_y(\hat\Gamma\phi)_z=0\,.
 \]
-and at third order, writing $W$ for $W^{(2)}$,
+To read off $W_{xyz}$ we strip the factors $\hat\Gamma$ from its legs, which we
+do by contracting with $W$ and using the first-order result. This gives
+\[
+W_{xyz}=-W_{xa}W_{yb}W_{zc}\,\hat\Gamma_{abc}\,.
+\]
+
+At third order there are three contributions, one from each line of the
+expansion of $\phi$:
+\[
+\frac16\,W_{xa}\hat\Gamma_{auvw}\phi_u\phi_v\phi_w
++\frac12\,W_{xyz}\,(\hat\Gamma\phi)_y\,\hat\Gamma_{zvw}\phi_v\phi_w
++\frac16\,W_{xyzw}\,(\hat\Gamma\phi)_y(\hat\Gamma\phi)_z(\hat\Gamma\phi)_w=0\,.
+\]
+The middle term collects the two cross terms of $\frac12W_{xyz}J_yJ_z$, which is
+why its coefficient is $\frac12$. Stripping the legs again, inserting the
+result for $W_{xyz}$, and symmetrizing over the three external points, we get
+\begin{align*}
+W_{xyzw}={}&-W_{xa}W_{yb}W_{zc}W_{wd}\,\hat\Gamma_{abcd}\\
+&+W_{xa}W_{yb}\,\hat\Gamma_{abu}\,W_{uv}\,\hat\Gamma_{vcd}\,W_{cz}W_{dw}
++(y\leftrightarrow z)+(y\leftrightarrow w)\,.
+\end{align*}
+The factor $3$ from the middle term is shared out among the three ways of
+splitting the four external points into two pairs.
+
+\solpart{Result.} Back in ordinary notation, with $W=W^{(2)}$,
+\[
+W^{(3)}(x_1,x_2,x_3)=-\int_{y_1,y_2,y_3}W(x_1,y_1)\,W(x_2,y_2)\,W(x_3,y_3)\,\hat\Gamma^{(3)}(y_1,y_2,y_3)\,,
+\]
+and
 \begin{multline*}
-W^{(4)}(x_1,\dots,x_4)=-\int_{y_1\dots y_4}\prod_{a=1}^4W(x_a,y_a)\;\hat\Gamma^{(4)}(y_1,\dots,y_4)\\
+W^{(4)}(x_1,\dots,x_4)=-\int_{y_1\dots y_4}\left[\prod_{a=1}^4W(x_a,y_a)\right]\hat\Gamma^{(4)}(y_1,\dots,y_4)\\
 +\biggl[\int_{y_1\dots y_4,u,v}W(x_1,y_1)W(x_2,y_2)\,\hat\Gamma^{(3)}(y_1,y_2,u)\,W(u,v)\,\hat\Gamma^{(3)}(v,y_3,y_4)\,W(y_3,x_3)W(y_4,x_4)\\
 +(2\leftrightarrow3)+(2\leftrightarrow4)\biggr]\,.
 \end{multline*}
-The same results follow from differentiating $W^{(2)}=[\Gamma^{(2)}]^{-1}$ with
-respect to $J$: each derivative of $W^{(2)}$ brings $-W^{(2)}W^{(2)}W^{(2)}\Gamma^{(3)}$,
-and each derivative of $\Gamma^{(n)}$ brings $\Gamma^{(n+1)}W^{(2)}$.
+The same results follow from differentiating $W^{(2)}=\bigl[\hat\Gamma^{(2)}\bigr]^{-1}$
+with respect to $J$. A derivative of the inverse gives
+$-W^{(2)}\,\bigl(\delta\hat\Gamma^{(2)}/\delta J\bigr)\,W^{(2)}$, and the chain rule gives
+$\delta\hat\Gamma^{(n)}/\delta J=\hat\Gamma^{(n+1)}W^{(2)}$.
 
-In diagrams, a hatched blob is $\hat\Gamma^{(n)}$ and a line with an open circle
-is the full propagator $W^{(2)}$:
+\solpart{Diagrams.} Draw $\hat\Gamma^{(n)}$ as a hatched blob with $n$ legs and the
+full propagator $W^{(2)}$ as a line with an open circle. Then
 \[
 W^{(3)}=-\;\dia[0.4]{\pic{dressed={0.5}{90,210,330}};}\,,\qquad
 W^{(4)}=-\;\dia[0.4]{\pic{dressed={0.5}{45,135,225,315}};}
 \;+\;\dia[0.4]{\pic{gtree};}\;+\;(\text{two more channels})\,.
 \]
-At lowest order $\hat\Gamma^{(3)}=\lambda_3$ and $\hat\Gamma^{(4)}$ starts with
-the one-loop box, $O(\lambda_3^4)$. So at tree level $W^{(4)}$ is given entirely by
-the exchange diagrams.
+The connected four-point function is the proper four-point vertex plus the
+three ways of joining two proper three-point vertices by a full propagator.
+At lowest order $\hat\Gamma^{(2)}=p^2+m_0^2+\lambda_3\bar\phi$,
+$\hat\Gamma^{(3)}=\lambda_3$ and $\hat\Gamma^{(4)}=0$, because the action has no
+quartic term. The first correction to $\hat\Gamma^{(4)}$ is the one-loop box, of
+order $\lambda_3^4$. So at tree level $W^{(4)}$ is given entirely by the three
+exchange diagrams, each with the factor $(-\lambda_3)^2=\lambda_3^2$, which is
+what the Feynman rules give directly.
 
 \noindent\hyperref[hw:3]{$\leftarrow$ Back to Problem 3}
 
+% ======================================================================
 \subsection{Problem 4}\label{sol:4}
 
-All cactus diagrams have momentum-independent self-energy, so write
-$\Gamma^{(2)}(p)=p^2+m^2$ with $m^2=m_0^2+\Sigma$. A cactus diagram is a tadpole
-whose loop carries any number of smaller cacti, and each of those is built the same
-way. Summing the insertions on the loop turns the bare propagator into
-$1/(k^2+m_0^2+\Sigma)=1/(k^2+m^2)$, so the sum of all cacti obeys the
-self-consistent (Hartree) equation
+\solpart{The gap equation.} Every cactus diagram is built from four-point vertices
+whose loops close on themselves, so no momentum flows from the external line
+into the loops. The self-energy is therefore independent of $p$, and we can
+write $\Gamma^{(2)}(p)=p^2+m^2$ with $m^2=m_0^2+\Sigma$, as in Section~11.
+
+Now look at the structure of a cactus. It is a single tadpole attached to the
+external line, whose loop carries any number of smaller cacti, and each of
+those is built the same way. Summing all the insertions on the loop of the
+first tadpole gives the geometric series
 \[
-m^2=m_0^2+\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac{\Phi(k^2/\Lambda^2)}{k^2+m^2}\,.
+\frac1{k^2+m_0^2}\sum_{n=0}^\infty\left(\frac{-\Sigma}{k^2+m_0^2}\right)^n=\frac1{k^2+m_0^2+\Sigma}=\frac1{k^2+m^2}\,.
 \]
-Here the cutoff factor multiplies each loop integration, as in
-Section~11. With $\Phi=e^{-k^2/\Lambda^2}$ and $u=k^2$,
+So the sum of all cacti is the one-loop tadpole with the bare propagator
+replaced by the full one:
 \[
-\int\frac{d^4k}{(2\pi)^4}\,\frac{e^{-k^2/\Lambda^2}}{k^2+m^2}
-=\frac1{16\pi^2}\int_0^\infty du\,\frac{u\,e^{-u/\Lambda^2}}{u+m^2}
-=\frac1{16\pi^2}\Bigl[\Lambda^2-m^2\,e^{m^2/\Lambda^2}E_1\bigl(m^2/\Lambda^2\bigr)\Bigr]\,,
+m^2=m_0^2+\frac\lambda2\int\frac{\dd^4k}{(2\pi)^4}\,\frac{\Phi(k^2/\Lambda^2)}{k^2+m^2}\,.
 \]
-where $E_1(x)=\int_x^\infty e^{-s}\,ds/s$. The relation, exact in $\lambda$ within
-the cactus approximation, is
+This is a self-consistent equation for $m^2$, known as the Hartree
+approximation. The cutoff factor is attached to the loop integration, as in
+Section~11.
+
+\solpart{The integral.} With $\Phi=e^{-k^2/\Lambda^2}$, four-dimensional
+spherical coordinates and $u=k^2$ we have $\dd^4k=\pi^2u\,\dd u$, so
 \[
-m_0^2=m^2-\frac{\lambda\,\Lambda^2}{32\pi^2}\Bigl[1-\frac{m^2}{\Lambda^2}\,e^{m^2/\Lambda^2}E_1\Bigl(\frac{m^2}{\Lambda^2}\Bigr)\Bigr]\,.
+\int\frac{\dd^4k}{(2\pi)^4}\,\frac{e^{-k^2/\Lambda^2}}{k^2+m^2}
+=\frac1{16\pi^2}\int_0^\infty \dd u\,\frac{u\,e^{-u/\Lambda^2}}{u+m^2}\,.
 \]
-The function $x\,e^xE_1(x)$ grows monotonically from $0$ to $1$, so for each
-$m_0^2$ above the critical value there is exactly one $m^2>0$. For $\Lambda\gg m$,
-using $E_1(x)=-\gamma_E-\log x+O(x)$,
+Write $\frac u{u+m^2}=1-\frac{m^2}{u+m^2}$. The first piece gives $\Lambda^2$.
+In the second, shift $u+m^2=s\,\Lambda^2$:
 \[
-m_0^2=m^2-\frac\lambda{32\pi^2}\Bigl[\Lambda^2-m^2\log\frac{\Lambda^2}{m^2}+\gamma_E\,m^2+O\Bigl(\frac{m^4}{\Lambda^2}\log\frac{\Lambda^2}{m^2}\Bigr)\Bigr]\,.
+\int_0^\infty \dd u\,\frac{e^{-u/\Lambda^2}}{u+m^2}=e^{m^2/\Lambda^2}\int_{m^2/\Lambda^2}^\infty\frac{e^{-s}}s\,\dd s
+=e^{m^2/\Lambda^2}\,E_1\left(\frac{m^2}{\Lambda^2}\right)\,,
 \]
-Expanding $m^2$ in powers of $\lambda$ reproduces the first-order result of
-Section~11 and then the whole cactus series. The massless theory sits at
-$m_0^2=-\lambda\Lambda^2/32\pi^2$.
+where $E_1(x)=\int_x^\infty e^{-s}\dd s/s$ is the exponential integral. So
+\[
+\int\frac{\dd^4k}{(2\pi)^4}\,\frac{e^{-k^2/\Lambda^2}}{k^2+m^2}
+=\frac1{16\pi^2}\left[\Lambda^2-m^2\,e^{m^2/\Lambda^2}E_1\left(\frac{m^2}{\Lambda^2}\right)\right]\,.
+\]
+
+\solpart{Result.} In the cactus approximation, to all orders in $\lambda$,
+\[
+m_0^2=m^2-\frac{\lambda\,\Lambda^2}{32\pi^2}\left[1-\frac{m^2}{\Lambda^2}\,e^{m^2/\Lambda^2}E_1\left(\frac{m^2}{\Lambda^2}\right)\right]\,.
+\]
+The function $x\,e^xE_1(x)$ grows monotonically from $0$ at $x=0$ to $1$ at
+$x\to\infty$. So the right-hand side is an increasing function of $m^2$, and for
+each $m_0^2$ above the critical value $-\lambda\Lambda^2/32\pi^2$ there is exactly
+one $m^2>0$. At the critical value the physical mass vanishes. Below it the
+equation has no solution with $m^2>0$, which signals the broken-symmetry phase.
+
+For $\Lambda\gg m$ we can use $E_1(x)=-\gamma_E-\log x+O(x)$, which gives
+\[
+m_0^2=m^2-\frac\lambda{32\pi^2}\left[\Lambda^2-m^2\log\frac{\Lambda^2}{m^2}+\gamma_E\,m^2+O\left(\frac{m^4}{\Lambda^2}\log\frac{\Lambda^2}{m^2}\right)\right]\,.
+\]
+
+\solpart{Check.} Write the gap equation as $m^2=m_0^2+\frac\lambda2\,I(m^2)$, with
+$I(m^2)=\int\frac{\dd^4k}{(2\pi)^4}\,\Phi/(k^2+m^2)$, and solve it by iteration.
+To second order,
+\[
+m^2=m_0^2+\frac\lambda2\,I(m_0^2)
+-\frac{\lambda^2}4\int\frac{\dd^4k}{(2\pi)^4}\,\frac{\Phi(k^2/\Lambda^2)}{(k^2+m_0^2)^2}\int\frac{\dd^4q}{(2\pi)^4}\,\frac{\Phi(q^2/\Lambda^2)}{q^2+m_0^2}+O(\lambda^3)\,.
+\]
+The first-order term is the relation of Section~11. The second-order term is
+the second cactus in the problem, a tadpole on top of a tadpole, with its
+symmetry factor $\frac14$. Going on, every term of the iteration is one of the
+cactus diagrams.
+
+One could also attach a factor $\Phi$ to every propagator, including each
+segment of a loop between two insertions. Then the geometric series gives
+$\Phi/(k^2+m_0^2+\Phi\,\Sigma)$ in place of $\Phi/(k^2+m^2)$. The two
+prescriptions agree for $k\ll\Lambda$, so they give the same $\Lambda^2$ and
+$m^2\log\Lambda^2$ terms and differ only in the finite constant next to them.
 
 \noindent\hyperref[hw:4]{$\leftarrow$ Back to Problem 4}
 
+% ======================================================================
 \subsection{Problem 5}\label{sol:5}
 
-Work at $d=4-\epsilon$. The coupling then has dimension $\epsilon$; write it as
-$\lambda\mu^\epsilon$ with dimensionless $\lambda=\lambda_{(\mu)}$, so that $\mu$
-also sets the scale in the logarithms below. Two massless integrals are needed,
-the bubble and the sunset:
+\solpart{Setting up.} We work at $d=4-\epsilon$. The coupling then has
+dimension $\epsilon$, so we write it as $\lambda\mu^\epsilon$ with dimensionless
+$\lambda=\lambda_{(\mu)}$. The scale $\mu$ then also sets the scale in the
+logarithms below. The action is
+\[
+\mathcal A=\int \dd^dx\left[\frac12\,(\partial\varphi)^2+\frac{\lambda\mu^\epsilon}{4!}\,\varphi^4
++\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta m^2}2\,\varphi^2+\frac{\delta\lambda\,\mu^\epsilon}{4!}\,\varphi^4\right]\,,
+\]
+with $\delta Z=z^{(2)}\lambda^2+\dots$, $\delta\lambda=a^{(2)}\lambda^2+\dots$ and
+$\delta m^2=b^{(1)}\lambda+b^{(2)}\lambda^2+\dots$. We drop the subscript
+$(\mu)$ on the coefficients.
+
+\solpart{Two integrals.} Two massless integrals are needed, the one-loop bubble
+and the two-loop sunset. For the bubble, combine the denominators with a
+Feynman parameter, shift $k$, and use the formula of Section~13:
 \begin{align*}
-B(p^2)&=\int\frac{d^dk}{(2\pi)^d}\,\frac1{k^2(k+p)^2}
-=\frac{\Gamma(2-\frac d2)\,\Gamma(\frac d2-1)^2}{(4\pi)^{d/2}\,\Gamma(d-2)}\,(p^2)^{\frac d2-2}\\
-&=\frac1{(4\pi)^2}\Bigl[\frac2\epsilon+2-\gamma_E+\log4\pi-\log\frac{p^2}{\mu^2}\Bigr]+O(\epsilon)\,,\\
-S(p^2)&=\int\frac{d^dk\,d^dq}{(2\pi)^{2d}}\,\frac1{k^2q^2(p-k-q)^2}
-=\frac{\Gamma(3-d)\,\Gamma(\frac d2-1)^3}{(4\pi)^d\,\Gamma(\frac{3d}2-3)}\,(p^2)^{d-3}\\
-&=-\frac{p^2}{2(4\pi)^4}\Bigl[\frac1\epsilon+\frac{13}4-\gamma_E+\log4\pi-\log\frac{p^2}{\mu^2}\Bigr]+O(\epsilon)\,.
+B(p^2)&=\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{k^2(k+p)^2}
+=\int_0^1\dd u\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{\bigl[k^2+u(1-u)p^2\bigr]^2}\\
+&=\frac{\Gamma\left(2-\frac d2\right)}{(4\pi)^{d/2}}\,(p^2)^{\frac d2-2}\int_0^1\dd u\,\bigl[u(1-u)\bigr]^{\frac d2-2}
+=\frac{\Gamma\left(2-\frac d2\right)\,\Gamma\left(\frac d2-1\right)^2}{(4\pi)^{d/2}\,\Gamma(d-2)}\,(p^2)^{\frac d2-2}\,.
 \end{align*}
-The sunset follows by doing the $q$ integral first (a bubble with momentum $p-k$)
-and then the $k$ integral with the same formula.
-
-\emph{Mass counterterms.} At order $\lambda$ the only diagram in $\Gamma^{(2)}$ is
-the tadpole, $\frac\lambda2\int d^dk/k^2=0$. Then \eqref{eq:mu3} gives
-$b^{(1)}_{(\mu)}=0$. At order $\lambda^2$ the double tadpole and the tadpole with a
-mass counterterm both vanish, and the sunset is proportional to $(p^2)^{d-3}$,
-which vanishes at $p=0$. So \eqref{eq:mu3} gives $b^{(2)}_{(\mu)}=0$.
-
-\emph{Two-point vertex.} The sunset enters with two vertices $-\lambda$ and the
-symmetry factor $\frac16$:
+The more general version of the same calculation is
 \[
-\Gamma^{(2)}(p^2)=p^2+z^{(2)}_{(\mu)}\lambda^2p^2-\frac{\lambda^2}6\,S(p^2)
-=p^2+z^{(2)}_{(\mu)}\lambda^2p^2+\frac{\lambda^2\,p^2}{12(4\pi)^4}\Bigl[\frac1\epsilon+\frac{13}4-\gamma_E+\log4\pi-\log\frac{p^2}{\mu^2}\Bigr]\,.
+\int\frac{\dd^dk}{(2\pi)^d}\,\frac1{(k^2)^\alpha\,\bigl((p-k)^2\bigr)^\beta}
+=\frac{\Gamma\left(\alpha+\beta-\frac d2\right)\,\Gamma\left(\frac d2-\alpha\right)\,\Gamma\left(\frac d2-\beta\right)}{(4\pi)^{d/2}\,\Gamma(\alpha)\,\Gamma(\beta)\,\Gamma(d-\alpha-\beta)}\,(p^2)^{\frac d2-\alpha-\beta}\,.
 \]
-The condition \eqref{eq:mu1} fixes
+For the sunset we do the $q$ integral first. It is a bubble with external
+momentum $p-k$, so it gives $B\bigl((p-k)^2\bigr)\propto\bigl((p-k)^2\bigr)^{\frac d2-2}$.
+The $k$ integral is then the general formula with $\alpha=1$ and
+$\beta=2-\frac d2$. The factors $\Gamma\left(2-\frac d2\right)$ and $\Gamma(d-2)$
+cancel between the two steps, and
 \[
-z^{(2)}_{(\mu)}=-\frac1{12(4\pi)^4}\Bigl[\frac1\epsilon+\frac94-\gamma_E+\log4\pi\Bigr]\,,
+S(p^2)=\int\frac{\dd^dk\,\dd^dq}{(2\pi)^{2d}}\,\frac1{k^2q^2(p-k-q)^2}
+=\frac{\Gamma(3-d)\,\Gamma\left(\frac d2-1\right)^3}{(4\pi)^d\,\Gamma\left(\frac{3d}2-3\right)}\,(p^2)^{d-3}\,.
 \]
-and then
+
+\solpart{Expanding in $\epsilon$.} With the factors $\mu^\epsilon$ from the
+couplings included, the expansions are
+\begin{align*}
+\mu^\epsilon B(p^2)&=\frac1{(4\pi)^2}\left[\frac2\epsilon+2-\gamma_E+\log4\pi-\log\frac{p^2}{\mu^2}\right]+O(\epsilon)\,,\\
+\mu^{2\epsilon}S(p^2)&=-\frac{p^2}{2(4\pi)^4}\left[\frac1\epsilon+\frac{13}4-\gamma_E+\log4\pi-\log\frac{p^2}{\mu^2}\right]+O(\epsilon)\,.
+\end{align*}
+For the bubble we used $\Gamma\left(\frac\epsilon2\right)=\frac2\epsilon-\gamma_E+O(\epsilon)$,
+$\Gamma\left(1-\frac\epsilon2\right)^2=1+\gamma_E\epsilon+O(\epsilon^2)$ and
+$1/\Gamma(2-\epsilon)=1+(1-\gamma_E)\,\epsilon+O(\epsilon^2)$. For the sunset we
+used $\Gamma(-1+\epsilon)=-\frac1\epsilon-1+\gamma_E+O(\epsilon)$ and
+$1/\Gamma\left(3-\frac{3\epsilon}2\right)=\frac12\left[1+\frac{3\epsilon}2\left(\frac32-\gamma_E\right)\right]+O(\epsilon^2)$.
+In both cases the factor $(4\pi\mu^2/p^2)^{\epsilon/2}$ per loop supplies the
+$\log4\pi-\log(p^2/\mu^2)$ next to each pole.
+
+\solpart{Mass counterterms.} At order $\lambda$ the only diagram in
+$\Gamma^{(2)}$ is the tadpole, $\frac\lambda2\int \dd^dk/k^2$, which is zero in
+dimensional regularization. The condition \eqref{eq:mu3} then gives
+$b^{(1)}=0$. At order $\lambda^2$ there are four candidates. The tadpole with a
+tadpole on its loop and the tadpole with a $\delta\lambda$ vertex both contain
+$\int \dd^dk/k^2$ or its derivative, so they vanish. The tadpole with a mass
+counterterm vanishes because $b^{(1)}=0$. The sunset is proportional to
+$(p^2)^{d-3}$, which vanishes at $p=0$ near $d=4$. So \eqref{eq:mu3} also gives
+$b^{(2)}=0$, and in fact $\delta m^2=0$ to all orders, as Section~15 explains.
+
+\solpart{Two-point vertex.} The surviving contributions are the sunset, with two
+vertices $-\lambda$ and the symmetry factor $\frac16$, and the counterterm
+$\delta Z\,p^2$:
+\begin{align*}
+\Gamma^{(2)}(p^2)&=p^2+z^{(2)}\lambda^2p^2-\frac{\lambda^2}6\,\mu^{2\epsilon}S(p^2)\\
+&=p^2+z^{(2)}\lambda^2p^2+\frac{\lambda^2\,p^2}{12(4\pi)^4}\left[\frac1\epsilon+\frac{13}4-\gamma_E+\log4\pi-\log\frac{p^2}{\mu^2}\right]\,.
+\end{align*}
+Differentiating with respect to $p^2$ brings down an extra $-1$ from the
+logarithm, so the condition \eqref{eq:mu1} at $p^2=\mu^2$ reads
 \[
-\Gamma^{(2)}(p^2)=p^2+\frac{\lambda^2}{12(4\pi)^4}\,p^2\Bigl(\log\frac{\mu^2}{p^2}+1\Bigr)+O(\lambda^3)\,,
+z^{(2)}+\frac1{12(4\pi)^4}\left[\frac1\epsilon+\frac{13}4-1-\gamma_E+\log4\pi\right]=0\,,
+\]
+so
+\[
+z^{(2)}=-\frac1{12(4\pi)^4}\left[\frac1\epsilon+\frac94-\gamma_E+\log4\pi\right]\,.
+\]
+With this counterterm the pole and the constants cancel, and
+\[
+\Gamma^{(2)}(p^2)=p^2+\frac{\lambda^2}{12(4\pi)^4}\,p^2\left(\log\frac{\mu^2}{p^2}+1\right)+O(\lambda^3)\,,
 \]
 which is \eqref{eq:G2mu}.
 
-\emph{Four-point vertex.} With $p_{ij}^2=(p_i+p_j)^2$,
+\solpart{Four-point vertex.} At order $\lambda^2$ the one-loop diagrams are the
+bubbles in the three channels, each with symmetry factor $\frac12$, and the
+counterterm adds $\delta\lambda$. With $p_{ij}^2=(p_i+p_j)^2$,
 \[
-\Gamma^{(4)}=\lambda+a^{(2)}_{(\mu)}\lambda^2-\frac{\lambda^2}2\Bigl[B(p_{12}^2)+B(p_{13}^2)+B(p_{14}^2)\Bigr]+O(\lambda^3)\,.
+\Gamma^{(4)}=\lambda+a^{(2)}\lambda^2-\frac{\lambda^2}2\,\mu^\epsilon\Bigl[B(p_{12}^2)+B(p_{13}^2)+B(p_{14}^2)\Bigr]+O(\lambda^3)\,.
 \]
-At the normalization point $p_i=\mu e_i$ every $p_{ij}^2=\mu^2(e_i+e_j)^2=4\mu^2$, so
+At the normalization point $p_i=\mu e_i$ we have
+$p_{ij}^2=\mu^2(e_i+e_j)^2=\mu^2(3+3-2)=4\mu^2$ for every pair, so
 \eqref{eq:mu2} fixes
 \[
-a^{(2)}_{(\mu)}=\frac3{2(4\pi)^2}\Bigl[\frac2\epsilon+2-\gamma_E+\log4\pi-\log4\Bigr]\,,
+a^{(2)}=\frac32\,\mu^\epsilon B(4\mu^2)=\frac3{2(4\pi)^2}\left[\frac2\epsilon+2-\gamma_E+\log4\pi-\log4\right]\,.
 \]
-and
+The poles and constants again cancel, and what is left is
 \[
 \Gamma^{(4)}(p_1,\dots,p_4)=\lambda+\frac{\lambda^2}{2(4\pi)^2}\left[\log\frac{p_{12}^2}{4\mu^2}+\log\frac{p_{13}^2}{4\mu^2}+\log\frac{p_{14}^2}{4\mu^2}\right]+O(\lambda^3)\,,
 \]
-which is \eqref{eq:G4mu}. The counterterm $\delta Z$ is $O(\lambda^2)$, so it
-enters $\Gamma^{(4)}$ only at order $\lambda^3$.
+which is \eqref{eq:G4mu}. The counterterm $\delta Z$ is already of order
+$\lambda^2$, so it enters $\Gamma^{(4)}$ only at order $\lambda^3$.
 
 \noindent\hyperref[hw:5]{$\leftarrow$ Back to Problem 5}
 
+% ======================================================================
 \subsection{Problem 6}\label{sol:6}
 
-\emph{(a)} The measure and the action are invariant under
-$\varphi_i\to R_{ij}\varphi_j$ with $R\in O(N)$. So $\tilde W^{(2)}_{ij}$ and
-$\tilde W^{(4)}_{ijkl}$ are invariant tensors of $O(N)$. The only invariant tensor
-of rank two is $\delta_{ij}$, and those of rank four are
-$\delta_{ij}\delta_{kl}$, $\delta_{ik}\delta_{jl}$ and $\delta_{il}\delta_{jk}$.
-Bose symmetry of $\tilde W^{(4)}$ under simultaneous exchange of an index and its
-momentum relates the three coefficient functions, which gives the stated form
-with a single function $\tilde W^{(4)}(p_1,p_2;p_3,p_4)$, symmetric under
-$p_1\leftrightarrow p_2$, under $p_3\leftrightarrow p_4$, and under exchange of
-the pairs. Since $\tilde W^{(2)}_{ij}$ is diagonal, the proper vertices carry the
-same tensors:
-\begin{align*}
-\Gamma^{(2)}_{ij}(p)&=\delta_{ij}\,\Gamma^{(2)}(p)\,,\qquad\Gamma^{(2)}(p)=1/\tilde W^{(2)}(p)\,,\\
-\Gamma^{(4)}_{ijkl}&=\delta_{ij}\delta_{kl}\,\Gamma^{(4)}(p_1,p_2;p_3,p_4)+\delta_{ik}\delta_{jl}\,\Gamma^{(4)}(p_1,p_3;p_2,p_4)+\delta_{il}\delta_{jk}\,\Gamma^{(4)}(p_1,p_4;p_2,p_3)\,,
-\end{align*}
-where $\tilde W^{(4)}_{ijkl,\,\text{amp}}=-\Gamma^{(4)}_{ijkl}$ as in the
-one-component theory.
+\solpart{(a)} The measure and the action are invariant under
+$\varphi_i\to R_{ij}\varphi_j$ for every $R\in O(N)$. So the correlation
+functions are invariant tensors,
+\[
+\tilde W^{(2)}_{ij}=R_{ii'}R_{jj'}\,\tilde W^{(2)}_{i'j'}\,,\qquad
+\tilde W^{(4)}_{ijkl}=R_{ii'}R_{jj'}R_{kk'}R_{ll'}\,\tilde W^{(4)}_{i'j'k'l'}\,.
+\]
+The only invariant tensor of rank two is $\delta_{ij}$, which gives
+$\tilde W^{(2)}_{ij}(p)=\delta_{ij}\,\tilde W^{(2)}(p)$. The invariant tensors of
+rank four are $\delta_{ij}\delta_{kl}$, $\delta_{ik}\delta_{jl}$ and
+$\delta_{il}\delta_{jk}$, so
+\[
+\tilde W^{(4)}_{ijkl}(p_1,\dots,p_4)=\delta_{ij}\delta_{kl}\,A(p_1,p_2,p_3,p_4)+\delta_{ik}\delta_{jl}\,B(p_1,p_2,p_3,p_4)+\delta_{il}\delta_{jk}\,C(p_1,p_2,p_3,p_4)
+\]
+with three functions $A$, $B$, $C$. Bose symmetry relates them. The function
+$\tilde W^{(4)}_{ijkl}(p_1,p_2,p_3,p_4)$ is unchanged when we exchange two
+fields, which swaps an index together with its momentum. Exchanging
+$(j,p_2)\leftrightarrow(k,p_3)$ turns $\delta_{ik}\delta_{jl}$ into
+$\delta_{ij}\delta_{kl}$, so $B(p_1,p_2,p_3,p_4)=A(p_1,p_3,p_2,p_4)$. In the
+same way $C(p_1,p_2,p_3,p_4)=A(p_1,p_4,p_2,p_3)$. Calling
+$A=\tilde W^{(4)}(p_1,p_2;p_3,p_4)$ gives the structure stated in the problem.
+The exchanges that leave $\delta_{ij}\delta_{kl}$ alone show that
+$\tilde W^{(4)}(p_1,p_2;p_3,p_4)$ is symmetric under $p_1\leftrightarrow p_2$,
+under $p_3\leftrightarrow p_4$, and under exchange of the two pairs. The same
+argument applies to the full and to the connected four-point function, since the
+disconnected part $\delta_{ij}\delta_{kl}\,\tilde W^{(2)}\tilde W^{(2)}+\dots$ has
+the same form.
 
-\emph{(b)} The propagator and the vertex are
+The proper vertices are defined as in the one-component theory. Since
+$\tilde W^{(2)}_{ij}$ is proportional to $\delta_{ij}$, its inverse is too:
+\[
+\Gamma^{(2)}_{ij}(p)=\delta_{ij}\,\Gamma^{(2)}(p)\,,\qquad\Gamma^{(2)}(p)=\frac1{\tilde W^{(2)}(p)}\,.
+\]
+Amputation multiplies by $\Gamma^{(2)}(p_a)$ on each leg and does not touch the
+indices. So the four-point vertex,
+$\Gamma^{(4)}_{ijkl}=-\prod_a\Gamma^{(2)}(p_a)\,\tilde W^{(4)}_{ijkl,\,c}$, has the
+same tensor structure,
+\[
+\Gamma^{(4)}_{ijkl}=\delta_{ij}\delta_{kl}\,\Gamma^{(4)}(p_1,p_2;p_3,p_4)+\delta_{ik}\delta_{jl}\,\Gamma^{(4)}(p_1,p_3;p_2,p_4)+\delta_{il}\delta_{jk}\,\Gamma^{(4)}(p_1,p_4;p_2,p_3)\,,
+\]
+with the scalar vertex
+$\Gamma^{(4)}(p_1,p_2;p_3,p_4)=-\tilde W^{(4)}_c(p_1,p_2;p_3,p_4)\big/\prod_a\tilde W^{(2)}(p_a)$.
+
+\solpart{(b)} The quadratic part of the action gives the propagator. The vertex
+is the fourth derivative of the interaction,
+\[
+\frac{\partial^4}{\partial\varphi_i\,\partial\varphi_j\,\partial\varphi_k\,\partial\varphi_l}\,\frac\lambda8\,\bigl(\varphi_m\varphi_m\bigr)^2
+=\lambda\,\bigl(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk}\bigr)\,.
+\]
+So the Feynman rules are
 \[
 \dia[0.5]{\draw[prop] (0,0) -- (2,0); \node[left] at (0,0) {$i$}; \node[right] at (2,0) {$j$}; \draw[arr] (0.7,0.25) -- (1.3,0.25) node[midway,above] {$p$};}
 =\frac{\delta_{ij}}{p^2+M^2}\,,\qquad
 \dia[0.5]{\pic{xvertex}; \node[left] at (-0.5,0.5) {$i$}; \node[right] at (0.5,0.5) {$j$}; \node[left] at (-0.5,-0.5) {$k$}; \node[right] at (0.5,-0.5) {$l$};}
 =-\lambda\,\bigl(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk}\bigr)\,(2\pi)^d\,\delta^{(d)}(p_1+\dots+p_4)\,.
 \]
-The vertex is the fourth derivative of $\frac\lambda8(\bm{\varphi}^2)^2$. Each
-loop carries $\int d^dk/(2\pi)^d$ and a sum over the internal indices, and the
-symmetry factors are those of the one-component theory. For $N=1$ the vertex is
-$-3\lambda$, which is $\varphi^4$ theory with $\lambda_{4!}=3\lambda$. At tree
-level $\Gamma^{(4)}(p_1,p_2;p_3,p_4)=\lambda$.
+Each loop carries $\int \dd^dk/(2\pi)^d$, the indices on internal lines are
+summed over, and the symmetry factors are those of the one-component theory.
+For $N=1$ the vertex is $-3\lambda$, so the model is $\varphi^4$ theory with
+$\lambda_{4!}=3\lambda$. At tree level $\Gamma^{(4)}(p_1,p_2;p_3,p_4)=\lambda$.
 
-\emph{(c)} The scheme is the one of Section~15, applied to the scalar
-functions: $d\Gamma^{(2)}/dp^2=1$ at $p^2=\mu^2$, and
-$\Gamma^{(4)}(p_1,p_2;p_3,p_4)=\lambda$ at $p_i=\mu e_i$. The renormalization
-commutes with $O(N)$, so each tensor structure obeys the equation separately:
-\[
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\frac\partial{\partial\lambda}-2\gamma(\lambda)\Bigr)\Gamma^{(2)}(p)=0\,,\qquad
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\frac\partial{\partial\lambda}-4\gamma(\lambda)\Bigr)\Gamma^{(4)}(p_1,p_2;p_3,p_4)=0\,.
-\]
+\solpart{(c)} We use the scheme of Section~15, applied to the scalar functions:
+$\dd\Gamma^{(2)}/\dd p^2=1$ at $p^2=\mu^2$, $\Gamma^{(2)}(0)=0$, and
+$\Gamma^{(4)}(p_1,p_2;p_3,p_4)=\lambda$ at $p_i=\mu e_i$. The field
+renormalization is $\varphi_i=Z^{-1/2}\varphi_{0,i}$ with the same $Z$ for every
+component, since the counterterms are $O(N)$ invariant. So the derivation of
+\eqref{eq:CSGamma} goes through unchanged for each tensor structure separately,
+and
+\begin{align*}
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}-2\gamma(\lambda)\right)\Gamma^{(2)}(p)&=0\,,\\
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}-4\gamma(\lambda)\right)\Gamma^{(4)}(p_1,p_2;p_3,p_4)&=0\,.
+\end{align*}
 
-\emph{(d)} Write $V_{ijkl}=\lambda(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$.
-The two index sums that appear are
+\solpart{(d)} The calculation is the one of Problem~5, with an index sum for
+every diagram. Write
+$V_{ijkl}=\lambda\,(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$
+for the vertex. Two index sums appear. Multiplying out the products of
+Kronecker deltas term by term,
 \[
 \begin{gathered}
 \sum_{m,n}V_{ijmn}V_{mnkl}=\lambda^2\bigl[(N+4)\,\delta_{ij}\delta_{kl}+2\,\delta_{ik}\delta_{jl}+2\,\delta_{il}\delta_{jk}\bigr]\,,\\
 \sum_{k,l,m}V_{iklm}V_{jklm}=3(N+2)\,\lambda^2\,\delta_{ij}\,.
 \end{gathered}
 \]
-The one-loop four-point function is $-\frac12\sum_{mn}V_{ijmn}V_{mnkl}\,B(p_{12}^2)$
-plus the two crossed channels. Collecting the coefficient of
-$\delta_{ij}\delta_{kl}$ and renormalizing as in Problem~5,
+In the first sum the factor $N$ comes from the closed index loop
+$\delta_{mn}\delta_{mn}$.
+
+The one-loop four-point function in the $s$ channel is
+$-\frac12\sum_{m,n}V_{ijmn}V_{mnkl}\,B(p_{12}^2)$. The $t$ and $u$ channels are
+the same with $(j,p_2)$ exchanged with $(k,p_3)$ or $(l,p_4)$. We need the
+coefficient of $\delta_{ij}\delta_{kl}$. The $s$ channel contributes $(N+4)$,
+and the other two channels contribute $2$ each:
+\[
+\Gamma^{(4)}(p_1,p_2;p_3,p_4)=\lambda+a^{(2)}\lambda^2-\frac{\lambda^2}2\Bigl[(N+4)\,B(p_{12}^2)+2\,B(p_{13}^2)+2\,B(p_{14}^2)\Bigr]+O(\lambda^3)\,.
+\]
+The poles add up to $(N+8)$ times the pole of a single bubble, for each of the
+three tensor structures. So the divergence has the tensor form of the bare
+vertex, and a single counterterm $\delta\lambda$ removes it. The normalization
+condition gives $a^{(2)}=\frac{N+8}2\,B(4\mu^2)$, and
 \[
 \Gamma^{(4)}(p_1,p_2;p_3,p_4)=\lambda+\frac{\lambda^2}{2(4\pi)^2}\left[(N+4)\log\frac{p_{12}^2}{4\mu^2}+2\log\frac{p_{13}^2}{4\mu^2}+2\log\frac{p_{14}^2}{4\mu^2}\right]+O(\lambda^3)\,.
 \]
-The divergent parts of the three channels add up to
-$(N+8)(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$, the
-tensor of the bare vertex, so one counterterm $\delta\lambda$ suffices. The sunset
-in $\Gamma^{(2)}$ comes with $\frac16\cdot3(N+2)\lambda^2$, so
+In $\Gamma^{(2)}$ the sunset comes with $\frac16\sum V_{iklm}V_{jklm}=\frac{N+2}2\,\lambda^2\,\delta_{ij}$
+in place of $\frac16\,\lambda_{4!}^2$, and the same steps as in Problem~5 give
 \[
-\Gamma^{(2)}(p)=p^2+\frac{(N+2)\,\lambda^2}{4(4\pi)^4}\,p^2\Bigl(\log\frac{\mu^2}{p^2}+1\Bigr)+O(\lambda^3)\,.
+\Gamma^{(2)}(p)=p^2+\frac{(N+2)\,\lambda^2}{4(4\pi)^4}\,p^2\left(\log\frac{\mu^2}{p^2}+1\right)+O(\lambda^3)\,.
 \]
-Substituting into the equations of part (c), exactly as in Section~15,
+Now we substitute into the equations of part~(c), exactly as in Section~15.
+In the equation for $\Gamma^{(2)}$ the term $\mu\,\partial/\partial\mu$ acting on
+the logarithm gives $\frac{2(N+2)\lambda^2}{4(4\pi)^4}\,p^2$. The $\beta$ term is of
+order $\lambda^3$. So
 \[
-\gamma(\lambda)=\frac{(N+2)\,\lambda^2}{4(4\pi)^4}+O(\lambda^3)\,,\qquad
+\gamma(\lambda)=\frac{(N+2)\,\lambda^2}{4(4\pi)^4}+O(\lambda^3)\,.
+\]
+In the equation for $\Gamma^{(4)}$, $\mu\,\partial/\partial\mu$ acting on the
+three logarithms gives $-\frac{\lambda^2}{(4\pi)^2}\,(N+4+2+2)$, the $\beta$
+term gives $\beta(\lambda)$, and the $\gamma$ term is of order $\lambda^3$. So
+\[
 \beta(\lambda)=\frac{(N+8)\,\lambda^2}{(4\pi)^2}+O(\lambda^3)\,.
 \]
-For $N=1$ and $\lambda_{4!}=3\lambda$ these become $\gamma=\lambda_{4!}^2/12(4\pi)^4$
-and $\beta_{4!}=3\lambda_{4!}^2/(4\pi)^2$, the results \eqref{eq:gamma1} and
+For $N=1$ we have $\lambda_{4!}=3\lambda$ and $\beta_{4!}=3\beta$. The formulas
+become $\gamma=\lambda_{4!}^2/12(4\pi)^4$ and
+$\beta_{4!}=3\lambda_{4!}^2/(4\pi)^2$, which are \eqref{eq:gamma1} and
 \eqref{eq:beta1}.
 
 \noindent\hyperref[hw:6]{$\leftarrow$ Back to Problem 6}
 
+% ======================================================================
 \subsection{Problem 7}\label{sol:7}
 
-\emph{(b)} I do part (b) first. Schwinger's representation and the Gaussian
-momentum integral give
+Write $R=|x_E|$. It is easiest to do part~(b) first and read off part~(a) from it.
+
+\solpart{(b)} Schwinger's representation is
+$\frac1{p^2+m^2}=\int_0^\infty \dd\tau\,e^{-\tau(p^2+m^2)}$. The momentum integral is
+then Gaussian. Completing the square,
 \[
-D_E(x_E)=\int_0^\infty d\tau\int\frac{d^4p}{(2\pi)^4}\,e^{-\tau(p^2+m^2)+ipx_E}
-=\int_0^\infty\frac{d\tau}{(4\pi\tau)^2}\,e^{-m^2\tau-\frac{R^2}{4\tau}}\,.
+\int\frac{\dd^4p}{(2\pi)^4}\,e^{-\tau p^2+ipx_E}=\frac1{(4\pi\tau)^2}\,e^{-\frac{R^2}{4\tau}}\,,
+\qquad\text{so}\qquad
+D_E(x_E)=\int_0^\infty\frac{\dd\tau}{(4\pi\tau)^2}\,e^{-m^2\tau-\frac{R^2}{4\tau}}\,.
 \]
-With $K_\nu(z)=\frac12\bigl(\frac z2\bigr)^\nu\int_0^\infty dt\,t^{-\nu-1}e^{-t-z^2/4t}$
-at $\nu=1$ and $t=m^2\tau$,
+This is a standard integral representation of a Bessel function,
 \[
-D_E(x_E)=\frac m{4\pi^2R}\,K_1(mR)\,.
+K_\nu(z)=\frac12\left(\frac z2\right)^\nu\int_0^\infty \dd t\,t^{-\nu-1}\,e^{-t-\frac{z^2}{4t}}\,.
+\]
+Substituting $t=m^2\tau$ turns the exponent into $-t-m^2R^2/4t$, so $z=mR$, and
+$\dd\tau/\tau^2=m^2\,\dd t/t^2$ matches $\nu=1$. Therefore
+\[
+D_E(x_E)=\frac{m^2}{16\pi^2}\cdot2\left(\frac{mR}2\right)^{-1}K_1(mR)=\frac m{4\pi^2R}\,K_1(mR)\,.
 \]
 
-\emph{(a)} From $K_1(z)=\sqrt{\pi/2z}\;e^{-z}\bigl(1+\frac3{8z}+\dots\bigr)$,
+\solpart{(a)} For large argument
+$K_1(z)=\sqrt{\pi/2z}\;e^{-z}\bigl(1+\frac3{8z}+\dots\bigr)$. Substituting,
 \[
-D_E(x_E)\simeq\frac1{2(2\pi)^{3/2}}\,\frac{m^{1/2}}{R^{3/2}}\,e^{-mR}\,,\qquad
+D_E(x_E)\simeq\frac m{4\pi^2R}\,\sqrt{\frac\pi{2mR}}\;e^{-mR}
+=\frac1{2(2\pi)^{3/2}}\,\frac{m^{1/2}}{R^{3/2}}\,e^{-mR}\,,\qquad
 \Const=\frac1{2(2\pi)^{3/2}}=\frac1{\sqrt{32\pi^3}}\,.
 \]
-The same constant comes from the saddle point of the $\tau$ integral at
-$\tau_*=R/2m$.
+The same constant comes straight from the $\tau$ integral, without Bessel
+functions. The exponent $f(\tau)=m^2\tau+R^2/4\tau$ has its minimum at
+$\tau_*=R/2m$, where $f(\tau_*)=mR$ and $f''(\tau_*)=4m^3/R$. For $mR\gg1$ the
+minimum is sharp, and the saddle point estimate
+\[
+D_E\simeq\frac1{(4\pi\tau_*)^2}\,\sqrt{\frac{2\pi}{f''(\tau_*)}}\;e^{-mR}
+=\frac{m^2}{4\pi^2R^2}\,\sqrt{\frac{\pi R}{2m^3}}\;e^{-mR}
+\]
+is the same as above.
 
-\emph{(c)} At small $z$,
-$K_1(z)=\frac1z+I_1(z)\log\frac z2+z\,h(z^2)$ with $h$ entire and
-$I_1(z)/z$ entire in $z^2$. Write $s^2=x_E^2$. Then
+\solpart{(c)} At small $z$ the Bessel function has the expansion
+\[
+K_1(z)=\frac1z+I_1(z)\,\log\frac z2+z\,h(z^2)\,,
+\]
+where $h$ is an entire function, and $I_1(z)/z=\frac12+\frac{z^2}{16}+\dots$ is an
+entire function of $z^2$. Write $s^2=x_E^2$. Then
 \[
 D_E=\frac1{4\pi^2}\left[\frac1{s^2}+\frac12\,\frac{m\,I_1(ms)}s\,\log\frac{m^2s^2}4+E(s^2)\right]
-=\frac1{4\pi^2s^2}+\frac{m^2}{16\pi^2}\log\frac{m^2s^2}4+\dots\,,
+=\frac1{4\pi^2s^2}+\frac{m^2}{16\pi^2}\,\log\frac{m^2s^2}4+\dots\,,
 \]
-with $E$ an entire function. The singularity at $x_E^2=0$ is a pole in $s^2$
-plus a logarithm multiplied by an entire function. Now set $x_4=it$, so
-$s^2=\xx^2-t^2$. As a function of complex $t$, $D(\xx,t)$ is analytic except at
-$t=\pm|\xx|$, where it has simple poles and logarithmic branch points. The cuts can
-be taken along $t\ge|\xx|$ and $t\le-|\xx|$, where $\xx^2-t^2<0$, as in
-Section~4. For real $t>0$ the shifts $t\mp i0$ move $\xx^2-t^2$ to
-$\pm i0$. With $1/(u+i0)-1/(u-i0)=-2\pi i\,\delta(u)$, a jump of $2\pi i$ in the
-logarithm, and $m\,I_1(ms)/s=m\,J_1(m\sigma)/\sigma$ for
-$\sigma=\sqrt{t^2-\xx^2}$,
+with $E$ another entire function. So at $x_E^2=0$ the propagator has a pole in
+$s^2$, plus a logarithm of $s^2$ multiplied by an entire function of $s^2$.
+Everything else is analytic.
+
+Now set $x_E=(\xx,x_4)$ with $x_4=it$, so that $s^2=\xx^2-t^2$. For fixed real
+$\xx$, $D(\xx,t)$ is an analytic function of complex $t$ except at the two
+points $t=\pm|\xx|$, where $s^2=0$. Each of these is a simple pole and a
+logarithmic branch point at the same time. The logarithm $\log s^2$ is real for
+$s^2>0$, which is the region $|t|<|\xx|$ on the real axis. So we take the cuts
+along the rest of the real axis, $t\ge|\xx|$ and $t\le-|\xx|$, where $s^2<0$.
+These are the future and the past halves of the light cone, as in Section~4.
+
+To find the jumps, take real $t>|\xx|$. Then $(t\mp i0)^2=t^2\mp i0$, so
+$s^2=\xx^2-t^2\pm i0$. Write $u=\xx^2-t^2<0$. We need three facts. The pole
+gives $\frac1{u+i0}-\frac1{u-i0}=-2\pi i\,\delta(u)$. The logarithm jumps by
+$\log(u+i0)-\log(u-i0)=2\pi i$. And for $s=i\sigma$ with
+$\sigma=\sqrt{t^2-\xx^2}$, $I_1(i\,m\sigma)=i\,J_1(m\sigma)$, so that
+$m\,I_1(ms)/s=m\,J_1(m\sigma)/\sigma$. For $t<-|\xx|$ the signs of the $i0$ are
+reversed. Altogether,
 \[
 D(\xx,t-i0)-D(\xx,t+i0)=\operatorname{sign}(t)\left[-\frac i{2\pi}\,\delta(t^2-\xx^2)
 +\frac{i\,m}{4\pi}\,\theta(t^2-\xx^2)\,\frac{J_1\bigl(m\sqrt{t^2-\xx^2}\bigr)}{\sqrt{t^2-\xx^2}}\right]\,.
 \]
-By Section~4 this is
-$\bra0[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)]\ket0$. It is supported on and
-inside the light cone, a delta function on the cone itself plus a Bessel tail
-inside, and it vanishes for $|t|<|\xx|$.
+This is $\bra0[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)]\ket0$, the
+Pauli-Jordan function, in agreement with Section~4. It has a delta function on
+the light cone and a Bessel tail inside it, and it vanishes for $|t|<|\xx|$, as
+causality requires.
 
 \noindent\hyperref[hw:7]{$\leftarrow$ Back to Problem 7}
 
+% ======================================================================
 \subsection{Problem 8}\label{sol:8}
 
-Use the results of Problem~6 with the dimensionless coupling $\lambda\mu^{-\epsilon}$.
-At $d=4-\epsilon$ the canonical dimension of the coupling adds $-\epsilon\lambda$
-to the flow function:
+\solpart{The fixed point.} We use the results of Problem~6, now at
+$d=4-\epsilon$. As in Section~21 the coupling is made dimensionless with the
+normalization scale, $\lambda_0\to\lambda\mu^\epsilon$. The canonical dimension
+of the coupling then adds $-\epsilon\lambda$ to the flow function, while the
+one-loop term is the four-dimensional one:
 \[
-\beta(\lambda)=-\epsilon\lambda+\frac{(N+8)\,\lambda^2}{16\pi^2}+O(\lambda^3)\,,\qquad
-\lambda_*=\frac{16\pi^2\,\epsilon}{N+8}\,.
+\beta(\lambda)=-\epsilon\lambda+\frac{(N+8)\,\lambda^2}{16\pi^2}+O(\lambda^3)\,.
 \]
-The anomalous dimension of $\bm{\varphi}^2$ comes from the same one-loop diagram
-as in Section~15. The insertion of $\varphi_k\varphi_k$ meets the vertex
-through $\sum_k V_{kkij}=(N+2)\lambda\,\delta_{ij}$, so
+Besides the Gaussian zero at $\lambda=0$ there is the Wilson-Fisher fixed point
+\[
+\lambda_*=\frac{16\pi^2\,\epsilon}{N+8}+O(\epsilon^2)\,.
+\]
+It is small when $\epsilon$ is small, which justifies the perturbative
+treatment. Since $\beta'(\lambda_*)=\epsilon>0$, the coupling flows into
+$\lambda_*$ at large distances. For $N=1$ we get $\lambda_*=16\pi^2\epsilon/9$,
+which is $\lambda_{4!*}=16\pi^2\epsilon/3$, the value of Section~21.
+
+\solpart{Anomalous dimension of $\bm{\varphi}^2$.} The composite field is
+$\frac12\,\varphi_k\varphi_k$. Its anomalous dimension comes from the one-loop
+diagram of Section~15, where the two legs of the insertion close into a loop
+through one vertex. In the one-component theory the vertex there is
+$\lambda_{4!}$. Here it is replaced by the index sum
+\[
+\sum_kV_{kkij}=\lambda\,(N+1+1)\,\delta_{ij}=(N+2)\,\lambda\,\delta_{ij}\,.
+\]
+So \eqref{eq:gammaphi2val} becomes
 \[
 \gamma_{\varphi^2}(\lambda)=\frac{(N+2)\,\lambda}{16\pi^2}+O(\lambda^2)\,,\qquad
-\gamma_{\varphi^2}(\lambda_*)=\frac{N+2}{N+8}\,\epsilon\,.
+\gamma_{\varphi^2}(\lambda_*)=\frac{N+2}{N+8}\,\epsilon+O(\epsilon^2)\,.
 \]
-The anomalous dimension of $\bm{\varphi}$ starts at two loops,
-$\gamma(\lambda_*)=\frac{(N+2)\,\epsilon^2}{4(N+8)^2}$, so to order $\epsilon$ it
-vanishes. The scaling dimensions at the fixed point are
+With the normalization $\frac{\lambda'}{4!}(\bm{\varphi}^2)^2$ of the coupling,
+$\lambda=\lambda'/3$, this is the
+$\gamma_{\varphi^2}=\frac{N+2}{48\pi^2}\,\lambda'$ quoted in Section~21.
+
+\solpart{Anomalous dimension of $\bm{\varphi}$.} The field anomalous dimension has
+no one-loop term, because the only one-loop self-energy diagram is the
+tadpole, which is independent of $p$. From Problem~6,
+\[
+\gamma(\lambda_*)=\frac{(N+2)\,\lambda_*^2}{4(4\pi)^4}=\frac{(N+2)\,\epsilon^2}{4(N+8)^2}\,,
+\]
+so to order $\epsilon$ the anomalous dimension of $\bm{\varphi}$ is zero.
+
+\solpart{Scaling dimensions.} At the fixed point,
 \[
 D_\varphi=\frac{d-2}2+\gamma(\lambda_*)=1-\frac\epsilon2+O(\epsilon^2)\,,\qquad
 D_{\varphi^2}=d-2+\gamma_{\varphi^2}(\lambda_*)=2-\frac{6\,\epsilon}{N+8}+O(\epsilon^2)\,.
 \]
-As in Section~21, $\bm{\varphi}^2$ is the relevant direction, so
-$1/\nu=d-D_{\varphi^2}$ and $\alpha=2-d\,\nu$:
+
+\solpart{Exponents.} As in Sections~20 and 21, $\bm{\varphi}^2$ is the single
+relevant direction at the fixed point, and the coefficient of $\bm{\varphi}^2$ is
+proportional to $T-T_c$. Its eigenvalue is $\kappa_0=d-D_{\varphi^2}$, and
+$\nu=1/\kappa_0$:
 \[
-\nu=\frac12+\frac{N+2}{4(N+8)}\,\epsilon+O(\epsilon^2)\,,\qquad
-\alpha=\frac{4-N}{2(N+8)}\,\epsilon+O(\epsilon^2)\,.
+\frac1\nu=d-D_{\varphi^2}=2-\frac{N+2}{N+8}\,\epsilon\,,\qquad
+\nu=\frac12+\frac{N+2}{4(N+8)}\,\epsilon+O(\epsilon^2)\,.
 \]
-For $N=1$ these reduce to $\nu=\frac12+\frac\epsilon{12}$ and $\alpha=\frac\epsilon6$
-of Section~21. For $N\to\infty$ they agree with the large-$N$ values
-$\nu=1/(d-2)$ and $\alpha=(d-4)/(d-2)$ to first order in $\epsilon$.
+The heat capacity exponent follows from the hyperscaling relation
+\eqref{eq:alpha}, $\alpha=2-d\,\nu$:
+\[
+\alpha=2-(4-\epsilon)\left(\frac12+\frac{N+2}{4(N+8)}\,\epsilon\right)
+=\frac{4-N}{2(N+8)}\,\epsilon+O(\epsilon^2)\,.
+\]
+
+\solpart{Checks.} For $N=1$ these are $\nu=\frac12+\frac\epsilon{12}$ and
+$\alpha=\frac\epsilon6$, the results of Section~21. For $N\to\infty$ they become
+$\nu=\frac12+\frac\epsilon4$ and $\alpha=-\frac\epsilon2$, which are the first
+terms in the expansion of the exact large-$N$ values $\nu=1/(d-2)$ and
+$\alpha=(d-4)/(d-2)$. The heat capacity exponent changes sign at $N=4$.
 
 \noindent\hyperref[hw:8]{$\leftarrow$ Back to Problem 8}
 
+% ======================================================================
 \subsection{Problem 9}\label{sol:9}
 
-From Section~22, at small $g$,
+We collect the facts we need from Section~22. At small $g$ and $d=2$,
 \[
-\frac{dg}{dl}=\frac{N-2}{2\pi}\,g^2\,,\qquad\gamma_{\mathbf n}(g)=\frac{N-1}{4\pi}\,g\,,\qquad
--\frac d{dl}\,Z_{\mathbf n}^{-\frac12}=\gamma_{\mathbf n}\,Z_{\mathbf n}^{-\frac12}\,,
+\frac{\dd g}{\dd l}=\frac{N-2}{2\pi}\,g^2\,,\qquad
+\gamma_{\mathbf n}(g)=\frac{N-1}{4\pi}\,g\,,\qquad
+-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-\frac12}=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-\frac12}\,.
 \]
-so $\frac d{dl}\log Z_{\mathbf n}=2\gamma_{\mathbf n}\bigl(g(l)\bigr)$.
-
-\emph{I(a)} The flow gives $1/g(l)=1/g(0)-\frac{N-2}{2\pi}\,l$. Change the variable
-from $l$ to $g$, $dl=\frac{2\pi}{N-2}\,dg/g^2$:
+Taking the logarithm of the last equation,
 \[
-\log Z_{\mathbf n}(l)=\frac{N-1}{2\pi}\int_0^lg\,dl'=\frac{N-1}{N-2}\,\log\frac{g(l)}{g(0)}\,,
-\]
-so
-\[
-Z_{\mathbf n}(l)=\left(\frac{g(l)}{g(0)}\right)^{\frac{N-1}{N-2}}=\Bigl(1-\frac{N-2}{2\pi}\,g(0)\,l\Bigr)^{-\frac{N-1}{N-2}}\,.
+\frac{\dd}{\dd l}\log Z_{\mathbf n}(l)=2\gamma_{\mathbf n}\bigl(g(l)\bigr)\,,\qquad Z_{\mathbf n}(0)=1\,.
 \]
 
-\emph{I(b)} Take the scaling relation of Section~22 with $|x_1-x_2|=r$ and
-$L=r$, so $l=\log r<0$:
+\solpart{I(a)} The flow equation integrates to
+\[
+\frac1{g(l)}=\frac1{g(0)}-\frac{N-2}{2\pi}\,l\,.
+\]
+To integrate the equation for $Z_{\mathbf n}$ it is easiest to use $g$ as the
+variable in place of $l$. The flow equation gives
+$\dd l=\frac{2\pi}{N-2}\,\dd g/g^2$, so
+\[
+\log Z_{\mathbf n}(l)=\frac{N-1}{2\pi}\int_0^lg(l')\,\dd l'
+=\frac{N-1}{2\pi}\cdot\frac{2\pi}{N-2}\int_{g(0)}^{g(l)}\frac{\dd g}g
+=\frac{N-1}{N-2}\,\log\frac{g(l)}{g(0)}\,.
+\]
+Therefore
+\[
+Z_{\mathbf n}(l)=\left(\frac{g(l)}{g(0)}\right)^{\frac{N-1}{N-2}}=\left(1-\frac{N-2}{2\pi}\,g(0)\,l\right)^{-\frac{N-1}{N-2}}\,.
+\]
+For $g(0)\,l\ll1$ this reduces to $1+\frac{N-1}{2\pi}\,g(0)\,l$, the
+one-step result of Section~22. Since we assumed $g(l)\ll1$ throughout, the
+formula holds for $l<0$ and for positive $l$ well below $2\pi/\bigl((N-2)\,g(0)\bigr)$.
+
+\solpart{I(b)} The scaling relation from the problem reads
+\[
+\bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,\qquad l=\log L\,.
+\]
+Both sides depend only on the separation. Choose $|x_1-x_2|=r$ and $L=r$. The
+left-hand side is then evaluated at unit separation:
 \[
 \bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle_{g(0)}\Big|_{|x|=r}
-=Z_{\mathbf n}^{-1}(l)\,\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle_{g(l)}\Big|_{|x|=1}\,.
+=Z_{\mathbf n}^{-1}(l)\,\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle_{g(l)}\Big|_{|x|=1}\,,\qquad l=\log r\,.
 \]
-As $r\to0$ the coupling $g(l)\simeq2\pi/\bigl((N-2)\log\frac1r\bigr)$ goes to zero,
-and the correlator on the right tends to a constant. Therefore
+Short distances mean $r\to0$, so $l\to-\infty$. The flow then drives the
+coupling to zero,
 \[
-\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle\simeq\Const\,\Bigl(\frac{g(0)}{g(l)}\Bigr)^{\frac{N-1}{N-2}}
+g(l)=\frac{g(0)}{1+\frac{N-2}{2\pi}\,g(0)\,|l|}\simeq\frac{2\pi}{(N-2)\log\frac1r}\,,
+\]
+which is asymptotic freedom. So the expansion in $g(l)$ is reliable. At small
+coupling the field barely fluctuates, and the correlator on the right tends to
+its free value, a constant. Therefore
+\[
+\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle\simeq\Const\left(\frac{g(0)}{g(l)}\right)^{\frac{N-1}{N-2}}
 \sim\left[\log\frac1{x^2}\right]^{\frac{N-1}{N-2}}\qquad(|x|\to0)\,.
 \]
 
-\emph{I(c)} At $N\to\infty$ the exponent tends to $1$. In the exact large-$N$
-solution (PS, \S13.3) each component of $\mathbf n$ is a free field of mass
-$m\propto\Lambda e^{-2\pi/Ng}$, with propagator $1/(p^2+m^2)$. In two dimensions
-its Fourier transform is $\frac1{2\pi}K_0(m|x|)\simeq\frac1{4\pi}\log\frac1{m^2x^2}$
-at small $|x|$, a single power of the logarithm, as the RG result says.
-
-\emph{II} At $d=2+\epsilon$,
+\solpart{I(c)} At $N\to\infty$ the exponent $\frac{N-1}{N-2}$ tends to $1$. In
+the exact large-$N$ solution (PS, \S13.3) each of the $N$ components of
+$\mathbf n$ is a free field with mass $m\propto\Lambda\,e^{-2\pi/Ng}$, generated
+dynamically, and with propagator proportional to $1/(p^2+m^2)$. In two
+dimensions the Fourier transform of this propagator is
 \[
-\frac{dg}{dl}=-\epsilon g+\frac{N-2}{2\pi}\,g^2=\frac{N-2}{2\pi}\,g\,(g-g_*)\,,\qquad
-\frac1{g(l)}=\frac1{g_*}+\Bigl(\frac1{g(0)}-\frac1{g_*}\Bigr)e^{\epsilon l}\,,\qquad g_*=\frac{2\pi\epsilon}{N-2}\,,
+\int\frac{\dd^2p}{(2\pi)^2}\,\frac{e^{ipx}}{p^2+m^2}=\frac1{2\pi}\,K_0(m|x|)\simeq\frac1{4\pi}\,\log\frac1{m^2x^2}\qquad(m|x|\ll1)\,.
 \]
-and the flow equation for $Z_{\mathbf n}$ is
+This is a single power of the logarithm, which is the RG result at $N=\infty$.
+
+\solpart{II} At $d=2+\epsilon$ the coupling $g$ has dimension $-\epsilon$, which
+adds $-\epsilon g$ to the flow (Section~22):
 \[
-\frac d{dl}\,Z_{\mathbf n}(l)=\frac{N-1}{2\pi}\,g(l)\,Z_{\mathbf n}(l)\,,\qquad
+\frac{\dd g}{\dd l}=-\epsilon g+\frac{N-2}{2\pi}\,g^2=\frac{N-2}{2\pi}\,g\,(g-g_*)\,,\qquad g_*=\frac{2\pi\,\epsilon}{N-2}\,.
+\]
+This integrates to
+\[
+\frac1{g(l)}=\frac1{g_*}+\left(\frac1{g(0)}-\frac1{g_*}\right)e^{\epsilon l}\,.
+\]
+The field $\mathbf n$ is still dimensionless, because of the constraint
+$\mathbf n^2=1$, and $\gamma_{\mathbf n}(g)$ is unchanged at leading order. So
+the flow equation for $Z_{\mathbf n}$ is
+\[
+\frac{\dd}{\dd l}\,Z_{\mathbf n}(l)=\frac{N-1}{2\pi}\,g(l)\,Z_{\mathbf n}(l)\,.
+\]
+Changing the variable to $g$ as before,
+$\dd l=\frac{2\pi}{N-2}\,\dd g/\bigl(g(g-g_*)\bigr)$, so
+\[
+\log Z_{\mathbf n}=\frac{N-1}{N-2}\int_{g(0)}^{g(l)}\frac{\dd g}{g-g_*}\,,\qquad
 Z_{\mathbf n}(l)=\left(\frac{g(l)-g_*}{g(0)-g_*}\right)^{\frac{N-1}{N-2}}\,.
 \]
-At $\epsilon\to0$ this goes back to part I(a). Going to short distances,
-$l\to-\infty$, the coupling flows to the ultraviolet fixed point $g_*$ from either
-side, with $g(l)-g_*\propto e^{\epsilon l}$. Then
-$Z_{\mathbf n}(l)\propto e^{2\gamma_*l}$ with
-$\gamma_*=\gamma_{\mathbf n}(g_*)=\frac{(N-1)\,\epsilon}{2(N-2)}$, and the same
-argument as in I(b) gives a power law,
+At $\epsilon\to0$ we have $g_*\to0$, and this goes back to part~I(a).
+
+Going to short distances, $l\to-\infty$, the factor $e^{\epsilon l}$ goes to
+zero, and $g(l)$ flows to the ultraviolet fixed point $g_*$ from either side.
+Near the fixed point $g(l)-g_*\propto e^{\epsilon l}$, so
 \[
-\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle\sim|x|^{-2\gamma_*}=|x|^{-\frac{N-1}{N-2}\,\epsilon}\qquad(|x|\to0)\,.
+Z_{\mathbf n}(l)\propto e^{\frac{N-1}{N-2}\,\epsilon l}=e^{2\gamma_*l}\,,\qquad
+\gamma_*=\gamma_{\mathbf n}(g_*)=\frac{(N-1)\,\epsilon}{2(N-2)}\,.
 \]
-In the usual notation $2D_{\mathbf n}=d-2+\eta$ this is $\eta=\epsilon/(N-2)$, the
-known result for the sigma model at $2+\epsilon$ dimensions.
+The argument of part~I(b) now gives a power law. At $L=r$ the correlator at
+unit separation tends to its value at $g_*$, a constant, and
+\[
+\bigl\langle\mathbf n(x)\,\mathbf n(0)\bigr\rangle\sim Z_{\mathbf n}^{-1}(\log|x|)\sim|x|^{-2\gamma_*}=|x|^{-\frac{N-1}{N-2}\,\epsilon}\qquad(|x|\to0)\,.
+\]
+The scaling dimension of $\mathbf n$ at $g_*$ is $D_{\mathbf n}=\gamma_*$. In the
+usual notation $2D_{\mathbf n}=d-2+\eta$, this is
+$\eta=2\gamma_*-\epsilon=\epsilon/(N-2)$, the known result for the sigma model
+at $2+\epsilon$ dimensions.
 
 \noindent\hyperref[hw:9]{$\leftarrow$ Back to Problem 9}

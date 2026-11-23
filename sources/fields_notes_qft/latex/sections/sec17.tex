@@ -144,7 +144,7 @@ It is usually most convenient to consider the infinitesimal RG transformation
 \[
 RG_{\delta l}\{\mathcal A\}=\mathcal A+B\{\mathcal A\}\,\delta l+O(\delta l^2)\,,
 \qquad\text{where}\qquad
-B\{\mathcal A\}=\frac d{dl}\,RG_l\{\mathcal A\}\Big|_{l=0}\,.
+B\{\mathcal A\}=\frac{\dd}{\dd l}\,RG_l\{\mathcal A\}\Big|_{l=0}\,.
 \]
 It follows from \eqref{eq:semigroup} that the one-parameter family of actions
 \[
@@ -153,7 +153,7 @@ It follows from \eqref{eq:semigroup} that the one-parameter family of actions
 where $\mathcal A_0$ is an arbitrary ``initial'' action, satisfies the differential
 equation
 \begin{equation}\label{eq:WilsonFlow}
-\frac d{dl}\,\mathcal A_l=B\{\mathcal A_l\}\,,
+\frac{\dd}{\dd l}\,\mathcal A_l=B\{\mathcal A_l\}\,,
 \end{equation}
 which is usually referred to as \emph{Wilson's RG flow equation}. It generates the
 scale transformations in the space of quasilocal actions $\Sigma$, namely, two
@@ -169,7 +169,7 @@ form. To make it substantial one has to introduce some coordinates on $\Sigma$.
 Generic quasilocal action can be written as (I assume $\varphi_0\to-\varphi_0$
 symmetry)
 \begin{multline}\label{eq:quasilocal}
-\mathcal A[\varphi_0]=\int d^dx\,\Bigl[\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_0^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_0^{2k}\,(\partial\varphi_0)^2(x)\\
+\mathcal A[\varphi_0]=\int \dd^dx\,\Bigl[\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_0^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_0^{2k}\,(\partial\varphi_0)^2(x)\\
 +\sum_{k=0}^\infty\frac{w_{2k+1}}{2k!}\,\varphi_0^{2k+1}\,(\partial\varphi_0)^2\,\partial^2\varphi_0(x)+\cdots\Bigr]\,.
 \end{multline}
 The coefficients (``coupling constants'') $u_{2k},v_{2k},w_{2k+1},\dots$ can be
@@ -186,8 +186,8 @@ In terms of these coordinates the RG flow equation \eqref{eq:WilsonFlow} can be
 written as
 \begin{equation}\label{eq:Bfunctions}
 \begin{aligned}
-\frac d{dl}\,u_{2k}(l)&=B_{u_{2k}}\bigl(\{u_{2k}(l)\},\{v_{2k}(l)\},\{w_{2k+1}(l)\},\dots\bigr)\,;\\
-\frac d{dl}\,v_{2k}(l)&=B_{v_{2k}}\bigl(\{u_{2k}(l)\},\{v_{2k}(l)\},\{w_{2k+1}(l)\},\dots\bigr)\,;\\
+\frac{\dd}{\dd l}\,u_{2k}(l)&=B_{u_{2k}}\bigl(\{u_{2k}(l)\},\{v_{2k}(l)\},\{w_{2k+1}(l)\},\dots\bigr)\,;\\
+\frac{\dd}{\dd l}\,v_{2k}(l)&=B_{v_{2k}}\bigl(\{u_{2k}(l)\},\{v_{2k}(l)\},\{w_{2k+1}(l)\},\dots\bigr)\,;\\
 &\ \ \text{etc}
 \end{aligned}
 \end{equation}
@@ -310,7 +310,7 @@ subset in $\Sigma$.
 
 The differential equation \eqref{eq:WilsonFlow}, i.e.
 \[
-\frac d{dl}\,\mathcal A=B\{\mathcal A\}
+\frac{\dd}{\dd l}\,\mathcal A=B\{\mathcal A\}
 \]
 can be integrated backward in $l$ as well as forward. Suppose $\mathcal A$ is in
 $\Sigma$ but not in $\Sigma(l)$. Then $\mathcal A_{-l}$, obtained by integrating

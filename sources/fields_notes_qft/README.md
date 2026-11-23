@@ -4,7 +4,7 @@ Course notes from Spring 2026, retyped in JHEP format from the four printed
 PDFs in [`originals/fields-notes-qft/lectures/`](../../originals/fields-notes-qft/lectures/),
 with the nine problem sets from
 [`originals/fields-notes-qft/homework/`](../../originals/fields-notes-qft/homework/)
-placed in the text and solved in an appendix. The edition runs to 212 pages.
+placed in the text and solved in an appendix. The edition runs to 220 pages.
 
 Open [`pdfs/fields-notes-qft/fields-notes-qft.pdf`](../../pdfs/fields-notes-qft/fields-notes-qft.pdf).
 Rebuild with `sh build.sh` from this directory; the entry point is `latex/master.tex` and the bundled `jheppub.sty`
@@ -24,7 +24,7 @@ and spectrum plots, the RG flow diagrams and all the Feynman diagrams. One
 figure the notes promise but leave blank (the spectrum with two stable
 particles, p. 269) is supplied.
 
-[CORRECTIONS.md](CORRECTIONS.md) lists 91 corrections of substance and 73
+[CORRECTIONS.md](CORRECTIONS.md) lists 92 corrections of substance and 73
 wording repairs, each with its printed page. Among them are sign errors
 (Hamilton's equations, the Casimir force, the definition of the anomalous
 dimension and the mass-flow equations in Section 15, the Ward identity for

@@ -61,7 +61,7 @@ the generic interaction.
 
 Let us define the Generating Functional as follows. Introduce the functional
 \begin{equation}\label{eq:zetaJ}
-\zeta[J]=\sum_{n=0}^\infty\frac1{n!}\int d^4x_1\cdots d^4x_n\,\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\,J(x_1)\cdots J(x_n)\,.
+\zeta[J]=\sum_{n=0}^\infty\frac1{n!}\int \dd^4x_1\cdots \dd^4x_n\,\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle\,J(x_1)\cdots J(x_n)\,.
 \end{equation}
 It depends on the auxiliary function $J$, and incorporates all $n$-point
 correlation functions. By the definition
@@ -70,7 +70,7 @@ correlation functions. By the definition
 \end{equation}
 The generating functional can be written as
 \[
-\zeta[J]=\Bigl\langle\exp\Bigl(\int J(x)\varphi(x)\,d^4x\Bigr)\Bigr\rangle
+\zeta[J]=\left\langle\exp\left(\int J(x)\varphi(x)\dd^4x\right)\right\rangle
 \]
 and therefore it is expressed as the ratio
 \[
@@ -78,11 +78,11 @@ and therefore it is expressed as the ratio
 \]
 where
 \begin{equation}\label{eq:ZJ}
-Z[J]=\int\bigl[D\varphi\bigr]\,e^{\int J(x)\varphi(x)\,d^4x}\,e^{-\mathcal A[\varphi]}
+Z[J]=\int\bigl[D\varphi\bigr]\,e^{\int J(x)\varphi(x)\dd^4x}\,e^{-\mathcal A[\varphi]}
 \end{equation}
 is a partition function associated with the action
 \[
-\mathcal A_J=\mathcal A-\int J(x)\varphi(x)\,d^4x\,.
+\mathcal A_J=\mathcal A-\int J(x)\varphi(x)\dd^4x\,.
 \]
 For this reason the function $J(x)$ is usually referred to as an ``external
 source''.
@@ -90,13 +90,13 @@ source''.
 The source-dependent action above is a particular case of generic theory with
 $x$-dependent coupling $\lambda_1(x)=-J(x)$,
 \[
-\mathcal A_I=\int d^4x\,\left[-J(x)\varphi(x)+\frac{\lambda}{4!}\,\varphi^4(x)\right]\,.
+\mathcal A_I=\int \dd^4x\,\left[-J(x)\varphi(x)+\frac{\lambda}{4!}\,\varphi^4(x)\right]\,.
 \]
 Therefore its partition function $Z[J]$ (more precisely $Z[J]/Z_0$) is given by
 a sum of all vacuum diagrams which now contain two kinds of vertices,
 \[
-\dia{\draw[prop] (-1.6,0) -- (0,0) node[vtx]{};}=\int d^4x\,J(x)\dots\,,\qquad\qquad
-\dia{\pic{xvertex};}=-\lambda\int d^4x\dots\,.
+\dia{\draw[prop] (-1.6,0) -- (0,0) node[vtx]{};}=\int \dd^4x\,J(x)\dots\,,\qquad\qquad
+\dia{\pic{xvertex};}=-\lambda\int \dd^4x\dots\,.
 \]
 By taking the variational derivatives with respect to $J(x)$ we just convert
 the one-leg vertices above into the external legs; this is the meaning of the
@@ -111,7 +111,7 @@ Univ.\ Press 1996, \S6.1.} Defining
 we conclude that the expansion of this new functional $W[J]$ in terms of $J$
 will generate the \emph{connected} correlation functions, namely
 \[
-W[J]=\sum_{n=0}^\infty\frac1{n!}\int d^4x_1\cdots d^4x_n\,W^{(n)}(x_1,\dots,x_n)\,J(x_1)\cdots J(x_n)\,,
+W[J]=\sum_{n=0}^\infty\frac1{n!}\int \dd^4x_1\cdots \dd^4x_n\,W^{(n)}(x_1,\dots,x_n)\,J(x_1)\cdots J(x_n)\,,
 \]
 where
 \[
@@ -121,7 +121,7 @@ The functional $W[J]$ is called the generating functional for the
 \emph{connected} correlation functions. In the KG theory one can evaluate the
 Gaussian functional integral \eqref{eq:ZJ} for $Z[J]$ explicitly and find
 \[
-W_{\mathrm{KG}}[J]=\frac12\int d^4x\,d^4x'\,J(x)\,D(x-x')\,J(x')\,,
+W_{\mathrm{KG}}[J]=\frac12\int \dd^4x\dd^4x'\,J(x)\,D(x-x')\,J(x')\,,
 \]
 which shows again that in the free theory all connected correlation functions
 but the two-point one vanish.
@@ -147,7 +147,7 @@ corrections to the ``external legs''. This shows that the connected correlation
 functions can be expressed through so-called ``amputated'' correlation
 functions,
 \[
-W^{(n)}(x_1,\dots,x_n)=\int\Bigl[\prod_{i=1}^nd^4y_i\,W(x_i-y_i)\Bigr]\,W^{(n)}_{\text{amp}}(y_1,\dots,y_n)
+W^{(n)}(x_1,\dots,x_n)=\int\left[\prod_{i=1}^n\dd^4y_i\,W(x_i-y_i)\right]\,W^{(n)}_{\text{amp}}(y_1,\dots,y_n)
 \]
 where I used the shorthand
 \[
@@ -177,7 +177,7 @@ neither external legs nor the corrections to them. Note that by this definition
 $W^{(2)}_{\text{amp}}(x,y)=S(x-y)$ is inverse (in the operator sense) to the
 two-point function, i.e.
 \[
-\int d^4y\,S(x-y)\,W(y-x')=\delta^{(4)}(x-x')\,.
+\int \dd^4y\,S(x-y)\,W(y-x')=\delta^{(4)}(x-x')\,.
 \]
 In the free theory this is the inverse of the function $D$ i.e.\ just the
 (Euclidean) Klein-Gordon operator
@@ -254,7 +254,7 @@ W=D-D*\Sigma*D+D*\Sigma*D*\Sigma*D-\cdots\,.
 \]
 Here $A*B$ denotes a convolution
 \[
-(A*B)(x-x')=\int d^4y\,A(x-y)\,B(y-x')\,.
+(A*B)(x-x')=\int \dd^4y\,A(x-y)\,B(y-x')\,.
 \]
 Using
 \[

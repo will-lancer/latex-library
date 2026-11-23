@@ -156,7 +156,7 @@ the distance at which $\mathbf M(x)$ changes significantly must involve
 macroscopic number of the micromagnets). One then replaces the homogeneous
 magnetization $\mathbf M$ by the local magnetization
 \[
-V\,\Omega(\mathbf M,T)\ \to\ \int d^3x\,\Omega\bigl(\mathbf M(x),T\bigr)\,.
+V\,\Omega(\mathbf M,T)\ \to\ \int \dd^3x\,\Omega\bigl(\mathbf M(x),T\bigr)\,.
 \]
 Once $\mathbf M$ is not a constant, one may include the spatial derivatives of
 $\mathbf M(x)$, and assume that the long-range fluctuations have the probability
@@ -166,7 +166,7 @@ P[\mathbf M(x)]\sim Z^{-1}\exp\left(-\frac{\Ham[\mathbf M(x)]}{kT}\right)
 \]
 with the ``effective energy'' of the form
 \[
-\Ham[\mathbf M(x)]=\int d^3x\,\Omega\bigl(\mathbf M(x),\nabla\mathbf M(x),\dots;T\bigr)
+\Ham[\mathbf M(x)]=\int \dd^3x\,\Omega\bigl(\mathbf M(x),\nabla\mathbf M(x),\dots;T\bigr)
 \]
 where $\Omega$ now is a local density. In the spirit of the Landau theory we can
 write
@@ -265,7 +265,7 @@ Because basic ideas of the Wilson's RG do not depend very much on precise way ho
 the cutoff regularization is implemented, let me assume specific one. Let me
 assume that the field $\varphi_0$ can be written as the Fourier-like integral
 \[
-\varphi_0(x)=\int_{|k|<\Lambda}\frac{d^dk}{(2\pi)^d}\,\phi(k)\,e^{ikx}\,,
+\varphi_0(x)=\int_{|k|<\Lambda}\frac{\dd^dk}{(2\pi)^d}\,\phi(k)\,e^{ikx}\,,
 \]
 where only the wave-vectors with $|k|<\Lambda$ contribute to the integral. This
 can be named (as I will) the ``Sharp momentum cutoff'', because in perturbation
@@ -356,7 +356,7 @@ and after the integration over $\tilde\varphi$
 \]
 For $\mathcal A_0$ of the $\varphi^4$ form
 \[
-\tilde{\mathcal A}=\int d^dx\,\left[\frac12\,(\partial\tilde\varphi)^2+\frac{m_0^2}2\,\tilde\varphi^2
+\tilde{\mathcal A}=\int \dd^dx\,\left[\frac12\,(\partial\tilde\varphi)^2+\frac{m_0^2}2\,\tilde\varphi^2
 +\frac{\lambda_0}{4!}\,\bigl(4\varphi_1^3\tilde\varphi+6\varphi_1^2\tilde\varphi^2+4\varphi_1\tilde\varphi^3+\tilde\varphi^4\bigr)\right]
 \]
 The terms $\partial\varphi_1\partial\tilde\varphi$ and $\varphi_1\tilde\varphi$ do
@@ -424,11 +424,11 @@ diagram
 \]
 brings in the contribution
 \[
--\frac{\lambda_0^2}{16}\int d^dx\,d^dx'\,\varphi_1^2(x)\,\tilde D^2(x-x')\,\varphi_1^2(x')\,,
+-\frac{\lambda_0^2}{16}\int \dd^dx\dd^dx'\,\varphi_1^2(x)\,\tilde D^2(x-x')\,\varphi_1^2(x')\,,
 \]
 where $\tilde D$ is the $\tilde\varphi$ propagator,
 \[
-\tilde D(x)=\int_{\Lambda_0>|k|>\Lambda_1}\frac{d^dk}{(2\pi)^d}\,\frac{e^{ikx}}{k^2+m_0^2}\,.
+\tilde D(x)=\int_{\Lambda_0>|k|>\Lambda_1}\frac{\dd^dk}{(2\pi)^d}\,\frac{e^{ikx}}{k^2+m_0^2}\,.
 \]
 This non-locality, albeit unpleasant, is not disastrous. Recall that we have
 already violated the locality by introducing the cutoff. It is important however
@@ -455,7 +455,7 @@ This convergence of the expansions of $\mathcal D(p_1,\dots,p_n)$ implies that t
 new action $\mathcal A_1$ admits meaningful expansion in terms of local
 composites,
 \[
-\mathcal A_1[\varphi_1]=\int d^dx\,\left[\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_1^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_1^{2k}(x)\,\bigl(\partial\varphi_1(x)\bigr)^2+\text{higher terms}\right]
+\mathcal A_1[\varphi_1]=\int \dd^dx\,\left[\sum_{k=1}^\infty\frac{u_{2k}}{2k!}\,\varphi_1^{2k}(x)+\sum_{k=0}^\infty\frac{v_{2k}}{2k!}\,\varphi_1^{2k}(x)\,\bigl(\partial\varphi_1(x)\bigr)^2+\text{higher terms}\right]
 \]
 where the ``higher terms'' involve both the higher powers of $\partial\varphi_1$,
 and the terms with the higher derivatives of $\varphi_1$. The most significant

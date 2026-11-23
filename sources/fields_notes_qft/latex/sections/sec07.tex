@@ -11,8 +11,8 @@ where $\tau$ is the ``imaginary time'' which I will denote $x_4$ below, and
 $x_E=(\xx,x_4)$. The Euclidean action is obtained by substituting $t=-ix_4$ in
 the KG action, i.e.
 \[
-\mathcal A=\int dx_4\,d\xx\,\frac12\Bigl[(\partial_4\varphi)^2+(\nabla\varphi)^2+m^2\varphi^2\Bigr]
-=\int d^4x_E\,\left[\frac12\,(\partial_\mu\varphi)^2+\frac{m^2}{2}\,\varphi^2\right]\,,
+\mathcal A=\int \dd x_4\dd\xx\,\frac12\Bigl[(\partial_4\varphi)^2+(\nabla\varphi)^2+m^2\varphi^2\Bigr]
+=\int \dd^4x_E\,\left[\frac12\,(\partial_\mu\varphi)^2+\frac{m^2}{2}\,\varphi^2\right]\,,
 \]
 where now $\mu=1,2,3,4$. We are interested in the path integral
 \[
@@ -46,11 +46,11 @@ The derivatives and the integration in the action can be replaced by finite
 differences and summations, i.e.
 \[
 \partial_\mu\varphi(x)\to\frac1\Delta\,\bigl(\varphi(x+e^\mu\Delta)-\varphi(x)\bigr)\,;\qquad
-\int d^4x\to\Delta^4\sum_x
+\int \dd^4x\to\Delta^4\sum_x
 \]
 ($e^\mu$ is the unit vector in the direction $\mu$); with this one can set
 \begin{equation}\label{eq:latticemeasure}
-\bigl[D\varphi\bigr]=\lim_{\Delta\to0}\prod_xd\varphi(x)\,.
+\bigl[D\varphi\bigr]=\lim_{\Delta\to0}\prod_x\dd\varphi(x)\,.
 \end{equation}
 In the Klein-Gordon theory such definition works more or less
 straightforwardly. In more interesting cases with an interaction defining the
@@ -84,7 +84,7 @@ $\varphi$ in the integrand is odd.
 \]
 where $D_E(x)$ is the familiar function
 \[
-D_E(x)=\int\frac{d^4p}{(2\pi)^4}\,\frac1{p^2+m^2}\,e^{ipx}\,.
+D_E(x)=\int\frac{\dd^4p}{(2\pi)^4}\,\frac1{p^2+m^2}\,e^{ipx}\,.
 \]
 From now on I will usually drop the subscript $E$, so that $D(x)$ will stand
 for this function. Also, $x$ and $p$ now stand for the Euclidean vectors
@@ -140,7 +140,7 @@ involves $N-1$ terms. Make the following change of the integration variables
 where $\epsilon(x)$ is an arbitrary infinitesimal function. The action changes
 as follows
 \[
-\mathcal A[\varphi+\epsilon]=\mathcal A[\varphi]+\int d^4x_1\,\epsilon(x_1)\,\bigl[m^2-\Delta_{x_1}\bigr]\varphi(x_1)+O(\epsilon^2)\,,
+\mathcal A[\varphi+\epsilon]=\mathcal A[\varphi]+\int \dd^4x_1\,\epsilon(x_1)\,\bigl[m^2-\Delta_{x_1}\bigr]\varphi(x_1)+O(\epsilon^2)\,,
 \]
 where I have assumed that the function $\epsilon(x)$ decays sufficiently fast
 making the integration by parts possible. Here
@@ -151,7 +151,7 @@ is 4D Laplace operator. Since the change of integration variables does not
 change the value of the integral, we have the identity
 \begin{multline*}
 0=\sum_{k=2}^N\epsilon(x_k)\int\bigl[D\varphi\bigr]\,\varphi(x_2)\cdots\widehat{\varphi(x_k)}\cdots\varphi(x_N)\,e^{-\mathcal A}\\
--\int d^4x_1\,\epsilon(x_1)\,\bigl(m^2-\Delta_{x_1}\bigr)\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\,e^{-\mathcal A}\,.
+-\int \dd^4x_1\,\epsilon(x_1)\,\bigl(m^2-\Delta_{x_1}\bigr)\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\cdots\varphi(x_N)\,e^{-\mathcal A}\,.
 \end{multline*}
 As the function $\epsilon(x)$ is arbitrary, we must have
 \begin{equation}\label{eq:WickSD}

@@ -41,10 +41,10 @@ In the Klein-Gordon theory
 \]
 and the Hamiltonian is
 \begin{equation}\label{eq:HKG}
-H=\int d^3\xx\,\left[\frac12\,\pi^2(\xx)+\frac12\,\bigl(\nabla\varphi\bigr)^2(\xx)+\frac{m^2}{2}\,\varphi^2(\xx)\right].
+H=\int \dd^3\xx\,\left[\frac12\,\pi^2(\xx)+\frac12\,\bigl(\nabla\varphi\bigr)^2(\xx)+\frac{m^2}{2}\,\varphi^2(\xx)\right].
 \end{equation}
 Of course, it coincides with the above expression for the energy,
-$E=\int T^{00}\,d^3\xx$, expressed through $\pi$ rather than $\dot\varphi$.
+$E=\int T^{00}\dd^3\xx$, expressed through $\pi$ rather than $\dot\varphi$.
 
 \subsection*{Quantum Klein-Gordon field}
 
@@ -94,7 +94,7 @@ canonical commutation relations through the identifications
 \]
 The Hamiltonian operator then is
 \[
-\hat H=\int d^3\xx\,\left[-\frac12\,\frac{\delta^2}{\delta\varphi(\xx)^2}+\frac12\,\bigl(\nabla\varphi\bigr)^2+\frac{m^2}{2}\,\varphi^2\right],
+\hat H=\int \dd^3\xx\,\left[-\frac12\,\frac{\delta^2}{\delta\varphi(\xx)^2}+\frac12\,\bigl(\nabla\varphi\bigr)^2+\frac{m^2}{2}\,\varphi^2\right],
 \]
 and it remains to find all solutions of the stationary Schroedinger equation
 \[
@@ -104,13 +104,13 @@ and it remains to find all solutions of the stationary Schroedinger equation
 \begin{exercise}
 Show that this Schroedinger equation admits formal solution of the form
 \[
-\Psi_0[\varphi]=\Const\,\exp\Bigl\{\int\varphi(\xx)\,G(\xx-\xx')\,\varphi(\xx')\,d^3\xx\,d^3\xx'\Bigr\}\,.
+\Psi_0[\varphi]=\Const\,\exp\left\{\int\varphi(\xx)\,G(\xx-\xx')\,\varphi(\xx')\dd^3\xx\dd^3\xx'\right\}\,.
 \]
 Find the kernel $G(\xx-\xx')$. (At this point, do not worry when you discover
 divergent integrals). Try to look for further solutions in the form
 \[
 \Psi_n[\varphi]\sim\int F(\xx_1,\dots,\xx_n)\,\varphi(\xx_1)\cdots\varphi(\xx_n)\,
-\exp\Bigl\{\int\varphi(\xx)\,G(\xx-\xx')\,\varphi(\xx')\,d^3\xx\,d^3\xx'\Bigr\}\,.
+\exp\left\{\int\varphi(\xx)\,G(\xx-\xx')\,\varphi(\xx')\dd^3\xx\dd^3\xx'\right\}\,.
 \]
 \end{exercise}
 
@@ -170,14 +170,14 @@ J^\mu_f=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,f-\tilde J^\mu_f=\va
 \]
 The corresponding Integrals of Motion are (at a time $t$)
 \[
-A_f=\int d^3\xx\,\Bigl(\dot\varphi(\xx,t)\,f(\xx,t)-\varphi(\xx,t)\,\dot f(\xx,t)\Bigr)
-=\int d^3\xx\,\Bigl(\pi(\xx)\,f(\xx)-\varphi(\xx)\,\dot f(\xx)\Bigr)\,,
+A_f=\int \dd^3\xx\,\Bigl(\dot\varphi(\xx,t)\,f(\xx,t)-\varphi(\xx,t)\,\dot f(\xx,t)\Bigr)
+=\int \dd^3\xx\,\Bigl(\pi(\xx)\,f(\xx)-\varphi(\xx)\,\dot f(\xx)\Bigr)\,,
 \]
 where $\pi(\xx)=\dot\varphi(\xx)$ is the canonical momentum conjugate to
 $\varphi(\xx)$. The integrals $A_f$ are Lorentz scalars. This becomes explicit
 if one rewrites their definition in covariant form
 \[
-A_f=\int_\Sigma d\Sigma_\mu\,\bigl(\varphi\,\partial^\mu f-\partial^\mu\varphi\,f\bigr)\,,
+A_f=\int_\Sigma \dd\Sigma_\mu\,\bigl(\varphi\,\partial^\mu f-\partial^\mu\varphi\,f\bigr)\,,
 \]
 where $\Sigma$ is any space-like 3-surface (figure~\ref{fig:spacelike});
 because of the continuity equation the currents $J^\mu_f$ obey, the above
@@ -191,7 +191,7 @@ does not depend on the choice of $\Sigma$.}
 
 In classical theory one straightforwardly evaluates the Poisson brackets
 \[
-\{A_f,A_g\}=\int d^3\xx\,\Bigl(f(\xx,t)\,\dot g(\xx,t)-\dot f(\xx,t)\,g(\xx,t)\Bigr)
+\{A_f,A_g\}=\int \dd^3\xx\,\Bigl(f(\xx,t)\,\dot g(\xx,t)-\dot f(\xx,t)\,g(\xx,t)\Bigr)
 \]
 (this expression also can be written in the covariant form, in terms of the
 integral over arbitrary $\Sigma$). In quantum theory we should replace, as
@@ -201,7 +201,7 @@ usual,
 \]
 so that
 \[
-[\hat A_f,\hat A_g]=-i\int d^3\xx\,\Bigl(\dot f(\xx)\,g(\xx)-f(\xx)\,\dot g(\xx)\Bigr)\,.
+[\hat A_f,\hat A_g]=-i\int \dd^3\xx\,\Bigl(\dot f(\xx)\,g(\xx)-f(\xx)\,\dot g(\xx)\Bigr)\,.
 \]
 It is convenient to use standard plane-wave solutions of the Klein-Gordon
 equation
@@ -230,7 +230,7 @@ Advantage of $A,A^\dagger$ is their Lorentz invariance.
 The Hamiltonian can be expressed through the creation and annihilation
 operators as
 \begin{equation}\label{eq:HAA}
-\hat H=\int\frac{d^3\pp}{(2\pi)^3}\,\frac14\,\Bigl(\hat A^\dagger_\pp\,\hat A_\pp+\hat A_\pp\,\hat A^\dagger_\pp\Bigr)\,,
+\hat H=\int\frac{\dd^3\pp}{(2\pi)^3}\,\frac14\,\Bigl(\hat A^\dagger_\pp\,\hat A_\pp+\hat A_\pp\,\hat A^\dagger_\pp\Bigr)\,,
 \end{equation}
 which indeed is the Hamiltonian of a collection of harmonic oscillators, one
 oscillator per each wave-vector $\pp$, the associated frequency being
@@ -242,11 +242,11 @@ $\omega_\pp$. It is straightforward to check that $\hat A^\dagger_\pp$ raises
 \]
 Similarly, for the momentum
 \[
-\hat{\PPv}=-\int d^3\xx\,\hat\pi(\xx)\,\nabla\hat\varphi(\xx)
+\hat{\PPv}=-\int \dd^3\xx\,\hat\pi(\xx)\,\nabla\hat\varphi(\xx)
 \]
 we have
 \[
-\hat{\PPv}=\int\frac{d^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,\Bigl(\hat A^\dagger_\pp\,\hat A_\pp+\hat A_\pp\,\hat A^\dagger_\pp\Bigr)\,.
+\hat{\PPv}=\int\frac{\dd^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,\Bigl(\hat A^\dagger_\pp\,\hat A_\pp+\hat A_\pp\,\hat A^\dagger_\pp\Bigr)\,.
 \]
 Hence
 \[
@@ -291,24 +291,24 @@ the momenta $\pp_1,\dots,\pp_N$.
 
 The above expression for the Hamiltonian can be rewritten as
 \[
-\hat H=E_0+\int\frac{d^3\pp}{(2\pi)^3}\,\frac12\,\hat A^\dagger_\pp\,\hat A_\pp\,,
+\hat H=E_0+\int\frac{\dd^3\pp}{(2\pi)^3}\,\frac12\,\hat A^\dagger_\pp\,\hat A_\pp\,,
 \qquad\text{with}\qquad
-E_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac14\,[\hat A_\pp,\hat A^\dagger_\pp]\,,
+E_0=\int\frac{\dd^3\pp}{(2\pi)^3}\,\frac14\,[\hat A_\pp,\hat A^\dagger_\pp]\,,
 \]
 which of course is the sum of the zero-point energies of all the constituent
 oscillators.
 
 There are two evident problems with the last expression:
-
-(i) It is not zero, and moreover it contains seemingly meaningless factor
+\begin{enumerate}[label=(\roman*)]
+\item It is not zero, and moreover it contains seemingly meaningless factor
 $\delta^{(3)}(\mathbf{0})$ (recall that
 $[\hat A_\pp,\hat A^\dagger_{\pp'}]=2\omega_\pp\,(2\pi)^3\,\delta^{(3)}(\pp-\pp')$).
-
-(ii) The remaining integral over $\pp$ diverges at large $\pp$.
+\item The remaining integral over $\pp$ diverges at large $\pp$.
+\end{enumerate}
 
 Note that these problems don't seem to be as bad for $\PPv_0$, where we have
 \[
-\PPv_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,[\hat A_\pp,\hat A^\dagger_\pp]=0\,,
+\PPv_0=\int\frac{\dd^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,[\hat A_\pp,\hat A^\dagger_\pp]=0\,,
 \]
 since the contributions of $\pp$ and $-\pp$ cancel pairwise. This is good, as
 we do not want the vacuum to have any net momentum. But this seems to create
@@ -326,11 +326,11 @@ E_0=\varepsilon\,V^{(3)}\,,
 where $\varepsilon$ is the vacuum energy density. This answers the question
 how to interpret the $\delta^{(3)}(\mathbf 0)$ factor: Recall that
 \[
-(2\pi)^3\,\delta^{(3)}(\pp-\pp')=\int d^3\xx\,e^{i(\pp-\pp')\cdot\xx}\,,
+(2\pi)^3\,\delta^{(3)}(\pp-\pp')=\int \dd^3\xx\,e^{i(\pp-\pp')\cdot\xx}\,,
 \]
 and so the above nonsense factor in fact is
 \[
-(2\pi)^3\,\delta^{(3)}(\mathbf 0)=\int d^3\xx\ \to\ V^{(3)}\,.
+(2\pi)^3\,\delta^{(3)}(\mathbf 0)=\int \dd^3\xx\ \to\ V^{(3)}\,.
 \]
 This also solves the problem of Lorentz invariance. The energy density
 $\varepsilon$ transforms as $00$ component of 4-tensor (the energy-momentum
@@ -350,7 +350,7 @@ density.
 Still, something has to be done about the badly divergent integral for this
 energy density,
 \[
-\varepsilon_0=\frac12\int\frac{d^3\pp}{(2\pi)^3}\,\omega_\pp\,.
+\varepsilon_0=\frac12\int\frac{\dd^3\pp}{(2\pi)^3}\,\omega_\pp\,.
 \]
 The integral diverges at large momenta, i.e.\ the divergent contribution comes
 from small length scales. This is not too surprising, since our idea of the
@@ -360,7 +360,7 @@ could assume that perhaps some microscopic physics takes care of the problem,
 replacing the above mathematically meaningless expression by the ``cutoff''
 integral
 \[
-\varepsilon_0=\frac12\int\frac{d^3\pp}{(2\pi)^3}\,\omega_\pp\,\Phi\left(\frac{\pp^2}{\Lambda^2}\right)\,,
+\varepsilon_0=\frac12\int\frac{\dd^3\pp}{(2\pi)^3}\,\omega_\pp\,\Phi\left(\frac{\pp^2}{\Lambda^2}\right)\,,
 \]
 where the ``cutoff'' factor $\Phi(\xi)$ is close to 1 when $\xi\ll1$ and
 decays fast at large $\xi$, and $\Lambda$ represents the energy scale beyond
@@ -394,7 +394,7 @@ locality. Of course this modification is irrelevant in the classical theory
 equations of motion. But the Lagrangian density will pass this term to the
 energy-momentum tensor, and finally to the Hamiltonian,
 \[
-\hat H\to\hat H-\Const\int d^3\xx\,.
+\hat H\to\hat H-\Const\int \dd^3\xx\,.
 \]
 One can now ``absorb'' the vacuum energy divergence into this constant. We
 write

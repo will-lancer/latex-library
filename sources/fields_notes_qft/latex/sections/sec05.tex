@@ -59,15 +59,15 @@ matrix element
 \[
 \bra{q_f}e^{-\hat H\tau}\ket{q_i}\,.
 \]
-The composition property (which follows from $\mathbb{I}=\int dq\,\ket q\bra q$)
+The composition property (which follows from $\mathbb{I}=\int \dd q\,\ket q\bra q$)
 \[
-\bra{q_f}e^{-\hat H(\tau_1+\tau_2)}\ket{q_i}=\int\bra{q_f}e^{-\hat H\tau_1}\ket{q}\,\bra{q}e^{-\hat H\tau_2}\ket{q_i}\,dq
+\bra{q_f}e^{-\hat H(\tau_1+\tau_2)}\ket{q_i}=\int\bra{q_f}e^{-\hat H\tau_1}\ket{q}\,\bra{q}e^{-\hat H\tau_2}\ket{q_i}\dd q
 \]
 can be applied repeatedly to reduce the above matrix element to the
 composition of the matrix elements with arbitrarily small ``time'' intervals
 $\Delta\tau$,
 \[
-\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\int\prod_{k=1}^{n-1}dq_k\,\prod_{k=1}^n\bra{q_k}e^{-\hat H\Delta\tau}\ket{q_{k-1}}\,,
+\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\int\prod_{k=1}^{n-1}\dd q_k\,\prod_{k=1}^n\bra{q_k}e^{-\hat H\Delta\tau}\ket{q_{k-1}}\,,
 \]
 where $q_0=q_i$, $q_n=q_f$, and $\Delta\tau=\tau/n$. In the limit of small
 $\Delta\tau$, as the consequence of the ``locality'' of $\hat H$ in the
@@ -108,7 +108,7 @@ Substituting this ansatz into the above diffusion equation one finds (I
 suggest doing it as an \textbf{Exercise})
 \[
 \sigma_0(q,q')=\frac{(q-q')^2}{2}\,,\qquad a=1/2\,,\qquad
-\sigma_1(q,q')=\frac1{q-q'}\int_{q'}^qV(y)\,dy\,,\qquad\text{etc.}
+\sigma_1(q,q')=\frac1{q-q'}\int_{q'}^qV(y)\dd y\,,\qquad\text{etc.}
 \]
 The leading terms do not depend on $V$, and are the same as for the free case,
 and $\sigma_1$ is the potential $V$ averaged over the interval $[q',q]$. The
@@ -126,7 +126,7 @@ potential $V$ is differentiable (which we assume), we have
 (I have used the fact that $(q-q')^2\sim\tau$). Therefore, for finite $\tau$
 but large $n$ (i.e.\ small $\Delta\tau=\tau/n$) we can write
 \[
-\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\lim_{n\to\infty}\left(\frac1{2\pi\Delta\tau}\right)^{n/2}\int\Bigl(\prod_{k=1}^{n-1}dq_k\Bigr)\,e^{-\mathcal A\{q_k\}}\,,
+\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\lim_{n\to\infty}\left(\frac1{2\pi\Delta\tau}\right)^{n/2}\int\left(\prod_{k=1}^{n-1}\dd q_k\right)\,e^{-\mathcal A\{q_k\}}\,,
 \]
 where
 \[
@@ -149,7 +149,7 @@ $\tau_n$. The intermediate values $q_k=q(\tau_k)$ are integrated over.}
 When $n\to\infty$, $\Delta\tau\to0$, the function $\mathcal A\{q_k\}$ in the
 exponential has formal limit
 \[
-\mathcal A[q(\tau)]=\int_0^\tau d\tau\,\left[\frac12\,\bigl(dq(\tau)/d\tau\bigr)^2+V\bigl(q(\tau)\bigr)\right]\,.
+\mathcal A[q(\tau)]=\int_0^\tau \dd\tau\,\left[\frac12\,\bigl(\dd q(\tau)/\dd\tau\bigr)^2+V\bigl(q(\tau)\bigr)\right]\,.
 \]
 It coincides with the ``imaginary time action'', i.e.\ the action associated
 with our system, with $t$ replaced by $-i\tau$,
@@ -165,32 +165,32 @@ and to call it the (imaginary time) path integral, since the r.h.s.\ involves
 the continuous path $q(\tau)$ from $q_i$ to $q_f$.
 
 Few remarks.
-
-1. The path integral method makes the most explicit use of the
+\begin{enumerate}
+\item The path integral method makes the most explicit use of the
 \emph{superposition principle} of quantum theory. The latter states that if
 some process can go several distinct ways, the full transition amplitude is
 the sum of the amplitudes associated with each possible way. Here (when
 returning back to real time) we sum the amplitudes associated with all
 distinct paths from $q_i$ to $q_f$.
 
-2. What kind of paths enter the path integral in the limit $n\to\infty$?
+\item What kind of paths enter the path integral in the limit $n\to\infty$?
 Although it is correct to think of the limiting paths as continuous functions
 $q(\tau)$, absolute majority of the paths entering the integral are not smooth
 curves. This can be observed directly from the fact that for
 $\tau_1-\tau_2\to0$ we have $|q(\tau_1)-q(\tau_2)|\sim\sqrt{|\tau_1-\tau_2|}$,
 not $\sim|\tau_1-\tau_2|$ as should be true for a continuously differentiable
 function. From this point of view the two terms in the action play
-significantly different role. The ``kinetic'' term $\frac12\int(dq/d\tau)^2\,d\tau$
+significantly different role. The ``kinetic'' term $\frac12\int(\dd q/\dd\tau)^2\dd\tau$
 selects the class of the paths entering the integral, i.e.\ those paths for
 which $\bigl(q(\tau+\Delta\tau)-q(\tau)\bigr)^2/\Delta\tau$ remains finite as
 $\Delta\tau\to0$; in this sense the factor
-$\exp\bigl(-\frac12\int(dq/d\tau)^2\,d\tau\bigr)$ should be regarded as a part
-of the functional measure. The factor $\exp\bigl(-\int V(q(\tau))\,d\tau\bigr)$
+$\exp\bigl(-\frac12\int(\dd q/\dd\tau)^2\dd\tau\bigr)$ should be regarded as a part
+of the functional measure. The factor $\exp\bigl(-\int V(q(\tau))\dd\tau\bigr)$
 weights the paths according to their average potential energy.
 
-3. Note that the symbol
+\item Note that the symbol
 \[
-\bigl[Dq(\tau)\bigr]=\lim_{n\to\infty}\left(\frac1{2\pi\Delta\tau}\right)^{n/2}\prod_{k=1}^{n-1}dq_k
+\bigl[Dq(\tau)\bigr]=\lim_{n\to\infty}\left(\frac1{2\pi\Delta\tau}\right)^{n/2}\prod_{k=1}^{n-1}\dd q_k
 \]
 contains divergent (in the limit) factor
 \[
@@ -201,7 +201,7 @@ time interval. This factor is reminiscent of the irritating infinity we had
 for the vacuum energy in the KG theory, and absorbing it into $[Dq(\tau)]$ is
 analogous to subtracting $E_0$ from $\hat H$.
 
-4. We have derived the above path integral representation of the evolution
+\item We have derived the above path integral representation of the evolution
 operator in the imaginary time $\tau$. But one can repeat the above
 calculation step by step, considering the paths in the real time $t$ instead
 of $\tau$ (this is the form in which the path integral is usually introduced
@@ -218,7 +218,7 @@ parameters) which makes the integral absolutely convergent, with subsequent
 taking the limiting values. The imaginary-time approach simply makes this
 procedure explicit.
 
-5. Generalization of the above construction to the systems with many degrees
+\item Generalization of the above construction to the systems with many degrees
 of freedom $q_a$ is straightforward, if the Hamiltonian is of the form
 \[
 H=\sum_a\frac12\,p_a^2+V(q_a)\,;
@@ -229,6 +229,7 @@ one obtains
 \]
 for the evolution operator. In more complicated cases the path integral in the
 phase space can be useful; this is briefly discussed in Sect.~9.1 of PS.
+\end{enumerate}
 
 \subsection*{Relation to Classical Statistical Mechanics}
 
@@ -244,11 +245,11 @@ straightforward), and the Hamiltonian $\Ham(P_i,Q_i)$. In a thermal
 equilibrium state at a temperature $T$ the probability distribution of
 microscopic states is given by the Gibbs formula
 \[
-\mathcal P(P_i,Q_i)\prod_i dP_i\,dQ_i=Z^{-1}\,e^{-\beta\Ham(P_i,Q_i)}\,\frac1{N!}\prod_i dP_i\,dQ_i\,,
+\mathcal P(P_i,Q_i)\prod_i \dd P_i\dd Q_i=Z^{-1}\,e^{-\beta\Ham(P_i,Q_i)}\,\frac1{N!}\prod_i \dd P_i\dd Q_i\,,
 \]
 where $\beta=1/kT$, and $Z$ is the partition function
 \[
-Z=\int\frac{\prod_i dP_i\,dQ_i}{N!}\,e^{-\beta\Ham(P_i,Q_i)}\,.
+Z=\int\frac{\prod_i \dd P_i\dd Q_i}{N!}\,e^{-\beta\Ham(P_i,Q_i)}\,.
 \]
 Calculating the partition function is one of the main problems in statistical
 mechanics because the thermodynamic quantities are expressed through $Z$, say
@@ -264,7 +265,7 @@ Z=\frac1{N!}\left(\frac{2\pi}{\beta}\right)^{\frac N2}Z_{\text{conf}}\,,
 where $N$ is the number of the degrees of freedom, $i=1,2,\dots,N$, and
 $Z_{\text{conf}}$ is the configuration-space integral
 \[
-Z_{\text{conf}}=\int\prod_i dQ_i\,e^{-\beta U(\{Q_i\})}
+Z_{\text{conf}}=\int\prod_i \dd Q_i\,e^{-\beta U(\{Q_i\})}
 \]
 which contains most of interesting physics.
 
@@ -284,7 +285,7 @@ ends held at $q(0)=q_i$ and $q(L)=q_f$.}
 We also assume that the string lies in a potential well $V(q)$, so that the
 potential energy of the string is
 \[
-U[q(\tau)]=\int_0^Ld\tau\,\left[V\bigl(q(\tau)\bigr)+\frac12\,\left(\frac{dq(\tau)}{d\tau}\right)^2\right]\,,
+U[q(\tau)]=\int_0^L\dd\tau\,\left[V\bigl(q(\tau)\bigr)+\frac12\,\left(\frac{\dd q(\tau)}{\dd\tau}\right)^2\right]\,,
 \]
 where the last term accounts for the elastic energy; to simplify the equations
 I have assumed that the elastic string tension equals 1.
@@ -360,7 +361,7 @@ operator, say
 \]
 we find
 \begin{multline*}
-\bigl\langle q(\tau_1)q(\tau_2)\cdots q(\tau_N)\bigr\rangle=Z^{-1}\int\Bigl[\prod_{k=1}^Ndq_k\Bigr]\times q_1q_2\cdots q_N\\
+\bigl\langle q(\tau_1)q(\tau_2)\cdots q(\tau_N)\bigr\rangle=Z^{-1}\int\left[\prod_{k=1}^N\dd q_k\right]\times q_1q_2\cdots q_N\\
 \times\bra{q_f}e^{-\hat H(L/2-\tau_N)}\ket{q_N}\bra{q_N}e^{-\hat H(\tau_N-\tau_{N-1})}\ket{q_{N-1}}\cdots\bra{q_1}e^{-\hat H(\tau_1+L/2)}\ket{q_i}\,.
 \end{multline*}
 Recall that in the coordinate representation the operator $\hat q$ acts by
@@ -370,7 +371,7 @@ multiplication
 \]
 so that in this expression we can replace
 \[
-\int dq\,\ket{q}\,q\,\bra{q}=\hat q\,.
+\int \dd q\,\ket{q}\,q\,\bra{q}=\hat q\,.
 \]
 Then the above expression can be written as
 \[

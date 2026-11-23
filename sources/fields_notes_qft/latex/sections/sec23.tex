@@ -12,11 +12,11 @@ x^\mu\to\tilde x^\mu=f^\mu(x)\,,
 \]
 where $f^\mu$ are arbitrary smooth functions. Variations of the action
 functional\footnote{The sign minus in this formula corresponds to the relation
-$-\mathcal A=iS=i\int dt\,d\xx\,\Lag(x)=\int dx^4\,d\xx\,\Lag(x)=-\int dx^4\,d\xx\,\Lag_E(x)$,
+$-\mathcal A=iS=i\int \dd t\dd\xx\,\Lag(x)=\int \dd x^4\dd\xx\,\Lag(x)=-\int \dd x^4\dd\xx\,\Lag_E(x)$,
 where $\Lag(x)$ is the usual Lagrangian density with $t$ replaced by $-ix_4$, see
 Section~7.}
 \begin{equation}\label{eq:Aminus}
-\mathcal A=-\int d^dx\,\Lag(x)
+\mathcal A=-\int \dd^dx\,\Lag(x)
 \end{equation}
 under these coordinate transformations in a local field theory is generally
 described in terms of its energy-momentum tensor $T^{\mu\nu}(x)$. Therefore this
@@ -50,11 +50,11 @@ $T^{\mu\nu}=T^{\nu\mu}$.
 More general way to define the EM tensor is to consider the field theory in the
 space with nontrivial metric
 \begin{equation}\label{eq:metric}
-ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu\,.
+\dd s^2=g_{\mu\nu}(x)\dd x^\mu \dd x^\nu\,.
 \end{equation}
 In this case the action
 \[
-\mathcal A[\varphi,g]=-\int d^dx\,\sqrt g\,\Lag(\varphi,\partial_\mu\varphi,g_{\mu\nu})
+\mathcal A[\varphi,g]=-\int \dd^dx\,\sqrt g\,\Lag(\varphi,\partial_\mu\varphi,g_{\mu\nu})
 \]
 becomes a functional of the metric tensor $g$ also.
 
@@ -68,7 +68,7 @@ This form is called the ``minimal coupling to gravity''.
 In any case, the field $T^{\mu\nu}(x)$ is defined in terms of the variation of the
 action with respect to the metric (sign!),
 \begin{equation}\label{eq:Tdef}
-\delta\mathcal A=-\frac12\int d^dx\,\sqrt g\,T^{\mu\nu}(x)\,\delta g_{\mu\nu}(x)\,.
+\delta\mathcal A=-\frac12\int \dd^dx\,\sqrt g\,T^{\mu\nu}(x)\,\delta g_{\mu\nu}(x)\,.
 \end{equation}
 Note that $T^{\mu\nu}$ defined this way is automatically symmetric,
 \[
@@ -80,7 +80,7 @@ Note that for flat space this definition is still ambiguous, as one could couple
 the theory to the external metric in many different ways. For example, in the
 scalar field theory one could add the ``non-minimal'' terms like
 \[
-\int d^dx\,\sqrt g\,R\,W(\varphi)\,,\qquad\text{or}\qquad\int d^dx\,\sqrt g\,R_{[\mu\lambda][\nu\rho]}\,W^{[\mu\lambda][\nu\rho]}(\varphi)
+\int \dd^dx\,\sqrt g\,R\,W(\varphi)\,,\qquad\text{or}\qquad\int \dd^dx\,\sqrt g\,R_{[\mu\lambda][\nu\rho]}\,W^{[\mu\lambda][\nu\rho]}(\varphi)
 \]
 where $R$ is the curvature, and $W$ is arbitrary. These terms disappear in the flat
 space, however they affect the variation \eqref{eq:Tdef} even when the metric is
@@ -98,7 +98,7 @@ This is intrinsic ambiguity which cannot be resolved unless we specify exactly h
 the system behaves in curved space. Note that if $Y$ decays sufficiently fast at
 $x\to\infty$, such modifications do not affect the notions of energy and momentum,
 \[
-E=\int d^{d-1}\xx\,T^{00}\,,\qquad P^i=\int d^{d-1}\xx\,T^{0i}\,,
+E=\int \dd^{d-1}\xx\,T^{00}\,,\qquad P^i=\int \dd^{d-1}\xx\,T^{0i}\,,
 \]
 as they add total derivatives to the integrands. If we are interested just in the
 theory in flat metric, fixing this ambiguity is a matter of convenience.
@@ -135,7 +135,7 @@ $\varphi(x)$, so it amounts to a change of variables in the functional integral
 This leads to the identity
 \begin{multline}\label{eq:Ward}
 0=\sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle\\
-+\int d^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,,
++\int \dd^dx\,\partial_\mu\varepsilon_\nu(x)\,\bigl\langle T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,,
 \end{multline}
 where $\delta_\varepsilon\mathcal O_i(x)$ stand for local variations of the fields
 $\mathcal O_i(x_i)$ under the coordinate transformation \eqref{eq:coordtr}. The
@@ -143,13 +143,13 @@ identities of this type are generally known as the \emph{Ward identities}.
 
 What can be said about the variations $\delta_\varepsilon\mathcal O_i(x)$ on
 general grounds? These again are local fields which depend on $\varepsilon^\mu(x)$
-\begin{itemize}
-\item[(i)] linearly, i.e.\
+\begin{enumerate}[label=(\roman*)]
+\item linearly, i.e.\
 $\delta_{\varepsilon_1+\varepsilon_2}\mathcal O=\delta_{\varepsilon_1}\mathcal O+\delta_{\varepsilon_2}\mathcal O$,
 and
-\item[(ii)] locally, i.e.\ $\delta_\varepsilon\mathcal O(x)$ depends on
+\item locally, i.e.\ $\delta_\varepsilon\mathcal O(x)$ depends on
 $\varepsilon^\mu(x)$ and its derivatives taken at the point $x$.
-\end{itemize}
+\end{enumerate}
 In fact, the part of $\delta_\varepsilon\mathcal O(x)$ which contains just
 $\varepsilon^\mu(x)$, with no derivatives, is completely fixed,
 \[
@@ -181,7 +181,7 @@ Going back to the Ward Identity \eqref{eq:Ward}, we observe that integral there 
 be transformed by parts, hence we have
 \begin{multline}\label{eq:Ward2}
 0=\sum_{i=1}^n\bigl\langle\mathcal O_1(x_1)\cdots\delta_\varepsilon\mathcal O_i(x_i)\cdots\mathcal O_n(x_n)\bigr\rangle\\
--\int d^dx\,\varepsilon_\nu(x)\,\bigl\langle\partial_\mu T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,.
+-\int \dd^dx\,\varepsilon_\nu(x)\,\bigl\langle\partial_\mu T^{\mu\nu}(x)\,\mathcal O_1(x_1)\cdots\mathcal O_n(x_n)\bigr\rangle\,.
 \end{multline}
 As the first term here depends only on $\varepsilon(x)$ (and its derivatives) at the
 points $x_1,\dots,x_n$ only, we conclude that
@@ -216,7 +216,7 @@ where by definition
 Then the Ward identity \eqref{eq:Ward} reduces to
 \begin{equation}\label{eq:WardTheta}
 \sum_{i=1}^n\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots(\mathcal D\mathcal O)_{\alpha_i}(x_i)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
-=-\int d^dx\,\bigl\langle\Theta(x)\,\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
+=-\int \dd^dx\,\bigl\langle\Theta(x)\,\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
 \end{equation}
 where
 \[
@@ -237,7 +237,7 @@ matrix $D_\alpha{}^\beta$, but otherwise would not change our argument. Here I i
 this contribution for simplicity.}
 \[
 \frac\partial{\partial\lambda^k}\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
-=-\int d^dx\,\bigl\langle\Phi_k(x)\,\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
+=-\int \dd^dx\,\bigl\langle\Phi_k(x)\,\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
 \]
 If we assume that $\Theta(x)$ can be expanded in terms of $\Phi_k(x)$,
 \begin{equation}\label{eq:ThetaBeta}
@@ -487,7 +487,7 @@ E_0(\beta)=-\frac{C\,V_\parallel}{\beta^{d-1}}\,,
 \end{equation}
 where $C$ is some dimensionless ($d$-dependent) constant, and
 \[
-V_\parallel=\int d^{d-2}\xx_\parallel
+V_\parallel=\int \dd^{d-2}\xx_\parallel
 \]
 is the volume of the $\R^{d-2}$ component of the space. In fact, apart from the
 value of the constant, the form \eqref{eq:E0beta} is dictated by scale invariance
@@ -513,14 +513,14 @@ the Casimir energy was instructive.
 The finite temperature partition function is closely related to the energy density
 of states. We have
 \[
-Z(\beta)=\int_0^\infty e^{-\beta E}\,\rho(E)\,dE\,,
+Z(\beta)=\int_0^\infty e^{-\beta E}\,\rho(E)\dd E\,,
 \]
 where $\rho(E)\,\Delta E$ is the number of states in the energy interval between
 $E$ and $E+\Delta E$. Mathematically, $Z(\beta)$ is the Laplace transform of
 $\rho(E)$. The inverse transform is
 \[
-\rho(E)=\int_{-i\infty}^{+i\infty}e^{\beta E}\,Z(\beta)\,\frac{d\beta}{2\pi i}
-=\int_{-i\infty}^{+i\infty}e^{\beta E}\,e^{\frac{C\,V_{d-1}}{\beta^{d-1}}}\,\frac{d\beta}{2\pi i}\,.
+\rho(E)=\int_{-i\infty}^{+i\infty}e^{\beta E}\,Z(\beta)\,\frac{\dd\beta}{2\pi i}
+=\int_{-i\infty}^{+i\infty}e^{\beta E}\,e^{\frac{C\,V_{d-1}}{\beta^{d-1}}}\,\frac{\dd\beta}{2\pi i}\,.
 \]
 At large $V_{d-1}$ the integral is dominated by the saddle point at
 \[

@@ -5,7 +5,7 @@ Now we turn to actual evaluation of the diagram contributions. For this purpose
 in most cases it is much more convenient to use the Feynman rules in the
 momentum space, evaluating the Fourier transformed correlation functions
 \begin{multline}\label{eq:FTW}
-\int W^{(n)}(x_1,\dots,x_n)\,e^{-ip_1x_1}\cdots e^{-ip_nx_n}\,d^4x_1\cdots d^4x_n\\
+\int W^{(n)}(x_1,\dots,x_n)\,e^{-ip_1x_1}\cdots e^{-ip_nx_n}\dd^4x_1\cdots \dd^4x_n\\
 =(2\pi)^4\,\delta^{(4)}(p_1+\dots+p_n)\,\tilde W^{(n)}(p_1,\dots,p_n)\,.
 \end{multline}
 Here again $W^{(n)}$ denotes \emph{connected} $n$-point correlation function.
@@ -17,7 +17,7 @@ I will skip detailed derivation of the diagram rules in the momentum space
 (look up \textbf{Sect.~4.4 of PS} for the details). Very briefly, in any
 diagram one uses the Fourier transform
 \[
-D(x-x')=\int\frac{d^4p}{(2\pi)^4}\,\tilde D(p)\,e^{ip(x-x')}\,,\qquad
+D(x-x')=\int\frac{\dd^4p}{(2\pi)^4}\,\tilde D(p)\,e^{ip(x-x')}\,,\qquad
 \tilde D(p)=\frac1{p^2+m^2}
 \]
 of all propagators. Then the integral over all $x$ associated with vertices, as
@@ -25,14 +25,14 @@ well as over all ``external'' points $x_i$, can be evaluated explicitly yielding
 the momentum delta-functions. As the result one obtains the
 
 \subsection*{Momentum-space Feynman rules:}
-
-(i) ``Internal'' propagators carry (directed) momentum to be integrated over,
+\begin{enumerate}[label=(\roman*)]
+\item ``Internal'' propagators carry (directed) momentum to be integrated over,
 \[
 \dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[arr] (-0.5,0.35) -- (0.5,0.35) node[above,pos=0.5] {\small$p$};}
 =\dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[arr] (0.5,0.35) -- (-0.5,0.35) node[above,pos=0.5] {\small$-p$};}
-=\int\frac{d^4p}{(2\pi)^4}\,\frac1{p^2+m^2}\,.
+=\int\frac{\dd^4p}{(2\pi)^4}\,\frac1{p^2+m^2}\,.
 \]
-(ii) ``External'' legs carry fixed momenta
+\item ``External'' legs carry fixed momenta
 \[
 \tilde W^{(n)}(p_1,\dots,p_n)=
 \diac{\foreach \a/\l in {135/p_1,90/p_2,45/p_3,0/p_4} {\draw[prop] (0,0) -- (\a:2.2);
@@ -40,22 +40,23 @@ the momentum delta-functions. As the result one obtains the
   \node[circle,draw,fill=white,inner sep=1.3pt] at (0,0) {};
   \draw[densely dotted] (165:1.4) arc[start angle=165,end angle=345,radius=1.4];}\,,
 \]
-(iii) The vertices conserve the momentum
+\item The vertices conserve the momentum
 \[
 \diac{\foreach \a/\l in {135/p_1,45/p_2,315/p_3,225/p_4} {\draw[prop] (0,0) -- (\a:2);
   \draw[arr] (\a:1.9) ++(\a+90:0.3) -- ++(\a+180:0.7); \node at ($(\a:1.9)+(\a+90:0.75)$) {\small$\l$};}
   \node[vtx] at (0,0) {};}
 =-\lambda\,(2\pi)^4\,\delta^{(4)}(p_1+\dots+p_4)\,,
 \]
-(iv) Integration $\int\frac{d^4p_i}{(2\pi)^4}$ is performed over all the
+\item Integration $\int\frac{\dd^4p_i}{(2\pi)^4}$ is performed over all the
 momenta associated with the ``internal'' propagators.
+\end{enumerate}
 
 \subsection*{Some properties of \texorpdfstring{$\tilde W^{(n)}$}{W(n)}}
 
 In the momentum representation many operations simplify. For example the
 ``amputation'' takes very simple form
 \[
-\tilde W^{(n)}(p_1,\dots,p_n)=\Bigl[\prod_{i=1}^n\tilde W(p_i)\Bigr]\,\tilde W^{(n)}_{\text{amp}}(p_1,\dots,p_n)\,,
+\tilde W^{(n)}(p_1,\dots,p_n)=\left[\prod_{i=1}^n\tilde W(p_i)\right]\,\tilde W^{(n)}_{\text{amp}}(p_1,\dots,p_n)\,,
 \]
 where $\tilde W(p)$ is the Fourier transform of $W(x-x')$. Similar
 simplification occurs to the relation to proper vertices.
@@ -80,8 +81,8 @@ leading order we have
 \[
 \tilde\Sigma(p)=-\Bigl(\,\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6);
   \draw[arr] (-0.3,1.45) -- (0.3,1.45); \node[above] at (0,1.45) {\small$k$}; \node[vtx] at (0,0) {};}\,\Bigr)
-=\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac1{k^2+m^2}
-=\frac{\lambda}{16\pi^2}\int_0^\infty\frac{|k|^3\,d|k|}{|k|^2+m^2}\,.
+=\frac\lambda2\int\frac{\dd^4k}{(2\pi)^4}\,\frac1{k^2+m^2}
+=\frac{\lambda}{16\pi^2}\int_0^\infty\frac{|k|^3\dd|k|}{|k|^2+m^2}\,.
 \]
 This integral is badly divergent as $k\to\infty$. What should we do about it?
 We can get rid of the meaningless expression by introducing a ``cutoff'', say,
@@ -92,7 +93,7 @@ replacing
 with the ``cutoff factor'' $\Phi(\xi)$ decaying at $\xi\to\infty$ fast enough
 to make the integral convergent. Then
 \[
-\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)=\frac\lambda2\,m^2\,F(\Lambda^2/m^2)\,.
+\frac\lambda2\int\frac{\dd^4k}{(2\pi)^4}\,\frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)=\frac\lambda2\,m^2\,F(\Lambda^2/m^2)\,.
 \]
 Just as in the case of KG vacuum energy, this move alone brings no real
 progress: it replaces something meaningless by something undetermined.
@@ -182,7 +183,7 @@ $\sim\lambda^2$ and higher)
 \begin{align*}
 \tilde\Sigma(p)&=-\Bigl(\,\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \draw[prop] (0,0.6) circle (0.6); \node[vtx] at (0,0) {};}
 +\dia{\draw[prop,densely dashed] (-2,0) -- (2,0); \node[xvtx] at (0,0) {};}\,\Bigr)\\
-&=\frac\lambda2\int\frac{d^4k}{(2\pi)^4}\,\frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)+\delta m^2=\frac\lambda2\,m^2\,F(\Lambda^2/m^2)+\delta m^2\,.
+&=\frac\lambda2\int\frac{\dd^4k}{(2\pi)^4}\,\frac1{k^2+m^2}\,\Phi(k^2/\Lambda^2)+\delta m^2=\frac\lambda2\,m^2\,F(\Lambda^2/m^2)+\delta m^2\,.
 \end{align*}
 Since we insist that $m$ is the actual mass, we have to set
 \[
@@ -241,7 +242,7 @@ diagram contains
 \begin{array}{lll}
 V & \text{vertices} & \dia{\pic{xvertex};}\\[8pt]
 P & \text{propagators} & \dia{\draw[prop] (0,0) -- (2,0);}\\[8pt]
-I & \text{momentum integrals} & \displaystyle\int\frac{d^4k}{(2\pi)^4}\,.
+I & \text{momentum integrals} & \displaystyle\int\frac{\dd^4k}{(2\pi)^4}\,.
 \end{array}
 \]
 These numbers are not all independent. First, $V$ vertices must absorb exactly
@@ -271,7 +272,7 @@ Thus we have two equations
 \]
 Now, the expression for the diagram has the following general form
 \[
-\int\frac{d^4k'_1\cdots d^4k'_I}{(q_1^2+m^2)\cdots(q_P^2+m^2)}\,,
+\int\frac{\dd^4k'_1\cdots \dd^4k'_I}{(q_1^2+m^2)\cdots(q_P^2+m^2)}\,,
 \]
 where $k'_1,\dots,k'_I$ are the integration momenta left over after eliminating
 the delta-functions, and $q_1,\dots,q_P$ are some linear combinations of $k'_j$

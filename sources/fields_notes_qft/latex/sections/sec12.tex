@@ -22,16 +22,16 @@ consider the simplest connected diagrams for this vertex,
 \]
 The explicitly shown loop diagram represents the momentum integral
 \[
-\frac{(-\lambda)^2}2\int\frac{d^4k}{(2\pi)^4}\,\frac1{(k^2+m^2)\bigl((p_1+p_2-k)^2+m^2\bigr)}\,.
+\frac{(-\lambda)^2}2\int\frac{\dd^4k}{(2\pi)^4}\,\frac1{(k^2+m^2)\bigl((p_1+p_2-k)^2+m^2\bigr)}\,.
 \]
 When $|k|\gg|p_1+p_2|$ and $|k|\gg m$ this reduces to
 \[
-\frac{\lambda^2}{2\,(2\pi)^4}\int\frac{d^4k}{k^2\,k^2}\,.
+\frac{\lambda^2}{2\,(2\pi)^4}\int\frac{\dd^4k}{k^2\,k^2}\,.
 \]
-Note that $d^4k=d\Omega_4\,|k|^3\,d|k|$, where $d\Omega_4$ is the surface
-element of a unit 3-sphere $S^3$, $\int_{S^3}d\Omega_4=2\pi^2$. We have
+Note that $\dd^4k=\dd\Omega_4\,|k|^3\dd|k|$, where $\dd\Omega_4$ is the surface
+element of a unit 3-sphere $S^3$, $\int_{S^3}\dd\Omega_4=2\pi^2$. We have
 \[
-\frac{\lambda^2\,2\pi^2}{2\,(2\pi)^4}\int\frac{|k|^3\,d|k|}{|k|^4}=\frac{\lambda^2}{16\pi^2}\int\frac{d|k|}{|k|}\,.
+\frac{\lambda^2\,2\pi^2}{2\,(2\pi)^4}\int\frac{|k|^3\dd|k|}{|k|^4}=\frac{\lambda^2}{16\pi^2}\int\frac{\dd|k|}{|k|}\,.
 \]
 The integral diverges at large $|k|$ (one shouldn't worry about its divergence
 at $|k|\to0$; the above simplified form is not valid at small $|k|$). If one
@@ -101,13 +101,13 @@ this diagram has superficial degree of divergence $D=2$, i.e.\ with the cutoff
 introduced it behaves as $\Lambda^2$ as $\Lambda\to\infty$. We can see this
 writing the contribution explicitly,
 \[
--\tilde\Sigma_2(p)=\frac{(-\lambda)^2}{3!}\int\frac{d^4k_1}{(2\pi)^4}\,\frac{d^4k_2}{(2\pi)^4}\,
+-\tilde\Sigma_2(p)=\frac{(-\lambda)^2}{3!}\int\frac{\dd^4k_1}{(2\pi)^4}\,\frac{\dd^4k_2}{(2\pi)^4}\,
 \frac1{(k_1^2+m^2)(k_2^2+m^2)\bigl((p-k_1-k_2)^2+m^2\bigr)}
 \]
 (note the symmetry factor $1/3!$). For $k_1,k_2\gg p,m$ the integrand
 simplifies as
 \[
-\sim\int\frac{d^4k_1\,d^4k_2}{k_1^2\,k_2^2\,(k_1+k_2)^2}\sim\Lambda^2\,.
+\sim\int\frac{\dd^4k_1\dd^4k_2}{k_1^2\,k_2^2\,(k_1+k_2)^2}\sim\Lambda^2\,.
 \]
 Let us write
 \[
@@ -115,7 +115,7 @@ Let us write
 \]
 Here
 \[
-\tilde\Sigma_2(0)=-\frac{\lambda^2}{3!}\int\frac{d^4k_1\,d^4k_2}{(2\pi)^8}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)\bigl((k_1+k_2)^2+m^2\bigr)}\,.
+\tilde\Sigma_2(0)=-\frac{\lambda^2}{3!}\int\frac{\dd^4k_1\dd^4k_2}{(2\pi)^8}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)\bigl((k_1+k_2)^2+m^2\bigr)}\,.
 \]
 This divergent term does not depend on $p$; in this respect it is similar to
 the contribution of the diagram
@@ -130,7 +130,7 @@ modification of the counterterm
 The difference
 \begin{multline*}
 \tilde\Sigma_2(p)-\tilde\Sigma_2(0)\\
-=-\frac{\lambda^2}{3!}\int\frac{d^4k_1\,d^4k_2}{(2\pi)^8}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)}\,
+=-\frac{\lambda^2}{3!}\int\frac{\dd^4k_1\dd^4k_2}{(2\pi)^8}\,\frac1{(k_1^2+m^2)(k_2^2+m^2)}\,
 \frac{2(pk_1)+2(pk_2)-p^2}{\bigl((k_1+k_2)^2+m^2\bigr)\bigl((k_1+k_2-p)^2+m^2\bigr)}
 \end{multline*}
 still diverges (logarithmically). If the cutoff is introduced, this
@@ -172,19 +172,19 @@ admit finite $\Lambda\to\infty$ limit.
 We are ready to formulate the \emph{renormalization program}.
 
 \subsection*{Renormalization program (\texorpdfstring{$\varphi^4$}{phi**4} theory)}
-
-1. We start with the action
+\begin{enumerate}
+\item We start with the action
 \[
-\mathcal A=\int d^4x\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\right]\,,
+\mathcal A=\int \dd^4x\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\right]\,,
 \]
 which involves the bare field $\varphi_0$, the bare mass $m_0$, and the bare
 coupling constant $\lambda_0$.
 
-2. We introduce some cutoff, with the cutoff momentum $\Lambda$, to make all
+\item We introduce some cutoff, with the cutoff momentum $\Lambda$, to make all
 diagram contributions finite but cutoff-dependent (this can be done in many
 ways, as we shall discuss later).
 
-3. The bare parameters $m_0^2$, $\lambda_0$, and the field renormalization
+\item The bare parameters $m_0^2$, $\lambda_0$, and the field renormalization
 constant $Z$ should be given certain dependence on the cutoff momentum
 $\Lambda$,
 \[
@@ -192,6 +192,7 @@ m_0^2(\Lambda)\,,\qquad\lambda_0(\Lambda)\,,\qquad Z(\Lambda)\,,
 \]
 such that the correlation functions of the renormalized field
 $\varphi(x)=Z^{-1/2}\varphi_0(x)$ will have finite $\Lambda\to\infty$ limit.
+\end{enumerate}
 
 In practice, one uses the perturbation theory to evaluate the correlation
 functions. The above program can be further reformulated as the
@@ -200,7 +201,7 @@ functions. The above program can be further reformulated as the
 
 Let us rewrite the action as
 \[
-\mathcal A=\int d^4x\,\left[\underbrace{\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2}_{\text{free part}}
+\mathcal A=\int \dd^4x\,\left[\underbrace{\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2}_{\text{free part}}
 +\underbrace{\frac\lambda{4!}\,\varphi^4}_{\text{interaction part}}
 +\underbrace{\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta m^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4}_{\text{counterterms}}\right]\,,
 \]
@@ -249,12 +250,12 @@ It is instructive to consider such field theory in the space of $d$
 dimensions, with generic $d$. We will consider general scalar theories with the
 actions of the form
 \begin{equation}\label{eq:genscalar}
-\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\sum_{k=3}^N\frac{\lambda_{0\,k}}{k!}\,\varphi_0^k\right]\,.
+\mathcal A=\int \dd^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\sum_{k=3}^N\frac{\lambda_{0\,k}}{k!}\,\varphi_0^k\right]\,.
 \end{equation}
 The Feynman rules remain the same as in 4-dimensional theory, except for the
 momentum integrations go over $d$-dimensional momentum space,
 \[
-\frac{d^4k}{(2\pi)^4}\ \to\ \frac{d^dk}{(2\pi)^d}\,,
+\frac{\dd^4k}{(2\pi)^4}\ \to\ \frac{\dd^dk}{(2\pi)^d}\,,
 \]
 and of course the diagrams contain $k$-leg vertices associated with the
 couplings $\lambda_{0\,k}$.
@@ -303,7 +304,7 @@ D=\bigl[\tilde\Gamma^{(n)}\bigr]-\sum_k\bigl[\lambda_{0\,k}\bigr]\cdot V_k\,.
 Now the meaning of this equation must be obvious. For $\Lambda\gg|p_i|$ the
 dominating contribution of the diagram with $V_k$ vertices $\lambda_k$ is
 \begin{equation}\label{eq:GammaLambda}
-\tilde\Gamma^{(n)}\sim\Bigl[\prod_k\lambda_{0\,k}^{V_k}\Bigr]\,\Lambda^D\,,
+\tilde\Gamma^{(n)}\sim\left[\prod_k\lambda_{0\,k}^{V_k}\right]\,\Lambda^D\,,
 \end{equation}
 and our equation simply describes the balance of dimensions.
 

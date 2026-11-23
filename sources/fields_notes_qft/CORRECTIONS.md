@@ -27,9 +27,15 @@ These are editorial choices, not errors in the notes.
   Euclidean sections are unaffected.
 - Vectors in field space are bold (`𝐧`, and `\bm{φ}` for the `O(N)` field),
   where the notes had arrows.
-- Commutators and Poisson brackets use normal-size brackets; delimiters around
-  display fractions are sized with `\left`/`\right`; mixed tensor indices are
-  staggered (`T^μ{}_ν`, `D_α{}^β`).
+- Commutators and Poisson brackets use normal-size brackets. In displays,
+  delimiters around fractions, sums, products and integrals are sized with
+  `\left`/`\right` (with `mleftright`, so `f\left(…\right)` keeps tight
+  spacing). Mixed tensor indices are staggered (`T^μ{}_ν`, `D_α{}^β`).
+- Differentials are upright, `\dd x` = `\mathop{}\!\mathrm{d}x`, everywhere
+  the notes had an italic `d`, including the labels in the figures. The
+  dimension `d` stays italic.
+- Lists the notes numbered by hand ("1.", "(i)", "I.") are typeset as numbered
+  lists.
 - Solutions to the nine homework problems are new to this edition. They are in
   the appendix, and each problem ends with a link to its solution.
 
@@ -159,6 +165,8 @@ These are editorial choices, not errors in the notes.
 - p. 112. The proper-time propagator `∫_{1/Λ²} ds e^{−s(p²+m²)}` equals
   `Φ(p²/Λ²)/(p² + m²)` with `Φ(x) = e^{−x}` only up to the constant
   `e^{−m²/Λ²}`; the text now says so.
+- p. 113. In the factorization rule (iii) the first integral on the right was
+  `∫ d^{d₁}k F(k₁)`; the integration variable is `k₁`.
 - p. 119. The one-loop mass counterterm: the notes wrote
   `b⁽¹⁾ = −(a) = ∫ d^dk/(2π)^d 1/(k² + m̃²)`. The tadpole (a) is
   `−(λ̃/2) ∫ d^dk/(2π)^d 1/(k² + m̃²)` and the counterterm vertex is `−λ̃ b⁽¹⁾`,

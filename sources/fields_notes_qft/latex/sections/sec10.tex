@@ -3,7 +3,7 @@
 
 The generating functional for the proper vertices
 \begin{equation}\label{eq:Gammadef}
-\Gamma[\phi]=\sum_{n=2}^\infty\frac1{n!}\int d^4x_1\cdots d^4x_n\,\Gamma^{(n)}(x_1,\dots,x_n)\,\phi(x_1)\cdots\phi(x_n)
+\Gamma[\phi]=\sum_{n=2}^\infty\frac1{n!}\int \dd^4x_1\cdots \dd^4x_n\,\Gamma^{(n)}(x_1,\dots,x_n)\,\phi(x_1)\cdots\phi(x_n)
 \end{equation}
 is called the \emph{Effective Action}. Here $-\Gamma^{(n)}(x_1,\dots,x_n)$ are
 defined as the sums of one-particle irreducible diagrams for $n$-point
@@ -40,7 +40,7 @@ transformation relating $\Phi(M)$ to $F(B)$ is the \emph{Legendre transform}.
 Note that the above functional $Z[J]$ is interpreted as the partition function
 of a field statistical system with the Hamiltonian
 \[
-\mathcal A[\varphi]-\int J(x)\varphi(x)\,d^4x\,,
+\mathcal A[\varphi]-\int J(x)\varphi(x)\dd^4x\,,
 \]
 i.e.\ the source $J(x)$ plays the role of the external field in the above
 example. The generating functional $W[J]=\log\zeta[J]$ is then interpreted as
@@ -62,7 +62,7 @@ J=J(x,[\phi]):\qquad J\bigl(x,[\phi(x,[J_0(x)])]\bigr)=J_0(x)\,,\qquad
 for any functions $J_0(x)$ or $\phi_0(x)$. One can define then the analog of
 the thermodynamic potential
 \[
-\Gamma[\phi]=\Bigl[-W[J]+\int J(x)\phi(x)\,d^4x\Bigr]_{J(x)=J(x,[\phi])}
+\Gamma[\phi]=\left[-W[J]+\int J(x)\phi(x)\dd^4x\right]_{J(x)=J(x,[\phi])}
 \]
 It is not difficult to show that for $\Gamma[\phi]$ thus defined the relation
 holds
@@ -71,12 +71,12 @@ J(x,[\phi])=\frac{\delta\Gamma[\phi]}{\delta\phi(x)}\,.
 \end{equation}
 Indeed, taking the variation of
 \[
-\Gamma[\phi]+W[J]-\int J(x)\phi(x)\,d^4x=0
+\Gamma[\phi]+W[J]-\int J(x)\phi(x)\dd^4x=0
 \]
 (where it is understood that $\phi$ and $J$ are related through
 \eqref{eq:phiJ}) we have
 \[
-\int d^4x\,\left[\frac{\delta\Gamma}{\delta\phi(x)}\,\delta\phi(x)+\frac{\delta W}{\delta J(x)}\,\delta J(x)-\phi(x)\,\delta J(x)-J(x)\,\delta\phi(x)\right]=0
+\int \dd^4x\,\left[\frac{\delta\Gamma}{\delta\phi(x)}\,\delta\phi(x)+\frac{\delta W}{\delta J(x)}\,\delta J(x)-\phi(x)\,\delta J(x)-J(x)\,\delta\phi(x)\right]=0
 \]
 The second and the third terms here cancel each other in view of
 \eqref{eq:phiJ} and we obtain \eqref{eq:JGamma}.
@@ -88,25 +88,25 @@ $\Gamma^{(n)}$ as its coefficient functions. Let us see how it works for
 lower-order correlation functions, using $\varphi^4$ theory as an example. We
 have
 \begin{multline*}
-W[J]=\frac12\int d^4x_1\,d^4x_2\,W(x_1-x_2)\,J(x_1)J(x_2)\\
-+\frac1{4!}\int\Bigl[\prod_{i=1}^4d^4x_i\Bigr]\,W^{(4)}(x_1,\dots,x_4)\,J(x_1)J(x_2)J(x_3)J(x_4)+O(J^6)
+W[J]=\frac12\int \dd^4x_1\dd^4x_2\,W(x_1-x_2)\,J(x_1)J(x_2)\\
++\frac1{4!}\int\left[\prod_{i=1}^4\dd^4x_i\right]\,W^{(4)}(x_1,\dots,x_4)\,J(x_1)J(x_2)J(x_3)J(x_4)+O(J^6)
 \end{multline*}
 and
 \begin{multline*}
-\Gamma[\phi]=\frac12\int d^4x_1\,d^4x_2\,\Gamma^{(2)}(x_1-x_2)\,\phi(x_1)\phi(x_2)\\
-+\frac1{4!}\int\Bigl[\prod_{i=1}^4d^4x_i\Bigr]\,\Gamma^{(4)}(x_1,\dots,x_4)\,\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)+O(\phi^6)\,.
+\Gamma[\phi]=\frac12\int \dd^4x_1\dd^4x_2\,\Gamma^{(2)}(x_1-x_2)\,\phi(x_1)\phi(x_2)\\
++\frac1{4!}\int\left[\prod_{i=1}^4\dd^4x_i\right]\,\Gamma^{(4)}(x_1,\dots,x_4)\,\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)+O(\phi^6)\,.
 \end{multline*}
 Using the equation $\phi(x,[J])=\delta W/\delta J(x)$ we can express $\phi$ in
 terms of $J$ as
 \begin{multline*}
-\phi(x,[J])=\int d^4x_1\,W(x-x_1)\,J(x_1)\\
-+\frac1{3!}\int\Bigl[\prod_{i=1}^3d^4x_i\Bigr]\,W^{(4)}(x,x_1,x_2,x_3)\,J(x_1)J(x_2)J(x_3)+O(J^5)\,.
+\phi(x,[J])=\int \dd^4x_1\,W(x-x_1)\,J(x_1)\\
++\frac1{3!}\int\left[\prod_{i=1}^3\dd^4x_i\right]\,W^{(4)}(x,x_1,x_2,x_3)\,J(x_1)J(x_2)J(x_3)+O(J^5)\,.
 \end{multline*}
 Similarly, using $J(x,[\phi])=\delta\Gamma/\delta\phi(x)$, $J$ is expressed
 through $\phi$ as
 \begin{multline*}
-J(x,[\phi])=\int d^4x_1\,\Gamma^{(2)}(x-x_1)\,\phi(x_1)\\
-+\frac1{3!}\int\Bigl[\prod_{i=1}^3d^4x_i\Bigr]\,\Gamma^{(4)}(x,x_1,x_2,x_3)\,\phi(x_1)\phi(x_2)\phi(x_3)+O(\phi^5)\,.
+J(x,[\phi])=\int \dd^4x_1\,\Gamma^{(2)}(x-x_1)\,\phi(x_1)\\
++\frac1{3!}\int\left[\prod_{i=1}^3\dd^4x_i\right]\,\Gamma^{(4)}(x,x_1,x_2,x_3)\,\phi(x_1)\phi(x_2)\phi(x_3)+O(\phi^5)\,.
 \end{multline*}
 These two relations must be inverse one to another. Substituting the first into
 the second we have, schematically
@@ -157,7 +157,7 @@ $\hbar$ in \eqref{eq:ZJhbar} is dimensionless, and it looks like an additional
 parameter of the theory. In fact, such parameter can always be traded for
 coupling constants determining the strength of interaction. For example, the
 $\varphi^4$ action can be written as
-$\mathcal A=\frac1\lambda\int\bigl(\frac12(\partial\chi)^2+\frac{m^2}2\chi^2+\frac1{4!}\chi^4\bigr)\,d^4x$
+$\mathcal A=\frac1\lambda\int\bigl(\frac12(\partial\chi)^2+\frac{m^2}2\chi^2+\frac1{4!}\chi^4\bigr)\dd^4x$
 in terms of the rescaled field $\chi=\sqrt\lambda\,\varphi$.}
 
 For the purpose of the present analysis I will consider a generic action of the
@@ -241,7 +241,7 @@ x\,\dia{\node[xvtx] at (0,0) {}; \draw[prop] (0,0) -- (3,0) node[vtx] {};}
 Here I mark the ``external point'' $x$ where $\varphi_c(x)$ sits by a cross to
 distinguish it from the one-leg vertex
 \[
-\dia{\draw[prop] (-2,0) -- (0,0) node[vtx] {};}=\int d^4x\,J(x)\,.
+\dia{\draw[prop] (-2,0) -- (0,0) node[vtx] {};}=\int \dd^4x\,J(x)\,.
 \]
 It is easy to see that the diagrams appearing here have no loops (i.e.\ one
 cannot travel along the diagram and come back to the starting point never going
@@ -318,7 +318,7 @@ Z[J]=e^{\frac1\hbar W_0[J]}\int\bigl[D\chi\bigr]\,e^{-\frac1\hbar\mathcal A_1[\c
 \]
 where
 \begin{equation}\label{eq:A1}
-\mathcal A_1[\chi]=\int d^4x\,\left[\frac12\,(\partial\chi)^2+\frac{m^2}2\,\chi^2+\frac12\,V''(\varphi_c)\,\chi^2\right]
+\mathcal A_1[\chi]=\int \dd^4x\,\left[\frac12\,(\partial\chi)^2+\frac{m^2}2\,\chi^2+\frac12\,V''(\varphi_c)\,\chi^2\right]
 \end{equation}
 Since the higher-order terms in $\chi$ are neglected the integral over $\chi$
 is gaussian and it can be evaluated explicitly in terms of the determinant of
@@ -331,7 +331,7 @@ K(x,x')=\frac{\delta^2\mathcal A}{\delta\varphi(x)\,\delta\varphi(x')}\Big|_{\va
 \begin{exercise}
 Evaluate $n$-dimensional gaussian integral
 \[
-\prod_{i=1}^n\Bigl[\int_{-\infty}^\infty d\xi_i\Bigr]\,\exp\left\{-\frac12\sum_{i,j=1}^ns_{ij}\,\xi_i\xi_j\right\}
+\prod_{i=1}^n\left[\int_{-\infty}^\infty \dd\xi_i\right]\,\exp\left\{-\frac12\sum_{i,j=1}^ns_{ij}\,\xi_i\xi_j\right\}
 \]
 where $s_{ij}$ are elements of a symmetric positive matrix, and show that it
 equals
@@ -385,7 +385,7 @@ W_1[J]=-\frac12\,\tr\log\bigl(I+A\bigr)
 with the line standing for $D$, as usual, but with the special two-leg vertex
 \[
 \dia{\draw[prop] (-1.5,0) -- (1.5,0); \draw[prop,fill=white] (0,0) circle (0.4);}
-=-\int d^4x\,V''\bigl(\varphi_c(x)\bigr)\,.
+=-\int \dd^4x\,V''\bigl(\varphi_c(x)\bigr)\,.
 \]
 A diagram with $n$ such vertices comes with the factor (implicit in the above
 series)
@@ -522,7 +522,7 @@ to produce all connected diagrams.
 \begin{hwproblem}{3}\label{hw:3}
 In the $\varphi^3$ theory
 \[
-\mathcal A_I=\frac{\lambda_3}{3!}\int\varphi^3(x)\,d^4x
+\mathcal A_I=\frac{\lambda_3}{3!}\int\varphi^3(x)\dd^4x
 \]
 carry out the Legendre transform of $W[J]$ to the order 4 in $J$ and $\phi$.
 Define

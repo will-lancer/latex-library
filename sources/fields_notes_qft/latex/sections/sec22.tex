@@ -4,7 +4,7 @@
 Now I would like to discuss how the RG transformation acts on the action of the
 $\sigma$-model at $d=2$. In this case the coupling constant $g$ in
 \[
-\mathcal A=\int d^2x\,\frac1{2g}\,(\partial\mathbf n)^2
+\mathcal A=\int \dd^2x\,\frac1{2g}\,(\partial\mathbf n)^2
 \]
 is dimensionless. I assume that $g$ is small, so that the fluctuations of
 $\mathbf n(x)$ are small, since at small $g$ the exponential factor
@@ -21,7 +21,7 @@ features as compared to what we have done before.
 
 First, we introduce cutoff,
 \[
-\mathbf n(x)=\int_{|k|<\Lambda}\mathbf n_k\,e^{ikx}\,\frac{d^2k}{(2\pi)^2}\,.
+\mathbf n(x)=\int_{|k|<\Lambda}\mathbf n_k\,e^{ikx}\,\frac{\dd^2k}{(2\pi)^2}\,.
 \]
 Note that now the modes $\mathbf n_k$ are not all independent, but must obey
 complicated constraint $\int_q\mathbf n_q\mathbf n_{k-q}=\delta^{(2)}(k)$, because
@@ -76,7 +76,7 @@ A_\mu^{ik}(x)&=(\mathbf e_k\,\partial_\mu\mathbf e_i)=-(\mathbf e_i\,\partial_\m
 Note that the fields $A_\mu^{ik}$ and $B_\mu^i$ are ``slow''. In terms of these
 variables the action is
 \[
-\mathcal A=\frac1{2g}\int d^2x\,\Bigl[\Bigl(\partial_\mu\sqrt{1-\phi^2}-B_\mu^i\partial_\mu\phi_i\Bigr)^2
+\mathcal A=\frac1{2g}\int \dd^2x\,\Bigl[\Bigl(\partial_\mu\sqrt{1-\phi^2}-B_\mu^i\partial_\mu\phi_i\Bigr)^2
 +\Bigl(\partial_\mu\phi_i-A_\mu^{ik}\phi_k+B_\mu^i\sqrt{1-\phi^2}\Bigr)^2\Bigr]\,.
 \]
 For small $g$ one can neglect all terms beyond the terms quadratic in $\phi$,
@@ -85,11 +85,11 @@ For small $g$ one can neglect all terms beyond the terms quadratic in $\phi$,
 \]
 where the first term comes from
 \[
-\frac1{2g}\int d^2x\,B_\mu^iB_\mu^i=\frac1{2g}\int d^2x\,(\partial_\mu\mathbf n_0)^2=\mathcal A[\mathbf n_0]\,,
+\frac1{2g}\int \dd^2x\,B_\mu^iB_\mu^i=\frac1{2g}\int \dd^2x\,(\partial_\mu\mathbf n_0)^2=\mathcal A[\mathbf n_0]\,,
 \]
 and
 \[
-\tilde{\mathcal A}=\frac1{2g}\int d^2x\,\Bigl[\bigl(\partial_\mu\phi_i-A_\mu^{ik}\phi_k\bigr)^2+B_\mu^iB_\mu^k\bigl(\phi_i\phi_k-\delta_{ik}\phi^2\bigr)\Bigr]\,.
+\tilde{\mathcal A}=\frac1{2g}\int \dd^2x\,\Bigl[\bigl(\partial_\mu\phi_i-A_\mu^{ik}\phi_k\bigr)^2+B_\mu^iB_\mu^k\bigl(\phi_i\phi_k-\delta_{ik}\phi^2\bigr)\Bigr]\,.
 \]
 Our goal now is to integrate out the fast modes $\phi$. We treat the term
 $(1/2g)\int(\partial\phi)^2$ as the unperturbed action, yielding the propagator
@@ -122,8 +122,8 @@ The leading order in $g$ comes from the one-loop diagrams. The simplest (and the
 most important) of those is
 \begin{align*}
 \dia[0.45]{\draw[prop,densely dashed] (-2,0) -- (0,0); \draw[prop] (0.9,0) circle (0.9); \node[vtx,minimum size=4.5pt] at (0,0) {}; \node[left] at (-2,0) {\small$B^2$};}
-&=\frac{\delta_{jk}\,B_\mu^iB_\mu^i-B_\mu^jB_\mu^k}{2g}\int\frac{d^2p}{(2\pi)^2}\,\frac{g\,\delta_{jk}}{p^2}\\
-&=\frac{(N-2)\,(B_\mu^i)^2}2\,\frac1{4\pi}\int_{\Lambda^2/L^2}^{\Lambda^2}\frac{dp^2}{p^2}=\frac{N-2}{4\pi}\,(\partial_\mu\mathbf n_0)^2\,\log L\,.
+&=\frac{\delta_{jk}\,B_\mu^iB_\mu^i-B_\mu^jB_\mu^k}{2g}\int\frac{\dd^2p}{(2\pi)^2}\,\frac{g\,\delta_{jk}}{p^2}\\
+&=\frac{(N-2)\,(B_\mu^i)^2}2\,\frac1{4\pi}\int_{\Lambda^2/L^2}^{\Lambda^2}\frac{\dd p^2}{p^2}=\frac{N-2}{4\pi}\,(\partial_\mu\mathbf n_0)^2\,\log L\,.
 \end{align*}
 Thus, this diagram brings in a term identical in the form to the original action,
 i.e.\ it renormalizes the coupling parameter $g$.
@@ -151,7 +151,7 @@ Let us take a look at the diagrams with $A$-vertices. Consider the following one
 \]
 Both these diagrams show logarithmic behavior,
 \[
-\int\frac{d^2k}{k^2}\sim\log L\,,\qquad\text{and}\qquad\int\frac{d^2k\,k^\mu k^\nu}{k^2\,k^2}\sim\log L\,.
+\int\frac{\dd^2k}{k^2}\sim\log L\,,\qquad\text{and}\qquad\int\frac{\dd^2k\,k^\mu k^\nu}{k^2\,k^2}\sim\log L\,.
 \]
 However, it is not difficult to show that these two logarithmic contributions in
 fact cancel each other. One can do it by a direct calculation, but it is easy to
@@ -204,7 +204,7 @@ However it involves extra derivative, and thus corresponds to an irrelevant term
 Therefore, in this approximation the only interesting contribution comes from the
 above loop diagram with single $B^2$ vertex. We have
 \begin{equation}\label{eq:A1sigma}
-\mathcal A_1=\int\left(\frac1{2g}-\frac{N-2}{4\pi}\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\,d^2x\,.
+\mathcal A_1=\int\left(\frac1{2g}-\frac{N-2}{4\pi}\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\dd^2x\,.
 \end{equation}
 Thus, the step 1 of the RG transformation leads to
 \[
@@ -224,7 +224,7 @@ In other words, the beta-function is
 \]
 and for small $g$ the RG flow equation
 \[
-\frac{dg}{dl}=\frac{N-2}{2\pi}\,g^2
+\frac{\dd g}{\dd l}=\frac{N-2}{2\pi}\,g^2
 \]
 shows that $g(l)$ \emph{increases} towards large distances; at $d=2$ the Goldstone
 fixed point becomes unstable.
@@ -260,7 +260,7 @@ Z_{\mathbf n}^{-\frac12}(L)=1-\frac12\,\langle\phi_i^2\rangle=1-\frac{N-1}2\,\fr
 \]
 Since at $d=2$ $\mathbf n$ has zero canonical dimension, we then have
 \[
-\gamma_{\mathbf n}(g)=D_{\mathbf n}(g)=-\frac d{dl}\,Z_{\mathbf n}^{-\frac12}(l)\Big|_{l=0}=\frac{N-1}{4\pi}\,g\,.
+\gamma_{\mathbf n}(g)=D_{\mathbf n}(g)=-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-\frac12}(l)\Big|_{l=0}=\frac{N-1}{4\pi}\,g\,.
 \]
 In the above calculation we have assumed that $gl\ll1$; that is why the
 higher-order terms in $\phi$ were neglected. But, as usual, we can extend it to
@@ -270,11 +270,11 @@ RG_l\,\mathbf n=Z_{\mathbf n}^{-\frac12}(l)\,\mathbf n\,,
 \]
 where $Z_{\mathbf n}^{-\frac12}(l)$ is a solution of the equation
 \[
--\frac d{dl}\,Z_{\mathbf n}^{-\frac12}(l)=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-\frac12}(l)\,,
+-\frac{\dd}{\dd l}\,Z_{\mathbf n}^{-\frac12}(l)=\gamma_{\mathbf n}\bigl(g(l)\bigr)\,Z_{\mathbf n}^{-\frac12}(l)\,,
 \]
 and $g(l)$ is the integral curve of the equation
 \[
-\frac{dg(l)}{dl}=-\beta\bigl(g(l)\bigr)\,.
+\frac{\dd g(l)}{\dd l}=-\beta\bigl(g(l)\bigr)\,.
 \]
 In our case
 \[
@@ -289,9 +289,9 @@ where $l=\log L$.
 
 \begin{exercise}
 For the $O(N)$ nonlinear sigma model,
-
-I. At $d=2$
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\Roman*.,leftmargin=*]
+\item At $d=2$:
+\begin{enumerate}[label=(\alph*)]
 \item Assuming $g(l)\ll1$, find $Z_{\mathbf n}(l)$.
 \item Derive the following $|x|\to0$ asymptotic of the two-point correlation
 function
@@ -301,14 +301,15 @@ function
 Explain how this result is in agreement with the exact solution of the model at
 $N\to\infty$ (PS, \S13.3, pages 463--465).
 \end{enumerate}
-II. Find the flow equation for $g(l)$ and $Z_{\mathbf n}(l)$ at $d=2+\epsilon$,
+\item Find the flow equation for $g(l)$ and $Z_{\mathbf n}(l)$ at $d=2+\epsilon$,
 with $\epsilon\ll1$. Again, determine the $|x|\to0$ behavior of the two-point
 correlation function.
+\end{enumerate}
 \end{exercise}
 
 Coming back to the flow equation ($d=2$)
 \[
-\frac{dg}{dl}=\frac{N-2}{2\pi}\,g^2+\dots
+\frac{\dd g}{\dd l}=\frac{N-2}{2\pi}\,g^2+\dots
 \]
 one observes that (at $N>2$) the flow of the coupling $g(l)$ looks like this:
 \[
@@ -356,7 +357,7 @@ $N>2$.\footnote{At $N=2$ the $g^2$ term in the $\beta$-function vanishes. In fac
 it is easy to see that all higher terms vanish as well. At $N=2$ the direction
 $\mathbf n(x)$ can be parameterized by a single angle $\theta(x)$,
 $\mathbf n(x)=\bigl(\cos\theta(x),\sin\theta(x)\bigr)$, and formally
-$\mathcal A=\frac1{2g}\int(\partial_\mu\theta)^2\,d^2x$, which is just the action
+$\mathcal A=\frac1{2g}\int(\partial_\mu\theta)^2\dd^2x$, which is just the action
 of free massless theory. The action of RG on a free theory is trivial. However,
 beyond the perturbation theory, the $N=2$ sigma model has more complex structure.
 This is because the field $\theta(x)$ is an angular variable,
@@ -373,7 +374,7 @@ of $d=2+\epsilon$ with $\epsilon\ll1$. In this case we can repeat our calculatio
 of the RG flow at small $g$. The step 1 (elimination of the fast part) yields
 essentially the same result,
 \begin{equation}\label{eq:A1sigmaeps}
-\mathcal A_1=\int\left(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
+\mathcal A_1=\int\left(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\dd^dx\,.
 \end{equation}
 However, the step 2 (scale transformation) is no longer exactly trivial. The change
 of variables
@@ -382,11 +383,11 @@ of variables
 \]
 leads to
 \[
-\int(\partial_\mu\mathbf n_0)^2\,d^dx=L^{d-2}\int(\partial_\mu\mathbf n)^2\,d^dx\,.
+\int(\partial_\mu\mathbf n_0)^2\dd^dx=L^{d-2}\int(\partial_\mu\mathbf n)^2\dd^dx\,.
 \]
 Therefore
 \[
-\mathcal A'=\int L^\epsilon\,\left(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
+\mathcal A'=\int L^\epsilon\,\left(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\dd^dx\,.
 \]
 Since
 \[
@@ -400,7 +401,7 @@ where I have ignored the factor $\Lambda^\epsilon\approx1$.\footnote{One can get
 rid of this factor by changing to a dimensionless coupling $g\to\Lambda^{-\epsilon}g$.}
 The associated RG flow equation is
 \[
-\frac{dg}{dl}=-\epsilon\,g+\frac{N-2}{2\pi}\,g^2=\frac{N-2}{2\pi}\,g\,(g-g_*)\,,
+\frac{\dd g}{\dd l}=-\epsilon\,g+\frac{N-2}{2\pi}\,g^2=\frac{N-2}{2\pi}\,g\,(g-g_*)\,,
 \qquad\text{where}\qquad
 g_*=\frac{2\pi\,\epsilon}{N-2}\,.
 \]
@@ -449,11 +450,11 @@ solution of the theory at $N\to\infty$ (partly described in \S13.3 of PS).
 \begin{hwproblem}{9}\label{hw:9}
 For the $O(N)$ sigma model,
 \[
-\mathcal A[\mathbf n(x)]=\int d^2x\,\frac1{2g}\,\bigl(\partial\mathbf n(x)\bigr)^2\,.
+\mathcal A[\mathbf n(x)]=\int \dd^2x\,\frac1{2g}\,\bigl(\partial\mathbf n(x)\bigr)^2\,.
 \]
 Assume $N>2$.
-
-I. At $d=2$
+\begin{enumerate}[label=\Roman*.,leftmargin=*]
+\item At $d=2$:
 \begin{hwparts}
 \item Assuming $g(l)\ll1$, find $Z_{\mathbf n}(l)$ (see Section~22 for
 definition).
@@ -463,7 +464,7 @@ $\langle\mathbf n(x)\mathbf n(0)\rangle$.
 solution of the model at $N\to\infty$ (PS, \S13.3, pages 463--465).
 \end{hwparts}
 \emph{Direction:} Find $Z_{\mathbf n}(l)$ from
-$-\frac d{dl}Z_{\mathbf n}^{-1/2}(l)=\gamma_{\mathbf n}(g(l))\,Z_{\mathbf n}^{-1/2}(l)$.
+$-\frac{\dd}{\dd l}Z_{\mathbf n}^{-1/2}(l)=\gamma_{\mathbf n}(g(l))\,Z_{\mathbf n}^{-1/2}(l)$.
 Use the equation
 \[
 \bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,
@@ -471,7 +472,8 @@ Use the equation
 and remember that this correlation function depends on the coordinates through the
 separation $|x_1-x_2|$ only.
 
-II. At $d=2+\epsilon$ with $\epsilon\ll1$, find the flow equation for
+\item At $d=2+\epsilon$ with $\epsilon\ll1$, find the flow equation for
 $Z_{\mathbf n}(l)$. Again, determine the $|x|\to0$ behavior of the two-point
 correlation function.
+\end{enumerate}
 \end{hwproblem}

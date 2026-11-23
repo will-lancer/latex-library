@@ -19,15 +19,15 @@ we write such amplitude as an integral over the ``paths''?
 In classical mechanics the action of a relativistic particle travelling from
 $x_i$ to $x_f$ is
 \[
-S=-m\int_{x_i}^{x_f}\sqrt{-dx_\mu\,dx^\mu}=-m\int_{(t_i,\xx_i)}^{(t_f,\xx_f)}\sqrt{dt^2-d\xx^2}\,,
+S=-m\int_{x_i}^{x_f}\sqrt{-\dd x_\mu\dd x^\mu}=-m\int_{(t_i,\xx_i)}^{(t_f,\xx_f)}\sqrt{\dd t^2-\dd\xx^2}\,,
 \]
 where the integration is performed along a given path (generally described by
 a parametric curve $x^\mu(s)$) from $x_i$ to $x_f$. In classical theory it is
-assumed that $(dx^0)^2\ge d\xx^2$ along the whole path (the particle velocity
+assumed that $(\dd x^0)^2\ge \dd\xx^2$ along the whole path (the particle velocity
 never exceeds the speed of light). Then the time component $t=x^0$ of $x^\mu$
 can serve as the parameter along the path, and we can write
 \[
-S[\xx(t)]=-m\int_{t_i}^{t_f}dt\,\sqrt{1-\dot\xx^2}\,.
+S[\xx(t)]=-m\int_{t_i}^{t_f}\dd t\,\sqrt{1-\dot\xx^2}\,.
 \]
 In quantum theory one may attempt to write for the transition amplitude
 \[
@@ -38,7 +38,7 @@ where the integration is over ``all paths'' from $x_i$ to $x_f$
 \begin{figure}[ht]
 \centering\figfile{relpath}
 \caption{Two of the paths from $x_i$ to $x_f$ that enter the sum. The
-element $dx^\mu$ of a path may be time-like or space-like.}
+element $\dd x^\mu$ of a path may be time-like or space-like.}
 \label{fig:relpath}
 \end{figure}
 
@@ -53,9 +53,9 @@ sense we discussed the last time; the matrix elements $\bra{\xx}H\ket{\xx'}$
 do not vanish when $\xx\neq\xx'$ (check it against the Exercise in
 Lecture~2). More fundamentally, the problem is about the class of the paths
 which we need to include into the path integral. The expression
-$-dx_\mu dx^\mu$ in the square root in $S$ can be either positive or negative,
-depending on whether $dx^\mu$ is time-like or space-like. One can try to
-exclude from the integration the paths having space-like $dx^\mu$ anywhere,
+$-\dd x_\mu \dd x^\mu$ in the square root in $S$ can be either positive or negative,
+depending on whether $\dd x^\mu$ is time-like or space-like. One can try to
+exclude from the integration the paths having space-like $\dd x^\mu$ anywhere,
 but it does not seem to be right idea if we want to describe the propagator
 $D_F$ this way. Indeed, unlike the commutator, the function $D_F(\xx,t)$ does
 not vanish outside the light cone (at $|t|<|\xx|$). It is exponentially small
@@ -63,8 +63,8 @@ if you go far outside the light cone, but it is not zero. This is similar to a
 non-relativistic particle in the classically inaccessible region of its
 configuration space: the wave function is exponentially small but does not
 vanish (``quantum tunneling''). Thus we have to admit the paths having
-space-like $dx^\mu$ somewhere along them. Once such paths are admitted, the
-Lorentz invariance requires that paths in which $dx^0$ is allowed to take
+space-like $\dd x^\mu$ somewhere along them. Once such paths are admitted, the
+Lorentz invariance requires that paths in which $\dd x^0$ is allowed to take
 negative values (i.e.\ the paths with the folds going ``backward in time'')
 are admitted as well (figure~\ref{fig:backpath}).
 \begin{figure}[ht]
@@ -74,8 +74,8 @@ are admitted as well (figure~\ref{fig:backpath}).
 \end{figure}
 
 For such paths $\xx(t)$ is not a function, and the integral over $[D\xx(t)]$
-does not apply. Besides, whereas for the case of space-like $dx^\mu$ there is
-a natural choice of the branch of the square root $\sqrt{-dx_\mu dx^\mu}$ in the
+does not apply. Besides, whereas for the case of space-like $\dd x^\mu$ there is
+a natural choice of the branch of the square root $\sqrt{-\dd x_\mu \dd x^\mu}$ in the
 action ($e^{iS}$ must receive exponentially small contributions from the
 space-like parts of the path), we have no clear intuition which sign to choose
 in the case of the time-like ``backward in time'' paths.
@@ -87,11 +87,11 @@ t=-i\,x_4\,,
 \]
 we have $iS\to-\mathcal A$, where the Euclidean action is
 \[
-\mathcal A=m\int\sqrt{(dx_E)^2}\,,
+\mathcal A=m\int\sqrt{(\dd x_E)^2}\,,
 \]
 with explicitly positive expression
 \[
-dx_E^2=dx_4^2+d\xx^2
+\dd x_E^2=\dd x_4^2+\dd\xx^2
 \]
 under the square root. In the subsequent discussion I will often omit the
 subscript $E$ for the Euclidean 4-vectors. With this, one can define the
@@ -131,21 +131,21 @@ Let $\nu_k$ be the unit 4-vector in the direction of the $k$-th piece;
 $|\nu_k|=1$. In this discrete approximation the path integral can be written
 as
 \[
-\sum_{n=0}^\infty e^{-m_0\Delta n}\int\Bigl(\prod_{k=1}^nd\mu(\nu_k)\Bigr)\,\delta^{(4)}\Bigl(\Delta\sum_{k=1}^n\nu_k-x\Bigr)\,.
+\sum_{n=0}^\infty e^{-m_0\Delta n}\int\left(\prod_{k=1}^n\dd\mu(\nu_k)\right)\,\delta^{(4)}\left(\Delta\sum_{k=1}^n\nu_k-x\right)\,.
 \]
-Here $d\mu(\nu_k)$ stands for the usual measure on $S^3$, and the
+Here $\dd\mu(\nu_k)$ stands for the usual measure on $S^3$, and the
 delta-function ensures that the vectors $\Delta\,\nu_k$ add up to $x$, i.e.\
 the path indeed is from $0$ to $x=x_f-x_i$. Finally, the sum over $n$ must be
 performed since we want to include all paths, with arbitrary length $L$.
 
 The delta-function can be represented as
 \[
-\delta^{(4)}\Bigl(\Delta\sum\nu_k-x\Bigr)=\int\frac{d^4P}{(2\pi)^4}\,e^{iP(x-\Delta\sum\nu_k)}\,.
+\delta^{(4)}\left(\Delta\sum\nu_k-x\right)=\int\frac{\dd^4P}{(2\pi)^4}\,e^{iP(x-\Delta\sum\nu_k)}\,.
 \]
-For fixed $P$ the integration over $\prod d\mu(\nu_k)$ splits into $n$
-identical integrals $I(P\Delta)=\int d\mu(\nu)\,e^{-i\Delta\nu P}$,
+For fixed $P$ the integration over $\prod \dd\mu(\nu_k)$ splits into $n$
+identical integrals $I(P\Delta)=\int \dd\mu(\nu)\,e^{-i\Delta\nu P}$,
 \[
-\prod_{k=1}^n\int d\mu(\nu_k)\,e^{-i\Delta\nu_kP}=\bigl[I(P\Delta)\bigr]^n\,.
+\prod_{k=1}^n\int \dd\mu(\nu_k)\,e^{-i\Delta\nu_kP}=\bigl[I(P\Delta)\bigr]^n\,.
 \]
 Certainly, the integral $I$ can be evaluated explicitly in terms of the
 Bessel's function. However, there is no need in its explicit form. We are
@@ -155,7 +155,7 @@ argument is important. We find
 \[
 I(P\Delta)=A-A\,\xi\,P^2\Delta^2+O(\Delta^4)\,,
 \]
-where exact values of the constants $A=\int_{S^3}d\mu(\nu)=2\pi^2$ and
+where exact values of the constants $A=\int_{S^3}\dd\mu(\nu)=2\pi^2$ and
 $\xi=1/8$ are not important. We have
 \[
 I^n\sim A^n\,e^{-\Delta^2n\,\xi P^2}\,.
@@ -223,7 +223,7 @@ e^{-m^2\xi n\Delta^2}\to e^{-m^2s}\,.
 \]
 For large $n$ the sum is replaced by the integral over $s$, and one obtains
 \[
-\int_0^\infty ds\,e^{-m^2s}\int\frac{d^4P}{(2\pi)^4}\,e^{-sP^2}\,e^{iPx}\,,
+\int_0^\infty \dd s\,e^{-m^2s}\int\frac{\dd^4P}{(2\pi)^4}\,e^{-sP^2}\,e^{iPx}\,,
 \]
 which is exactly the Schwinger's proper-time representation \eqref{eq:Schwinger}
 of the Euclidean correlation function $D_E(x)$ of the KG theory. Thus this
