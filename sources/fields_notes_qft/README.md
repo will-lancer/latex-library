@@ -4,7 +4,7 @@ Course notes from Spring 2026, retyped in JHEP format from the four printed
 PDFs in [`originals/fields-notes-qft/lectures/`](../../originals/fields-notes-qft/lectures/),
 with the nine problem sets from
 [`originals/fields-notes-qft/homework/`](../../originals/fields-notes-qft/homework/)
-placed in the text. The edition runs to 204 pages.
+placed in the text and solved in an appendix. The edition runs to 212 pages.
 
 Open [`pdfs/fields-notes-qft/fields-notes-qft.pdf`](../../pdfs/fields-notes-qft/fields-notes-qft.pdf).
 Rebuild with `sh build.sh` from this directory; the entry point is `latex/master.tex` and the bundled `jheppub.sty`
@@ -15,20 +15,24 @@ files go to a temporary directory under `/private/tmp`.
 
 The source PDFs are images of typeset pages with no text layer, so every page
 was read and retyped. Section and equation numbers match the notes, and
-Lecture N of the course is Section N here.
+Lecture N of the course is Section N here. Minkowski-space formulas use the
+mostly plus metric `diag(−1, +1, +1, +1)`; the notes used mostly minus. The
+Euclidean sections, which are most of the course, do not depend on this.
 
 Every figure is redrawn in TikZ: the hand-drawn xfig sketches, the contour
 and spectrum plots, the RG flow diagrams and all the Feynman diagrams. One
 figure the notes promise but leave blank (the spectrum with two stable
 particles, p. 269) is supplied.
 
-[CORRECTIONS.md](CORRECTIONS.md) lists 90 corrections of substance and 73
+[CORRECTIONS.md](CORRECTIONS.md) lists 91 corrections of substance and 73
 wording repairs, each with its printed page. Among them are sign errors
 (Hamilton's equations, the Casimir force, the definition of the anomalous
 dimension and the mass-flow equations in Section 15, the Ward identity for
 dilations), wrong factors (the tadpole's 1/16π², the bubble's λ₀²/16, the
 Gaussian integral, the volume of S³), a dropped coupling constant, broken
-cross-references, and a formula for Φ₄ that breaks off mid-line.
+cross-references, a formula for Φ₄ that breaks off mid-line, and the power of
+`Z_n` in the sigma-model scaling relation. It also lists the conventions this
+edition changed.
 
 ## Homework placement
 
@@ -45,7 +49,8 @@ cross-references, and a formula for Φ₄ that breaks off mid-line.
 | 9. O(N) sigma model at d = 2 and 2 + ε | Section 22 |
 
 Problems keep their course numbers, so Problem 7 appears before Problem 3:
-it uses only the Klein-Gordon propagator of Section 4.
+it uses only the Klein-Gordon propagator of Section 4. Each problem ends with a
+link to its solution in Appendix A, and each solution links back.
 
 ## Files
 
@@ -53,6 +58,7 @@ it uses only the Klein-Gordon propagator of Section 4.
 | --- | --- |
 | `latex/master.tex` | Preamble, macros, diagram styles |
 | `latex/sections/secNN.tex` | One file per section of the notes |
+| `latex/sections/solutions.tex` | Appendix A, solutions to the homework |
 | `latex/figures/*.tex` | TikZ figures |
 | `SOURCE_MAP.md` | Printed page ranges for each section |
 | `CORRECTIONS.md` | Every change of substance, by page |

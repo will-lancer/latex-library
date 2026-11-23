@@ -18,12 +18,12 @@ H(p,q)=\sum_i p_i\,\dot q^i-L\,.
 \]
 The equations of motion then take the canonical form
 \[
-\dot p_i=\bigl\{p_i,H\bigr\}=-\frac{\partial H}{\partial q^i}\,,\qquad
-\dot q^i=\bigl\{q^i,H\bigr\}=\frac{\partial H}{\partial p_i}\,,
+\dot p_i=\{p_i,H\}=-\frac{\partial H}{\partial q^i}\,,\qquad
+\dot q^i=\{q^i,H\}=\frac{\partial H}{\partial p_i}\,,
 \]
 in terms of the Poisson brackets
 \[
-\bigl\{f,g\bigr\}:=\sum_i\frac{\partial f}{\partial q^i}\,\frac{\partial g}{\partial p_i}-\frac{\partial f}{\partial p_i}\,\frac{\partial g}{\partial q^i}\,.
+\{f,g\}:=\sum_i\frac{\partial f}{\partial q^i}\,\frac{\partial g}{\partial p_i}-\frac{\partial f}{\partial p_i}\,\frac{\partial g}{\partial q^i}\,.
 \]
 In a field theory we have continuously many generalized coordinates
 $\varphi(\xx)$ (I assume here a scalar field, for simplicity), labeled by the
@@ -33,7 +33,7 @@ spatial coordinates $\xx$. In this case the conjugated momenta are defined as
 \]
 with the basic Poisson brackets
 \[
-\bigl\{\varphi(\xx),\pi(\xx')\bigr\}=\delta(\xx-\xx')\,.
+\{\varphi(\xx),\pi(\xx')\}=\delta(\xx-\xx')\,.
 \]
 In the Klein-Gordon theory
 \[
@@ -41,7 +41,7 @@ In the Klein-Gordon theory
 \]
 and the Hamiltonian is
 \begin{equation}\label{eq:HKG}
-H=\int d^3\xx\,\biggl[\frac12\,\pi^2(\xx)+\frac12\,\bigl(\nabla\varphi\bigr)^2(\xx)+\frac{m^2}{2}\,\varphi^2(\xx)\biggr].
+H=\int d^3\xx\,\left[\frac12\,\pi^2(\xx)+\frac12\,\bigl(\nabla\varphi\bigr)^2(\xx)+\frac{m^2}{2}\,\varphi^2(\xx)\right].
 \end{equation}
 Of course, it coincides with the above expression for the energy,
 $E=\int T^{00}\,d^3\xx$, expressed through $\pi$ rather than $\dot\varphi$.
@@ -61,7 +61,7 @@ $H(p,q)$ & $\hat H(\hat p,\hat q):\ \Ham\to\Ham$
 where the Hermitian operators $\hat q,\hat p$ must obey the canonical
 commutation relations
 \[
-\bigl[\hat q^i,\hat p_j\bigr]=i\,\delta^i_j\,.
+[\hat q^i,\hat p_j]=i\,\delta^i_j\,.
 \]
 
 \begin{remark}
@@ -83,7 +83,7 @@ In principle, one can follow this prescription and introduce the operators
 $\hat\varphi(\xx)$, $\hat\pi(\xx)$ and demand that they satisfy the canonical
 commutators in the form
 \[
-\bigl[\hat\varphi(\xx),\hat\pi(\xx')\bigr]=i\,\delta(\xx-\xx')\,.
+[\hat\varphi(\xx),\hat\pi(\xx')]=i\,\delta(\xx-\xx')\,.
 \]
 Furthermore, one can take the space of functionals $\Psi[\varphi(\xx)]$ as
 the Hilbert space $\Ham$; it provides a formal representation of the above
@@ -94,7 +94,7 @@ canonical commutation relations through the identifications
 \]
 The Hamiltonian operator then is
 \[
-\hat H=\int d^3\xx\,\biggl[-\frac12\,\frac{\delta^2}{\delta\varphi(\xx)^2}+\frac12\,\bigl(\nabla\varphi\bigr)^2+\frac{m^2}{2}\,\varphi^2\biggr],
+\hat H=\int d^3\xx\,\left[-\frac12\,\frac{\delta^2}{\delta\varphi(\xx)^2}+\frac12\,\bigl(\nabla\varphi\bigr)^2+\frac{m^2}{2}\,\varphi^2\right],
 \]
 and it remains to find all solutions of the stationary Schroedinger equation
 \[
@@ -141,7 +141,7 @@ and I refer to \textbf{Sect.~2.3} there for the detailed calculation.
 Instead, here I will follow equivalent routine based on special symmetries of
 the KG theory. Recall that the Lagrangian density is
 \[
-\Lag=\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\,,
+\Lag=-\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\,,
 \]
 and observe that the transformation of the field
 \[
@@ -149,13 +149,13 @@ and observe that the transformation of the field
 \]
 where $f(x)$ is an arbitrary solution of the KG equation
 \[
-\partial_\mu\partial^\mu f(x)+m^2\,f(x)=0\,,
+\partial_\mu\partial^\mu f(x)-m^2\,f(x)=0\,,
 \]
 changes the Lagrangian density by a total derivative term
 \[
 \Lag(\varphi',\partial\varphi')=\Lag(\varphi,\partial\varphi)+\partial_\mu\tilde J^\mu_f\,,
 \qquad\text{where}\qquad
-\tilde J^\mu_f(x)=\varphi(x)\,\partial^\mu f(x)
+\tilde J^\mu_f(x)=-\varphi(x)\,\partial^\mu f(x)
 \]
 (in writing this equation I have assumed that $f$ is infinitesimal and
 neglected the terms $\sim f^2$). The situation meets the conditions of the
@@ -166,7 +166,7 @@ generates a conserved current $J^\mu_f$, such that
 \]
 Explicitly
 \[
-J^\mu_f=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,f-\tilde J^\mu_f=\partial^\mu\varphi\,f-\varphi\,\partial^\mu f\,.
+J^\mu_f=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,f-\tilde J^\mu_f=\varphi\,\partial^\mu f-\partial^\mu\varphi\,f\,.
 \]
 The corresponding Integrals of Motion are (at a time $t$)
 \[
@@ -177,7 +177,7 @@ where $\pi(\xx)=\dot\varphi(\xx)$ is the canonical momentum conjugate to
 $\varphi(\xx)$. The integrals $A_f$ are Lorentz scalars. This becomes explicit
 if one rewrites their definition in covariant form
 \[
-A_f=\int_\Sigma d\Sigma_\mu\,\bigl(\partial^\mu\varphi\,f-\varphi\,\partial^\mu f\bigr)\,,
+A_f=\int_\Sigma d\Sigma_\mu\,\bigl(\varphi\,\partial^\mu f-\partial^\mu\varphi\,f\bigr)\,,
 \]
 where $\Sigma$ is any space-like 3-surface (figure~\ref{fig:spacelike});
 because of the continuity equation the currents $J^\mu_f$ obey, the above
@@ -191,17 +191,17 @@ does not depend on the choice of $\Sigma$.}
 
 In classical theory one straightforwardly evaluates the Poisson brackets
 \[
-\bigl\{A_f,A_g\bigr\}=\int d^3\xx\,\Bigl(f(\xx,t)\,\dot g(\xx,t)-\dot f(\xx,t)\,g(\xx,t)\Bigr)
+\{A_f,A_g\}=\int d^3\xx\,\Bigl(f(\xx,t)\,\dot g(\xx,t)-\dot f(\xx,t)\,g(\xx,t)\Bigr)
 \]
 (this expression also can be written in the covariant form, in terms of the
 integral over arbitrary $\Sigma$). In quantum theory we should replace, as
 usual,
 \[
-\bigl\{A,B\bigr\}\to-i\,\bigl[\hat A,\hat B\bigr]\,,
+\{A,B\}\to-i\,[\hat A,\hat B]\,,
 \]
 so that
 \[
-\bigl[\hat A_f,\hat A_g\bigr]=-i\int d^3\xx\,\Bigl(\dot f(\xx)\,g(\xx)-f(\xx)\,\dot g(\xx)\Bigr)\,.
+[\hat A_f,\hat A_g]=-i\int d^3\xx\,\Bigl(\dot f(\xx)\,g(\xx)-f(\xx)\,\dot g(\xx)\Bigr)\,.
 \]
 It is convenient to use standard plane-wave solutions of the Klein-Gordon
 equation
@@ -215,9 +215,9 @@ Denoting
 \]
 we find the commutation relations
 \[
-\bigl[\hat A_\pp,\hat A^\dagger_{\pp'}\bigr]=(2\pi)^3\,2\omega_\pp\,\delta^{(3)}(\pp-\pp')\,;\qquad
-\bigl[\hat A_\pp,\hat A_{\pp'}\bigr]=0\,;\qquad
-\bigl[\hat A^\dagger_\pp,\hat A^\dagger_{\pp'}\bigr]=0\,.
+[\hat A_\pp,\hat A^\dagger_{\pp'}]=(2\pi)^3\,2\omega_\pp\,\delta^{(3)}(\pp-\pp')\,;\qquad
+[\hat A_\pp,\hat A_{\pp'}]=0\,;\qquad
+[\hat A^\dagger_\pp,\hat A^\dagger_{\pp'}]=0\,.
 \]
 These are the \emph{creation and annihilation operators}. The above operators
 $\hat A_\pp$ and $\hat A^\dagger_\pp$ differ in normalization from $a_\pp$ and
@@ -237,8 +237,8 @@ oscillator per each wave-vector $\pp$, the associated frequency being
 $\omega_\pp$. It is straightforward to check that $\hat A^\dagger_\pp$ raises
 (and $\hat A_\pp$ lowers) the energy by the amount $\omega_\pp$, namely
 \[
-\bigl[\hat H,\hat A^\dagger_\pp\bigr]=\omega_\pp\,\hat A^\dagger_\pp\,,\qquad
-\bigl[\hat H,\hat A_\pp\bigr]=-\,\omega_\pp\,\hat A_\pp\,.
+[\hat H,\hat A^\dagger_\pp]=\omega_\pp\,\hat A^\dagger_\pp\,,\qquad
+[\hat H,\hat A_\pp]=-\,\omega_\pp\,\hat A_\pp\,.
 \]
 Similarly, for the momentum
 \[
@@ -250,8 +250,8 @@ we have
 \]
 Hence
 \[
-\bigl[\hat{\PPv},\hat A^\dagger_\pp\bigr]=\pp\,\hat A^\dagger_\pp\,,\qquad
-\bigl[\hat{\PPv},\hat A_\pp\bigr]=-\,\pp\,\hat A_\pp\,,
+[\hat{\PPv},\hat A^\dagger_\pp]=\pp\,\hat A^\dagger_\pp\,,\qquad
+[\hat{\PPv},\hat A_\pp]=-\,\pp\,\hat A_\pp\,,
 \]
 i.e.\ $\hat A^\dagger_\pp$ adds $\pp$ to the total momentum.
 
@@ -293,7 +293,7 @@ The above expression for the Hamiltonian can be rewritten as
 \[
 \hat H=E_0+\int\frac{d^3\pp}{(2\pi)^3}\,\frac12\,\hat A^\dagger_\pp\,\hat A_\pp\,,
 \qquad\text{with}\qquad
-E_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac14\,\bigl[\hat A_\pp,\hat A^\dagger_\pp\bigr]\,,
+E_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac14\,[\hat A_\pp,\hat A^\dagger_\pp]\,,
 \]
 which of course is the sum of the zero-point energies of all the constituent
 oscillators.
@@ -308,7 +308,7 @@ $[\hat A_\pp,\hat A^\dagger_{\pp'}]=2\omega_\pp\,(2\pi)^3\,\delta^{(3)}(\pp-\pp'
 
 Note that these problems don't seem to be as bad for $\PPv_0$, where we have
 \[
-\PPv_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,\bigl[\hat A_\pp,\hat A^\dagger_\pp\bigr]=0\,,
+\PPv_0=\int\frac{d^3\pp}{(2\pi)^3}\,\frac{\pp}{4\omega_\pp}\,[\hat A_\pp,\hat A^\dagger_\pp]=0\,,
 \]
 since the contributions of $\pp$ and $-\pp$ cancel pairwise. This is good, as
 we do not want the vacuum to have any net momentum. But this seems to create
@@ -340,8 +340,8 @@ tensor),
 \]
 The Lorentz-invariance of the vacuum state $\ket{0}$ only requires that
 \[
-\bra{0}T^{\mu\nu}\ket{0}=\varepsilon_0\,\eta^{\mu\nu}\,,\qquad
-\eta^{\mu\nu}=\operatorname{diag}(+1,-1,-1,-1)\,,
+\bra{0}T^{\mu\nu}\ket{0}=-\varepsilon_0\,\eta^{\mu\nu}\,,\qquad
+\eta^{\mu\nu}=\operatorname{diag}(-1,+1,+1,+1)\,,
 \]
 and we soon will have techniques to check that this equation indeed holds in
 the KG theory. It is OK for a Lorentz-invariant state to have nonzero energy
@@ -360,7 +360,7 @@ could assume that perhaps some microscopic physics takes care of the problem,
 replacing the above mathematically meaningless expression by the ``cutoff''
 integral
 \[
-\varepsilon_0=\frac12\int\frac{d^3\pp}{(2\pi)^3}\,\omega_\pp\,\Phi\Bigl(\frac{\pp^2}{\Lambda^2}\Bigr)\,,
+\varepsilon_0=\frac12\int\frac{d^3\pp}{(2\pi)^3}\,\omega_\pp\,\Phi\left(\frac{\pp^2}{\Lambda^2}\right)\,,
 \]
 where the ``cutoff'' factor $\Phi(\xi)$ is close to 1 when $\xi\ll1$ and
 decays fast at large $\xi$, and $\Lambda$ represents the energy scale beyond

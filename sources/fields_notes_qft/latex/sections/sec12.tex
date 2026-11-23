@@ -42,12 +42,12 @@ introduces a cutoff, say replaces
 with some $\Phi(x)$ such that $\Phi(x)=1$ for $x\ll1$, but decays fast at
 $x\gg1$, the integral evaluates as
 \[
-\frac{\lambda^2}{32\pi^2}\Bigl(\log\frac{\Lambda^2}{m^2}+f(p_{12})\Bigr)\,,
+\frac{\lambda^2}{32\pi^2}\left(\log\frac{\Lambda^2}{m^2}+f(p_{12})\right)\,,
 \]
 where $f(p_{12})$ (I use $p_{12}=p_1+p_2$) has finite limit as
 $\Lambda\to\infty$. Including the ``permutations'' terms, we then have
 \[
-\tilde\Gamma^{(4)}=\lambda-\frac{\lambda^2}{32\pi^2}\Bigl(3\log\frac{\Lambda^2}{m^2}+f(p_{12})+f(p_{13})+f(p_{14})\Bigr)\,.
+\tilde\Gamma^{(4)}=\lambda-\frac{\lambda^2}{32\pi^2}\left(3\log\frac{\Lambda^2}{m^2}+f(p_{12})+f(p_{13})+f(p_{14})\right)\,.
 \]
 
 One can observe that the divergent term carries no dependence on the external
@@ -58,7 +58,7 @@ constant $\lambda$. This can be formulated more precisely as follows. Just as
 in the case of the mass renormalization discussed above, we should start with
 the action
 \[
-\mathcal A=\int\Bigl[\frac12\,(\partial\varphi)^2+\frac{m_0^2}2\,\varphi^2+\frac{\lambda_0}{4!}\,\varphi^4\Bigr]\,,
+\mathcal A=\int\left[\frac12\,(\partial\varphi)^2+\frac{m_0^2}2\,\varphi^2+\frac{\lambda_0}{4!}\,\varphi^4\right]\,,
 \]
 with some ``bare'' coupling constant $\lambda_0$ (as well as the ``bare'' mass
 parameter $m_0^2$). Then it is possible to give $\lambda_0$ certain dependence
@@ -69,13 +69,13 @@ on the cutoff momentum $\Lambda$,
 such that the limit $\Lambda\to\infty$ of $\tilde\Gamma^{(4)}$ in this order of
 the perturbation theory is finite. Namely, let us set
 \[
-\lambda_0(\Lambda)=\lambda+\frac{3\lambda^2}{32\pi^2}\Bigl(\log\frac{\Lambda^2}{m^2}+C\Bigr)+O(\lambda^3)\,,
+\lambda_0(\Lambda)=\lambda+\frac{3\lambda^2}{32\pi^2}\left(\log\frac{\Lambda^2}{m^2}+C\right)+O(\lambda^3)\,,
 \]
 where new parameter $\lambda$ is called the \emph{renormalized} coupling
 constant, and $C$ is arbitrary number. We then have
 \begin{align*}
-\tilde\Gamma^{(4)}&=\lambda_0-\frac{\lambda_0^2}{32\pi^2}\Bigl(3\log\frac{\Lambda^2}{m^2}+\tilde f(p)\Bigr)+O(\lambda_0^3)\\
-&=\lambda+\frac{3\lambda^2}{32\pi^2}\Bigl(\log\frac{\Lambda^2}{m^2}+C\Bigr)-\frac{\lambda^2}{32\pi^2}\Bigl(3\log\frac{\Lambda^2}{m^2}+\tilde f(p)\Bigr)+O(\lambda^3)\,.
+\tilde\Gamma^{(4)}&=\lambda_0-\frac{\lambda_0^2}{32\pi^2}\left(3\log\frac{\Lambda^2}{m^2}+\tilde f(p)\right)+O(\lambda_0^3)\\
+&=\lambda+\frac{3\lambda^2}{32\pi^2}\left(\log\frac{\Lambda^2}{m^2}+C\right)-\frac{\lambda^2}{32\pi^2}\left(3\log\frac{\Lambda^2}{m^2}+\tilde f(p)\right)+O(\lambda^3)\,.
 \end{align*}
 (Here $\tilde f(p)=f(p_{12})+f(p_{13})+f(p_{14})$.) The $\Lambda$-dependent term
 cancels out. Assuming that $\lambda$ is fixed in the limit $\Lambda\to\infty$,
@@ -175,7 +175,7 @@ We are ready to formulate the \emph{renormalization program}.
 
 1. We start with the action
 \[
-\mathcal A=\int d^4x\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\Bigr]\,,
+\mathcal A=\int d^4x\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\right]\,,
 \]
 which involves the bare field $\varphi_0$, the bare mass $m_0$, and the bare
 coupling constant $\lambda_0$.
@@ -200,9 +200,9 @@ functions. The above program can be further reformulated as the
 
 Let us rewrite the action as
 \[
-\mathcal A=\int d^4x\,\Bigl[\underbrace{\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2}_{\text{free part}}
+\mathcal A=\int d^4x\,\left[\underbrace{\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2}_{\text{free part}}
 +\underbrace{\frac\lambda{4!}\,\varphi^4}_{\text{interaction part}}
-+\underbrace{\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta m^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4}_{\text{counterterms}}\Bigr]\,,
++\underbrace{\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta m^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4}_{\text{counterterms}}\right]\,,
 \]
 where $m$ is the actual mass and $\lambda$ is suitably defined renormalized
 coupling constant (to be discussed later), and $\varphi$ is the renormalized
@@ -249,7 +249,7 @@ It is instructive to consider such field theory in the space of $d$
 dimensions, with generic $d$. We will consider general scalar theories with the
 actions of the form
 \begin{equation}\label{eq:genscalar}
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\sum_{k=3}^N\frac{\lambda_{0\,k}}{k!}\,\varphi_0^k\Bigr]\,.
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\sum_{k=3}^N\frac{\lambda_{0\,k}}{k!}\,\varphi_0^k\right]\,.
 \end{equation}
 The Feynman rules remain the same as in 4-dimensional theory, except for the
 momentum integrations go over $d$-dimensional momentum space,
@@ -273,7 +273,7 @@ that we have made for $\varphi^4$ theory reveals two identities
 \]
 Combining these equations one finds
 \[
-D=\sum_k\Bigl(\frac{d-2}2\,k-d\Bigr)V_k-\frac{d-2}2\,n+d\,.
+D=\sum_k\left(\frac{d-2}2\,k-d\right)V_k-\frac{d-2}2\,n+d\,.
 \]
 This formula admits simple interpretation in terms of dimensional counting.
 Note that in our units $c=\hbar=1$ there is only one independent unit, which we

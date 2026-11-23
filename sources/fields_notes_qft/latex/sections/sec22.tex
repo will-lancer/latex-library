@@ -204,7 +204,7 @@ However it involves extra derivative, and thus corresponds to an irrelevant term
 Therefore, in this approximation the only interesting contribution comes from the
 above loop diagram with single $B^2$ vertex. We have
 \begin{equation}\label{eq:A1sigma}
-\mathcal A_1=\int\Bigl(\frac1{2g}-\frac{N-2}{4\pi}\,\log L\Bigr)\,(\partial_\mu\mathbf n_0)^2\,d^2x\,.
+\mathcal A_1=\int\left(\frac1{2g}-\frac{N-2}{4\pi}\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\,d^2x\,.
 \end{equation}
 Thus, the step 1 of the RG transformation leads to
 \[
@@ -234,7 +234,7 @@ the action under the RG transformation. One might be interested in the behavior
 of correlation functions of, say, the field $\mathbf n(x)$. To that end one needs
 then to find the RG function $\gamma_{\mathbf n}(g)$ in the CS equation
 \[
-\Bigl(x\frac\partial{\partial x}+n\,\gamma_{\mathbf n}(g)+\beta(g)\,\frac\partial{\partial g}\Bigr)\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_c=0\,.
+\left(x\frac\partial{\partial x}+n\,\gamma_{\mathbf n}(g)+\beta(g)\,\frac\partial{\partial g}\right)\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_c=0\,.
 \]
 It is defined in terms of the action of the RG transformation on the field
 $\mathbf n(x)$.
@@ -246,14 +246,16 @@ Consider any correlation function involving $\mathbf n(x)$,
 and assume again that the momentum $p$ associated with $x$ is $\ll\Lambda/L$.
 Then, splitting as before
 \[
-\mathbf n=\mathbf n_0\,\sqrt{1-\phi^2}+\mathbf e^i\,\phi_i\simeq\mathbf n_0\,\Bigl(1-\frac12\,\phi^2\Bigr)+\mathbf e^i\,\phi_i
+\mathbf n=\mathbf n_0\,\sqrt{1-\phi^2}+\mathbf e^i\,\phi_i\simeq\mathbf n_0\,\left(1-\frac12\,\phi^2\right)+\mathbf e^i\,\phi_i
 \]
 one needs to find expectation value of this combination over the ensemble of the
 fast modes $\phi$. The last term can be ignored (its expectation value is zero),
 and we have
 \[
-\mathbf n\ \to\ \mathbf n_0\,\Bigl(1-\frac12\,\langle\phi_i^2\rangle\Bigr):=Z_{\mathbf n}^{-\frac12}(L)\,\mathbf n_0\,,
-\qquad\text{where}\qquad
+\mathbf n\ \to\ \mathbf n_0\,\left(1-\frac12\,\langle\phi_i^2\rangle\right):=Z_{\mathbf n}^{-\frac12}(L)\,\mathbf n_0\,,
+\]
+where
+\[
 Z_{\mathbf n}^{-\frac12}(L)=1-\frac12\,\langle\phi_i^2\rangle=1-\frac{N-1}2\,\frac g{2\pi}\,l\,.
 \]
 Since at $d=2$ $\mathbf n$ has zero canonical dimension, we then have
@@ -281,7 +283,7 @@ In our case
 Recall that the ``flow'' of $Z_{\mathbf n}^{-\frac12}(l)$ determines the scale
 dependence of the correlation functions
 \[
-\bigl\langle\mathbf n(x_1/L)\cdots\mathbf n(x_n/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{-\frac n2}(l)\,\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_{g(0)}\,,
+\bigl\langle\mathbf n(x_1/L)\cdots\mathbf n(x_n/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{\frac n2}(l)\,\bigl\langle\mathbf n(x_1)\cdots\mathbf n(x_n)\bigr\rangle_{g(0)}\,,
 \]
 where $l=\log L$.
 
@@ -294,7 +296,7 @@ I. At $d=2$
 \item Derive the following $|x|\to0$ asymptotic of the two-point correlation
 function
 \[
-\bigl\langle\mathbf n(x)\mathbf n(0)\bigr\rangle\sim\Bigl[\log\Bigl(\frac1{x^2}\Bigr)\Bigr]^{\frac{N-1}{N-2}}\,.
+\bigl\langle\mathbf n(x)\mathbf n(0)\bigr\rangle\sim\left[\log\left(\frac1{x^2}\right)\right]^{\frac{N-1}{N-2}}\,.
 \]
 Explain how this result is in agreement with the exact solution of the model at
 $N\to\infty$ (PS, \S13.3, pages 463--465).
@@ -318,7 +320,7 @@ coupling analysis is no longer valid (in particular the higher order terms in
 $\beta(g)$ can not be neglected). On the other hand, if we follow the flow of
 $g(l)$ backward, to $l\to-\infty$,
 \[
-g(l)=\Bigl(\Const-\frac{N-2}{2\pi}\,l\Bigr)^{-1}\ \to\ \frac{2\pi}{N-2}\,(-l)^{-1}\,,
+g(l)=\left(\Const-\frac{N-2}{2\pi}\,l\right)^{-1}\ \to\ \frac{2\pi}{N-2}\,(-l)^{-1}\,,
 \]
 the interaction of the Goldstone modes becomes weaker, and the short-distance
 behavior is controlled by a free theory. For this reason, this type of RG flow is
@@ -371,7 +373,7 @@ of $d=2+\epsilon$ with $\epsilon\ll1$. In this case we can repeat our calculatio
 of the RG flow at small $g$. The step 1 (elimination of the fast part) yields
 essentially the same result,
 \begin{equation}\label{eq:A1sigmaeps}
-\mathcal A_1=\int\Bigl(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\Bigr)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
+\mathcal A_1=\int\left(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
 \end{equation}
 However, the step 2 (scale transformation) is no longer exactly trivial. The change
 of variables
@@ -384,7 +386,7 @@ leads to
 \]
 Therefore
 \[
-\mathcal A'=\int L^\epsilon\,\Bigl(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\Bigr)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
+\mathcal A'=\int L^\epsilon\,\left(\frac1{2g}-\frac{N-2}{4\pi}\,\Lambda^\epsilon\,\log L\right)\,(\partial_\mu\mathbf n_0)^2\,d^dx\,.
 \]
 Since
 \[
@@ -392,7 +394,7 @@ L^\epsilon\approx1+\epsilon\log L
 \]
 one finds that under the RG transformation
 \[
-\frac1g\ \to\ \frac1g+\Bigl(\frac\epsilon g-\frac{N-2}{2\pi}\Bigr)\,\log L\,,
+\frac1g\ \to\ \frac1g+\left(\frac\epsilon g-\frac{N-2}{2\pi}\right)\,\log L\,,
 \]
 where I have ignored the factor $\Lambda^\epsilon\approx1$.\footnote{One can get
 rid of this factor by changing to a dimensionless coupling $g\to\Lambda^{-\epsilon}g$.}
@@ -464,7 +466,7 @@ solution of the model at $N\to\infty$ (PS, \S13.3, pages 463--465).
 $-\frac d{dl}Z_{\mathbf n}^{-1/2}(l)=\gamma_{\mathbf n}(g(l))\,Z_{\mathbf n}^{-1/2}(l)$.
 Use the equation
 \[
-\bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}^{-1}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,
+\bigl\langle\mathbf n(x_1/L)\,\mathbf n(x_2/L)\bigr\rangle_{g(l)}=Z_{\mathbf n}(l)\,\bigl\langle\mathbf n(x_1)\,\mathbf n(x_2)\bigr\rangle_{g(0)}\,,
 \]
 and remember that this correlation function depends on the coordinates through the
 separation $|x_1-x_2|$ only.

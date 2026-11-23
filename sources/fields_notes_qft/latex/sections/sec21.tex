@@ -77,7 +77,7 @@ is marginally irrelevant, in which case we know that the flow in the vicinity of
 the gaussian fixed point is described by the equations
 \begin{align*}
 \frac d{dl}\,\lambda&=-\beta(\lambda)=-3\,\frac{\lambda^2}{(4\pi)^2}+O(\lambda^3)\,,\\
-\frac d{dl}\,M^2&=\bigl(2-\gamma_{\varphi^2}(\lambda)\bigr)\,M^2=\Bigl(2-\frac\lambda{(4\pi)^2}+O(\lambda^2)\Bigr)\,M^2\,.
+\frac d{dl}\,M^2&=\bigl(2-\gamma_{\varphi^2}(\lambda)\bigr)\,M^2=\left(2-\frac\lambda{(4\pi)^2}+O(\lambda^2)\right)\,M^2\,.
 \end{align*}
 On the basis of these arguments Wilson and Fisher have assumed that if one
 formally takes $d=4-\epsilon$ with $\epsilon$ small, say $d=3.99$, the fixed point
@@ -88,7 +88,7 @@ Let us briefly discuss what changes in the renormalized perturbation theory of
 $\varphi^4$ if one takes $d=4-\epsilon$ instead of $d=4$. As before, we start with
 the action in its ``bare'' form
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\Bigr]
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\right]
 \]
 Note that in $d$ dimensions the canonical dimension of $\varphi_0$ is $(d-2)/2$
 and hence coupling constant $\lambda_0$ has positive mass dimension,
@@ -98,8 +98,8 @@ and hence coupling constant $\lambda_0$ has positive mass dimension,
 To develop renormalized perturbation theory we rewrite this action in terms of the
 renormalized field and renormalized parameters,
 \begin{equation}\label{eq:Aren21}
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{M^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4
-+\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta M^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4\Bigr]\,,
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{M^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4
++\frac{\delta Z}2\,(\partial\varphi)^2+\frac{\delta M^2}2\,\varphi^2+\frac{\delta\lambda}{4!}\,\varphi^4\right]\,,
 \end{equation}
 where the counterterms are determined from suitably chosen normalization
 conditions.
@@ -133,7 +133,7 @@ definition of the renormalized coupling constant $\lambda$.
 
 At $d<4$ the Callan-Symanzik equation for the massless theory is
 \begin{equation}\label{eq:CS21}
-\Bigl[x\frac\partial{\partial x}+N\,D(\lambda)+\beta(\lambda)\,\frac\partial{\partial\lambda}\Bigr]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_\lambda=0\,;
+\left[x\frac\partial{\partial x}+N\,D(\lambda)+\beta(\lambda)\,\frac\partial{\partial\lambda}\right]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_\lambda=0\,;
 \end{equation}
 its form reflects the general properties of the RG we sketched the last time,
 which did not depend on $d$. However for generic $d$
@@ -162,7 +162,7 @@ the $N$-point correlation functions have the form
 \]
 and therefore the CS equation can be rewritten as
 \begin{equation}\label{eq:CSbar}
-\Bigl[\mu\frac\partial{\partial\mu}+N\,\bar\gamma(\bar\lambda)+\bar\beta(\bar\lambda)\,\frac\partial{\partial\bar\lambda}\Bigr]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_{\bar\lambda}=0\,,
+\left[\mu\frac\partial{\partial\mu}+N\,\bar\gamma(\bar\lambda)+\bar\beta(\bar\lambda)\,\frac\partial{\partial\bar\lambda}\right]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_{\bar\lambda}=0\,,
 \end{equation}
 where $\bar\beta$ and $\bar\gamma$ are the dimensionless functions of the
 dimensionless parameter $\bar\lambda$ defined as
@@ -176,7 +176,7 @@ for $\bar\beta$, etc.; anyhow, these quantities coincide if $\mu$ is taken to be
 the unit of mass. The equation \eqref{eq:CSbar} can also be rewritten in terms of
 the momentum-space proper vertices,
 \begin{equation}\label{eq:CSGamma21}
-\Bigl[\mu\frac\partial{\partial\mu}-N\,\gamma(\lambda)+\beta(\lambda)\,\frac\partial{\partial\lambda}\Bigr]\Gamma^{(N)}(p_1,\dots,p_N)=0\,.
+\left[\mu\frac\partial{\partial\mu}-N\,\gamma(\lambda)+\beta(\lambda)\,\frac\partial{\partial\lambda}\right]\Gamma^{(N)}(p_1,\dots,p_N)=0\,.
 \end{equation}
 
 We can now repeat our calculations of the leading perturbative contributions to
@@ -188,7 +188,7 @@ dimensional regularization method, and obtain
 and
 \begin{multline}\label{eq:G4d}
 \Gamma^{(4)}(p_1,\dots,p_4)=\mu^{4-d}\Bigl\{\lambda-\frac12\,\frac{\lambda^2}{(4\pi)^{\frac d2}}\,\frac{\Gamma(2-d/2)\,\Gamma^2(d/2-1)}{\Gamma(d-2)}\\
-\times\Bigl[\Bigl(\frac{p_{12}^2}{\mu^2}\Bigr)^{\frac{d-4}2}+\Bigl(\frac{p_{13}^2}{\mu^2}\Bigr)^{\frac{d-4}2}+\Bigl(\frac{p_{14}^2}{\mu^2}\Bigr)^{\frac{d-4}2}-3\,\bigl(2^{d-4}\bigr)\Bigr]+O(\lambda^3)\Bigr\}\,.
+\times\left[\left(\frac{p_{12}^2}{\mu^2}\right)^{\frac{d-4}2}+\left(\frac{p_{13}^2}{\mu^2}\right)^{\frac{d-4}2}+\left(\frac{p_{14}^2}{\mu^2}\right)^{\frac{d-4}2}-3\,\bigl(2^{d-4}\bigr)\right]+O(\lambda^3)\Bigr\}\,.
 \end{multline}
 In the last equation the counterterm contribution is fixed by the normalization
 condition \eqref{eq:norm21}, i.e.
@@ -315,7 +315,7 @@ characteristics of the Wilson-Fisher fixed point. For instance, to the leading
 order in $\epsilon$ the flow equation for the mass parameter $M^2$ has the same
 form as at $d=4$,
 \begin{equation}\label{eq:M2flow21}
-\frac d{dl}\,M^2=\Bigl(2-\frac\lambda{(4\pi)^2}+O(\epsilon^2)\Bigr)\,M^2\,.
+\frac d{dl}\,M^2=\left(2-\frac\lambda{(4\pi)^2}+O(\epsilon^2)\right)\,M^2\,.
 \end{equation}
 Together with \eqref{eq:logistic} this equation yields the pattern of the flow
 shown in figure~\ref{fig:wfflow}.
@@ -358,20 +358,20 @@ definition is $R_c\sim|T_c-T|^{-\nu}$, $C\sim|T_c-T|^{-\alpha}$.}
 \subsection*{\texorpdfstring{$O(N)$ $\varphi^4$}{O(N) phi**4} theory}
 
 Let us discuss somewhat more general $\varphi^4$ theory. Assume that the scalar
-field has $N$ components $\vec\varphi=(\varphi_1,\dots,\varphi_N)$, and the
+field has $N$ components $\bm{\varphi}=(\varphi_1,\dots,\varphi_N)$, and the
 $\varphi^4$ interaction respects the $O(N)$ transformations of the vector
-$\vec\varphi$. We have
+$\bm{\varphi}$. We have
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\vec\varphi)^2+\frac{M^2}2\,\vec\varphi^{\,2}+\frac\lambda{4!}\,(\vec\varphi^{\,2})^2\Bigr]
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\bm{\varphi})^2+\frac{M^2}2\,\bm{\varphi}^2+\frac\lambda{4!}\,(\bm{\varphi}^2)^2\right]
 \]
 Although, as before, we use the notation $M^2/2$ for the coefficient in front of
-the term $\vec\varphi^{\,2}$, this coefficient is allowed to take negative values.
+the term $\bm{\varphi}^2$, this coefficient is allowed to take negative values.
 
 At small $d=4-\epsilon$ with small $\epsilon$ the pattern of the RG flow of the
 $O(N)$ $\varphi^4$ theory in the vicinity of its Gaussian fixed point is
 essentially the same as in the one-component case we discussed
 previously\footnote{Explicit calculation (Problem~\ref{hw:8}) yields, in the
-normalization $\frac\lambda{4!}(\vec\varphi^{\,2})^2$ used here,
+normalization $\frac\lambda{4!}(\bm{\varphi}^2)^2$ used here,
 $\beta(\lambda)=-\epsilon\lambda+\frac{N+8}{48\pi^2}\,\lambda^2+\cdots$,
 $\gamma_{\varphi^2}(\lambda)=\frac{N+2}{48\pi^2}\,\lambda+\cdots$.}
 (figure~\ref{fig:onflow}).
@@ -393,50 +393,50 @@ downward. One can try to figure out the ultimate fate of the flow at positive an
 negative $M^2$ on physical grounds. The domain $M^2>0$ corresponds to the
 high-temperature phase of the ferromagnetic system. The pattern of the flow shows
 that $M^2$ increases with $l$. At large positive $M^2$ the term
-$\frac{M^2}2\vec\varphi^{\,2}$ suppresses fluctuations of $\vec\varphi$. Therefore
+$\frac{M^2}2\bm{\varphi}^2$ suppresses fluctuations of $\bm{\varphi}$. Therefore
 at $M^2>0$ one expects to have attractive non-critical fixed point
 $P_{\text{high}}$, corresponding to the probability distribution
 \[
-P_{\text{high}}[\vec\varphi]\sim\prod_x\delta\bigl(\vec\varphi(x)\bigr)\,.
+P_{\text{high}}[\bm{\varphi}]\sim\prod_x\delta\bigl(\bm{\varphi}(x)\bigr)\,.
 \]
 The domain of negative $M^2$ is associated with the low-temperature phase. Here
 under the RG flow $M^2$ remains negative while increasing in the absolute value. In
 this domain the potential term
-$\frac{M^2}2\vec\varphi^{\,2}+\frac\lambda{4!}(\vec\varphi^{\,2})^2$, as the
-function of $\vec\varphi^{\,2}$, has the minimum away from zero
+$\frac{M^2}2\bm{\varphi}^2+\frac\lambda{4!}(\bm{\varphi}^2)^2$, as the
+function of $\bm{\varphi}^2$, has the minimum away from zero
 (figure~\ref{fig:mexican}).
 \begin{figure}[ht]
 \centering\figfile{mexican}
-\caption{The potential $V$ as a function of $|\vec\varphi|$ for $M^2<0$.}
+\caption{The potential $V$ as a function of $|\bm{\varphi}|$ for $M^2<0$.}
 \label{fig:mexican}
 \end{figure}
 
-In terms of $\vec\varphi$ we have manifold of degenerate minima, the sphere
+In terms of $\bm{\varphi}$ we have manifold of degenerate minima, the sphere
 $S^{N-1}$, of the radius
 \[
-|\vec\varphi|=\rho:=\sqrt{\frac{6\,|M^2|}\lambda}\,.
+|\bm{\varphi}|=\rho:=\sqrt{\frac{6\,|M^2|}\lambda}\,.
 \]
-Points of the sphere indicate possible directions of $\vec\varphi$ at the minimum.
+Points of the sphere indicate possible directions of $\bm{\varphi}$ at the minimum.
 It is easy to see that if $|M^2|$ is large the minimum in figure~\ref{fig:mexican}
-becomes deep and narrow. Fluctuations of the radial part, $|\vec\varphi|$, are
+becomes deep and narrow. Fluctuations of the radial part, $|\bm{\varphi}|$, are
 then suppressed. On the other hand there is no suppression for the fluctuations of
 the angular part. Writing
 \[
-\vec\varphi=\rho\,\vec n\,,\qquad|\vec n|=1\,.
+\bm{\varphi}=\rho\,\mathbf n\,,\qquad|\mathbf n|=1\,.
 \]
-If we completely ignore the radial fluctuations, i.e.\ set $|\vec\varphi|=\rho$
+If we completely ignore the radial fluctuations, i.e.\ set $|\bm{\varphi}|=\rho$
 everywhere, the action takes simple form
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac1{2g}\,(\partial\vec n)^2\Bigr]
+\mathcal A=\int d^dx\,\left[\frac1{2g}\,(\partial\mathbf n)^2\right]
 \qquad\text{with}\qquad
 g=\frac1{\rho^2}=\frac\lambda{6\,|M^2|}\,.
 \]
 As $|M^2|$ increases with the RG flow, $g$ becomes small.\footnote{This simple
 classical analysis is valid only in the limit $\lambda\to0$. More generally,
-fluctuations of $|\vec\varphi|$ can be taken into account, along with the
+fluctuations of $|\bm{\varphi}|$ can be taken into account, along with the
 fluctuations of the angular part, by renormalized perturbation theory. Some
 details about this theory, the so called linear sigma model, can be found in
-Chapter 11 of PS.} Due to the non-linear constraint $\vec n^{\,2}=1$ the above
+Chapter 11 of PS.} Due to the non-linear constraint $\mathbf n^2=1$ the above
 action leads to a theory more complicated than a free massless field. It is named
 the non-linear sigma model.
 
@@ -444,16 +444,16 @@ Let us analyze physical content of the nonlinear sigma-model. Classically, the
 most favorable field configurations correspond to minima of the action, which in
 this case are constant ($x$-independent) fields
 \[
-\vec n(x)=\vec n_0\,.
+\mathbf n(x)=\mathbf n_0\,.
 \]
 By the $O(N)$ symmetry we can choose
 \[
-\vec n_0=(0,0,\dots,0,1)
+\mathbf n_0=(0,0,\dots,0,1)
 \]
 with no loss of generality. To take into account fluctuations around this minimum
 one can set
 \[
-\vec n(x)=\bigl(\pi^1(x),\pi^2(x),\dots,\pi^{N-1}(x),\sigma(x)\bigr)\equiv\bigl(\pi^k(x),\sigma(x)\bigr)\qquad(k=1,2,\dots,N-1)
+\mathbf n(x)=\bigl(\pi^1(x),\pi^2(x),\dots,\pi^{N-1}(x),\sigma(x)\bigr)\equiv\bigl(\pi^k(x),\sigma(x)\bigr)\qquad(k=1,2,\dots,N-1)
 \]
 with
 \[
@@ -461,7 +461,7 @@ with
 \]
 The action takes the form
 \[
-\mathcal A=\int d^dx\,\frac1{2g}\Bigl[(\partial_\mu\pi^k)^2+\frac{(\pi^k\partial_\mu\pi^k)^2}{1-(\pi^k)^2}\Bigr]
+\mathcal A=\int d^dx\,\frac1{2g}\left[(\partial_\mu\pi^k)^2+\frac{(\pi^k\partial_\mu\pi^k)^2}{1-(\pi^k)^2}\right]
 \]
 Ignoring first the quartic and higher terms in this action, we observe $N-1$
 massless scalar fields $\pi^k(x)$. These are the \emph{Goldstone bosons},
@@ -475,7 +475,7 @@ Rescaling
 \]
 one can write the above action as
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\phi^k)^2+\sum_{n=1}^\infty g^n\,O_n(x)\Bigr]\,,
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\phi^k)^2+\sum_{n=1}^\infty g^n\,O_n(x)\right]\,,
 \qquad\text{where}\qquad
 O_n=\frac12\,(\phi^k\partial_\mu\phi^k)^2\,(\phi^k\phi^k)^{n-1}\,.
 \]
@@ -513,12 +513,12 @@ Obviously, something interesting is happening in this case. Let us analyze it
 separately.
 
 \begin{hwproblem}{8}\label{hw:8}
-Consider the same $O(N)$ $(\vec\varphi)^4$ theory as in the HW
+Consider the same $O(N)$ $(\bm{\varphi})^4$ theory as in the HW
 Problem~\ref{hw:6}, but this time in $d=4-\epsilon$ space, with $\epsilon\ll1$.
 
 Find the Wilson-Fisher fixed point $\lambda_*$ to the leading order in $\epsilon$,
-and evaluate the anomalous dimensions of the fields $(\vec\varphi)^2$ and
-$\vec\varphi$ to the order $\sim\epsilon$, at the WF fixed point. Find the critical
+and evaluate the anomalous dimensions of the fields $(\bm{\varphi})^2$ and
+$\bm{\varphi}$ to the order $\sim\epsilon$, at the WF fixed point. Find the critical
 exponents $\nu$ in $R_c\sim|T_c-T|^{-\nu}$, and $\alpha$ in
 $C\sim|T_c-T|^{-\alpha}$.
 \end{hwproblem}

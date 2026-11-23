@@ -302,26 +302,26 @@ $\varphi_0$ and its derivatives at the point $x$,
 \]
 and therefore
 \[
-\mathcal O_\alpha\bigl(\varphi_1(x)+\tilde\varphi(x),\ \text{derivatives}\bigr)=\sum_\beta Y_\alpha^\beta\bigl(\tilde\varphi(x),\ \text{derivatives}\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,,
+\mathcal O_\alpha\bigl(\varphi_1(x)+\tilde\varphi(x),\ \text{derivatives}\bigr)=\sum_\beta Y_\alpha{}^\beta\bigl(\tilde\varphi(x),\ \text{derivatives}\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,,
 \]
-where $Y_\alpha^\beta$ are polynomials of the ``fast'' field $\tilde\varphi(x)$ and
+where $Y_\alpha{}^\beta$ are polynomials of the ``fast'' field $\tilde\varphi(x)$ and
 its derivatives. Example is the field $\varphi_0^n$,
 \[
-\bigl(\varphi_1(x)+\tilde\varphi(x)\bigr)^n=\sum_{k=0}^nY_n^k\bigl(\tilde\varphi(x)\bigr)\,\varphi_1^{n-k}(x)\,,\qquad Y_n^k(\tilde\varphi)=C_n^k\,\tilde\varphi^k\,.
+\bigl(\varphi_1(x)+\tilde\varphi(x)\bigr)^n=\sum_{k=0}^nY_n{}^k\bigl(\tilde\varphi(x)\bigr)\,\varphi_1^{n-k}(x)\,,\qquad Y_n{}^k(\tilde\varphi)=C_n^k\,\tilde\varphi^k\,.
 \]
 Assuming again that we are interested in the case when all external momenta
 $p_1,\dots,p_n\ll\Lambda$, one can write the result of $\tilde\varphi$ integration
 as
 \begin{multline}\label{eq:Ostep1}
 \frac1Z\int[D\tilde\varphi]\,\bigl[\mathcal O_\alpha\bigl(\varphi_1(x)+\tilde\varphi(x),\ \text{derivatives}\bigr)\,\varphi_0(x_1)\cdots\varphi_0(x_n)\bigr]\,e^{-\mathcal A[\varphi_1+\tilde\varphi]}\\
-=\frac1{Z_1}\Bigl[\sum_\beta\bar Y_\alpha^\beta\bigl(L|[\varphi_1]\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,\varphi_1(x_1)\cdots\varphi_1(x_n)\Bigr]\,e^{-\mathcal A_1[\varphi_1]}\,,
+=\frac1{Z_1}\Bigl[\sum_\beta\bar Y_\alpha{}^\beta\bigl(L|[\varphi_1]\bigr)\,\mathcal O_\beta\bigl(\varphi_1(x),\ \text{derivatives}\bigr)\,\varphi_1(x_1)\cdots\varphi_1(x_n)\Bigr]\,e^{-\mathcal A_1[\varphi_1]}\,,
 \end{multline}
 where $\mathcal A_1$ is the action appearing in the step 1 of the Wilson's RG
 transformation with the parameter $L$, and
 \[
-\bar Y_\alpha^\beta\bigl(L|[\varphi_1]\bigr)=\bigl\langle Y_\alpha^\beta(\tilde\varphi,\ \text{derivatives})\bigr\rangle_{\tilde\varphi,c}
+\bar Y_\alpha{}^\beta\bigl(L|[\varphi_1]\bigr)=\bigl\langle Y_\alpha{}^\beta(\tilde\varphi,\ \text{derivatives})\bigr\rangle_{\tilde\varphi,c}
 \]
-are the expectation values of $Y_\alpha^\beta$ over the ensemble of the fast mode
+are the expectation values of $Y_\alpha{}^\beta$ over the ensemble of the fast mode
 fluctuations taken at fixed $\varphi_1$; the subscript $c$ signifies that all
 diagrams disconnected from the insertion point $x$ must be disregarded (they are
 already accounted for by the factor $\exp(-\mathcal A_1)$). Although these
@@ -346,12 +346,12 @@ of variables
 As $\mathcal O_\beta$ in \eqref{eq:Ostep1} are polynomials of $\varphi_1$ and its
 derivatives taken at $x$, we have
 \begin{multline*}
-\sum_\beta y_\alpha^\beta(L)\,\mathcal O_\beta\Bigl(Z^{-\frac12}(L)\,\varphi_0(x/L),\ Z^{-\frac12}(L)\,\frac\partial{\partial x^\mu}\varphi_0(x/L),\dots\Bigr)\\
-=\sum_\beta z_\alpha^\beta(L)\,\mathcal O_\beta\Bigl(\varphi_0(x/L),\ \frac\partial{\partial(x^\mu/L)}\varphi_0(x/L),\dots\Bigr)\,,
+\sum_\beta y_\alpha^\beta(L)\,\mathcal O_\beta\left(Z^{-\frac12}(L)\,\varphi_0(x/L),\ Z^{-\frac12}(L)\,\frac\partial{\partial x^\mu}\varphi_0(x/L),\dots\right)\\
+=\sum_\beta z_\alpha{}^\beta(L)\,\mathcal O_\beta\left(\varphi_0(x/L),\ \frac\partial{\partial(x^\mu/L)}\varphi_0(x/L),\dots\right)\,,
 \end{multline*}
 i.e.\ under the full RG transformation
 \begin{equation}\label{eq:RGfields}
-\bigl\langle\mathcal O_\alpha(x)\cdots\bigr\rangle\big|_{\mathcal A}=\Bigl\langle\sum_\beta z_\alpha^\beta(L)\,\mathcal O_\beta(x/L)\cdots\Bigr\rangle\Big|_{\mathcal A'}\,,
+\bigl\langle\mathcal O_\alpha(x)\cdots\bigr\rangle\big|_{\mathcal A}=\Bigl\langle\sum_\beta z_\alpha{}^\beta(L)\,\mathcal O_\beta(x/L)\cdots\Bigr\rangle\Big|_{\mathcal A'}\,,
 \end{equation}
 where $\mathcal A'$ is RG transformed action,
 \[
@@ -359,7 +359,7 @@ where $\mathcal A'$ is RG transformed action,
 \]
 We will write
 \begin{equation}\label{eq:RGop}
-RG_{l,\mathcal A}\,\mathcal O_\alpha=\sum_\beta z_\alpha^\beta(L)\,\mathcal O_\beta\,,\qquad L=e^l\,,
+RG_{l,\mathcal A}\,\mathcal O_\alpha=\sum_\beta z_\alpha{}^\beta(L)\,\mathcal O_\beta\,,\qquad L=e^l\,,
 \end{equation}
 stressing the fact that $RG$ transformation acts on the fields linearly;
 additional index $\mathcal A$ is written down to remind that this transformation
@@ -377,17 +377,17 @@ RG_{l+l'}\{*\}=RG_l\{RG_{l'}\{*\}\}\,,
 \]
 in this case the coefficients $z$ must obey the equation
 \[
-z_\alpha^\beta(l+l')=\sum_\gamma z_\alpha^\gamma(l')\,z_\gamma^\beta(l)\,,
+z_\alpha{}^\beta(l+l')=\sum_\gamma z_\alpha{}^\gamma(l')\,z_\gamma{}^\beta(l)\,,
 \]
 where I changed the notations $z(l)=z(L=e^l)$. In other words these coefficients,
 as the functions of $l$, must satisfy linear differential equation with constant
 coefficients,
 \[
-\frac d{dl}\,z_\alpha^\beta(l)=-\sum_\gamma D_\alpha^\gamma\,z_\gamma^\beta(l)\,,
+\frac d{dl}\,z_\alpha{}^\beta(l)=-\sum_\gamma D_\alpha{}^\gamma\,z_\gamma{}^\beta(l)\,,
 \qquad\text{where}\qquad
-D_\alpha^\beta=-\frac d{dl}\,z_\alpha^\beta(l)\Big|_{l=0}\,.
+D_\alpha{}^\beta=-\frac d{dl}\,z_\alpha{}^\beta(l)\Big|_{l=0}\,.
 \]
-The coefficients $D_\alpha^\beta$ are matrix elements of the linear operator $D$
+The coefficients $D_\alpha{}^\beta$ are matrix elements of the linear operator $D$
 corresponding to the infinitesimal transformation \eqref{eq:RGop}
 \[
 RG_{\delta l,\mathcal A_*}=I-\delta l\,D+O(\delta l^2)\,.
@@ -396,7 +396,7 @@ Let us denote $\Phi_\alpha(x)$ the eigenvectors of the operator $D$, i.e.\ speci
 linear combinations of the composite fields $\mathcal O_\alpha(x)$ which satisfy
 the equations
 \[
-D\,\Phi_\alpha\equiv D_\alpha^\beta\,\Phi_\beta=D_\alpha\,\Phi_\alpha\,,
+D\,\Phi_\alpha\equiv D_\alpha{}^\beta\,\Phi_\beta=D_\alpha\,\Phi_\alpha\,,
 \]
 where I use the notation $D_\alpha$ for the corresponding eigenvalues of $D$. Then
 \[
@@ -504,7 +504,7 @@ It is straightforward to check that it is indeed a fixed point. If we split
 $\varphi_0$ into the slow and the fast components, these modes completely
 decouple,
 \[
-\mathcal A_{*,G}=\int d^dx\,\Bigl(\frac12\,(\partial\varphi_1)^2+\frac12\,(\partial\tilde\varphi)^2\Bigr)\,,
+\mathcal A_{*,G}=\int d^dx\,\left(\frac12\,(\partial\varphi_1)^2+\frac12\,(\partial\tilde\varphi)^2\right)\,,
 \]
 and therefore the step 1 of the RG procedure does not change the action
 $\mathcal A_{*,G}$ at all,
@@ -520,7 +520,7 @@ we obtain
 \mathcal A'[\varphi_0(x)]=\mathcal A_1\bigl[Z^{-\frac12}(L)\,\varphi_0(x/L)\bigr]\,,
 \]
 \[
-\mathcal A'=Z^{-1}(L)\int d^dx\,\frac12\Bigl(\frac\partial{\partial x^\mu}\varphi_0(x/L)\Bigr)^2=\frac{L^{d-2}}{Z(L)}\int d^dx\,\frac12\Bigl(\frac\partial{\partial x^\mu}\varphi_0(x)\Bigr)^2\,.
+\mathcal A'=Z^{-1}(L)\int d^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x/L)\right)^2=\frac{L^{d-2}}{Z(L)}\int d^dx\,\frac12\left(\frac\partial{\partial x^\mu}\varphi_0(x)\right)^2\,.
 \]
 where the change of the coordinates $x\to Lx$ is made in the last step. Under the
 choice
@@ -655,7 +655,7 @@ component $\tilde\varphi$ in
 \]
 Consider the action $\mathcal A_0$ of the form
 \begin{equation}\label{eq:A0phi4}
-\mathcal A_0=\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)=\int d^4x\,\Bigl(\frac12\,(\partial\varphi_0)^2+\frac\lambda{4!}\,\varphi_0^4-\frac{\lambda\,b}4\,\varphi_0^2+\Const\Bigr)
+\mathcal A_0=\mathcal A_{*,G}+\lambda\int d^4x\,\Phi_4(x)=\int d^4x\,\left(\frac12\,(\partial\varphi_0)^2+\frac\lambda{4!}\,\varphi_0^4-\frac{\lambda\,b}4\,\varphi_0^2+\Const\right)
 \end{equation}
 where
 \[
@@ -665,7 +665,7 @@ b=\langle\varphi_0^2\rangle_{\mathcal A_{*,G}}=\int_{|k|<\Lambda}\frac{d^4k}{(2\
 as we should have found in the Exercise above). We have
 \begin{multline}\label{eq:A1phi4}
 e^{-\mathcal A_1[\varphi_1]}\sim e^{-\mathcal A_0[\varphi_1]}\times\int[D\tilde\varphi]\\
-\times\exp\Bigl\{-\int d^4x\,\Bigl[\frac12\,(\partial\tilde\varphi)^2+\lambda\Bigl(\frac1{4!}\,\tilde\varphi^4-\frac b4\,\tilde\varphi^2+\frac16\,\varphi_1\tilde\varphi^3+\frac14\,\varphi_1^2\tilde\varphi^2+\frac16\,\varphi_1^3\tilde\varphi\Bigr)\Bigr]\Bigr\}\,.
+\times\exp\left\{-\int d^4x\,\left[\frac12\,(\partial\tilde\varphi)^2+\lambda\left(\frac1{4!}\,\tilde\varphi^4-\frac b4\,\tilde\varphi^2+\frac16\,\varphi_1\tilde\varphi^3+\frac14\,\varphi_1^2\tilde\varphi^2+\frac16\,\varphi_1^3\tilde\varphi\right)\right]\right\}\,.
 \end{multline}
 As we discussed already in Section~16, integration over $\tilde\varphi$ yields
 \[

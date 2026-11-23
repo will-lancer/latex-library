@@ -41,7 +41,7 @@ of the functions $f_\pp(x)$ and $f^*_\pp(x)$ above, the following complete set
 of solutions
 \[
 f_{\pp_\parallel,n}(\xx,t)=\sqrt{\frac2a}\;e^{i\omega_{\pp_\parallel,n}t-i\pp_\parallel\cdot\xx_\parallel}\,
-\sin\Bigl(\frac{\pi n}{a}\,x_\perp\Bigr)\,,
+\sin\left(\frac{\pi n}{a}\,x_\perp\right)\,,
 \]
 and the corresponding complex-conjugated functions $f^*_{\pp_\parallel,n}$.
 Here $\xx_\parallel$ and $x_\perp$ are the components of $\xx$ parallel and
@@ -68,7 +68,7 @@ and similarly for $\hat A^\dagger_{\pp_\parallel,n}$, with
 $f^*_{\pp_\parallel,n}$ replacing $f_{\pp_\parallel,n}$. It is not difficult
 then to show that
 \[
-\bigl[\hat A_{\pp_\parallel,n},\hat A^\dagger_{\pp'_\parallel,n'}\bigr]
+[\hat A_{\pp_\parallel,n},\hat A^\dagger_{\pp'_\parallel,n'}]
 =2\omega_{\pp_\parallel,n}\,\delta_{nn'}\,(2\pi)^2\,\delta(\pp_\parallel-\pp'_\parallel)\,,
 \]
 and to compute the Hamiltonian of the part of the system residing between the
@@ -87,7 +87,7 @@ nullify the ground state, since otherwise $\hat H$ is unbounded from below.
 Therefore the vacuum eigenvalue of this Hamiltonian is
 \[
 E_{\text{vac}}=\frac{L^2}{2}\sum_{n=1}^\infty\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
-\sqrt{\pp_\parallel^2+\frac{\pi^2n^2}{a^2}}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2n^2/a^2}{\Lambda^2}\biggr)
+\sqrt{\pp_\parallel^2+\frac{\pi^2n^2}{a^2}}\;\Phi\left(\frac{\pp_\parallel^2+\pi^2n^2/a^2}{\Lambda^2}\right)
 -a\,L^2\,\varepsilon_0+a\,L^2\,\varepsilon\,,
 \]
 where I have introduced again the cutoff factor $\Phi$; without it this
@@ -97,7 +97,7 @@ Now, the term $-a\,L^2\,\varepsilon_0$ is the divergent part of the vacuum
 energy counterterm. It is
 \[
 -a\,L^2\,\varepsilon_0=-\frac{L^2}{2}\,a\int\frac{dp_\perp}{(2\pi)}\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
-\sqrt{\pp_\parallel^2+p_\perp^2}\;\Phi\biggl(\frac{\pp_\parallel^2+p_\perp^2}{\Lambda^2}\biggr)\,,
+\sqrt{\pp_\parallel^2+p_\perp^2}\;\Phi\left(\frac{\pp_\parallel^2+p_\perp^2}{\Lambda^2}\right)\,,
 \]
 where I have separated the $dp_\perp$ and $d^2\pp_\parallel$ parts of the
 integral over $d^3\pp=dp_\perp\,d^2\pp_\parallel$. After the change of
@@ -108,7 +108,7 @@ p_\perp=\pi\,\tau/a
 it takes the form
 \[
 -\frac{L^2}{2}\int_0^\infty d\tau\int\frac{d^2\pp_\parallel}{(2\pi)^2}\,
-\sqrt{\pp_\parallel^2+\frac{\pi^2\tau^2}{a^2}}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\biggr)\,.
+\sqrt{\pp_\parallel^2+\frac{\pi^2\tau^2}{a^2}}\;\Phi\left(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\right)\,.
 \]
 We see that the interesting part of the ground-state energy (rather, of the
 energy per unit area of the plates) can be written as
@@ -118,7 +118,7 @@ energy per unit area of the plates) can be written as
 \]
 where
 \[
-F_{\pp_\parallel}(\tau)=\frac12\,\sqrt{\pp_\parallel^2+\pi^2\tau^2/a^2}\;\Phi\biggl(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\biggr)\,.
+F_{\pp_\parallel}(\tau)=\frac12\,\sqrt{\pp_\parallel^2+\pi^2\tau^2/a^2}\;\Phi\left(\frac{\pp_\parallel^2+\pi^2\tau^2/a^2}{\Lambda^2}\right)\,.
 \]
 The $\sum F(n)-\int F(\tau)$ expression above can be handled with the help of
 the Abel-Plana summation formula (see the Appendix to this section)
@@ -156,7 +156,7 @@ $i\infty$ (and from $-i|\pp_\parallel|a/\pi$ to $-i\infty$). We have, at
 $|t|>a|\pp_\parallel|/\pi$,
 \[
 \Im F_{\pp_\parallel}(it+0)=\frac12\,\sqrt{\frac{\pi^2t^2}{a^2}-\pp_\parallel^2}\;
-\Phi\biggl(\frac{\pp_\parallel^2-\pi^2t^2/a^2}{\Lambda^2}\biggr):=\frac12\,G_{\pp_\parallel}(t)\,.
+\Phi\left(\frac{\pp_\parallel^2-\pi^2t^2/a^2}{\Lambda^2}\right):=\frac12\,G_{\pp_\parallel}(t)\,.
 \]
 Note that the factor $(e^{2\pi t}-1)^{-1}$ makes this integral fast
 convergent at large $t$, even without the cutoff factor $\Phi$. With large
@@ -172,7 +172,7 @@ The interesting contribution to the vacuum energy then is
 where I have interchanged the order in which the integrals are taken. The
 integral over $\pp_\parallel$ is evaluated in closed form
 \[
-\int_0^{\pi^2t^2/a^2}\frac{dp^2}{4\pi}\,\sqrt{\frac{\pi^2t^2}{a^2}-p^2}=\frac1{6\pi}\Bigl(\frac{\pi t}{a}\Bigr)^3\,.
+\int_0^{\pi^2t^2/a^2}\frac{dp^2}{4\pi}\,\sqrt{\frac{\pi^2t^2}{a^2}-p^2}=\frac1{6\pi}\left(\frac{\pi t}{a}\right)^3\,.
 \]
 The contribution to the energy is
 \[
@@ -194,7 +194,7 @@ hence this term does not lead to any force. The interesting term
 $-\pi^2/1440\,a^3$ shows that the plates attract; the force (per unit plate
 area) is
 \[
-\frac{\text{Force}}{L^2}=-\frac{\partial}{\partial a}\Bigl(-\frac{\pi^2}{1440\,a^3}\Bigr)=-\frac{\pi^2\,\hbar c}{480\,a^4}\,.
+\frac{\text{Force}}{L^2}=-\frac{\partial}{\partial a}\left(-\frac{\pi^2}{1440\,a^3}\right)=-\frac{\pi^2\,\hbar c}{480\,a^4}\,.
 \]
 Let me stress that this result is completely independent of the form of
 auxiliary cutoff factor $\Phi$; this is exactly what we want from quantum

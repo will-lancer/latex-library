@@ -102,7 +102,7 @@ singularities are directly related to commutators of the field operators (see
 again the analysis in Section~4). Locality states that the commutators of
 Heisenberg field operators must vanish outside the light cone,
 \[
-\bigl[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)\bigr]=0\qquad\text{for}\qquad t^2<\xx^2\,.
+[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)]=0\qquad\text{for}\qquad t^2<\xx^2\,.
 \]
 This property of locality is preserved in the renormalized perturbation theory at
 each order in $\lambda$ but there is no guarantee it will not break down in full
@@ -187,7 +187,7 @@ are singular at this point. Consider for instance the 4-point vertex,
 \]
 where again
 \[
-I_r(p^2)=-\frac1{(4\pi)^2}\int_0^1du\,\log\Bigl(1+u(1-u)\,\frac{p^2}{m^2}\Bigr)\,.
+I_r(p^2)=-\frac1{(4\pi)^2}\int_0^1du\,\log\left(1+u(1-u)\,\frac{p^2}{m^2}\right)\,.
 \]
 Obviously, there is a singularity at $m^2=0$. This can signal one of two things.
 Either the theory itself becomes sick at this point, or our coordinate system
@@ -238,11 +238,11 @@ We can now develop renormalized perturbation theory for massless $\varphi^4$
 theory taking exact same steps we did before. We start with the action in its
 bare form,
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\Bigr]\,,
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi_0)^2+\frac{m_0^2}2\,\varphi_0^2+\frac{\lambda_0}{4!}\,\varphi_0^4\right]\,,
 \]
 with some bare mass parameter (yet to be adjusted), and write it as
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{\lambda_{(\mu)}}{4!}\,\varphi^4+\text{counterterms}\Bigr]\,,
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{\lambda_{(\mu)}}{4!}\,\varphi^4+\text{counterterms}\right]\,,
 \]
 where
 \[
@@ -357,7 +357,7 @@ correlation function is calculated in the scheme with the normalization scale
 $\mu$. This independence can be expressed in the form of partial differential
 equation
 \[
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}\Bigr)R(x_i|\lambda,\mu)=0\,,
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}\right)R(x_i|\lambda,\mu)=0\,,
 \]
 where now $\lambda$ and $\mu$ are viewed as two independent variables.
 
@@ -371,14 +371,14 @@ where again at $d=4$ the constant $Z_{\text{finite}}$ can depend on $\lambda$ an
 dimensionless ratio $\tilde\mu/\mu$. For an infinitesimal change
 $\tilde\mu=\mu+\delta\mu$
 \[
-\varphi_{(\mu+\delta\mu)}=\Bigl(1-\frac{\delta\mu}\mu\,\gamma(\lambda)\Bigr)\,\varphi_{(\mu)}\,,
+\varphi_{(\mu+\delta\mu)}=\left(1-\frac{\delta\mu}\mu\,\gamma(\lambda)\right)\,\varphi_{(\mu)}\,,
 \qquad\text{with}\qquad
 \gamma(\lambda)=\frac12\,\frac{dZ_{\text{finite}}(\lambda,\xi)}{d\xi}\Big|_{\xi=1}\,.
 \]
 Taking into account this transformation of $\varphi$ we obtain the so-called
 \emph{Callan-Symanzik equation}:
 \begin{equation}\label{eq:CS}
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{(\mu)}=0
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)\right)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle_{(\mu)}=0
 \end{equation}
 where the correlation function is viewed as depending on two parameters,
 $\lambda$ and $\mu$.
@@ -401,7 +401,7 @@ where $C^{(n)}$ is dimensionless function of dimensionless variables $\mu x_i$
 and $\lambda$. Therefore the Callan-Symanzik equation \eqref{eq:CS} can be written
 as
 \begin{equation}\label{eq:CSdil}
-\Bigl(\sum_{i=1}^nx_i\frac\partial{\partial x_i}+n\bigl(1+\gamma(\lambda)\bigr)+\beta(\lambda)\,\frac\partial{\partial\lambda}\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,,
+\left(\sum_{i=1}^nx_i\frac\partial{\partial x_i}+n\bigl(1+\gamma(\lambda)\bigr)+\beta(\lambda)\,\frac\partial{\partial\lambda}\right)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,,
 \end{equation}
 where the coordinate derivative operators have the following exact meaning
 \[
@@ -484,7 +484,7 @@ Fourier transform relating the two depends neither on $\lambda$ nor on $\mu$).
 Moreover, simple calculation shows that this equation can be written as the
 equation
 \begin{equation}\label{eq:CSGamma}
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}-n\,\gamma(\lambda)\Bigr)\Gamma^{(n)}(p_1,\dots,p_n)=0
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}-n\,\gamma(\lambda)\right)\Gamma^{(n)}(p_1,\dots,p_n)=0
 \end{equation}
 involving the proper vertices.
 
@@ -493,7 +493,7 @@ when computed in the scheme \eqref{eq:mu1}--\eqref{eq:mu2}, are (I ask you to
 carry out the calculations as the homework Problem~\ref{hw:5})
 \begin{align}
 \Gamma^{(2)}(p^2)&=p^2+\frac1{12}\,\frac{\lambda^2}{(4\pi)^4}\,p^2\,\Bigl(\log(\mu^2/p^2)+1\Bigr)+O(\lambda^3)\,,\label{eq:G2mu}\\
-\Gamma^{(4)}(p_1,\dots,p_4)&=\lambda+\frac{\lambda^2}{2\,(4\pi)^2}\Bigl[\log\Bigl(\frac{p_{12}^2}{4\mu^2}\Bigr)+\log\Bigl(\frac{p_{13}^2}{4\mu^2}\Bigr)+\log\Bigl(\frac{p_{14}^2}{4\mu^2}\Bigr)\Bigr]+O(\lambda^3)\,,\label{eq:G4mu}
+\Gamma^{(4)}(p_1,\dots,p_4)&=\lambda+\frac{\lambda^2}{2\,(4\pi)^2}\left[\log\left(\frac{p_{12}^2}{4\mu^2}\right)+\log\left(\frac{p_{13}^2}{4\mu^2}\right)+\log\left(\frac{p_{14}^2}{4\mu^2}\right)\right]+O(\lambda^3)\,,\label{eq:G4mu}
 \end{align}
 where $p_{12}^2=(p_1+p_2)^2$, etc. Let us first plug \eqref{eq:G2mu} into
 \eqref{eq:CSGamma}. The result is
@@ -591,7 +591,7 @@ $Z^{\varphi^2}_{(\tilde\mu)}/Z^{\varphi^2}_{(\mu)}$ is expected to be finite. An
 infinitesimal change of the renormalization scale $\mu\to\mu+\delta\mu$ then leads
 to infinitesimal renormalization
 \[
-[\varphi^2]_{(\mu+\delta\mu)}=\Bigl(1-\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\Bigr)\,[\varphi^2]_{(\mu)}\,,
+[\varphi^2]_{(\mu+\delta\mu)}=\left(1-\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\right)\,[\varphi^2]_{(\mu)}\,,
 \]
 where
 \begin{equation}\label{eq:gammaphi2}
@@ -605,7 +605,7 @@ Repeating our previous calculations we find that a correlation function with $N$
 insertions of $[\varphi^2]_{(\mu)}$ and $n$ insertions of $\varphi$, satisfies the
 modified Callan-Symanzik equation
 \[
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)+N\,\gamma_{\varphi^2}(\lambda)\Bigr)
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)+N\,\gamma_{\varphi^2}(\lambda)\right)
 \bigl\langle\varphi(x_1)\cdots\varphi(x_n)\,[\varphi^2]_{(\mu)}(y_1)\cdots[\varphi^2]_{(\mu)}(y_N)\bigr\rangle_{(\mu)}=0\,.
 \]
 
@@ -615,7 +615,7 @@ Let us now introduce the mass term as
 \]
 where $\mathcal A_0$ is the massless action
 \[
-\mathcal A_0=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac\lambda{4!}\,\varphi^4+\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\Bigr]\,.
+\mathcal A_0=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac\lambda{4!}\,\varphi^4+\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\right]\,.
 \]
 Here $\delta Z_{(\mu)}$ and $\delta\lambda_{(\mu)}$ are counterterms computed in the
 massless theory, within the above $\mu$-dependent renormalization scheme (and I
@@ -626,11 +626,11 @@ not included). Recalling that
 \]
 the massive action can be written as
 \[
-\mathcal A_{M^2}=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{M^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta M^2_{(\mu)}}2\,\varphi^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\Bigr]\,,
+\mathcal A_{M^2}=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{M^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\frac{\delta Z_{(\mu)}}2\,(\partial\varphi)^2+\frac{\delta M^2_{(\mu)}}2\,\varphi^2+\frac{\delta\lambda_{(\mu)}}{4!}\,\varphi^4\right]\,,
 \]
 where
 \begin{equation}\label{eq:deltaM2}
-\delta M^2_{(\mu)}=M^2\Bigl(\frac{Z_{(\mu)}}{Z^{\varphi^2}_{(\mu)}}-1\Bigr)\,.
+\delta M^2_{(\mu)}=M^2\left(\frac{Z_{(\mu)}}{Z^{\varphi^2}_{(\mu)}}-1\right)\,.
 \end{equation}
 This action can be used now to develop a renormalized perturbation theory in the
 massive case. Note that the above definition of the mass parameter corresponds to
@@ -667,21 +667,21 @@ auxiliary scale $\mu$. Under the infinitesimal change
 \]
 the renormalized field $[\varphi^2]_{(\mu)}$ transforms as
 \[
-[\varphi^2]_{(\mu+\delta\mu)}=\Bigl(1-\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\Bigr)\,[\varphi^2]_{(\mu)}\,.
+[\varphi^2]_{(\mu+\delta\mu)}=\left(1-\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\right)\,[\varphi^2]_{(\mu)}\,.
 \]
 This brings in certain change in the action, which however is compensated if we
 simultaneously change the mass parameter,
 \[
-M^2\to\Bigl(1+\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\Bigr)\,M^2\,.
+M^2\to\left(1+\frac{\delta\mu}\mu\,\gamma_{\varphi^2}(\lambda)\right)\,M^2\,.
 \]
 Invariance of the action w.r.t.\ the above simultaneous change in $\mu$ and $M^2$
 leads to the equation
 \[
-\Bigl(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)+\gamma_{\varphi^2}(\lambda)\,M^2\frac\partial{\partial M^2}\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,,
+\left(\mu\frac\partial{\partial\mu}+\beta(\lambda)\,\frac\partial{\partial\lambda}+n\,\gamma(\lambda)+\gamma_{\varphi^2}(\lambda)\,M^2\frac\partial{\partial M^2}\right)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,,
 \]
 or, equivalently (using $\langle\varphi(x_1)\cdots\varphi(x_n)\rangle=\mu^n\,C^{(n)}(\mu x_i,M^2/\mu^2|\lambda)$),
 \[
-\Bigl(\sum_ix_i\frac\partial{\partial x_i}+n\bigl(1+\gamma(\lambda)\bigr)+\beta(\lambda)\,\frac\partial{\partial\lambda}+\bigl(-2+\gamma_{\varphi^2}\bigr)\,M^2\frac\partial{\partial M^2}\Bigr)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,.
+\left(\sum_ix_i\frac\partial{\partial x_i}+n\bigl(1+\gamma(\lambda)\bigr)+\beta(\lambda)\,\frac\partial{\partial\lambda}+\bigl(-2+\gamma_{\varphi^2}\bigr)\,M^2\frac\partial{\partial M^2}\right)\bigl\langle\varphi(x_1)\cdots\varphi(x_n)\bigr\rangle=0\,.
 \]
 This equation shows that in the massive case the scale transformations induce the
 ``flow'' in the two-dimensional space of $\varphi^4$ theories,
@@ -707,9 +707,9 @@ In solving this problem the following dimensionally continued integral is useful
 
 \begin{hwproblem}{6}\label{hw:6}
 Consider a scalar field theory with $N$-component field
-$\vec\varphi=(\varphi_1,\dots,\varphi_N)$, and $O(N)$-symmetric action
+$\bm{\varphi}=(\varphi_1,\dots,\varphi_N)$, and $O(N)$-symmetric action
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,\bigl(\partial\vec\varphi\bigr)^2+\frac{M^2}2\,\vec\varphi^{\,2}+\frac\lambda8\,\bigl(\vec\varphi^{\,2}\bigr)^2\Bigr]\,.
+\mathcal A=\int d^dx\,\left[\frac12\,\bigl(\partial\bm{\varphi}\bigr)^2+\frac{M^2}2\,\bm{\varphi}^2+\frac\lambda8\,\bigl(\bm{\varphi}^2\bigr)^2\right]\,.
 \]
 \begin{hwparts}
 \item Use the $O(N)$ symmetry to show that the two- and four-point correlation

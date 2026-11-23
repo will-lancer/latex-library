@@ -70,7 +70,7 @@ where the integral vanishes. As the result, all matrix elements
 Similar calculation shows that the operators $P_\mu$ act on the states
 $\ket{O_1(x_1)\cdots O_N(x_N)}$ as follows
 \[
-\hat P_\mu\ket{O_1(x_1)\cdots O_N(x_N)}=i\Bigl[\sum_{k=1}^N\frac\partial{\partial x_k^\mu}\Bigr]\ket{O_1(x_1)\cdots O_N(x_N)}
+\hat P_\mu\ket{O_1(x_1)\cdots O_N(x_N)}=i\left[\sum_{k=1}^N\frac\partial{\partial x_k^\mu}\right]\ket{O_1(x_1)\cdots O_N(x_N)}
 \]
 Indeed, this time deforming $\Sigma$ to the $\tau\to-\infty$ domain leaves behind
 integrals around the insertion points $x_k$, which, according to
@@ -160,15 +160,15 @@ p^\mu\in\mathcal P\ \Rightarrow\ \exists\ \ket\alpha\in\Ham\ \text{such that}\ p
 \]
 Lorentz invariance suggests that
 \[
-p^\mu\in\mathcal P\ \Rightarrow\ \Lambda^\mu_{\ \nu}\,p^\nu\in\mathcal P\,,
+p^\mu\in\mathcal P\ \Rightarrow\ \Lambda^\mu{}_\nu\,p^\nu\in\mathcal P\,,
 \]
 where $\Lambda$ is a Lorentz transformation. This means that any $p^\mu\in\mathcal P$
-such that $p^\mu p_\mu=m^2$ enters $\mathcal P$ together with the entire hyperboloid
+such that $p^\mu p_\mu=-m^2$ enters $\mathcal P$ together with the entire hyperboloid
 \[
-\mathcal P_{m^2}=\bigl\{p^\mu:\ p^\mu p_\mu=(p^0)^2-\pp^2=m^2\bigr\}\,.
+\mathcal P_{m^2}=\bigl\{p^\mu:\ -p^\mu p_\mu=(p^0)^2-\pp^2=m^2\bigr\}\,.
 \]
 It follows then from the positivity of the energy that $\mathcal P$ lies entirely
-within the future light cone $p^\mu p_\mu\ge0$, $p^0\ge0$.
+within the future light cone $p^\mu p_\mu\le0$, $p^0\ge0$.
 
 Another important property of $\mathcal P$ is its additivity, i.e.
 \[
@@ -206,7 +206,7 @@ The spectrum $\bar{\mathcal P}_{m^2}$ in some sense is the minimal Lorentz-invar
 set compatible with the above additivity condition. If this spectrum appears in an
 interacting QFT we say that the theory contains just one massive particle of the
 mass $m$. The states associated with the hyperboloid $\mathcal P_{m^2}$ are the
-one-particle states, and the states with $(p^\mu)^2\ge4m^2$ are interpreted as the
+one-particle states, and the states with $-p^\mu p_\mu\ge4m^2$ are interpreted as the
 scattering states of two or more interacting particles.
 
 In general case the spectrum can be more complicated (even in a scalar QFT like we
@@ -225,7 +225,7 @@ $\min(2m_1,m_1+m_2)=2m_1$, with further thresholds at $m_1+m_2$, $2m_2$, $3m_1$,
 
 In any case, if we form the operator
 \[
-\hat P^2=\hat H^2-\hat{\PPv}^2\,,
+-\hat P^\mu\hat P_\mu=\hat H^2-\hat{\PPv}^2\,,
 \]
 the discrete components of its spectrum are associated with the one-particle
 states, and the continuous spectrum incorporates all the multi-particle scattering
@@ -274,9 +274,9 @@ Evidently,
 so that $\rho(q)\ge0$ everywhere.
 
 $\rho(q)$ vanishes if $q^0<0$ (Hamiltonian is assumed to be positive definite), and
-at $q^0>0$ it depends on $q^2=(q^0)^2-(\qq)^2$ (Lorentz invariance); I will write
+at $q^0>0$ it depends on $-q^2=(q^0)^2-\qq^2$ (Lorentz invariance); I will write
 \[
-\rho=\theta(q^0)\,\rho(q^2)\,.
+\rho=\theta(q^0)\,\rho(-q^2)\,.
 \]
 Then, for $\tau>0$ we have
 \begin{align*}

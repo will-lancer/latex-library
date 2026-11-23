@@ -8,6 +8,31 @@ and equation numbers are unchanged.
 Spelling, grammar and layout repairs are collected at the end of each section's
 list under "Wording".
 
+## Conventions changed in this edition
+
+These are editorial choices, not errors in the notes.
+
+- Metric signature. The notes use `η = diag(+1, −1, −1, −1)`. This edition uses
+  the mostly plus metric `η = diag(−1, +1, +1, +1)`, so `px = −p⁰x⁰ + p·x` and an
+  on-shell momentum has `p² = −m²`. The affected formulas are the Minkowski ones
+  in Sections 1, 2, 4, 6 and 25: the interval, the Klein-Gordon action and
+  equation, the canonical energy-momentum tensor
+  `T^μ_ν = −(∂ℒ/∂(∂_μΦ)) ∂_νΦ + δ^μ_ν ℒ` (so that `E = ∫T^{00} = −∫T^0_0` and
+  `P^i = ∫T^0_i`), the plane waves (`e^{ipx}` is now the positive-frequency
+  wave), the Noether currents `J^μ_f`, the vacuum expectation
+  `⟨T^{μν}⟩ = −ε₀ η^{μν}`, the mass-shell delta functions, the Feynman propagator
+  `∫ d⁴p/(2π)⁴ (−i) e^{ipx}/(p² + m² − i0)` with
+  `(−∂² + m²) D_F = −i δ⁴(x)`, the relativistic particle action
+  `−m∫√(−dx_μ dx^μ)`, and the description of the spectrum in Section 25. The
+  Euclidean sections are unaffected.
+- Vectors in field space are bold (`𝐧`, and `\bm{φ}` for the `O(N)` field),
+  where the notes had arrows.
+- Commutators and Poisson brackets use normal-size brackets; delimiters around
+  display fractions are sized with `\left`/`\right`; mixed tensor indices are
+  staggered (`T^μ{}_ν`, `D_α{}^β`).
+- Solutions to the nine homework problems are new to this edition. They are in
+  the appendix, and each problem ends with a link to its solution.
+
 ## Mathematical corrections
 
 ### Section 1. Elements of Classical Field Theory
@@ -16,8 +41,9 @@ list under "Wording".
   `dΣ_μ = (1/3!) ε_{μνλρ} dx^ν dx^λ dx^ρ`. The notes said it was "the normal
   element of `e_{μνλρ} dx^ν dx^λ dx^ρ`", which leaves out the factor.
 - p. 9. Momentum density of the Klein-Gordon field: `𝒫 = φ̇ ∇φ` is now
-  `𝒫 = −φ̇ ∇φ`. With `T^{0i} = ∂^0φ ∂^iφ` and `∂^i = −∂_i` the minus sign is
-  forced, and it agrees with `P̂ = −∫ π̂ ∇φ̂` on p. 15.
+  `𝒫 = −φ̇ ∇φ`. In the notes' signature `T^{0i} = ∂^0φ ∂^iφ` with `∂^i = −∂_i`
+  forces the minus sign (in the mostly plus signature of this edition,
+  `T^{0i} = T_{0i}·(−1) = −φ̇ ∂_iφ`), and it agrees with `P̂ = −∫ π̂ ∇φ̂` on p. 15.
 
 ### Section 2. Quantization
 
@@ -286,11 +312,21 @@ list under "Wording".
 
 - p. 236, (22.9). At `d = 2 + ε` the measure in `A₁` is `d^dx`; the notes
   kept `d²x`.
-- Homework Problem 9. The direction said to find `Z_n` from
-  `−(d/dl) Z_n^{1/2} = γ_n Z_n^{1/2}`. The notes (p. 233) define the flow by
-  `−(d/dl) Z_n^{−1/2} = γ_n Z_n^{−1/2}`, and the equation for the two-point
-  function quoted in the same problem, with `Z_n^{−1}(l)`, uses that
-  convention. The problem now states the flow for `Z_n^{−1/2}`.
+- p. 233. The scaling relation read
+  `⟨n(x₁/L)⋯n(x_n/L)⟩_{g(l)} = Z_n^{−n/2}(l) ⟨n(x₁)⋯n(x_n)⟩_{g(0)}`. With
+  `RG_l n = Z_n^{−1/2}(l) n`, as derived on p. 232 (integrating out the fast
+  modes multiplies the slow field by `Z_n^{−1/2} < 1`), one has
+  `⟨n(x₁)⋯⟩_{g(0)} = Z_n^{−n/2}(l) ⟨n(x₁/L)⋯⟩_{g(l)}`, so the power on the right
+  is `+n/2`. With the printed power the short-distance exercise on the same page
+  would give `[log(1/x²)]^{−(N−1)/(N−2)}` instead of the stated
+  `[log(1/x²)]^{(N−1)/(N−2)}`, and the latter is the one that agrees with the
+  exact large-`N` solution.
+- Homework Problem 9. The problem set stated the flow as
+  `−(d/dl) Z_n^{1/2} = γ_n Z_n^{1/2}` together with the two-point relation with
+  `Z_n^{−1}(l)`. That pair is consistent, but its `Z_n` is the inverse of the
+  one defined in the notes. The problem now uses the notes' definition,
+  `−(d/dl) Z_n^{−1/2} = γ_n Z_n^{−1/2}`, with the corrected relation
+  `⟨n(x₁/L) n(x₂/L)⟩_{g(l)} = Z_n(l) ⟨n(x₁) n(x₂)⟩_{g(0)}`.
 
 ### Section 23. RG and Energy-Momentum Tensor
 

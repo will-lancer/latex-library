@@ -43,8 +43,8 @@ where $e_\mu$ is the unit vector in the direction $\mu$ and $n_1,\dots,n_d$ are
 integers. The lattice action is obtained by replacing derivatives by finite
 differences,
 \begin{equation}\label{eq:Alat}
-\mathcal A_{\text{lat}}=\Delta^d\sum_{x\in\Delta\mathbb Z^d}\Bigl[\frac12\sum_{\mu=1,\dots,d}\Bigl(\frac{\varphi_0(x+\Delta e_\mu)-\varphi_0(x)}\Delta\Bigr)^2
-+\frac{m_0^2}2\,\varphi_0^2(x)+V\bigl(\varphi_0(x)\bigr)\Bigr]
+\mathcal A_{\text{lat}}=\Delta^d\sum_{x\in\Delta\mathbb Z^d}\left[\frac12\sum_{\mu=1,\dots,d}\left(\frac{\varphi_0(x+\Delta e_\mu)-\varphi_0(x)}\Delta\right)^2
++\frac{m_0^2}2\,\varphi_0^2(x)+V\bigl(\varphi_0(x)\bigr)\right]
 \end{equation}
 and the integration measure in the functional integral is taken as
 \[
@@ -129,14 +129,14 @@ Using the definition of the Euler's Gamma function
 \]
 we obtain for $d<4$
 \begin{equation}\label{eq:dimreg3}
-\frac{(m^2)^{\frac d2-2}}{(4\pi)^{\frac d2}}\,\Gamma\Bigl(2-\frac d2\Bigr)\,.
+\frac{(m^2)^{\frac d2-2}}{(4\pi)^{\frac d2}}\,\Gamma\left(2-\frac d2\right)\,.
 \end{equation}
 As is known the Gamma function $\Gamma(z)$ is analytic (actually, meromorphic)
 function of $z$ with poles at $z=0,-1,-2,\dots$. In particular, the above
 expression has pole at $d=4$, i.e.\ exactly where the integral diverges
 logarithmically. For $d=4-\epsilon$, $\epsilon\to0$
 \[
-\Gamma\Bigl(2-\frac d2\Bigr)=\frac2\epsilon-\gamma+O(\epsilon)
+\Gamma\left(2-\frac d2\right)=\frac2\epsilon-\gamma+O(\epsilon)
 \]
 where $\gamma=0.5772\ldots$ is the Euler's constant.
 
@@ -179,7 +179,7 @@ future calculations. For instance,
 \end{equation}
 \begin{equation}\label{eq:dimregk2}
 \begin{split}
-\int\frac{d^dk}{(2\pi)^d}\,\frac{k^2}{(k^2+m^2)^\alpha}&=\int\frac{d^dk}{(2\pi)^d}\Bigl[\frac1{(k^2+m^2)^{\alpha-1}}-\frac{m^2}{(k^2+m^2)^\alpha}\Bigr]\\
+\int\frac{d^dk}{(2\pi)^d}\,\frac{k^2}{(k^2+m^2)^\alpha}&=\int\frac{d^dk}{(2\pi)^d}\left[\frac1{(k^2+m^2)^{\alpha-1}}-\frac{m^2}{(k^2+m^2)^\alpha}\right]\\
 &=\frac{(m^2)^{\frac d2-\alpha+1}}{(4\pi)^{\frac d2}}\,\frac d2\,\frac{\Gamma(\alpha-\frac d2-1)}{\Gamma(\alpha)}\,.
 \end{split}
 \end{equation}
@@ -191,7 +191,7 @@ $\Gamma(z+1)=z\,\Gamma(z)$ was used.
 Let us recall the basic idea of the (perturbative) renormalization program. To
 develop renormalized perturbation theory, one starts with the action
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\text{counterterms}\Bigr]\,,
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+\frac\lambda{4!}\,\varphi^4+\text{counterterms}\right]\,,
 \]
 expressed in terms of the renormalized quantities. I have written it in the
 $d$-dimensional form having in mind dimensional regularization. This action
@@ -201,7 +201,7 @@ contains counterterms
 \]
 We are planning to treat the theory perturbatively, with
 \[
-\mathcal A_I=\int_x\Bigl[\frac\lambda{4!}\,\varphi^4+\text{counterterms}\Bigr]
+\mathcal A_I=\int_x\left[\frac\lambda{4!}\,\varphi^4+\text{counterterms}\right]
 \]
 taken as the perturbation.
 
@@ -453,8 +453,8 @@ I_r(p^2)=I(p^2)-I(0)=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\Bi
 has finite value at $d=4$ as the result of compensation between the pole of the
 gamma function and zero of the integrand. One finds
 \begin{align*}
-I_r(p^2)\Big|_{d=4}&=-\frac1{(4\pi)^2}\int_0^1du\,\log\Bigl(1+u(1-u)\,\frac{p^2}{\tilde m^2}\Bigr)\\
-&=-\frac1{16\pi^2}\biggl[\sqrt{\frac{p^2+4\tilde m^2}{p^2}}\,\log\frac{\sqrt{p^2+4\tilde m^2}+\sqrt{p^2}}{\sqrt{p^2+4\tilde m^2}-\sqrt{p^2}}-2\biggr]\,.
+I_r(p^2)\Big|_{d=4}&=-\frac1{(4\pi)^2}\int_0^1du\,\log\left(1+u(1-u)\,\frac{p^2}{\tilde m^2}\right)\\
+&=-\frac1{16\pi^2}\left[\sqrt{\frac{p^2+4\tilde m^2}{p^2}}\,\log\frac{\sqrt{p^2+4\tilde m^2}+\sqrt{p^2}}{\sqrt{p^2+4\tilde m^2}-\sqrt{p^2}}-2\right]\,.
 \end{align*}
 I leave evaluating the last explicit expression as an \textbf{Exercise}. We see
 that by giving the counterterm coefficient $a^{(2)}$ certain dependence on $d$
@@ -537,7 +537,7 @@ as
 \]
 where $\Gamma^{\text{div}}_L$ has the form
 \[
--\tilde\lambda^L\int d^dx\,\Bigl[\frac{Z^{(L)}(\epsilon)}2\,(\partial\phi)^2+\frac{B^{(L)}(\epsilon)}2\,\phi^2+\frac{\tilde\lambda\,A^{(L)}(\epsilon)}{4!}\,\phi^4\Bigr]\,,
+-\tilde\lambda^L\int d^dx\,\left[\frac{Z^{(L)}(\epsilon)}2\,(\partial\phi)^2+\frac{B^{(L)}(\epsilon)}2\,\phi^2+\frac{\tilde\lambda\,A^{(L)}(\epsilon)}{4!}\,\phi^4\right]\,,
 \]
 with coefficients having $L$th order pole in $\epsilon$,
 \begin{equation}\label{eq:divpoles}
@@ -549,7 +549,7 @@ and $\Gamma^{\text{finite}}$ is finite at $\epsilon=0$. It is clear then that th
 divergent part can be compensated for if one adds to the action the $L$-loop
 counterterm
 \[
-\mathcal A^{(L)}=\tilde\lambda^L\int d^dx\,\Bigl[\frac{z^{(L)}(\epsilon)}2\,(\partial\varphi)^2+\frac{b^{(L)}(\epsilon)}2\,\varphi^2+\frac{\tilde\lambda\,a^{(L)}(\epsilon)}{4!}\,\varphi^4\Bigr]\,,
+\mathcal A^{(L)}=\tilde\lambda^L\int d^dx\,\left[\frac{z^{(L)}(\epsilon)}2\,(\partial\varphi)^2+\frac{b^{(L)}(\epsilon)}2\,\varphi^2+\frac{\tilde\lambda\,a^{(L)}(\epsilon)}{4!}\,\varphi^4\right]\,,
 \]
 with
 \[
@@ -575,7 +575,7 @@ action renormalized to $L-1$ loops, as defined above, i.e.
 \]
 In this scheme the parameters $m^2_{MS}$ and $\lambda_{MS}$ entering the action
 \[
-\mathcal A=\int d^dx\,\Bigl[\frac12\,(\partial\varphi)^2+\frac{m^2_{MS}}2\,\varphi^2+\frac{\lambda_{MS}}{4!}\,\varphi^4+\text{Counterterms in MS Scheme}\Bigr]\,,
+\mathcal A=\int d^dx\,\left[\frac12\,(\partial\varphi)^2+\frac{m^2_{MS}}2\,\varphi^2+\frac{\lambda_{MS}}{4!}\,\varphi^4+\text{Counterterms in MS Scheme}\right]\,,
 \]
 are not a priori related to physical quantities such as the particle mass and
 scattering amplitudes. This relation has to be calculated order by order in
@@ -755,7 +755,7 @@ To isolate the singular contributions let us write the integral over $w$ as
 The second piece is
 \[
 -\frac{\tilde\lambda^3}2\,\frac{\Gamma(4-d)}{(4\pi)^d}\int_0^1du\,dv\,dw\,w^{1-\frac d2}\,
-\Bigl[\frac{1-w}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2(w)\bigr)^{d-4}-\bigl(\tilde m^2+P^2(w=0)\bigr)^{d-4}\Bigr]\,.
+\left[\frac{1-w}{A^{\frac d2}}\,\bigl(\tilde m^2+P^2(w)\bigr)^{d-4}-\bigl(\tilde m^2+P^2(w=0)\bigr)^{d-4}\right]\,.
 \]
 Here the integral over $u,v,w$ is convergent and brings in no additional
 singularity at $d=4$. Therefore the above expression has only simple pole at
@@ -778,7 +778,7 @@ written as
 \]
 and therefore this piece of the diagram is
 \[
--\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\Bigl(\frac1\epsilon-\gamma+\log4\pi-\int_0^1dv\,\log\bigl[\tilde m^2+v(1-v)\,p_{12}^2\bigr]\Bigr)+\text{finite terms.}
+-\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac1\epsilon-\gamma+\log4\pi-\int_0^1dv\,\log\bigl[\tilde m^2+v(1-v)\,p_{12}^2\bigr]\right)+\text{finite terms.}
 \]
 We have to add here the second diagram in the group II, which is
 \[
@@ -788,22 +788,22 @@ where the expression \eqref{eq:a2} for the coefficient $a^{(2)}$ is used. Recall
 that
 \begin{align*}
 I(p^2)&=\frac{\Gamma(2-\frac d2)}{(4\pi)^{\frac d2}}\int_0^1du\,\bigl[\tilde m^2+u(1-u)\,p^2\bigr]^{\frac d2-2}\\
-&=\frac1{(4\pi)^{\frac d2}}\Bigl(\frac2\epsilon-\gamma-\int_0^1du\,\log\bigl(\tilde m^2+u(1-u)\,p^2\bigr)+O(\epsilon)\Bigr)\,.
+&=\frac1{(4\pi)^{\frac d2}}\left(\frac2\epsilon-\gamma-\int_0^1du\,\log\bigl(\tilde m^2+u(1-u)\,p^2\bigr)+O(\epsilon)\right)\,.
 \end{align*}
 Therefore the contribution of this diagram is
 \[
-\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\Bigl(\frac2\epsilon-2\gamma+2\log4\pi-\log\tilde m^2-\int_0^1du\,\log\bigl[\tilde m^2+u(1-u)\,p_{12}^2\bigr]\Bigr)+\text{finite terms.}
+\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac2\epsilon-2\gamma+2\log4\pi-\log\tilde m^2-\int_0^1du\,\log\bigl[\tilde m^2+u(1-u)\,p_{12}^2\bigr]\right)+\text{finite terms.}
 \]
 Adding the two diagrams of the group II we see that the $p_{12}$-dependent
 singular terms cancel out,
 \[
-\text{Group II}=\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\Bigl(\frac1\epsilon-\gamma+\log4\pi-\log\tilde m^2\Bigr)+\text{finite terms.}
+\text{Group II}=\frac{\tilde\lambda^3}{(4\pi)^4}\,\frac1\epsilon\left(\frac1\epsilon-\gamma+\log4\pi-\log\tilde m^2\right)+\text{finite terms.}
 \]
 The group III can be analyzed similarly. We find that all singular parts of the
 first 15 diagrams are pole terms with the coefficients independent of external
 momenta,
 \begin{equation}\label{eq:15diagrams}
-\text{15 diagrams}=\tilde\lambda^3\Bigl(\frac{c_{-2}}{\epsilon^2}+\frac{c_{-1}}\epsilon+F(p_1,\dots,p_4)\Bigr)\,,
+\text{15 diagrams}=\tilde\lambda^3\left(\frac{c_{-2}}{\epsilon^2}+\frac{c_{-1}}\epsilon+F(p_1,\dots,p_4)\right)\,,
 \end{equation}
 where $c_{-2},c_{-1}$ do not depend on $p_i$, and $F$ is finite at $d=4$.
 Therefore the counterterm coefficient $a^{(3)}$ appearing in the 16th diagram

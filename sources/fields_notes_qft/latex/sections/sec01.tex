@@ -63,10 +63,10 @@ x^\mu=(x^0,x^1,x^2,x^3)=(t,\xx)\,,
 \]
 equipped with the ``pseudo-metric''
 \[
-d\tau^2=c^2\,dt^2-(dx^1)^2-(dx^2)^2-(dx^3)^2\,.
+ds^2=-c^2\,dt^2+(dx^1)^2+(dx^2)^2+(dx^3)^2\,.
 \]
 The Lorentz transformations are those linear transformations of the
-coordinates $x^\mu$ which preserve $d\tau^2$. In what follows I will use the
+coordinates $x^\mu$ which preserve $ds^2$. In what follows I will use the
 units in which\footnote{These conditions are simply the convention to measure
 spatial distances and energy in the units
 $[\text{unit of length}]=c\times[\text{unit of time}]$,
@@ -76,8 +76,12 @@ c=1\,,\qquad \hbar=1\,.
 \]
 Then
 \[
-d\tau^2=dx^\mu\,dx_\mu\,,\qquad\text{where}\qquad x^\mu=(t,\xx)\,,\quad\text{and}\quad x_\mu=(t,-\xx)\,.
+ds^2=\eta_{\mu\nu}\,dx^\mu dx^\nu=dx^\mu\,dx_\mu\,,\qquad\text{where}\qquad x^\mu=(t,\xx)\,,\quad x_\mu=(-t,\xx)\,,
 \]
+and $\eta_{\mu\nu}=\operatorname{diag}(-1,+1,+1,+1)$ is the Minkowski metric.
+Throughout these notes the metric is ``mostly plus'', so a timelike vector
+has $v^2=v^\mu v_\mu<0$ and an on-shell momentum has $p^2=-m^2$. In this
+convention $px=-p^0x^0+\pp\cdot\xx$.
 To ensure relativistic invariance of the classical field theory it suffices
 to choose $\Lag$ to be a Lorentz scalar.
 
@@ -131,19 +135,19 @@ $\Phi(\xx,t)$; the Lagrangian density then is written as
 \[
 \Lag\bigl(\Phi(x),\partial_\mu\Phi(x)\bigr)\,,
 \qquad\text{where}\qquad
-\partial_\mu\equiv\frac{\partial}{\partial x^\mu}=\Bigl(\frac{\partial}{\partial t},\nabla\Bigr)\,.
+\partial_\mu\equiv\frac{\partial}{\partial x^\mu}=\left(\frac{\partial}{\partial t},\nabla\right)\,.
 \]
 A simple exercise in functional analysis (look up the textbook, page 15 in
 PS) yields the classical field equations of motion
 \begin{equation}\label{eq:EL}
-\partial_\mu\biggl(\frac{\partial\Lag}{\partial\bigl(\partial_\mu\Phi(x)\bigr)}\biggr)-\frac{\partial\Lag}{\partial\Phi(x)}=0\,.
+\partial_\mu\left(\frac{\partial\Lag}{\partial\bigl(\partial_\mu\Phi(x)\bigr)}\right)-\frac{\partial\Lag}{\partial\Phi(x)}=0\,.
 \end{equation}
 
 \begin{remark}
 Essential step in deriving \eqref{eq:EL} is integrating by parts. The total
 derivative term
 \[
-\int d^4x\,\frac{\partial}{\partial x^\mu}\biggl(\delta\Phi(x)\,\frac{\partial\Lag}{\partial(\partial_\mu\Phi(x))}\biggr)
+\int d^4x\,\frac{\partial}{\partial x^\mu}\left(\delta\Phi(x)\,\frac{\partial\Lag}{\partial(\partial_\mu\Phi(x))}\right)
 \]
 can be reduced to the integral over the boundary (Gauss theorem), which
 depends only on the variations $\delta\Phi(x)$ at the boundary; this term does
@@ -199,7 +203,7 @@ with an infinitesimal $\epsilon$. Substituting in the Lagrangian density, one
 finds
 \[
 \Lag(\Phi',\partial_\mu\Phi')=\Lag(\Phi,\partial_\mu\Phi)
-+\epsilon\biggl[\frac{\partial\Lag}{\partial\Phi}\,E(x,\Phi)+\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,\partial_\mu E(x,\Phi)\biggr]+O(\epsilon^2)\,.
++\epsilon\left[\frac{\partial\Lag}{\partial\Phi}\,E(x,\Phi)+\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,\partial_\mu E(x,\Phi)\right]+O(\epsilon^2)\,.
 \]
 
 The invariance (i.e.\ the requirement that the action $S=\int\Lag\,d^4x$
@@ -211,8 +215,8 @@ with some $\tilde J^\mu$ which depend on our field variables in a local way
 (it may also have separate dependence on $x$ if $E$ does). Transforming the
 left-hand side by parts one finds
 \[
-\partial_\mu\biggl(\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,E(x,\Phi)\biggr)
-+\biggl[\frac{\partial\Lag}{\partial\Phi}-\partial_\mu\biggl(\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\biggr)\biggr]E(x,\Phi)=\partial_\mu\tilde J^\mu\,.
+\partial_\mu\left(\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,E(x,\Phi)\right)
++\left[\frac{\partial\Lag}{\partial\Phi}-\partial_\mu\left(\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\right)\right]E(x,\Phi)=\partial_\mu\tilde J^\mu\,.
 \]
 Now, suppose that $\Phi=\Phi_c$, a solution of the classical field equations
 of motion. Then the second term vanishes, and we obtain the \emph{continuity
@@ -285,25 +289,25 @@ $\partial_\mu\tilde J^\mu$ in the general argument above.
 Note that there are four independent symmetries associated with four
 components of $a^\mu$. Correspondingly, there are four Noether's currents
 \[
-T^\mu_{\ \nu}=\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,\partial_\nu\Phi-\delta^\mu_\nu\,\Lag\,,
+T^\mu{}_\nu=-\frac{\partial\Lag}{\partial(\partial_\mu\Phi)}\,\partial_\nu\Phi+\delta^\mu_\nu\,\Lag\,,
 \]
 which therefore satisfy the continuity equations
 \[
-\partial_\mu T^\mu_{\ \nu}=0\qquad\text{on shell.}
+\partial_\mu T^\mu{}_\nu=0\qquad\text{on shell.}
 \]
 This object is known as the \textbf{energy-momentum tensor}. It leads to four
 conserved charges
 \[
-E=\int T^0_{\ 0}\,d^3\xx\,,
+E=-\int T^0{}_0\,d^3\xx\,,
 \qquad\text{and}\qquad
-P^i=-\int T^0_{\ i}\,d^3\xx\,,\quad\text{with}\quad i=1,2,3\,.
+P^i=\int T^0{}_i\,d^3\xx\,,\quad\text{with}\quad i=1,2,3\,.
 \]
 Of these, $E$ is interpreted as the energy of the field configuration
 $\Phi(\xx,t)$, and $\mathbf{P}$ is interpreted as its momentum. Therefore one
 may take
 \begin{align*}
-T^{00}&=T^0_{\ 0}=\mathcal{E}&&\text{for the energy density,}\\
-T^{0i}&=-T^0_{\ i}=\mathcal{P}^i&&\text{for the momentum density.}
+T^{00}&=-T^0{}_0=\mathcal{E}&&\text{for the energy density,}\\
+T^{0i}&=T^0{}_i=\mathcal{P}^i&&\text{for the momentum density.}
 \end{align*}
 The spatial components $T^{ij}$ constitute the (spatial) \emph{stress tensor}.
 It is interpreted as usual: Consider any domain $D=D^3$ in the 3-dimensional
@@ -328,25 +332,22 @@ Let us consider a simple field theory known as the \emph{Klein-Gordon} theory
 (it will be our main example for some time). It involves a single-component
 scalar field $\Phi(x)=\varphi(\xx,t)$, and the action is
 \[
-S=\int d^4x\,\biggl[\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\biggr]
-\equiv\int dt\,d^3\xx\,\biggl[\frac12\,\dot\varphi^2-\frac12\,(\nabla\varphi)^2-\frac{m^2}{2}\,\varphi^2\biggr].
+S=\int d^4x\,\left[-\frac12\,\partial_\mu\varphi\,\partial^\mu\varphi-\frac{m^2}{2}\,\varphi^2\right]
+\equiv\int dt\,d^3\xx\,\left[\frac12\,\dot\varphi^2-\frac12\,(\nabla\varphi)^2-\frac{m^2}{2}\,\varphi^2\right].
 \]
 This form of the action shows that the theory is Lorentz-invariant, and the
 field $\varphi$ is a scalar (i.e.\ $\varphi(x)$ has definite value at each
 space-time point $x$, independent of the choice of the inertial frame).
 Variation yields the Klein-Gordon field equation
 \[
-\partial_\mu\partial^\mu\varphi+m^2\,\varphi=\partial_t^2\varphi-\nabla^2\varphi+m^2\,\varphi=0\,.
+-\partial_\mu\partial^\mu\varphi+m^2\,\varphi=\partial_t^2\varphi-\nabla^2\varphi+m^2\,\varphi=0\,.
 \]
 Applying the above equations one finds for the energy-momentum tensor
 \[
-T_{\mu\nu}=\partial_\mu\varphi\,\partial_\nu\varphi-\frac12\,g_{\mu\nu}\,\bigl(\partial_\lambda\varphi\,\partial^\lambda\varphi-m^2\,\varphi^2\bigr)\,,
+T_{\mu\nu}=\partial_\mu\varphi\,\partial_\nu\varphi-\frac12\,\eta_{\mu\nu}\,\bigl(\partial_\lambda\varphi\,\partial^\lambda\varphi+m^2\,\varphi^2\bigr)\,,
 \]
-where
-\[
-g_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)
-\]
-is the usual Minkowski metric. Thus,
+with $\eta_{\mu\nu}=\operatorname{diag}(-1,1,1,1)$, so that
+$\mathcal{E}=T^{00}=-T^0{}_0$ and $\mathcal{P}^i=T^{0i}=T^0{}_i$. Thus,
 \[
 \mathcal{E}=\frac12\Bigl(\dot\varphi^2+(\nabla\varphi)^2+m^2\,\varphi^2\Bigr)\,,
 \qquad\text{and}\qquad
@@ -371,18 +372,18 @@ are conserved on-shell.
 
 The equations of motion of the Klein-Gordon theory
 \[
-\partial_\mu\partial^\mu\varphi+m^2\,\varphi=\partial_t^2\varphi-\nabla^2\varphi+m^2\,\varphi=0
+-\partial_\mu\partial^\mu\varphi+m^2\,\varphi=\partial_t^2\varphi-\nabla^2\varphi+m^2\,\varphi=0
 \]
 are \emph{linear}. That is, any linear combination of solutions is again a
 solution. (In general, this property defines the \emph{free field theory}).
 Therefore, general solution is a superposition of ``elementary solutions''.
 In the infinite space-time, one can take the plane waves
 \[
-e^{-ipx}=e^{-ip^0x^0+i\pp\cdot\xx}\qquad\text{with}\qquad p^0=\omega_\pp:=\sqrt{\pp^2+m^2}
+e^{ipx}=e^{-ip^0x^0+i\pp\cdot\xx}\qquad\text{with}\qquad p^0=\omega_\pp:=\sqrt{\pp^2+m^2}
 \]
 as well as the complex-conjugate waves
 \begin{equation}\label{eq:KGgeneral}
-\varphi(x)=\int\frac{d^3\pp}{2\omega_\pp\,(2\pi)^3}\,\bigl(A_\pp\,e^{-ipx}+A^*_\pp\,e^{ipx}\bigr)\,.
+\varphi(x)=\int\frac{d^3\pp}{2\omega_\pp\,(2\pi)^3}\,\bigl(A_\pp\,e^{ipx}+A^*_\pp\,e^{-ipx}\bigr)\,.
 \end{equation}
 This form represents general solution of the Klein-Gordon equation, which is
 bounded at the spatial infinity.
@@ -393,7 +394,7 @@ $x^1,x^2\in(-\infty,\infty)$ but $x^3\in[0,\infty)$, with the boundary at
 $x^3=0$. Assume that there is a single scalar field $\varphi(\xx,t)$, and the
 Lagrangian has the form
 \[
-L=\int_0^\infty dz\int d^2x_\parallel\,\biggl[\frac12\,\dot\varphi^2-\frac12\,\bigl(\nabla\varphi\bigr)^2-\frac{m^2}{2}\,\varphi^2\biggr]
+L=\int_0^\infty dz\int d^2x_\parallel\,\left[\frac12\,\dot\varphi^2-\frac12\,\bigl(\nabla\varphi\bigr)^2-\frac{m^2}{2}\,\varphi^2\right]
 -\int d^2x_\parallel\,V\bigl(\varphi_B(x_\parallel,t)\bigr)\,,
 \]
 with some function $V(\varphi_B)$. Here $z\equiv x^3$, and

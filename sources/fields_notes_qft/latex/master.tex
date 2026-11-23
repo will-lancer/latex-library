@@ -56,11 +56,15 @@
 \newtheorem*{remark}{Remark}
 \newtheorem*{exercise}{Exercise}
 \newcounter{hwproblem}
+\makeatletter
 \newenvironment{hwproblem}[1]
  {\par\bigskip\Needspace{6\baselineskip}%
+  \gdef\hwcurrent{#1}\phantomsection\def\@currentlabel{#1}%
   \noindent\begin{minipage}{\linewidth}\hrule\smallskip
   \noindent\textbf{Homework Problem #1.}\enspace\ignorespaces}
- {\par\smallskip\hrule\end{minipage}\par\bigskip}
+ {\par\nopagebreak\hfill{\small\hyperref[sol:\hwcurrent]{Solution on page~\pageref*{sol:\hwcurrent}\,$\rightarrow$}}%
+  \par\smallskip\hrule\end{minipage}\par\bigskip}
+\makeatother
 \newlist{hwparts}{enumerate}{1}
 \setlist[hwparts]{label=(\alph*),leftmargin=*,topsep=3pt,itemsep=2pt}
 
@@ -141,7 +145,9 @@
 retyped from the printed lectures. The figures have been redrawn, errors in
 the formulas and text have been corrected, and the nine homework problems
 of the course appear at the points in the notes where the material they use
-has been covered. A list of corrections is kept with the source files.}
+has been covered. Their solutions are in the appendix. Minkowski-space
+formulas use the mostly plus metric. A list of corrections is kept with the
+source files.}
 \setcounter{tocdepth}{2}
 \begin{document}
 \maketitle

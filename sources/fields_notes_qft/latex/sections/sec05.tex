@@ -84,7 +84,7 @@ G(q,q'|\tau)=\bra{q}e^{-\hat H\tau}\ket{q'}
 \]
 satisfies the differential equation of the diffusion type
 \[
--\frac{\partial}{\partial\tau}\,G(q,q'|\tau)=\Bigl(-\frac12\,\frac{\partial^2}{\partial q^2}+V(q)\Bigr)\,G(q,q'|\tau)\,,
+-\frac{\partial}{\partial\tau}\,G(q,q'|\tau)=\left(-\frac12\,\frac{\partial^2}{\partial q^2}+V(q)\right)\,G(q,q'|\tau)\,,
 \]
 with the initial condition
 \[
@@ -126,11 +126,11 @@ potential $V$ is differentiable (which we assume), we have
 (I have used the fact that $(q-q')^2\sim\tau$). Therefore, for finite $\tau$
 but large $n$ (i.e.\ small $\Delta\tau=\tau/n$) we can write
 \[
-\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\lim_{n\to\infty}\Bigl(\frac1{2\pi\Delta\tau}\Bigr)^{n/2}\int\Bigl(\prod_{k=1}^{n-1}dq_k\Bigr)\,e^{-\mathcal A\{q_k\}}\,,
+\bra{q_f}e^{-\hat H\tau}\ket{q_i}=\lim_{n\to\infty}\left(\frac1{2\pi\Delta\tau}\right)^{n/2}\int\Bigl(\prod_{k=1}^{n-1}dq_k\Bigr)\,e^{-\mathcal A\{q_k\}}\,,
 \]
 where
 \[
-\mathcal A\{q_k\}=\sum_{k=1}^n\biggl[\frac{(q_k-q_{k-1})^2}{2\,\Delta\tau}+\Delta\tau\,\frac{V(q_k)+V(q_{k-1})}{2}\biggr]\,,
+\mathcal A\{q_k\}=\sum_{k=1}^n\left[\frac{(q_k-q_{k-1})^2}{2\,\Delta\tau}+\Delta\tau\,\frac{V(q_k)+V(q_{k-1})}{2}\right]\,,
 \]
 and $\Delta\tau=\tau/n$, and it is understood that
 \[
@@ -149,7 +149,7 @@ $\tau_n$. The intermediate values $q_k=q(\tau_k)$ are integrated over.}
 When $n\to\infty$, $\Delta\tau\to0$, the function $\mathcal A\{q_k\}$ in the
 exponential has formal limit
 \[
-\mathcal A[q(\tau)]=\int_0^\tau d\tau\,\Bigl[\frac12\,\bigl(dq(\tau)/d\tau\bigr)^2+V\bigl(q(\tau)\bigr)\Bigr]\,.
+\mathcal A[q(\tau)]=\int_0^\tau d\tau\,\left[\frac12\,\bigl(dq(\tau)/d\tau\bigr)^2+V\bigl(q(\tau)\bigr)\right]\,.
 \]
 It coincides with the ``imaginary time action'', i.e.\ the action associated
 with our system, with $t$ replaced by $-i\tau$,
@@ -190,11 +190,11 @@ weights the paths according to their average potential energy.
 
 3. Note that the symbol
 \[
-\bigl[Dq(\tau)\bigr]=\lim_{n\to\infty}\Bigl(\frac1{2\pi\Delta\tau}\Bigr)^{n/2}\prod_{k=1}^{n-1}dq_k
+\bigl[Dq(\tau)\bigr]=\lim_{n\to\infty}\left(\frac1{2\pi\Delta\tau}\right)^{n/2}\prod_{k=1}^{n-1}dq_k
 \]
 contains divergent (in the limit) factor
 \[
-\Bigl(\frac1{2\pi\Delta\tau}\Bigr)^{n/2}=e^{-\frac{\log(2\pi\Delta\tau)}{2\,\Delta\tau}\,L}\,,
+\left(\frac1{2\pi\Delta\tau}\right)^{n/2}=e^{-\frac{\log(2\pi\Delta\tau)}{2\,\Delta\tau}\,L}\,,
 \]
 where $L=(\tau_f-\tau_i)=n\,\Delta\tau$ is the ``volume'' of the imaginary
 time interval. This factor is reminiscent of the irritating infinity we had
@@ -259,7 +259,7 @@ is
 \]
 In this case the integration over $P_i$ is easy to perform,
 \[
-Z=\frac1{N!}\Bigl(\frac{2\pi}{\beta}\Bigr)^{\frac N2}Z_{\text{conf}}\,,
+Z=\frac1{N!}\left(\frac{2\pi}{\beta}\right)^{\frac N2}Z_{\text{conf}}\,,
 \]
 where $N$ is the number of the degrees of freedom, $i=1,2,\dots,N$, and
 $Z_{\text{conf}}$ is the configuration-space integral
@@ -284,7 +284,7 @@ ends held at $q(0)=q_i$ and $q(L)=q_f$.}
 We also assume that the string lies in a potential well $V(q)$, so that the
 potential energy of the string is
 \[
-U[q(\tau)]=\int_0^Ld\tau\,\biggl[V\bigl(q(\tau)\bigr)+\frac12\,\Bigl(\frac{dq(\tau)}{d\tau}\Bigr)^2\biggr]\,,
+U[q(\tau)]=\int_0^Ld\tau\,\left[V\bigl(q(\tau)\bigr)+\frac12\,\left(\frac{dq(\tau)}{d\tau}\right)^2\right]\,,
 \]
 where the last term accounts for the elastic energy; to simplify the equations
 I have assumed that the elastic string tension equals 1.

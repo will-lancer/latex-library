@@ -22,7 +22,7 @@ under these coordinate transformations in a local field theory is generally
 described in terms of its energy-momentum tensor $T^{\mu\nu}(x)$. Therefore this
 field, and in particular its trace
 \[
-\Theta(x):=T^\mu_{\ \mu}(x)\,,
+\Theta(x):=T^\mu{}_\mu(x)\,,
 \]
 plays important role in RG theory. In fact, all basic equations of RG theory in
 local QFT can be expressed as certain properties of this field.
@@ -31,17 +31,17 @@ In the first lecture of this course we have defined the Energy-Momentum tensor (
 EM tensor, for shortness), in a classical field theory, as the Noether's current
 associated with the translational symmetry $x^\mu\to x^\mu+a^\mu$,
 \[
-T^\mu_{\ \nu}=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,\partial_\nu\varphi-\delta^\mu_\nu\,\Lag\,,
+T^\mu{}_\nu=\frac{\partial\Lag}{\partial(\partial_\mu\varphi)}\,\partial_\nu\varphi-\delta^\mu_\nu\,\Lag\,,
 \]
 which satisfies the continuity equation
 \begin{equation}\label{eq:Tcont}
-\partial_\mu T^\mu_{\ \nu}=0
+\partial_\mu T^\mu{}_\nu=0
 \end{equation}
 as a consequence of the classical equations of motion. Generally, there is an
 important ambiguity in the definition of the local EM tensor. One can redefine
-$T^\mu_{\ \nu}$ by adding a total derivative
+$T^\mu{}_\nu$ by adding a total derivative
 \[
-T^\mu_{\ \nu}\to T^\mu_{\ \nu}+\partial_\lambda\psi^{\mu\lambda}_{\ \ \nu}\,,\qquad\psi^{\mu\lambda}_{\ \ \nu}=-\psi^{\lambda\mu}_{\ \ \nu}\,.
+T^\mu{}_\nu\to T^\mu{}_\nu+\partial_\lambda\psi^{\mu\lambda}{}_\nu\,,\qquad\psi^{\mu\lambda}{}_\nu=-\psi^{\lambda\mu}{}_\nu\,.
 \]
 The new tensor still satisfies the continuity equation \eqref{eq:Tcont}. By
 appropriate choice of $\psi$ the modified EM tensor can always be made symmetric,
@@ -61,7 +61,7 @@ becomes a functional of the metric tensor $g$ also.
 For instance, for generic scalar field theory, in the presence of the metric
 background \eqref{eq:metric}, the simplest action is
 \[
-\mathcal A=\int\sqrt g\,\Bigl[\frac12\,g^{\mu\nu}\,\partial_\mu\varphi\,\partial_\nu\varphi+V(\varphi)\Bigr]\,.
+\mathcal A=\int\sqrt g\,\left[\frac12\,g^{\mu\nu}\,\partial_\mu\varphi\,\partial_\nu\varphi+V(\varphi)\right]\,.
 \]
 This form is called the ``minimal coupling to gravity''.
 
@@ -169,7 +169,7 @@ where $d$ is the dimensionality of the space, and the parameter $D$ is related t
 the dimension of $\varphi$. This generalizes to more complicated scalar composite
 fields $\mathcal O_\alpha$ as follows
 \[
-\delta_\varepsilon\mathcal O_\alpha(x)=\varepsilon^\mu(x)\,\partial_\mu\mathcal O_\alpha(x)+\frac{D_\alpha^\beta}d\,(\partial_\mu\varepsilon^\mu)\,\mathcal O_\beta(x)+\text{terms with }\partial_\nu\partial_\lambda\varepsilon^\mu\,,\ \text{etc.}
+\delta_\varepsilon\mathcal O_\alpha(x)=\varepsilon^\mu(x)\,\partial_\mu\mathcal O_\alpha(x)+\frac{D_\alpha{}^\beta}d\,(\partial_\mu\varepsilon^\mu)\,\mathcal O_\beta(x)+\text{terms with }\partial_\nu\partial_\lambda\varepsilon^\mu\,,\ \text{etc.}
 \]
 For tensor fields the terms involving local rotations
 \[
@@ -211,7 +211,7 @@ $\mathcal O_\alpha$ we have
 \]
 where by definition
 \begin{equation}\label{eq:DO}
-(\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha^\beta\,\mathcal O_\beta(x)\,.
+(\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha{}^\beta\,\mathcal O_\beta(x)\,.
 \end{equation}
 Then the Ward identity \eqref{eq:Ward} reduces to
 \begin{equation}\label{eq:WardTheta}
@@ -220,7 +220,7 @@ Then the Ward identity \eqref{eq:Ward} reduces to
 \end{equation}
 where
 \[
-\Theta(x)=T^\mu_{\ \mu}(x)
+\Theta(x)=T^\mu{}_\mu(x)
 \]
 is the trace component of the EM tensor.
 
@@ -233,7 +233,7 @@ action $\mathcal A$. The derivatives
 are in general some scalar composite fields. Then\footnote{Of course, in general
 the fields $\mathcal O_\alpha(x)$ may depend on the couplings $\lambda$. If such
 dependence is present, the derivatives of $\mathcal O_\alpha$ would add to the
-matrix $D_\alpha^\beta$, but otherwise would not change our argument. Here I ignore
+matrix $D_\alpha{}^\beta$, but otherwise would not change our argument. Here I ignore
 this contribution for simplicity.}
 \[
 \frac\partial{\partial\lambda^k}\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle
@@ -248,7 +248,7 @@ one arrives again at the Callan-Symanzik equation, i.e.
 \sum_{i=1}^n\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots(\mathcal D\mathcal O)_{\alpha_i}(x_i)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle\\
 +\sum_{k=1}^N\beta^k(\lambda)\,\frac\partial{\partial\lambda^k}\bigl\langle\mathcal O_{\alpha_1}(x_1)\cdots\mathcal O_{\alpha_n}(x_n)\bigr\rangle=0\,,
 \end{multline}
-where the coefficients $D_\alpha^\beta(\lambda)$ in the operator $\mathcal D$ in
+where the coefficients $D_\alpha{}^\beta(\lambda)$ in the operator $\mathcal D$ in
 \eqref{eq:DO} can of course depend on the parameters $\lambda$. The possibility to
 expand the field $\Theta(x)$ in terms of finitely many ``basic'' fields
 $\Phi_k(x)$ is the statement of renormalizability of the field theory.
@@ -299,7 +299,7 @@ The correlation functions of this fixed-point theory enjoy scale invariance with
 the dimensions of the fields $\mathcal O_\alpha$ determined by the eigenvalues of
 the matrix
 \[
-D_\alpha^\beta=D_\alpha^\beta(\lambda_*)\,.
+D_\alpha{}^\beta=D_\alpha{}^\beta(\lambda_*)\,.
 \]
 In fact, vanishing of the trace component $\Theta(x)$ in the fixed-point theory
 guarantees much bigger symmetry. Namely, let $v^\mu(x)$ be any vector field which
@@ -325,9 +325,9 @@ We obtain the closed equation
 \end{equation}
 where
 \[
-\mathcal D_v\Phi_\alpha(x)=\Bigl(v^\mu(x)\,\frac\partial{\partial x^\mu}+\frac{D_\alpha}d\,\bigl(\partial_\mu v^\mu(x)\bigr)\Bigr)\,\Phi_\alpha(x)\,,
+\mathcal D_v\Phi_\alpha(x)=\left(v^\mu(x)\,\frac\partial{\partial x^\mu}+\frac{D_\alpha}d\,\bigl(\partial_\mu v^\mu(x)\bigr)\right)\,\Phi_\alpha(x)\,,
 \]
-and $\Phi_\alpha(x)$ are the fields which diagonalize the matrix $D_\alpha^\beta$,
+and $\Phi_\alpha(x)$ are the fields which diagonalize the matrix $D_\alpha{}^\beta$,
 and $D_\alpha$ are corresponding eigenvalues.
 
 The coordinate transformations \eqref{eq:confeps} which satisfy the equation
@@ -366,7 +366,7 @@ v^\mu(x)=b^\mu x^2-2x^\mu(bx)\,.
 \]
 In this case
 \[
-\mathcal D_v\Phi_\alpha(x)=\Bigl[\bigl(b^\mu x^2-2x^\mu(bx)\bigr)\frac\partial{\partial x^\mu}-2D_\alpha\,(bx)\Bigr]\,\Phi_\alpha(x)\,,
+\mathcal D_v\Phi_\alpha(x)=\left[\bigl(b^\mu x^2-2x^\mu(bx)\bigr)\frac\partial{\partial x^\mu}-2D_\alpha\,(bx)\right]\,\Phi_\alpha(x)\,,
 \]
 and \eqref{eq:WardConf2} becomes nontrivial closed differential equation for the
 correlation functions. In fact, this equation completely determines one-, two- and
@@ -524,7 +524,7 @@ $\rho(E)$. The inverse transform is
 \]
 At large $V_{d-1}$ the integral is dominated by the saddle point at
 \[
-\beta=\beta_0(E):=\Bigl(\frac{C\,(d-1)\,V_{d-1}}E\Bigr)^{1/d}\,,
+\beta=\beta_0(E):=\left(\frac{C\,(d-1)\,V_{d-1}}E\right)^{1/d}\,,
 \]
 and we find
 \begin{equation}\label{eq:rhoE}

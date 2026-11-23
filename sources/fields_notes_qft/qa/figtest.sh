@@ -9,7 +9,9 @@ mkdir -p "$out"
   printf '%s\n' '\begin{document}'
   if [ $# -gt 0 ]; then list="$*"; else list=$(cd "$here/latex/figures" && ls *.tex | sed 's/\.tex$//'); fi
   for f in $list; do
-    printf '%s\n' "\\par\\noindent\\texttt{$f}\\par\\begin{center}\\input{figures/$f.tex}\\end{center}\\bigskip"
+    # wick4 and fourptconn are equation pieces and need math mode
+    case $f in wick4|fourptconn) body="\$\\input{figures/$f.tex}\$" ;; *) body="\\input{figures/$f.tex}" ;; esac
+    printf '%s\n' "\\par\\noindent\\texttt{$f}\\par\\begin{center}$body\\end{center}\\bigskip"
   done
   printf '%s\n' '\end{document}'
 } > "$out/figtest.tex"

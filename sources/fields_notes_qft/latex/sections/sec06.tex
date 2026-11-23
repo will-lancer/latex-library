@@ -19,7 +19,7 @@ we write such amplitude as an integral over the ``paths''?
 In classical mechanics the action of a relativistic particle travelling from
 $x_i$ to $x_f$ is
 \[
-S=-m\int_{x_i}^{x_f}\sqrt{dx_\mu\,dx^\mu}=-m\int_{(t_i,\xx_i)}^{(t_f,\xx_f)}\sqrt{dt^2-d\xx^2}\,,
+S=-m\int_{x_i}^{x_f}\sqrt{-dx_\mu\,dx^\mu}=-m\int_{(t_i,\xx_i)}^{(t_f,\xx_f)}\sqrt{dt^2-d\xx^2}\,,
 \]
 where the integration is performed along a given path (generally described by
 a parametric curve $x^\mu(s)$) from $x_i$ to $x_f$. In classical theory it is
@@ -53,7 +53,7 @@ sense we discussed the last time; the matrix elements $\bra{\xx}H\ket{\xx'}$
 do not vanish when $\xx\neq\xx'$ (check it against the Exercise in
 Lecture~2). More fundamentally, the problem is about the class of the paths
 which we need to include into the path integral. The expression
-$dx_\mu dx^\mu$ in the square root in $S$ can be either positive or negative,
+$-dx_\mu dx^\mu$ in the square root in $S$ can be either positive or negative,
 depending on whether $dx^\mu$ is time-like or space-like. One can try to
 exclude from the integration the paths having space-like $dx^\mu$ anywhere,
 but it does not seem to be right idea if we want to describe the propagator
@@ -75,7 +75,7 @@ are admitted as well (figure~\ref{fig:backpath}).
 
 For such paths $\xx(t)$ is not a function, and the integral over $[D\xx(t)]$
 does not apply. Besides, whereas for the case of space-like $dx^\mu$ there is
-a natural choice of the branch of the square root $\sqrt{dx_\mu dx^\mu}$ in the
+a natural choice of the branch of the square root $\sqrt{-dx_\mu dx^\mu}$ in the
 action ($e^{iS}$ must receive exponentially small contributions from the
 space-like parts of the path), we have no clear intuition which sign to choose
 in the case of the time-like ``backward in time'' paths.

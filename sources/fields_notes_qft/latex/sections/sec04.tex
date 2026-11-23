@@ -64,11 +64,11 @@ d\mu(\pp)=\frac1{2\omega_\pp}\,\frac{d^3\pp}{(2\pi)^3}\,.
 Check that the measure $d\mu(\pp)$ is Lorentz-invariant. An instructive way to
 do that is to check the identity
 \[
-d\mu(\pp)=\int_{p^0>0}\frac{dp^0}{2\pi}\;2\pi\,\delta(p^\mu p_\mu-m^2)\,\frac{d^3\pp}{(2\pi)^3}\,,
+d\mu(\pp)=\int_{p^0>0}\frac{dp^0}{2\pi}\;2\pi\,\delta(p^\mu p_\mu+m^2)\,\frac{d^3\pp}{(2\pi)^3}\,,
 \]
 i.e.\ we have
 \[
-\int d\mu(\pp)\,F(\pp,\omega_\pp)=\int_{p^0>0}\frac{d^4p}{(2\pi)^4}\,2\pi\,\delta(p^\mu p_\mu-m^2)\,F(\pp,p^0)\,.
+\int d\mu(\pp)\,F(\pp,\omega_\pp)=\int_{p^0>0}\frac{d^4p}{(2\pi)^4}\,2\pi\,\delta(p^\mu p_\mu+m^2)\,F(\pp,p^0)\,.
 \]
 \end{exercise}
 
@@ -76,7 +76,7 @@ The operators $\hat\varphi(\xx)$ and $\hat\pi(\xx)$ are the
 ``Schroedinger'', or the ``equal time'' field operators. As defined, they obey
 the canonical commutation relations
 \[
-\bigl[\hat\pi(\xx),\hat\varphi(\xx')\bigr]=-i\,\delta^{(3)}(\xx-\xx')\,.
+[\hat\pi(\xx),\hat\varphi(\xx')]=-i\,\delta^{(3)}(\xx-\xx')\,.
 \]
 As is common in quantum mechanics, it is often useful to trade the time
 evolution of the states for the time evolution of the operators. This is known
@@ -115,12 +115,12 @@ be discussed later in Lecture~6.} Since $\hat\varphi_-(x)$ obviously commutes
 with $\hat\varphi_-(x')$, and the same is true for the $\hat\varphi_+$
 component, we have
 \[
-\bigl[\hat\varphi(x),\hat\varphi(x')\bigr]=D_-(x-x')-D_+(x-x')\,,
+[\hat\varphi(x),\hat\varphi(x')]=D_-(x-x')-D_+(x-x')\,,
 \]
 where
 \begin{align*}
-D_-(x-x')&=\bigl[\hat\varphi_-(x),\hat\varphi_+(x')\bigr]\,,\\
-D_+(x-x')&=\bigl[\hat\varphi_-(x'),\hat\varphi_+(x)\bigr]\equiv D_-(x'-x)\,.
+D_-(x-x')&=[\hat\varphi_-(x),\hat\varphi_+(x')]\,,\\
+D_+(x-x')&=[\hat\varphi_-(x'),\hat\varphi_+(x)]\equiv D_-(x'-x)\,.
 \end{align*}
 Explicitly
 \begin{align*}
@@ -134,7 +134,7 @@ i) The integrals for $D_-(x)$ and $D_+(x)$ are Lorentz-invariant, i.e.\ if two
 then $D(x)=D(x')$. Indeed, the integrals can be written in explicitly
 covariant form, say
 \[
-D_-(x)=\int_{p^0>0}\frac{d^4p}{(2\pi)^4}\,2\pi\,\delta(p^\mu p_\mu-m^2)\,e^{-ip_\mu x^\mu}\,.
+D_-(x)=\int_{p^0>0}\frac{d^4p}{(2\pi)^4}\,2\pi\,\delta(p^\mu p_\mu+m^2)\,e^{ip_\mu x^\mu}\,.
 \]
 Then the change of the integration variables $p=\Lambda^{-1}p'$ verifies that
 $D_-(x)=D_-(\Lambda x)$. Similar representation exists for $D_+(x)$.
@@ -155,7 +155,7 @@ $t$ we take $D_+(\xx,t+i0)$.
 Let us consider the case of real $t$ such that the 4-vector $x^\mu=(t,\xx)$ is
 space-like,
 \[
-x^\mu x_\mu=t^2-\xx^2<0
+x^\mu x_\mu=-t^2+\xx^2>0
 \]
 (in this consideration we assume that $\xx$ is real). In the complex $t$-plane
 we are looking at the segment
@@ -231,12 +231,12 @@ $[\hat\varphi(x),\hat\varphi(0)]=D_-(x)-D_+(x)$. Here I have set $x'=0$; in
 general case $x$ has to be replaced by the difference $x-x'$. We see that the
 commutator is equal to the discontinuity
 \[
-\bigl[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)\bigr]=D(\xx,t-i0)-D(\xx,t+i0)\,.
+[\hat\varphi(\xx,t),\hat\varphi(\mathbf0,0)]=D(\xx,t-i0)-D(\xx,t+i0)\,.
 \]
 When the separation $x=(t,\xx)$ is space-like the discontinuity vanishes, and
 we conclude that
 \[
-\bigl[\hat\varphi(x),\hat\varphi(x')\bigr]=0\qquad\text{for all space-like separations}\quad x-x'\,.
+[\hat\varphi(x),\hat\varphi(x')]=0\qquad\text{for all space-like separations}\quad x-x'\,.
 \]
 This is important conclusion. Recall that in quantum mechanics commutator of
 two operators allows one to determine how, in a given state, the measurement
@@ -248,7 +248,7 @@ quantum field theory. This is general requirement of quantum field theory
 called the \textbf{local commutativity}. It states that for any local fields
 $\mathcal O_1(x)$, $\mathcal O_2(x')$ we must have
 \[
-\bigl[\hat{\mathcal O}_1(x),\hat{\mathcal O}_2(x')\bigr]=0\qquad\text{for all space-like separations}\quad x-x'\,.
+[\hat{\mathcal O}_1(x),\hat{\mathcal O}_2(x')]=0\qquad\text{for all space-like separations}\quad x-x'\,.
 \]
 The discontinuities across the branch cuts $|t|>|\xx|$ do not vanish, so when
 the separation is time-like the commutator takes non-zero values. We see that
@@ -332,16 +332,16 @@ residue calculation yields $D_+(\xx,t)$.
 This integration prescription is usually expressed as
 \[
 D_F(x)=\int\frac{d\omega}{2\pi}\,\frac{d^3\pp}{(2\pi)^3}\,\frac{i\,e^{-i\omega t+i\pp\cdot\xx}}{\omega^2-\pp^2-m^2+i0}
-=\int\frac{d^4p}{(2\pi)^4}\,\frac{i\,e^{-ip_\mu x^\mu}}{p_\mu p^\mu-m^2+i0}\,.
+=\int\frac{d^4p}{(2\pi)^4}\,\frac{-i\,e^{ip_\mu x^\mu}}{p_\mu p^\mu+m^2-i0}\,.
 \]
 This form of the Feynman propagator is explicitly covariant. It also shows that
 $D_F(x)$ is the Green's function of the KG equation,
 \[
-\bigl(\partial_\mu\partial^\mu+m^2\bigr)\,D_F(x)=-i\,\delta^{(4)}(x)\,.
+\bigl(-\partial_\mu\partial^\mu+m^2\bigr)\,D_F(x)=-i\,\delta^{(4)}(x)\,.
 \]
 Note that the functions $D_\pm(x)$ satisfy homogeneous KG equation
 \[
-\bigl(\partial_\mu\partial^\mu+m^2\bigr)\,D_\pm(x)=0\,,
+\bigl(-\partial_\mu\partial^\mu+m^2\bigr)\,D_\pm(x)=0\,,
 \]
 since in the KG theory the Heisenberg operator $\hat\varphi(x)$ itself
 satisfies homogeneous KG equation.
@@ -351,14 +351,14 @@ The Feynman propagator is defined as
 \[
 D_F(\xx,t)=\theta(t)\,\bra0\hat\varphi(\xx,t)\,\hat\varphi(\mathbf0,0)\ket0+\theta(-t)\,\bra0\hat\varphi(\mathbf0,0)\,\hat\varphi(\xx,t)\ket0\,.
 \]
-Applying the differential operator $\partial_\mu\partial^\mu+m^2$ and using the
+Applying the differential operator $-\partial_\mu\partial^\mu+m^2$ and using the
 equal-time commutation relations
 \[
-\bigl[\hat\pi(\xx,t),\hat\varphi(\xx',t)\bigr]=-i\,\delta^{(3)}(\xx-\xx')\,,
+[\hat\pi(\xx,t),\hat\varphi(\xx',t)]=-i\,\delta^{(3)}(\xx-\xx')\,,
 \]
 confirm that
 \[
-\bigl(\partial_\mu\partial^\mu+m^2\bigr)\,D_F(x)=-i\,\delta^{(4)}(x)\,.
+\bigl(-\partial_\mu\partial^\mu+m^2\bigr)\,D_F(x)=-i\,\delta^{(4)}(x)\,.
 \]
 \end{exercise}
 
@@ -385,7 +385,7 @@ Note that this contour can be obtained from $C_F$ by $90^\circ$ rotation.
 As is well known, by taking pure imaginary values of $t$ one converts the
 Minkowski space-time into 4-dimensional Euclidean space, since
 \[
--d\tau^2\to ds^2=dx_4^2+d\xx^2\,,
+ds^2=-dt^2+d\xx^2\to dx_4^2+d\xx^2\qquad(t=-i\,x_4)\,,
 \]
 and the Lorentz symmetry becomes the orthogonal group $O(4)$ of rotations of
 the Euclidean 4-vectors
@@ -398,7 +398,7 @@ theory. We will discuss its significance later. For now, let us observe that
 since $D_E$ is related to $D_F$ simply by rotating the time contour, it
 satisfies the Euclidean-space version of the inhomogeneous KG equation
 \[
-\Bigl(m^2-\frac{\partial^2}{\partial x_4^2}-\nabla^2\Bigr)\,D_E(\xx,x_4)=\delta(x_4)\,\delta^{(3)}(\xx)\,,
+\left(m^2-\frac{\partial^2}{\partial x_4^2}-\nabla^2\right)\,D_E(\xx,x_4)=\delta(x_4)\,\delta^{(3)}(\xx)\,,
 \]
 or in symmetric form
 \[

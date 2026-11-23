@@ -36,20 +36,20 @@ B^\alpha(\{0\})=0\,.
 Let us assume that these functions can be expanded into Taylor series around the
 fixed point,
 \[
-B^\alpha(\{y\})=K^\alpha_\beta\,y^\beta+C^\alpha_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
+B^\alpha(\{y\})=K^\alpha{}_\beta\,y^\beta+C^\alpha{}_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
 \]
 where $K$, $C$, etc, are some constants, and summation over repeated indices is
-assumed. The coefficients $K^\alpha_\beta$ are the matrix elements of the operator
+assumed. The coefficients $K^\alpha{}_\beta$ are the matrix elements of the operator
 $K$, the linearization of the RG generator $B$ near the fixed point,
 \[
 B\{\mathcal A_*+\delta\mathcal A\}=K\,\delta\mathcal A+O(\delta\mathcal A^2)\,.
 \]
 By appropriate linear transformation of the coordinates $y$:
-$y^\alpha\to M^\alpha_\beta y^\beta$ the matrix $K^\alpha_\beta$ can be brought to
+$y^\alpha\to M^\alpha{}_\beta y^\beta$ the matrix $K^\alpha{}_\beta$ can be brought to
 diagonal form.\footnote{Non-diagonalizable forms contradict unitarity (positivity
 of norms).} In these coordinates the flow equation \eqref{eq:flowy} takes the form
 \begin{equation}\label{eq:flowdiag}
-\frac d{dl}\,y^\alpha=\kappa_\alpha\,y^\alpha+c^\alpha_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
+\frac d{dl}\,y^\alpha=\kappa_\alpha\,y^\alpha+c^\alpha{}_{\beta\gamma}\,y^\beta y^\gamma+\cdots\,,
 \end{equation}
 where $\kappa_\alpha$ are the eigenvalues of $K$, and no summation over $\alpha$ is
 assumed in the first term in the r.h.s.; the coefficients $c$ are related to $C$
@@ -59,19 +59,19 @@ No further simplification of the linear term in the r.h.s.\ of \eqref{eq:flowdia
 is possible. However one may ask if the quadratic and higher order terms in the
 r.h.s.\ can be simplified by nonlinear coordinate transformation
 \[
-y^\alpha=y^\alpha(\{\tilde y\})=\tilde y^\alpha+a^\alpha_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,.
+y^\alpha=y^\alpha(\{\tilde y\})=\tilde y^\alpha+a^\alpha{}_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,.
 \]
 Under coordinate transformations the functions $B^\alpha$ transform as components
 of a vector field on $\Sigma$. Simple calculation shows that in terms of $\tilde y$
 the RG flow equations take the form
 \[
-\frac d{dl}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+\tilde c^\alpha_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,,
+\frac d{dl}\,\tilde y^\alpha=\kappa_\alpha\,\tilde y^\alpha+\tilde c^\alpha{}_{\beta\gamma}\,\tilde y^\beta\tilde y^\gamma+\cdots\,,
 \qquad\text{where}\qquad
-\tilde c^\alpha_{\beta\gamma}=c^\alpha_{\beta\gamma}+(\kappa_\alpha-\kappa_\beta-\kappa_\gamma)\,a^\alpha_{\beta\gamma}\,.
+\tilde c^\alpha{}_{\beta\gamma}=c^\alpha{}_{\beta\gamma}+(\kappa_\alpha-\kappa_\beta-\kappa_\gamma)\,a^\alpha{}_{\beta\gamma}\,.
 \]
 One can completely eliminate the quadratic term by taking
 \[
-a^\alpha_{\beta\gamma}=-\frac{c^\alpha_{\beta\gamma}}{\kappa_\alpha-\kappa_\beta-\kappa_\gamma}\,;
+a^\alpha{}_{\beta\gamma}=-\frac{c^\alpha{}_{\beta\gamma}}{\kappa_\alpha-\kappa_\beta-\kappa_\gamma}\,;
 \]
 with this choice
 \[
@@ -85,24 +85,24 @@ the \emph{resonance condition}
 \]
 the ``resonance'' term
 \[
-c^\alpha_{\beta\gamma}\,y^\beta y^\gamma
+c^\alpha{}_{\beta\gamma}\,y^\beta y^\gamma
 \]
 (no summation) cannot be eliminated.
 
 Similar situation takes place in the higher orders. If components $B^\alpha$ of a
 vector field $B$ can be written as power series
 \begin{equation}\label{eq:Bseries}
-B^\alpha(\{y\})=\kappa_\alpha\,y^\alpha+c^\alpha_{\beta_1\beta_2}\,y^{\beta_1}y^{\beta_2}+c^\alpha_{\beta_1\beta_2\beta_3}\,y^{\beta_1}y^{\beta_2}y^{\beta_3}+\cdots\,.
+B^\alpha(\{y\})=\kappa_\alpha\,y^\alpha+c^\alpha{}_{\beta_1\beta_2}\,y^{\beta_1}y^{\beta_2}+c^\alpha{}_{\beta_1\beta_2\beta_3}\,y^{\beta_1}y^{\beta_2}y^{\beta_3}+\cdots\,.
 \end{equation}
 in some local coordinates $y^\alpha$, then by means of appropriate analytic
 coordinate transformation
 \begin{equation}\label{eq:normaltr}
-y^\alpha\to y^\alpha+a^\alpha_{\beta_1\beta_2}\,y^{\beta_1}y^{\beta_2}+a^\alpha_{\beta_1\beta_2\beta_3}\,y^{\beta_1}y^{\beta_2}y^{\beta_3}+\cdots
+y^\alpha\to y^\alpha+a^\alpha{}_{\beta_1\beta_2}\,y^{\beta_1}y^{\beta_2}+a^\alpha{}_{\beta_1\beta_2\beta_3}\,y^{\beta_1}y^{\beta_2}y^{\beta_3}+\cdots
 \end{equation}
 one can eliminate all nonlinear terms in \eqref{eq:Bseries}, except for the
 so-called resonance terms. A term
 \begin{equation}\label{eq:resterm}
-c^\alpha_{\beta_1\beta_2\cdots\beta_n}\,y^{\beta_1}y^{\beta_2}\cdots y^{\beta_n}
+c^\alpha{}_{\beta_1\beta_2\cdots\beta_n}\,y^{\beta_1}y^{\beta_2}\cdots y^{\beta_n}
 \end{equation}
 in the function $B^\alpha$ is called the \emph{resonance term} if the following
 \emph{resonance condition}
@@ -265,7 +265,7 @@ functions
 where $L=e^l$. Taking infinitesimal transformation $l=\delta l$, $L=1+\delta l$,
 $\lambda(l)=\lambda-\beta(\lambda)\,\delta l$, we have
 \begin{equation}\label{eq:CSgeneral}
-\Bigl[x\frac\partial{\partial x}+N\,D(\lambda)+\sum_{i=1}^n\beta^i(\lambda)\,\frac\partial{\partial\lambda^i}\Bigr]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_\lambda=0\,,
+\left[x\frac\partial{\partial x}+N\,D(\lambda)+\sum_{i=1}^n\beta^i(\lambda)\,\frac\partial{\partial\lambda^i}\right]\bigl\langle\varphi(x_1)\cdots\varphi(x_N)\bigr\rangle_\lambda=0\,,
 \end{equation}
 where $x\frac\partial{\partial x}$ is the shorthand notation for
 \[
@@ -291,14 +291,14 @@ analysis we obtain
 \end{multline}
 where
 \[
-(\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha^\beta(\lambda)\,\mathcal O_\beta(x)\,,
+(\mathcal D\mathcal O)_\alpha(x)=x^\mu\frac\partial{\partial x^\mu}\,\mathcal O_\alpha(x)+D_\alpha{}^\beta(\lambda)\,\mathcal O_\beta(x)\,,
 \qquad\text{and}\qquad
-D_\alpha^\beta(\lambda)=-L\frac d{dL}\,z_\alpha^\beta(L)\Big|_{L=1}\,;
+D_\alpha{}^\beta(\lambda)=-L\frac d{dL}\,z_\alpha{}^\beta(L)\Big|_{L=1}\,;
 \]
-$z_\alpha^\beta(L)$ describes the RG transformation of the composite fields
+$z_\alpha{}^\beta(L)$ describes the RG transformation of the composite fields
 $\mathcal O_\alpha$ (see Sect.~18). Again,
 \[
-D_\alpha^\beta=D_\alpha^\beta(\lambda)\big|_{\lambda=0}
+D_\alpha{}^\beta=D_\alpha{}^\beta(\lambda)\big|_{\lambda=0}
 \]
 coincides with the matrix of dimensions at $\mathcal A_*$, whose eigenvalues are
 the dimensions of the fields $\Phi_\alpha$.

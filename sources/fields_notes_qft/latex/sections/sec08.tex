@@ -10,7 +10,7 @@ consider next.
 
 The $\varphi^4$ theory is described by the Euclidean action
 \[
-\mathcal A[\varphi]=\int d^4x\,\Bigl[\frac12\,(\partial_\mu\varphi)^2+\frac{m^2}{2}\,\varphi^2+\frac{\lambda}{4!}\,\varphi^4\Bigr]\,.
+\mathcal A[\varphi]=\int d^4x\,\left[\frac12\,(\partial_\mu\varphi)^2+\frac{m^2}{2}\,\varphi^2+\frac{\lambda}{4!}\,\varphi^4\right]\,.
 \]
 Here $\lambda$ is a new parameter, the ``coupling constant''.
 
@@ -56,7 +56,7 @@ interaction part, which includes the terms of higher order:
 \]
 The exponential $\exp(-\mathcal A)$ is then expanded as
 \[
-e^{-\mathcal A}=e^{-\mathcal A_0}\Bigl(1-\mathcal A_I+\frac12\,\mathcal A_I^2+\dots\Bigr)\,.
+e^{-\mathcal A}=e^{-\mathcal A_0}\left(1-\mathcal A_I+\frac12\,\mathcal A_I^2+\dots\right)\,.
 \]
 Since $\mathcal A_0$ is quadratic, each term can be evaluated using the Wick's
 theorem.
@@ -79,13 +79,13 @@ function $\langle\varphi(x_1)\varphi(x_2)\rangle$. By its definition
 \]
 Expanding the last exponential as prescribed, we have
 \[
-Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\Bigl(1-\frac{\lambda}{4!}\int\varphi^4(x)\,d^4x+O(\lambda^2)\Bigr)\,e^{-\mathcal A_0}\,.
+Z^{-1}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\left(1-\frac{\lambda}{4!}\int\varphi^4(x)\,d^4x+O(\lambda^2)\right)\,e^{-\mathcal A_0}\,.
 \]
 The zero-order term is just the functional integral for the two-point function
 of the KG theory. We can rewrite the previous expression as
 \begin{equation}\label{eq:pt2}
-\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle=\frac{Z_0}{Z}\Bigl[\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle_0
--\frac{\lambda}{4!}\int\bigl\langle\varphi(x_1)\varphi(x_2)\varphi^4(x)\bigr\rangle_0\,d^4x+\dots\Bigr]\,,
+\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle=\frac{Z_0}{Z}\left[\bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle_0
+-\frac{\lambda}{4!}\int\bigl\langle\varphi(x_1)\varphi(x_2)\varphi^4(x)\bigr\rangle_0\,d^4x+\dots\right]\,,
 \end{equation}
 where $Z_0=\int D[\varphi]\,e^{-\mathcal A_0}$ and $\langle\cdots\rangle_0$
 stand for the partition function and correlation functions in the free theory.
@@ -176,7 +176,7 @@ called ``symmetry factors'' here are
 Similar structure is found in the higher orders of the $\lambda$-expansion. The
 $n$-th order term has the form
 \begin{equation}\label{eq:ptn}
-\frac1{n!}\Bigl(-\frac{\lambda}{4!}\Bigr)^n\Bigl\langle\varphi(x_1)\varphi(x_2)\Bigl[\int\varphi^4(y)\,d^4y\Bigr]^n\Bigr\rangle_0
+\frac1{n!}\left(-\frac{\lambda}{4!}\right)^n\Bigl\langle\varphi(x_1)\varphi(x_2)\Bigl[\int\varphi^4(y)\,d^4y\Bigr]^n\Bigr\rangle_0
 \end{equation}
 which involves the $n$-fold 4-space integration
 \[
@@ -242,7 +242,7 @@ multiplicity factor
 This factor almost entirely cancels the denominators in the overall factors
 $(1/n!)(-\lambda/4!)^n$ in \eqref{eq:ptn}, which for $n=2$ is
 \[
-\frac1{2!}\Bigl(-\frac{\lambda}{4!}\Bigr)^2\,,
+\frac1{2!}\left(-\frac{\lambda}{4!}\right)^2\,,
 \]
 leaving behind the factor $(-\lambda)^2/3!$. Finally, total contribution of
 the contractions corresponding to the diagram in this example is
@@ -278,7 +278,7 @@ These rules are generalized in a straightforward way to interactions involving
 any powers of the field $\varphi$ (possibly including terms linear and
 quadratic in $\varphi$)
 \begin{equation}\label{eq:genint}
-\mathcal A_I=\int d^4y\,\Bigl[\lambda_1(y)\,\varphi(y)+\frac{\lambda_2(y)}{2!}\,\varphi^2(y)+\frac{\lambda_3(y)}{3!}\,\varphi^3(y)+\frac{\lambda_4(y)}{4!}\,\varphi^4(y)+\cdots\Bigr]\,.
+\mathcal A_I=\int d^4y\,\left[\lambda_1(y)\,\varphi(y)+\frac{\lambda_2(y)}{2!}\,\varphi^2(y)+\frac{\lambda_3(y)}{3!}\,\varphi^3(y)+\frac{\lambda_4(y)}{4!}\,\varphi^4(y)+\cdots\right]\,.
 \end{equation}
 Here I allowed the coupling parameters $\lambda_k=\lambda_k(y)$ to be
 arbitrary functions of $y$. (This generally breaks space-time translation and
@@ -305,7 +305,7 @@ Returning back to the homogeneous $\varphi^4$ theory, let us take another look
 at the diagrams contributing to the two-point function. We write
 \begin{equation}\label{eq:twofactors}
 \bigl\langle\varphi(x_1)\varphi(x_2)\bigr\rangle
-=\Bigl[\frac1{Z_0}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\,e^{-\mathcal A_0-\mathcal A_I}\Bigr]\times\Bigl[\frac{Z_0}{Z}\Bigr]\,,
+=\left[\frac1{Z_0}\int\bigl[D\varphi\bigr]\,\varphi(x_1)\varphi(x_2)\,e^{-\mathcal A_0-\mathcal A_I}\right]\times\left[\frac{Z_0}{Z}\right]\,,
 \end{equation}
 where $Z_0$ is the partition function of the free theory defined by
 $\mathcal A_0=\mathcal A_{\mathrm{KG}}$. The diagrams we wrote down above
@@ -325,7 +325,7 @@ which is not connected to any of the ``external'' points ($x_1,x_2$ in this
 case). Such fragments are called ``vacuum diagrams'' (or ``vacuum
 fragments''). The value
 \[
-D(x_1-x_2)\times\Bigl(-\frac{\lambda}{8}\int d^4x\,D(x-x)\,D(x-x)\Bigr)
+D(x_1-x_2)\times\left(-\frac{\lambda}{8}\int d^4x\,D(x-x)\,D(x-x)\right)
 \]
 associated with the diagram (c) above is the product of the values of its
 parts,
@@ -362,7 +362,7 @@ result we obtain for the first factor in \eqref{eq:twofactors}
 \Bigl(\underbrace{\dia{\pic{line}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}
 +\dia{\pic{tadline}; \lab[left]{-1.4,0}{x_1} \lab[right]{1.4,0}{x_2}}
 +\dia{\pic{sunline}; \lab[left]{-1.7,0}{x_1} \lab[right]{1.7,0}{x_2}}+\cdots}_{\text{sum of all connected diagrams}}\Bigr)\\
-\times\exp\Bigl(\underbrace{\dia{\pic{eight};}+\dia{\pic{melon};}+\dia{\pic{chain3};}+\cdots}_{\text{sum of all connected vacuum diagrams}}\Bigr)
+\times\exp\Bigl(\underbrace{\dia{\pic{eight};}+\dia{\pic{melon};}+\dia{\pic{chain3};}+\cdots}_{\mathclap{\text{sum of all connected vacuum diagrams}}}\Bigr)
 \end{multline*}
 Consider now the second factor in \eqref{eq:twofactors},
 \[

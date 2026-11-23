@@ -76,7 +76,7 @@ Indeed, taking the variation of
 (where it is understood that $\phi$ and $J$ are related through
 \eqref{eq:phiJ}) we have
 \[
-\int d^4x\,\Bigl[\frac{\delta\Gamma}{\delta\phi(x)}\,\delta\phi(x)+\frac{\delta W}{\delta J(x)}\,\delta J(x)-\phi(x)\,\delta J(x)-J(x)\,\delta\phi(x)\Bigr]=0
+\int d^4x\,\left[\frac{\delta\Gamma}{\delta\phi(x)}\,\delta\phi(x)+\frac{\delta W}{\delta J(x)}\,\delta J(x)-\phi(x)\,\delta J(x)-J(x)\,\delta\phi(x)\right]=0
 \]
 The second and the third terms here cancel each other in view of
 \eqref{eq:phiJ} and we obtain \eqref{eq:JGamma}.
@@ -163,7 +163,7 @@ in terms of the rescaled field $\chi=\sqrt\lambda\,\varphi$.}
 For the purpose of the present analysis I will consider a generic action of the
 form
 \begin{equation}\label{eq:genericA}
-\mathcal A=\int\Bigl[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+V(\varphi)\Bigr]\,,
+\mathcal A=\int\left[\frac12\,(\partial\varphi)^2+\frac{m^2}2\,\varphi^2+V(\varphi)\right]\,,
 \end{equation}
 with $V(\varphi)$ of general form
 \[
@@ -250,7 +250,7 @@ the same line twice). Such diagrams are called the \emph{tree diagrams}.
 The easiest way to obtain the functional $W_0[J]$ \eqref{eq:W0} is to observe
 that
 \[
-\frac{\delta W_0}{\delta J}=\Bigl[-\frac{\delta\mathcal A}{\delta\varphi_c}+J\Bigr]\frac{\delta\varphi_c}{\delta J}+\varphi_c=\varphi_c\,,
+\frac{\delta W_0}{\delta J}=\left[-\frac{\delta\mathcal A}{\delta\varphi_c}+J\right]\frac{\delta\varphi_c}{\delta J}+\varphi_c=\varphi_c\,,
 \]
 where the fact that $\varphi_c$ solves the classical equation is used.
 Integrating the above expansion of $\varphi_c(x,[J])$ term by term we find
@@ -318,7 +318,7 @@ Z[J]=e^{\frac1\hbar W_0[J]}\int\bigl[D\chi\bigr]\,e^{-\frac1\hbar\mathcal A_1[\c
 \]
 where
 \begin{equation}\label{eq:A1}
-\mathcal A_1[\chi]=\int d^4x\,\Bigl[\frac12\,(\partial\chi)^2+\frac{m^2}2\,\chi^2+\frac12\,V''(\varphi_c)\,\chi^2\Bigr]
+\mathcal A_1[\chi]=\int d^4x\,\left[\frac12\,(\partial\chi)^2+\frac{m^2}2\,\chi^2+\frac12\,V''(\varphi_c)\,\chi^2\right]
 \end{equation}
 Since the higher-order terms in $\chi$ are neglected the integral over $\chi$
 is gaussian and it can be evaluated explicitly in terms of the determinant of
@@ -331,7 +331,7 @@ K(x,x')=\frac{\delta^2\mathcal A}{\delta\varphi(x)\,\delta\varphi(x')}\Big|_{\va
 \begin{exercise}
 Evaluate $n$-dimensional gaussian integral
 \[
-\prod_{i=1}^n\Bigl[\int_{-\infty}^\infty d\xi_i\Bigr]\,\exp\Bigl\{-\frac12\sum_{i,j=1}^ns_{ij}\,\xi_i\xi_j\Bigr\}
+\prod_{i=1}^n\Bigl[\int_{-\infty}^\infty d\xi_i\Bigr]\,\exp\left\{-\frac12\sum_{i,j=1}^ns_{ij}\,\xi_i\xi_j\right\}
 \]
 where $s_{ij}$ are elements of a symmetric positive matrix, and show that it
 equals
@@ -343,8 +343,8 @@ equals
 Actually, we are interested in the ratio $Z[J]/Z[0]$, therefore we need to
 evaluate the ratio of the determinants
 \begin{multline*}
-\biggl[\frac{\det\bigl(S_0(x-x')+\delta(x-x')\,V''(x')\bigr)}{\det\bigl(S_0(x-x')\bigr)}\biggr]^{-\frac12}
-\\=\exp\Bigl[-\frac12\log\det\Bigl(\delta(x-x')+D(x-x')\,V''\bigl(\varphi_c(x')\bigr)\Bigr)\Bigr]
+\left[\frac{\det\bigl(S_0(x-x')+\delta(x-x')\,V''(x')\bigr)}{\det\bigl(S_0(x-x')\bigr)}\right]^{-\frac12}
+\\=\exp\left[-\frac12\log\det\Bigl(\delta(x-x')+D(x-x')\,V''\bigl(\varphi_c(x')\bigr)\Bigr)\right]
 \end{multline*}
 This can be transformed with the help of the identity, valid for any positive
 Hermitian operator $M$:
