@@ -17,13 +17,13 @@ Books and lecture notes typeset in LaTeX. Choose a PDF below to read or download
 | Book | PDFs | LaTeX |
 | --- | --- | --- |
 | Banks, *Modern Quantum Field Theory* | [With solutions](pdfs/banks-qft/banks-qft-exercise-edition.pdf) · [With added exercises](pdfs/banks-qft/banks-qft-implicit-exercise-edition.pdf) | [Project](sources/banks_qft/README.md) |
-| *Quantum Theory of Fields*, lecture notes with homework (Spring 2026) | [PDF](pdfs/fields-notes-qft/fields-notes-qft.pdf) | [Project](sources/fields_notes_qft/README.md) |
 | Streater and Wightman, *PCT, Spin and Statistics, and All That* | [PDF](pdfs/pct-spin-statistics-all-that/pct-spin-statistics-all-that.pdf) | [Project](sources/pct_spin_statistics_all_that/README.md) |
 | Wald, *Quantum Field Theory in Curved Spacetime and Black Hole Thermodynamics* | [PDF](pdfs/wald-qft/wald-qft-jhep.pdf) | [Project](sources/wald-qft/README.md) · [Source and scan ZIP](pdfs/wald-qft/wald-qft-latex-and-source.zip) |
 | Weinberg, *The Quantum Theory of Fields*, Volume I | [PDF](pdfs/weinberg-qft/weinberg-vol1.pdf) · [With exercises](pdfs/weinberg-qft-exercises/weinberg-vol1-exercises.pdf) | [Source](sources/weinberg_vol1/latex/) · [Exercise edition](sources/weinberg_vol1_exercises/README.md) |
 | Weinberg, Volume II | [PDF](pdfs/weinberg-qft/weinberg-vol2.pdf) · [With exercises](pdfs/weinberg-qft-exercises/weinberg-vol2-exercises.pdf) | [Source](sources/weinberg_vol2/latex/) · [Exercise edition](sources/weinberg_vol2_exercises/README.md) |
 | Weinberg, Volume III | [PDF](pdfs/weinberg-qft/weinberg-vol3.pdf) · [With exercises](pdfs/weinberg-qft-exercises/weinberg-vol3-exercises.pdf) · [Two-component spinors](pdfs/weinberg-qft-two-component/weinberg-vol3-two-component.pdf) | [Source](sources/weinberg_vol3/latex/) · [Exercises](sources/weinberg_vol3_exercises/README.md) · [Spinor edition](sources/weinberg_vol3_two_component/README.md) |
 | Witten, *Introduction to Supersymmetry* | [PDF](pdfs/witten-supersymmetry/witten-supersymmetry.pdf) | [Source](sources/wittenSUSYintro/latex/) |
+| Zamolodchikov, *Quantum Theory of Fields*, lecture notes with homework (Spring 2026) | [PDF](pdfs/fields-notes-qft/fields-notes-qft.pdf) | [Project](sources/fields_notes_qft/README.md) |
 
 ## Gravity
 

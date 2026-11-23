@@ -2,9 +2,9 @@ name                                 type              encoding         emb sub 
 ------------------------------------ ----------------- ---------------- --- --- --- ---------
 YAKPLK+SFSX1728                      Type 1            Custom           yes yes yes    155  0
 USCVER+SFSX1200                      Type 1            Custom           yes yes yes    156  0
-ANZOBM+SFSX1095                      Type 1            Custom           yes yes yes    157  0
+NLZJIF+SFSX1095                      Type 1            Custom           yes yes yes    157  0
 GPZXTQ+SFCC1095                      Type 1            Custom           yes yes yes    158  0
-LEPJZO+SFRM1095                      Type 1            Custom           yes yes yes    159  0
+IJUPZL+SFRM1095                      Type 1            Custom           yes yes yes    159  0
 CYSTWG+SFBX1200                      Type 1            Custom           yes yes yes    190  0
 DJYOEK+SFBX1095                      Type 1            Custom           yes yes yes    191  0
 JXTXOD+CMMI10                        Type 1            Builtin          yes yes yes    192  0
@@ -39,7 +39,7 @@ TLUDHU+CMBX7                         Type 1            Builtin          yes yes 
 LMOPGE+SFTT1095                      Type 1            Custom           yes yes yes    432  0
 AKWYLM+MSBM7                         Type 1            Builtin          yes yes yes    435  0
 UEXVRD+CMEX8                         Type 1            Builtin          yes yes yes    507  0
-LEPJZO+SFRM1095                      Type 1            Custom           yes yes yes    525  0
+IJUPZL+SFRM1095                      Type 1            Custom           yes yes yes    525  0
 WMPQPE+CMMI12                        Type 1            Builtin          yes yes yes    539  0
 USIPWL+CMEX9                         Type 1            Builtin          yes yes yes    674  0
 RQNSQF+SFTI0900                      Type 1            Custom           yes yes yes   1005  0

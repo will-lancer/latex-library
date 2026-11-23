@@ -1,6 +1,6 @@
 # Quantum Theory of Fields: lecture notes with homework
 
-Course notes from Spring 2026, retyped in JHEP format from the four printed
+Alexander Zamolodchikov's course notes from Spring 2026, retyped in JHEP format from the four printed
 PDFs in [`originals/fields-notes-qft/lectures/`](../../originals/fields-notes-qft/lectures/),
 with the nine problem sets from
 [`originals/fields-notes-qft/homework/`](../../originals/fields-notes-qft/homework/)

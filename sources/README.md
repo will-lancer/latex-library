@@ -9,7 +9,6 @@ stay consistent across scripts that compare editions.
 | --- | --- |
 | Atiyah and Macdonald | [Original text](unedited/atiyah-macdonald-commutative-algebra/latex/) · [Edited](atiyah-macdonald-commutative-algebra/latex/) |
 | Banks QFT | [Project](banks_qft/README.md) |
-| *Quantum Theory of Fields*, lecture notes with homework | [Project](fields_notes_qft/README.md) |
 | Grojnowski, *Introduction to Lie Algebras and their Representations* | [Project](grojnowski_lie_algebras/README.md) |
 | Milnor, *Topology from the Differentiable Viewpoint* | [LaTeX](milnorTopFromDiffView/latex/) |
 | Shrock, *Advanced Statistical Mechanics* (PHY 541 notes) | [Project](shrock_phy541/README.md) |
@@ -23,6 +22,7 @@ stay consistent across scripts that compare editions.
 | Witten, *Introduction to Supersymmetry* | [LaTeX](wittenSUSYintro/latex/) |
 | Xi Yin, Physics 253abc | [Project](yin_qft_253abc/README.md) |
 | Xinfeng Zhou, *A Practical Guide to Quantitative Finance Interviews* | [Project](zhou_quantitative_finance_interviews/README.md) |
+| Zamolodchikov, *Quantum Theory of Fields* (lecture notes with homework) | [Project](fields_notes_qft/README.md) |
 
 The Wald GR exercise project and Xi Yin's lectures have build workspaces here.
 Their project notes describe their outputs. Kaplan's edition is available as a
