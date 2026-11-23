@@ -32,6 +32,12 @@ Books and lecture notes typeset in LaTeX. Choose a PDF below to read or download
 | Wald, *General Relativity* | [PDF](pdfs/wald-gr/wald-gr-modernized.pdf) | [Project](sources/wald_gr/README.md) |
 | Weinberg, *Gravitation and Cosmology* | [PDF](pdfs/weinberg-gr/weinberg-gr-modernized.pdf) · [With exercises](pdfs/weinberg-gr-exercises/weinberg-gr-exercises.pdf) | [Project](sources/weinberg_gr/README.md) · [Exercise edition](sources/weinberg_gr_exercises/README.md) |
 
+## Statistical mechanics
+
+| Notes | PDF | LaTeX |
+| --- | --- | --- |
+| Robert Shrock, *Advanced Statistical Mechanics*, Physics 541 lecture notes (Spring 2026) | [PDF](pdfs/shrock-phy541/shrock-phy541.pdf) | [Project](sources/shrock_phy541/README.md) |
+
 ## Machine learning
 
 | Notes | PDF | Edition |

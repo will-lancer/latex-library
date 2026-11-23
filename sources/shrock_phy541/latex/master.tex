@@ -1,0 +1,79 @@
+\pdfoutput=1
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{jheppub}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing,decorations.pathreplacing,patterns,positioning}
+\hypersetup{hypertexnames=false,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,
+ pdftitle={Advanced Statistical Mechanics},pdfauthor={Robert Shrock},
+ pdfsubject={Physics 541 lecture notes}}
+
+% ------------------------------------------------------------------ macros
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\kB}{k_{B}}
+\newcommand{\NAv}{N_{\mathrm{Av}}}
+\newcommand{\Tc}{T_{c}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\Order}{\mathcal{O}}
+\newcommand{\ev}[1]{\langle #1\rangle}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+
+% A lecture marker at the point in the text where a lecture begins.
+\newcommand{\lecture}[1]{\par\Needspace{4\baselineskip}\medskip
+  \noindent\hfill{\small\scshape Lecture #1}\par\nobreak\smallskip}
+% Handwritten marginal remarks and arrow labels.
+\newcommand{\annotation}[1]{\par\nobreak{\small #1\par}}
+% Diagrams with numbered captions.
+\newcommand{\diagramcaption}[1]{\par\nobreak\smallskip{\small\textbf{Figure \thefigure.}\ #1\par}}
+\newenvironment{diagram}{\par\medskip\noindent\begin{minipage}{\linewidth}\refstepcounter{figure}\centering}{\end{minipage}\par\medskip}
+
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\parindent}{0pt}
+\setlist{itemsep=2pt,parsep=0pt,topsep=4pt,partopsep=0pt}
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{3pt plus 2pt}
+\setlength{\belowdisplayshortskip}{6pt plus 2pt minus 2pt}
+\setlength{\jot}{5pt}
+\setlength{\emergencystretch}{2.5em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=5000
+\renewcommand\afterProceedingsSpace{\vspace{20pt}}
+\renewcommand\afterTitleSpace{\vspace{14pt}}
+\renewcommand\afterRuleSpace{\vspace{16pt}}
+\renewcommand\afterEmailSpace{\vspace{24pt}}
+\numberwithin{equation}{section}
+
+\title{Advanced Statistical Mechanics}
+\subheader{Physics 541 lecture notes, Stony Brook University}
+\author{Robert Shrock}
+\affiliation{C.N.\ Yang Institute for Theoretical Physics, Stony Brook University}
+\abstract{Handwritten lecture notes for Physics 541, typed. The notes cover
+thermodynamics and phase transitions, the Ising, Potts and $O(N)$ spin models,
+transfer matrices, mean-field and Landau--Ginzburg theory, graph-theoretic
+methods for the Potts model, the exact solution of the two-dimensional Ising
+model, critical exponents and scaling, the renormalization group, high- and
+low-temperature series expansions, complex-temperature singularities, the
+liquid--gas transition, liquid crystals, and quantum distribution functions
+with Bose--Einstein condensation.}
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\maketitle
+\raggedbottom
+
+\input{lectures/master-inputs}
+
+\end{document}

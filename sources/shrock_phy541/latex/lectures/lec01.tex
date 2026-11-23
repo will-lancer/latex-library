@@ -1,0 +1,400 @@
+% Source: Lecture1.pdf, pages 1-6.
+\subsection{General information}
+
+See (1) the syllabus and (2) some useful books. Formerly, this course used the
+Blackboard website, but as of the 2022--2023 academic year, this was replaced
+by the BrightSpace website. Course documents will be uploaded to this website.
+
+\lecture{1}
+\subsection{Large numbers of particles}
+
+Statistical mechanics usually deals with systems containing large numbers of
+particles, e.g.\ molecules or atoms in a gas (e.g.\ N$_2$, O$_2$, CO$_2$, Ar in
+air) or spins in a magnetic substance.
+
+A quantitative measure of such a large number is given by Avogadro's number,
+$\NAv$. Let us see how this arises:
+\begin{equation}
+  \NAv = 0.602\times 10^{24}\ \text{particles/mole}.
+\end{equation}
+It is easy to understand why this is large. The length scale characterizing
+atomic and molecular phenomena, and hence chemistry and biochemistry and
+condensed matter physics, is the Bohr orbit
+\begin{equation}
+  a_B = \frac{\hbar}{\alpha m_e c} = 0.53\ \text{\AA} = 0.53\times 10^{-8}\ \text{cm},
+\end{equation}
+where
+\begin{equation}
+  \alpha = \frac{e^2}{4\pi\hbar c} = \text{``fine-structure'' const.}\simeq\frac{1}{137}.
+\end{equation}
+A macroscopic length is $\ell\sim 1$~cm, so the corresponding number of particles
+in a $1\ \text{cm}^3$ volume is
+\begin{equation}
+  N = \left(\frac{1\ \text{cm}}{a_B}\right)^3 \simeq 10^{24},
+\end{equation}
+and this is $\sim\NAv$.
+
+\subsection{State variables and the equation of state}
+
+State variables describe a physical system in thermodynamic equilibrium:
+e.g.\ temperature $T$ and pressure $p$; others such as the volume $V$, the number
+$N$ of particles, and the number density
+\begin{equation}
+  \rho_n = \frac{N}{V}.
+\end{equation}
+Boltzmann's constant is $\kB = 1.38\times 10^{-23}\ \text{J/K}$ (K = Kelvin).
+
+Equation of state = EOS. The ideal gas law is
+\begin{equation}
+  pV = N\kB T = \left(\frac{N}{\NAv}\right)(\NAv\kB)\,T = \nu R T,
+\end{equation}
+where $\nu = \#\ \text{moles} = N/\NAv$ and
+\begin{equation}
+  R = \NAv\kB = \text{gas const.} = 8.314\ \frac{\text{J}}{\text{mol}\cdot\text{K}}
+  = 1.99\ \frac{\text{cal}}{\text{mol}\cdot\text{K}}.
+\end{equation}
+Here calorie = cal = energy required to raise the temperature of 1~gm of water by
+$\Delta T = 1$~Kelvin $=1^\circ$C.
+
+\subsubsection*{Properties of state variables}
+
+\begin{itemize}
+  \item extensive, e.g.\ energy $E$;
+  \item intensive, e.g.\ $E/N$, $T$, $p$;
+  \item thermodynamic equilibrium: if we bring two systems into contact, they
+    will come into thermodynamic equilibrium (e.g.\ mix hot and cold liquids),
+    so one can describe the system as having a given temperature $T$.
+\end{itemize}
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.8]
+  \draw[thick] (0,0) rectangle (4,1.6);
+  \fill[pattern=north east lines] (0,1.6) rectangle (4,1.85);
+  \fill[pattern=north east lines] (0,-0.25) rectangle (4,0);
+  \fill[pattern=north east lines] (-0.25,-0.25) rectangle (0,1.85);
+  \draw[thick] (2.9,0) -- (2.9,1.6);
+  \draw[thick] (2.9,0.8) -- (5.2,0.8);
+  \foreach \p in {(0.5,0.4),(0.9,1.1),(1.3,0.6),(1.7,1.2),(2.1,0.3),(2.4,0.9),(0.7,0.8),(1.9,0.7)}
+    \fill \p circle (0.035);
+  \node[anchor=west] at (5.3,0.8) {movable piston};
+  \node[anchor=south] at (2,1.9) {container of gas};
+\end{tikzpicture}
+\diagramcaption{A gas in a container closed by a movable piston.}
+\end{diagram}
+
+Some reference temperatures:
+\begin{equation}
+  T_m^{\mathrm{H_2O}} = 0^\circ\text{C} = 273.15\ \text{K},\qquad
+  T_b^{\mathrm{H_2O}} = 100^\circ\text{C} = 373.15\ \text{K}.
+\end{equation}
+Pressure: $p = 101$~kPa $= 1.01\times 10^5$~Pa $\simeq 1$~bar, where
+Pa = Pascal = Newton/(meter)$^2$ = MKS unit of pressure.
+
+For a magnetic system the variables are $T$ and $\mathbf{H}$, the external magnetic
+field ($\mathbf{B}$). The effect of an applied external $\mathbf{H}$ field is
+\begin{equation}
+  M = \chi H \qquad\text{(paramagnet)}.
+\end{equation}
+A solenoid is used to control $\mathbf{H}\equiv\mathbf{B}$: vary the electrical
+current $I$ through it to control $\mathbf{B}$.
+
+Externally controlled quantities:
+\begin{itemize}
+  \item $T$, $p$ in a liquid--gas system;
+  \item $T$, $\mathbf{H}$ in a magnetic system.
+\end{itemize}
+(Don't confuse $H$ = external magnetic field with the symbol $H\leftrightarrow\Ham$
+for the Hamiltonian.)
+
+\subsection{Phase transitions and order parameters}
+
+A phase transition is an abrupt change in the properties of a system,
+characterized by an order parameter.
+
+For a solid--liquid--gas system the order parameter is $\Delta\rho$ = difference in
+density, e.g.\ for liquid--gas, $\Delta\rho = \rho_{\mathrm{liq}}-\rho_{\mathrm{gas}}$,
+etc. (For a solid--solid phase transition a related order parameter is the type of
+crystal structure.)
+
+For a magnetic system the generic order parameter is the spontaneous magnetization
+\begin{equation}
+  \mathbf{M}_{sp} = \lim_{\mathbf{H}\to 0}\mathbf{M}(\mathbf{H})
+\end{equation}
+(ferromagnetic if $\uparrow\uparrow\uparrow\uparrow$ order; antiferromagnetic if
+$\uparrow\downarrow\uparrow\downarrow$ order, where $\mathbf{M}_{\text{staggered}}$ is
+the order parameter).
+
+\subsection{Phase diagrams}
+
+Example: a gas--liquid--solid system.
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw[->] (0,0) -- (6.2,0) node[below] {$T$};
+  \draw[->] (0,0) -- (0,4.2) node[left] {$p$};
+  \coordinate (tp) at (2.4,1.6);
+  \coordinate (cp) at (4.6,2.9);
+  \draw[thick] (0.5,0.15) .. controls (1.4,0.7) and (2,1.2) .. (tp);
+  \draw[thick] (tp) .. controls (3.3,2.1) and (4,2.5) .. (cp);
+  \draw[thick] (tp) .. controls (2.6,2.6) and (2.7,3.3) .. (2.85,4);
+  \fill (tp) circle (0.06);
+  \fill (cp) circle (0.06);
+  \draw[dashed] (0,2.9) -- (cp);
+  \node at (1.3,2.4) {solid};
+  \node at (3.3,3.25) {liquid};
+  \node at (4.6,1.0) {gas};
+  \node[anchor=south west,font=\small] at (4.65,2.95) {critical pt.};
+  \node[anchor=north west,font=\small] at (2.45,1.5) {triple pt.};
+  \node[anchor=west,font=\small,align=left] at (5.3,1.9) {liquid--gas\\ coexistence curve};
+  \draw[->,gray] (5.3,1.95) -- (3.9,2.5);
+  \node[anchor=west,font=\small] at (3.1,4) {liquid--solid coexistence curve};
+  \node[anchor=north west,font=\small,align=left] at (0.9,-0.15) {solid--gas coexistence curve};
+  \draw[->,gray] (1.2,-0.3) -- (1.1,0.45);
+\end{tikzpicture}
+\diagramcaption{Phase diagram of a solid--liquid--gas system. The critical point is
+technically a ``bicritical point'', since one specifies two external variables,
+temperature $T$ and pressure $p$, to reach this point.}\label{fig:pT}
+\end{diagram}
+
+The order parameter is $\Delta\rho_{\ell g}\equiv\rho_\ell-\rho_g$ for the
+liquid--gas transition, and analogues for s--$\ell$, s--g.
+
+Example: argon, $^{36}_{18}$Ar. As a noble gas, this has a rather simple phase
+diagram. For Ar,
+\begin{equation*}
+\begin{aligned}
+  T_m &= 83.81\ \text{K}, & T_b - T_m &= 3.49\ \text{K},\\
+  T_b \equiv T_\ell &= 87.3\ \text{K}, & T_{cr} &= 150.39\ \text{K},\\
+  T_{tr} &= 83.806\ \text{K}, & p_{cr} &= 4.86\ \text{MPa},\\
+  p_{tr} &\simeq 69\ \text{kPa}, & 1\ \text{atm} &= 0.1\ \text{MPa}.
+\end{aligned}
+\end{equation*}
+Comparison of $T_m$, $T_b$ with $^{20}_{10}$Ne (neon):
+\begin{equation*}
+  T_m = 24.56\ \text{K},\qquad T_b = 27.10\ \text{K},\qquad T_b - T_m = 2.54\ \text{K}.
+\end{equation*}
+For both Ar, Ne, etc., $T_b-T_m$ is only a few K, $\ll 100$~K for water.
+
+\subsubsection*{Carbon dioxide}
+
+Another example of a phase diagram for a s--$\ell$--gas system is carbon dioxide,
+CO$_2$.
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw[->] (0,0) -- (5.6,0) node[below] {$T$};
+  \draw[->] (0,0) -- (0,4.2) node[left] {$p$};
+  \coordinate (tp) at (2.4,1.5);
+  \coordinate (cp) at (4.4,3.2);
+  \draw[thick] (0.6,0.25) .. controls (1.4,0.6) and (2,1.1) .. (tp);
+  \draw[thick] (tp) .. controls (3.2,2.1) and (3.9,2.6) .. (cp);
+  \draw[thick] (tp) .. controls (2.7,2.5) and (2.9,3.3) .. (3.05,4);
+  \fill (tp) circle (0.06); \fill (cp) circle (0.06);
+  \draw[dashed] (0,3.2) -- (cp) -- (4.4,0);
+  \draw[dashed] (0,1.5) -- (tp) -- (2.4,0);
+  \draw[dashed] (0,0.9) -- (2.1,0.9);
+  \node[left,font=\small] at (0,1.5) {$p_{tr}=5.1$ atm};
+  \node[left,font=\small] at (0,0.9) {1 atm};
+  \node[below,font=\small] at (2.4,0) {217 K};
+  \node[below,font=\small] at (4.4,0) {304 K};
+  \node at (1.3,2.3) {s};
+  \node at (3.4,1.0) {g};
+  \node[anchor=west,font=\small] at (4.5,3.3) {$p_c = 7.38$ MPa $\simeq 73$ atm};
+  \node[anchor=west,font=\small] at (4.5,2.85) {$T_c = 304$ K $\simeq 31^\circ$C};
+\end{tikzpicture}
+\diagramcaption{Phase diagram of CO$_2$ (``dry ice'' for the solid). Since
+$p_{tr}>1$~atm, the solid sublimates at atmospheric pressure.}
+\end{diagram}
+
+Interesting feature: CO$_2$ goes directly from solid $\to$ gas at $p = 1$~atm,
+i.e.\ $p_{\text{triple}} > 1$~atm (sublimation). A nice demo: put dry ice in water
+and see bubbles.
+
+\subsubsection*{Water}
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw[->] (0,0) -- (6,0) node[below] {$T$};
+  \draw[->] (0,0) -- (0,4.4) node[left] {$p$};
+  \coordinate (tp) at (2.2,1.2);
+  \coordinate (cp) at (5,3.9);
+  \draw[thick] (0.5,0.15) .. controls (1.2,0.5) and (1.8,0.9) .. (tp);
+  \draw[thick] (tp) .. controls (3.2,2.0) and (4.2,3.0) .. (cp);
+  \draw[thick] (tp) -- (2.05,4.2);
+  \fill (tp) circle (0.06); \fill (cp) circle (0.06);
+  \draw[dashed] (0,1.2) -- (tp) -- (2.2,0);
+  \draw[dashed] (0,2.0) -- (3.05,2.0);
+  \draw[dashed] (2.14,2.0) -- (2.14,0);
+  \draw[dashed] (3.05,2.0) -- (3.05,0);
+  \node[left,font=\small] at (0,2.0) {1 atm};
+  \node[left,font=\small] at (0,1.2) {$p_{tr} = 6\times 10^{-3}$ atm};
+  \node[below left,font=\small] at (2.2,0) {$T_{tr}$};
+  \node[below right,font=\small] at (2.95,0) {373.15 K};
+  \node at (1.2,2.8) {ice};
+  \node[align=center,font=\small] at (2.75,3.2) {liquid\\ water};
+  \node at (4.3,1.6) {gas};
+  \node[anchor=west,font=\small] at (5.1,4.05) {$p_{cr} = 218$ atm};
+  \node[anchor=west,font=\small] at (5.1,3.6) {$T_{cr} = 647.3$ K};
+\end{tikzpicture}
+\diagramcaption{Phase diagram of H$_2$O, with $T_m = 273.15\ \text{K} = 0^\circ$C,
+$T_{tr} = 273.16$~K and $T_b = 373.15\ \text{K} = 100^\circ$C.}
+\end{diagram}
+
+For water, $T_b - T_m = 100$~K: a very large temperature interval over which water is
+liquid. This is attributed to the large permanent electric dipole moment of water.
+Water ice has many crystallographic structures; see the quantitative plots on
+Blackboard.
+
+\subsubsection*{Magnetic system}
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw (0,0) rectangle (6,3);
+  \draw (0,1.5) -- (6,1.5);
+  \draw (3,0) -- (3,3);
+  \node[below] at (3,0) {$0$};
+  \node[below] at (6,0) {$\infty$};
+  \node[below=10pt] at (3,0) {$H$};
+  \node[left] at (-0.1,1.5) {$\dfrac{M(H)}{M_{\max}}$};
+  \draw[thick,blue] (0,0.1) .. controls (2.7,0.2) and (2.9,0.5) .. (3,1.5) .. controls (3.1,2.5) and (3.3,2.8) .. (6,2.9);
+  \draw[thick,green!60!black] (0,0.12) .. controls (2.4,0.25) and (2.85,0.6) .. (3,1.5) .. controls (3.15,2.4) and (3.6,2.75) .. (6,2.88);
+  \draw[thick] (0,0.15) .. controls (2,0.35) and (2.7,0.8) .. (3,1.5) .. controls (3.3,2.2) and (4,2.65) .. (6,2.85);
+  \draw[thick,red] (0,0.2) .. controls (1.5,0.5) and (2.4,1.0) .. (3,1.5) .. controls (3.6,2.0) and (4.5,2.5) .. (6,2.8);
+  \node[blue,font=\small] at (2.7,3.3) {$T_1$};
+  \node[green!60!black,font=\small] at (3.6,3.3) {$T_c$};
+  \node[font=\small] at (4.3,2.0) {$T_3$};
+  \node[red,font=\small] at (5.2,2.35) {$T_4$};
+  \node[anchor=west,font=\small] at (6.3,2.6) {$T_1<T_c<T_3<T_4$};
+\end{tikzpicture}
+\diagramcaption{Magnetization of a ferromagnet as a function of applied field $H$
+for temperatures below, at and above $T_c$.}
+\end{diagram}
+
+The order parameter is the spontaneous magnetization
+\begin{equation}
+  M_{sp} = |\mathbf{M}_{sp}| = \lim_{|\mathbf{H}|\to 0}\mathbf{M}(\mathbf{H}).
+\end{equation}
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw (0,0) -- (5,0); \draw (0,0) -- (0,3);
+  \node[below] at (0,0) {$0$};
+  \node[below] at (5,0) {$\infty$};
+  \node[below] at (3,0) {$T_c$};
+  \node[left] at (0,2) {$M_{sp}$};
+  \draw[thick] (0,2.6) -- (1,2.6) .. controls (2.2,2.55) and (2.9,1.8) .. (3,0);
+  \begin{scope}[xshift=7cm]
+  \draw (0,0) -- (5,0); \draw (0,-0.8) -- (0,2.2);
+  \node[left] at (0,1.6) {$H$};
+  \draw[decorate,decoration={snake,amplitude=0.6pt,segment length=3pt},thick] (0,0) -- (2.4,0);
+  \fill (2.4,0) circle (0.07);
+  \node[blue,below] at (1.3,-0.1) {$T_1$};
+  \node[green!60!black,below] at (2.4,-0.1) {$T_c$};
+  \node[below] at (3.4,-0.1) {$T_3$};
+  \node[red,below] at (4.4,-0.1) {$T_4$};
+  \end{scope}
+\end{tikzpicture}
+\diagramcaption{Left: spontaneous magnetization as a function of $T$. Right: the
+$(T,H)$ plane, with the phase boundary along $H=0$ for $0\le T<T_c$, ending at the
+critical point.}
+\end{diagram}
+
+Relevant variables that specify a (bi)critical point:
+\begin{itemize}
+  \item s--$\ell$--g (solid--liquid--gas): $p = p_c$, $T = T_c$;
+  \item magnetic: $H = H_c = 0$, $T = T_c$.
+\end{itemize}
+There is a discontinuous phase transition across a phase coexistence curve.
+
+\subsection{Nonanalytic behavior and critical exponents}
+
+A phase transition is signalled by nonanalytic behavior of thermodynamic
+quantities.
+
+For a solid--liquid--gas system, the Gibbs free energy is a function of $T$, $p$:
+\begin{equation}
+  G = G(T,p);\qquad
+  \dd G = \underbrace{\left(\pder{G}{T}\right)_p}_{-S,\ \text{entropy}}\dd T
+        + \underbrace{\left(\pder{G}{p}\right)_T}_{V,\ \text{volume}}\dd p.
+\end{equation}
+In a ``first-order'' phase transition, a first derivative of the free energy fails
+to exist at $T_c$; here, there is a discontinuity in the volume $V$ occupied by a
+given number $N$ of particles as a liquid transforms to a gas across the phase
+boundary.
+
+Example of a response function in a liquid--gas system:
+\begin{equation}
+  \kappa_T = -\frac{1}{V}\left(\pder{V}{p}\right)_T
+  = -\frac{1}{V}\left(\frac{\partial^2 G}{\partial p^2}\right)_T
+  = \text{isothermal compressibility},
+\end{equation}
+\begin{equation}
+  \kappa_T \sim
+  \begin{cases}
+    \tau^{-\gamma} & \text{as } T\to T_c^+\\
+    |\tau|^{-\gamma'} & \text{as } T\to T_c^-
+  \end{cases}
+  \qquad
+  \tau = \frac{T-T_c}{T_c}.
+\end{equation}
+(Another common notation is $\epsilon = (T-T_c)/T_c$.)
+
+At the critical point, $T = T_c$, $p = p_c$, the liquid--gas transition becomes
+second-order, continuous. Similarly, in a magnetic system there is a critical point
+at $T = T_c$, $H = H_c = 0$. For $G(T,H)$,
+\begin{equation}
+  \dd G = \underbrace{\left(\pder{G}{T}\right)_H}_{-S}\dd T
+        + \underbrace{\left(\pder{G}{H}\right)_T}_{-M}\dd H
+        = -S\,\dd T - M\,\dd H.
+\end{equation}
+The zero-field (``initial'') magnetic susceptibility
+$\chi_0 = (\partial M/\partial H)_{H=0}$ is again a second derivative of $G$:
+\begin{equation}
+  \chi_0 = -\left(\frac{\partial^2 G}{\partial H^2}\right)_{H=0}.
+\end{equation}
+This exhibits non-analytic behavior, typically an algebraic divergence, described by
+critical exponents $\gamma$, $\gamma'$:
+\begin{equation}
+  \chi_0\sim
+  \begin{cases}
+    \tau^{-\gamma} & \text{as } T\to T_c^+\quad\text{(leading singularity)}\\
+    |\tau|^{-\gamma'} & \text{as } T\to T_c^-
+  \end{cases}
+\end{equation}
+Usually $\gamma = \gamma'$. Other response functions behave similarly, such as the
+specific heat $C_p = -T(\partial^2 G/\partial T^2)_p$:
+\begin{equation}
+  C_p\sim
+  \begin{cases}
+    \tau^{-\alpha} & \text{as } T\to T_c^+\\
+    |\tau|^{-\alpha'} & \text{as } T\to T_c^-.
+  \end{cases}
+\end{equation}
+The term ``second-order'' phase transition refers to the property that second-order
+derivatives of the Gibbs free energy $G$ do not exist at this point, e.g.\ the
+specific heat $C$ and (i) the compressibility for a liquid--gas transition; (ii) the
+susceptibility for a magnetic transition.
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw (0,0) -- (5,0); \draw (0,0) -- (0,3.4);
+  \draw[dashed] (2.5,0) -- (2.5,3.5);
+  \draw[thick] (0.2,0.3) .. controls (1.6,0.5) and (2.3,1.2) .. (2.42,3.3);
+  \draw[thick] (2.58,3.3) .. controls (2.7,1.2) and (3.4,0.5) .. (4.8,0.3);
+  \node[below] at (2.5,0) {$T_c$};
+  \node[left,align=right,font=\small] at (-0.1,1.7) {response\\ function:\\ $C$, $\kappa_T$, or $\chi_0$};
+\end{tikzpicture}
+\diagramcaption{Typical plot of a response function near $T_c$, with $\gamma=\gamma'$.}
+\end{diagram}
+
+Writing the response function as
+\begin{equation}
+  \begin{cases}
+    A_+\tau^{-\gamma} & \text{for } T\to T_c^+\\
+    A_-|\tau|^{-\gamma'} & \text{for } T\to T_c^-,
+  \end{cases}
+\end{equation}
+the ``critical amplitudes'' $A_+\neq A_-$. See Figs.~1.13 and 1.16 in the book by
+Stanley, \emph{Introduction to Phase Transitions and Critical Phenomena}. Of course,
+experimentally we never actually observe $C\to\infty$ or $\chi\to\infty$, just large
+values at $T_c$.

@@ -1,0 +1,96 @@
+% Source: Work-by-gas.pdf, pages 1-2. No lecture number; placed after the Dieterici EOS, which it cites.
+\subsection{Example: work done by a gas in isothermal expansion}
+
+An example of the application of more accurate equations of state (EOS): the work done by a gas as it expands
+under isothermal conditions. Recall the calculation for an ideal gas with $pV = N\kB T$: the work is the area under
+the curve,
+\begin{equation}
+  W = \int_{V_1}^{V_2}p\,\dd V = N\kB T\int_{V_1}^{V_2}\frac{\dd V}{V} = N\kB T\ln\left(\frac{V_2}{V_1}\right).
+\end{equation}
+
+\begin{diagram}
+\begin{tikzpicture}[scale=0.8]
+  \draw[->] (0,0) -- (4.5,0) node[below] {$V$}; \draw[->] (0,0) -- (0,3) node[left] {$p$};
+  \fill[pattern=north east lines,pattern color=blue] (1.2,0) -- plot[domain=1.2:2.6] (\x,{2.2/\x}) -- (2.6,0) -- cycle;
+  \draw[thick,blue,domain=0.75:4.2,samples=50] plot (\x,{2.2/\x});
+  \draw[dashed,blue] (1.2,0) -- (1.2,1.83); \draw[dashed,blue] (2.6,0) -- (2.6,0.85);
+  \node[below] at (1.2,0) {$V_1$}; \node[below] at (2.6,0) {$V_2$};
+\end{tikzpicture}
+\diagramcaption{The work done in an isothermal expansion is the area under the isotherm.}
+\end{diagram}
+
+Now do the calculation for a gas with the van der Waals EOS, with $v = V/N$:
+\begin{equation}
+  p = \frac{\kB T}{v-b} - \frac{a}{v^2} = \frac{\kB T}{\left(\frac VN\right)-b} - \frac{a}{\left(\frac VN\right)^2} = \frac{N\kB T}{V-bN} - \frac{aN^2}{V^2},
+\end{equation}
+so
+\begin{align}
+  W &= \int_{V_1}^{V_2}p\,\dd V = N\kB T\int_{V_1}^{V_2}\frac{\dd V}{V-bN} - aN^2\int_{V_1}^{V_2}\frac{\dd V}{V^2}\nonumber\\
+    &= \left.N\kB T\ln(V-bN)\right|_{V_1}^{V_2} + \underbrace{\left.aN^2\left(\frac1V\right)\right|_{V_1}^{V_2}}_{aN^2\left(\frac{1}{V_2}-\frac{1}{V_1}\right)}\nonumber\\
+    &= N\kB T\ln\left(\frac{V_2-bN}{V_1-bN}\right) + aN^2\left(\frac{V_1-V_2}{V_1V_2}\right)\nonumber\\
+  &= N\kB T\ln\left[\frac{V_2\left(1-b\frac{N}{V_2}\right)}{V_1\left(1-b\frac{N}{V_1}\right)}\right] - \frac{aN^2\Delta V}{V_1V_2},
+\end{align}
+where $\Delta V = V_2-V_1>0$. The logarithm is
+\begin{equation}
+  N\kB T\left\{\ln\left(\frac{V_2}{V_1}\right) + \ln\left[\frac{1-b\frac{N}{V_2}}{1-b\frac{N}{V_1}}\right]\right\};
+\end{equation}
+expand for small $bN/V$:
+\begin{equation}
+  \ln\left[\frac{1-b\frac{N}{V_2}}{1-b\frac{N}{V_1}}\right]\simeq\ln\left[\left(1-b\frac{N}{V_2}\right)\left(1+b\frac{N}{V_1}\right)\right]
+  \simeq bN\left(\frac{1}{V_1}-\frac{1}{V_2}\right) = \frac{bN(V_2-V_1)}{V_1V_2}.
+\end{equation}
+So
+\begin{equation}
+  W\simeq N\kB T\ln\left(\frac{V_2}{V_1}\right) + \underbrace{\frac{bN^2\kB T\Delta V}{V_1V_2} - \frac{aN^2\Delta V}{V_1V_2}}_{bN^2\left(\kB T-\frac ab\right)\frac{\Delta V}{V_1V_2} = b\kB(T-T_{\text{Boyle}})\frac{N^2\Delta V}{V_1V_2}},
+\end{equation}
+where here, for the vdW EOS, $\kB T_{\text{Boyle}} = \frac ab$. Compare with the work done by an ideal gas,
+$W_{\text{ideal}} = N\kB T\ln\left(\frac{V_2}{V_1}\right)$:
+\begin{equation}
+  \Delta W = W - W_{\text{ideal}} = b\kB(T-T_{\text{Boyle}})\frac{N^2\Delta V}{V_1V_2}.
+\end{equation}
+N.B.: $bN = V_{\text{total excluded vol}}\equiv V_{\text{excl.}}$. So
+\begin{equation}
+  \frac{\Delta W}{W_{\text{ideal}}} = \frac{(bN)N\kB T\left(1-\frac{T_{\text{Boyle}}}{T}\right)\frac{(V_2-V_1)}{V_1V_2}}{N\kB T\ln(V_2/V_1)}
+  = \frac{\left(\frac{V_{\text{excl.}}}{V_1}\right)\left(1-\frac{V_1}{V_2}\right)\left(1-\frac{T_{\text{Boyle}}}{T}\right)}{\ln\left(\frac{V_2}{V_1}\right)},
+\end{equation}
+so
+\begin{equation}
+  \begin{cases}
+    W>W_{\text{ideal}} & \text{if } T>T_{\text{Boyle}}\\
+    W<W_{\text{ideal}} & \text{if } T<T_{\text{Boyle}} .
+  \end{cases}
+\end{equation}
+This is clear from the definition $W = \int_{V_1}^{V_2}p\,\dd V$ and the property of the pressure:
+\begin{equation}
+  p = \frac{\kB T}{v-b} - \frac{a}{v^2} = \frac{\kB T\rho_n}{1-b\rho_n} - a\rho_n^2,
+\end{equation}
+where $\rho_n = \frac NV = \frac1v$; for $\frac bv = b\rho_n\ll 1$,
+\begin{equation}
+  p\simeq\kB T\rho_n(1+b\rho_n) - a\rho_n^2 = \kB T\rho_n\left[1+(b-\beta a)\rho_n\right];
+\end{equation}
+now $p_{\text{ideal}} = \frac{N\kB T}{V} = \kB T\rho_n$, so
+\begin{equation}
+  \frac{p}{p_{\text{ideal}}} = 1 + b\left(1-\beta\frac ab\right)\rho_n = 1 + b\left(1-\frac{T_{\text{Boyle}}}{T}\right)\rho_n,
+\end{equation}
+so $p>p_{\text{ideal gas}}$ if $T>T_{\text{Boyle}} = \frac ab$ and $p<p_{\text{ideal gas}}$ if $T<T_{\text{Boyle}}$, and
+the same applies for $\int_{V_1}^{V_2}p\,\dd V = W$.
+
+Some values of $T_{\text{Boyle}}$, with $T_{\text{boil}} = T_{\text{liq.}}$ (at $p = 1$~atm) for comparison:
+\begin{center}
+\begin{tabular}{lcccc}
+  gas & $T_{\text{boil}}$ & $T_c$ & $T_{\text{Boyle}}$ & $T_c/T_{\text{Boyle}}$\\ \hline
+  Ar & 87.3 K & 151 K & $\sim 408$ K & 0.37\\
+  N$_2$ & 77.35 K & 126 K & $\sim 326$ K & 0.39\\
+  O$_2$ & 90.2 K & 155 K & $\sim 410$ K & 0.38\\
+  CO$_2$ & (sublimates at $p = 1$ atm) & 304 K & $\sim 718$ K & 0.42
+\end{tabular}
+\end{center}
+Reference for these values of $T_{\text{Boyle}}$: R.~Estrada-Torres et al., Fluid Phase Equilibria \textbf{258}, 148
+(2007).
+
+Recall that for the van der Waals EOS, $\kB T_c = \frac{8}{27}\frac ab$ and $\kB T_{\text{Boyle}} = \frac ab$, so
+\begin{equation}
+  \text{vdW}\Rightarrow\frac{T_c}{T_{\text{Boyle}}} = \frac{8}{27} = 0.296,
+\end{equation}
+which is slightly less than the experimental values. For the Dieterici EOS, $\kB T_c = \frac{a}{4b}$,
+$\kB T_{\text{Boyle}} = \frac ab$, so $\frac{T_c}{T_{\text{Boyle}}} = \frac14 = 0.25$.

@@ -1,0 +1,134 @@
+% Source: Lecture7.pdf, pages 1-3 (1D Ising model, continued). Page 8 is blank.
+% The Potts-model half of the lecture (pages 3-7) is in lec07-potts.tex.
+\lecture{7}
+\subsection{Correlation length and susceptibility of the 1D Ising model}
+
+Previously, we calculated (for $H = 0$) the 2-spin correlation function
+\begin{equation}
+  \ev{\sigma_0\sigma_\ell} = v^\ell,\qquad \ell\ge 0,
+\end{equation}
+where $v = \tanh K$, $K = \beta J$. Recall that for $T>0$, since $|\tanh K|<1$,
+\begin{enumerate}[label=(\arabic*)]
+  \item $|\ev{\sigma_0\sigma_\ell}|$ is a monotonically decreasing function of $\ell\ge 0$, where $\ell$ is the distance
+    between the spins in lattice units (if $\ell = 0$, $\ev{\sigma_0^2} = 1$);
+  \item for fixed $\ell\ge 1$, $|\ev{\sigma_0\sigma_\ell}|$ is a monotonically decreasing function of $T$.
+\end{enumerate}
+These properties are physically understandable. Property (1) expresses the fact that as the two spins get farther and
+farther apart, the value of spin $\sigma_0$ has a progressively smaller and smaller influence on the value of spin
+$\sigma_\ell$. Property (2) follows because the higher the temperature $T$ is, i.e.\ the smaller $\beta$ and $|K|$ are, the
+less is the ordering effect of the interaction term in $e^{-\beta\Ham} = e^{K\sum_{\langle ij\rangle}\sigma_i\sigma_j}$.
+
+Also, note that the property that $\tanh(K)$ is an odd function of $K$ means that this correlation function has the
+properties expected from the ferromagnetic (FM) and antiferromagnetic (AFM) signs of the spin--spin coupling, respectively
+$J>0$ and $J<0$, namely that $\ev{\sigma_0\sigma_\ell}>0$ for FM $J$, while for AFM $J<0$,
+\begin{equation}
+  \ev{\sigma_0\sigma_\ell} = (\tanh K)^\ell = (-1)^\ell|\tanh K|^\ell
+  = \begin{cases} >0 & \text{if $\ell$ even}\\ <0 & \text{if $\ell$ odd.}\end{cases}
+\end{equation}
+\begin{equation*}
+  \text{FM order:}\quad
+  \begin{array}{cccc} + & + & + & +\\[-2pt] \scriptstyle 0 & \scriptstyle 1 & \scriptstyle 2 & \scriptstyle 3\end{array}
+  \ \text{or}\
+  \begin{array}{cccc} - & - & - & -\\[-2pt] \scriptstyle 0 & \scriptstyle 1 & \scriptstyle 2 & \scriptstyle 3\end{array}
+  \qquad\qquad
+  \text{AFM order:}\quad
+  \begin{array}{cccc} + & - & + & -\\[-2pt] \scriptstyle 0 & \scriptstyle 1 & \scriptstyle 2 & \scriptstyle 3\end{array}
+  \ \text{or}\
+  \begin{array}{cccc} - & + & - & +\\[-2pt] \scriptstyle 0 & \scriptstyle 1 & \scriptstyle 2 & \scriptstyle 3\end{array}
+\end{equation*}
+
+\subsubsection*{Correlation length}
+
+Next, calculate the correlation length $\xi$. Because of the bipartite nature of the 1D lattice, we may take $J>0$ with no
+loss of generality. Recall that for $T\ne T_c$, a connected correlation function decays exponentially as the distance
+between the spins gets large; $\ev{\sigma_0\sigma_r}\sim e^{-r/\xi}$ (in higher dimensions there may be power-law
+prefactors, but here these are absent). So we have (with $v = \tanh K$)
+\begin{equation}
+  v^r = e^{-r/\xi}\ \Rightarrow\ v = e^{-1/\xi}\ \Rightarrow\ \ln v = -\frac1\xi,\quad\text{i.e.}\quad
+  \xi = -\frac{1}{\ln v} = \frac{1}{\ln\left(\frac1v\right)} .
+\end{equation}
+Since $v$ decreases with increasing $T$, $\ln(1/v)$ increases, and $\xi$ decreases. Again, this makes sense physically; as
+$T$ increases, there is greater thermal disorder, so the correlation length should decrease.
+
+Next, calculate the singularity in $\xi$ as $T\to 0$, i.e.\ $K\to\infty$:
+\begin{align}
+  \xi &= \frac{1}{\ln\left(\frac1v\right)};\qquad
+  \frac1v = \frac{1}{\tanh K} = \frac{\cosh K}{\sinh K} = \frac{e^K+e^{-K}}{e^K-e^{-K}} = \frac{1+e^{-2K}}{1-e^{-2K}}\nonumber\\
+  &\simeq\left(1+e^{-2K}\right)\left(1+e^{-2K}+\cdots\right) = 1+2e^{-2K},
+\end{align}
+so
+\begin{equation}
+  \ln\left(\frac1v\right)\simeq\ln\left(1+2e^{-2K}\right)\simeq 2e^{-2K}\ \Rightarrow\
+  \xi\simeq\frac{1}{2e^{-2K}} = \frac12e^{2K}\quad\text{as } T\to 0 .
+\end{equation}
+So the correlation length $\xi$ diverges exponentially rapidly as $T\to 0$,
+\begin{equation}
+  \xi\simeq\tfrac12e^{2J/(\kB T)},
+\end{equation}
+an essential singularity. This is similar to what we found for $\bar\chi$, the initial ($H = 0$) magnetic susceptibility,
+$\bar\chi_{H=0} = \beta e^{2K}$.
+
+\subsubsection*{Susceptibility from the correlation function}
+
+It is useful to exhibit a different way to calculate $\bar\chi_{H=0}$. To do this we recall that, just as
+$\bar M = \pder fh$ ``pulls down'' one $\sigma_i$ from $e^{-\beta\Ham}$,
+\begin{equation}
+  \bar M = \lim_{N\to\infty}\frac1N\,\frac{\sum_{\{\sigma_i\}}\left(\sum_j\sigma_j\right)e^{-\beta\Ham}}{\sum_{\{\sigma_i\}}e^{-\beta\Ham}},
+\end{equation}
+the susceptibility
+\begin{equation}
+  \bar\chi = \pder{\bar M}{H} = \beta\pder{\bar M}{h} = \beta\frac{\partial^2f}{\partial h^2}
+\end{equation}
+``pulls down'' two $\sigma$'s. For $T>0$, $\ev\sigma = \bar M = 0$, and
+\begin{equation}
+  \beta^{-1}\bar\chi = \lim_{N\to\infty}\frac1N\sum_{\text{all }i,j}\ev{\sigma_i\sigma_j},
+\end{equation}
+where, as indicated, $i$ and $j$ range over all sites. Since the lattice is homogeneous, this
+$\lim_{N\to\infty}\sum_{i,j}$ double sum is equal to the sum over one site with the other fixed:
+\begin{equation}
+  \lim_{N\to\infty}\frac1N\sum_{\text{all }i,j}\ev{\sigma_i\sigma_j} = \sum_j\ev{\sigma_0\sigma_j},\qquad j\in\mathbb Z .
+\end{equation}
+Further, $\ev{\sigma_0\sigma_j} = \ev{\sigma_0\sigma_{-j}} = v^{|j|}$. So
+\begin{equation}
+  \sum_{j\in\mathbb Z}\ev{\sigma_0\sigma_j} = \underbrace{\ev{\sigma_0\sigma_0}}_{1}
+  + \sum_{j=-\infty}^{-1}\ev{\sigma_0\sigma_j} + \sum_{j=1}^\infty\ev{\sigma_0\sigma_j}
+  = 1 + 2\sum_{j=1}^\infty\ev{\sigma_0\sigma_j} = 1 + 2\sum_{j=1}^\infty v^j .
+\end{equation}
+Now $\sum_{j=0}^\infty v^j = \frac{1}{1-v}$, provided this series converges, which it does for $|v|<1$, so
+\begin{equation}
+  \sum_{j=1}^\infty v^j = -v^0 + v^0 + \sum_{j=1}^\infty v^j = -1 + \sum_{j=0}^\infty v^j = -1 + \frac{1}{1-v} = \frac{v}{1-v}.
+\end{equation}
+So $1 + 2\sum_{j=1}^\infty v^j = 1 + 2\left(\frac{v}{1-v}\right) = \frac{1+v}{1-v}$, so
+\begin{align}
+  \beta^{-1}\bar\chi &= \frac{1+v}{1-v} = \frac{1+\tanh K}{1-\tanh K} = \frac{\cosh K+\sinh K}{\cosh K-\sinh K}\nonumber\\
+  &= \frac{\left(e^K+e^{-K}\right)+\left(e^K-e^{-K}\right)}{\left(e^K+e^{-K}\right)-\left(e^K-e^{-K}\right)} = \frac{2e^K}{2e^{-K}} = e^{2K},
+\end{align}
+i.e.\ $\bar\chi = \beta e^{2K}$, as we derived earlier.
+
+\subsubsection*{Susceptibility in a nonzero field}
+
+Next, discuss our earlier result in the case of a nonzero external magnetic field $H$. Recall the expression
+\begin{equation}
+  \bar\chi = \frac{\beta e^{-4K}\cosh h}{\left[\sinh^2h+e^{-4K}\right]^{3/2}}.
+\end{equation}
+Consider the behavior as $T\to\infty$, i.e.\ $\beta\to 0$, $K\to 0$ and $h\equiv\beta H\to 0$, so $\sinh h\to 0$,
+$e^{-4K}\to 1$, $\cosh h\to 1$, $\bar\chi\to\beta$. This is the realization, in this model, of the Curie (Pierre Curie)
+``law'', that $\bar\chi\propto\beta\propto\frac1T$ at high temperature $T$. This is observed experimentally in 3D as well as
+lower-dimensional substances.
+
+Consider the behavior as $T\to 0$. Here, with $H\ne 0$, one must analyze the $J>0$ (FM) and $J<0$ (AFM) cases separately.
+This is clear, since an external magnetic field $H$ biases the system toward FM spin ordering ($h = \beta H$).
+\begin{enumerate}[label=(\arabic*)]
+  \item Case $J>0$: here, as $T\to 0$, $K\to\infty$ so $e^{-4K}\to 0$, and $h\to\infty$:
+    $\cosh h\to\frac{e^h}{2}$, $\sinh h\to\frac{e^h}{2}$, $\frac{\cosh h}{\sinh^3h}\to\frac{e^h/2}{(e^h/2)^3} = 4e^{-2h}$, so
+    \begin{equation}
+      \bar\chi\to\frac{\beta e^{-4K}\cosh h}{\sinh^3h}\to 4\beta e^{-4K}e^{-2h}\to 0 .
+    \end{equation}
+    This vanishing of $\bar\chi$ for $H\ne 0$ is physically understandable, because the external magnetic field biases the
+    spins toward FM order, and this approaches a complete ordering as $T\to 0$, $|\bar M|\to 1$, so increasing $H$ has a
+    negligible effect and $\bar\chi = \pder{\bar M}{H}\to 0$.
+  \item Case $J<0$: here one has competing interactions: (i) the spin--spin interaction prefers the spins to order
+    antiferromagnetically: $+-+-+-$; (ii) the external magnetic field prefers the spins to order ferromagnetically. This is
+    an exactly solvable example of competing interactions. Which one dominates over the other? This will be a homework
+    problem.
+\end{enumerate}

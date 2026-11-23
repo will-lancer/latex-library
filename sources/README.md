@@ -12,6 +12,7 @@ stay consistent across scripts that compare editions.
 | *Quantum Theory of Fields*, lecture notes with homework | [Project](fields_notes_qft/README.md) |
 | Grojnowski, *Introduction to Lie Algebras and their Representations* | [Project](grojnowski_lie_algebras/README.md) |
 | Milnor, *Topology from the Differentiable Viewpoint* | [LaTeX](milnorTopFromDiffView/latex/) |
+| Shrock, *Advanced Statistical Mechanics* (PHY 541 notes) | [Project](shrock_phy541/README.md) |
 | Streater and Wightman | [Project](pct_spin_statistics_all_that/README.md) |
 | Wald GR | [Project](wald_gr/README.md) · [Exercise project](wald_gr_exercises/README.md) |
 | Wald QFT | [Project](wald-qft/README.md) |

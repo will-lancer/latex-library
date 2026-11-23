@@ -1,0 +1,332 @@
+% Source: Lecture8.pdf, pages 1-21 (typed handout). Title on the source: "Lecture 8: Further
+% Properties of Potts Model Partition Functions and Connections with Graph-Theoretic Polynomials".
+\lecture{8}
+\subsection{Some preliminaries from graph theory}
+
+A graph $G$ is defined by its set of vertices (sites, in physics terminology), $V = \{v_1,\ldots,v_{n(G)}\}$ and its set of
+edges (bonds in physics terminology), $E$, so we write $G = (V,E)$. The total numbers of vertices and edges in $G$ are
+$n(G)$ and $e(G)$, respectively.
+
+\paragraph{Def.} A graph $G$ is \emph{connected} if, starting at a given vertex $v\in V$, there exists a continuous path along
+the edges that enables one to move to any other vertex in $V$. For a general graph, we denote $k(G)$ as the number of
+connected components of $G$. An example of a connected graph is the line graph $L_3$ consisting of three vertices $v_i$,
+$i = 1,2,3$ with an edge $e_{12}$ connecting $v_1$ and $v_2$, and an edge $e_{23}$ connecting $v_2$ and $v_3$. An example
+of a disconnected graph is obtained by deleting either of these two edges; the resultant graph has $k = 2$ components. If
+one deletes both edges, the resultant graph has $k = 3$ components.
+
+\paragraph{Def.} The \emph{empty} (null) graph $E_n$ is the graph consisting of $n$ vertices with no edges.
+
+\paragraph{Def.} The \emph{complete graph} $K_n$ is the graph consisting of $n$ vertices such that there is a (single) edge
+$e_{ij}$ connecting each distinct pair of vertices $v_i$ and $v_j$.
+
+\paragraph{Def.} A \emph{bridge} on a graph is an edge such that deleting it leads to an increase in the number of components
+in the graph. For example, consider the line graph $L_3$ with three vertices. This is a connected graph, so $k(L_3) = 1$.
+Both of its two edges are bridges, since deleting either one produces a graph with $k = 2$ connected components.
+
+\paragraph{Def.} A \emph{loop} is an edge that extends out from a given vertex and loops back to connect to the same vertex.
+In physics we will usually restrict to loopless graphs.
+
+\paragraph{Def.} Two vertices in $G$ are said to be \emph{adjacent} if they are connected by at least one edge. In general,
+two adjacent vertices may be connected by more than one edge, although on a regular lattice one generally restricts to the
+minimal case in which adjacent vertices are connected by only one edge.
+
+\paragraph{Def.} The \emph{degree} $\Delta_v$ of a vertex $v$ in $G$ is equal to the number of edges that connect to it.
+
+\paragraph{Def.} A graph $G$ is said to be \emph{$\Delta$-regular} if all of its vertices have the same degree, $\Delta$. A 1D
+lattice with periodic boundary conditions (BC) is a 2-regular graph. A 2D square lattice with toroidal boundary conditions
+is a 4-regular graph, etc. On a $\Delta$-regular lattice graph $\Lambda$, $\Delta_\Lambda$ is the coordination number of the
+lattice. For a $\Delta$-regular lattice graph,
+\begin{equation}
+  e(G) = \frac\Delta2n(G).
+\end{equation}
+One can also define an effective degree $\Delta_{\text{eff}}$ of a graph as
+\begin{equation}
+  \Delta_{\text{eff}} = \lim_{n(G)\to\infty}\frac{2e(G)}{n(G)}.
+\end{equation}
+For example, consider a 1D lattice with free boundary conditions; then the interior vertices have degree $\Delta = 2$, but
+the end vertices have degree $\Delta = 1$, so this is not a $\Delta$-regular graph. However, in the limit as
+$n(G)\to\infty$, $\Delta_{\text{eff}} = 2$. Similarly, consider a rectangular $L_x\times L_y$ section of a 2D square lattice
+with free boundary conditions. Then the interior vertices have degree 4, the other vertices on the four sides have degree 3,
+and the corner vertices have degree 2. Again, in the thermodynamic limit $L_x\to\infty$ and $L_y\to\infty$ with finite
+nonzero aspect ratio $L_y/L_x$, $\Delta_{\text{eff}} = 4$. This is thus the same as if one used boundary conditions that are
+periodic in one direction (sometimes called cylindrical) or in both directions (toroidal BC). Similar comments apply for
+higher-dimensional lattices.
+
+\paragraph{Def.} The graph $C_n$ with $n$ vertices is called the \emph{circuit graph}. It is equivalent to a 1D lattice with
+$n$ vertices and PBC.
+
+\paragraph{Def.} A \emph{cycle} (circuit) in $G$ is a path on adjacent edges that forms a circuit. The number of linearly
+independent cycles on $G$ is denoted $c(G)$. For example, consider the circuit graph $C_4$ with vertex set
+$\{v_1,v_2,v_3,v_4\}$. We can think of this as a square with the lower right-hand vertex denoted $v_1$, the upper right-hand
+vertex denoted $v_2$, etc. Now add one diagonal edge (bond) joining the upper right-hand vertex $v_2$ to the lower left-hand
+vertex $v_4$. The resultant graph $G$ has $n(G) = 4$, edge set $E = \{e_{12},e_{23},e_{34},e_{41},e_{24}\}$ and
+$e(G) = 5$. There are three cyclic paths that one can draw: (i) around the outside of the square; (ii) around the upper
+left-hand triangle; and (iii) around the lower right-hand triangle. However, only two of these are linearly independent, so
+$c(G) = 2$. (Recall similar considerations when using Kirchhoff's laws in electrical circuits; if this were a circuit with
+resistors, one would only write down two linearly independent Kirchhoff equations.) A relevant relation is
+\begin{equation}
+  c(G) = e(G) + k(G) - n(G);
+\end{equation}
+for example, for the graph above, $n(G) = 4$, $e(G) = 5$, and $k(G) = 1$, so $c(G) = 5+1-4 = 2$.
+
+\paragraph{Def.} A \emph{tree graph} is a connected graph with no cycles. Although the tree graphs with $n = 1,2,3$ are unique,
+for $n\ge 4$, there is more than one tree graph. For example, for $n = 4$, there are two tree graphs, namely the line graph
+with 4 vertices and the star graph with one central vertex and three outer vertices. We sometimes use the generic symbol $T_n$
+for an $n$-vertex tree graph.
+
+\paragraph{Def.} Given a graph $G = (V,E)$, a \emph{spanning subgraph} $G' = (V',E')$ is a graph containing all of the vertices
+of $G$, so $V' = V$, and a subset of the edges of $G$, i.e.\ $E'\subseteq E$.
+
+\paragraph{Def.} A graph is \emph{planar} if it can be embedded in a plane with no intersecting edges.
+
+\paragraph{Def.} Given a planar graph $G$, the \emph{planar dual} of $G$, denoted $G^*$, is obtained by mapping each face in $G$
+to a vertex in $G^*$, each vertex in $G$ to a face in $G^*$, and then connecting the vertices of $G^*$ with edges. A planar
+graph $G$ is self-dual if $G^* = G$.
+
+\subsection{Cluster formula for the Potts model partition function}
+
+Let us consider the Potts model on a general graph $G = (V,E)$. Formulated in the context of statistical mechanics, this
+model involves dynamical variables (classical spins) $\sigma_i$ at each vertex $v_i\in V$ that can take on any of the values
+in the set $\{1,\ldots,q\}$, with an interaction energy between the spins on adjacent vertices
+$\Ham_{\text{int}} = -J\sum_{e_{ij}}\delta_{\sigma_i\sigma_j}$. For simplicity, let us take the external magnetic field to be
+zero. Then $\Ham = \Ham_{\text{int}}$ and $-\beta\Ham = K\sum_{e_{ij}}\delta_{\sigma_i\sigma_j}$, where $K = \beta J$ and
+$\beta = 1/(\kB T)$, with $T$ the temperature. In thermal equilibrium at a temperature $T$, the partition function is
+\begin{equation}
+  Z = \sum_{\{\sigma_i\}}e^{-\beta\Ham} = \sum_{\{\sigma_i\}}\exp\left[K\sum_{e_{ij}}\delta_{\sigma_i\sigma_j}\right].
+\end{equation}
+Let $v_P = e^K-1$ and, for notational simplicity, suppress the subscript $P$, writing this as $v$. Recall the identity
+\begin{equation}
+  e^{K\delta_{\sigma_i\sigma_j}} = 1 + \left(e^K-1\right)\delta_{\sigma_i\sigma_j} = 1 + v\delta_{\sigma_i\sigma_j}.
+\end{equation}
+Using this identity, we can write $Z$ as
+\begin{equation}
+  Z = \sum_{\{\sigma_i\}}\left[\prod_{e_{ij}}\left(1+v\delta_{\sigma_i\sigma_j}\right)\right].
+\end{equation}
+As above, let $G'$ denote a spanning subgraph of $G$. Then one can rewrite $Z$ as
+\begin{equation}\label{eq:cluster}
+  Z(G,q,v) = \sum_{G'\subseteq G}q^{k(G')}v^{e(G')},
+\end{equation}
+where $k(G')$ and $e(G')$ are the number of connected components and edges in $G'$. This is often called the
+Fortuin--Kasteleyn cluster formula for the Potts model partition function by physicists, although an equivalent relation had
+been derived earlier by mathematicians. This cluster formula is very useful, since it expresses $Z$ in a graph-theoretic
+manner, as a sum over contributions from spanning subgraphs without explicit reference to the sum over spin configurations.
+
+If $G$ is the disjoint union $G = G_1\cup G_2$, then $Z(G,q,v) = Z(G_1,q,v)Z(G_2,q,v)$ so, without loss of generality, we
+take $G$ to be connected. (But some $G'$ subgraphs are disconnected.)
+
+Since $k(G')\ge 1$ and $e(G')\ge 0$, the cluster representation of $Z$ shows that $Z(G,q,v)$ is a polynomial in $q$ and $v$.
+
+\paragraph{Corollary.} Since $k(G')\ge 1$, the minimum degree of $Z$ as a polynomial in $q$ is 1, i.e.\ $Z(G,q,v)$ always
+contains an overall factor of $q$. Since one of the spanning subgraphs is the empty graph with no edges, the minimum degree of
+$Z$ as a polynomial in $v$ is 0.
+
+The cluster formula allows one to formally generalize $q$ from nonnegative integers $q = 1,2,3,\ldots$ to nonnegative real
+numbers. For the case of ferromagnetic spin--spin couplings, $v\ge 0$, the resultant $Z$ is nonnegative, and is positive if
+$q\ne 0$. Physically, since $\Ham$ is real, the Boltzmann weights $e^{-\beta\Ham}$ are nonnegative. One refers to this situation
+by saying that a model has a ``Gibbs measure''. So (aside from the marginal case $q = 0$), the generalization above in the case
+of the FM sign of the coupling, $J>0$, yields a Gibbs measure.
+
+If one is interested in zeros of $Z$ in the variable $q$, then one naturally generalizes $q$ to complex numbers, but for most of
+our discussion, the generalization to real nonnegative $q$ will be sufficient.
+
+\subsubsection*{Proof of the cluster formula}
+
+The proof of the cluster formula is based on the 1--1 correspondence between the terms in
+$Z = \sum_{\{\sigma_i\}}\prod_{e_{ij}}\left(1+v\delta_{\sigma_i\sigma_j}\right)$ and spanning subgraphs $G'\subseteq G$. A sketch of
+the proof, using, as illustration, $G = C_3$, where $C_n$ is the circuit graph with $n$ vertices. Here
+\begin{equation}
+  Z(C_3,q,v) = \sum_{\{\sigma_i\}}\prod_{e_{ij}}\left(1+v\delta_{\sigma_i\sigma_j}\right)
+  = \sum_{\{\sigma_i\}}\left(1+v\delta_{\sigma_1\sigma_2}\right)\left(1+v\delta_{\sigma_2\sigma_3}\right)\left(1+v\delta_{\sigma_3\sigma_1}\right).
+\end{equation}
+There are four types of terms that contribute (in correspondence with $\sum_{G'\subseteq G}q^{k(G')}v^{e(G')}$):
+\begin{itemize}
+  \item the term 1, corresponding to the $G'$ with three disjoint vertices, no edges (so $e(G') = 0$, $k(G') = 3$), for which
+    the sum over the $\sigma_i$'s yields $q^3$, i.e.\ one can choose the $\sigma$'s independently in $q^3$ ways;
+  \item $v\left(\delta_{\sigma_1\sigma_2}+\delta_{\sigma_2\sigma_3}+\delta_{\sigma_3\sigma_1}\right)$, corresponding to the three
+    $G'$s with one edge and one disjoint vertex, so $e(G') = 1$, $k(G') = 2$. The first of these terms contributes if
+    $\sigma_1 = \sigma_2$; here one chooses $\sigma_1 = \sigma_2$ in any of $q$ ways, and then $\sigma_3$ independently in any
+    of $q$ ways, for a total of $q^2$ ways; similarly for the other two terms, so these terms contribute $3q^2v$;
+  \item $v^2\left(\delta_{\sigma_1\sigma_2}\delta_{\sigma_2\sigma_3}+\delta_{\sigma_2\sigma_3}\delta_{\sigma_3\sigma_1}
+    +\delta_{\sigma_3\sigma_1}\delta_{\sigma_1\sigma_2}\right)$, corresponding to $G'$s with two edges, so $e(G') = 2$,
+    $k(G') = 1$. For the first term to contribute, all of the $\sigma$'s must be equal, and there are $q$ ways of choosing
+    them; similarly for the other two terms, so the total contribution is then $3qv^2$;
+  \item $v^3\left(\delta_{\sigma_1\sigma_2}\delta_{\sigma_2\sigma_3}\delta_{\sigma_3\sigma_1}\right)$, corresponding to $G' = G$,
+    with all edges present, so $e(G') = 3$, $k(G') = 1$. For this term to contribute, all of the $\sigma$'s must be equal,
+    amounting to $q$ possibilities, and yielding the term $qv^3$.
+\end{itemize}
+So combining all of these terms, one gets $Z(C_3,q,v) = q^3+3q^2v+3qv^2+qv^3$, which is precisely
+$\sum_{G'\subseteq C_3}q^{k(G')}v^{e(G')}$. Now
+\begin{equation}
+  q^3+3q^2v+3qv^2+qv^3 = q^3+3q^2v+3qv^2+v^3+qv^3-v^3 = (q+v)^3+(q-1)v^3,
+\end{equation}
+so $Z(C_3,q,v) = (q+v)^3+(q-1)v^3$. By the same methods, one obtains the generalization
+\begin{equation}
+  Z(C_n,q,v) = (q+v)^n+(q-1)v^n .
+\end{equation}
+We derived this inductively in the last lecture using transfer-matrix methods, where we showed that the $q\times q$ transfer
+matrix on a 1D lattice with PBC has one (leading) eigenvalue $\lambda_1 = q+v$ and a subleading eigenvalue $\lambda_2 = v$ with
+multiplicity $q-1$, so $Z(C_n,q,v) = \lambda_1^n+(q-1)\lambda_2^n = (q+v)^n+(q-1)v^n$. In that derivation, $q$ had to be a
+positive integer. Our present derivation does not require $q$ to be a positive integer and hence is more general.
+
+\subsection{Chromatic and Tutte polynomials}
+
+Next, let us define two important graph-theoretic polynomials.
+
+\paragraph{Def.} The \emph{chromatic polynomial} $P(G,q)$ is the number of ways of assigning $q$ colors to the vertices of $G$
+such that no two adjacent vertices have the same color. This is called a proper $q$-coloring of (the vertices of) $G$. The
+minimum number of colors needed for a proper $q$-coloring of $G$ is the chromatic number, $\chi(G)$.
+
+Note that if a graph contains any loop, then $P(G,q)$ vanishes identically, since a vertex with a loop is adjacent to itself,
+so it cannot satisfy the constraint that it has a different color than adjacent vertices.
+
+In the antiferromagnetic Potts model, consider the limit $T\to 0$, so $K\to-\infty$ (since $K = \beta J$ and $J<0$) and
+$v = e^K-1\to-1$. In this limit, the only spin configurations that contribute to $Z(G,q,v=-1)$ are those for which adjacent
+spins have different values. Hence, the $T = 0$ limit of the Potts antiferromagnet partition function is the chromatic
+polynomial:
+\begin{equation}
+  Z(G,q,-1) = P(G,q).
+\end{equation}
+Since $Z(G,q,v)$ always contains an overall factor of $q$, this is also true for $P(G,q)$. Given the meaning of $P(G,q)$ as the
+number of proper $q$-colorings of $G$, the fact that $P(G,0) = 0$ is clear.
+
+There is a close connection between the Potts model partition function and a function of major importance in mathematical
+graph theory, the Tutte (also called Tutte--Whitney) polynomial, $T(G,x,y)$.
+
+\paragraph{Def.} The \emph{Tutte polynomial} of a graph $G$ is
+\begin{equation}
+  T(G,x,y) = \sum_{G'\subseteq G}(x-1)^{k(G')-k(G)}(y-1)^{c(G')}
+           = \sum_{G'\subseteq G}(x-1)^{k(G')-k(G)}(y-1)^{e(G')+k(G')-n(G')},
+\end{equation}
+where $G'$ is a spanning subgraph of $G$ and $k(G')$ and $c(G')$ denote the number of components and (linearly independent)
+cycles in $G'$. Since $k(G')-k(G)\ge 0$ and $c(G')\ge 0$, it follows that $T(G,x,y)$ is a polynomial in $x$ and $y$.
+
+To prove this connection (essentially an equivalence with appropriate changes of variables), let
+\begin{equation}
+  x = 1+\frac qv,\qquad y = v+1,
+\end{equation}
+so $q = (x-1)(y-1)$ and $v = y-1$. Then, using the fact that $n(G') = n(G)$, so
+$c(G') = e(G')+k(G')-n(G') = e(G')+k(G')-n(G)$, and $x-1 = q/v$, $y-1 = v$, we have
+\begin{align}
+  T(G,x,y) &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}(x-1)^{k(G')}(y-1)^{e(G')+k(G')}\nonumber\\
+  &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}\left(\frac qv\right)^{k(G')}v^{e(G')+k(G')}\nonumber\\
+  &= (x-1)^{-k(G)}(y-1)^{-n(G)}\sum_{G'\subseteq G}q^{k(G')}v^{e(G')}\nonumber\\
+  &= (x-1)^{-k(G)}(y-1)^{-n(G)}Z(G,q,v),
+\end{align}
+i.e.
+\begin{equation}
+  Z(G,q,v) = (x-1)^{k(G)}(y-1)^{n(G)}T(G,x,y) = \left(\frac qv\right)^{k(G)}v^{n(G)}T(G,x,y).
+\end{equation}
+
+\subsubsection*{Special valuations of the Tutte polynomial}
+
+Special valuations of $T(G,x,y)$ count various types of subgraphs of $G$. Setting $x = 1$ in $T(G,x,y)$ restricts the $G'$s
+that contribute to those that are connected, i.e.\ $k(G') = k(G) = 1$. Setting $y = 1$ restricts the $G'$s that contribute to
+those having no cycles, so that $c(G') = 0$.
+
+\paragraph{Def.} A connected spanning subgraph that is a tree (is cycle-free, $c(G') = 0$) is called a \emph{spanning tree}.
+Setting $x = y = 1$ picks out $G'$s that are connected spanning subgraphs with $c(G') = 0$, i.e.\ spanning trees. So
+\begin{equation}
+  T(G,1,1) = N_{ST}(G).
+\end{equation}
+
+\paragraph{Def.} A spanning subgraph $G'$ that has no cycles but may be disconnected, i.e.\ consist of more than one component,
+is called a \emph{spanning forest} of $G$. One can relax the restriction on connectedness by setting $x = 2$, so that
+$(x-1)^{k(G')-k(G)} = 1$, independent of $k(G')$. Then
+\begin{equation}
+  T(G,2,1) = N_{SF}(G),
+\end{equation}
+where $N_{SF}(G)$ is the number of spanning forests of $G$.
+
+One can keep the restriction on connectedness but include $G'$s with cycles by setting $y = 2$; then $(y-1)^{c(G')} = 1$
+independent of $c(G')$. Hence
+\begin{equation}
+  T(G,1,2) = N_{CSSG}(G),
+\end{equation}
+where $N_{CSSG}$ is the number of connected spanning subgraphs of $G$. If one sets $x = y = 2$, then the summand is just 1, so
+this counts all of the spanning subgraphs of $G$: $T(G,2,2) = 2^{e(G)}$.
+
+Special cases of the Tutte polynomial yield many graph-theoretic functions of interest. One of these is the chromatic
+polynomial; for $v = -1$, i.e.\ $y = 0$, since $Z(G,q,v=-1) = P(G,q)$, one has
+\begin{equation}
+  P(G,q) = (-q)^{k(G)}(-1)^{n(G)}\,T(G,x=1-q,y=0).
+\end{equation}
+
+\subsection{Coloring problems and the four-color theorem}
+
+The chromatic polynomial is of interest not just in graph theory but also in applied mathematics and engineering. One
+application is the following frequency allocation problem. Consider $n$ radio broadcast transmitter stations; let each of these
+be represented by a vertex of a graph $G$ and define two transmitters as being adjacent (joined by an edge) if they are closer
+than a certain distance to each other. Then assign frequencies from a set of $q$ values to these transmitters, subject to the
+condition that adjacent stations should use different frequencies to avoid interference. The number of ways of doing this is
+$P(G,q)$.
+
+The early interest by Birkhoff and Whitney in chromatic polynomials was motivated by their connection with the map coloring
+problem, i.e.\ face-colorings of graphs; further work was done by Tutte, Read, and others.
+
+\paragraph{Def.} A \emph{proper $q$-coloring of the faces} of a graph is an assignment of colors, from a set of $q$ colors, to the
+faces of a graph such that no two adjacent faces (faces that share an edge) have the same color.
+
+As we noted, for a planar graph $G$, there is a 1--1 correspondence between the vertices of $G$ and the faces of the planar dual
+graph $G^*$. Therefore, $P(G,q)$ equivalently counts the proper $q$-colorings of the vertices of $G$ and the proper
+$q$-colorings of the faces of $G^*$.
+
+Recall that an edge of a graph such that its deletion would increase the number of components by 1 is called a bridge. A
+bridge in a planar graph leads to a face being adjacent to itself across the bridge. Since adjacent faces must have different
+colors in a proper $q$-coloring of the faces of a planar graph $G^*$, this is not possible if $G^*$ contains any bridges. This is
+the planar dual of the property that a proper $q$-coloring of a graph $G$ is not possible if the graph contains any loops.
+
+The \emph{Four-Color Theorem} is the statement that if $G$ is a planar graph with no loops, so $G^*$ is a planar graph with no
+bridges, then $P(G,4)>0$, i.e.\ there exists a proper $q$-coloring of the faces of $G^*$ with $q = 4$ colors; equivalently,
+there exists a proper $q$-coloring of the vertices of $G$ with $q = 4$ colors. Mathematicians sought to prove this for over a
+century. It was proved in 1976 by Appel and Haken.
+
+\subsection{Simple examples of \texorpdfstring{$Z(G,q,v)$, $T(G,x,y)$ and $P(G,q)$}{Z, T and P}}
+
+We have shown that for a circuit graph, $C_n$, $Z(C_n,q,v) = (q+v)^n+(q-1)v^n$. Using $x-1 = q/v$ and $q = (x-1)(y-1)$, we
+can write this as
+\begin{equation}
+  Z(C_n,q,v) = v^n\left[\left(1+\frac qv\right)^n+(q-1)\right] = v^n\left[x^n+(q-1)\right]
+  = \left(\frac qv\right)v^n\left[\frac{x^n+(q-1)}{x-1}\right],
+\end{equation}
+and hence we have
+\begin{equation}
+  T(C_n,x,y) = \left[\frac{x^n+(xy-y-x)}{x-1}\right].
+\end{equation}
+Using $(x^n-x)/(x-1) = \sum_{j=1}^{n-1}x^j$ (for $n\ge 2$), one can write this as
+\begin{equation}
+  T(C_n,x,y) = \left(\sum_{j=1}^{n-1}x^j\right)+y .
+\end{equation}
+As is the case here, in expressions for $T(G,x,y)$ with a $1/(x-1)$ prefactor, it is always cancelled, so that $T(G,x,y)$ is a
+polynomial in $x$ and $y$.
+
+Setting $v = -1$ in the results for $Z(G,q,v)$ yields $P(G,q)$. For example, from $Z(C_n,q,v) = (q+v)^n+(q-1)v^n$, it follows
+that
+\begin{equation}
+  P(C_n,q) = (q-1)^n+(q-1)(-1)^n .
+\end{equation}
+
+Many properties of $P(G,q)$ can be proved by combinatoric arguments. For example, if a graph $G$ contains any edge (i.e.\ is
+not the null graph, $E_n$), then $P(G,q)$ clearly vanishes if $q = 1$, since one would have to use at least two colors to
+assign different colors to the vertices that are adjacent along this edge. This, together with the property that $P(G,q)$ is a
+polynomial in $q$, proves that, in addition to the factor of $q$ that it always contains, $P(G,q)$ also contains a factor of
+$q-1$.
+
+Similarly, if a graph $G$ contains any subgraph that is isomorphic to a triangle, $K_3 = C_3$, then $P(G,q)$ contains not just
+the factors of $q$ and $q-1$, but also a factor of $q-2$. This is proved by noting that one can choose the color assigned to
+the first vertex of the $K_3$ subgraph in any of $q$ ways, but then one can choose the color of the second vertex in $K_3$ in
+only $q-1$ ways, and one can choose the color of the third vertex in the $K_3$ subgraph in only $q-2$ ways. So if $q = 2$, then
+$P(G,q) = 0$. Since $P(G,q)$ is a polynomial, this proves that it contains a factor of $q-2$.
+
+\paragraph{Def.} A graph is \emph{$k$-partite} if the vertex set $V$ can be partitioned as $V = V_1\cup V_2\cup\cdots\cup V_k$,
+where $V_i\cap V_j = \emptyset$ if $i\ne j$ and no vertex in $V_i$ connects via an edge to any other vertex in $V_i$ for any $i$.
+
+Another simple result is the following: for a connected bipartite graph $G_{\text{bip.}}$,
+\begin{equation}
+  P(G_{\text{bip.}},q=2) = 2 .
+\end{equation}
+This is proved by noting that one can choose the color to be assigned to a vertex in $V_1$ in any of 2 ways. Then one must
+assign the other color to all of the vertices in $V_2$, and the first color to all the other vertices of $V_1$. As we have
+discussed, the circuit graph $C_n$ is bipartite if and only if $n$ is even. By similar combinatoric arguments, one has
+$P(G_{tri},3) = 3!$, where $tri$ is the triangular lattice, with free boundary conditions. To prove this, one assigns the three
+colors to the vertices of one triangle, for which there are $3!$ ways. This uniquely determines the color assignments to all
+other triangles on the lattice.
