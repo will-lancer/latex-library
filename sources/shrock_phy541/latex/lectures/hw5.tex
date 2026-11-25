@@ -1,0 +1,56 @@
+% Source: originals/shrock-phy541/homework/phy541_hw5.png (photograph of the handout; no header is visible and the
+% photograph ends partway through Problem 3(e)). Placed after the equations of state for gases; it uses Lectures 21-23
+% and the series analysis of Lectures 19 and 20.
+\hwset{5}
+
+\noindent\emph{The photographed handout shows no header, and it ends partway through Problem~5.3(e).}
+
+\begin{hwproblem}{5}{1}
+(30 pts) The high-temperature series expansion for the reduced zero-field susceptibility per site,
+$\tilde\chi\equiv\beta^{-1}\bar\chi$, of the (spin-$1/2$, nearest-neighbor, zero-field) Ising model with ferromagnetic
+sign of the spin-spin coupling $J>0$ at temperature $T$ on a certain lattice is
+\begin{align}
+  \tilde\chi &= 1+12v+132v^2+1404v^3+14652v^4+151116v^5+1546332v^6\nonumber\\
+  &\quad+15734460v^7+159425580v^8+1609987708v^9+16215457188v^{10}\nonumber\\
+  &\quad+162961837500v^{11}+\Order(v^{12})
+\end{align}
+where $v = \tanh(K)$. (This series expansion is known to higher order, but we will only use these terms.) Since $J>0$
+and hence $K = \beta J\ge 0$, the physical values of $v$ are $v\ge 0$.
+\begin{hwparts}
+  \item (a, 10 pts) Calculate ten successive estimates of the critical values of $v_c = \tanh K_c$ and $K_c$ from this
+    series using the ratio test.
+  \item (b, 20 pts) From the $[3,3]$ dlog Pad\'e approximant to the series, calculate estimates for the critical values
+    $v_c$ and $K_c$, and the critical exponent $\gamma$ for the phase transition of the Ising ferromagnet on this
+    lattice.
+\end{hwparts}
+\end{hwproblem}
+
+\begin{hwproblem}{5}{2}
+(20 pts) Consider the van der Waals equation of state (EOS) of a gas,
+\begin{equation}
+  p = \frac{\kB T}{v-b}-\frac{a}{v^2},
+\end{equation}
+where $p$ is the pressure, $T$ is the temperature, $v = V/N$ is the volume per particle, and $a$ and $b$ are
+parameters. Consider the isotherm defined by $\kB T = a/(4b)$ in the $p$-$v$ diagram. Is there any part of this
+isotherm that is unphysical? If you say no, support your answer. If you say yes, determine this part quantitatively as
+a function of $v$.
+\end{hwproblem}
+
+\begin{hwproblem}{5}{3}
+(100 pts) Consider the following equation of state:
+\begin{equation}
+  p = \frac{\kB T}{v-b}-\frac{a}{v^2+2bv-b^2},
+\end{equation}
+where, as defined in class, $v = V/N = 1/\rho_n$. The following questions apply for this EOS:
+\begin{hwparts}
+  \item (a, 20 pts) Calculate the critical value of $v_n$. This can be expressed as a numerical coefficient times the
+    appropriate function of the constants $a$ and $b$.
+  \item (b, 20 pts) Calculate the critical value of $T_c$ (or just the combination $\kB T_c$). This can be expressed as
+    a numerical coefficient times the appropriate function of the constants $a$ and $b$.
+  \item (c, 20 pts) Calculate the critical value of $p_c$ as a function of the parameters $a$ and $b$.
+  \item (d, 20 pts) Using your results in parts (a), (b), and (c), calculate the critical value of
+    $z_c = p_cv_c/(\kB T_c)$ and compare with the experimentally measured values given in class.
+  \item (e, 20 pts) Calculate the virial coefficients (i, 10 pts) $B_2$ and (ii, 10 pts) $B_3$, [the photograph ends
+    here]
+\end{hwparts}
+\end{hwproblem}

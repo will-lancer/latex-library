@@ -1,0 +1,67 @@
+% Source: originals/shrock-phy541/homework/phy541_hw4.pdf, pages 1-2 (typed handout dated 3/23/2026). Placed where
+% Lectures 19 and 20 (high- and low-temperature series expansions, not among the scans) would fall; Problem 1 uses
+% Lecture 17.
+\hwset{4}
+
+\noindent\emph{Dated 3/23/2026.} This homework assignment is due in class on Wed.\ Apr.\ 8. The total point value is
+160 points. (Problems 4.2 to 4.5 are on the high- and low-temperature series expansions of Lectures 19 and 20, which
+are not among the scans; the expansion variables $v$ and $z$ are introduced in Section~\ref{sec:htlt}.)
+
+\begin{hwproblem}{4}{1}
+(60 pts) Recall that the renormalization-group (RG) transformations for the Boltzmann variables $z$ and $y$ in the
+spin-1 Ising ferromagnet on the square lattice, which we discussed in class, are
+\begin{equation}
+  z' = \frac{4z^2}{(1+z^2)^2},\qquad y' = \frac{y^4}{(1+z^2)^2}.
+\end{equation}
+As discussed in class, there is a renormalization-group fixed point (RGFP) at $(z_*,y_*) = (0.2956,1.057)$ (where the
+values of $z$ and $y$ are given to the indicated floating-point accuracy). At this RGFP, in the notation used in class,
+calculate
+\begin{hwparts}
+  \item (i, 10 pts) the eigenvalue $\lambda_1$ of $M$
+  \item (ii, 10 pts) the associated critical exponent, $y_1$
+  \item (iii, 10 pts) the associated unit-normalized eigenvector $\hat{\mathbf e}_1 = (\cos\theta_1,\sin\theta_1)$
+  \item (iv, 10 pts) the eigenvalue $\lambda_2$
+  \item (v, 10 pts) the corresponding critical exponent $y_2$
+  \item (vi, 10 pts) the corresponding unit-normalized eigenvector $\hat{\mathbf e}_2 = (\cos\theta_2,\sin\theta_2)$.
+\end{hwparts}
+\end{hwproblem}
+
+The next problems are on high-temperature and low-temperature series expansions. For the problems on the Ising model,
+recall the form of the Hamiltonian $\Ham$ and partition function $Z$ of the zero-field Ising model at temperature $T$ on
+a lattice $\Lambda$:
+\begin{equation}
+  \Ham = -J\sum_{e_{\mathbf r\mathbf r'}}\sigma_{\mathbf r}\sigma_{\mathbf r'},\qquad
+  Z = \sum_{\{\sigma_{\mathbf r}\}}e^{-\beta\Ham},
+\end{equation}
+where $e_{\mathbf r\mathbf r'}$ denote bonds on $\Lambda$ between adjacent sites $\mathbf r$ and $\mathbf r'$ on
+$\Lambda$, and $\beta = 1/(\kB T)$. We use the same notation as before for the Ising model, namely $K = \beta J$,
+$v = \tanh(K)$, and $z = e^{-2K}$. For the problem on the $O(2)$ spin model on a lattice $\Lambda$, the spin at each site
+$\mathbf r\in\Lambda$ is $\mathbf S_{\mathbf r} = (\cos\theta_{\mathbf r},\sin\theta_{\mathbf r})$, and
+\begin{equation}
+  \Ham_{O(2)} = -J\sum_{e_{\mathbf r\mathbf r'}}\mathbf S_{\mathbf r}\cdot\mathbf S_{\mathbf r'},\qquad
+  Z = \left[\prod_{\mathbf r}\int_{-\pi}^{\pi}\frac{\dd\theta_{\mathbf r}}{2\pi}\right]e^{-\beta\Ham_{O(2)}}.
+\end{equation}
+Again, for the $O(2)$ model, we set $K = \beta J$.
+
+\begin{hwproblem}{4}{2}
+(30 pts) Writing the high-temperature expansion of the reduced dimensionless free energy
+$f = \lim_{N\to\infty}N^{-1}\ln Z$ of the zero-field Ising model on the triangular lattice as
+$f = \ln 2+a\ln[\cosh(K)]+bv^p+\ldots$, calculate (i, 10 pts) $a$, (ii, 10 pts) $b$, and (iii, 10 pts) $p$.
+\end{hwproblem}
+
+\begin{hwproblem}{4}{3}
+(20 pts) Calculate the $\Order(v)$ term in the high-temperature expansion of the initial susceptibility $\bar\chi$ of
+the zero-field Ising model on the simple cubic lattice.
+\end{hwproblem}
+
+\begin{hwproblem}{4}{4}
+(20 pts) Calculate the leading term in the high-temperature expansion of the nearest-neighbor spin-spin correlation
+function $\ev{\mathbf S_{(0,0,0,0)}\cdot\mathbf S_{(1,0,0,0)}}$ of the zero-field $O(2)$ spin model on the
+four-dimensional hypercubic lattice.
+\end{hwproblem}
+
+\begin{hwproblem}{4}{5}
+(30 pts) Writing the low-temperature expansion of the reduced dimensionless free energy $f$ of the zero-field Ising
+model on the $d$-dimensional hypercubic lattice as $f = aK+bz^p+\ldots$, derive the values of (i, 10 pts) $a$, (ii, 10
+pts) $b$, and (iii, 10 pts) $p$.
+\end{hwproblem}

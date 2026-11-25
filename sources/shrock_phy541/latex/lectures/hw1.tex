@@ -1,0 +1,77 @@
+% Source: originals/shrock-phy541/homework/phy541_hw1.pdf, pages 1-2 (photographed handout dated 2/11/2026).
+% Placed after the 1D Ising model; it uses Lectures 1-7.
+\hwset{1}
+
+\noindent\emph{Dated 2/11/2026.} Please submit your homework papers at the beginning of class on Mon.\ Feb.\ 23. It is
+not necessary to submit typed answers, but if you write your answers by hand, please make your handwriting legible.
+This assignment has a total of 120 points.
+
+\begin{hwproblem}{1}{1}
+(20 pts) Consider the air outside on a winter night at a temperature of $-13^\circ$ Celsius and pressure of one
+atmosphere. (a) (10 pts) Calculate the mean distance between the gas molecules. (b) (5 pts) How does this distance
+compare with the approximate sizes of the N$_2$ and O$_2$ molecules in the air? (c) (5 pts) Explain how this is
+related to the accuracy of the ideal gas law at this temperature and pressure.
+\end{hwproblem}
+
+\begin{hwproblem}{1}{2}
+(20 pts) Consider a spin model with spins $\mathbf S_i$ at sites $i$ on (the thermodynamic limit of) a lattice
+$\Lambda$ and a spin-spin interaction given by the Hamiltonian $\Ham = -J\sum_{e_{i\ell}}\mathbf S_i\cdot\mathbf S_\ell$
+with $J>0$, i.e., a ferromagnetic spin-spin coupling. Here, $e_{i\ell}$ denotes the bond between adjacent (i.e.,
+nearest-neighbor) sites $i$ and $\ell$ on $\Lambda$. The system is in thermal equilibrium at a temperature $T$. Let
+$\beta = 1/(\kB T)$, $K = \beta J$, and $u = e^{-4K}$. Assume that the spontaneous magnetization (per site) in this model
+is given by
+\begin{equation}
+  M = \frac{(1+u)^{1/4}(1-6u+u^2)^{1/7}}{(1-u)^{1/2}}
+\end{equation}
+for $T<T_c$ (and zero for $T\ge T_c$), where $T_c$ is the critical temperature. Calculate (a) (10 pts) the critical
+temperature $T_c$; (b) (10 pts) the critical exponent $\beta$.
+\end{hwproblem}
+
+\begin{hwproblem}{1}{3}
+(20 pts) Assume that the initial susceptibility $\chi_0$ of a given magnetic system has the following form, for
+temperatures $T>T_c$, as $T-T_c\to 0^+$:
+\begin{equation}
+  \chi_0 = \frac{b}{\left[(T/T_c)^8-1\right]^{3/2}}
+\end{equation}
+where $b$ is a (positive) real number. Calculate the exponent $\gamma$, which gives the leading singularity in
+$\chi_0$ as $T\to T_c^+$ (20 pts).
+\end{hwproblem}
+
+\begin{hwproblem}{1}{4}
+(30 pts) Consider the spin-$1/2$ Ising model in 1D in an external (uniform) magnetic field, $H$, described by the
+Hamiltonian
+\begin{equation}
+  \Ham = -J\sum_{e_{ij}}\sigma_i\sigma_j - H\sum_i\sigma_i
+\end{equation}
+and partition function
+\begin{equation}
+  Z = \sum_{\{\sigma_i\}}e^{-\beta\Ham}
+\end{equation}
+where $\sigma_i = \pm1$ at each site $i$ and $e_{ij}$ denotes the edge (bond) connecting adjacent sites $i$ and $j$.
+As in class, define $K = \beta J$ and $h = \beta H$, where $\beta = 1/(\kB T)$. In class we calculated the induced
+magnetization per site as $M(H)$ as
+\begin{equation}
+  M = \frac{\sinh h}{\left[\sinh^2h+e^{-4K}\right]^{1/2}}.
+\end{equation}
+Consider the case of $J<0$, i.e., antiferromagnetic spin-spin coupling. Calculate $M$ at $T = 0$. Hint: This is a
+case of competing interactions.
+\end{hwproblem}
+
+\begin{hwproblem}{1}{5}
+(20 pts) The spin-$s$ Ising model is defined as a spin model with classical spin variables $\sigma_i$ that can take on
+values in the set $\{-s,-s+1,\ldots,s\}$. The Hamiltonian and partition function are given by
+\begin{gather}
+  \Ham = -J\sum_{\{e_{ij}\}}\sigma_i\sigma_j - H\sum_i\sigma_i\\
+  Z = \sum_{\{\sigma_i\}}e^{-\beta\Ham} = \sum_{\{\sigma_i\}}e^{K\sum_{\{e_{ij}\}}\sigma_i\sigma_j+h\sum_i\sigma_i}
+\end{gather}
+where again $e_{ij}$ denotes the bond (edge) connecting two nearest-neighbor sites, and $K = \beta J$, and $h = \beta H$.
+This problem deals with the spin-1 Ising model, where spins at each site take on values in the set $\{-1,0,1\}$. Let us
+consider this model on a 1D lattice with periodic boundary conditions. (a) (10 pts) Calculate the transfer matrix for
+this model on the given lattice. (b) (10 pts) Calculate the Gibbs free energy per site in the case of zero external
+field, $H = 0$, in the thermodynamic limit.
+\end{hwproblem}
+
+\begin{hwproblem}{1}{6}
+(20 pts) Determine the planar dual of the $3\cdot 6\cdot 3\cdot 6$ lattice. Is this an Archimedean lattice? Prove
+your answer.
+\end{hwproblem}

@@ -59,6 +59,25 @@
 \renewcommand\afterEmailSpace{\vspace{24pt}}
 \numberwithin{equation}{section}
 
+% Homework sets and problems; each problem links to its solution in the appendix and back.
+\makeatletter
+\newcommand{\hwset}[1]{\subsection*{Homework assignment #1}%
+  \addcontentsline{toc}{subsection}{Homework assignment #1}\label{hwset:#1}}
+\newenvironment{hwproblem}[2]
+ {\par\medskip\Needspace{6\baselineskip}%
+  \gdef\hwkey{#1.#2}\phantomsection\def\@currentlabel{#1.#2}\label{hw:#1.#2}%
+  \noindent\begin{minipage}{\linewidth}\hrule\smallskip
+  \noindent\textbf{Problem #1.#2.}\enspace\ignorespaces}
+ {\par\nopagebreak\hfill{\small\hyperref[sol:\hwkey]{Solution on page~\pageref*{sol:\hwkey}\,$\rightarrow$}}%
+  \par\smallskip\hrule\end{minipage}\par\medskip}
+\newcommand{\solution}[2]{\subsubsection*{Problem #1.#2}\phantomsection\def\@currentlabel{#1.#2}%
+  \label{sol:#1.#2}\noindent{\small\hyperref[hw:#1.#2]{$\leftarrow$\,Problem on
+  page~\pageref*{hw:#1.#2}}}\par\nobreak}
+\newcommand{\solpart}[1]{\par\medskip\noindent\textbf{#1}\enspace\ignorespaces}
+\makeatother
+\newlist{hwparts}{itemize}{1}
+\setlist[hwparts]{label=\textbullet,leftmargin=*,topsep=3pt,itemsep=2pt}
+
 \title{Advanced Statistical Mechanics}
 \subheader{Physics 541 lecture notes, Stony Brook University}
 \author{Robert Shrock}
@@ -70,7 +89,8 @@ methods for the Potts model, the exact solution of the two-dimensional Ising
 model, critical exponents and scaling, the renormalization group, high- and
 low-temperature series expansions, complex-temperature singularities, the
 liquid--gas transition, liquid crystals, and quantum distribution functions
-with Bose--Einstein condensation.}
+with Bose--Einstein condensation. The five homework assignments appear where they
+fall in the course, and the appendix solves them.}
 \setcounter{tocdepth}{2}
 
 \begin{document}

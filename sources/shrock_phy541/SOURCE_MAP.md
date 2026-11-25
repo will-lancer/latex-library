@@ -53,3 +53,20 @@ export dates:
 - `phaseTransitions_liquidCrystals.pdf` follows the gas equations of state.
 - `quantum_distribution_functions.pdf` and `moreBoseEinstein.pdf` were exported
   last (16 April 2026) and close the notes.
+
+## Homework
+
+| Source | Pages | File | Placed |
+| --- | --- | --- | --- |
+| homework/phy541_hw1.pdf | 1-2 (photographed, dated 2/11/2026) | lectures/hw1.tex | end of Section 2 |
+| homework/phy541_hw2.pdf | 1 (typed, dated Feb. 23, 2026) | lectures/hw2.tex | end of Section 4 |
+| homework/phy541_hw3.png | one stitched photograph, no header | lectures/hw3.tex | Section 7, after the exponent relations |
+| homework/phy541_hw4.pdf | 1-2 (typed, dated 3/23/2026) | lectures/hw4.tex | end of Section 9 |
+| homework/phy541_hw5.png | one photograph, no header, cut off in 3(e) | lectures/hw5.tex | end of Section 10 |
+
+Each assignment follows the last lecture it draws on. Assignment 3 has no date;
+it uses Lectures 12 to 14 and comes between Assignments 2 and 4.
+Assignment 4 is dated 3/23 and draws on Lecture 17 and on the series expansions
+of Lectures 19 and 20, which would come just before Lecture 21. The solutions in
+`lectures/solutions.tex` have no source; they were written for this edition.
+

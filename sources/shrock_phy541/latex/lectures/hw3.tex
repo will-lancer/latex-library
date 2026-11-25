@@ -1,0 +1,88 @@
+% Source: originals/shrock-phy541/homework/phy541_hw3.png (photographs of the handout; no header, date or point total
+% is visible). Placed after the relations among critical exponents; it uses Lectures 12-14.
+\hwset{3}
+
+\noindent\emph{The photographed handout shows no header; the problems follow.}
+
+\begin{hwproblem}{3}{1}
+(20 pts) The partition function of the (spin $1/2$) Ising model at temperature $T$, with zero external magnetic field,
+on a lattice is $Z = \sum_{\sigma_i}e^{-\beta\Ham}$, where $\beta = 1/(\kB T)$ and $\Ham = -J\sum_{e_{ij}}\sigma_i\sigma_j$.
+Define $K = \beta J$. In the high-temperature phase of this model, the reduced dimensionless free energy per site of
+this model on a certain two-dimensional lattice is
+\begin{equation}
+  f = \frac{3}{4}\ln 2 + \frac{1}{4}\int_{-\pi}^{\pi}\frac{\dd\theta_1}{2\pi}\int_{-\pi}^{\pi}\frac{\dd\theta_2}{2\pi}
+  \ln\left[1+\cosh^3(2K)-\sinh^2(2K)\,\mathcal P(\theta_1,\theta_2)\right]
+\end{equation}
+where
+\begin{equation}
+  \mathcal P(\theta_1,\theta_2) = \cos\theta_1+\cos\theta_2+\cos(\theta_1+\theta_2).
+\end{equation}
+From this information, calculate the critical temperature of this model for the paramagnetic-to-ferromagnetic phase
+transition. (The Gibbs free energy per site is $G(T,H=0) = -\kB Tf$.)
+\end{hwproblem}
+
+\begin{hwproblem}{3}{2}
+(20 pts) Consider the (spin $1/2$, zero-field) Ising model on the square lattice. Denote $K = \beta J$, where $J$ is the
+spin-spin coupling, and define the elliptic moduli $k_> = \sinh^2(2K)$ and $k_< = 1/k_>$, as in class. Assume $J>0$. We
+denote a spin at position $\mathbf r$ as $\sigma_{\mathbf r} = \sigma_{(i,j)}$, where $\mathbf r = (i,j)$. In the
+low-temperature, ferromagnetically ordered phase, the two-spin correlation function for next-nearest-neighbor spins
+along the diagonal is
+\begin{equation}
+  \ev{\sigma_{(0,0)}\sigma_{(1,1)}} = \frac{2}{\pi}E(k_<)\qquad\text{for } T<T_c
+\end{equation}
+where $E(k)$ is the complete elliptic integral of the second kind with elliptic modulus $k$, as defined in class. Say
+that you are told that in the high-temperature phase, $\ev{\sigma_{(0,0)}\sigma_{(1,1)}}$ has the form
+\begin{equation}
+  \ev{\sigma_{(0,0)}\sigma_{(1,1)}} = \frac{2}{\pi}\left[aE(k_>)+bK(k_>)+(k_>^2-1)K(k_>)\right]
+\end{equation}
+where $a$ and $b$ are numerical constants and $K(k)$ is the complete elliptic integral of the first kind with elliptic
+modulus $k$, as defined in class. From this information alone, is it possible to determine the values of the constants
+$a$ and $b$? If your answer is no, provide a proof. If your answer is yes, then derive the values of $a$ and $b$.
+\end{hwproblem}
+
+\begin{hwproblem}{3}{3}
+(40 pts) Which of the following functions are generalized homogeneous functions, i.e., functions satisfying the
+property that
+\begin{equation}
+  f(\lambda^ax,\lambda^by) = \lambda f(x,y)
+\end{equation}
+where $a\ne 0$ and $b\ne 0$ are real numbers. If you say that a function is a generalized homogeneous function, give
+the values of the exponents $a$ and $b$. In the following, the powers $p,q,r,s,u,v$ and the coefficients
+$c_1,c_2,\ldots$ are generic nonzero real numbers.
+\begin{enumerate}[label=(\alph*),nosep,leftmargin=*]
+  \item (10 pts) $f(x,y) = c_1x^py^q$.
+  \item (10 pts) $f(x,y) = c_1x^py^q+c_2x^ry^s$. In this part (b), in accordance with the above conditions that $p$,
+    $q$, $r$, and $s$ are generic nonzero real numbers, assume that $p$ and $q$ are different from $r$ and $s$ and that
+    $pq\ne rs$ and $ps\ne qr$.
+  \item (10 pts) $f(x,y) = (c_1+c_2x^py^q)/(c_3+c_4x^ry^s)$.
+  \item (10 pts) $f(x,y) = x\tanh(y^2)$.
+\end{enumerate}
+\end{hwproblem}
+
+\begin{hwproblem}{3}{4}
+(40 pts) A certain substance in $d$ spatial dimensions undergoes a continuous (finite-temperature) phase transition
+with the critical exponents $\beta = 1/3$ and $\gamma = \gamma' = 5/4$. Assume $\alpha = \alpha'$ and $\nu = \nu'$.
+(a, 20 pts) Calculate the rest of the critical exponents $\alpha$, $\nu$, $\delta$, and $\eta$ from this information.
+(b, 20 pts) Calculate the fundamental thermal and magnetic critical exponents, $y_\tau$ and $y_h$.
+\end{hwproblem}
+
+\begin{hwproblem}{3}{5}
+(20 pts) The asymptotic scaling form for the two-spin correlation function as $r\to\infty$ is
+\begin{equation}
+  |\ev{\sigma_0\sigma_{\mathbf r}}|\propto\frac{1}{r^{d-2+\eta}}
+\end{equation}
+where $r = |\mathbf r|$ and $\eta$ is the associated critical exponent, with a proportionality constant that is
+independent of $r$ in this limit. For the 2D Ising model, $\eta = 1/4$. Consider the Ising model on the square lattice
+with the ferromagnetic sign of the spin-spin coupling, $J>0$. In the high-temperature phase of this model, the
+spin-spin correlation function for the spins at the points $(0,0)$ and $\mathbf r = (2,2)$ is
+\begin{equation}
+  \ev{\sigma_{(0,0)}\sigma_{(2,2)}} = \left(\frac{4}{3\pi^2k^2}\right)
+  \left[(5-k^2)E(k)^2+8(k^2-1)E(k)K(k)+3(k^2-1)^2K(k)^2\right]
+\end{equation}
+where $k\equiv k_> = \sinh(2K)^2$ and $K(k)$ and $E(k)$ are the complete elliptic integrals of the elliptic moduli
+$k$. Using those expressions and your result from Problem~3.2, calculate the ratio
+\begin{equation}
+  \frac{\ev{\sigma_{(0,0)}\sigma_{(2,2)}}}{\ev{\sigma_{(0,0)}\sigma_{(1,1)}}}
+\end{equation}
+at $T = T_c$ and compare the actual value with the asymptotic scaling prediction for this ratio.
+\end{hwproblem}

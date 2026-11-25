@@ -94,6 +94,26 @@ purpose:
 `Complex.pdf`, p. 5 has a sketch of 𝓑_v with the physical phases on the real v
 axis. It was missing from the first transcription and is now drawn.
 
+## Homework
+
+The assignments are typed as written, with these small edits:
+
+- Assignment 2 says "This homework assignment is s due"; the stray "s" is
+  dropped. Its problems refer to an accompanying sheet of graphs that is not
+  among the scans, so the three graphs are drawn from the problem statements.
+- Assignment 1, p. 2 ends a sentence with two periods; one is dropped.
+- Assignment 4 has "unit-normalizaed" and "on a lattice: Λ:". These are now
+  "unit-normalized" and "on a lattice Λ:".
+- Problems are numbered by assignment, so the reference to "Problem 2" inside
+  Assignment 3 reads "Problem 3.2".
+- The photographs of Assignments 3 and 5 show no header. The photograph of
+  Assignment 5 ends partway through Problem 3(e), after "B₂ and (ii, 10 pts) B₃,".
+
+Two problem statements carry slips that the solutions point out. In Problem 3.2
+the high-temperature form of ⟨σ₍₀,₀₎σ₍₁,₁₎⟩ lacks an overall factor 1/k_>; the
+values at T_c, which Problem 3.5 uses, are unaffected. In Problem 4.1 the rounded
+fixed point gives λ₂ = 3.995, while the exact fixed point gives λ₂ = 4.
+
 ## Readings kept as written
 
 - Lecture 1, p. 3. "p = 101 kPa = 1.01×10⁵ Pa = 1 bar" is typed with ≃.
@@ -146,3 +166,15 @@ formula, Eq. (35), holds at levels 3 and 4 with a constant α_ℓ (2304 and
 37748736). Eqs. (36) to (42) agree for m = 2 to 7, and the range
 1 ≤ s ≤ r ≤ m − 1 lists each distinct h_{r,s} once. The check also confirms the
 h₁,₂ correction above.
+
+Every number in the homework solutions was recomputed by a separate script. The
+Potts partition function, chromatic and Tutte polynomials of the graph in
+Problem 2.3 match a brute-force sum over all colorings and edge subsets, and a
+twelve-site triangular patch has exactly 6 proper 3-colorings. The spin-1
+transfer matrix of Problem 1.5 reproduces a brute-force sum on a ring. The
+diagonal correlation of Problem 3.2 was computed with a transfer matrix on an
+infinite cylinder of circumference 12; that is how the missing factor 1/k_> was
+found. The ratio test, the [3,3] dlog Padé approximant and the critical
+constants of the two equations of state in Assignment 5 were also computed
+numerically.
+
